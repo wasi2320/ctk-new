@@ -1,0 +1,11 @@
+export const HOME_HERO_SECTION = {
+  heading: "WE DRIVE YOUR VISION FORWARD",
+  subHeading: "Connect your team with cloud expertise that drives innovation",
+  button: {
+    text: "Get Started",
+    link: "/",
+  },
+  img: "/Images/aws.svg",
+  text: "Trusted by more than 400 companies around the world",
+  mainImage: "/Images/Home_Hero_Img.webp",
+};
