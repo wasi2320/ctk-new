@@ -5,18 +5,30 @@ export const INFRASTRUCTURE_SECTION = {
   cards: [
     {
       title: "Cloud Engineering",
-      description:
-        "Enhance your infrastructure with cloud solutions that help your team scale and innovate.",
+      description: "Seamless cloud solutions for optimized performance.",
+      pages: [
+        { name: "Public Cloud services", url: "/" },
+        { name: "Consulting and Advisory", url: "/" },
+        { name: "Security & Compliance", url: "/" },
+        { name: "Cloud Migration", url: "/" },
+        { name: "Finops", url: "/" },
+        { name: "DevOps Implementation", url: "/" },
+      ],
     },
     {
-      title: "Web Solutions ",
-      description:
-        "Build responsive, high-performance websites tailored to your business needs. ",
+      title: "Software Development",
+      description: "Build scalable, robust, and high-performing applications.",
+      pages: [{ name: "UI/UX Designs and animation", url: "/" }],
     },
+
     {
-      title: "UI & Animation",
-      description:
-        "Design user-friendly interfaces with smooth animations to boost engagement and experience.",
+      title: "Cyber Security",
+      description: "Protect your data with state-of-the-art security measures.",
+      pages: [
+        { name: "Web Solutions", url: "/" },
+        { name: "Mobile Development", url: "/" },
+        { name: "Al & GenAI", url: "/" },
+      ],
     },
   ],
   image: "/Images/Building.webp",

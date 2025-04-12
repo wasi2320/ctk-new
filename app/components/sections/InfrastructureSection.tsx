@@ -1,5 +1,6 @@
 import { INFRASTRUCTURE_SECTION } from "@/utils/data/infrastructureSection";
 import Image from "next/image";
+import Link from "next/link";
 
 const InfrastructureSection = () => {
   return (
@@ -18,24 +19,22 @@ const InfrastructureSection = () => {
                 key={index}
                 className="shadow-2xl bg-white py-4 px-8 rounded-3xl"
               >
-                <div className="flex justify-between">
-                  <h3 className="md:text-3xl mb-3 font-semibold">
-                    {card.title}
-                  </h3>
-                  <Image
-                    src="/Images/Down_Arrow.svg"
-                    alt=""
-                    height={18}
-                    width={18}
-                    className="w-[18px] h-[18px]"
-                  />
+                <h3 className="md:text-3xl mb-2 text-center">{card.title}</h3>
+                <p className="md:text-lg text-center">{card.description}</p>
+                <div className="grid md:grid-cols-2 gap-y-3 font-semibold mt-3">
+                  {card.pages.map((page, index) => (
+                    <div key={index} className="flex justify-center">
+                      <Link href={page.url}>
+                        <p>{page.name}</p>
+                      </Link>
+                    </div>
+                  ))}
                 </div>
-                <p className="md:text-lg">{card.description}</p>
               </div>
             ))}
           </div>
         </div>
-        <div className="md:w-[40%] h-[550px]">
+        <div className="md:w-[40%] h-[600px]">
           <Image
             src={INFRASTRUCTURE_SECTION.image}
             alt=""
