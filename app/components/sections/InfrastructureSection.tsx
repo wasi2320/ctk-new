@@ -4,7 +4,7 @@ import Image from "next/image";
 const InfrastructureSection = () => {
   return (
     <section className="py-12">
-      <h2 className="md:text-5xl text-center font-semibold md:w-7/12 mx-auto">
+      <h2 className="md:text-5xl text-center md:w-7/12 mx-auto">
         {INFRASTRUCTURE_SECTION.heading}
       </h2>
       <p className="text-center md:text-lg md:w-5/12 mx-auto my-5">

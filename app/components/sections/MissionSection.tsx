@@ -14,7 +14,7 @@ const MissionSection = () => {
         />
       </div>
       <div className="md:w-1/2 text-white md:mr-20">
-        <h2 className="md:text-5xl text-3xl font-medium">{MISSION_SECTION.heading}</h2>
+        <h2 className="md:text-5xl text-3xl">{MISSION_SECTION.heading}</h2>
         <p className="md:text-xl mt-7">{MISSION_SECTION.description}</p>
       </div>
     </section>

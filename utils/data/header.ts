@@ -1,5 +1,4 @@
 export const HEADER = {
-  logo: "/Images/logo.svg",
   navItems: [
     { name: "Home", link: "/" },
     { name: "Services", link: "/services" },

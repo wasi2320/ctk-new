@@ -1,20 +1,13 @@
 import { HEADER } from "@/utils/data/header";
 import Image from "next/image";
 import Link from "next/link";
+import { Logo } from "../global/logo";
 
 const Header = () => {
   return (
     <nav className="flex justify-between items-center px-4 md:px-20 pt-3">
       <div>
-        <Link href="/">
-          <Image
-            src={HEADER.logo}
-            alt="logo"
-            height={60}
-            width={60}
-            className="w-[60px] h-[60px]"
-          />
-        </Link>
+        <Logo />
       </div>
       <div className="flex items-center gap-10">
         <div className="flex items-center gap-10">

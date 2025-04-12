@@ -54,6 +54,7 @@ const IndustriesSection = () => {
                     md:text-xl 
                     my-6 
                     font-medium 
+                    nunito-medium
                     ${index === 1 ? "text-white" : "text-[#172A46]"}
                   `}
                   >

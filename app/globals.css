@@ -12,15 +12,69 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/*  */
+
+@font-face {
+  font-family: "Nunito";
+  src: url("/Fonts/Nunito-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Nunito", sans-serif !important;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("/Fonts/Nunito-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+.nunito-medium,
+h4 {
+  font-family: "Nunito", sans-serif !important;
+}
+
+@font-face {
+  font-family: "ClashGrotesk";
+  src: url("/Fonts/ClashGrotesk-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "ClashGrotesk", sans-serif !important;
+}
+
+/*  */
+
+.right-bottom-shadow {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-bottom-shadow {
+  box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-right-bottom-shadow {
+  box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.1), 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/*  */
