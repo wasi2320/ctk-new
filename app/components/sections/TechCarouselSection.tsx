@@ -8,8 +8,8 @@ import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
 const TechCarouselSection = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
-  const [prevBtnEnabled, setPrevBtnEnabled] = useState(true);
-  const [nextBtnEnabled, setNextBtnEnabled] = useState(true);
+  const [, setPrevBtnEnabled] = useState(true);
+  const [, setNextBtnEnabled] = useState(true);
 
   const scrollPrev = useCallback(
     () => emblaApi && emblaApi.scrollPrev(),
