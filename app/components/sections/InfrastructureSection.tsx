@@ -34,7 +34,7 @@ const InfrastructureSection = () => {
             ))}
           </div>
         </div>
-        <div className="md:w-[40%] h-[600px]">
+        <div className="md:w-[40%] h-[630px]">
           <Image
             src={INFRASTRUCTURE_SECTION.image}
             alt=""

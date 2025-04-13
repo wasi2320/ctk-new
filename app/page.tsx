@@ -19,7 +19,6 @@ export default function Home() {
       {/* <BusinessCarouselSection /> */}
       <TechCarouselSection />
       <EnsureSection />
-      <ConnectSection />
     </div>
   );
 }

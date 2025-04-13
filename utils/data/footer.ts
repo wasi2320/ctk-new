@@ -1,4 +1,8 @@
 export const FOOTER_DATA = {
+  heading: "We build partnerships.",
+  subHeading: "Let’s break through together.",
+  placeholder: "Your email address",
+  buttonText: "Connect",
   logoCol: {
     subHeading:
       "Empower your team with cloud expertise that fosters innovation and growth. Together, we drive success through collaborative solutions.",

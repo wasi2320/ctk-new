@@ -71,7 +71,7 @@ const TechCarouselSection = () => {
                       width={400}
                       height={500}
                     />
-                    <p className="absolute bottom-8 left-7 md:w-8/12 text-white text-sm">
+                    <p className="absolute bottom-8 left-7 md:w-8/12 text-white">
                       {card.description}
                     </p>
                   </div>
