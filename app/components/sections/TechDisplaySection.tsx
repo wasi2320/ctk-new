@@ -1,7 +1,7 @@
 import { TECH_MARQUEE_SECTION } from "@/utils/data/techMarqueeSection";
 import Image from "next/image";
 
-const TechMarqueeSection = () => {
+const TechDisplaySection = () => {
   return (
     <section className="bg-[#F9F8F8] py-20 md:px-20 px-4">
       <h2 className="md:text-4xl text-2xl text-center nunito-bold font-bold mb-5">
@@ -30,4 +30,4 @@ const TechMarqueeSection = () => {
   );
 };
 
-export default TechMarqueeSection;
+export default TechDisplaySection;

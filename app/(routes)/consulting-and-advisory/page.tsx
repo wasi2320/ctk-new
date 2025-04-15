@@ -2,7 +2,7 @@ import HeroSection from "@/app/components/HeroSection";
 import TailoredSection from "@/app/components/sections/TailoredSection";
 import ConsultingSection from "@/app/components/sections/ConsultingSection";
 import WhyUsSection from "@/app/components/sections/WhyUsSection";
-import TechMarqueeSection from "@/app/components/sections/TechMarqueeSection";
+import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
 
 const ConsultingAndAdvisory = () => {
   return (
@@ -16,7 +16,7 @@ const ConsultingAndAdvisory = () => {
       <TailoredSection />
       <ConsultingSection />
       <WhyUsSection />
-      <TechMarqueeSection />
+      <TechDisplaySection />
     </div>
   );
 };

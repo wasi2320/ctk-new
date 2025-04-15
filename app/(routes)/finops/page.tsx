@@ -1,5 +1,8 @@
 import HeroSection from "@/app/components/HeroSection";
 import TailoredSection from "@/app/components/sections/TailoredSection";
+import FinOpsBusinessSection from "@/app/components/sections/FinOpsBusinessSection";
+import FinOpsDifferentiateSection from "@/app/components/sections/FinOpsDifferentiateSection";
+import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
 
 const FinOps = () => {
   return (
@@ -10,6 +13,9 @@ const FinOps = () => {
         imageSrc="/Images/Fin_Hero.png"
       />
       <TailoredSection />
+      <FinOpsBusinessSection />
+      <FinOpsDifferentiateSection />
+      <TechDisplaySection />
     </div>
   );
 };

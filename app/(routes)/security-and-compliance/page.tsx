@@ -1,8 +1,8 @@
 import HeroSection from "@/app/components/HeroSection";
 import DifferentiateSection from "@/app/components/sections/DifferentiateSection";
 import TailoredSection from "@/app/components/sections/TailoredSection";
+import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
 import UpscaleSection from "@/app/components/sections/UpscaleSection";
-import TechMarqueeSection from "@/app/components/sections/TechMarqueeSection";
 
 const SecurityAndCompliance = () => {
   return (
@@ -15,7 +15,7 @@ const SecurityAndCompliance = () => {
       <TailoredSection />
       <UpscaleSection />
       <DifferentiateSection />
-      <TechMarqueeSection />
+      <TechDisplaySection />
     </div>
   );
 };
