@@ -1,5 +1,8 @@
 import HeroSection from "@/app/components/HeroSection";
 import TailoredSection from "@/app/components/sections/TailoredSection";
+import CloudBusinessSection from "@/app/components/sections/CloudBusinessSection";
+import CloudDifferentiateSection from "@/app/components/sections/CloudDifferentiateSection";
+import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
 
 const CloudService = () => {
   return (
@@ -10,6 +13,9 @@ const CloudService = () => {
         imageSrc="/Images/Cloud_Service_Hero.png"
       />
       <TailoredSection />
+      <CloudBusinessSection />
+      <CloudDifferentiateSection />
+      <TechDisplaySection />
     </div>
   );
 };

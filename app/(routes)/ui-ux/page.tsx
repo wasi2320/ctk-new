@@ -9,7 +9,10 @@ const UiUx = () => {
         description="Designing clean, functional interfaces that connect with users effortlessly."
         imageSrc="/Images/UiUx_Hero.png"
       />
-      <TailoredSection />
+      <TailoredSection
+      secondHeadingText={true}
+      />
+
     </div>
   );
 };
