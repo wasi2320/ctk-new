@@ -4,7 +4,7 @@ export const HEADER = {
     { name: "Services", link: "/services" },
     { name: "Expertise", link: "/expertise" },
     { name: "Resources", link: "/resources" },
-    { name: "About Us", link: "/about" },
+    { name: "About Us", link: "/aboutus" },
   ],
   search: "/Images/Search.svg",
 };
