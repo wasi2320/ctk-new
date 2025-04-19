@@ -3,7 +3,7 @@
 import React, { useCallback, useEffect } from "react";
 import Image from "next/image";
 import { INDUSTRIES_SECTION } from "@/utils/data/industriesSection";
-import useEmblaCarousel from "embla-carousel-react";
+import useEmblaCarousel, { EmblaCarouselType } from "embla-carousel-react";
 
 const IndustriesSection = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -13,7 +13,7 @@ const IndustriesSection = () => {
   });
 
   // Auto-play effect
-  const autoplay = useCallback((emblaApi) => {
+  const autoplay = useCallback((emblaApi: EmblaCarouselType | undefined) => {
     const autoplayInterval = setInterval(() => {
       if (emblaApi) emblaApi.scrollNext();
     }, 3000);
