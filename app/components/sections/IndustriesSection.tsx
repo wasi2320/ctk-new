@@ -3,7 +3,9 @@
 import React, { useCallback, useEffect } from "react";
 import Image from "next/image";
 import { INDUSTRIES_SECTION } from "@/utils/data/industriesSection";
-import useEmblaCarousel, { EmblaCarouselType } from "embla-carousel-react";
+import useEmblaCarousel from "embla-carousel-react";
+import type { EmblaCarouselType } from 'embla-carousel';
+
 
 const IndustriesSection = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
