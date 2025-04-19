@@ -4,8 +4,18 @@ import React, { useCallback, useEffect } from "react";
 import Image from "next/image";
 import { INDUSTRIES_SECTION } from "@/utils/data/industriesSection";
 import useEmblaCarousel from "embla-carousel-react";
-import type { EmblaCarouselType } from 'embla-carousel';
+import type { EmblaCarouselType } from "embla-carousel";
 
+type CardType = {
+  title: string;
+  description: string;
+  img: string;
+};
+
+type IndustryCardProps = {
+  card: CardType;
+  index: number;
+};
 
 const IndustriesSection = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -77,7 +87,7 @@ const IndustriesSection = () => {
 };
 
 // Separate component for individual industry card
-const IndustryCard = ({ card, index }) => {
+const IndustryCard: React.FC<IndustryCardProps> = ({ card, index }) => {
   return (
     <div
       className={`
