@@ -13,7 +13,7 @@ const IndustriesSection = () => {
   });
 
   // Auto-play effect
-  const autoplay = useCallback((emblaApi: any) => {
+  const autoplay = useCallback((emblaApi) => {
     const autoplayInterval = setInterval(() => {
       if (emblaApi) emblaApi.scrollNext();
     }, 3000);
@@ -75,7 +75,7 @@ const IndustriesSection = () => {
 };
 
 // Separate component for individual industry card
-const IndustryCard = ({ card, index }: { card: any; index: any }) => {
+const IndustryCard = ({ card, index }) => {
   return (
     <div
       className={`
