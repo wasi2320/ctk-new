@@ -3,6 +3,7 @@ import TailoredSection from "@/app/components/sections/TailoredSection";
 import AiBusinessSection from "@/app/components/sections/AiBusinessSection";
 import AiDifferentiateSection from "@/app/components/sections/AiDifferentiateSection";
 import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
+import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
 
 const Ai = () => {
   return (
@@ -16,6 +17,7 @@ const Ai = () => {
       <AiBusinessSection />
       <AiDifferentiateSection />
       <TechDisplaySection />
+      <CardScrollSection />
     </div>
   );
 };

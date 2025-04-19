@@ -17,15 +17,17 @@ const Footer = () => {
   return (
     <footer>
       <div
-        className={`py-10 px-4 md:px-20 ${backgroundImage} bg-cover bg-center bg-no-repeat flex justify-between items-center`}
+        className={`py-10 px-4 md:px-20 ${backgroundImage} bg-cover bg-center bg-no-repeat flex flex-col md:flex-row justify-between items-center gap-5`}
       >
         <div className="md:w-1/2">
-          <h2 className="text-4xl md:text-6xl text-white">
+          <h2 className="text-3xl md:text-6xl text-white">
             {FOOTER_DATA.heading}
           </h2>
         </div>
         <div className="md:w-[40%] space-y-5">
-          <h3 className="text-white md:text-3xl">{FOOTER_DATA.subHeading}</h3>
+          <h3 className="text-white md:text-3xl text-xl">
+            {FOOTER_DATA.subHeading}
+          </h3>
           <div
             className={`${inputBg} p-1.5 flex justify-between items-center rounded-full`}
           >
@@ -40,16 +42,17 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      
       <div className="bg-[url('/Images/Footer_Bg.png')] bg-cover bg-center bg-no-repeat text-white md:px-20 px-4 py-12">
-        <div className="flex justify-between">
+        <div className="flex flex-col md:flex-row justify-between">
           <div className="md:w-[45%]">
             <LogoWhite />
-            <p className="md:text-lg mt-10 mb-20 leading-8">
+            <p className="md:text-lg md:mt-10 mt-5 mb-8 md:mb-20 leading-8">
               {FOOTER_DATA.logoCol.subHeading}
             </p>
-            <h3 className="md:text-4xl">{FOOTER_DATA.logoCol.heading}</h3>
+            <h3 className="md:text-4xl text-2xl">{FOOTER_DATA.logoCol.heading}</h3>
           </div>
-          <div className="md:w-1/2 border-t-2 border-white flex justify-center gap-20 mt-14">
+          <div className="md:w-1/2 md:border-t-2 md:border-white flex justify-center md:gap-20 gap-10 md:mt-14 mt-6">
             <div className="md:ml-20">
               <h4 className="md:text-lg mt-10">Learn</h4>
               <div className="flex flex-col gap-4 mt-4">
@@ -75,19 +78,19 @@ const Footer = () => {
               <p className="text-[#CCCBC9] mb-1 mt-4 md:w-9/12">
                 {FOOTER_DATA.addressCol.addressOne}
               </p>
-              <p className="text-[#CCCBC9] md:w-9/12 w-1/2 text-center md:text-start">
+              <p className="text-[#CCCBC9] md:w-9/12">
                 {FOOTER_DATA.addressCol.addressTwo}
               </p>
             </div>
           </div>
         </div>
 
-        <div className="border-t-2 border-white mt-16 flex justify-between items-center">
+        <div className="border-t-2 border-white mt-16 flex flex-col md:flex-row justify-between items-center">
           <div className="md:w-[45%] mt-8">
-            <div className="flex justify-between">
+            <div className="flex justify-between gap-4 md:gap-0">
               {FOOTER_DATA.otherPages.map((item, index) => (
                 <Link href={item.link} key={index}>
-                  <p className="md:text-lg">{item.name}</p>
+                  <p className="md:text-lg text-sm">{item.name}</p>
                 </Link>
               ))}
             </div>

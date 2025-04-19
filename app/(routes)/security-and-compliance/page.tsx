@@ -1,5 +1,6 @@
 import HeroSection from "@/app/components/HeroSection";
 import DifferentiateSection from "@/app/components/sections/DifferentiateSection";
+import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
 import TailoredSection from "@/app/components/sections/TailoredSection";
 import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
 import UpscaleSection from "@/app/components/sections/UpscaleSection";
@@ -16,6 +17,7 @@ const SecurityAndCompliance = () => {
       <UpscaleSection />
       <DifferentiateSection />
       <TechDisplaySection />
+      <CardScrollSection />
     </div>
   );
 };

@@ -3,28 +3,28 @@ import Image from "next/image";
 
 const UiUxDifferentiateSection = () => {
   return (
-    <section className="md:px-20 px-4 pt-24 pb-12 bg-[url('/Images/Differentiate_Bg.png')] bg-cover bg-center bg-no-repeat text-white">
-      <h2 className="md:text-4xl text-2xl nunito-bold font-bold mb-5">
+    <section className="md:px-20 px-4 md:pt-24 pt-12 pb-12 bg-[url('/Images/Differentiate_Bg.png')] bg-cover bg-center bg-no-repeat text-white">
+      <h2 className="md:text-4xl text-2xl nunito-bold font-bold mb-5 text-center md:text-start">
         {UIUX_DIFFERENTIATE_SECTION.heading}
       </h2>
-      <p className="md:text-2xl text-white/70 md:w-7/12">
+      <p className="md:text-2xl text-white/70 md:w-7/12 text-center md:text-start">
         {UIUX_DIFFERENTIATE_SECTION.description}
       </p>
       <div className="grid md:grid-cols-3 mt-16 gap-12">
         {UIUX_DIFFERENTIATE_SECTION.cards.map((card, index) => (
-          <div key={index} className="flex flex-col gap-3">
+          <div key={index} className="flex flex-col items-center md:items-start gap-3">
             <Image
               src={card.imageSrc}
               alt=""
               width={375}
               height={370}
-              className="w-full h-[450px]"
+              className="w-full md:h-[450px] h-[250px]"
             />
-            <h3 className="md:text-xl nunito-bold font-semibold mt-5">
+            <h3 className="md:text-xl text-lg nunito-bold font-semibold mt-5">
               {card.title}
             </h3>
 
-            <p className="md:text- md:w-11/12 text-white/70">
+            <p className="md:text-start text-center md:w-11/12 text-white/70">
               {card.description}
             </p>
           </div>

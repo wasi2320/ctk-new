@@ -1,5 +1,7 @@
 export const TECH_CAROUSEL_SECTION = {
   heading: "We Strive For Innovation",
+  mobileHeading:
+    "Explore Our Case Studies to See How We Drive Innovation and Excellence",
   cards: [
     {
       title: "Cyber Security",

@@ -1,6 +1,7 @@
 import HeroSection from "@/app/components/HeroSection";
-import { PortfolioSection } from "@/app/components/sections/portfolioSection";
+import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
 import TailoredSection from "@/app/components/sections/TailoredSection";
+import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
 import WebBusinessSection from "@/app/components/sections/WebBusinessSection";
 import WebDifferentiateSection from "@/app/components/sections/WebDifferentiateSection";
 
@@ -15,6 +16,8 @@ const WebSolutions = () => {
       <TailoredSection heading="Optimize your infrastructure  today." />
       <WebBusinessSection />
       <WebDifferentiateSection />
+      <TechDisplaySection />
+      <CardScrollSection />
     </div>
   );
 };

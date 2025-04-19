@@ -4,11 +4,11 @@ import Image from "next/image";
 
 const TechStackSection = () => {
   return (
-    <section className="md:px-20 px-4 py-12 flex justify-between">
+    <section className="md:px-20 px-4 py-12 flex flex-col md:flex-row justify-between gap-10 md:gap-0">
       <div className="md:w-1/2">
-        <h2 className="md:text-6xl text-4xl">{TECH_STACK_SECTION.heading}</h2>
-        <p className="md:text-xl mt-10 mb-8">{TECH_STACK_SECTION.subHeading}</p>
-        <Link href={TECH_STACK_SECTION.button.link}>
+        <h2 className="md:text-6xl text-3xl text-center md:text-start">{TECH_STACK_SECTION.heading}</h2>
+        <p className="md:text-xl md:mt-10 mt-5 mb-8 text-center md:text-start">{TECH_STACK_SECTION.subHeading}</p>
+        <Link href={TECH_STACK_SECTION.button.link} className="flex justify-center md:justify-start">
           <button className="rounded-full px-7 py-2 bg-black text-white cursor-pointer">
             {TECH_STACK_SECTION.button.text}
           </button>
@@ -26,7 +26,7 @@ const TechStackSection = () => {
                 alt=""
                 height={80}
                 width={80}
-                className="w-[80px] h-[80px]"
+                className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
               />
             </div>
           ))}
@@ -42,7 +42,7 @@ const TechStackSection = () => {
                 alt=""
                 height={80}
                 width={80}
-                className="w-[80px] h-[80px]"
+                className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
               />
             </div>
           ))}
@@ -58,7 +58,7 @@ const TechStackSection = () => {
                 alt=""
                 height={80}
                 width={80}
-                className="w-[80px] h-[80px]"
+                className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
               />
             </div>
           ))}
@@ -74,7 +74,7 @@ const TechStackSection = () => {
                 alt=""
                 height={80}
                 width={80}
-                className="w-[80px] h-[80px]"
+                className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
               />
             </div>
           ))}

@@ -3,6 +3,7 @@ import TailoredSection from "@/app/components/sections/TailoredSection";
 import FinOpsBusinessSection from "@/app/components/sections/FinOpsBusinessSection";
 import FinOpsDifferentiateSection from "@/app/components/sections/FinOpsDifferentiateSection";
 import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
+import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
 
 const FinOps = () => {
   return (
@@ -16,6 +17,7 @@ const FinOps = () => {
       <FinOpsBusinessSection />
       <FinOpsDifferentiateSection />
       <TechDisplaySection />
+      <CardScrollSection />
     </div>
   );
 };

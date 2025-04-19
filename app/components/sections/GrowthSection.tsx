@@ -20,7 +20,7 @@ const GrowthSection = () => {
               height={75}
               className="w-[75px] h-[75px]"
             />
-            <h3 className="md:text-2xl nunito-bold font-semibold">
+            <h3 className="md:text-2xl text-xl nunito-bold font-semibold">
               {card.title}
             </h3>
 

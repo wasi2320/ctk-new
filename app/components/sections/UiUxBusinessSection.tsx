@@ -4,7 +4,7 @@ import Image from "next/image";
 const UiUxBusinessSection = () => {
   return (
     <section className="md:px-20 px-4 py-16">
-      <h2 className="md:text-4xl text-2xl nunito-bold font-bold text-center">
+      <h2 className="md:text-4xl text-3xl nunito-bold font-bold text-center">
         {UIUX_BUSINESS_SECTION.heading}
       </h2>
       <div className="grid md:grid-cols-2 mt-14 gap-12">
@@ -24,13 +24,13 @@ const UiUxBusinessSection = () => {
               </div>
             ) : (
               <>
-                <div className="flex gap-5 mb-2">
+                <div className="flex md:gap-5 gap-2.5 mb-2">
                   <Image src="/Images/Tick.svg" alt="" width={20} height={20} />
-                  <h3 className="md:text-2xl nunito-bold font-semibold">
+                  <h3 className="md:text-2xl text-xl nunito-bold font-semibold">
                     {card.title}
                   </h3>
                 </div>
-                <p className="md:text-xl md:ml-10">{card.description}</p>
+                <p className="md:text-xl md:ml-10 ml-7">{card.description}</p>
               </>
             )}
           </div>

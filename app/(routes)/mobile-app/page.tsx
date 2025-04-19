@@ -3,6 +3,7 @@ import TailoredSection from "@/app/components/sections/TailoredSection";
 import MobileBusinessSection from "@/app/components/sections/MobileBusinessSection";
 import MobileDifferentiateSection from "@/app/components/sections/MobileDifferentiateSection";
 import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
+import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
 
 const MobileApp = () => {
   return (
@@ -16,6 +17,7 @@ const MobileApp = () => {
       <MobileBusinessSection />
       <MobileDifferentiateSection />
       <TechDisplaySection />
+      <CardScrollSection />
     </div>
   );
 };

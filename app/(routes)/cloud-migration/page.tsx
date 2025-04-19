@@ -3,6 +3,7 @@ import TailoredSection from "@/app/components/sections/TailoredSection";
 import GrowthSection from "@/app/components/sections/GrowthSection";
 import DifferentiateCardSection from "@/app/components/sections/DifferentiateCardSection";
 import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
+import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
 
 const CloudMigration = () => {
   return (
@@ -16,6 +17,7 @@ const CloudMigration = () => {
       <GrowthSection />
       <DifferentiateCardSection />
       <TechDisplaySection />
+      <CardScrollSection />
     </div>
   );
 };

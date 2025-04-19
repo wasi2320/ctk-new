@@ -3,6 +3,7 @@ import TailoredSection from "@/app/components/sections/TailoredSection";
 import UiUxBusinessSection from "@/app/components/sections/UiUxBusinessSection";
 import UiUxDifferentiateSection from "@/app/components/sections/UiUxDifferentiateSection";
 import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
+import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
 
 const UiUx = () => {
   return (
@@ -16,6 +17,7 @@ const UiUx = () => {
       <UiUxBusinessSection />
       <UiUxDifferentiateSection />
       <TechDisplaySection />
+      <CardScrollSection />
     </div>
   );
 };

@@ -3,9 +3,9 @@ import Image from "next/image";
 
 const WebDifferentiateSection = () => {
   return (
-    <section className="md:px-20 px-4 py-12 bg-[url('/Images/Differentiate_Bg.png')] bg-cover bg-center bg-no-repeat flex gap-12">
+    <section className="md:px-20 px-4 py-12 bg-[url('/Images/Differentiate_Bg.png')] bg-cover bg-center bg-no-repeat flex flex-col md:flex-row gap-12">
       <div className="md:w-1/2">
-        <h2 className="md:text-5xl text-2xl nunito-bold font-bold text-white md:w-11/12">
+        <h2 className="md:text-5xl text-3xl nunito-bold font-bold text-white md:w-11/12 text-center md:text-start">
           {WEB_DIFFERENTIATE_SECTION.heading}
         </h2>
         <div className="md:flex flex-col mt-10">
@@ -19,13 +19,13 @@ const WebDifferentiateSection = () => {
                   ${
                     hasImage
                       ? "col-span-2 my-10"
-                      : "bg-[linear-gradient(to_right,#D9D9D9,#A4AEAB)] py-8 px-12 rounded-2xl"
+                      : "bg-[linear-gradient(to_right,#D9D9D9,#A4AEAB)] md:py-8 py-4 px-6 md:px-12 rounded-2xl"
                   }
                   ${index === 1 ? "md:col-start-2" : ""}
                 `}
               >
                 {hasImage ? (
-                  <div className="relative w-full h-[430px]">
+                  <div className="relative w-full md:h-[430px] h-[250px]">
                     <Image
                       src={card.image}
                       alt="HTML Business Benefits"
@@ -43,11 +43,11 @@ const WebDifferentiateSection = () => {
                         height={30}
                       />
                     </div>
-                    <h3 className="md:text-xl nunito-bold font-semibold mb-4">
+                    <h3 className="text-xl nunito-bold font-semibold mb-4">
                       {card.title}
                     </h3>
-                    <p className="md:text-lg font-bold">{card.description}</p>
-                    <div className="flex gap-2 mt-8">
+                    <p className="md:text-lg text-sm font-bold">{card.description}</p>
+                    <div className="flex gap-2 md:mt-8 mt-5">
                       <button className="font-semibold text-lg">
                         Learn More
                       </button>
@@ -79,12 +79,12 @@ const WebDifferentiateSection = () => {
                 ${
                   hasImage
                     ? "col-span-2 mb-10"
-                    : "bg-[linear-gradient(to_right,#D9D9D9,#A4AEAB)] py-8 px-12 rounded-2xl text-black"
+                    : "bg-[linear-gradient(to_right,#D9D9D9,#A4AEAB)] md:py-8 py-4 px-6 md:px-12 rounded-2xl text-black"
                 }
               `}
             >
               {hasImage ? (
-                <div className="relative w-full h-[410px]">
+                <div className="relative w-full md:h-[410px] h-[250px]">
                   <Image
                     src={card.image}
                     alt="Web Development Services"
@@ -102,10 +102,10 @@ const WebDifferentiateSection = () => {
                       height={30}
                     />
                   </div>
-                  <h3 className="md:text-xl nunito-bold font-semibold mb-4">
+                  <h3 className="text-xl nunito-bold font-semibold mb-4">
                     {card.title}
                   </h3>
-                  <p className="md:text-lg font-bold mb-4">
+                  <p className="md:text-lg text-sm font-bold mb-4">
                     {card.description}
                   </p>
 
@@ -120,7 +120,7 @@ const WebDifferentiateSection = () => {
                   {hasScore && (
                     <div className="mt-5">
                       <span className="text-4xl font-bold">{card.score}</span>
-                      <p className="text-lg font-semibold">
+                      <p className="md:text-lg text-sm font-semibold">
                         {card.descriptionScore}
                       </p>
                     </div>

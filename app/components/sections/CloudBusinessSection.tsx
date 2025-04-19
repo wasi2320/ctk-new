@@ -4,15 +4,15 @@ import Image from "next/image";
 const CloudBusinessSection = () => {
   return (
     <section className="md:px-20 px-4 py-16">
-      <h2 className="md:text-4xl text-2xl text-center nunito-bold font-bold mb-5">
+      <h2 className="md:text-4xl text-3xl text-center nunito-bold font-bold mb-5">
         {CLOUD_BUSINESS_SECTION.heading}
       </h2>
 
-      <div className="grid md:grid-cols-4 mt-16 gap-10">
+      <div className="grid md:grid-cols-4 grid-cols-2 mt-16 md:gap-10 gap-4">
         {CLOUD_BUSINESS_SECTION.cards.map((card, index) => (
           <div
             key={index}
-            className="flex flex-col items-center gap-4 bg-white py-12 px-6 rounded-2xl all-sides-shadow"
+            className="flex flex-col items-center gap-4 bg-white md:py-12 py-6 md:px-6 px-3 rounded-2xl all-sides-shadow"
           >
             <Image
               src={card.imageSrc}
@@ -21,11 +21,11 @@ const CloudBusinessSection = () => {
               height={50}
               className="w-[50px] h-[50px]"
             />
-            <h3 className="md:text-xl nunito-bold font-semibold text-center">
+            <h3 className="md:text-xl text-lg nunito-bold font-semibold text-center">
               {card.title}
             </h3>
 
-            <p className="md:text-lg text-center">{card.description}</p>
+            <p className="md:text-lg text-sm text-center">{card.description}</p>
           </div>
         ))}
       </div>
