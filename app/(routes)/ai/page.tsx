@@ -1,5 +1,9 @@
 import HeroSection from "@/app/components/HeroSection";
 import TailoredSection from "@/app/components/sections/TailoredSection";
+import AiBusinessSection from "@/app/components/sections/AiBusinessSection";
+import AiDifferentiateSection from "@/app/components/sections/AiDifferentiateSection";
+import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
+import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
 
 const Ai = () => {
   return (
@@ -9,7 +13,11 @@ const Ai = () => {
         description="Harness the power of AI, ML, and GenAI to drive smarter decisions, fuel innovation, and accelerate your business growth."
         imageSrc="/Images/Ai_Hero.png"
       />
-      <TailoredSection />
+      <TailoredSection heading="Transform, Innovate & Scale with AI/ML & GenAI" />
+      <AiBusinessSection />
+      <AiDifferentiateSection />
+      <TechDisplaySection />
+      <CardScrollSection />
     </div>
   );
 };

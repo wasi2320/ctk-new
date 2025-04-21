@@ -5,7 +5,7 @@ import IndustriesSection from "./components/sections/IndustriesSection";
 import TechStackSection from "./components/sections/TechStackSection";
 import TechCarouselSection from "./components/sections/TechCarouselSection";
 import EnsureSection from "./components/sections/EnsureSection";
-// import BusinessCarouselSection from "./components/sections/BusinessCarouselSection";
+import BusinessCarouselSection from "./components/sections/BusinessCarouselSection";
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
       <InfrastructureSection />
       <IndustriesSection />
       <TechStackSection />
-      {/* <BusinessCarouselSection /> */}
+      <BusinessCarouselSection />
       <TechCarouselSection />
       <EnsureSection />
     </div>

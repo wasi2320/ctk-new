@@ -3,9 +3,10 @@ import Image from "next/image";
 
 const BenefitSection = () => {
   return (
-    <section className="md:px-20 px-4 py- flex justify-between items-center bg-black text-white">
+    <section className="md:px-20 px-4 py-10 md:py-0 flex flex-col-reverse md:flex-row justify-between items-center bg-black text-white">
+     
       <div className="md:w-[38%]">
-        <h2 className="md:text-4xl text-2xl text-shadow-2xl nunito-bold font-bold md:w-9/12">
+        <h2 className="text-4xl text-shadow-2xl nunito-bold font-bold w-9/12 hidden md:block">
           {BENEIT_SECTION.title}
         </h2>
         <p className="md:text-xl text-base md:w-12/12 my-8 text-white/80">
@@ -25,9 +26,12 @@ const BenefitSection = () => {
           alt="Hero"
           height={480}
           width={500}
-          className="h-[480px] w-full object-cover"
+          className="md:h-[480px] h-[240px] w-full object-cover"
         />
       </div>
+      <h2 className="text-2xl text-shadow-2xl nunito-bold font-bold md:hidden text-center mb-6">
+        {BENEIT_SECTION.title}
+      </h2>
     </section>
   );
 };

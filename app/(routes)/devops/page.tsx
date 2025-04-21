@@ -4,6 +4,7 @@ import DevOpsBusinessSection from "@/app/components/sections/DevOpsBusinessSecti
 import BenefitSection from "@/app/components/sections/BenefitSection";
 import DevOpsDifferentiateSection from "@/app/components/sections/DevOpsDifferentiateSection";
 import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
+import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
 
 const DevOps = () => {
   return (
@@ -18,6 +19,7 @@ const DevOps = () => {
       <BenefitSection />
       <DevOpsDifferentiateSection />
       <TechDisplaySection />
+      <CardScrollSection />
     </div>
   );
 };

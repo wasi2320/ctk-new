@@ -3,6 +3,7 @@ import TailoredSection from "@/app/components/sections/TailoredSection";
 import CloudBusinessSection from "@/app/components/sections/CloudBusinessSection";
 import CloudDifferentiateSection from "@/app/components/sections/CloudDifferentiateSection";
 import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
+import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
 
 const CloudService = () => {
   return (
@@ -16,6 +17,7 @@ const CloudService = () => {
       <CloudBusinessSection />
       <CloudDifferentiateSection />
       <TechDisplaySection />
+      <CardScrollSection />
     </div>
   );
 };

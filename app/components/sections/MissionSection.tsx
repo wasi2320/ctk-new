@@ -3,8 +3,8 @@ import Image from "next/image";
 
 const MissionSection = () => {
   return (
-    <section className="flex justify-between items-center gap-5 bg-[url('/Images/Mission_Bg.png')] bg-cover bg-center bg-no-repeat h-[60vh]">
-      <div className="md:w-1/2 h-full">
+    <section className="flex justify-between items-center md:gap-5 bg-[url('/Images/Mission_Bg.png')] bg-cover bg-center bg-no-repeat md:h-[60vh] h-[35vh] mt-12 md:mt-0">
+      <div className="md:w-1/2 w-[45%] h-full">
         <Image
           src={MISSION_SECTION.leftImage}
           alt=""
@@ -13,9 +13,9 @@ const MissionSection = () => {
           className="w-full h-full"
         />
       </div>
-      <div className="md:w-1/2 text-white md:mr-20">
-        <h2 className="md:text-5xl text-3xl">{MISSION_SECTION.heading}</h2>
-        <p className="md:text-xl mt-7">{MISSION_SECTION.description}</p>
+      <div className="md:w-1/2 w-[60%] text-white md:mr-20 mr-4">
+        <h2 className="md:text-5xl text-xl text-center md:text-start">{MISSION_SECTION.heading}</h2>
+        <p className="md:text-xl md:mt-7 mt-3 text-xs text-center md:text-start">{MISSION_SECTION.description}</p>
       </div>
     </section>
   );

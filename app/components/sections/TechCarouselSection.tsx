@@ -32,8 +32,11 @@ const TechCarouselSection = () => {
 
   return (
     <section className="md:px-20 px-4 py-12">
-      <h2 className="text-4xl md:text-5xl text-center">
+      <h2 className="text-5xl text-center hidden md:block">
         {TECH_CAROUSEL_SECTION.heading}
+      </h2>
+      <h2 className="text-4xl text-center md:hidden">
+        {TECH_CAROUSEL_SECTION.mobileHeading}
       </h2>
 
       <div className="relative mt-10">
@@ -56,20 +59,21 @@ const TechCarouselSection = () => {
 
         {/* Carousel Container */}
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex">
+          <div className="flex gap-3 md:gap-0">
             {TECH_CAROUSEL_SECTION.cards.map((card, index) => (
               <div
                 key={index}
                 className="flex-[0_0_100%] min-w-0 md:flex-[0_0_28%]"
               >
-                <div className="flex flex-col gap-5 mr-9">
-                  <h4 className="md:text-2xl">{card.title}</h4>
-                  <div className="relative">
+                <div className="flex flex-col gap-5 last:mr-3 last:md:mr-9">
+                  <h4 className="md:text-2xl text-xl">{card.title}</h4>
+                  <div className="relative md:h-[500px] h-[400px]">
                     <Image
                       src={card.image}
                       alt={card.title}
                       width={400}
                       height={500}
+                      className="w-full h-full object-cover rounded-3xl"
                     />
                     <p className="absolute bottom-8 left-7 md:w-8/12 text-white">
                       {card.description}
