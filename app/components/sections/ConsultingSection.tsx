@@ -4,7 +4,7 @@ import Image from "next/image";
 const ConsultingSection = () => {
   return (
     <section className="md:px-20 px-4 md:py-20 py-10 flex flex-col md:flex-row justify-between items-center">
-       <h2 className="text-2xl text-center mb-6 text-shadow-2xl nunito-bold font-bold md:hidden">
+       <h2 className="text-2xl text-center mb-6 nunito-bold font-bold md:hidden">
           {CONSULTING_SECTION.title}
         </h2>
       <div className="md:w-[45%]">
@@ -17,7 +17,7 @@ const ConsultingSection = () => {
         />
       </div>
       <div className="md:w-1/2">
-        <h2 className="text-4xl text-shadow-2xl nunito-bold font-bold hidden md:block">
+        <h2 className="text-4xl nunito-bold font-bold hidden md:block">
           {CONSULTING_SECTION.title}
         </h2>
         <p className="md:text-xl text-base md:w-11/12 my-8 text-gray-600 text-center md:text-start">

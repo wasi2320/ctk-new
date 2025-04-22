@@ -15,7 +15,7 @@ const MobileDifferentiateSection = () => {
           <Image
             src={MOBILE_DIFFERENTIATE_SECTION.image}
             alt=""
-            width={260}
+            width={400}
             height={400}
             className="h-full w-full object-cover rounded-3xl"
           />

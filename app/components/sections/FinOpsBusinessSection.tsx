@@ -20,7 +20,7 @@ const FinOpsBusinessSection = () => {
             }
                 ${
                   index === 3
-                    ? "border-t-2 border-l-2 border-l-[linear-gradient(to_right,#D9D9D9,#A4AEAB)] border-[#152F27] md:pt-12 md:pl-12 pt-6 pl-6 -ml-[1px] md:-mt-[1px] -mt-[2px]"
+                    ? "border-t-2 border-l-2 border-l-[linear-gradient(to_right,#D9D9D9,#A4AEAB)] border-[#152F27] md:pt-12 md:pl-12 pt-6 pl-6 -ml-[1px] md:-mt-[1.5px] -mt-[2px]"
                     : ""
                 }
                 ${index === 2 ? "md:mt-12 md:mr-12 mt-6 mr-6" : ""}

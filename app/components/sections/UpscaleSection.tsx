@@ -24,7 +24,7 @@ const UpscaleSection = () => {
                     <div
                       className={`md:rounded-3xl rounded-2xl all-sides-shadow ${
                         index === 0 ? "pt-5 md:px-8 px-4 md:pb-14 pb-5" : "py-5 md:px-8 px-4"
-                      } ${index === 1 ? "mt-12" : ""} ${
+                      } ${index === 1 ? "mt-12 pb-14" : ""} ${
                         index === 1
                           ? "bg-[#245444] text-white"
                           : "text-[#152F27]"
@@ -43,8 +43,8 @@ const UpscaleSection = () => {
           })}
 
           {/* Two star divs side by side */}
-          <div className="flex gap-6 col-span-2">
-            <div className="flex gap-2 md:px-8 px-4 all-sides-shadow bg-[#1D493A] md:rounded-3xl rounded-2xl justify-center md:ml-16 md:w-1/2 md:h-[100px] h-[70px] items-center mt-5">
+          <div className="flex gap-5 col-span-2">
+            <div className="flex gap-2 md:px-8 px-4 all-sides-shadow bg-[#1D493A] md:rounded-3xl rounded-2xl justify-center md:ml-16 md:w-1/2 md:h-[100px] h-[70px] items-center mt-1">
               {UPSCALE_SECTION.StarOne.map((star, index) => (
                 <div key={index}>
                   <Image
@@ -58,7 +58,7 @@ const UpscaleSection = () => {
               ))}
             </div>
 
-            <div className="flex gap-2 md:px-8 px-4 all-sides-shadow bg-white md:rounded-3xl rounded-2xl justify-center md:w-1/2 items-center mt-10 mb-1 md:h-[100px] h-[70px]">
+            <div className="flex gap-2 md:px-8 px-4 all-sides-shadow bg-white md:rounded-3xl rounded-2xl justify-center md:w-1/2 items-center mt-6 mb-1 md:h-[100px] h-[70px]">
               {UPSCALE_SECTION.StarTwo.map((star, index) => (
                 <div key={index}>
                   <Image
@@ -81,7 +81,7 @@ const UpscaleSection = () => {
                 <div className="space-y-9">
                   <div
                     className={`md:rounded-3xl rounded-2xl all-sides-shadow ${
-                      actualIndex === 3 ? "pt-5 md:px-8 px-4 md:pb-14 pb-5" : "py-5 md:px-8 px-4"
+                      actualIndex === 3 ? "pt-5 md:px-8 px-4 md:pb-16 pb-5" : "py-5 md:px-8 px-4 pb-8"
                     } ${
                       actualIndex === 3
                         ? "bg-[#152F27] text-white"
