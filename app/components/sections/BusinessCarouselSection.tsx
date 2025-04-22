@@ -74,7 +74,7 @@ const BusinessCarouselSection = () => {
   };
 
   return (
-    <section className="relative bg-[url('/Images/Differentiate_Bg.png')] bg-cover bg-center bg-no-repeat py-16 px-4 md:px-20 md:h-screen flex flex-col justify-center">
+    <section className="relative bg-[url('/Images/Differentiate_Bg.png')] bg-cover bg-center bg-no-repeat py-16 px-4 md:px-20 flex flex-col justify-center">
       <h2 className="text-4xl md:text-6xl text-center mb-12 text-white">
         {BUSINESS_CAROUSEL_SECTION.heading}
       </h2>

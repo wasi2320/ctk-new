@@ -10,7 +10,7 @@ export const CardScrollSection = () => {
         <h2 className="md:text-4xl text-3xl text-center nunito-bold font-bold mb-6">
           {CARD_SCROLL_SECTION.heading}
         </h2>
-        <p className="md:text-xl text-sm nunito-medium md:w-7/12 mx-auto text-center font-semibold">
+        <p className="md:text-xl text-sm nunito-semiBold md:w-7/12 mx-auto text-center font-semibold">
           {CARD_SCROLL_SECTION.description}
         </p>
       </div>
@@ -40,9 +40,9 @@ export const CardScrollSection = () => {
                 <h2 className="text-2xl nunito-bold font-bold mb-4">
                   {item.heading}
                 </h2>
-                <p className="nunito-medium mb-6">{item.description}</p>
+                <p className="nunito-extraLight mb-6">{item.description}</p>
                 <div className="flex gap-2">
-                  <button className="font-semibold text-lg">Learn More</button>
+                  <button className="text-lg">Learn More</button>
                   <div className="w-7 h-7 flex justify-center items-center bg-[#152F27] rounded-full">
                     <Image
                       src="/Images/Arrow_Left.svg"
@@ -73,9 +73,9 @@ export const CardScrollSection = () => {
                 <h2 className="md:text-4xl text-2xl nunito-bold font-bold lg:w-8/12 lg:leading-12">
                   {item.heading}
                 </h2>
-                <p className="md:text-xl nunito-medium">{item.description}</p>
+                <p className="md:text-xl nunito-extraLight">{item.description}</p>
                 <div className="flex gap-2 mt-12">
-                  <button className="font-semibold text-lg">Learn More</button>
+                  <button className="text-2xl">Learn More</button>
                   <div className="w-7 h-7 flex justify-center items-center bg-[#152F27] rounded-full">
                     <Image
                       src="/Images/Arrow_Left.svg"

@@ -14,7 +14,7 @@ const TechStackSection = () => {
           </button>
         </Link>
       </div>
-      <div className="md:w-[42%] flex justify-between items-center">
+      <div className="md:w-[42%] 2xl:w-[40%] flex justify-between items-center">
         <div className="space-y-8">
           {TECH_STACK_SECTION.techImagesCol1.map((img, index) => (
             <div

@@ -51,6 +51,28 @@ h4 {
 }
 
 @font-face {
+  font-family: "Nunito-ExtraLight";
+  src: url("/Fonts/Nunito-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+.nunito-extraLight {
+  font-family: "Nunito-ExtraLight", sans-serif !important;
+}
+
+@font-face {
+  font-family: "Nunito-SemiBold";
+  src: url("/Fonts/Nunito-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+.nunito-semiBold {
+  font-family: "Nunito-SemiBold", sans-serif !important;
+}
+
+@font-face {
   font-family: "Nunito";
   src: url("/Fonts/Nunito-Bold.ttf") format("truetype");
   font-weight: 700;
@@ -62,7 +84,7 @@ h4 {
 }
 
 @font-face {
-  font-family: "Nunito";
+  font-family: "Nunito-Medium";
   src: url("/Fonts/Nunito-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
@@ -70,7 +92,7 @@ h4 {
 
 .nunito-medium,
 h4 {
-  font-family: "Nunito", sans-serif !important;
+  font-family: "Nunito-Medium", sans-serif !important;
 }
 
 @font-face {
@@ -89,15 +111,15 @@ h3 {
 /*  */
 
 .right-bottom-shadow {
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.1);
 }
 
 .left-bottom-shadow {
-  box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: -8px 8px 10px rgba(0, 0, 0, 0.1);
 }
 
 .left-right-bottom-shadow {
-  box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.1), 4px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: -8px 8px 10px rgba(0, 0, 0, 0.1), 8px 8px 10px rgba(0, 0, 0, 0.1);
 }
 
 .all-sides-shadow {
@@ -105,4 +127,10 @@ h3 {
     4px 0px 10px rgba(0, 0, 0, 0.1), 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.all-shadow {
+  box-shadow: 0px -12px 10px rgba(0, 0, 0, 0.1), -12px 0px 10px rgba(0, 0, 0, 0.1),
+    12px 0px 10px rgba(0, 0, 0, 0.1), 0px 12px 10px rgba(0, 0, 0, 0.1);
+}
+
 /*  */
+

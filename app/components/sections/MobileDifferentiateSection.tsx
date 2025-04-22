@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const MobileDifferentiateSection = () => {
   return (
-    <section className="md:px-20 px-4 py-16 bg-[url('/Images/Differentiate_Bg.png')] bg-cover bg-center bg-no-repeat flex flex-col md:flex-row justify-between items-center text-white gap-12">
+    <section className="md:px-20 px-4 py-20 bg-[url('/Images/Mobile_Diff_Bg.png')] bg-cover bg-center bg-no-repeat flex flex-col md:flex-row justify-between items-center text-white gap-12">
       <div className="md:w-[45%]">
         <h2 className="md:text-4xl text-3xl nunito-bold font-bold mb-4 text-center md:text-start">
           {MOBILE_DIFFERENTIATE_SECTION.heading}
@@ -34,7 +34,7 @@ const MobileDifferentiateSection = () => {
                   height={13}
                    className="md:h-[20px] h-[16px] md:w-[20px] w-[16px]"
                 />
-                <h3 className="md:text-2xl text-lg nunito-bold font-semibold">
+                <h3 className="md:text-2xl text-lg nunito-bold font-bold">
                   {card.title}
                 </h3>
               </div>

@@ -27,18 +27,18 @@ const TechDisplaySection = () => {
       <h2 className="md:text-4xl text-2xl text-center nunito-bold font-bold mb-5">
         {TECH_DISPLAY_SECTION.heading}
       </h2>
-      <p className="md:text-xl nunito-medium md:w-6/12 mx-auto text-center font-semibold">
+      <p className="md:text-xl nunito-semiBold md:w-6/12 mx-auto text-center font-semibold">
         {TECH_DISPLAY_SECTION.description}
       </p>
       
-      <div className="mt-12 md:mx-20 py-4"> {/* Added vertical padding */}
+      <div className="mt-12 md:mx-20 py-4"> 
         <div className="embla" ref={emblaRef}>
-          <div className="embla__container h-full"> {/* Added h-full */}
+          <div className="embla__container h-full">
             {TECH_DISPLAY_SECTION.marqueeItems.map((img, index) => (
               <div 
                 key={index} 
-                className="embla__slide flex items-center justify-center" /* Added flex centering */
-                style={{ minWidth: `${100 / slidesToShow}%`, padding: '8px 0' }} /* Added vertical padding */
+                className="embla__slide flex items-center justify-center" 
+                style={{ minWidth: `${100 / slidesToShow}%`, padding: '8px 0' }} 
               >
                 <div className="p-4 rounded-lg left-right-bottom-shadow bg-[#EFEEEE]/40 mx-2 h-full flex items-center justify-center"> {/* Added h-full and flex centering */}
                   <Image

@@ -7,7 +7,7 @@ const WebBusinessSection = () => {
       <h2 className="md:text-4xl text-3xl nunito-bold font-bold mb-5 text-center md:text-start">
         {WEB_BUSINESS_SECTION.heading}
       </h2>
-      <p className="md:text-xl nunito-medium md:w-9/12 text-center md:text-start">
+      <p className="md:text-xl md:w-9/12 text-center md:text-start">
         {WEB_BUSINESS_SECTION.description}
       </p>
       <div className="grid md:grid-cols-4 mt-14 gap-10">
@@ -16,11 +16,11 @@ const WebBusinessSection = () => {
             <Image
               src={card.imageSrc}
               alt=""
-              width={60}
-              height={60}
-              className="w-[60px] h-[60px]"
+              width={80}
+              height={80}
+              className="w-[80px] h-[80px]"
             />
-            <h3 className="md:text-2xl text-xl nunito-bold font-semibold">
+            <h3 className="md:text-2xl text-xl nunito-bold font-bold">
               {card.title}
             </h3>
 

@@ -13,7 +13,7 @@ const TailoredSection = ({ heading }: TailoredSectionProps) => {
         {heading || defaultHeading}
       </h2>
       <Link href="">
-        <button className="rounded-full md:px-7 px-4 py-2 text-sm md:text-base bg-transparent border border-white font-semibold cursor-pointer">
+        <button className="rounded-full nunito-extraLight md:px-7 px-4 py-2 text-sm md:text-base bg-transparent border border-white font-semibold cursor-pointer">
           Schedule your cloud assessment
         </button>
       </Link>

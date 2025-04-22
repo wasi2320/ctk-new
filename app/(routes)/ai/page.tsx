@@ -12,6 +12,7 @@ const Ai = () => {
         title="Power of AI, ML,and GenAI to drive smarter decisions,"
         description="Harness the power of AI, ML, and GenAI to drive smarter decisions, fuel innovation, and accelerate your business growth."
         imageSrc="/Images/Ai_Hero.png"
+        cover={true}
       />
       <TailoredSection heading="Transform, Innovate & Scale with AI/ML & GenAI" />
       <AiBusinessSection />

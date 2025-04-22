@@ -7,7 +7,7 @@ const MobileBusinessSection = () => {
       <h2 className="md:text-4xl text-3xl nunito-bold font-bold mb-5 text-center md:text-start">
         {MOBILE_BUSINESS_SECTION.heading}
       </h2>
-      <p className="md:text-xl nunito-medium md:w-9/12 text-center md:text-start">
+      <p className="md:text-xl md:w-9/12 text-center md:text-start">
         {MOBILE_BUSINESS_SECTION.description}
       </p>
       <div className="grid md:grid-cols-2 mt-14 gap-10">
@@ -23,7 +23,7 @@ const MobileBusinessSection = () => {
               />
             </div>
             <div>
-              <h3 className="md:text-2xl nunito-bold font-semibold mb-2">
+              <h3 className="md:text-2xl nunito-bold font-bold mb-2">
                 {card.title}
               </h3>
               <p className="md:text-xl">{card.description}</p>

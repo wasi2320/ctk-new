@@ -12,7 +12,7 @@ const CloudBusinessSection = () => {
         {CLOUD_BUSINESS_SECTION.cards.map((card, index) => (
           <div
             key={index}
-            className="flex flex-col items-center gap-4 bg-white md:py-12 py-6 md:px-6 px-3 rounded-2xl all-sides-shadow"
+            className="flex flex-col items-center gap-4 bg-white md:pt-12 md:pb-24 py-6 md:px-6 px-3 rounded-2xl all-shadow"
           >
             <Image
               src={card.imageSrc}

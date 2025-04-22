@@ -5,19 +5,25 @@ interface HeroSectionProps {
   title: string;
   description: string;
   imageSrc: string;
+  cover?: boolean;
 }
 
-const HeroSection = ({ title, description, imageSrc }: HeroSectionProps) => {
+const HeroSection = ({
+  title,
+  description,
+  imageSrc,
+  cover = false,
+}: HeroSectionProps) => {
   return (
     <section className="md:px-20 px-4 flex flex-col-reverse md:flex-row items-center justify-between h-auto md:h-[90vh] gap-10 my-10 md:my-0">
       <div className="md:w-[55%] text-center md:text-left">
-        <h1 className="md:text-7xl text-4xl text-shadow-2xl">{title}</h1>
-        <h3 className="md:text-xl text-base md:w-11/12 my-8 text-gray-700">
+        <h1 className="md:text-7xl text-4xl text-shadow-lg">{title}</h1>
+        <p className="md:text-xl text-base md:w-11/12 my-8 text-gray-700">
           {description}
-        </h3>
+        </p>
 
         <Link href="/">
-          <button className="rounded-full px-7 py-2 bg-black text-white cursor-pointer shadow-2xl">
+          <button className="rounded-full px-8 py-3 bg-black text-white cursor-pointer shadow-2xl">
             Let’s connect
           </button>
         </Link>
@@ -29,7 +35,9 @@ const HeroSection = ({ title, description, imageSrc }: HeroSectionProps) => {
           alt="Hero"
           height={500}
           width={500}
-          className="md:h-[500px] h-[450px] w-full"
+          className={`md:h-[500px] h-[450px] w-full ${
+            cover ? "object-contain" : ""
+          }`}
         />
       </div>
     </section>

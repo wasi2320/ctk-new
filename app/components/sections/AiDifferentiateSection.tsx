@@ -36,7 +36,7 @@ const AiDifferentiateSection = () => {
                   height={13}
                   className="md:h-[20px] h-[16px] md:w-[20px] w-[16px]"
                 />
-                <h3 className="md:text-2xl text-xl nunito-bold font-semibold">
+                <h3 className="md:text-2xl text-xl nunito-bold font-bold">
                   {card.title}
                 </h3>
               </div>

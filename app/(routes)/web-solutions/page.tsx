@@ -12,6 +12,7 @@ const WebSolutions = () => {
         title="Your Trusted Source for Advanced Web Solutions"
         description="Your website is more than just code it is the heartbeat of your brand."
         imageSrc="/Images/Web_Hero.png"
+        cover={true}
       />
       <TailoredSection heading="Optimize your infrastructure  today." />
       <WebBusinessSection />

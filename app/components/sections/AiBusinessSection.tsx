@@ -10,7 +10,7 @@ const AiBusinessSection = () => {
         </h2>
         <div className="flex justify-between items-center gap-4">
           <div className="w-[55%] md:w-full">
-            <p className="md:text-lg font-semibold text-sm">
+            <p className="md:text-lg nunito-semiBold text-sm">
               {AI_BUSINESS_SECTION.description}
             </p>
           </div>
@@ -30,7 +30,7 @@ const AiBusinessSection = () => {
             <div key={index} className="">
               <div className="flex gap-5 mb-2">
                 <Image src="/Images/Tick.svg" alt="" width={20} height={20} />
-                <h3 className="md:text-2xl text-xl nunito-bold font-semibold">
+                <h3 className="md:text-2xl text-xl nunito-bold font-bold">
                   {card.title}
                 </h3>
               </div>
@@ -44,6 +44,7 @@ const AiBusinessSection = () => {
             alt=""
             width={500}
             height={600}
+            className="w-full"
           />
         </div>
       </div>

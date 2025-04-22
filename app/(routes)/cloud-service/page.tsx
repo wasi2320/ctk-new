@@ -12,6 +12,7 @@ const CloudService = () => {
         title="Power Your Business in the Cloud"
         description="Leverage the power of Public Cloud for scalable, secure, and cost-efficient solutions"
         imageSrc="/Images/Cloud_Service_Hero.png"
+        cover={true}
       />
       <TailoredSection />
       <CloudBusinessSection />

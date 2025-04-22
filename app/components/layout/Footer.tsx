@@ -11,7 +11,7 @@ const Footer = () => {
   const backgroundImage =
     pathname === "/"
       ? "bg-[url('/Images/Partner_Bg.png')]"
-      : "bg-[url('/Images/Partner_Bg_Main.png')]";
+      : "bg-[url('/Images/Partner_Bg_Main_.png')]";
   const inputBg = pathname === "/" ? "bg-[#152F27]" : "bg-[#254F42]";
 
   return (
@@ -50,9 +50,9 @@ const Footer = () => {
             <p className="md:text-lg md:mt-10 mt-5 mb-8 md:mb-20 leading-8">
               {FOOTER_DATA.logoCol.subHeading}
             </p>
-            <h3 className="md:text-4xl text-2xl">{FOOTER_DATA.logoCol.heading}</h3>
+            <h3 className="md:text-4xl text-2xl nunito-medium">{FOOTER_DATA.logoCol.heading}</h3>
           </div>
-          <div className="md:w-1/2 md:border-t-2 md:border-white flex justify-center md:gap-20 gap-10 md:mt-14 mt-6">
+          <div className="md:w-1/2 md:border-t-2 md:border-white flex justify-center md:gap-20 2xl:gap-32 gap-10 md:mt-14 mt-6">
             <div className="md:ml-20">
               <h4 className="md:text-lg mt-10">Learn</h4>
               <div className="flex flex-col gap-4 mt-4">
