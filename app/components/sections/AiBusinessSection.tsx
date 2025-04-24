@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const AiBusinessSection = () => {
   return (
-    <section className="md:px-20 px-4 pt-12 pb-20">
+    <section className="md:px-28 px-4 pt-12 pb-20">
       <div className="md:ml-10">
         <h2 className="md:text-4xl text-3xl nunito-bold font-bold mb-5 text-center md:text-start">
           {AI_BUSINESS_SECTION.heading}

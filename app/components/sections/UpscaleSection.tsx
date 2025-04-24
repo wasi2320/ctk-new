@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const UpscaleSection = () => {
   return (
-    <section className="md:px-20 px-4 py-12 flex flex-col md:flex-row justify-between items-center">
+    <section className="md:px-28 px-4 py-12 flex flex-col md:flex-row justify-between items-center">
       <div className="md:w-[45%]">
         <h2 className="md:text-4xl text-2xl text-shadow-2xl nunito-bold font-bold md:w-10/12 md:leading-10 text-center md:text-start">
           {UPSCALE_SECTION.heading}

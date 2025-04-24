@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const TechStackSection = () => {
   return (
-    <section className="md:px-20 px-4 py-12 flex flex-col md:flex-row justify-between gap-10 md:gap-0">
+    <section className="md:px-28 px-4 py-12 flex flex-col md:flex-row justify-between gap-10 md:gap-0">
       <div className="md:w-1/2">
         <h2 className="md:text-6xl text-3xl text-center md:text-start">{TECH_STACK_SECTION.heading}</h2>
         <p className="md:text-xl md:mt-10 mt-5 mb-8 text-center md:text-start">{TECH_STACK_SECTION.subHeading}</p>
@@ -14,7 +14,7 @@ const TechStackSection = () => {
           </button>
         </Link>
       </div>
-      <div className="md:w-[42%] 2xl:w-[40%] flex justify-between items-center">
+      <div className="md:w-[42%] flex justify-between items-center">
         <div className="space-y-8">
           {TECH_STACK_SECTION.techImagesCol1.map((img, index) => (
             <div

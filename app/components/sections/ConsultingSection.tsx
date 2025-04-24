@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const ConsultingSection = () => {
   return (
-    <section className="md:px-20 px-4 md:py-20 py-10 flex flex-col md:flex-row justify-between items-center">
+    <section className="md:px-28 px-4 md:py-20 py-10 flex flex-col md:flex-row justify-between items-center">
        <h2 className="text-2xl text-center mb-6 nunito-bold font-bold md:hidden">
           {CONSULTING_SECTION.title}
         </h2>

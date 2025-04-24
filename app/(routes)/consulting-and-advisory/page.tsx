@@ -12,6 +12,7 @@ const ConsultingAndAdvisory = () => {
         title="Expert Consulting and  Services Empowering Your Business"
         description="We help your business grow with tailored strategies and expert advice. We guide you through challenges to achieve lasting success."
         imageSrc="/Images/Consulting_Hero.png"
+        cover={true}
       />
       <TailoredSection />
       <ConsultingSection />

@@ -12,6 +12,7 @@ const UiUx = () => {
         title="Elevate Your Digital Experience with UI/UX Design and Animation"
         description="Designing clean, functional interfaces that connect with users effortlessly."
         imageSrc="/Images/UiUx_Hero.png"
+        cover={true}
       />
       <TailoredSection heading="Create, Engage & Elevate with UI/UX Design & Animation" />
       <UiUxBusinessSection />

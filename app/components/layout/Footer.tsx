@@ -17,7 +17,7 @@ const Footer = () => {
   return (
     <footer>
       <div
-        className={`py-10 px-4 md:px-20 ${backgroundImage} bg-cover bg-center bg-no-repeat flex flex-col md:flex-row justify-between items-center gap-5`}
+        className={`py-10 px-4 md:px-28 ${backgroundImage} bg-cover bg-center bg-no-repeat flex flex-col md:flex-row justify-between items-center gap-5`}
       >
         <div className="md:w-1/2">
           <h2 className="text-3xl md:text-6xl text-white">
@@ -43,7 +43,7 @@ const Footer = () => {
         </div>
       </div>
       
-      <div className="bg-[url('/Images/Footer_Bg.png')] bg-cover bg-center bg-no-repeat text-white md:px-20 px-4 py-12">
+      <div className="bg-[url('/Images/Footer_Bg.png')] bg-cover bg-center bg-no-repeat text-white md:px-28 px-4 py-12">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="md:w-[45%]">
             <LogoWhite />

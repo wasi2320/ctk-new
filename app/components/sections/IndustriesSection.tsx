@@ -41,7 +41,7 @@ const IndustriesSection = () => {
   }, [emblaApi, autoplay]);
 
   return (
-    <section className="py-16 px-4 md:px-20">
+    <section className="py-16 px-4 md:px-28">
       <div className="flex flex-col md:flex-row justify-between items-center">
         <h2 className="md:text-5xl text-2xl w-8/12 font-medium md:w-4/12 text-center md:text-start">
           {INDUSTRIES_SECTION.heading}

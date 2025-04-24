@@ -12,6 +12,7 @@ const SecurityAndCompliance = () => {
         title="Stays ahead of threats with security and compliance solutions"
         description="Solutions, designed to protect your data, mitigate risks, and meet industry regulations with confidence."
         imageSrc="/Images/Security_Hero.png"
+        cover={true}
       />
       <TailoredSection />
       <UpscaleSection />

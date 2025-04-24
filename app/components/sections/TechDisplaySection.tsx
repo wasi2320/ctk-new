@@ -23,7 +23,7 @@ const TechDisplaySection = () => {
   }, [updateSlidesToShow]);
 
   return (
-    <section className="bg-[#F9F8F8] py-20 md:px-20 px-4 overflow-hidden">
+    <section className="bg-[#F9F8F8] py-20 md:px-28 px-4 overflow-hidden">
       <h2 className="md:text-4xl text-2xl text-center nunito-bold font-bold mb-5">
         {TECH_DISPLAY_SECTION.heading}
       </h2>

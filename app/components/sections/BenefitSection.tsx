@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const BenefitSection = () => {
   return (
-    <section className="md:px-20 px-4 py-10 md:py-0 flex flex-col-reverse md:flex-row justify-between items-center bg-black text-white">
+    <section className="md:px-28 px-4 py-10 md:py-0 flex flex-col-reverse md:flex-row justify-between items-center bg-black text-white">
      
       <div className="md:w-[38%]">
         <h2 className="text-4xl text-shadow-2xl nunito-bold font-bold w-9/12 hidden md:block">

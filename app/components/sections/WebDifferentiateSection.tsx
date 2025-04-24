@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const WebDifferentiateSection = () => {
   return (
-    <section className="md:px-20 px-4 py-28 bg-[url('/Images/Differentiate_Bg.png')] bg-cover bg-center bg-no-repeat flex flex-col md:flex-row gap-12">
+    <section className="md:px-28 px-4 py-28 bg-[url('/Images/Differentiate_Bg.png')] bg-cover bg-center bg-no-repeat flex flex-col md:flex-row gap-12">
       <div className="md:w-1/2">
         <h2 className="md:text-5xl text-3xl nunito-bold font-bold text-white md:w-11/12 text-center md:text-start">
           {WEB_DIFFERENTIATE_SECTION.heading}

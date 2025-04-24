@@ -15,7 +15,7 @@ const HeroSection = ({
   cover = false,
 }: HeroSectionProps) => {
   return (
-    <section className="md:px-20 px-4 flex flex-col-reverse md:flex-row items-center justify-between h-auto md:h-[90vh] gap-10 my-10 md:my-0">
+    <section className="md:px-28 px-4 flex flex-col-reverse md:flex-row items-center justify-between h-auto md:h-[90vh] gap-10 my-10 md:my-0">
       <div className="md:w-[55%] text-center md:text-left">
         <h1 className="md:text-7xl text-4xl text-shadow-lg">{title}</h1>
         <p className="md:text-xl text-base md:w-11/12 my-8 text-gray-700">
@@ -23,7 +23,7 @@ const HeroSection = ({
         </p>
 
         <Link href="/">
-          <button className="rounded-full px-8 py-3 bg-black text-white cursor-pointer shadow-2xl">
+          <button className="rounded-full px-8 py-3 bg-black hover:bg-white text-white hover:text-black hover:border hover:border-black cursor-pointer shadow-2xl">
             Let’s connect
           </button>
         </Link>

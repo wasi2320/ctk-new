@@ -8,7 +8,7 @@ const TailoredSection = ({ heading }: TailoredSectionProps) => {
   const defaultHeading = "Get a tailored solution today.";
 
   return (
-    <section className="md:px-20 px-4 md:pt-16 pt-8 pb-8 bg-[url('/Images/Tailored_Bg.png')] bg-cover bg-center bg-no-repeat text-white">
+    <section className="md:px-28 px-4 md:pt-16 pt-8 pb-8 bg-[url('/Images/Tailored_Bg.png')] bg-cover bg-center bg-no-repeat text-white">
       <h2 className="md:text-5xl text-2xl md:mb-8 mb-5 tracking-wide">
         {heading || defaultHeading}
       </h2>

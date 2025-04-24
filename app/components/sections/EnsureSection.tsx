@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const EnsureSection = () => {
   return (
-    <section className="py-12 px-4 md:px-20">
+    <section className="py-12 px-4 md:px-28">
       <h2 className="text-4xl md:text-6xl text-center hidden md:block">
         {ENSURE_SECTION.heading}
       </h2>

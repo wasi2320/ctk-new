@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const DifferentiateCardSection = () => {
   return (
-    <section className="md:px-20 px-4 py-20 bg-[url('/Images/Differentiate_Bg.png')] bg-cover bg-center bg-no-repeat">
+    <section className="md:px-28 px-4 py-20 bg-[url('/Images/Differentiate_Bg.png')] bg-cover bg-center bg-no-repeat">
       <h2 className="md:text-4xl text-2xl nunito-bold font-bold text-white text-center md:text-start">
         {DIFFERENTIATE_CARD_SECTION.heading}
       </h2>

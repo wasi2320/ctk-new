@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const CloudBusinessSection = () => {
   return (
-    <section className="md:px-20 px-4 py-16">
+    <section className="md:px-28 px-4 py-16">
       <h2 className="md:text-4xl text-3xl text-center nunito-bold font-bold mb-5">
         {CLOUD_BUSINESS_SECTION.heading}
       </h2>

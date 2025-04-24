@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const AiDifferentiateSection = () => {
   return (
-    <section className="md:px-20 px-4 py-12 bg-[url('/Images/Differentiate_Bg.png')] bg-cover bg-center bg-no-repeat flex flex-col md:flex-row justify-between items-center text-white gap-12">
+    <section className="md:px-28 px-4 py-12 bg-[url('/Images/Differentiate_Bg.png')] bg-cover bg-center bg-no-repeat flex flex-col md:flex-row justify-between items-center text-white gap-12">
       <div className="md:w-[45%]">
         <h2 className="md:text-4xl text-3xl text-center md:text-start nunito-bold font-bold md:ml-10">
           {AI_DIFFERENTIATE_SECTION.heading}

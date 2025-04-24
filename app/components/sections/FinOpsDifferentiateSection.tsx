@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const FinOpsDifferentiateSection = () => {
   return (
-    <section className="md:px-20 px-4 pb-24 pt-12 bg-[url('/Images/Differentiate_Bg.png')] bg-cover bg-center bg-no-repeat text-white">
+    <section className="md:px-28 px-4 pb-24 pt-12 bg-[url('/Images/Differentiate_Bg.png')] bg-cover bg-center bg-no-repeat text-white">
       <h2 className="md:text-4xl text-2xl nunito-bold font-bold mb-5 text-center md:text-start">
         {FINOPS_DIFFERENTIATE_SECTION.heading}
       </h2>

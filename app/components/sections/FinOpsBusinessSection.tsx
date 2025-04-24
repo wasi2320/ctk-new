@@ -2,7 +2,7 @@ import { FINOPS_BUSINESS_SECTION } from "@/utils/data/finOpsBusinessSection";
 
 const FinOpsBusinessSection = () => {
   return (
-    <section className="md:px-20 px-4 pt-12 pb-24">
+    <section className="md:px-28 px-4 pt-12 pb-24">
       <h2 className="md:text-4xl text-2xl text-center nunito-bold font-bold mb-5">
         {FINOPS_BUSINESS_SECTION.heading}
       </h2>

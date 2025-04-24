@@ -60,7 +60,7 @@ export const CardScrollSection = () => {
       </div>
 
       {/* Desktop Sticky Container (original code) */}
-      <div className="hidden md:block relative pb-3 lg:pb-[6rem] md:px-20 px-4 mb-12">
+      <div className="hidden md:block relative pb-3 lg:pb-[6rem] md:px-28 px-4 mb-12">
         {CARD_SCROLL_SECTION.cards.map((item, index) => (
           <motion.div
             key={index}

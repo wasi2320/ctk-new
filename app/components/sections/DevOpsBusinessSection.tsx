@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const DevOpsBusinessSection = () => {
   return (
-    <section className="md:px-20 px-4 py-20 flex flex-col md:flex-row justify-between items-center bg-[#F9F8F8]">
+    <section className="md:px-28 px-4 py-20 flex flex-col md:flex-row justify-between items-center bg-[#F9F8F8]">
       <h2 className="text-2xl text-shadow-2xl nunito-bold font-bold md:hidden text-center mb-6">
         {DEVOPS_BUSINESS_SECTION.title}
       </h2>

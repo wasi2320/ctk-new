@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const HomeHeroSection = () => {
   return (
-    <section className="md:px-20 px-4 flex flex-col-reverse md:flex-row items-center justify-between h-[90vh]">
+    <section className="md:px-28 px-4 flex flex-col-reverse md:flex-row items-center justify-between h-[90vh]">
       <div className="md:w-1/2">
         <h1 className="md:text-7xl text-[40px] text-shadow-lg leading-10 md:leading-16 text-shadow-2xl text-center md:text-start">{HOME_HERO_SECTION.heading}</h1>
         <h3 className="md:text-xl md:w-6/12 my-8 text-center md:text-start">{HOME_HERO_SECTION.subHeading}</h3>
