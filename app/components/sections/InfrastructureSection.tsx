@@ -21,15 +21,7 @@ const InfrastructureSection = () => {
               >
                 <h3 className="md:text-4xl text-2xl mb-2">{card.title}</h3>
                 <p className="md:text-2xl">{card.description}</p>
-                <div className="grid md:grid-cols-2 md:gap-y-3 gap-y-2 font-semibold mt-3">
-                  {/* {card.pages.map((page, index) => (
-                    <div key={index} className="flex justify-center">
-                      <Link href={page.url}>
-                        <p className="md:text-base text-xs text-center">{page.name}</p>
-                      </Link>
-                    </div>
-                  ))} */}
-                </div>
+                <div className="grid md:grid-cols-2 md:gap-y-3 gap-y-2 font-semibold mt-3"></div>
               </div>
             ))}
           </div>
