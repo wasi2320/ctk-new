@@ -1,6 +1,5 @@
 import { INFRASTRUCTURE_SECTION } from "@/utils/data/infrastructureSection";
 import Image from "next/image";
-import Link from "next/link";
 
 const InfrastructureSection = () => {
   return (
