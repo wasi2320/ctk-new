@@ -47,10 +47,8 @@ const Header = () => {
                   <div key={index} className="relative">
                     <button
                       className="flex items-center gap-1 text-lg focus:outline-none cursor-pointer"
-                      onClick={toggleServices}
-                      onBlur={() =>
-                        setTimeout(() => setIsServicesOpen(false), 150)
-                      }
+                      onMouseEnter={toggleServices}
+                      onMouseLeave={() => setIsServicesOpen(false)}
                     >
                       {item.name}
                       {/* Down arrow icon */}
@@ -75,7 +73,8 @@ const Header = () => {
                     {isServicesOpen && (
                       <div
                         className="absolute left-0 mt-2 w-fit bg-white shadow-xl rounded-xl z-50 p-4 flex gap-8"
-                        onMouseDown={(e) => e.preventDefault()} // Prevent blur on click
+                        onMouseEnter={toggleServices}
+                        onMouseLeave={() => setIsServicesOpen(false)}
                       >
                         <div className="flex flex-col gap-3">
                           {servicesLinks.slice(0, 5).map((service, idx) => (

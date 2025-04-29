@@ -10,7 +10,7 @@ const HomeHeroSection = () => {
         <h3 className="md:text-xl md:w-6/12 my-4 text-center md:text-start">{HOME_HERO_SECTION.subHeading}</h3>
         <div className="flex items-center justify-center md:justify-start gap-8 md:gap-20">
           <Link href={HOME_HERO_SECTION.button.link}>
-            <button className="rounded-full md:px-7 px-4 py-2 text-sm md:text-base bg-black text-white cursor-pointer">{HOME_HERO_SECTION.button.text}</button>
+            <button className="rounded-full md:px-7 px-4 py-2 text-sm md:text-base bg-black text-white cursor-pointer hover:bg-white hover:text-black hover:border hover:border-black  transition-all duration-300">{HOME_HERO_SECTION.button.text}</button>
           </Link>
          
         </div>
