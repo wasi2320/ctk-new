@@ -58,7 +58,7 @@ const IndustriesSection = () => {
             alt=""
             height={500}
             width={500}
-            className="w-full h-full"
+            className="w-full h-full "
           />
         </div>
 
@@ -100,7 +100,8 @@ const IndustryCard: React.FC<IndustryCardProps> = ({ card, index }) => {
         flex-col 
         justify-center 
         items-center 
-        ${index === 1 ? "!bg-[#081410] text-white" : ""}
+        hover:bg-[#081410] hover:text-white transition-all duration-300 group
+       
       `}
     >
       <Image
@@ -108,7 +109,7 @@ const IndustryCard: React.FC<IndustryCardProps> = ({ card, index }) => {
         alt=""
         height={50}
         width={50}
-        className="w-[50px] h-[50px]"
+        className="w-[50px] h-[50px] brightness-0 group-hover:invert  transition-all duration-300 "
       />
       <h3
         className={`
@@ -116,7 +117,7 @@ const IndustryCard: React.FC<IndustryCardProps> = ({ card, index }) => {
           my-6 
           font-medium 
           nunito-medium
-          ${index === 1 ? "text-white" : "text-[#172A46]"}
+          
         `}
       >
         {card.title}
@@ -126,7 +127,6 @@ const IndustryCard: React.FC<IndustryCardProps> = ({ card, index }) => {
         className={`
           md:text-base 
           text-center 
-          ${index === 1 ? "text-white" : "text-[#172A46]"}
         `}
       >
         {card.description}

@@ -9,7 +9,7 @@ const InfrastructureSection = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   return (
-    <section className="py-12">
+    <section className="py-12 mt-16">
       <h2 className="md:text-5xl text-2xl text-center md:w-7/12 mx-auto">
         {INFRASTRUCTURE_SECTION.heading}
       </h2>
@@ -42,7 +42,7 @@ const InfrastructureSection = () => {
                       initial={{ opacity: 0, y: 10, height: 0 }}
                       animate={{ opacity: 1, y: 0, height: "auto" }}
                       exit={{ opacity: 0, y: 10, height: 0 }}
-                      transition={{ duration: 1.5, ease: "easeInOut" }}
+                      transition={{ duration: 0.5, ease: "easeInOut" }}
                       className="grid md:grid-cols-2 md:gap-y-3 gap-y-2 font-semibold mt-3 overflow-hidden"
                     >
                       {card.pages.map((page, index) => (
