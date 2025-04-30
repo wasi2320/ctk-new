@@ -30,7 +30,7 @@ const InfrastructureSection = () => {
                   y: hoveredCard === index ? -10 : 0,
                   height: hoveredCard === index ? "auto" : "auto",
                 }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
                 onHoverStart={() => setHoveredCard(index)}
                 onHoverEnd={() => setHoveredCard(null)}
               >
