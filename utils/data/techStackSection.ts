@@ -7,7 +7,7 @@ export const TECH_STACK_SECTION = {
     link: "/",
   },
   techImagesCol1: [
-    "/Images/PNGSS/1_ru5TRX06wPxuqki6MDf-yg.png",
+    "/Images/PNGSS/promithis.png",
     "/Images/PNGSS/97_Docker_logo_logos-512.webp",
     "/Images/PNGSS/After-Effects-Logo.png",
   ],
@@ -15,17 +15,17 @@ export const TECH_STACK_SECTION = {
     "/Images/PNGSS/Amazon_Web_Services-Logo.wine.png",
     "/Images/PNGSS/Ansible_Logo.png",
     "/Images/PNGSS/Argo-1-e1630327305635-1.png",
-    "/Images/PNGSS/circleci-logo-stacked-fb-d935075860d0f00f19fe71f0cec05899.png",
+    "/Images/PNGSS/circleci-logo.png",
   ],
   techImagesCol3: [
-    "/Images/PNGSS/DigitalOcean_logo.svg.png",
+    "/Images/PNGSS/DigitalOcean_logo.png",
     "/Images/PNGSS/Docker.png",
     "/Images/PNGSS/Figma.png",
   ],
   techImagesCol4: [
     "/Images/PNGSS/GitHub-Logo.png",
-    "/Images/PNGSS/GitLab-Logo.png",
-    "/Images/PNGSS/google-cloud-large_2023-08-31-161351_xqeu.png",
+    "/Images/PNGSS/GitLab-logo.png",
+    "/Images/PNGSS/google-cloud.png",
     "/Images/PNGSS/Grafana_logo.svg.png",
   ],
 };
