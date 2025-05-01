@@ -4,7 +4,7 @@ interface EmpoweringEducationProps {
   heading?: string;
 }
 
-const EmpoweringEducation = ({ heading }: EmpoweringEducationProps) => {
+const EmpoweringEducation = ({}: EmpoweringEducationProps) => {
   return (
     <section className="md:px-36 px-4 md:pt-16 pt-8 pb-8 bg-center bg-no-repeat text-dark">
       <div className="flex flex-col md:flex-row items-start justify-between">

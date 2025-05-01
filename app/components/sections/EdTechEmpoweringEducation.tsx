@@ -1,12 +1,8 @@
-import Link from "next/link";
-
 interface EdTechEmpoweringEducationProps {
   heading?: string;
 }
 
-const EdTechEmpoweringEducation = ({
-  heading,
-}: EdTechEmpoweringEducationProps) => {
+const EdTechEmpoweringEducation = ({}: EdTechEmpoweringEducationProps) => {
   return (
     <section className="md:px-36 px-4 md:pt-16 pt-8 pb-8 bg-[#f9f8f8] bg-center bg-no-repeat text-dark">
       <div className="flex flex-col md:flex-row items-start justify-between">
