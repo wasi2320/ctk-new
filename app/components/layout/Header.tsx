@@ -69,6 +69,8 @@ const Header = () => {
                       className="flex items-center gap-1 text-lg focus:outline-none cursor-pointer"
                       onMouseEnter={toggleServices}
                       onMouseLeave={() => setIsServicesOpen(false)}
+                      onClick={toggleServices}
+                      onBlur={() => setTimeout(() => setIsServicesOpen(false), 150)}
                     >
                       {item.name}
                       <svg
@@ -87,6 +89,7 @@ const Header = () => {
                         className="absolute left-0 mt-2 w-fit bg-white shadow-xl rounded-xl z-50 p-4 flex gap-8"
                         onMouseEnter={toggleServices}
                         onMouseLeave={() => setIsServicesOpen(false)}
+                        onMouseDown={(e) => e.preventDefault()}
                       >
                         <div className="flex flex-col gap-3">
                           {servicesLinks.slice(0, 5).map((service, idx) => (
