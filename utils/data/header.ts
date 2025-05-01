@@ -16,10 +16,18 @@ export const HEADER = {
         { name: "Al & GenAI", link: "/ai" },
       ],
     },
-    { name: "Expertise", link: "/expertise" },
+    {
+      name: "Expertise",
+      link: [
+        { name: "Healthcare", link: "/healthcare" },
+        { name: "E-commerce", link: "/e-commerce" },
+        { name: "Manufacturing", link: "/manufacturing" },
+        { name: "EdTech", link: "/ed-tech" },
+        { name: "FinTech", link: "/fin-tech" },
+      ],
+    },
     { name: "Resources", link: "/resources" },
     { name: "About Us", link: "/aboutus" },
-    { name: "Contact Us", link: "/contact" },
   ],
   search: "/Images/Search.svg",
 };
