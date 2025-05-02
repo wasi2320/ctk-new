@@ -23,7 +23,9 @@ const InfrastructureSection = () => {
               <motion.div
                 key={index}
                 className={`shadow-2xl bg-white md:py-4 py-2 md:px-8 px-4 md:rounded-3xl rounded-2xl relative ${
-                  hoveredCard !== null && hoveredCard !== index ? "opacity-50 blur-sm" : ""
+                  hoveredCard !== null && hoveredCard !== index
+                    ? "opacity-50 blur-sm"
+                    : ""
                 }`}
                 initial={{ y: 0, height: "auto" }}
                 animate={{
@@ -62,6 +64,7 @@ const InfrastructureSection = () => {
                     </motion.div>
                   )}
                 </AnimatePresence>
+                <div className="grid md:grid-cols-2 md:gap-y-3 gap-y-2 font-semibold mt-3"></div>
               </motion.div>
             ))}
           </div>
