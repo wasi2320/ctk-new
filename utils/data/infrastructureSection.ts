@@ -16,22 +16,24 @@ export const INFRASTRUCTURE_SECTION = {
         { name: "DevOps Implementation", url: "/devops" },
       ],
     },
+   
     {
       title: "Web Solutions",
       description:
         "Build responsive, high-performance websites tailored to your business needs.",
-      pages: [{ name: "UI/UX Designs and animation", url: "/ui-ux" }],
+        pages: [
+          { name: "Web Solutions", url: "/web-solutions" },
+          { name: "Mobile Development", url: "/mobile-app" },
+          { name: "Al & GenAI", url: "/ai" },
+        ],
     },
 
     {
       title: "UI & Animation",
       description:
         "Design user-friendly interfaces with smooth animations to boost engagement and experience.",
-      pages: [
-        { name: "Web Solutions", url: "/web-solutions" },
-        { name: "Mobile Development", url: "/mobile-app" },
-        { name: "Al & GenAI", url: "/ai" },
-      ],
+        pages: [{ name: "UI/UX Designs and animation", url: "/ui-ux" }],
+
     },
   ],
   image: "/Images/Building.webp",
