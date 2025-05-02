@@ -22,7 +22,7 @@ const InfrastructureSection = () => {
             {INFRASTRUCTURE_SECTION.cards.map((card, index) => (
               <motion.div
                 key={index}
-                className={`shadow-2xl bg-white md:py-4 py-2 md:px-8 px-4 md:rounded-3xl rounded-2xl relative ${
+                className={`shadow-2xl bg-white md:py-4 py-2 md:px-8 px-4 md:rounded-3xl rounded-2xl relative transition-all duration-1000 ${
                   hoveredCard !== null && hoveredCard !== index
                     ? "opacity-50 blur-sm"
                     : ""

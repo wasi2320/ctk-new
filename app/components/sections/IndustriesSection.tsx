@@ -5,6 +5,7 @@ import Image from "next/image";
 import { INDUSTRIES_SECTION } from "@/utils/data/industriesSection";
 import useEmblaCarousel from "embla-carousel-react";
 import type { EmblaCarouselType } from "embla-carousel";
+import Link from "next/link";
 
 type CardType = {
   title: string;
@@ -66,7 +67,9 @@ const IndustriesSection = () => {
           {/* Desktop Grid Layout */}
           <div className="hidden md:grid md:grid-cols-3 gap-5">
             {INDUSTRIES_SECTION.cards.map((card, index) => (
-              <IndustryCard key={index} card={card} index={index} />
+              <Link key={index} href={card?.link}>
+                <IndustryCard key={index} card={card} index={index} />
+              </Link>
             ))}
           </div>
 
@@ -74,9 +77,11 @@ const IndustriesSection = () => {
           <div className="md:hidden overflow-hidden" ref={emblaRef}>
             <div className="flex">
               {INDUSTRIES_SECTION.cards.map((card, index) => (
+                <Link key={index} href={card.link}>
                 <div key={index} className="flex-[0_0_80%] mr-4 flex-shrink-0">
                   <IndustryCard card={card} index={index} />
                 </div>
+                </Link>
               ))}
             </div>
           </div>
