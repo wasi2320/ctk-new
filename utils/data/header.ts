@@ -24,6 +24,7 @@ export const HEADER = {
         { name: "Manufacturing", link: "/manufacturing" },
         { name: "EdTech", link: "/ed-tech" },
         { name: "FinTech", link: "/fin-tech" },
+        { name: "Poweing Business", link: "/powering-business" },
       ],
     },
     { name: "Resources", link: "/resources" },
