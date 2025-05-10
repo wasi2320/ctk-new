@@ -1,11 +1,14 @@
 "use client";
 
-import React, { useCallback, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import { INDUSTRIES_SECTION } from "@/utils/data/industriesSection";
-import useEmblaCarousel from "embla-carousel-react";
-import type { EmblaCarouselType } from "embla-carousel";
+import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 type CardType = {
   title: string;
@@ -19,27 +22,13 @@ type IndustryCardProps = {
 };
 
 const IndustriesSection = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: true,
-    align: "start",
-    slidesToScroll: 1,
-  });
-
-  // Auto-play effect
-  const autoplay = useCallback((emblaApi: EmblaCarouselType | undefined) => {
-    const autoplayInterval = setInterval(() => {
-      if (emblaApi) emblaApi.scrollNext();
-    }, 3000);
-
-    return () => clearInterval(autoplayInterval);
-  }, []);
-
-  useEffect(() => {
-    if (emblaApi) {
-      const stopAutoplay = autoplay(emblaApi);
-      return stopAutoplay;
-    }
-  }, [emblaApi, autoplay]);
+  const settings = {
+    modules: [Navigation, Pagination, Autoplay],
+    spaceBetween: 20,
+    slidesPerView: 1,
+    pagination: { clickable: true },
+    autoplay: { delay: 3000, disableOnInteraction: false },
+  };
 
   return (
     <section className="py-16 px-4 md:px-28">
@@ -56,10 +45,10 @@ const IndustriesSection = () => {
         <div className="md:w-[30%] h-[550px] hidden md:block">
           <Image
             src={INDUSTRIES_SECTION.image}
-            alt=""
+            alt="Industries"
             height={500}
             width={500}
-            className="w-full h-full "
+            className="w-full h-full object-cover"
           />
         </div>
 
@@ -68,22 +57,22 @@ const IndustriesSection = () => {
           <div className="hidden md:grid md:grid-cols-3 gap-5">
             {INDUSTRIES_SECTION.cards.map((card, index) => (
               <Link key={index} href={card?.link}>
-                <IndustryCard key={index} card={card} index={index} />
+                <IndustryCard card={card} index={index} />
               </Link>
             ))}
           </div>
 
-          {/* Mobile Auto Carousel */}
-          <div className="md:hidden overflow-hidden" ref={emblaRef}>
-            <div className="flex">
+          {/* Mobile Auto Carousel using Swiper */}
+          <div className="md:hidden w-full">
+            <Swiper {...settings} className="w-full">
               {INDUSTRIES_SECTION.cards.map((card, index) => (
-                <Link key={index} href={card.link}>
-                <div key={index} className="flex-[0_0_80%] mr-4 flex-shrink-0">
-                  <IndustryCard card={card} index={index} />
-                </div>
-                </Link>
+                <SwiperSlide key={index} className="flex justify-center items-center px-4">
+                  <Link href={card.link} className="w-full max-w-[320px] mx-auto">
+                    <IndustryCard card={card} index={index} />
+                  </Link>
+                </SwiperSlide>
               ))}
-            </div>
+            </Swiper>
           </div>
         </div>
       </div>
@@ -97,7 +86,8 @@ const IndustryCard: React.FC<IndustryCardProps> = ({ card, index }) => {
     <div
       className={`
         bg-white 
-        px-4 py-6 
+        px-6 
+        py-8
         rounded-3xl 
         border 
         border-[#152F27] 
@@ -105,37 +95,48 @@ const IndustryCard: React.FC<IndustryCardProps> = ({ card, index }) => {
         flex-col 
         justify-center 
         items-center 
-        hover:bg-[#081410] hover:text-white transition-all duration-300 group
-       
+        hover:bg-[#081410] 
+        hover:text-white 
+        transition-all 
+        duration-300 
+        group
+        aspect-square
+        w-full
+        md:aspect-auto
+        md:min-h-0
       `}
     >
-      <Image
-        src={card.img}
-        alt=""
-        height={50}
-        width={50}
-        className="w-[50px] h-[50px] brightness-0 group-hover:invert  transition-all duration-300 "
-      />
-      <h3
-        className={`
-          md:text-xl 
-          my-6 
-          font-medium 
-          nunito-medium
-          
-        `}
-      >
-        {card.title}
-      </h3>
+      <div className="flex flex-col items-center justify-center h-full space-y-6">
+        <Image
+          src={card.img}
+          alt={card.title}
+          height={60}
+          width={60}
+          className="w-[60px] h-[60px] brightness-0 group-hover:invert transition-all duration-300"
+        />
+        <h3
+          className={`
+            md:text-xl 
+            text-xl
+            font-medium 
+            nunito-medium
+            text-center
+          `}
+        >
+          {card.title}
+        </h3>
 
-      <p
-        className={`
-          md:text-base 
-          text-center 
-        `}
-      >
-        {card.description}
-      </p>
+        <p
+          className={`
+            md:text-base 
+            text-base
+            text-center 
+            max-w-[90%]
+          `}
+        >
+          {card.description}
+        </p>
+      </div>
     </div>
   );
 };
