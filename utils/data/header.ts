@@ -27,7 +27,7 @@ export const HEADER = {
         { name: "Poweing Business", link: "/powering-business" },
       ],
     },
-    { name: "Resources", link: "/resources" },
+    // { name: "Resources", link: "/resources" },
     { name: "About Us", link: "/aboutus" },
     { name: "Contact Us", link: "/contact" },
   ],

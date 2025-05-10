@@ -1,18 +1,54 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HEADER } from "@/utils/data/header";
 import Image from "next/image";
 import Link from "next/link";
 import { Logo } from "../global/logo";
 import IconClose from "../icons/IconClose";
 import IconMenu from "../icons/IconMenu";
+import { useRouter, usePathname } from "next/navigation";
 
 const Header = () => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const [isLoading, setIsLoading] = useState(false);
+  const [loadingProgress, setLoadingProgress] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isExpertiseOpen, setIsExpertiseOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [isMobileExpertiseOpen, setIsMobileExpertiseOpen] = useState(false);
+
+  useEffect(() => {
+    if (isLoading) {
+      const timer = setInterval(() => {
+        setLoadingProgress((prev) => {
+          if (prev >= 90) {
+            clearInterval(timer);
+            return 90;
+          }
+          return prev + 10;
+        });
+      }, 100);
+
+      return () => clearInterval(timer);
+    }
+  }, [isLoading]);
+
+  useEffect(() => {
+    if (pathname) {
+      setLoadingProgress(100);
+      setTimeout(() => {
+        setIsLoading(false);
+        setLoadingProgress(0);
+      }, 200);
+    }
+  }, [pathname]);
+
+  const handleNavigation = (href: string) => {
+    setIsLoading(true);
+    router.push(href);
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -53,7 +89,7 @@ const Header = () => {
 
   return (
     <>
-      <nav className="flex justify-between items-center px-4 md:px-28 pt-3">
+      <nav className="flex justify-between items-center px-4 md:px-28 pt-3 shadow-md bg-white sticky top-0 z-40">
         <div>
           <Logo />
         </div>
@@ -71,8 +107,6 @@ const Header = () => {
                   <div key={index} className="relative">
                     <button
                       className="flex items-center gap-1 text-lg focus:outline-none cursor-pointer"
-                      onMouseEnter={toggleServices}
-                      onMouseLeave={() => setIsServicesOpen(false)}
                       onClick={toggleServices}
                       onBlur={() =>
                         setTimeout(() => setIsServicesOpen(false), 150)
@@ -80,9 +114,8 @@ const Header = () => {
                     >
                       {item.name}
                       <svg
-                        className={`w-4 h-4 ml-1 transition-transform duration-200 ${
-                          isServicesOpen ? "rotate-180" : ""
-                        }`}
+                        className={`w-4 h-4 ml-1 transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""
+                          }`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -100,8 +133,6 @@ const Header = () => {
                     {isServicesOpen && (
                       <div
                         className="absolute left-0 mt-2 w-fit bg-white shadow-xl rounded-xl z-50 p-4 flex gap-8"
-                        onMouseEnter={toggleServices}
-                        onMouseLeave={() => setIsServicesOpen(false)}
                         onMouseDown={(e) => e.preventDefault()}
                       >
                         <div className="flex flex-col gap-3">
@@ -109,7 +140,13 @@ const Header = () => {
                             <Link
                               href={service.link}
                               key={idx}
-                              className="whitespace-nowrap"
+                              className="whitespace-nowrap hover:text-[#000209] transition-colors"
+                              prefetch={true}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                setIsServicesOpen(false);
+                                handleNavigation(service.link);
+                              }}
                             >
                               {service.name}
                             </Link>
@@ -120,7 +157,13 @@ const Header = () => {
                             <Link
                               href={service.link}
                               key={idx}
-                              className="whitespace-nowrap"
+                              className="whitespace-nowrap hover:text-[#000209] transition-colors"
+                              prefetch={true}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                setIsServicesOpen(false);
+                                handleNavigation(service.link);
+                              }}
                             >
                               {service.name}
                             </Link>
@@ -148,9 +191,8 @@ const Header = () => {
                     >
                       {item.name}
                       <svg
-                        className={`w-4 h-4 ml-1 transition-transform duration-200 ${
-                          isExpertiseOpen ? "rotate-180" : ""
-                        }`}
+                        className={`w-4 h-4 ml-1 transition-transform duration-200 ${isExpertiseOpen ? "rotate-180" : ""
+                          }`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -175,7 +217,13 @@ const Header = () => {
                             <Link
                               href={expertise.link}
                               key={idx}
-                              className="whitespace-nowrap"
+                              className="whitespace-nowrap hover:text-[#000209] transition-colors"
+                              prefetch={true}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                setIsExpertiseOpen(false);
+                                handleNavigation(expertise.link);
+                              }}
                             >
                               {expertise.name}
                             </Link>
@@ -189,7 +237,16 @@ const Header = () => {
 
               // Normal nav item
               return (
-                <Link href={item.link as string} key={index}>
+                <Link
+                  href={item.link as string}
+                  key={index}
+                  className="hover:text-[#000209] transition-colors"
+                  prefetch={true}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation(item.link as string);
+                  }}
+                >
                   <p className="text-lg">{item.name}</p>
                 </Link>
               );
@@ -210,25 +267,32 @@ const Header = () => {
         </button>
       </nav>
 
+      {/* Loading Progress Bar */}
+      {isLoading && (
+        <div className="fixed top-0 left-0 w-full h-1 bg-[#000209]/20 z-50">
+          <div
+            className="h-full bg-[#000209] transition-all duration-300 ease-out"
+            style={{ width: `${loadingProgress}%` }}
+          />
+        </div>
+      )}
+
       {/* Mobile Sidebar */}
       <div
-        className={`fixed inset-0 z-50 transition-all duration-300 ease-in-out ${
-          isMenuOpen ? "visible" : "invisible"
-        }`}
+        className={`fixed inset-0 z-50 transition-all duration-300 ease-in-out ${isMenuOpen ? "visible" : "invisible"
+          }`}
       >
         {/* Overlay */}
         <div
-          className={`absolute inset-0 bg-black transition-opacity duration-300 ${
-            isMenuOpen ? "opacity-50" : "opacity-0"
-          }`}
+          className={`absolute inset-0 bg-black transition-opacity duration-300 ${isMenuOpen ? "opacity-50" : "opacity-0"
+            }`}
           onClick={toggleMenu}
         />
 
         {/* Sidebar Content */}
         <div
-          className={`absolute right-0 top-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
-            isMenuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+          className={`absolute right-0 top-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
         >
           <div className="p-4 flex justify-end">
             <button
@@ -253,9 +317,8 @@ const Header = () => {
                     >
                       {item.name}
                       <svg
-                        className={`w-4 h-4 ml-1 transition-transform duration-200 ${
-                          isMobileServicesOpen ? "rotate-180" : ""
-                        }`}
+                        className={`w-4 h-4 ml-1 transition-transform duration-200 ${isMobileServicesOpen ? "rotate-180" : ""
+                          }`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -276,7 +339,11 @@ const Header = () => {
                             href={service.link}
                             key={idx}
                             className="text-gray-800 hover:text-blue-600 transition-colors"
-                            onClick={toggleMenu}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              toggleMenu();
+                              handleNavigation(service.link);
+                            }}
                           >
                             {service.name}
                           </Link>
@@ -299,9 +366,8 @@ const Header = () => {
                     >
                       {item.name}
                       <svg
-                        className={`w-4 h-4 ml-1 transition-transform duration-200 ${
-                          isMobileExpertiseOpen ? "rotate-180" : ""
-                        }`}
+                        className={`w-4 h-4 ml-1 transition-transform duration-200 ${isMobileExpertiseOpen ? "rotate-180" : ""
+                          }`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -322,7 +388,11 @@ const Header = () => {
                             href={expertise.link}
                             key={idx}
                             className="text-gray-800 hover:text-blue-600 transition-colors"
-                            onClick={toggleMenu}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              toggleMenu();
+                              handleNavigation(expertise.link);
+                            }}
                           >
                             {expertise.name}
                           </Link>
@@ -337,9 +407,13 @@ const Header = () => {
                 <Link
                   href={item.link as string}
                   key={index}
-                  onClick={toggleMenu}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    toggleMenu();
+                    handleNavigation(item.link as string);
+                  }}
                 >
-                  <p className="text-lg text-gray-800 hover:text-blue-600 transition-colors">
+                  <p className="text-lg text-gray-800 hover:text-[#000209] transition-colors">
                     {item.name}
                   </p>
                 </Link>

@@ -7,6 +7,8 @@ import TechCarouselSection from "./components/sections/TechCarouselSection";
 import EnsureSection from "./components/sections/EnsureSection";
 import BusinessCarouselSection from "./components/sections/BusinessCarouselSection";
 
+
+
 export default function Home() {
   return (
     <div>

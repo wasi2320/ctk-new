@@ -167,3 +167,7 @@ h3 {
   transform: translateY(-2px);
 }
 
+
+.swiper-pagination-bullet-active {
+  background-color: #000209 !important; /* Active dot color */
+}

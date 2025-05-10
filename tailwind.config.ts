@@ -13,10 +13,15 @@ const config: Config = {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
         },
+        'loading-bar': {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' }
+        }
       },
       animation: {
         scroll: 'scroll 30s linear infinite',
         pause: 'paused',
+        'loading-bar': 'loading-bar 1s ease-in-out infinite'
       },
     },
   },
