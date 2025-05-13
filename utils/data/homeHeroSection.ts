@@ -6,6 +6,7 @@ export const HOME_HERO_SECTION = {
     link: "/",
   },
   img: "/Images/aws.svg",
+  badge: "patner.png",
   text: "Trusted by more than 400 companies around the world",
   mainImage: "/Images/Home_Hero_Img.webp",
 };
