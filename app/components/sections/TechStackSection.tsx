@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const TechStackSection = () => {
   return (
-    <section className="md:px-28 px-4 py-12 flex flex-col md:flex-row justify-between gap-10 md:gap-0">
+    <section className="w-[100vw] md:px-28 px-4 py-12 flex flex-col md:flex-row justify-between gap-10 md:gap-0">
       <div className="md:w-1/2">
         <h2 className="md:text-6xl text-3xl text-center md:text-start">
           {TECH_STACK_SECTION.heading}
@@ -25,9 +25,9 @@ const TechStackSection = () => {
       </div>
       <div className="md:w-[42%] overflow-hidden pb-10 relative">
         {/* Left blur gradient */}
-        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10"></div>
+        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 blur-gradient"></div>
         {/* Right blur gradient */}
-        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 blur-gradient"></div>
         <div className="flex flex-nowrap animate-scroll">
           {/* First set - original content */}
           <div className="flex flex-nowrap">
@@ -210,10 +210,9 @@ const TechStackSection = () => {
         .animate-scroll:hover {
           animation-play-state: paused;
         }
-        /* Add blur effect to the gradients */
-        .bg-gradient-to-r, .bg-gradient-to-l {
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
+        .blur-gradient {
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
         }
       `}</style>
     </section>

@@ -1,5 +1,5 @@
+import MissionSection from "@/app/components/sections/MissionSection";
 import ServiceCard from "@/app/components/ServiceCard";
-import Link from "next/link";
 import React from "react";
 
 function page() {
@@ -12,22 +12,7 @@ function page() {
         }
         image={"/Images/aboutus/aboutHeader.png"}
       />
-      <header className="w-full h-screen bg-[url('/Images/aboutus/vision-misssion.png')] bg-cover bg-center overflow-hidden relative">
-        <div className="relative w-full h-full flex items-center justify-end md:justify-center lg:justify-end px-5 md:px-5 lg:px-[120px]">
-          <div className="max-w-[800px] md:max-w-[600px] lg:max-w-[900px] text-white text-right md:text-center lg:text-center px-5 md:px-0 lg:w-[60%]">
-            <h1 className="text-center text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] font-semibold mb-4 md:mb-6 lg:mb-8 leading-[1.2]">
-              Our Vision and Mission
-            </h1>
-            <p className="text-base text-center md:text-[1.1rem] lg:text-[1.25rem] leading-[1.6] opacity-90">
-              As architects of connection, we empower business across the globe
-              to envision a future where legacy technology serves as a
-              foundational stepping stone towards progress. Our mission is to
-              connect the dots between where your business is today and the
-              dynamic, multi-cloud future that awaits.
-            </p>
-          </div>
-        </div>
-      </header>
+      <MissionSection />
 
       <section className="py-16 px-4 md:px-8 lg:px-12">
         <div className="max-w-[1200px] mx-auto">

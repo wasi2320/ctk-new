@@ -20,8 +20,8 @@ export const FOOTER_DATA = {
     { name: "Email", link: "#" },
   ],
   addressCol: {
-    addressOne: "432 Cherry DR, Troy, Michigan",
-    addressTwo: "48083 United States ((248) 823-3200 )",
+    addressOne: "Codetokloud Inc PO Box 9165 Naperville, IL 60567",
+    addressTwo: "+1 (480) 572-7818",
   },
   otherPages: [
     { name: "Terms", link: "/terms" },

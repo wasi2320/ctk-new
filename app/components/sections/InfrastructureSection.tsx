@@ -15,9 +15,9 @@ const InfrastructureSection = () => {
     };
 
     checkMobile();
-    window.addEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
 
-    return () => window.removeEventListener('resize', checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   const handleCardInteraction = (index: number) => {
@@ -27,7 +27,7 @@ const InfrastructureSection = () => {
   };
 
   return (
-    <section className="py-8 md:py-12 mt-8 md:mt-16 px-4 md:px-0">
+    <section className="w-[100vw] py-8 md:py-12 mt-8 md:mt-16 px-4 md:px-0">
       <h2 className="md:text-5xl text-2xl text-center md:w-7/12 w-full mx-auto font-bold">
         {INFRASTRUCTURE_SECTION.heading}
       </h2>
@@ -40,10 +40,11 @@ const InfrastructureSection = () => {
             {INFRASTRUCTURE_SECTION.cards.map((card, index) => (
               <motion.div
                 key={index}
-                className={`shadow-2xl bg-white md:py-4 py-4 md:px-8 px-5 md:rounded-3xl rounded-xl relative transition-all duration-1000 cursor-pointer ${hoveredCard !== null && hoveredCard !== index
-                  ? "opacity-50 blur-sm"
-                  : ""
-                  }`}
+                className={`shadow-2xl bg-white md:py-4 py-4 md:px-8 px-5 md:rounded-3xl rounded-xl relative transition-all duration-1000 cursor-pointer ${
+                  hoveredCard !== null && hoveredCard !== index
+                    ? "opacity-50 blur-sm"
+                    : ""
+                }`}
                 initial={{ y: 0, height: "auto" }}
                 animate={{
                   y: hoveredCard === index ? -10 : 0,
@@ -55,8 +56,12 @@ const InfrastructureSection = () => {
                 onClick={() => handleCardInteraction(index)}
               >
                 <div className="space-y-2 md:space-y-3">
-                  <h3 className="md:text-4xl text-xl font-semibold">{card.title}</h3>
-                  <p className="md:text-2xl text-base text-gray-700">{card.description}</p>
+                  <h3 className="md:text-4xl text-xl font-semibold">
+                    {card.title}
+                  </h3>
+                  <p className="md:text-2xl text-base text-gray-700">
+                    {card.description}
+                  </p>
                 </div>
                 <AnimatePresence>
                   {hoveredCard === index && (

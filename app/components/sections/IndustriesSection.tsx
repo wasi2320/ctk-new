@@ -5,10 +5,10 @@ import Image from "next/image";
 import { INDUSTRIES_SECTION } from "@/utils/data/industriesSection";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 type CardType = {
   title: string;
@@ -31,7 +31,7 @@ const IndustriesSection = () => {
   };
 
   return (
-    <section className="py-16 px-4 md:px-28">
+    <section className="w-[100vw] py-16 px-4 md:px-28">
       <div className="flex flex-col md:flex-row justify-between items-center">
         <h2 className="md:text-5xl text-2xl w-8/12 font-medium md:w-4/12 text-center md:text-start">
           {INDUSTRIES_SECTION.heading}
@@ -66,8 +66,14 @@ const IndustriesSection = () => {
           <div className="md:hidden w-full">
             <Swiper {...settings} className="w-full">
               {INDUSTRIES_SECTION.cards.map((card, index) => (
-                <SwiperSlide key={index} className="flex justify-center items-center px-4">
-                  <Link href={card.link} className="w-full max-w-[320px] mx-auto">
+                <SwiperSlide
+                  key={index}
+                  className="flex justify-center items-center px-4"
+                >
+                  <Link
+                    href={card.link}
+                    className="w-full max-w-[320px] mx-auto"
+                  >
                     <IndustryCard card={card} index={index} />
                   </Link>
                 </SwiperSlide>

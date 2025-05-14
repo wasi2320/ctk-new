@@ -1,17 +1,17 @@
 import { HOME_HERO_SECTION } from "@/utils/data/homeHeroSection";
 import Link from "next/link";
 import InfiniteScrollBar from "./InfiniteScrollBar";
+import ClutchWidget from "../ClutchWidget";
 
 const HomeHeroSection = () => {
   return (
-    <section className="md:px-28 px-4 flex flex-col-reverse md:flex-row items-center justify-between min-h-[90vh] py-10 md:py-0">
+    <section className="w-[100vw] md:px-28 px-4 flex flex-col-reverse md:flex-row items-center justify-between min-h-[90vh] py-10 md:py-0">
       <div className="md:w-1/2 w-full space-y-6 md:space-y-8">
         <div className="space-y-4 md:space-y-6">
           <h1 className="md:text-[60px] text-[32px] font-bold leading-tight md:leading-[1.1] text-center md:text-start">
             {HOME_HERO_SECTION.heading}
           </h1>
         </div>
-
         <div className="flex items-center justify-center md:justify-start gap-4 md:gap-20">
           <div className="flex flex-col items-center md:items-start md:gap-20">
             <h3
@@ -26,18 +26,21 @@ const HomeHeroSection = () => {
               </button>
             </Link>
           </div>
-          <img src={HOME_HERO_SECTION.badge} alt="aws" />
+          <Link
+            href={"https://partners.amazonaws.com/partners/001aq000008YFg0AAG/"}
+            target="_blank"
+            style={{ cursor: "pointer" }}
+          >
+            <img src={HOME_HERO_SECTION.badge} alt="aws" />
+          </Link>
         </div>
-
         <p className="md:text-xl text-base text-[#050B0B] text-center md:text-start">
           {HOME_HERO_SECTION.text}
         </p>
-
         <div className="mt-6 md:mt-8">
           <InfiniteScrollBar />
         </div>
       </div>
-
       <div className="md:w-[45%] w-full mb-8 md:mb-0">
         <video
           width="100%"

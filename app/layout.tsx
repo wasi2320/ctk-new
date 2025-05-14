@@ -4,6 +4,19 @@ import "./globals.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 
+// Add LocatorJS runtime setup
+const setupLocator = async () => {
+  if (process.env.NODE_ENV === "development") {
+    const setupLocatorUI = (await import("@locator/runtime")).default;
+    setupLocatorUI();
+  }
+};
+
+// Execute setup in client-side only
+if (typeof window !== "undefined") {
+  setupLocator();
+}
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

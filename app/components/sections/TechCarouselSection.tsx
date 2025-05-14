@@ -31,7 +31,7 @@ const TechCarouselSection = () => {
   }, [emblaApi]);
 
   return (
-    <section className="md:px-28 px-4 py-12">
+    <section className="w-[100vw] md:px-28 px-4 py-12">
       <h2 className="text-5xl text-center hidden md:block">
         {TECH_CAROUSEL_SECTION.heading}
       </h2>

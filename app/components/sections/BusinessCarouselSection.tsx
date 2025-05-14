@@ -5,18 +5,21 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import { BUSINESS_CAROUSEL_SECTION } from "@/utils/data/businessCarouselSection";
+import ClutchWidget from "../ClutchWidget";
+import Head from "next/head";
+import Script from "next/script";
 
 const BusinessCarouselSection = () => {
   const [isMobile, setIsMobile] = useState(false);
-  
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -50,7 +53,7 @@ const BusinessCarouselSection = () => {
     onSelect();
     emblaApi.on("select", onSelect);
     setSlides(emblaApi.scrollSnapList());
-    
+
     // Auto-scroll for mobile
     if (isMobile) {
       const interval = setInterval(() => {
@@ -74,14 +77,21 @@ const BusinessCarouselSection = () => {
   };
 
   return (
-    <section className="relative bg-[url('/Images/Differentiate_Bg.png')] bg-cover bg-center bg-no-repeat py-28 px-4 md:px-28 flex flex-col justify-center">
-      <h2 className="text-4xl md:text-6xl text-center mb-12 text-white">
-        {BUSINESS_CAROUSEL_SECTION.heading}
-      </h2>
+    <section className="w-[100vw] md:px-28 px-4 py-12">
+      <Script
+        src="https://widget.clutch.co/static/js/widget.js"
+        strategy="afterInteractive"
+      />
+      <section className=" relative bg-[url('/Images/Differentiate_Bg.png')] bg-cover bg-center bg-no-repeat py-28 px-4 md:px-28 flex flex-col justify-center">
+        <h2 className="text-4xl md:text-6xl text-center mb-12 text-white">
+          {BUSINESS_CAROUSEL_SECTION.heading}
+        </h2>
 
-      <div className="embla overflow-hidden relative" ref={emblaRef}>
-        <div className="embla__container flex items-end">
-          {BUSINESS_CAROUSEL_SECTION.reviewsCard.map((card, index) => {
+        <div className="embla overflow-hidden relative" ref={emblaRef}>
+          <div className="embla__container flex items-end">
+            <ClutchWidget />
+
+            {/* {BUSINESS_CAROUSEL_SECTION.reviewsCard.map((card, index) => {
             // Mobile view - full width cards
             if (isMobile) {
               return (
@@ -114,7 +124,9 @@ const BusinessCarouselSection = () => {
                         <span className="text-gray-">({card.rating})</span>
                       </div>
                       <div className="flex justify-center items-center h-full">
-                        <p className="md:text-3xl text-xl leading-6">{card.userReview}</p>
+                        <p className="md:text-3xl text-xl leading-6">
+                          {card.userReview}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -148,7 +160,7 @@ const BusinessCarouselSection = () => {
                   ${isNextCard ? "self-center mb-16" : ""}`}
               >
                 {/* Navigation arrows for the centered card */}
-                {index === selectedIndex && (
+            {/* {index === selectedIndex && (
                   <>
                     <button
                       onClick={scrollPrev}
@@ -201,9 +213,10 @@ const BusinessCarouselSection = () => {
                 )}
               </div>
             );
-          })}
+          })} */}
+          </div>
         </div>
-      </div>
+      </section>
     </section>
   );
 };

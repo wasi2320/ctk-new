@@ -7,19 +7,35 @@ import TechCarouselSection from "./components/sections/TechCarouselSection";
 import EnsureSection from "./components/sections/EnsureSection";
 import BusinessCarouselSection from "./components/sections/BusinessCarouselSection";
 
-
-
 export default function Home() {
   return (
-    <div>
+    <div style={{ width: "100%" }}>
       <HomeHeroSection />
       <MissionSection />
-      <InfrastructureSection />
-      <IndustriesSection />
-      <TechStackSection />
-      <BusinessCarouselSection />
-      <TechCarouselSection />
-      <EnsureSection />
+
+      <div className="max-w-[1200px] w-full">
+        <InfrastructureSection />
+      </div>
+
+      <div className="max-w-[1200px] w-full">
+        <IndustriesSection />
+      </div>
+
+      <div className="max-w-[1200px] w-full">
+        <TechStackSection />
+      </div>
+
+      <div className="max-w-[1200px] w-full">
+        <BusinessCarouselSection />
+      </div>
+
+      <div className="max-w-[1200px] w-full">
+        <TechCarouselSection />
+      </div>
+
+      <div className="max-w-[1200px] w-full">
+        <EnsureSection />
+      </div>
     </div>
   );
 }
