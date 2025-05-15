@@ -19,10 +19,15 @@ export const HEADER = {
     {
       name: "Industries",
       link: [
-        { name: "Nonprofits", link: "/nonprofits" },
+        { name: "Nonprofits", link: "/non-profits" },
         { name: "Small and Mid-Sized Business", link: "/smb" },
         { name: "SaaS and ISV", link: "/saas-isv" },
         { name: "Healthcare", link: "/healthcare" },
+        { name: "E-commerce", link: "/e-commerce" },
+        { name: "Manufacturing", link: "/manufacturing" },
+        { name: "EdTech", link: "/ed-tech" },
+        { name: "FinTech", link: "/fin-tech" },
+        { name: "Poweing Business", link: "/powering-business" },
         { name: "Financial Services", link: "/financial-services" },
         { name: "Real Estate", link: "/real-estate" },
         { name: "Private Equity and VC Firms", link: "/pe-vc" },

@@ -5,11 +5,22 @@ import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
+import Link from "next/link";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const TechCarouselSection = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const [, setPrevBtnEnabled] = useState(true);
   const [, setNextBtnEnabled] = useState(true);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-in-out",
+    });
+  }, []);
 
   const scrollPrev = useCallback(
     () => emblaApi && emblaApi.scrollPrev(),
@@ -31,61 +42,75 @@ const TechCarouselSection = () => {
   }, [emblaApi]);
 
   return (
-    <section className=" md:px-28 px-4 py-12">
-      <h2 className="text-5xl text-center hidden md:block">
+    <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+      <h1
+        data-aos="fade-down"
+        data-aos-delay="100"
+        className="text-5xl font-bold text-center text-slate-800 mb-16"
+      >
         {TECH_CAROUSEL_SECTION.heading}
-      </h2>
-      <h2 className="text-4xl text-center md:hidden">
-        {TECH_CAROUSEL_SECTION.mobileHeading}
-      </h2>
+      </h1>
 
-      <div className="relative mt-10">
-        {/* Navigation Buttons */}
-        <button
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 p-2 rounded-full shadow-md hover:bg-white transition-all cursor-pointer border border-black"
-          onClick={scrollPrev}
-          aria-label="Previous slide"
+      <div
+        data-aos="fade-up"
+        data-aos-delay="200"
+        className="flex flex-col lg:flex-row justify-between items-start mb-12"
+      >
+        <div>
+          <h2 className="text-4xl font-bold text-slate-800 mb-2">Our Portfolio</h2>
+          <p className="text-xl text-slate-600">Real-World cases in Fintech</p>
+        </div>
+
+        <div className="mt-6 lg:mt-0">
+          <Link
+            href="#"
+            className="inline-block px-6 py-3 text-xl text-slate-800 border-2 border-slate-800 rounded-full hover:bg-slate-100 transition-colors"
+          >
+            Real-World cases in Fintech
+          </Link>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Cost Optimization Card */}
+        <div
+          data-aos="fade-right"
+          data-aos-delay="300"
+          className="bg-gray-50 rounded-3xl p-8 shadow-lg"
         >
-          <ChevronLeftIcon className="w-6 h-6" />
-        </button>
+          <h3 className="text-3xl text-center font-bold text-slate-800 mb-2">Cost Optimization</h3>
+          <p className="text-xl text-center text-slate-600 mb-6">Real-World cases in Fintech</p>
+          <div className="flex justify-center">
+            <Image
+              src="/Images/homepage/Tech_Image_one.png"
+              alt="Cost Optimization Illustration"
+              width={350}
+              height={250}
+              className="w-full h-auto"
+            />
+          </div>
+        </div>
 
-        <button
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 p-2 rounded-full shadow-md hover:bg-white transition-all cursor-pointer border border-black"
-          onClick={scrollNext}
-          aria-label="Next slide"
+        {/* Security Compliance Card */}
+        <div
+          data-aos="fade-left"
+          data-aos-delay="400"
+          className="bg-gray-50 rounded-3xl p-8 shadow-lg"
         >
-          <ChevronRightIcon className="w-6 h-6" />
-        </button>
-
-        {/* Carousel Container */}
-        <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-3 md:gap-0">
-            {TECH_CAROUSEL_SECTION.cards.map((card, index) => (
-              <div
-                key={index}
-                className="flex-[0_0_100%] min-w-0 md:flex-[0_0_28%]"
-              >
-                <div className="flex flex-col gap-5 last:mr-3 last:md:mr-9">
-                  <h4 className="md:text-2xl text-xl">{card.title}</h4>
-                  <div className="relative md:h-[500px] h-[400px]">
-                    <Image
-                      src={card.image}
-                      alt={card.title}
-                      width={400}
-                      height={500}
-                      className="w-full h-full object-cover rounded-3xl"
-                    />
-                    <p className="absolute bottom-8 left-7 md:w-8/12 text-white">
-                      {card.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <h3 className="text-3xl text-center font-bold text-slate-800 mb-2">Security Compliance</h3>
+          <p className="text-xl text-center text-slate-600 mb-6">Real-World cases in Fintech</p>
+          <div className="flex justify-center">
+            <Image
+              src="/Images/homepage/Tech_Image_two.png"
+              alt="Security Compliance Illustration"
+              width={350}
+              height={250}
+              className="w-full h-auto"
+            />
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

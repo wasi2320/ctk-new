@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type ServiceCardProps = {
     title: string;
     description: string;
@@ -15,7 +17,7 @@ const ServiceCard = ({ title, description, image }: ServiceCardProps) => {
           </button>
         </div>
         <div className="flex-1">
-          <img src={image} alt={title} className="w-full h-auto rounded-lg object-cover" />
+          <Image src={image} alt={title} className="w-full h-auto rounded-lg object-cover" />
         </div>
       </div>
     );

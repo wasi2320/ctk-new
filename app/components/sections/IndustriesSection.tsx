@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { INDUSTRIES_SECTION } from "@/utils/data/industriesSection";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,6 +9,8 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 type CardType = {
   title: string;
@@ -22,6 +24,14 @@ type IndustryCardProps = {
 };
 
 const IndustriesSection = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-in-out",
+    });
+  }, []);
+
   const settings = {
     modules: [Navigation, Pagination, Autoplay],
     spaceBetween: 20,
@@ -31,54 +41,157 @@ const IndustriesSection = () => {
   };
 
   return (
-    <section className=" py-16 px-4 md:px-28">
-      <div className="flex flex-col md:flex-row justify-between items-center">
-        <h2 className="md:text-5xl text-2xl w-8/12 font-medium md:w-4/12 text-center md:text-start">
-          {INDUSTRIES_SECTION.heading}
-        </h2>
-        <p className="md:text-xl md:w-4/12 text-center md:text-start">
-          {INDUSTRIES_SECTION.description}
-        </p>
-      </div>
+    <section className="py-20 px-4 md:px-8 lg:px-12">
+      <h1
+        data-aos="fade-down"
+        data-aos-delay="100"
+        className="text-3xl font-bold mb-4 w-full text-center"
+      >
+        {INDUSTRIES_SECTION.heading}
+      </h1>
 
-      <div className="flex items-center mt-7 gap-10">
-        <div className="md:w-[30%] h-[550px] hidden md:block">
-          <Image
-            src={INDUSTRIES_SECTION.image}
-            alt="Industries"
-            height={500}
-            width={500}
-            className="w-full h-full object-cover"
-          />
-        </div>
-
-        <div className="md:w-[70%] w-full">
-          {/* Desktop Grid Layout */}
-          <div className="hidden md:grid md:grid-cols-3 gap-5">
-            {INDUSTRIES_SECTION.cards.map((card, index) => (
-              <Link key={index} href={card?.link}>
-                <IndustryCard card={card} index={index} />
-              </Link>
-            ))}
+      <div className="max-w-[80%] mx-auto mt-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          {/* Left Content - Text and Image */}
+          <div
+            data-aos="fade-right"
+            data-aos-delay="200"
+            className="lg:col-span-4"
+          >
+            <div className="relative w-full h-[50vh]">
+              <Image
+                src={INDUSTRIES_SECTION.image}
+                alt="Services Illustration"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
           </div>
 
-          {/* Mobile Auto Carousel using Swiper */}
-          <div className="md:hidden w-full">
-            <Swiper {...settings} className="w-full">
-              {INDUSTRIES_SECTION.cards.map((card, index) => (
-                <SwiperSlide
-                  key={index}
-                  className="flex justify-center items-center px-4"
-                >
-                  <Link
-                    href={card.link}
-                    className="w-full max-w-[320px] mx-auto"
-                  >
-                    <IndustryCard card={card} index={index} />
-                  </Link>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+          {/* Right Content - Service Cards in 2x3 Grid */}
+          <div
+            data-aos="fade-left"
+            data-aos-delay="300"
+            className="lg:col-span-8"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Fintech Card */}
+              <div
+                data-aos="zoom-in"
+                data-aos-delay="400"
+                className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group shadow-lg"
+              >
+                <div className="w-12 h-12 mb-4">
+                  <img
+                    src="/Images/aboutus/Frame4.svg"
+                    alt="Healthcare"
+                    className="w-full h-full transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Fintech</h3>
+                <p className="text-sm text-gray-600 group-hover:text-white">
+                  Enhancing financial security and operational efficiency.
+                </p>
+              </div>
+
+              {/* Edtech Card */}
+              <div
+                data-aos="zoom-in"
+                data-aos-delay="500"
+                className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group shadow-lg"
+              >
+                <div className="w-12 h-12 mb-4">
+                  <img
+                    src="/Images/aboutus/Frame3.svg"
+                    alt="Professional Services"
+                    className="w-full h-full transition-all duration-300 brightness-1 group-hover:brightness-0 group-hover:invert"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Edtech</h3>
+                <p className="text-sm text-gray-600 group-hover:text-white">
+                  Transforming education through innovative solutions.
+                </p>
+              </div>
+
+              {/* Professional Services Card */}
+              <div
+                data-aos="zoom-in"
+                data-aos-delay="600"
+                className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group shadow-lg"
+              >
+                <div className="w-12 h-12 mb-4">
+                  <img
+                    src="/Images/aboutus/Frame5.svg"
+                    alt="E-commerce"
+                    className="w-full h-full transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">
+                  Professional Services
+                </h3>
+                <p className="text-sm text-gray-600 group-hover:text-white">
+                  Streamlining operations for optimal performance.
+                </p>
+              </div>
+
+              {/* Healthcare Card */}
+              <div
+                data-aos="zoom-in"
+                data-aos-delay="700"
+                className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group shadow-lg"
+              >
+                <div className="w-12 h-12 mb-4">
+                  <img
+                    src="/Images/aboutus/Frame6.svg"
+                    alt="Healthcare"
+                    className="w-full h-full transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Healthcare</h3>
+                <p className="text-sm text-gray-600 group-hover:text-white">
+                  Improving patient care and healthcare efficiency.
+                </p>
+              </div>
+
+              {/* E-commerce Card */}
+              <div
+                data-aos="zoom-in"
+                data-aos-delay="800"
+                className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group shadow-lg"
+              >
+                <div className="w-12 h-12 mb-4">
+                  <img
+                    src="/Images/aboutus/Frame2.svg"
+                    alt="E-commerce"
+                    className="w-full h-full transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">E-commerce</h3>
+                <p className="text-sm text-gray-600 group-hover:text-white">
+                  Enhancing customer experiences and operational efficiency.
+                </p>
+              </div>
+
+              {/* Manufacturing Card */}
+              <div
+                data-aos="zoom-in"
+                data-aos-delay="900"
+                className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group shadow-lg"
+              >
+                <div className="w-12 h-12 mb-4">
+                  <img
+                    src="/Images/aboutus/Frame1.svg"
+                    alt="Fintech"
+                    className="w-full h-full transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Manufacturing</h3>
+                <p className="text-sm text-gray-600 group-hover:text-white">
+                  Driving automation and quality control in manufacturing.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -87,64 +200,64 @@ const IndustriesSection = () => {
 };
 
 // Separate component for individual industry card
-const IndustryCard: React.FC<IndustryCardProps> = ({ card, index }) => {
-  return (
-    <div
-      className={`
-        bg-white 
-        px-6 
-        py-8
-        rounded-3xl 
-        border 
-        border-[#152F27] 
-        flex 
-        flex-col 
-        justify-center 
-        items-center 
-        hover:bg-[#081410] 
-        hover:text-white 
-        transition-all 
-        duration-300 
-        group
-        aspect-square
-        w-full
-        md:aspect-auto
-        md:min-h-0
-      `}
-    >
-      <div className="flex flex-col items-center justify-center h-full space-y-6">
-        <Image
-          src={card.img}
-          alt={card.title}
-          height={60}
-          width={60}
-          className="w-[60px] h-[60px] brightness-0 group-hover:invert transition-all duration-300"
-        />
-        <h3
-          className={`
-            md:text-xl 
-            text-xl
-            font-medium 
-            nunito-medium
-            text-center
-          `}
-        >
-          {card.title}
-        </h3>
+// const IndustryCard: React.FC<IndustryCardProps> = ({ card, index }) => {
+//   return (
+//     <div
+//       className={`
+//         bg-white 
+//         px-6 
+//         py-8
+//         rounded-3xl 
+//         border 
+//         border-[#152F27] 
+//         flex 
+//         flex-col 
+//         justify-center 
+//         items-center 
+//         hover:bg-[#081410] 
+//         hover:text-white 
+//         transition-all 
+//         duration-300 
+//         group
+//         aspect-square
+//         w-full
+//         md:aspect-auto
+//         md:min-h-0
+//       `}
+//     >
+//       <div className="flex flex-col items-center justify-center h-full space-y-6">
+//         <Image
+//           src={card.img}
+//           alt={card.title}
+//           height={60}
+//           width={60}
+//           className="w-[60px] h-[60px] brightness-0 group-hover:invert transition-all duration-300"
+//         />
+//         <h3
+//           className={`
+//             md:text-xl 
+//             text-xl
+//             font-medium 
+//             nunito-medium
+//             text-center
+//           `}
+//         >
+//           {card.title}
+//         </h3>
 
-        <p
-          className={`
-            md:text-base 
-            text-base
-            text-center 
-            max-w-[90%]
-          `}
-        >
-          {card.description}
-        </p>
-      </div>
-    </div>
-  );
-};
+//         <p
+//           className={`
+//             md:text-base 
+//             text-base
+//             text-center 
+//             max-w-[90%]
+//           `}
+//         >
+//           {card.description}
+//         </p>
+//       </div>
+//     </div>
+//   );
+// };
 
 export default IndustriesSection;

@@ -1,6 +1,7 @@
 import MissionSection from "@/app/components/sections/MissionSection";
 import ServiceCard from "@/app/components/ServiceCard";
 import React from "react";
+import Image from "next/image";
 
 function page() {
   return (
@@ -146,11 +147,12 @@ function page() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
             {/* Customized FinOps Solutions */}
             <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-6">
-                <img
+              <div className="w-16 h-16 mx-auto mb-6 relative">
+                <Image
                   src="/Images/aboutus/Group1.png"
                   alt="FinOps"
-                  className="w-full h-full"
+                  fill
+                  className="object-contain"
                 />
               </div>
               <h3 className="text-xl font-semibold mb-4">
@@ -164,11 +166,12 @@ function page() {
 
             {/* Innovative Technology */}
             <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-6">
-                <img
+              <div className="w-16 h-16 mx-auto mb-6 relative">
+                <Image
                   src="/Images/aboutus/Group2.png"
                   alt="Innovative"
-                  className="w-full h-full"
+                  fill
+                  className="object-contain"
                 />
               </div>
               <h3 className="text-xl font-semibold mb-4">
@@ -182,11 +185,12 @@ function page() {
 
             {/* Continuous Optimization */}
             <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-6">
-                <img
+              <div className="w-16 h-16 mx-auto mb-6 relative">
+                <Image
                   src="/Images/aboutus/Group3.png"
                   alt="Optimization"
-                  className="w-full h-full"
+                  fill
+                  className="object-contain"
                 />
               </div>
               <h3 className="text-xl font-semibold mb-4">
@@ -200,11 +204,12 @@ function page() {
 
             {/* Expert FinOps Team */}
             <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-6">
-                <img
+              <div className="w-16 h-16 mx-auto mb-6 relative">
+                <Image
                   src="/Images/aboutus/Group4.png"
                   alt="Team"
-                  className="w-full h-full"
+                  fill
+                  className="object-contain"
                 />
               </div>
               <h3 className="text-xl font-semibold mb-4">Expert FinOps Team</h3>
@@ -229,10 +234,11 @@ function page() {
                 innovation and deliver exceptional results.
               </p>
               <div className="relative w-full aspect-square">
-                <img
+                <Image
                   src="/Images/aboutus/Rectangle.png"
                   alt="Services Illustration"
-                  className="w-full h-full object-contain"
+                  fill
+                  className="object-contain"
                 />
               </div>
             </div>
@@ -242,11 +248,12 @@ function page() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {/* Fintech Card */}
                 <div className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group">
-                  <div className="w-12 h-12 mb-4">
-                    <img
+                  <div className="w-12 h-12 mb-4 relative">
+                    <Image
                       src="/Images/aboutus/Frame4.svg"
                       alt="Healthcare"
-                      className="w-full h-full transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+                      fill
+                      className="object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
                     />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Fintech</h3>
@@ -257,11 +264,12 @@ function page() {
 
                 {/* Edtech Card */}
                 <div className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group">
-                  <div className="w-12 h-12 mb-4">
-                    <img
+                  <div className="w-12 h-12 mb-4 relative">
+                    <Image
                       src="/Images/aboutus/Frame3.svg"
                       alt="Professional Services"
-                      className="w-full h-full transition-all duration-300 brightness-1 group-hover:brightness-0 group-hover:invert"
+                      fill
+                      className="object-contain transition-all duration-300 brightness-1 group-hover:brightness-0 group-hover:invert"
                     />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Edtech</h3>
@@ -272,11 +280,12 @@ function page() {
 
                 {/* Professional Services Card */}
                 <div className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group">
-                  <div className="w-12 h-12 mb-4">
-                    <img
+                  <div className="w-12 h-12 mb-4 relative">
+                    <Image
                       src="/Images/aboutus/Frame5.svg"
                       alt="E-commerce"
-                      className="w-full h-full transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+                      fill
+                      className="object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
                     />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">
@@ -289,11 +298,12 @@ function page() {
 
                 {/* Healthcare Card */}
                 <div className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group">
-                  <div className="w-12 h-12 mb-4">
-                    <img
+                  <div className="w-12 h-12 mb-4 relative">
+                    <Image
                       src="/Images/aboutus/Frame6.svg"
                       alt="Healthcare"
-                      className="w-full h-full transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+                      fill
+                      className="object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
                     />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Healthcare</h3>
@@ -304,11 +314,12 @@ function page() {
 
                 {/* E-commerce Card */}
                 <div className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group">
-                  <div className="w-12 h-12 mb-4">
-                    <img
+                  <div className="w-12 h-12 mb-4 relative">
+                    <Image
                       src="/Images/aboutus/Frame2.svg"
                       alt="E-commerce"
-                      className="w-full h-full transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+                      fill
+                      className="object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
                     />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">E-commerce</h3>
@@ -319,11 +330,12 @@ function page() {
 
                 {/* Manufacturing Card */}
                 <div className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group">
-                  <div className="w-12 h-12 mb-4">
-                    <img
+                  <div className="w-12 h-12 mb-4 relative">
+                    <Image
                       src="/Images/aboutus/Frame1.svg"
                       alt="Fintech"
-                      className="w-full h-full transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+                      fill
+                      className="object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
                     />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">Manufacturing</h3>

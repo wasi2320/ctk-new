@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface EcommerceSolutionProps {
   heading?: string;
 }
@@ -13,10 +15,11 @@ const EcommerceSolution = ({}: EcommerceSolutionProps) => {
       <div className="flex flex-col md:flex-row gap-8 items-start justify-between">
         {/* Left Content */}
         <div className="md:w-[40%] text-center md:text-center mb-8 md:mb-12">
-          <img
+          <Image
             src="/Images/Ecommerce_Solution.png"
             alt="Ecommerce Solution"
             className="w-full h-auto mb-4"
+            fill
           />
         </div>
 

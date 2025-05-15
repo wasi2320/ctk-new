@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface EdTechFutureHealthcareProps {
   heading?: string;
 }
@@ -24,7 +26,7 @@ const EdTechFutureHealthcare = ({}: EdTechFutureHealthcareProps) => {
               className="inline-block bg-transparent text-Nunito text-dark text-lg md:text-xl font-semibold md:py-2 md:px-6 py-2 px-4 border-3 rounded-2xl transition"
             >
               Real-World cases in Edtech
-              <img
+              <Image
                 src="/Images/arrow-right.png"
                 alt="Arrow"
                 width={20}

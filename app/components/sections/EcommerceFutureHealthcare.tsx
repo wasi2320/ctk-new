@@ -1,8 +1,10 @@
+import Image from 'next/image';
+
 interface EcommerceFutureHealthcareProps {
   heading?: string;
 }
 
-const EcommerceFutureHealthcare = ({}: EcommerceFutureHealthcareProps) => {
+const EcommerceFutureHealthcare = ({ }: EcommerceFutureHealthcareProps) => {
   return (
     <section className="md:px-36 px-4 md:pt-12 pt-8 pb-8 bg-center bg-no-repeat text-dark">
       <div className="flex flex-col md:flex-col justify-center">
@@ -24,7 +26,7 @@ const EcommerceFutureHealthcare = ({}: EcommerceFutureHealthcareProps) => {
               className="inline-block bg-transparent text-Nunito text-dark text-lg md:text-xl font-semibold md:py-2 md:px-6 py-2 px-4 border-3 rounded-2xl transition"
             >
               Real-World cases in E-commerce
-              <img
+              <Image
                 src="/Images/arrow-right.png"
                 alt="Arrow"
                 width={20}

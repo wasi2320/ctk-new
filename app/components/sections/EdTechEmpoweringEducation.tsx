@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface EdTechEmpoweringEducationProps {
   heading?: string;
 }
@@ -22,7 +24,7 @@ const EdTechEmpoweringEducation = ({}: EdTechEmpoweringEducationProps) => {
 
         {/* Center Image */}
         <div className="md:w-1/3 hidden md:flex justify-center mb-8 md:mb-0">
-          <img src="/Images/line.png" alt="Center" className="h-full w-auto" />
+          <Image src="/Images/line.png" alt="Center" className="h-full w-auto" fill />
         </div>
 
         {/* Right Content */}

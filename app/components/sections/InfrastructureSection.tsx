@@ -27,7 +27,7 @@ const InfrastructureSection = () => {
   };
 
   return (
-    <section className=" py-8 md:py-12 mt-8 md:mt-16 px-4 md:px-0">
+    <section className="py-8 md:py-12 mt-8 md:mt-16 px-4 md:px-0">
       <h2 className="md:text-5xl text-2xl text-center md:w-7/12 w-full mx-auto font-bold">
         {INFRASTRUCTURE_SECTION.heading}
       </h2>
@@ -35,16 +35,15 @@ const InfrastructureSection = () => {
         {INFRASTRUCTURE_SECTION.description}
       </p>
       <div className="flex flex-col md:flex-row items-center md:w-8/12 w-full mx-auto gap-8 md:gap-0">
-        <div className="md:w-[60%] w-[95%] relative md:-right-10">
+        <div className="md:w-[60%] h-[55vh] w-[95%] relative md:-right-10">
           <div className="flex flex-col md:gap-6 gap-4">
             {INFRASTRUCTURE_SECTION.cards.map((card, index) => (
               <motion.div
                 key={index}
-                className={`shadow-2xl bg-white md:py-4 py-4 md:px-8 px-5 md:rounded-3xl rounded-xl relative transition-all duration-1000 cursor-pointer ${
-                  hoveredCard !== null && hoveredCard !== index
-                    ? "opacity-50 blur-sm"
-                    : ""
-                }`}
+                className={`shadow-2xl bg-white md:py-4 py-4 md:px-8 px-5 md:rounded-3xl rounded-xl relative transition-all duration-1000 cursor-pointer ${hoveredCard !== null && hoveredCard !== index
+                  ? "opacity-50 blur-sm"
+                  : ""
+                  }`}
                 initial={{ y: 0, height: "auto" }}
                 animate={{
                   y: hoveredCard === index ? -10 : 0,
@@ -59,7 +58,7 @@ const InfrastructureSection = () => {
                   <h3 className="md:text-4xl text-xl font-semibold">
                     {card.title}
                   </h3>
-                  <p className="md:text-2xl text-base text-gray-700">
+                  <p className="md:text-lg text-base text-gray-700">
                     {card.description}
                   </p>
                 </div>
@@ -93,7 +92,7 @@ const InfrastructureSection = () => {
             ))}
           </div>
         </div>
-        <div className="md:w-[40%] w-[95%] h-[300px] md:h-[600px] mr-4 md:mr-0">
+        <div className="md:w-[40%] w-[95%] h-[300px] md:h-[600px] mr-4 md:mr-0 relative z-[-10]">
           <Image
             src={INFRASTRUCTURE_SECTION.image}
             alt="Infrastructure"
