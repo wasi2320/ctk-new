@@ -15,9 +15,9 @@ const Header = () => {
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [isExpertiseOpen, setIsExpertiseOpen] = useState(false);
+  const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
-  const [isMobileExpertiseOpen, setIsMobileExpertiseOpen] = useState(false);
+  const [isMobileIndustriesOpen, setIsMobileIndustriesOpen] = useState(false);
 
   useEffect(() => {
     if (isLoading) {
@@ -58,16 +58,16 @@ const Header = () => {
     setIsServicesOpen((prev) => !prev);
   };
 
-  const toggleExpertise = () => {
-    setIsExpertiseOpen((prev) => !prev);
+  const toggleIndustries = () => {
+    setIsIndustriesOpen((prev) => !prev);
   };
 
   const toggleMobileServices = () => {
     setIsMobileServicesOpen((prev) => !prev);
   };
 
-  const toggleMobileExpertise = () => {
-    setIsMobileExpertiseOpen((prev) => !prev);
+  const toggleMobileIndustries = () => {
+    setIsMobileIndustriesOpen((prev) => !prev);
   };
 
   // Find the services nav item
@@ -78,13 +78,13 @@ const Header = () => {
     ? servicesItem.link
     : [];
 
-  // Find the expertise nav item
-  const expertiseItem = HEADER.navItems.find(
+  // Find the industries nav item
+  const industriesItem = HEADER.navItems.find(
     (item) =>
-      item.name.toLowerCase() === "expertise" && Array.isArray(item.link)
+      item.name.toLowerCase() === "industries" && Array.isArray(item.link)
   );
-  const expertiseLinks = Array.isArray(expertiseItem?.link)
-    ? expertiseItem.link
+  const industriesLinks = Array.isArray(industriesItem?.link)
+    ? industriesItem.link
     : [];
 
   return (
@@ -175,23 +175,23 @@ const Header = () => {
                 );
               }
 
-              // Expertise Dropdown
+              // Industries Dropdown
               if (
-                item.name.toLowerCase() === "expertise" &&
+                item.name.toLowerCase() === "industries" &&
                 Array.isArray(item.link)
               ) {
                 return (
                   <div key={index} className="relative">
                     <button
                       className="flex items-center gap-1 text-lg focus:outline-none cursor-pointer"
-                      onClick={toggleExpertise}
+                      onClick={toggleIndustries}
                       onBlur={() =>
-                        setTimeout(() => setIsExpertiseOpen(false), 150)
+                        setTimeout(() => setIsIndustriesOpen(false), 150)
                       }
                     >
                       {item.name}
                       <svg
-                        className={`w-4 h-4 ml-1 transition-transform duration-200 ${isExpertiseOpen ? "rotate-180" : ""
+                        className={`w-4 h-4 ml-1 transition-transform duration-200 ${isIndustriesOpen ? "rotate-180" : ""
                           }`}
                         fill="none"
                         stroke="currentColor"
@@ -207,25 +207,25 @@ const Header = () => {
                       </svg>
                     </button>
 
-                    {isExpertiseOpen && (
+                    {isIndustriesOpen && (
                       <div
                         className="absolute left-0 mt-2 w-fit bg-white shadow-xl rounded-xl z-50 p-4 flex gap-8"
                         onMouseDown={(e) => e.preventDefault()}
                       >
                         <div className="flex flex-col gap-3">
-                          {expertiseLinks.map((expertise, idx) => (
+                          {industriesLinks.map((industry, idx) => (
                             <Link
-                              href={expertise.link}
+                              href={industry.link}
                               key={idx}
                               className="whitespace-nowrap hover:text-[#000209] transition-colors"
                               prefetch={true}
                               onClick={(e) => {
                                 e.preventDefault();
-                                setIsExpertiseOpen(false);
-                                handleNavigation(expertise.link);
+                                setIsIndustriesOpen(false);
+                                handleNavigation(industry.link);
                               }}
                             >
-                              {expertise.name}
+                              {industry.name}
                             </Link>
                           ))}
                         </div>
@@ -355,18 +355,18 @@ const Header = () => {
               }
 
               if (
-                item.name.toLowerCase() === "expertise" &&
+                item.name.toLowerCase() === "industries" &&
                 Array.isArray(item.link)
               ) {
                 return (
                   <div key={index} className="flex flex-col">
                     <button
-                      onClick={toggleMobileExpertise}
+                      onClick={toggleMobileIndustries}
                       className="flex items-center justify-between w-full text-lg text-gray-800 hover:text-blue-600 transition-colors"
                     >
                       {item.name}
                       <svg
-                        className={`w-4 h-4 ml-1 transition-transform duration-200 ${isMobileExpertiseOpen ? "rotate-180" : ""
+                        className={`w-4 h-4 ml-1 transition-transform duration-200 ${isMobileIndustriesOpen ? "rotate-180" : ""
                           }`}
                         fill="none"
                         stroke="currentColor"
@@ -381,20 +381,20 @@ const Header = () => {
                         />
                       </svg>
                     </button>
-                    {isMobileExpertiseOpen && (
+                    {isMobileIndustriesOpen && (
                       <div className="mt-2 pl-4 flex flex-col gap-3">
-                        {expertiseLinks.map((expertise, idx) => (
+                        {industriesLinks.map((industry, idx) => (
                           <Link
-                            href={expertise.link}
+                            href={industry.link}
                             key={idx}
                             className="text-gray-800 hover:text-blue-600 transition-colors"
                             onClick={(e) => {
                               e.preventDefault();
                               toggleMenu();
-                              handleNavigation(expertise.link);
+                              handleNavigation(industry.link);
                             }}
                           >
-                            {expertise.name}
+                            {industry.name}
                           </Link>
                         ))}
                       </div>
