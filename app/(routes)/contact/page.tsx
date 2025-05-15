@@ -22,52 +22,54 @@ export default function page() {
         <div className="max-w-[1000px] mx-auto rounded-[20px] relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             <div className="bg-[#fafafa] p-5 md:p-10 lg:p-[40px] rounded-[20px] mb-8 lg:mb-0">
-              <h2 className="text-[1.8rem] md:text-[2rem] text-[#333] mb-5">Get in Touch</h2>
+              <h2 className="text-[1.8rem] md:text-[2rem] text-[#333] mb-5">
+                Get in Touch
+              </h2>
               <form className="flex flex-col gap-6">
                 <div className="mb-5">
-                  <input 
-                    type="text" 
-                    placeholder="Name" 
-                    required 
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    required
                     className="w-full px-4 py-3 bg-transparent border-b border-black rounded-none focus:outline-none focus:border-b-2 focus:border-black text-black placeholder-black/70"
                   />
                 </div>
                 <div className="mb-5">
-                  <input 
-                    type="text" 
-                    placeholder="Company Name" 
-                    required 
+                  <input
+                    type="text"
+                    placeholder="Company Name"
+                    required
                     className="w-full px-4 py-3 bg-transparent border-b border-black rounded-none focus:outline-none focus:border-b-2 focus:border-black text-black placeholder-black/70"
                   />
                 </div>
                 <div className="mb-5">
-                  <input 
-                    type="email" 
-                    placeholder="Email" 
-                    required 
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    required
                     className="w-full px-4 py-3 bg-transparent border-b border-black rounded-none focus:outline-none focus:border-b-2 focus:border-black text-black placeholder-black/70"
                   />
                 </div>
                 <div className="mb-5">
-                  <input 
-                    placeholder="Message" 
-                    required 
+                  <input
+                    placeholder="Message"
+                    required
                     className="w-full px-4 py-3 bg-transparent border-b border-black rounded-none focus:outline-none focus:border-b-2 focus:border-black text-black placeholder-black/70  resize-none"
                   />
                 </div>
                 <div className="flex items-center justify-between mt-[20px]">
                   <div className="relative">
                     <input type="file" id="file-input" className="hidden" />
-                    <label 
-                      htmlFor="file-input" 
+                    <label
+                      htmlFor="file-input"
                       className="flex items-center gap-2.5 px-5 py-1.5 text-black cursor-pointer hover:opacity-80 transition-all duration-300"
                     >
                       <Upload className="text-[#949494] w-5 h-5" />
                       <span>Upload file</span>
                     </label>
                   </div>
-                  <button 
-                    type="submit" 
+                  <button
+                    type="submit"
                     className="bg-black text-white px-5 py-1.5 rounded-[70px] text-sm md:text-base hover:bg-[#333] hover:-translate-y-0.5 transition-all duration-300"
                   >
                     Send Message
@@ -79,30 +81,44 @@ export default function page() {
             <div className="p-8 md:p-10 flex items-center justify-center lg:border-l lg:border-black my-[22%] mx-[15%]">
               <div className="w-full max-w-md">
                 <div className="mb-6">
-                  <h3 className="text-[1.2rem] text-[#333] mb-2.5">Location:</h3>
-                  <p className="text-[#666] my-1">44 Cherry DR, Troy,</p>
-                  <p className="text-[#666] my-1">Michigan</p>
-                  <p className="text-[#666] my-1">48083 United States (748)</p>
-                  <p className="text-[#666] my-1">823-32001</p>
+                  <h3 className="text-[1.2rem] text-[#333] mb-2.5">
+                    Location:
+                  </h3>
+                  <p className="text-[#666] my-1">Codetokloud Inc,</p>
+                  <p className="text-[#666] my-1">PO Box 9165</p>
+                  <p className="text-[#666] my-1">Naperville, IL 60567</p>
                 </div>
                 <div className="mb-6">
                   <h3 className="text-[1.2rem] text-[#333] mb-2.5">Email:</h3>
-                  <p className="text-[#666] my-1">C2B@gmail.com</p>
+                  <p className="text-[#666] my-1">sales@codetokloud.com</p>
                 </div>
                 <div className="mb-6">
-                  <h3 className="text-[1.2rem] text-[#333] mb-2.5">Phone Number:</h3>
-                  <p className="text-[#666] my-1">+736383839912</p>
+                  <h3 className="text-[1.2rem] text-[#333] mb-2.5">
+                    Phone Number:
+                  </h3>
+                  <p className="text-[#666] my-1">+1 (480) 572-7818</p>
                 </div>
                 <div className="mb-6">
-                  <h3 className="text-[1.2rem] text-[#333] mb-2.5">Follow us at:</h3>
+                  <h3 className="text-[1.2rem] text-[#333] mb-2.5">
+                    Follow us at:
+                  </h3>
                   <div className="flex gap-4 mt-2.5">
-                    <a href="#" className="text-[#333] text-2xl hover:text-black transition-colors duration-300">
+                    <a
+                      href="#"
+                      className="text-[#333] text-2xl hover:text-black transition-colors duration-300"
+                    >
                       <Facebook />
                     </a>
-                    <a href="#" className="text-[#333] text-2xl hover:text-black transition-colors duration-300">
+                    <a
+                      href="#"
+                      className="text-[#333] text-2xl hover:text-black transition-colors duration-300"
+                    >
                       <Instagram />
                     </a>
-                    <a href="#" className="text-[#333] text-2xl hover:text-black transition-colors duration-300">
+                    <a
+                      href="#"
+                      className="text-[#333] text-2xl hover:text-black transition-colors duration-300"
+                    >
                       <Linkedin />
                     </a>
                   </div>
@@ -114,7 +130,6 @@ export default function page() {
       </section>
 
       {/* Our Journey Section */}
-      
     </div>
   );
 }
