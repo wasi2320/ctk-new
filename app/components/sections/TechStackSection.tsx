@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const TechStackSection = () => {
   return (
-    <section className="w-[100vw] md:px-28 px-4 py-12 flex flex-col md:flex-row justify-between gap-10 md:gap-0">
+    <section className=" md:px-28 px-4 py-12 flex flex-col md:flex-row justify-between gap-10 md:gap-0">
       <div className="md:w-1/2">
         <h2 className="md:text-6xl text-3xl text-center md:text-start">
           {TECH_STACK_SECTION.heading}

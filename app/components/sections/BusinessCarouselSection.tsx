@@ -77,7 +77,7 @@ const BusinessCarouselSection = () => {
   };
 
   return (
-    <section className="w-[100vw] md:px-28 px-4 py-12">
+    <section className=" w-full">
       <Script
         src="https://widget.clutch.co/static/js/widget.js"
         strategy="afterInteractive"

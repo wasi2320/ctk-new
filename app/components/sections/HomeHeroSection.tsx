@@ -5,7 +5,7 @@ import ClutchWidget from "../ClutchWidget";
 
 const HomeHeroSection = () => {
   return (
-    <section className="w-[100vw] md:px-28 px-4 flex flex-col-reverse md:flex-row items-center justify-between min-h-[90vh] py-10 md:py-0">
+    <section className=" md:px-28 px-4 flex flex-col-reverse md:flex-row items-center justify-between min-h-[90vh] py-10 md:py-0">
       <div className="md:w-1/2 w-full space-y-6 md:space-y-8">
         <div className="space-y-4 md:space-y-6">
           <h1 className="md:text-[60px] text-[32px] font-bold leading-tight md:leading-[1.1] text-center md:text-start">

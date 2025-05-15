@@ -13,23 +13,23 @@ export default function Home() {
       <HomeHeroSection />
       <MissionSection />
 
-      <div className="max-w-[1200px] w-full">
+      <div className="max-w-[1200px] w-full mx-auto ">
         <InfrastructureSection />
       </div>
 
-      <div className="max-w-[1200px] w-full">
+      <div className="max-w-[1200px] w-full mx-auto ">
         <IndustriesSection />
       </div>
 
-      <div className="max-w-[1200px] w-full">
+      <div className="max-w-[1200px] w-full mx-auto ">
         <TechStackSection />
       </div>
 
-      <div className="max-w-[1200px] w-full">
-        <BusinessCarouselSection />
-      </div>
+      {/* <div className="max-w-[1200px] w-full mx-auto "> */}
+      <BusinessCarouselSection />
+      {/* </div> */}
 
-      <div className="max-w-[1200px] w-full">
+      <div className="max-w-[1200px] w-full mx-auto ">
         <TechCarouselSection />
       </div>
 

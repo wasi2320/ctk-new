@@ -27,7 +27,7 @@ const InfrastructureSection = () => {
   };
 
   return (
-    <section className="w-[100vw] py-8 md:py-12 mt-8 md:mt-16 px-4 md:px-0">
+    <section className=" py-8 md:py-12 mt-8 md:mt-16 px-4 md:px-0">
       <h2 className="md:text-5xl text-2xl text-center md:w-7/12 w-full mx-auto font-bold">
         {INFRASTRUCTURE_SECTION.heading}
       </h2>
