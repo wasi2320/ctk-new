@@ -3,20 +3,9 @@ import { HOME_HERO_SECTION } from "@/utils/data/homeHeroSection";
 import Link from "next/link";
 import InfiniteScrollBar from "./InfiniteScrollBar";
 import ClutchWidget from "../ClutchWidget";
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import Image from "next/image";
 
 const HomeHeroSection = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      easing: "ease-in-out",
-    });
-  }, []);
-
   return (
     // 90vhusama
     <section className="md:px-28 px-4 flex flex-col-reverse md:flex-row items-center justify-between min-h-[90vh] py-10 md:py-0">

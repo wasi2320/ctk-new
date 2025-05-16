@@ -74,7 +74,7 @@ const TechCarouselSection = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Cost Optimization Card */}
         <div
-          data-aos="fade-right"
+          data-aos="fade"
           data-aos-delay="300"
           className="bg-gray-50 rounded-3xl p-8 shadow-lg"
         >
@@ -93,7 +93,7 @@ const TechCarouselSection = () => {
 
         {/* Security Compliance Card */}
         <div
-          data-aos="fade-left"
+          data-aos="fade"
           data-aos-delay="400"
           className="bg-gray-50 rounded-3xl p-8 shadow-lg"
         >
