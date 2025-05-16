@@ -17,7 +17,10 @@ const ServiceCard = ({ title, description, image }: ServiceCardProps) => {
           </button>
         </div>
         <div className="flex-1">
-          <Image src={image} alt={title} className="w-full h-auto rounded-lg object-cover" />
+          <Image
+          width={1000}
+          height={1000}
+          src={image} alt={title} className="w-full h-auto rounded-lg object-cover" />
         </div>
       </div>
     );

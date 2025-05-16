@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 // Add LocatorJS runtime setup
 const setupLocator = async () => {
@@ -58,6 +59,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <Header />
+        <ScrollToTop />
         {children}
         <Footer />
       </body>
