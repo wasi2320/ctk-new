@@ -82,7 +82,7 @@ const TechCarouselSection = () => {
           <p className="text-xl text-center text-slate-600 mb-6">Real-World cases in Fintech</p>
           <div className="flex justify-center">
             <Image
-              src="/Images/homepage/Tech_Image_one.png"
+              src="/Images/homepage/Tech_Image_1.svg"
               alt="Cost Optimization Illustration"
               width={350}
               height={250}
@@ -101,7 +101,7 @@ const TechCarouselSection = () => {
           <p className="text-xl text-center text-slate-600 mb-6">Real-World cases in Fintech</p>
           <div className="flex justify-center">
             <Image
-              src="/Images/homepage/Tech_Image_two.png"
+              src="/Images/homepage/Tech_Image_2.svg"
               alt="Security Compliance Illustration"
               width={350}
               height={250}

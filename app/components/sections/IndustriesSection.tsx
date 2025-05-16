@@ -1,16 +1,14 @@
 "use client";
 
-import React, { useEffect } from "react";
-import Image from "next/image";
 import { INDUSTRIES_SECTION } from "@/utils/data/industriesSection";
-import { Swiper, SwiperSlide } from "swiper/react";
-import Link from "next/link";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Image from "next/image";
+import { useEffect } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 type CardType = {
   title: string;
@@ -58,12 +56,13 @@ const IndustriesSection = () => {
             data-aos-delay="200"
             className="lg:col-span-4"
           >
-            <div className="relative w-full h-[50vh]">
+            <div className="relative w-full h-[50vh] " >
               <Image
                 src={INDUSTRIES_SECTION.image}
                 alt="Services Illustration"
-                fill
-                className="object-contain"
+                width={280}
+                height={140}
+                className="object-contain mt-0  transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group shadow-lg rounded-3xl"
                 priority
               />
             </div>

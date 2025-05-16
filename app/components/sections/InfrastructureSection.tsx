@@ -96,9 +96,9 @@ const InfrastructureSection = () => {
           <Image
             src={INFRASTRUCTURE_SECTION.image}
             alt="Infrastructure"
-            height={500}
-            width={500}
-            className="w-full h-full object-cover rounded-2xl"
+            height={400}
+            width={370}
+            className=" object-cover rounded-2xl"
             priority
           />
         </div>
