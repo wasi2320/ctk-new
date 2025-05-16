@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 interface MarketDifferenceProps {
@@ -53,7 +54,7 @@ const MarketDifference = ({ heading }: MarketDifferenceProps) => {
                 {cards.map((card, index) => (
                 <div key={index} className="space-y-4 mt-12">
                     <div className="flex justify-center">
-                    <img src={card.icon} alt={card.title} width={60} height={60} />
+                    <Image src={card.icon} alt={card.title} width={60} height={60} fill />
                     </div>
                     <h5 className="text-2xl font-Nunito font-semibold md:w-[60%] w-80 m-auto mb-4" style={{lineHeight: "32px;"}}>{card.title}</h5>
                     <p className="text-white-300 font-Nunito text-md md:w-[70%] w-80 m-auto">{card.description}</p>

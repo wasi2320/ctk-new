@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface FinTechEmpoweringEducationProps {
   heading?: string;
 }
@@ -22,7 +24,7 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
         <div className="md:w-[50%] flex flex-col items-center gap-4 md:mt-2">
           <div className="flex items-start gap-4 p-4">
             {/* Image on top-left */}
-            <img
+            <Image
               src="/images/fin-empowering1.png"
               alt="Icon"
               className="mt-1"
@@ -42,7 +44,7 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
           </div>
           <div className="flex items-start gap-4 p-4">
             {/* Image on top-left */}
-            <img
+            <Image
               src="/images/fin-empowering1.png"
               alt="Icon"
               className="mt-1"
@@ -62,7 +64,7 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
           </div>
           <div className="flex items-start gap-4 p-4">
             {/* Image on top-left */}
-            <img
+            <Image
               src="/images/fin-empowering3.png"
               alt="Icon"
               className="mt-1"
@@ -84,7 +86,7 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
         <div className="md:w-[50%] flex flex-col items-center gap-8 md:mt-2">
           <div className="flex items-start gap-4 p-4">
             {/* Image on top-left */}
-            <img
+            <Image
               src="/images/fin-empowering4.png"
               alt="Icon"
               className="mt-1"
@@ -103,7 +105,7 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
           </div>
           <div className="flex items-start gap-4 p-4">
             {/* Image on top-left */}
-            <img
+            <Image
               src="/images/fin-empowering1.png"
               alt="Icon"
               className="mt-1"
@@ -122,7 +124,7 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
           </div>
           <div className="flex items-start gap-4 p-4">
             {/* Image on top-left */}
-            <img
+            <Image
               src="/images/fin-empowering6.png"
               alt="Icon"
               className="mt-1"

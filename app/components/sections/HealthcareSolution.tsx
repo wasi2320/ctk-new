@@ -58,7 +58,7 @@ const HealthcareSolution = ({ heading }: HealthcareSolutionProps) => {
         
             {/* Right Content */}
             <div className="md:w-[40%] flex justify-center items-center">
-                <img src="/Images/healthcare-help.png" alt="Center" className="w-[556px] max-h-[325px] object-contain" />
+                <Image src="/Images/healthcare-help.png" alt="Center" className="w-[556px] max-h-[325px] object-contain" fill />
             </div>
     
         </div>

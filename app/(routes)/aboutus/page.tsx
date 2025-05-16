@@ -252,7 +252,8 @@ function page() {
                     <Image
                       src="/Images/aboutus/Frame4.svg"
                       alt="Healthcare"
-                      fill
+                      width={48}
+                      height={48}
                       className="object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
                     />
                   </div>

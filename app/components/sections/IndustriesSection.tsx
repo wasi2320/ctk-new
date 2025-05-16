@@ -82,10 +82,12 @@ const IndustriesSection = () => {
                 data-aos-delay="400"
                 className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group shadow-lg"
               >
-                <div className="w-12 h-12 mb-4">
-                  <img
+                <div className="w-12 h-12 mb-4  ">
+                  <Image
                     src="/Images/aboutus/Frame4.svg"
                     alt="Healthcare"
+                    width={48}
+                    height={48}
                     className="w-full h-full transition-all duration-300 group-hover:brightness-0 group-hover:invert"
                   />
                 </div>
@@ -102,10 +104,12 @@ const IndustriesSection = () => {
                 className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group shadow-lg"
               >
                 <div className="w-12 h-12 mb-4">
-                  <img
+                  <Image
                     src="/Images/aboutus/Frame3.svg"
                     alt="Professional Services"
-                    className="w-full h-full transition-all duration-300 brightness-1 group-hover:brightness-0 group-hover:invert"
+                    width={48}
+                    height={48}
+                    className="w-full h-full transition-all duration-300 group-hover:brightness-0 group-hover:invert"
                   />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Edtech</h3>
@@ -121,9 +125,11 @@ const IndustriesSection = () => {
                 className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group shadow-lg"
               >
                 <div className="w-12 h-12 mb-4">
-                  <img
+                  <Image
                     src="/Images/aboutus/Frame5.svg"
                     alt="E-commerce"
+                    width={48}
+                    height={48}
                     className="w-full h-full transition-all duration-300 group-hover:brightness-0 group-hover:invert"
                   />
                 </div>
@@ -142,9 +148,11 @@ const IndustriesSection = () => {
                 className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group shadow-lg"
               >
                 <div className="w-12 h-12 mb-4">
-                  <img
+                  <Image
                     src="/Images/aboutus/Frame6.svg"
                     alt="Healthcare"
+                    width={48}
+                    height={48}
                     className="w-full h-full transition-all duration-300 group-hover:brightness-0 group-hover:invert"
                   />
                 </div>
@@ -161,9 +169,11 @@ const IndustriesSection = () => {
                 className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group shadow-lg"
               >
                 <div className="w-12 h-12 mb-4">
-                  <img
+                  <Image
                     src="/Images/aboutus/Frame2.svg"
                     alt="E-commerce"
+                    width={48}
+                    height={48}
                     className="w-full h-full transition-all duration-300 group-hover:brightness-0 group-hover:invert"
                   />
                 </div>
@@ -180,9 +190,11 @@ const IndustriesSection = () => {
                 className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group shadow-lg"
               >
                 <div className="w-12 h-12 mb-4">
-                  <img
+                  <Image
                     src="/Images/aboutus/Frame1.svg"
                     alt="Fintech"
+                    width={48}
+                    height={48}
                     className="w-full h-full transition-all duration-300 group-hover:brightness-0 group-hover:invert"
                   />
                 </div>

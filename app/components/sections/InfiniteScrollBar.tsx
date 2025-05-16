@@ -3,6 +3,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
+import Image from 'next/image';
 
 const InfiniteScrollBar = () => {
   const logos = [
@@ -23,7 +24,7 @@ const InfiniteScrollBar = () => {
       <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 blur-gradient"></div>
 
       {/* Right gradient fade */}
-        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 blur-gradient"></div>
+      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 blur-gradient"></div>
 
       <div className="w-full h-full flex items-center">
         <Swiper
@@ -34,20 +35,21 @@ const InfiniteScrollBar = () => {
           autoplay={{
             delay: 0,
             disableOnInteraction: false,
-
           }}
           speed={2000}
           className="w-full"
           style={{
-            '--swiper-wrapper-transition-timing-function': 'linear',
-          } as any}
+            ['--swiper-wrapper-transition-timing-function' as string]: 'linear',
+          }}
         >
           {allLogos.map((logo, index) => (
             <SwiperSlide key={`${logo.id}-${index}`} className="!w-auto">
               <div className="w-20 h-20 flex items-center justify-center transition-transform duration-300 hover:scale-120">
-                <img
+                <Image
                   src={logo.src}
                   alt={logo.alt}
+                  width={80}
+                  height={80}
                   className="max-w-full max-h-full object-contain"
                 />
               </div>

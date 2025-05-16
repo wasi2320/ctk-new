@@ -50,10 +50,11 @@ const FutureHealthcare = ({ heading }: FutureHealthcareProps) => {
             {/* Upload & Send */}
             <div className="flex items-center justify-between pt-4">
               <label className="flex items-center gap-2 cursor-pointer">
-                <img
+                <Image
                   src="/Images/upload-icon.png"
                   alt="Upload"
                   className="w-4 h-4"
+                  fill
                 />
                 <span className="text-gray-800 font-semibold font-Nunito">
                   Upload file
@@ -101,24 +102,27 @@ const FutureHealthcare = ({ heading }: FutureHealthcareProps) => {
             <h4 className="font-semibold text-2xl mb-4">Follow us at:</h4>
             <div className="flex md:align-start md:justify-start align-center justify-center gap-4">
               <a href="#">
-                <img
+                <Image
                   src="/Images/fb-link.png"
                   alt="Facebook"
                   className="w-12 h-12 object-contain"
+                  fill
                 />
               </a>
               <a href="#">
-                <img
+                <Image
                   src="/Images/insta-link.png"
                   alt="Instagram"
                   className="w-12 h-12 object-contain"
+                  fill
                 />
               </a>
               <a href="#">
-                <img
+                <Image
                   src="/Images/link-link.png"
                   alt="LinkedIn"
                   className="w-12 h-12 object-contain"
+                  fill
                 />
               </a>
             </div>

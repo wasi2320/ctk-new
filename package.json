@@ -28,6 +28,7 @@
     "@locator/babel-jsx": "^0.4.4",
     "@locator/runtime": "^0.4.4",
     "@tailwindcss/postcss": "^4",
+    "@types/aos": "^3.0.7",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

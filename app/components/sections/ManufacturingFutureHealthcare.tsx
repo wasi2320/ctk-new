@@ -25,7 +25,7 @@ const ManufacturingFutureHealthcare = ({ heading }: ManufacturingFutureHealthcar
                 <div>
                     <a href="#your-link" className="inline-block bg-transparent text-Nunito text-dark text-lg md:text-xl font-semibold md:py-2 md:px-6 py-2 px-4 border-3 rounded-2xl transition">
                         Real-World cases in Manufacturing
-                        <img src="/Images/arrow-right.png" alt="Arrow" width={20} height={20} className="inline-block ml-2" />
+                        <Image src="/Images/arrow-right.png" alt="Arrow" width={20} height={20} className="inline-block ml-2" fill />
                     </a>
                 </div>
 

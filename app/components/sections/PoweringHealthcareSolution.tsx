@@ -14,7 +14,7 @@ const PoweringHealthcareSolution = ({ heading }: PoweringHealthcareSolutionProps
 
             {/* Left Content */}
             <div className="md:w-[40%] flex justify-center items-center">
-                <img src="/Images/powering-healthcare.png" alt="Center" className="w-[556px] max-h-[325px] object-contain" />
+                <Image src="/Images/powering-healthcare.png" alt="Center" className="w-[556px] max-h-[325px] object-contain" fill />
             </div>
         
             {/* Right Content */}
@@ -29,27 +29,27 @@ const PoweringHealthcareSolution = ({ heading }: PoweringHealthcareSolutionProps
                 <ul className="mt-10 space-y-4">
                     {/* List Item 1 */}
                     <li className="flex items-center">
-                        <img src="/Images/circle-icon.png" alt="FinTech Icon" className="w-3 h-3 mr-3" />
+                        <Image src="/Images/circle-icon.png" alt="FinTech Icon" className="w-3 h-3 mr-3" fill />
                         <span className="text-lg font-semibold font-Nunito">Customized strategies tailored to business objectives</span>
                     </li>
 
                     <li className="flex items-center">
-                        <img src="/Images/circle-icon.png" alt="FinTech Icon" className="w-3 h-3 mr-3" />
+                        <Image src="/Images/circle-icon.png" alt="FinTech Icon" className="w-3 h-3 mr-3" fill />
                         <span className="text-lg font-semibold font-Nunito">Robust cybersecurity for sensitive operations and data</span>
                     </li>
 
                     <li className="flex items-center">
-                        <img src="/Images/circle-icon.png" alt="FinTech Icon" className="w-3 h-3 mr-3" />
+                        <Image src="/Images/circle-icon.png" alt="FinTech Icon" className="w-3 h-3 mr-3" fill />
                         <span className="text-lg font-semibold font-Nunito">Reduced overheads through automation and outsourcing</span>
                     </li>
 
                     <li className="flex items-center">
-                        <img src="/Images/circle-icon.png" alt="FinTech Icon" className="w-3 h-3 mr-3" />
+                        <Image src="/Images/circle-icon.png" alt="FinTech Icon" className="w-3 h-3 mr-3" fill />
                         <span className="text-lg font-semibold font-Nunito">Scalable solutions to support growth and innovation</span>
                     </li>
 
                     <li className="flex items-center">
-                        <img src="/Images/circle-icon.png" alt="FinTech Icon" className="w-3 h-3 mr-3" />
+                        <Image src="/Images/circle-icon.png" alt="FinTech Icon" className="w-3 h-3 mr-3" fill />
                         <span className="text-lg font-semibold font-Nunito">Enhanced experiences through digital-first engagement</span>
                     </li>
         

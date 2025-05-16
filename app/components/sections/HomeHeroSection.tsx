@@ -6,6 +6,7 @@ import ClutchWidget from "../ClutchWidget";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Image from "next/image";
 
 const HomeHeroSection = () => {
   useEffect(() => {
@@ -49,10 +50,12 @@ const HomeHeroSection = () => {
                 target="_blank"
                 style={{ cursor: "pointer" }}
               >
-                <img
+                <Image
                   src={HOME_HERO_SECTION.badge}
                   alt="aws"
                   className="h-[100px] w-auto object-contain"
+                  height={100}
+                  width={100}
                 />
               </Link>
             </div>

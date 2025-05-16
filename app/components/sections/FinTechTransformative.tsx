@@ -22,7 +22,7 @@ const FinTechTransformative = () => {
           <ul className="space-y-4">
             {/* List Item 1 */}
             <li className="flex items-center">
-              <img
+              <Image
                 src="/Images/circle-icon.png"
                 alt="FinTech Icon"
                 className="w-3 h-3 mr-3"
@@ -33,7 +33,7 @@ const FinTechTransformative = () => {
             </li>
 
             <li className="flex items-center">
-              <img
+              <Image
                 src="/Images/circle-icon.png"
                 alt="FinTech Icon"
                 className="w-3 h-3 mr-3"
@@ -44,7 +44,7 @@ const FinTechTransformative = () => {
             </li>
 
             <li className="flex items-center">
-              <img
+                <Image
                 src="/Images/circle-icon.png"
                 alt="FinTech Icon"
                 className="w-3 h-3 mr-3"
@@ -55,7 +55,7 @@ const FinTechTransformative = () => {
             </li>
 
             <li className="flex items-center">
-              <img
+              <Image
                 src="/Images/circle-icon.png"
                 alt="FinTech Icon"
                 className="w-3 h-3 mr-3"
@@ -66,7 +66,7 @@ const FinTechTransformative = () => {
             </li>
 
             <li className="flex items-center">
-              <img
+              <Image
                 src="/Images/circle-icon.png"
                 alt="FinTech Icon"
                 className="w-3 h-3 mr-3"

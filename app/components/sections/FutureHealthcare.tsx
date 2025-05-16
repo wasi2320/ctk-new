@@ -15,7 +15,7 @@ const FutureHealthcare = ({ heading }: FutureHealthcareProps) => {
                 <h3 className="md:text-4xl text-2xl text-Nunito mb-3">
                     Empowering the Future of Healthcare
                 </h3>
-                <img src="/Images/future-healthcare.png" alt="Center" />
+                <Image src="/Images/future-healthcare.png" alt="Center" fill />
                 <p className="md:text-2xl text-lg nunito-semiBold md:w-9/12 mx-auto mt-8 text-center font-semibold">
                     Deliver impactful healthcare experiences with our innovative solutions and dedicated support, helping you shape the next generation of patient care.
                 </p>
@@ -34,7 +34,7 @@ const FutureHealthcare = ({ heading }: FutureHealthcareProps) => {
                 <div>
                     <a href="#your-link" className="inline-block bg-transparent text-Nunito text-dark text-lg md:text-xl font-semibold md:py-2 md:px-6 py-2 px-4 border-3 rounded-2xl transition">
                         Real-World cases in HealthCare
-                        <img src="/Images/arrow-right.png" alt="Arrow" width={20} height={20} className="inline-block ml-2" />
+                        <Image src="/Images/arrow-right.png" alt="Arrow" width={20} height={20} className="inline-block ml-2" />
                     </a>
                 </div>
 
