@@ -29,14 +29,14 @@ export default function Home() {
 
   return (
     <div style={{ width: "100%" }}>
-      {isLoading && <Loader onLoadingComplete={() => setIsLoading(false)} />}
+      {/* {isLoading && <Loader onLoadingComplete={() => setIsLoading(false)} />} */}
       <div
-        className={`transition-all duration-700 ease-in-out ${isLoading ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
-          }`}
-        style={{
-          visibility: isContentReady ? 'visible' : 'hidden',
-          transform: isLoading ? 'translateY(20px)' : 'translateY(0)'
-        }}
+        // className={`transition-all duration-700 ease-in-out ${isLoading ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
+        //   }`}
+        // style={{
+        //   visibility: isContentReady ? 'visible' : 'hidden',
+        //   transform: isLoading ? 'translateY(20px)' : 'translateY(0)'
+        // }}
       >
         <HomeHeroSection />
         <div style={{ width: "100%", position: "relative" }}>
