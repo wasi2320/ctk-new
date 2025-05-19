@@ -71,7 +71,7 @@ const Loader = ({ onLoadingComplete }: { onLoadingComplete: () => void }) => {
 
                 <h2
                     data-aos="fade-up"
-                    data-aos-duration="2000"
+                    data-aos-duration="1000"
                     data-aos-delay="200"
                     className={`text-white text-xlg font-extrabold transition-all duration-1000 ${isExiting ? 'opacity-0' : 'opacity-100'
                         }`}
