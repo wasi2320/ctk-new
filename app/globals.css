@@ -171,3 +171,6 @@ h3 {
 .swiper-pagination-bullet-active {
   background-color: #000209 !important; /* Active dot color */
 }
+.clutch-widget{
+  width: 100% !important;
+}

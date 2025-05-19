@@ -12,6 +12,7 @@ const ClutchWidget = () => {
         <div
           className="clutch-widget"
           data-url="https://widget.clutch.co/"
+          data-width="100%"
           data-widget-type="12"
           data-height="375"
           data-nofollow="true"
