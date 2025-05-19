@@ -25,9 +25,9 @@ const TechStackSection = () => {
       </div>
       <div className="md:w-[42%] overflow-hidden pb-10 relative">
         {/* Left blur gradient */}
-        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 blur-gradient"></div>
+        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 "></div>
         {/* Right blur gradient */}
-        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 blur-gradient"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 "></div>
         <div className="flex flex-nowrap animate-scroll">
           {/* First set - original content */}
           <div className="flex flex-nowrap">
