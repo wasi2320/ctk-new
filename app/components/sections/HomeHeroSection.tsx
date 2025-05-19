@@ -30,7 +30,7 @@ const HomeHeroSection = () => {
             </h3>
             <div className="flex items-center gap-4">
               <Link href={HOME_HERO_SECTION.button.link}>
-                <button className="rounded-full px-6 py-2.5 text-sm md:text-base bg-black text-white cursor-pointer hover:bg-white hover:text-black border border-transparent hover:border-black transition-all duration-300 h-[40px] flex items-center">
+                <button className=" w-[9rem] rounded-full px-6 py-2.5 text-sm md:text-base bg-black text-white cursor-pointer hover:bg-white hover:text-black border border-transparent hover:border-black transition-all duration-300 h-[40px] flex items-center">
                   {HOME_HERO_SECTION.button.text}
                 </button>
               </Link>
