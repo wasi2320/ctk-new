@@ -48,8 +48,8 @@ const HomeHeroSection = () => {
                   width={100}
                 />
               </Link>
-            </div>
             <ClutchHeroSection />
+            </div>
           </div>
         </div>
         <p
