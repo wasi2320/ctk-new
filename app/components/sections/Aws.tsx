@@ -1,7 +1,7 @@
 "use client";
 import Script from "next/script";
 
-const ClutchWidget = () => {
+const ClutchHeroSection = () => {
   return (
     <>
       <Script
@@ -12,14 +12,11 @@ const ClutchWidget = () => {
         <div
           className="clutch-widget"
           data-url="https://widget.clutch.co/"
-          data-widget-type="12"
-          data-height="375"
+          data-widget-type="14"
+          data-height="50"
           data-nofollow="true"
           data-expandifr="true"
           data-scale="100"
-          data-primary-color="#082105"
-          data-secondary-color="#082105"
-          data-reviews="375170,373193,371564,365725,364927,362840"
           data-clutchcompany-id="2466293"
         />
       </div>
@@ -27,4 +24,4 @@ const ClutchWidget = () => {
   );
 };
 
-export default ClutchWidget;
+export default ClutchHeroSection;
