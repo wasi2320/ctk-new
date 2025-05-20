@@ -101,7 +101,7 @@ export default function StrengtheningAwsSecurityPage() {
         title="Strengthening AWS Security to Prevent Breaches"
         subtitle="Services provided on this Project"
         services={services}
-        arcSrc="/services/aws-architecture-diagram.png"
+        arcSrc="/services/strength_aws.png"
         alt="AWS Security Architecture Diagram"
       />
       <CaseStudyProblemStatement
@@ -110,7 +110,7 @@ export default function StrengtheningAwsSecurityPage() {
       />
       <CaseStudySolution
         solutions={solutionComponents}
-        illustration="/services/aws-solution-illustration.png"
+        illustration="/services/strength_aws2.png"
         illustrationAlt="Solution Illustration"
         description="To improve AWS security, the solution focused on network security, access management, pipeline security, monitoring, and data encryption."
       />

@@ -1,14 +1,27 @@
 "use client";
-import Script from "next/script";
+import { useEffect, useState } from "react";
+import ClutchScriptLoader from "./ClutchScriptLoader";
 
 const ClutchWidget = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Add a small delay to ensure the widget has time to initialize
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
-      <Script
-        src="https://widget.clutch.co/static/js/widget.js"
-        strategy="afterInteractive"
-      />
-      <div className="w-full align-center justify-center flex overflow-hidden">
+      <ClutchScriptLoader />
+      <div
+        className={`w-full align-center justify-center flex overflow-hidden transition-opacity duration-500 ${
+          isVisible ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <div
           className="clutch-widget"
           data-url="https://widget.clutch.co/"

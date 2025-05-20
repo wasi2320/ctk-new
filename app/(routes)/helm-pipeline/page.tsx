@@ -52,25 +52,25 @@ const metrics = [
     category: "Release Cycle",
     description: "50% faster release cycles",
     bgColor: "bg-[#1a2e22]",
-    width: "w-[75%]",
+    width: "w-[85%]",
   },
   {
     category: "Manual Effort",
     description: "80% reduction in manual effort",
     bgColor: "bg-[#1a3b2a]",
-    width: "w-[80%]",
+    width: "w-[90%]",
   },
   {
     category: "Deployment",
     description: "95% deployment success rate",
     bgColor: "bg-[#3a6a50]",
-    width: "w-[95%]",
+    width: "w-[80%]",
   },
   {
     category: "Issue Resolution",
     description: "Faster issue resolution with real-time alerts",
     bgColor: "bg-[#4d7a65]",
-    width: "w-[90%]",
+    width: "w-[95%]",
   },
 ];
 
@@ -88,7 +88,7 @@ export default function HelmPipelinePage() {
         title="CI/CD Pipeline with ArgoCD Helm on EKS"
         subtitle="Services provided on this Project"
         services={services}
-        arcSrc="/services/ci_cd_eks2.png"
+        arcSrc="/services/ci_cd_eks.png"
         alt="CI/CD EKS Architecture Diagram"
       />
       <CaseStudyProblemStatement
@@ -97,7 +97,7 @@ export default function HelmPipelinePage() {
       />
       <CaseStudySolution
         solutions={solutionComponents}
-        illustration="/services/ci_cd_eks.png"
+        illustration="/services/ci_cd_eks2.png"
         illustrationAlt="Solution Illustration"
         description="This setup ensures real-time notifications which keep teams informed, ensuring consistent and reliable delivery."
       />

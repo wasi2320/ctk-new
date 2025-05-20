@@ -27,29 +27,29 @@ const solutionComponents = [
     description: "for scalability",
   },
   {
-    title: "Security is handled with AWS WAF and Secret Manager",
-    description: "",
+    title: "AWS WAF and Secret Manager",
+    description: "used for security purposes.",
   },
   {
-    title: "Content moderation uses AWS Recognition, Textract, and Comprehend",
-    description: "",
+    title: "Content moderation",
+    description: " uses AWS Recognition, Textract, and Comprehend.",
   },
   {
-    title: "Media conversion is done with AWS MediaConvert and Lambda",
-    description: "",
+    title: "AWS MediaConvert and Lambda",
+    description: "for media conversion",
   },
   {
-    title:
-      "CI/CD is automated via AWS CodePipeline, CodeBuild, or GitHub actions",
-    description: "",
+    title: "CI/CD",
+    description:
+      " is automated via AWS CodePipeline, CodeBuild, or GitHub actions",
   },
   {
     title: "System monitoring implemented using AWS CloudWatch, Grafana",
     description: "",
   },
   {
-    title: "Prometheus for performance tracking.",
-    description: "",
+    title: "Prometheus ",
+    description: "for performance tracking.",
   },
 ];
 const techStack = [
@@ -103,7 +103,7 @@ export default function AwsDeploymentSecurityPage() {
         title="AWS Deployment & Security"
         subtitle="Services provided on this Project"
         services={services}
-        arcSrc="/services/awsDeployment2.png"
+        arcSrc="/services/awsDeployment.png"
         alt="AWS Architecture Diagram"
       />
       <CaseStudyProblemStatement
@@ -112,7 +112,7 @@ export default function AwsDeploymentSecurityPage() {
       />
       <CaseStudySolution
         solutions={solutionComponents}
-        illustration="/services/aws_mon2.png"
+        illustration="/services/awsDeployment2.png"
         illustrationAlt="Solution Illustration"
         description=""
       />

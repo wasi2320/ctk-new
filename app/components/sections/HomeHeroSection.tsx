@@ -2,7 +2,6 @@
 import { HOME_HERO_SECTION } from "@/utils/data/homeHeroSection";
 import Link from "next/link";
 import InfiniteScrollBar from "./InfiniteScrollBar";
-import ClutchWidget from "../ClutchWidget";
 import Image from "next/image";
 import ClutchHeroSection from "./Aws";
 
@@ -11,7 +10,11 @@ const HomeHeroSection = () => {
     // 90vhusama
     <section className="md:px-28 px-4 h-[80vh] flex flex-col-reverse md:flex-row items-center justify-between  py-10 md:py-0">
       <div className="md:w-1/2 w-full space-y-6 md:space-y-8">
-        <div className="space-y-4 md:space-y-6" data-aos="fade-right" data-aos-delay="100">
+        <div
+          className="space-y-4 md:space-y-6"
+          data-aos="fade-right"
+          data-aos-delay="100"
+        >
           <h1 className="md:text-[60px] text-[32px] font-bold leading-tight md:leading-[1.1] text-center md:text-start">
             {HOME_HERO_SECTION.heading}
           </h1>
@@ -36,7 +39,9 @@ const HomeHeroSection = () => {
               </Link>
               <Link
                 className="transition-transform duration-300 hover:scale-105 ml-5"
-                href={"https://partners.amazonaws.com/partners/001aq000008YFg0AAG/"}
+                href={
+                  "https://partners.amazonaws.com/partners/001aq000008YFg0AAG/"
+                }
                 target="_blank"
                 style={{ cursor: "pointer" }}
               >
@@ -48,7 +53,7 @@ const HomeHeroSection = () => {
                   width={100}
                 />
               </Link>
-            <ClutchHeroSection />
+              <ClutchHeroSection />
             </div>
           </div>
         </div>
@@ -59,11 +64,7 @@ const HomeHeroSection = () => {
         >
           {HOME_HERO_SECTION.text}
         </p>
-        <div
-          className="mt-6 md:mt-8"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
+        <div className="mt-6 md:mt-8" data-aos="fade-up" data-aos-delay="100">
           <InfiniteScrollBar />
         </div>
       </div>
@@ -72,14 +73,7 @@ const HomeHeroSection = () => {
         data-aos="fade-left"
         data-aos-delay="100"
       >
-        <video
-          width="100%"
-          height="auto"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
+        <video width="100%" height="auto" autoPlay loop muted playsInline>
           <source
             src="https://codetokloudbucketccests.s3.us-east-1.amazonaws.com/websiteSquare.mp4"
             type="video/mp4"

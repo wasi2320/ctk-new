@@ -50,19 +50,19 @@ const metrics = [
     description:
       "High availability through Application Load Balancer and Route 53",
     bgColor: "bg-[#1a3b2a]",
-    width: "w-[95%]",
+    width: "w-[85%]",
   },
   {
     category: "Security",
     description: "Strong security with Cognito, WAF, and KMS",
     bgColor: "bg-[#3a6a50]",
-    width: "w-[85%]",
+    width: "w-[55%]",
   },
   {
     category: "Errors",
     description: "CI/CD pipelines reduce errors",
     bgColor: "bg-[#4d7a65]",
-    width: "w-[80%]",
+    width: "w-[40%]",
   },
   {
     category: "Performance",
@@ -87,6 +87,8 @@ const metrics = [
 const lesson = {
   firstLesson:
     "Key lessons included the importance of planning and testing before migration to minimize downtime, ensuring system reliability through monitoring and security measures, and leveraging AWS automation features like auto-scaling. Continuous collaboration with stakeholders helped ensure smooth integration and adjustments throughout the project.",
+  secondLesson:
+    "A TCO analysis compared the cost of maintaining existing infrastructure with migrating to AWS. It accounted for setup, migration, and operational costs, including AWS services like EC2, RDS, and ELBs. The analysis showed that AWS offers reduced infrastructure costs, better scalability, and enhanced security, making it a cost-effective solution.",
 };
 
 export default function AwsMonolithicAppArchitecturePage() {
@@ -96,7 +98,7 @@ export default function AwsMonolithicAppArchitecturePage() {
         title="AWS Monolithic App Architecture"
         subtitle="Services provided on this Project"
         services={services}
-        arcSrc="/services/aws-monolithic-architecture-diagram.png"
+        arcSrc="/services/aws_mono.png"
         alt="AWS Architecture Diagram"
       />
       <CaseStudyProblemStatement
@@ -105,7 +107,7 @@ export default function AwsMonolithicAppArchitecturePage() {
       />
       <CaseStudySolution
         solutions={solutionComponents}
-        illustration="/services/aws-monolithic-solution-illustration.png"
+        illustration="/services/aws_mono2.png"
         illustrationAlt="Solution Illustration"
         description="This setup ensures scalability, high availability, and effective resource management."
       />

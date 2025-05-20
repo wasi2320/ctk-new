@@ -79,6 +79,8 @@ const metrics = [
 const lesson = {
   firstLesson:
     "Key takeaways included the importance of scalability with auto-scaling and Kubernetes, the value of automation in CI/CD workflows, the need for proactive monitoring, and the benefits of cloud-native security. Cost optimization required ongoing resource management to prevent overprovisioning.",
+  secondLesson:
+    "A comparison between VPS and AWS revealed significant savings and operational benefits. AWS reduced manual processes, improved security, and provided scalable infrastructure. Pay-as-you-go pricing minimized upfront costs, while automation reduced labor expenses. AWS's built-in services outperformed the client's existing VPS setup in cost, performance, and security.",
 };
 
 export default function ScalableSecureAwsPage() {
@@ -88,7 +90,7 @@ export default function ScalableSecureAwsPage() {
         title="Scalable and Secure AWS Setup"
         subtitle="Services provided on this Project"
         services={services}
-        arcSrc="/services/aws-architecture-diagram.png"
+        arcSrc="/services/strength_aws.png"
         alt="AWS Architecture Diagram"
       />
       <CaseStudyProblemStatement
@@ -103,7 +105,10 @@ export default function ScalableSecureAwsPage() {
       />
       <CaseStudyTechStack techs={techStack} />
       <MetricsDisplay metrics={metrics} />
-      <CaseStudyLessons lessons={lesson.firstLesson} />
+      <CaseStudyLessons
+        lessons={lesson.firstLesson}
+        secondLesson={lesson.secondLesson}
+      />
     </CaseStudyLayout>
   );
 }

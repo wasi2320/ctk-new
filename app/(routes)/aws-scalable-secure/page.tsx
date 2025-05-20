@@ -95,13 +95,12 @@ export default function VoipAiCallProtectionPage() {
       />
       <CaseStudySolution
         solutions={solutionComponents}
-        illustration="/services/GoAgalia2.png?height=300&width=300"
+        illustration="/services/GoAgalia2.png"
         illustrationAlt="Solution Illustration"
         description="To improve AWS security, the solution focused on network security, access management, pipeline security, monitoring, and data encryption."
       />
       <CaseStudyTechStack techs={techStack} />
       <MetricsDisplay metrics={metrics} />
-      {/* <CaseStudyMetrics metrics={successMetrics} /> */}
       <CaseStudyLessons lessons={lesson.firstLesson} />
     </CaseStudyLayout>
   );

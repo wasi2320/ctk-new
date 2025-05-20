@@ -8,8 +8,12 @@ const EnsureSection = () => {
         {ENSURE_SECTION.heading}
       </h2>
       <div
-        style={{ overflow: "scroll" }}
-        className="flex flex-col md:flex-row justify-between items-center md:mt-20 gap-6"
+        style={{
+          overflow: "scroll",
+          msOverflowStyle: "none",
+          scrollbarWidth: "none",
+        }}
+        className="flex flex-col md:flex-row justify-between items-center md:mt-20 gap-6 [&::-webkit-scrollbar]:hidden"
       >
         {ENSURE_SECTION.ensureCard.map((card, index) => (
           <div

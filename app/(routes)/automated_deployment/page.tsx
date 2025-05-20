@@ -73,7 +73,7 @@ export default function AutomatedDeploymentPage() {
         title="Automated Deployment of Financial App"
         subtitle="Services provided on this Project"
         services={services}
-        arcSrc="/services/aws-architecture-diagram.png"
+        arcSrc="/services/automated_aws.png"
         alt="AWS Architecture Diagram"
       />
       <CaseStudyProblemStatement
@@ -82,7 +82,7 @@ export default function AutomatedDeploymentPage() {
       />
       <CaseStudySolution
         solutions={solutionComponents}
-        illustration="/services/aws-solution-illustration.png"
+        illustration="/services/automated_aws2.png"
         illustrationAlt="Solution Illustration"
         description="This approach minimizes downtime, ensures secure storage, and offers cost-effective scalability with continuous zero-downtime updates."
       />
