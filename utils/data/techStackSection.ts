@@ -7,7 +7,7 @@ export const TECH_STACK_SECTION = {
     link: "/",
   },
   techImagesCol1: [
-    "/Images/PNGSS/promithis.png",
+    "/Images/PNGSS/prometheus.png",
     "/Images/PNGSS/97_Docker_logo_logos-512.webp",
     "/Images/PNGSS/After-Effects-Logo.png",
   ],
