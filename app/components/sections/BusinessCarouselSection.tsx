@@ -7,7 +7,6 @@ import Image from "next/image";
 import { BUSINESS_CAROUSEL_SECTION } from "@/utils/data/businessCarouselSection";
 import ClutchWidget from "../ClutchWidget";
 import Head from "next/head";
-import Script from "next/script";
 
 const BusinessCarouselSection = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -78,10 +77,6 @@ const BusinessCarouselSection = () => {
 
   return (
     <section className=" w-full">
-      <Script
-        src="https://widget.clutch.co/static/js/widget.js"
-        strategy="afterInteractive"
-      />
       <section className=" relative bg-[url('/Images/Differentiate_Bg.png')] bg-cover bg-center bg-no-repeat py-28 px-4 md:px-28 flex flex-col justify-center">
         <h2 className="text-4xl md:text-6xl text-center mb-12 text-white">
           {BUSINESS_CAROUSEL_SECTION.heading}

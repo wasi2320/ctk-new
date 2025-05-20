@@ -23,7 +23,7 @@ const TechStackSection = () => {
           </button>
         </Link>
       </div>
-    <div className="md:w-[42%] overflow-hidden pb-10 relative">
+      <div className="md:w-[42%] overflow-hidden pb-10 relative">
         {/* Left blur gradient */}
         <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 "></div>
         {/* Right blur gradient */}
@@ -35,7 +35,7 @@ const TechStackSection = () => {
               {TECH_STACK_SECTION.techImagesCol1.map((img, index) => (
                 <div
                   key={index}
-                  className="p-4 rounded-lg right-bottom-shadow bg-[linear-gradient(to_right,#ffffff,#D9D9D933)]"
+                  className="p-4 rounded-lg right-bottom-shadow bg-[linear-gradient(to_right,#ffffff,#D9D9D933)] tech-icon"
                 >
                   <Image
                     style={{
@@ -54,7 +54,7 @@ const TechStackSection = () => {
               {TECH_STACK_SECTION.techImagesCol2.map((img, index) => (
                 <div
                   key={index}
-                  className="p-4 rounded-lg left-right-bottom-shadow bg-[#EFEEEE]/40"
+                  className="p-4 rounded-lg left-right-bottom-shadow bg-[#EFEEEE]/40 tech-icon"
                 >
                   <Image
                     style={{
@@ -73,7 +73,7 @@ const TechStackSection = () => {
               {TECH_STACK_SECTION.techImagesCol3.map((img, index) => (
                 <div
                   key={index}
-                  className="p-4 rounded-lg left-right-bottom-shadow bg-[#EFEEEE]/40"
+                  className="p-4 rounded-lg left-right-bottom-shadow bg-[#EFEEEE]/40 tech-icon"
                 >
                   <Image
                     style={{
@@ -92,7 +92,7 @@ const TechStackSection = () => {
               {TECH_STACK_SECTION.techImagesCol4.map((img, index) => (
                 <div
                   key={index}
-                  className="p-4 rounded-lg left-bottom-shadow bg-[linear-gradient(to_right,#D9D9D933,#FFFFFF)]"
+                  className="p-4 rounded-lg left-bottom-shadow bg-[linear-gradient(to_right,#D9D9D933,#FFFFFF)] tech-icon"
                 >
                   <Image
                     style={{
@@ -115,7 +115,7 @@ const TechStackSection = () => {
               {TECH_STACK_SECTION.techImagesCol1.map((img, index) => (
                 <div
                   key={`duplicate-${index}`}
-                  className="p-4 rounded-lg right-bottom-shadow bg-[linear-gradient(to_right,#ffffff,#D9D9D933)]"
+                  className="p-4 rounded-lg right-bottom-shadow bg-[linear-gradient(to_right,#ffffff,#D9D9D933)] tech-icon"
                 >
                   <Image
                     style={{
@@ -134,7 +134,7 @@ const TechStackSection = () => {
               {TECH_STACK_SECTION.techImagesCol2.map((img, index) => (
                 <div
                   key={`duplicate-${index}`}
-                  className="p-4 rounded-lg left-right-bottom-shadow bg-[#EFEEEE]/40"
+                  className="p-4 rounded-lg left-right-bottom-shadow bg-[#EFEEEE]/40 tech-icon"
                 >
                   <Image
                     style={{
@@ -153,7 +153,7 @@ const TechStackSection = () => {
               {TECH_STACK_SECTION.techImagesCol3.map((img, index) => (
                 <div
                   key={`duplicate-${index}`}
-                  className="p-4 rounded-lg left-right-bottom-shadow bg-[#EFEEEE]/40"
+                  className="p-4 rounded-lg left-right-bottom-shadow bg-[#EFEEEE]/40 tech-icon"
                 >
                   <Image
                     style={{
@@ -172,7 +172,7 @@ const TechStackSection = () => {
               {TECH_STACK_SECTION.techImagesCol4.map((img, index) => (
                 <div
                   key={`duplicate-${index}`}
-                  className="p-4 rounded-lg left-bottom-shadow bg-[linear-gradient(to_right,#D9D9D933,#FFFFFF)]"
+                  className="p-4 rounded-lg left-bottom-shadow bg-[linear-gradient(to_right,#D9D9D933,#FFFFFF)] tech-icon"
                 >
                   <Image
                     style={{
@@ -199,6 +199,13 @@ const TechStackSection = () => {
             transform: translateX(-50%);
           }
         }
+
+        @keyframes shake {
+          0%, 100% { transform: rotate(0deg); }
+          25% { transform: rotate(-5deg); }
+          75% { transform: rotate(5deg); }
+        }
+
         .animate-scroll {
           animation: scroll 30s linear infinite;
           width: max-content;
@@ -213,6 +220,11 @@ const TechStackSection = () => {
         .blur-gradient {
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
+        }
+
+        .tech-icon:hover {
+          animation: shake 0.5s ease-in-out;
+          cursor: pointer;
         }
       `}</style>
     </section>
