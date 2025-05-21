@@ -54,7 +54,8 @@ const FutureHealthcare = ({ heading }: FutureHealthcareProps) => {
                   src="/Images/upload-icon.png"
                   alt="Upload"
                   className="w-4 h-4"
-                  fill
+                  width={50}
+                  height={50}
                 />
                 <span className="text-gray-800 font-semibold font-Nunito">
                   Upload file
@@ -106,7 +107,8 @@ const FutureHealthcare = ({ heading }: FutureHealthcareProps) => {
                   src="/Images/fb-link.png"
                   alt="Facebook"
                   className="w-12 h-12 object-contain"
-                  fill
+                  width={50}
+                  height={50}
                 />
               </a>
               <a href="#">
@@ -114,7 +116,8 @@ const FutureHealthcare = ({ heading }: FutureHealthcareProps) => {
                   src="/Images/insta-link.png"
                   alt="Instagram"
                   className="w-12 h-12 object-contain"
-                  fill
+                  width={50}
+                  height={50}
                 />
               </a>
               <a href="#">
@@ -122,7 +125,8 @@ const FutureHealthcare = ({ heading }: FutureHealthcareProps) => {
                   src="/Images/link-link.png"
                   alt="LinkedIn"
                   className="w-12 h-12 object-contain"
-                  fill
+                  width={50}
+                  height={50}
                 />
               </a>
             </div>

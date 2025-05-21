@@ -26,6 +26,7 @@ const FinTechTransformative = () => {
                 src="/Images/circle-icon.png"
                 alt="FinTech Icon"
                 className="w-3 h-3 mr-3"
+                fill
               />
               <span className="text-lg font-semibold font-Nunito">
                 Faster and more seamless transactions
@@ -44,7 +45,7 @@ const FinTechTransformative = () => {
             </li>
 
             <li className="flex items-center">
-                <Image
+              <Image
                 src="/Images/circle-icon.png"
                 alt="FinTech Icon"
                 className="w-3 h-3 mr-3"

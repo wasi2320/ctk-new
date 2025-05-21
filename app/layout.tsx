@@ -4,9 +4,6 @@ import "./globals.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import ScrollToTop from "./components/ScrollToTop";
-import ClutchScript from "./components/ClutchScript";
-import Script from "next/script";
-import Head from "next/head";
 
 // Add LocatorJS runtime setup
 const setupLocator = async () => {
@@ -57,24 +54,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <Script
-          src="https://widget.clutch.co/static/js/widget.js"
-          strategy="beforeInteractive"
-          suppressHydrationWarning={true}
-          suppressContentEditableWarning={true}
-        />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning={true}
       >
-        <Script
-          src="https://widget.clutch.co/static/js/widget.js"
-          strategy="beforeInteractive"
-          suppressHydrationWarning={true}
-          suppressContentEditableWarning={true}
-        />
         <Header />
         <ScrollToTop />
         {children}

@@ -18,8 +18,9 @@ const EcommerceSolution = ({}: EcommerceSolutionProps) => {
           <Image
             src="/Images/Ecommerce_Solution.png"
             alt="Ecommerce Solution"
-            className="w-full h-auto mb-4"
-            fill
+            // className="w-full h-auto mb-4"
+            width={500}
+            height={500}
           />
         </div>
 

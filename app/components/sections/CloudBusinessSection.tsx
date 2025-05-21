@@ -8,7 +8,7 @@ const CloudBusinessSection = () => {
         {CLOUD_BUSINESS_SECTION.heading}
       </h2>
 
-      <div className="grid md:grid-cols-4 grid-cols-2 mt-16 md:gap-10 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-16 md:gap-10 gap-4">
         {CLOUD_BUSINESS_SECTION.cards.map((card, index) => (
           <div
             key={index}
