@@ -1,12 +1,10 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import { BUSINESS_CAROUSEL_SECTION } from "@/utils/data/businessCarouselSection";
 import ClutchWidget from "../ClutchWidget";
-import Head from "next/head";
 
 const BusinessCarouselSection = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -34,13 +32,13 @@ const BusinessCarouselSection = () => {
   const [selectedIndex, setSelectedIndex] = useState(isMobile ? 0 : 1);
   const [, setSlides] = useState<number[]>([]);
 
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
+  // const scrollPrev = useCallback(() => {
+  //   if (emblaApi) emblaApi.scrollPrev();
+  // }, [emblaApi]);
 
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
+  // const scrollNext = useCallback(() => {
+  //   if (emblaApi) emblaApi.scrollNext();
+  // }, [emblaApi]);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -62,18 +60,18 @@ const BusinessCarouselSection = () => {
     }
   }, [emblaApi, onSelect, isMobile]);
 
-  const renderStars = (starImages: string[]) => {
-    return starImages.map((star, index) => (
-      <Image
-        key={index}
-        src={star}
-        alt="star"
-        width={20}
-        height={20}
-        className="w-5 h-5"
-      />
-    ));
-  };
+  // const renderStars = (starImages: string[]) => {
+  //   return starImages.map((star, index) => (
+  //     <Image
+  //       key={index}
+  //       src={star}
+  //       alt="star"
+  //       width={20}
+  //       height={20}
+  //       className="w-5 h-5"
+  //     />
+  //   ));
+  // };
 
   return (
     <section className=" w-full">

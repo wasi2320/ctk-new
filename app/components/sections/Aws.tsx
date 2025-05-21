@@ -1,28 +1,46 @@
 "use client";
+import dynamic from "next/dynamic";
+import Script from "next/script";
 import { useEffect, useState } from "react";
-import ClutchScriptLoader from "../ClutchScriptLoader";
 
-const ClutchHeroSection = () => {
-  const [isVisible, setIsVisible] = useState(false);
+// Declare the ClutchWidget type
+declare global {
+  interface Window {
+    ClutchWidget?: unknown;
+  }
+}
 
-  useEffect(() => {
-    // Add a small delay to ensure the widget has time to initialize
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 1000);
+const ClutchHero = () => {
+  // const [isClient, setIsClient] = useState(true);
 
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   setIsClient(true);
+  // }, [!!window?.location?.href]);
+
+  // if (!isClient) {
+  //   return null; // Return null on server-side
+  // }
 
   return (
     <>
-      <ClutchScriptLoader />
+      <Script
+        src="https://widget.clutch.co/static/js/widget.js"
+        strategy="beforeInteractive"
+        suppressHydrationWarning={true}
+        suppressContentEditableWarning={true}
+        onLoad={() => {
+          console.log("Clutch widget script loaded successfully");
+        }}
+        onError={(e) => {
+          console.log("Error loading Clutch widget script:", e);
+        }}
+      />
       <div
-        className={`w-full align-center justify-center flex overflow-hidden transition-opacity duration-500 ${
-          isVisible ? "opacity-100" : "opacity-0"
-        }`}
+        className={`w-full align-center justify-center flex overflow-hidden transition-opacity duration-500 ${"opacity-100"}`}
       >
         <div
+          suppressContentEditableWarning={true}
+          suppressHydrationWarning={true}
           className="clutch-widget"
           data-url="https://widget.clutch.co/"
           data-widget-type="14"
@@ -37,4 +55,7 @@ const ClutchHeroSection = () => {
   );
 };
 
+const ClutchHeroSection = dynamic(() => Promise.resolve(ClutchHero), {
+  ssr: false,
+});
 export default ClutchHeroSection;

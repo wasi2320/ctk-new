@@ -11,6 +11,7 @@ import BusinessCarouselSection from "./components/sections/BusinessCarouselSecti
 import Loader from "./components/Loader";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Script from "next/script";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
