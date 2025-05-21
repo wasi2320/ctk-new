@@ -55,18 +55,15 @@ const ClutchWidgetContent = () => {
 
   return (
     <div
-      className="w-full align-center justify-center flex overflow-hidden"
+      className="w-full max-w-6xl m-auto align-center justify-center flex overflow-hidden"
       key={key}
     >
       <iframe
         ref={iframeRef}
         src="/clutch-widget.html"
-        className="w-full border-none"
-        height="450"
+        className="w-full h-[450px]"
+        height={450}
         width={"100%"}
-        style={{
-          alignSelf: "center",
-        }}
         onLoad={handleIframeLoad}
         title="Clutch Widget"
       />
