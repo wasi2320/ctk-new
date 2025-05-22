@@ -6,6 +6,21 @@ import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
 import UpscaleSection from "@/app/components/sections/UpscaleSection";
 
 const SecurityAndCompliance = () => {
+  const securityTechStack = {
+    heading: "Security & Compliance Technologies",
+    description:
+      "Protecting your data and ensuring regulatory compliance with industry-leading security tools and platforms:",
+    marqueeItems: [
+      "/Images/PNGSS/aws.png",
+      "/Images/PNGSS/cloudflare-logo.png",
+      "/Images/PNGSS/vault-hashicorp.png",
+      "/Images/PNGSS/soc2-logo.png",
+      "/Images/PNGSS/gdpr-logo.png",
+      "/Images/PNGSS/crowdstrike-logo.png",
+      "/Images/PNGSS/palo-alto-networks.png",
+    ],
+  };
+
   return (
     <div>
       <HeroSection
@@ -17,7 +32,7 @@ const SecurityAndCompliance = () => {
       <TailoredSection />
       <UpscaleSection />
       <DifferentiateSection />
-      <TechDisplaySection />
+      <TechDisplaySection techDisplaySection={securityTechStack} />
       <CardScrollSection />
     </div>
   );

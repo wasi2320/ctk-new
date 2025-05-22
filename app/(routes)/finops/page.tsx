@@ -6,6 +6,21 @@ import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
 import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
 
 const FinOps = () => {
+  const finopsTechStack = {
+    heading: "FinOps Technology Stack",
+    description:
+      "Optimizing financial operations with cutting-edge tools and platforms for cost management and financial analysis:",
+    marqueeItems: [
+      "/Images/PNGSS/aws.png",
+      "/Images/PNGSS/google-cloud.png",
+      "/Images/PNGSS/azure-logo.png",
+      "/Images/PNGSS/Terraform.png",
+      "/Images/PNGSS/Kubernetes.png",
+      "/Images/PNGSS/prometheus.png",
+      "/Images/PNGSS/Grafana_logo.svg.png",
+    ],
+  };
+
   return (
     <div>
       <HeroSection
@@ -16,7 +31,7 @@ const FinOps = () => {
       <TailoredSection />
       <FinOpsBusinessSection />
       <FinOpsDifferentiateSection />
-      <TechDisplaySection />
+      <TechDisplaySection techDisplaySection={finopsTechStack} />
       <CardScrollSection />
     </div>
   );

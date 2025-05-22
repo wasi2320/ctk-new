@@ -6,6 +6,21 @@ import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
 import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
 
 const Ai = () => {
+  const aiTechStack = {
+    heading: "AI & Machine Learning Technologies",
+    description:
+      "Harnessing cutting-edge artificial intelligence and machine learning tools to create intelligent solutions:",
+    marqueeItems: [
+      "/Images/PNGSS/tensorflow-logo.png",
+      "/Images/PNGSS/pytorch-logo.png",
+      "/Images/PNGSS/scikit-learn-logo.png",
+      "/Images/PNGSS/huggingface-logo.png",
+      "/Images/PNGSS/aws.png",
+      "/Images/PNGSS/openai-logo.png",
+      "/Images/PNGSS/langchain-logo.png",
+    ],
+  };
+
   return (
     <div>
       <HeroSection
@@ -17,7 +32,7 @@ const Ai = () => {
       <TailoredSection heading="Transform, Innovate & Scale with AI/ML & GenAI" />
       <AiBusinessSection />
       <AiDifferentiateSection />
-      <TechDisplaySection />
+      <TechDisplaySection techDisplaySection={aiTechStack} />
       <CardScrollSection />
     </div>
   );

@@ -1,23 +1,37 @@
 import HeroSection from "@/app/components/HeroSection";
 import TailoredSection from "@/app/components/sections/TailoredSection";
 import CloudBusinessSection from "@/app/components/sections/CloudBusinessSection";
-import CloudDifferentiateSection from "@/app/components/sections/CloudDifferentiateSection";
 import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
+import CloudDifferentiateSection from "@/app/components/sections/CloudDifferentiateSection";
 import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
 
 const CloudService = () => {
+  const cloudTechStack = {
+    heading: "Cloud Services Technologies",
+    description:
+      "Building scalable, reliable cloud infrastructure with industry-leading platforms and tools:",
+    marqueeItems: [
+      "/Images/PNGSS/Amazon_Web_Services-Logo.wine.png",
+      "/Images/PNGSS/google-cloud.png",
+      "/Images/PNGSS/azure-logo.png",
+      "/Images/PNGSS/Docker.png",
+      "/Images/PNGSS/Kubernetes.png",
+      "/Images/PNGSS/Terraform.png",
+      "/Images/PNGSS/CloudFormation-logo.png",
+    ],
+  };
+
   return (
     <div>
       <HeroSection
-        title="Power Your Business in the Cloud"
-        description="Leverage the power of Public Cloud for scalable, secure, and cost-efficient solutions"
-        imageSrc="/Images/Cloud_Service_Hero.png"
-        cover={true}
+        title="Secure, Scalable & Reliable Cloud Service Solutions"
+        description="Efficient cloud infrastructure that grows with your business and keeps data safe."
+        imageSrc="/Images/Cloud_Hero.png"
       />
       <TailoredSection />
       <CloudBusinessSection />
       <CloudDifferentiateSection />
-      <TechDisplaySection />
+      <TechDisplaySection techDisplaySection={cloudTechStack} />
       <CardScrollSection />
     </div>
   );

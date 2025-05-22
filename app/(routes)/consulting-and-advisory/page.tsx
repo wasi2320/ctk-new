@@ -6,6 +6,21 @@ import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
 import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
 
 const ConsultingAndAdvisory = () => {
+  const consultingTechStack = {
+    heading: "Consulting & Advisory Technologies",
+    description:
+      "Leveraging data analytics and business intelligence tools to provide strategic insights and transformative solutions:",
+    marqueeItems: [
+      "/Images/PNGSS/tableau-logo.png",
+      "/Images/PNGSS/power-bi-logo.png",
+      "/Images/PNGSS/salesforce-logo.png",
+      "/Images/PNGSS/jira-logo.png",
+      "/Images/PNGSS/ms-teams-logo.png",
+      "/Images/PNGSS/slack-logo.png",
+      "/Images/PNGSS/asana-logo.png",
+    ],
+  };
+
   return (
     <div>
       <HeroSection
@@ -17,7 +32,7 @@ const ConsultingAndAdvisory = () => {
       <TailoredSection />
       <ConsultingSection />
       <WhyUsSection />
-      <TechDisplaySection />
+      <TechDisplaySection techDisplaySection={consultingTechStack} />
       <CardScrollSection />
     </div>
   );

@@ -27,7 +27,8 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
             <Image
               src="/images/fin-empowering1.png"
               alt="Icon"
-              className="mt-1"
+              height={20}
+              width={20}
             />
 
             {/* Text content on the right */}
@@ -47,7 +48,8 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
             <Image
               src="/images/fin-empowering1.png"
               alt="Icon"
-              className="mt-1"
+              height={20}
+              width={20}
             />
 
             {/* Text content on the right */}
@@ -67,7 +69,8 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
             <Image
               src="/images/fin-empowering3.png"
               alt="Icon"
-              className="mt-1"
+              height={20}
+              width={20}
             />
 
             {/* Text content on the right */}
@@ -89,7 +92,8 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
             <Image
               src="/images/fin-empowering4.png"
               alt="Icon"
-              className="mt-1"
+              height={20}
+              width={20}
             />
 
             {/* Text content on the right */}
@@ -108,7 +112,8 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
             <Image
               src="/images/fin-empowering1.png"
               alt="Icon"
-              className="mt-1"
+              height={20}
+              width={20}
             />
 
             {/* Text content on the right */}
@@ -127,7 +132,8 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
             <Image
               src="/images/fin-empowering6.png"
               alt="Icon"
-              className="mt-1"
+              height={20}
+              width={20}
             />
 
             {/* Text content on the right */}

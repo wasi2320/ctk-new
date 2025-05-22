@@ -7,6 +7,21 @@ import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
 import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
 
 const DevOps = () => {
+  const devopsTechStack = {
+    heading: "DevOps Technologies & Tools",
+    description:
+      "Streamlining development workflows with automation and integration tools for continuous delivery:",
+    marqueeItems: [
+      "/Images/PNGSS/Jenkins-logo.png",
+      "/Images/PNGSS/GitHub-Logo.png",
+      "/Images/PNGSS/GitLab-logo.png",
+      "/Images/PNGSS/circleci-logo.png",
+      "/Images/PNGSS/ansible-logo.png",
+      "/Images/PNGSS/Argo-1-e1630327305635-1.png",
+      "/Images/PNGSS/prometheus.png",
+    ],
+  };
+
   return (
     <div>
       <HeroSection
@@ -18,7 +33,7 @@ const DevOps = () => {
       <DevOpsBusinessSection />
       <BenefitSection />
       <DevOpsDifferentiateSection />
-      <TechDisplaySection />
+      <TechDisplaySection techDisplaySection={devopsTechStack} />
       <CardScrollSection />
     </div>
   );

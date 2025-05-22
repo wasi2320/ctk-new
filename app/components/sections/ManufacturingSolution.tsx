@@ -15,7 +15,7 @@ const ManufacturingSolution = ({ heading }: ManufacturingSolutionProps) => {
         </h3>
         <p
           className="font-Nunito fw-bold md:text-2xl text-center"
-          style={{ lineHeight: "45px;" }}
+          style={{ lineHeight: "45px" }}
         >
           Manufacturing solutions are revolutionizing industry by enabling
           personalized, flexible, and efficient production. Leveraging cloud

@@ -25,8 +25,8 @@ const FinTechTransformative = () => {
               <Image
                 src="/Images/circle-icon.png"
                 alt="FinTech Icon"
-                className="w-3 h-3 mr-3"
-                fill
+                height={20}
+                width={20}
               />
               <span className="text-lg font-semibold font-Nunito">
                 Faster and more seamless transactions
@@ -37,7 +37,8 @@ const FinTechTransformative = () => {
               <Image
                 src="/Images/circle-icon.png"
                 alt="FinTech Icon"
-                className="w-3 h-3 mr-3"
+                height={20}
+                width={20}
               />
               <span className="text-lg font-semibold font-Nunito">
                 Enhanced data security and fraud protection
@@ -48,7 +49,8 @@ const FinTechTransformative = () => {
               <Image
                 src="/Images/circle-icon.png"
                 alt="FinTech Icon"
-                className="w-3 h-3 mr-3"
+                height={20}
+                width={20}
               />
               <span className="text-lg font-semibold font-Nunito">
                 Lower operational and infrastructure costs
@@ -59,7 +61,8 @@ const FinTechTransformative = () => {
               <Image
                 src="/Images/circle-icon.png"
                 alt="FinTech Icon"
-                className="w-3 h-3 mr-3"
+                height={20}
+                width={20}
               />
               <span className="text-lg font-semibold font-Nunito">
                 Scalable services for growing demands
@@ -70,7 +73,8 @@ const FinTechTransformative = () => {
               <Image
                 src="/Images/circle-icon.png"
                 alt="FinTech Icon"
-                className="w-3 h-3 mr-3"
+                height={20}
+                width={20}
               />
               <span className="text-lg font-semibold font-Nunito">
                 Better customer experience through personalization

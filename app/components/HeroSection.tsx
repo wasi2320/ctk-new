@@ -16,7 +16,7 @@ const HeroSection = ({
   imageSrc,
   cover = false,
   buttonText = "Let’s connect", // default value
-  buttonLink = "/", 
+  buttonLink = "/",
 }: HeroSectionProps) => {
   return (
     <section className="md:px-36 px-4 flex flex-col-reverse md:flex-row items-center justify-between h-auto md:h-[90vh] gap-10 my-10 md:my-0">
@@ -39,9 +39,9 @@ const HeroSection = ({
         <Image
           src={imageSrc}
           alt="Hero"
-          height={500}
-          width={500}
-          className={`md:h-[500px] h-[450px] w-full ${
+          height={300}
+          width={300}
+          className={`md:h-[300px] h-[350px] w-full ${
             cover ? "object-contain" : ""
           }`}
         />

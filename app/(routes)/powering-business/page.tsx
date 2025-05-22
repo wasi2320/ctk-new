@@ -16,7 +16,6 @@ const CloudMigration = () => {
         imageSrc="/Images/healthcare.png"
         buttonText="Scheduale your cloud assessment"
         buttonLink="/healthcare"
-
       />
       <PoweringExpertiseTailoredSection />
       <PoweringHealthcareSolution />

@@ -24,7 +24,13 @@ const EdTechEmpoweringEducation = ({}: EdTechEmpoweringEducationProps) => {
 
         {/* Center Image */}
         <div className="md:w-1/3 hidden md:flex justify-center mb-8 md:mb-0">
-          <Image src="/Images/line.png" alt="Center" className="h-full w-auto" fill />
+          <Image
+            src="/Images/line.png"
+            alt="Center"
+            className="h-full w-auto"
+            width={100}
+            height={100}
+          />
         </div>
 
         {/* Right Content */}

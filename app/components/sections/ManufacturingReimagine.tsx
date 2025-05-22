@@ -14,7 +14,7 @@ const ManufacturingReimagine = ({ heading }: ManufacturingReimagineProps) => {
         </h3>
         <p
           className="font-Nunito fw-bold md:text-2xl"
-          style={{ lineHeight: "45px;" }}
+          style={{ lineHeight: "45px" }}
         >
           Empowering Your Industrial Ecosystem with Custom Cloud-Based
           Manufacturing Solutions;We offer cloud-based manufacturing solutions

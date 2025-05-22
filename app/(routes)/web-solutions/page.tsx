@@ -6,6 +6,21 @@ import WebBusinessSection from "@/app/components/sections/WebBusinessSection";
 import WebDifferentiateSection from "@/app/components/sections/WebDifferentiateSection";
 
 const WebSolutions = () => {
+  const webTechStack = {
+    heading: "Web Development Technologies",
+    description:
+      "Building modern web experiences with advanced frameworks and libraries to create interactive, performant applications:",
+    marqueeItems: [
+      "/Images/PNGSS/react-logo.png",
+      "/Images/PNGSS/next-js-logo.png",
+      "/Images/PNGSS/vue-js-logo.png",
+      "/Images/PNGSS/node-js-logo.png",
+      "/Images/PNGSS/typescript-logo.png",
+      "/Images/PNGSS/tailwind-css-logo.png",
+      "/Images/PNGSS/GraphQL-logo.png",
+    ],
+  };
+
   return (
     <div>
       <HeroSection
@@ -17,7 +32,7 @@ const WebSolutions = () => {
       <TailoredSection heading="Optimize your infrastructure  today." />
       <WebBusinessSection />
       <WebDifferentiateSection />
-      <TechDisplaySection />
+      <TechDisplaySection techDisplaySection={webTechStack} />
       <CardScrollSection />
     </div>
   );

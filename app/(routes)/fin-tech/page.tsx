@@ -14,7 +14,6 @@ const CloudMigration = () => {
         imageSrc="/Images/fin-tech.png"
         buttonText="Scheduale your cloud assessment"
         buttonLink="/fin-tech"
-
       />
       <FinTechTailoredSection />
       <FinTechTransformative />
