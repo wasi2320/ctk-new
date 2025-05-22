@@ -14,7 +14,6 @@ const Ai = () => {
       "/Images/PNGSS/tensorflow-logo.png",
       "/Images/PNGSS/pytorch-logo.png",
       "/Images/PNGSS/scikit-learn-logo.png",
-      "/Images/PNGSS/huggingface-logo.png",
       "/Images/PNGSS/aws.png",
       "/Images/PNGSS/openai-logo.png",
       "/Images/PNGSS/langchain-logo.png",

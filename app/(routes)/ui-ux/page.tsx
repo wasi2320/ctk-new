@@ -17,7 +17,6 @@ const UiUx = () => {
       "/Images/PNGSS/After-Effects-Logo.png",
       "/Images/PNGSS/illustrator-logo.png",
       "/Images/PNGSS/photoshop-logo.png",
-      "/Images/PNGSS/invision-logo.png",
     ],
   };
 

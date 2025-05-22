@@ -12,7 +12,6 @@ const ConsultingAndAdvisory = () => {
       "Leveraging data analytics and business intelligence tools to provide strategic insights and transformative solutions:",
     marqueeItems: [
       "/Images/PNGSS/tableau-logo.png",
-      "/Images/PNGSS/power-bi-logo.png",
       "/Images/PNGSS/salesforce-logo.png",
       "/Images/PNGSS/jira-logo.png",
       "/Images/PNGSS/ms-teams-logo.png",

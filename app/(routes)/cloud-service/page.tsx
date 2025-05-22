@@ -17,7 +17,6 @@ const CloudService = () => {
       "/Images/PNGSS/Docker.png",
       "/Images/PNGSS/Kubernetes.png",
       "/Images/PNGSS/Terraform.png",
-      "/Images/PNGSS/CloudFormation-logo.png",
     ],
   };
 

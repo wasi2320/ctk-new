@@ -13,11 +13,8 @@ const CloudMigration = () => {
     marqueeItems: [
       "/Images/PNGSS/aws.png",
       "/Images/PNGSS/azure-logo.png",
-      "/Images/PNGSS/google-migration-logo.png",
       "/Images/PNGSS/cloudendure-logo.png",
-      "/Images/PNGSS/snow-family-logo.png",
       "/Images/PNGSS/vmware-cloud-logo.png",
-      "/Images/PNGSS/database-migration-service.png",
     ],
   };
 
