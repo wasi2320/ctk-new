@@ -15,7 +15,7 @@ const FinTechFutureHealthcare = ({}: FinTechFutureHealthcareProps) => {
               Our Portfolio
             </h3>
             <h3 className="md:text-xl text-lg text-Nunito mb-3">
-              Real-World cases in HealthCare
+              Innovative Financial Technology Solutions
             </h3>
           </div>
 
@@ -25,7 +25,7 @@ const FinTechFutureHealthcare = ({}: FinTechFutureHealthcareProps) => {
               href="#your-link"
               className="inline-block bg-transparent text-Nunito text-dark text-lg md:text-xl font-semibold md:py-2 md:px-6 py-2 px-4 border-3 rounded-2xl transition"
             >
-              Real-World cases in Fintech
+              Explore FinTech Solutions
               <Image
                 src="/Images/arrow-right.png"
                 alt="Arrow"
