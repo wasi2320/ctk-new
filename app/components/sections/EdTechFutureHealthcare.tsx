@@ -44,7 +44,7 @@ const EdTechFutureHealthcare = ({}: EdTechFutureHealthcareProps) => {
               Cost Optimization
             </h3>
             <h3 className="md:text-lg text-lg text-Nunito mb-3">
-              Real-World cases in Fintech
+              Maximizing educational resources with minimal investment
             </h3>
           </div>
 
@@ -54,7 +54,7 @@ const EdTechFutureHealthcare = ({}: EdTechFutureHealthcareProps) => {
               Security Compliance
             </h3>
             <h3 className="md:text-xl text-lg text-Nunito mb-3">
-              Real-World cases in Fintech
+              Protecting student data and maintaining privacy standards
             </h3>
           </div>
         </div>

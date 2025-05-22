@@ -79,7 +79,9 @@ const TechCarouselSection = () => {
           <h2 className="text-4xl font-bold text-slate-800 mb-2">
             Our Portfolio
           </h2>
-          <p className="text-xl text-slate-600">Real-World cases in Fintech</p>
+          <p className="text-xl text-slate-600">
+            Real-World Technology Solutions
+          </p>
         </div>
       </div>
 

@@ -47,7 +47,7 @@ const ManufacturingFutureHealthcare = ({
               Cost Optimization
             </h3>
             <h3 className="md:text-lg text-lg text-Nunito mb-3">
-              Real-World cases in Fintech
+              Improving production efficiency and reducing manufacturing waste
             </h3>
           </div>
 
@@ -57,7 +57,8 @@ const ManufacturingFutureHealthcare = ({
               Security Compliance
             </h3>
             <h3 className="md:text-xl text-lg text-Nunito mb-3">
-              Real-World cases in Fintech
+              Implementing industry standards and securing manufacturing
+              operations
             </h3>
           </div>
         </div>

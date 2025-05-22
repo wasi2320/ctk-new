@@ -44,7 +44,7 @@ const FinTechFutureHealthcare = ({}: FinTechFutureHealthcareProps) => {
               Cost Optimization
             </h3>
             <h3 className="md:text-lg text-lg text-Nunito mb-3">
-              Real-World cases in Fintech
+              Reducing operational expenses in financial services
             </h3>
           </div>
 
@@ -54,7 +54,7 @@ const FinTechFutureHealthcare = ({}: FinTechFutureHealthcareProps) => {
               Security Compliance
             </h3>
             <h3 className="md:text-xl text-lg text-Nunito mb-3">
-              Real-World cases in Fintech
+              Ensuring regulatory compliance in financial institutions
             </h3>
           </div>
         </div>

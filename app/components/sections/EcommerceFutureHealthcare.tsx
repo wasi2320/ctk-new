@@ -1,10 +1,10 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 interface EcommerceFutureHealthcareProps {
   heading?: string;
 }
 
-const EcommerceFutureHealthcare = ({ }: EcommerceFutureHealthcareProps) => {
+const EcommerceFutureHealthcare = ({}: EcommerceFutureHealthcareProps) => {
   return (
     <section className="md:px-36 px-4 md:pt-12 pt-8 pb-8 bg-center bg-no-repeat text-dark">
       <div className="flex flex-col md:flex-col justify-center">
@@ -44,7 +44,7 @@ const EcommerceFutureHealthcare = ({ }: EcommerceFutureHealthcareProps) => {
               Cost Optimization
             </h3>
             <h3 className="md:text-lg text-lg text-Nunito mb-3">
-              Real-World cases in Fintech
+              Streamlining operations to reduce e-commerce overhead costs
             </h3>
           </div>
 
@@ -54,7 +54,7 @@ const EcommerceFutureHealthcare = ({ }: EcommerceFutureHealthcareProps) => {
               Security Compliance
             </h3>
             <h3 className="md:text-xl text-lg text-Nunito mb-3">
-              Real-World cases in Fintech
+              Safeguarding customer data and transaction security
             </h3>
           </div>
         </div>
