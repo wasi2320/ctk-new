@@ -14,7 +14,7 @@ const DevOps = () => {
     marqueeItems: [
       "/Images/PNGSS/Jenkins-logo.png",
       "/Images/PNGSS/GitHub-Logo.png",
-      "/Images/PNGSS/GitLab-logo.png",
+      "/Images/PNGSS/gitlab.png",
       "/Images/PNGSS/circleci-logo.png",
       "/Images/PNGSS/ansible-logo.png",
       "/Images/PNGSS/Argo-1-e1630327305635-1.png",

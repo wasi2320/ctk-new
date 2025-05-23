@@ -12,11 +12,11 @@ const CloudService = () => {
       "Building scalable, reliable cloud infrastructure with industry-leading platforms and tools:",
     marqueeItems: [
       "/Images/PNGSS/Amazon_Web_Services-Logo.wine.png",
-      "/Images/PNGSS/google-cloud.png",
+      "/Images/PNGSS/gcloud.png",
       "/Images/PNGSS/azure-logo.png",
       "/Images/PNGSS/Docker.png",
       "/Images/PNGSS/Kubernetes.png",
-      "/Images/PNGSS/Terraform.png",
+      "/Images/PNGSS/terraform-cloud.png",
     ],
   };
 

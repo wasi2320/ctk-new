@@ -15,7 +15,7 @@ const HeroSection = ({
   description,
   imageSrc,
   cover = false,
-  buttonText = "Let’s connect", // default value
+  buttonText = "Let's connect", // default value
   buttonLink = "/",
 }: HeroSectionProps) => {
   return (
@@ -35,13 +35,13 @@ const HeroSection = ({
         )}
       </div>
 
-      <div className="md:w-[45%] w-full flex justify-center">
+      <div className="md:w-[55%] w-full flex justify-center">
         <Image
           src={imageSrc}
           alt="Hero"
-          height={300}
-          width={300}
-          className={`md:h-[300px] h-[350px] w-full ${
+          height={500}
+          width={500}
+          className={`md:w-[350px] md:h-[350px] lg:w-[500px] lg:h-[500px] ${
             cover ? "object-contain" : ""
           }`}
         />

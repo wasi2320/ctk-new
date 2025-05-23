@@ -107,6 +107,82 @@ const TechStackSection = () => {
                 </div>
               ))}
             </div>
+            <div className="space-y-8 flex-shrink-0 mx-8 mt-12">
+              {TECH_STACK_SECTION.techImagesCol5.map((img, index) => (
+                <div
+                  key={index}
+                  className="p-4 rounded-lg left-bottom-shadow bg-[linear-gradient(to_right,#D9D9D933,#FFFFFF)] tech-icon"
+                >
+                  <Image
+                    style={{
+                      objectFit: "contain",
+                    }}
+                    src={img}
+                    alt=""
+                    height={80}
+                    width={80}
+                    className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="space-y-8 flex-shrink-0 mx-8">
+              {TECH_STACK_SECTION.techImagesCol7.map((img, index) => (
+                <div
+                  key={index}
+                  className="p-4 rounded-lg left-bottom-shadow bg-[linear-gradient(to_right,#D9D9D933,#FFFFFF)] tech-icon"
+                >
+                  <Image
+                    style={{
+                      objectFit: "contain",
+                    }}
+                    src={img}
+                    alt=""
+                    height={80}
+                    width={80}
+                    className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="space-y-8 flex-shrink-0 mx-8 mt-12">
+              {TECH_STACK_SECTION.techImagesCol6.map((img, index) => (
+                <div
+                  key={index}
+                  className="p-4 rounded-lg left-bottom-shadow bg-[linear-gradient(to_right,#D9D9D933,#FFFFFF)] tech-icon"
+                >
+                  <Image
+                    style={{
+                      objectFit: "contain",
+                    }}
+                    src={img}
+                    alt=""
+                    height={80}
+                    width={80}
+                    className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="space-y-8 flex-shrink-0 mx-8">
+              {TECH_STACK_SECTION.techImagesCol8.map((img, index) => (
+                <div
+                  key={index}
+                  className="p-4 rounded-lg left-bottom-shadow bg-[linear-gradient(to_right,#D9D9D933,#FFFFFF)] tech-icon"
+                >
+                  <Image
+                    style={{
+                      objectFit: "contain",
+                    }}
+                    src={img}
+                    alt=""
+                    height={80}
+                    width={80}
+                    className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Second set - exact duplicate for seamless loop */}
@@ -172,6 +248,82 @@ const TechStackSection = () => {
               {TECH_STACK_SECTION.techImagesCol4.map((img, index) => (
                 <div
                   key={`duplicate-${index}`}
+                  className="p-4 rounded-lg left-bottom-shadow bg-[linear-gradient(to_right,#D9D9D933,#FFFFFF)] tech-icon"
+                >
+                  <Image
+                    style={{
+                      objectFit: "contain",
+                    }}
+                    src={img}
+                    alt=""
+                    height={80}
+                    width={80}
+                    className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="space-y-8 flex-shrink-0 mx-8 mt-12">
+              {TECH_STACK_SECTION.techImagesCol5.map((img, index) => (
+                <div
+                  key={index}
+                  className="p-4 rounded-lg left-bottom-shadow bg-[linear-gradient(to_right,#D9D9D933,#FFFFFF)] tech-icon"
+                >
+                  <Image
+                    style={{
+                      objectFit: "contain",
+                    }}
+                    src={img}
+                    alt=""
+                    height={80}
+                    width={80}
+                    className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="space-y-8 flex-shrink-0 mx-8">
+              {TECH_STACK_SECTION.techImagesCol7.map((img, index) => (
+                <div
+                  key={index}
+                  className="p-4 rounded-lg left-bottom-shadow bg-[linear-gradient(to_right,#D9D9D933,#FFFFFF)] tech-icon"
+                >
+                  <Image
+                    style={{
+                      objectFit: "contain",
+                    }}
+                    src={img}
+                    alt=""
+                    height={80}
+                    width={80}
+                    className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="space-y-8 flex-shrink-0 mx-8 mt-12">
+              {TECH_STACK_SECTION.techImagesCol6.map((img, index) => (
+                <div
+                  key={index}
+                  className="p-4 rounded-lg left-bottom-shadow bg-[linear-gradient(to_right,#D9D9D933,#FFFFFF)] tech-icon"
+                >
+                  <Image
+                    style={{
+                      objectFit: "contain",
+                    }}
+                    src={img}
+                    alt=""
+                    height={80}
+                    width={80}
+                    className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="space-y-8 flex-shrink-0 mx-8">
+              {TECH_STACK_SECTION.techImagesCol8.map((img, index) => (
+                <div
+                  key={index}
                   className="p-4 rounded-lg left-bottom-shadow bg-[linear-gradient(to_right,#D9D9D933,#FFFFFF)] tech-icon"
                 >
                   <Image

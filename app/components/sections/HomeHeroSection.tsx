@@ -7,38 +7,34 @@ import ClutchHeroSection from "./Aws";
 
 const HomeHeroSection = () => {
   return (
-    // 90vhusama
-    <section className="md:px-28 px-4 h-[80vh] flex flex-col-reverse md:flex-row items-center justify-between  py-10 md:py-0">
-      <div className="md:w-1/2 w-full space-y-6 md:space-y-8">
+    <section className="px-4 sm:px-6 md:px-10 lg:px-20 xl:px-28 min-h-[80vh] py-8 sm:py-12 md:py-16 flex flex-col-reverse md:flex-row items-center justify-between gap-6 md:gap-8">
+      <div className="w-full md:w-1/2 lg:w-3/5 space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8">
         <div
-          className="space-y-4 md:space-y-6"
+          className="space-y-3 sm:space-y-4 md:space-y-6"
           data-aos="fade-right"
           data-aos-delay="100"
         >
-          <h1 className="md:text-[60px] text-[32px] font-bold leading-tight md:leading-[1.1] text-center md:text-start">
+          <h1 className="text-[28px] sm:text-[32px] md:text-[40px] lg:text-[50px] xl:text-[60px] font-bold leading-tight md:leading-[1.1] text-center md:text-start">
             {HOME_HERO_SECTION.heading}
           </h1>
         </div>
         <div
-          className="flex items-center justify-center md:justify-start gap-4 md:gap-20"
+          className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 sm:gap-8 md:gap-12 lg:gap-20"
           data-aos="fade-right"
           data-aos-delay="200"
         >
-          <div className="flex flex-col items-center md:items-start gap-5">
-            <h3
-              style={{ width: "100%" }}
-              className="md:text-xl text-base text-gray-700 md:w-6/12 text-center md:text-start"
-            >
+          <div className="flex flex-col items-center md:items-start gap-3 sm:gap-4 w-full">
+            <h3 className="text-base sm:text-lg md:text-xl text-gray-700 w-full md:w-10/12 lg:w-8/12 text-center md:text-start">
               {HOME_HERO_SECTION.subHeading}
             </h3>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 mt-2">
               <Link href={HOME_HERO_SECTION.button.link}>
-                <button className=" w-[9rem] rounded-full px-6 py-2.5 text-sm md:text-base bg-black text-white cursor-pointer hover:bg-white hover:text-black border border-transparent hover:border-black transition-all duration-300 h-[40px] flex items-center">
+                <button className="w-[9rem] rounded-full px-4 sm:px-6 py-2.5 text-sm md:text-base bg-black text-white cursor-pointer hover:bg-white hover:text-black border border-transparent hover:border-black transition-all duration-300 h-[40px] flex items-center justify-center">
                   {HOME_HERO_SECTION.button.text}
                 </button>
               </Link>
               <Link
-                className="transition-transform duration-300 hover:scale-105 ml-5"
+                className="transition-transform duration-300 hover:scale-105"
                 href={
                   "https://partners.amazonaws.com/partners/001aq000008YFg0AAG/"
                 }
@@ -48,32 +44,44 @@ const HomeHeroSection = () => {
                 <Image
                   src={HOME_HERO_SECTION.badge}
                   alt="aws"
-                  className="h-[100px] w-auto object-contain"
+                  className="h-[100px] sm:h-[120px] md:h-[100px] w-auto object-contain"
                   height={100}
                   width={100}
                 />
               </Link>
-              <ClutchHeroSection />
+              <div className="mt-2 sm:mt-0">
+                <ClutchHeroSection />
+              </div>
             </div>
           </div>
         </div>
         <p
-          className="md:text-xl text-base text-[#050B0B] text-center md:text-start"
+          className="text-base sm:text-lg md:text-xl text-[#050B0B] text-center md:text-start"
           data-aos="fade-up"
           data-aos-delay="100"
         >
           {HOME_HERO_SECTION.text}
         </p>
-        <div className="mt-6 md:mt-8" data-aos="fade-up" data-aos-delay="100">
+        <div
+          className="mt-4 md:mt-6 lg:mt-8"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           <InfiniteScrollBar />
         </div>
       </div>
       <div
-        className="md:w-[45%] w-full mb-8 md:mb-0"
+        className="w-full sm:w-10/12 md:w-1/2 lg:w-2/5 mb-6 md:mb-0"
         data-aos="fade-left"
         data-aos-delay="100"
       >
-        <video width="100%" height="auto" autoPlay loop muted playsInline>
+        <video
+          className="w-full h-auto rounded-lg "
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
           <source
             src="https://codetokloudbucketccests.s3.us-east-1.amazonaws.com/websiteSquare.mp4"
             type="video/mp4"

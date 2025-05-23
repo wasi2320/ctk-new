@@ -1,5 +1,5 @@
 export const TECH_STACK_SECTION = {
-  heading: "Core Tech stack we’ve worked with ",
+  heading: "Core Tech stack we've worked with ",
   subHeading:
     "Explore the core technologies that drive our solutions, ensuring innovation, scalability, and efficiency. Our expertise spans across a wide range of technologies to deliver robust and reliable results.",
   button: {
@@ -8,7 +8,7 @@ export const TECH_STACK_SECTION = {
   },
   techImagesCol1: [
     "/Images/PNGSS/prometheus.png",
-    "/Images/PNGSS/97_Docker_logo_logos-512.webp",
+    "/Images/PNGSS/tensorflow-logo.png",
     "/Images/PNGSS/After-Effects-Logo.png",
   ],
   techImagesCol2: [
@@ -24,8 +24,30 @@ export const TECH_STACK_SECTION = {
   ],
   techImagesCol4: [
     "/Images/PNGSS/GitHub-Logo.png",
-    "/Images/PNGSS/GitLab-logo.png",
-    "/Images/PNGSS/google-cloud.png",
+    "/Images/PNGSS/gitlab.png",
+    "/Images/PNGSS/gcloud.png",
     "/Images/PNGSS/Grafana_logo.svg.png",
+  ],
+  techImagesCol5: [
+    "/Images/PNGSS/Kubernetes.png",
+    "/Images/PNGSS/terraform-cloud.png",
+    "/Images/PNGSS/react-logo.png",
+  ],
+  techImagesCol6: [
+    "/Images/PNGSS/typescript-logo.png",
+    "/Images/PNGSS/next-js-logo.png",
+    "/Images/PNGSS/azure-logo.png",
+  ],
+  techImagesCol7: [
+    "/Images/PNGSS/vue-js-logo.png",
+    "/Images/PNGSS/node-js-logo.png",
+    "/Images/PNGSS/desc.png",
+    "/Images/PNGSS/angular.png",
+  ],
+  techImagesCol8: [
+    "/Images/PNGSS/openai-logo.png",
+    "/Images/PNGSS/jira-logo.png",
+    "/Images/PNGSS/GraphQL-logo.png",
+    "/Images/PNGSS/Python-logo-notext.svg.png",
   ],
 };

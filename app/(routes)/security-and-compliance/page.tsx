@@ -15,7 +15,6 @@ const SecurityAndCompliance = () => {
       "/Images/PNGSS/cloudflare-logo.png",
       "/Images/PNGSS/vault-hashicorp.png",
       "/Images/PNGSS/soc2-logo.png",
-      "/Images/PNGSS/crowdstrike-logo.png",
     ],
   };
 
