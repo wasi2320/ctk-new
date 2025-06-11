@@ -52,6 +52,10 @@
 
 /*  */
 
+body{
+  overflow-x: hidden;
+}
+
 @font-face {
   font-family: "Nunito";
   src: url("/Fonts/Nunito-Regular.ttf") format("truetype");

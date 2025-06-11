@@ -55,7 +55,11 @@ const Footer = () => {
           <div className="md:w-1/2 md:border-t-2 md:border-white flex justify-center md:gap-20 2xl:gap-32 gap-10 md:mt-14 mt-6">
             <div className="md:ml-20">
               <h4 className="md:text-lg mt-10">Learn</h4>
-              <div className="flex flex-col gap-4 mt-4">
+              <div className="flex flex-col gap-4 mt-4"
+              style={{
+                width: "120%",
+              }}
+              >
                 {FOOTER_DATA.learnCol.map((item, index) => (
                   <Link href={item.link} key={index}>
                     <p className="text-[#CCCBC9]">{item.name}</p>
@@ -86,7 +90,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t-2 border-white mt-16 flex flex-col md:flex-row justify-between items-center">
-          <div className="md:w-[45%] mt-8">
+          <div className="md:w-[10%] mt-8">
             <div className="flex justify-between gap-4 md:gap-0">
               {FOOTER_DATA.otherPages.map((item, index) => (
                 <Link href={item.link} key={index}>

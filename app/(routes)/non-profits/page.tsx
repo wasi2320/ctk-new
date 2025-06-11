@@ -1,11 +1,20 @@
 import React from "react";
+import NonProfitSection from "@/app/components/sections/nonProfit/NonProfitSection";
+import NonProfitStatsSection from "@/app/components/sections/nonProfit/statsSection";
+import EmpoweringSection from "@/app/components/sections/nonProfit/EmpoweringSection";
+import DifferentiateSection from "@/app/components/sections/nonProfit/DifferentiateSection";
+import OurPortfolioSection from "@/app/components/sections/nonProfit/OurPortfolioSection";
+import ContactUsSection from "@/app/components/sections/ContactUsSection";
 
 export default function NonProfitsPage() {
     return (
-        <div className="min-h-screen bg-white flex items-center justify-center">
-            <div className="text-center">
-                <h1 className="text-5xl font-bold text-gray-800">Coming Soon for Non-Profits</h1>
-            </div>
-        </div>
+        <>
+            <NonProfitSection />
+            <NonProfitStatsSection />
+            <EmpoweringSection />
+            <DifferentiateSection />
+            <OurPortfolioSection />
+            <ContactUsSection />
+        </>
     );
 } 

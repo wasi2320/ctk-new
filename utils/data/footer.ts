@@ -24,18 +24,15 @@ export const FOOTER_DATA = {
     addressTwo: "+1 (480) 572-7818",
   },
   otherPages: [
-    { name: "Terms", link: "/terms" },
-    { name: "Privacy", link: "/privacy" },
-    { name: "Cookies", link: "/cookies" },
-    { name: "Legal", link: "/legal" },
-    { name: "Recalls", link: "/recalls" },
-    { name: "Stats", link: "/stats" },
+    { name: "Terms", link: "/term-condition" },
+    { name: "Privacy", link: "/privacy-policy" },
+    
   ],
   socialCol: [
     { icon: "/Images/Social_1.svg", url: "www.facebook.com" },
-    { icon: "/Images/Social_1.svg", url: "www.instagram.com" },
-    { icon: "/Images/Social_1.svg", url: "www.whatsapp.com" },
-    { icon: "/Images/Social_1.svg", url: "www.google.com" },
-    { icon: "/Images/Social_1.svg", url: "www.linkedin.com" },
+    { icon: "/Images/Social_2.svg", url: "https://www.linkedin.com/company/codetokloud-inc" },
+    // { icon: "/Images/Social_3.svg", url: "https://www.instagram.com/codetokloud" },
+    // { icon: "/Images/Social_4.svg", url: "https://www.youtube.com/@codetokloud" },
+    // { icon: "/Images/Social_5.svg", url: "https://www.tiktok.com/@codetokloud" },
   ],
 };
