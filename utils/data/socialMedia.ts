@@ -16,14 +16,14 @@ export const SOCIAL_MEDIA_LINKS = {
   instagram: {
     name: "Instagram",
     url: "https://www.instagram.com/codetokloud/",
-    icon: "/Images/Social_3.svg",
+    icon: "/Images/Social_3.png",
     imageIcon: "/Images/insta-link.png",
     ariaLabel: "Instagram",
   },
   twitter: {
     name: "Twitter",
     url: "https://x.com/CodetoKloud",
-    icon: "/Images/Social_4.svg",
+    icon: "/Images/Social_4.png",
     imageIcon: "/Images/twitter-link.png",
     ariaLabel: "Twitter",
   },
