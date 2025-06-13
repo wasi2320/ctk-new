@@ -1,11 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
+import { getContactSocialLinks } from "@/utils/data/socialMedia";
 
 interface GetInTouchProps {
   heading?: string;
 }
 
 const GetInTouch = ({ heading }: GetInTouchProps) => {
+  const socialLinks = getContactSocialLinks();
+
   return (
     <section
       className="px-4 sm:px-8 md:px-12 lg:px-24 py-12 bg-center bg-no-repeat bg-cover text-dark relative"
@@ -109,33 +112,21 @@ const GetInTouch = ({ heading }: GetInTouchProps) => {
               Follow us at:
             </h4>
             <div className="flex gap-4">
-              <a href="#" aria-label="Facebook">
-                <Image
-                  src="/Images/fb-link.png"
-                  alt="Facebook"
-                  className="w-10 h-10 object-contain"
-                  width={40}
-                  height={40}
-                />
-              </a>
-              <a href="#" aria-label="Instagram">
-                <Image
-                  src="/Images/insta-link.png"
-                  alt="Instagram"
-                  className="w-10 h-10 object-contain"
-                  width={40}
-                  height={40}
-                />
-              </a>
-              <a href="#" aria-label="LinkedIn">
-                <Image
-                  src="/Images/link-link.png"
-                  alt="LinkedIn"
-                  className="w-10 h-10 object-contain"
-                  width={40}
-                  height={40}
-                />
-              </a>
+              {socialLinks.map((social) => (
+                <a
+                  key={social.id}
+                  href={social.url}
+                  aria-label={social.ariaLabel}
+                >
+                  <Image
+                    src={social.icon}
+                    alt={social.name}
+                    className="w-10 h-10 object-contain"
+                    width={40}
+                    height={40}
+                  />
+                </a>
+              ))}
             </div>
           </div>
         </div>

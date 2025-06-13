@@ -1,7 +1,16 @@
 import React from "react";
-import { Upload, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Upload, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { SOCIAL_MEDIA_LINKS } from "@/utils/data/socialMedia";
 
 export default function page() {
+  // Map social media platforms to their respective Lucide React icons
+  const socialIconMap = {
+    facebook: Facebook,
+    linkedin: Linkedin,
+    instagram: Instagram,
+    twitter: Twitter,
+  };
+
   return (
     <div>
       <header className="w-full h-[300px] md:h-[350px] lg:h-[400px] bg-[url('/Images/contact/contactHeader.png')] bg-cover bg-center overflow-hidden">
@@ -103,24 +112,19 @@ export default function page() {
                     Follow us at:
                   </h3>
                   <div className="flex gap-4 mt-2.5">
-                    <a
-                      href="#"
-                      className="text-[#333] text-2xl hover:text-black transition-colors duration-300"
-                    >
-                      <Facebook />
-                    </a>
-                    <a
-                      href="#"
-                      className="text-[#333] text-2xl hover:text-black transition-colors duration-300"
-                    >
-                      <Instagram />
-                    </a>
-                    <a
-                      href="#"
-                      className="text-[#333] text-2xl hover:text-black transition-colors duration-300"
-                    >
-                      <Linkedin />
-                    </a>
+                    {Object.entries(SOCIAL_MEDIA_LINKS).map(([key, social]) => {
+                      const IconComponent =
+                        socialIconMap[key as keyof typeof socialIconMap];
+                      return (
+                        <a
+                          key={key}
+                          href={social.url}
+                          className="text-[#333] text-2xl hover:text-black transition-colors duration-300"
+                        >
+                          <IconComponent />
+                        </a>
+                      );
+                    })}
                   </div>
                 </div>
               </div>

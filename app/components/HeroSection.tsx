@@ -16,7 +16,7 @@ const HeroSection = ({
   imageSrc,
   cover = false,
   buttonText = "Let's connect", // default value
-  buttonLink = "/",
+  buttonLink = "/contact",
 }: HeroSectionProps) => {
   return (
     <section className="md:px-36 px-4 flex flex-col-reverse md:flex-row items-center justify-between h-auto md:h-[90vh] gap-10 my-10 md:my-0">
