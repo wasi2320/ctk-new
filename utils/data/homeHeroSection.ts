@@ -3,7 +3,7 @@ export const HOME_HERO_SECTION = {
   subHeading: "Connect your team with cloud expertise that drives innovation",
   button: {
     text: "Get Started",
-    link: "/",
+    link: "/contact",
   },
   img: "/Images/aws.svg",
   badge: "/Images/homepage/aws_badge_.png",

@@ -1,9 +1,9 @@
 import HeroSection from "@/app/components/HeroSection";
 import FinTechTailoredSection from "@/app/components/sections/FinTechTailoredSection";
 import FinTechEmpoweringEducation from "@/app/components/sections/FinTechEmpoweringEducation";
-import GetInTouch from "@/app/components/sections/GetInTouch";
 import FinTechFutureHealthcare from "@/app/components/sections/FinTechFutureHealthcare";
 import FinTechTransformative from "@/app/components/sections/FinTechTransformative";
+import ContactUsSection from "@/app/components/sections/ContactUsSection";
 
 const CloudMigration = () => {
   return (
@@ -19,7 +19,7 @@ const CloudMigration = () => {
       <FinTechTransformative />
       <FinTechEmpoweringEducation />
       <FinTechFutureHealthcare />
-      <GetInTouch />
+      <ContactUsSection />
     </div>
   );
 };

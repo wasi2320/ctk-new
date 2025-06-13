@@ -3,7 +3,7 @@ import EcommerceExpertiseTailoredSection from "@/app/components/sections/Ecommer
 import EcommerceTransformative from "@/app/components/sections/EcommerceTransformative";
 import EcommerceSolution from "@/app/components/sections/EcommerceSolution";
 import EcommerceFutureHealthcare from "@/app/components/sections/EcommerceFutureHealthcare";
-import GetInTouch from "@/app/components/sections/GetInTouch";
+import ContactUsSection from "@/app/components/sections/ContactUsSection";
 
 const CloudMigration = () => {
   return (
@@ -14,13 +14,12 @@ const CloudMigration = () => {
         imageSrc="/Images/healthcare.png"
         buttonText="Scheduale your cloud assessment"
         buttonLink="/e-commerce"
-
       />
       <EcommerceExpertiseTailoredSection />
       <EcommerceTransformative />
       <EcommerceSolution />
       <EcommerceFutureHealthcare />
-      <GetInTouch />
+      <ContactUsSection />
     </div>
   );
 };

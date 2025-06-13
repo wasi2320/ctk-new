@@ -24,7 +24,7 @@ export const SOCIAL_MEDIA_LINKS = {
     name: "Twitter",
     url: "https://x.com/CodetoKloud",
     icon: "/Images/Social_4.png",
-    imageIcon: "/Images/twitter-link.png",
+    imageIcon: "/Images/Social_4.png",
     ariaLabel: "Twitter",
   },
 };

@@ -1,9 +1,9 @@
 import HeroSection from "@/app/components/HeroSection";
 import EdTechTailoredSection from "@/app/components/sections/EdTechTailoredSection";
 import EdTechEmpoweringEducation from "@/app/components/sections/EdTechEmpoweringEducation";
-import GetInTouch from "@/app/components/sections/GetInTouch";
 import EdTechTransformative from "@/app/components/sections/EdTechTransformative";
 import EdTechFutureHealthcare from "@/app/components/sections/EdTechFutureHealthcare";
+import ContactUsSection from "@/app/components/sections/ContactUsSection";
 
 const CloudMigration = () => {
   return (
@@ -19,7 +19,7 @@ const CloudMigration = () => {
       <EdTechTransformative />
       <EdTechEmpoweringEducation />
       <EdTechFutureHealthcare />
-      <GetInTouch />
+      <ContactUsSection />
     </div>
   );
 };

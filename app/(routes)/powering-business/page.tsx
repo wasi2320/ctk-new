@@ -4,7 +4,7 @@ import PoweringHealthcareSolution from "@/app/components/sections/PoweringHealth
 import MarketDifference from "@/app/components/sections/MarketDifference";
 import ProfessionalServices from "@/app/components/sections/ProfessionalServices";
 import PoweringFutureHealthCare from "@/app/components/sections/PoweringFutureHealthCare";
-import GetInTouch from "@/app/components/sections/GetInTouch";
+import ContactUsSection from "@/app/components/sections/ContactUsSection";
 
 const CloudMigration = () => {
   return (
@@ -22,7 +22,7 @@ const CloudMigration = () => {
       <MarketDifference />
       <ProfessionalServices />
       <PoweringFutureHealthCare />
-      <GetInTouch />
+      <ContactUsSection />
     </div>
   );
 };
