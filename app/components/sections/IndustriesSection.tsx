@@ -92,7 +92,7 @@ export const IndustriesCard = () => {
             />
           </div>
           <h3 className="text-xl font-semibold mb-2">Fintech</h3>
-          <p className="text-sm text-gray-600 group-hover:text-white">
+          <p className="text-sm text-center text-gray-600 group-hover:text-white">
             Enhancing financial security and operational efficiency.
           </p>
         </div>
@@ -108,7 +108,7 @@ export const IndustriesCard = () => {
             />
           </div>
           <h3 className="text-xl font-semibold mb-2">Edtech</h3>
-          <p className="text-sm text-gray-600 group-hover:text-white">
+          <p className="text-sm text-center text-gray-600 group-hover:text-white">
             Transforming education through innovative solutions.
           </p>
         </div>
@@ -124,7 +124,7 @@ export const IndustriesCard = () => {
             />
           </div>
           <h3 className="text-xl font-semibold mb-2">Professional Services</h3>
-          <p className="text-sm text-gray-600 group-hover:text-white">
+          <p className="text-sm text-center text-gray-600 group-hover:text-white">
             Streamlining operations for optimal performance.
           </p>
         </div>
@@ -140,7 +140,7 @@ export const IndustriesCard = () => {
             />
           </div>
           <h3 className="text-xl font-semibold mb-2">Healthcare</h3>
-          <p className="text-sm text-gray-600 group-hover:text-white">
+          <p className="text-sm text-center text-gray-600 group-hover:text-white">
             Improving patient care and healthcare efficiency.
           </p>
         </div>
@@ -156,7 +156,7 @@ export const IndustriesCard = () => {
             />
           </div>
           <h3 className="text-xl font-semibold mb-2">E-commerce</h3>
-          <p className="text-sm text-gray-600 group-hover:text-white">
+          <p className="text-sm text-center text-gray-600 group-hover:text-white">
             Enhancing customer experiences and operational efficiency.
           </p>
         </div>
@@ -172,7 +172,7 @@ export const IndustriesCard = () => {
             />
           </div>
           <h3 className="text-xl font-semibold mb-2">Manufacturing</h3>
-          <p className="text-sm text-gray-600 group-hover:text-white">
+          <p className="text-sm text-center text-gray-600 group-hover:text-white">
             Driving automation and quality control in manufacturing.
           </p>
         </div>

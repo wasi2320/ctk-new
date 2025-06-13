@@ -3,20 +3,20 @@ export const SOCIAL_MEDIA_LINKS = {
     name: "Facebook",
     url: "https://www.facebook.com/share/1AjsbfDZeR/",
     icon: "/Images/Social_1.svg",
-    imageIcon: "/Images/fb-link.png",
+    imageIcon: "/Images/Social_1.svg",
     ariaLabel: "Facebook",
   },
   linkedin: {
     name: "LinkedIn",
     url: "https://www.linkedin.com/company/codetokloud-inc/",
     icon: "/Images/Social_2.svg",
-    imageIcon: "/Images/link-link.png",
+    imageIcon: "/Images/Social_2.svg",
     ariaLabel: "LinkedIn",
   },
   instagram: {
     name: "Instagram",
     url: "https://www.instagram.com/codetokloud/",
-    icon: "/Images/Social_3.png",
+    icon: "/Images/insta-link.png",
     imageIcon: "/Images/insta-link.png",
     ariaLabel: "Instagram",
   },
@@ -34,16 +34,28 @@ export const getSocialMediaArray = () => {
   return Object.values(SOCIAL_MEDIA_LINKS);
 };
 
-// Helper function to get social media links for footer (SVG icons)
+// Helper function to get social media links for footer (maintains backward compatibility)
 export const getFooterSocialLinks = () => {
   return getSocialMediaArray().map((social) => ({
     icon: social.icon,
     url: social.url,
+    ariaLabel: social.ariaLabel,
   }));
 };
 
-// Helper function to get social media links for contact sections (image icons)
+// Helper function to get social media links for contact sections (maintains backward compatibility)
 export const getContactSocialLinks = () => {
+  return getSocialMediaArray().map((social) => ({
+    id: social.name.toLowerCase(),
+    name: social.name,
+    icon: social.imageIcon,
+    url: social.url,
+    ariaLabel: social.ariaLabel,
+  }));
+};
+
+// NEW: Helper function to get social media links with React icons for modern components
+export const getReactSocialLinks = () => {
   return getSocialMediaArray().map((social) => ({
     id: social.name.toLowerCase(),
     name: social.name,

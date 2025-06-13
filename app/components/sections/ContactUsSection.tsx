@@ -414,6 +414,7 @@ export default function ContactUsSection() {
                   key={social.id}
                   href={social.url}
                   aria-label={social.ariaLabel}
+                  target="_blank"
                 >
                   <Image
                     src={social.icon}

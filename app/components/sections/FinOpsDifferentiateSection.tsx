@@ -20,7 +20,7 @@ const FinOpsDifferentiateSection = () => {
               height={75}
               className="w-[75px] h-[75px]"
             />
-            <h3 className="md:text-xl text-lg nunito-bold font-semibold">
+            <h3 className="md:text-xl text-center text-lg nunito-bold font-semibold">
               {card.title}
             </h3>
 

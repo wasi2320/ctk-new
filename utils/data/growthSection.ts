@@ -1,7 +1,7 @@
 export const GROWTH_SECTION = {
   heading: "How will your Business upscale?",
   description:
-    "Connect your team with cloud expertise that drives innovation. Connect your team with cloud expertise that drives innovation.Connect your team with cloud expertise that drives innovation. Connect your team with cloud expertise that drives innovation.",
+    "Cloud migration allows your business to scale by providing flexible, on-demand resources. It boosts efficiency through process automation, handles increased traffic seamlessly, and opens new growth opportunities. With cloud technology, you can enhance performance, improve collaboration, and foster innovation, driving business success and expansion.",
   cards: [
     {
       title: "Growth Opportunities",

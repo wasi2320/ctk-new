@@ -42,12 +42,12 @@ function page() {
                 <h2 className="text-2xl md:text-3xl font-bold">
                   We build partnerships.
                 </h2>
-                <h3 className="text-xl md:text-2xl">
+                <h3 className="text-xl self-center text-center md:text-2xl">
                   Let&apos;s break through together.
                 </h3>
               </div>
 
-              <div className="flex items-center w-full max-w-md bg-[#1B332F] rounded-full overflow-hidden">
+              {/* <div className="flex items-center w-full max-w-md bg-[#1B332F] rounded-full overflow-hidden">
                 <input
                   type="email"
                   placeholder="Your email address"
@@ -56,14 +56,16 @@ function page() {
                 <button className="px-4 py-1  text-[#1B332F] font-medium bg-[#ffffff] transition-colors m-2 mr-3 rounded-2xl">
                   Connect
                 </button>
-              </div>
+              </div> */}
             </div>
 
             {/* Right Content */}
             <div className="bg-gray-50 p-8 rounded-xl space-y-8">
               <div className="space-y-2">
                 <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-xl font-medium">Project: Fintech</h3>
+                  <h3 className="text-xl self-center text-center font-medium">
+                    Project: Fintech
+                  </h3>
                   <span className="bg-[#C5D1CE] px-3 py-1 rounded-full text-sm">
                     Increased progress
                   </span>
@@ -158,7 +160,7 @@ function page() {
                   className="object-contain"
                 />
               </div>
-              <h3 className="text-xl font-semibold mb-4">
+              <h3 className="text-xl self-center text-center font-semibold mb-4">
                 Customized FinOps Solutions
               </h3>
               <p className="text-sm text-gray-300 leading-relaxed">
@@ -177,7 +179,7 @@ function page() {
                   className="object-contain"
                 />
               </div>
-              <h3 className="text-xl font-semibold mb-4">
+              <h3 className="text-xl self-center text-center font-semibold mb-4">
                 Innovative Technology
               </h3>
               <p className="text-sm text-gray-300 leading-relaxed">
@@ -196,7 +198,7 @@ function page() {
                   className="object-contain"
                 />
               </div>
-              <h3 className="text-xl font-semibold mb-4">
+              <h3 className="text-xl self-center text-center font-semibold mb-4">
                 Continuous Optimization
               </h3>
               <p className="text-sm text-gray-300 leading-relaxed">
@@ -215,7 +217,9 @@ function page() {
                   className="object-contain"
                 />
               </div>
-              <h3 className="text-xl font-semibold mb-4">Expert FinOps Team</h3>
+              <h3 className="text-xl self-center text-center font-semibold mb-4">
+                Expert FinOps Team
+              </h3>
               <p className="text-sm text-gray-300 leading-relaxed">
                 Providing specialized expertise to drive strategic financial
                 decision-making and execution.

@@ -1,17 +1,8 @@
 import React from "react";
-import { Upload, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
-import { SOCIAL_MEDIA_LINKS } from "@/utils/data/socialMedia";
 import ContactUsSection from "@/app/components/sections/ContactUsSection";
 
 export default function page() {
   // Map social media platforms to their respective Lucide React icons
-  const socialIconMap = {
-    facebook: Facebook,
-    linkedin: Linkedin,
-    instagram: Instagram,
-    twitter: Twitter,
-  };
-
   return (
     <div>
       <header className="w-full h-[300px] md:h-[350px] lg:h-[400px] bg-[url('/Images/contact/contactHeader.png')] bg-cover bg-center overflow-hidden">
