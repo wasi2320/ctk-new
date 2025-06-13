@@ -25,7 +25,7 @@ const MobileApp = () => {
       <HeroSection
         title="Revolutionize Your Business with Custom Mobile Apps"
         description="Your mobile app is your brand in the palm of your customer's hand, driving connection and action with every tap."
-        imageSrc="/Images/Ai_Hero.png"
+        imageSrc="/Images/mobile_app.svg"
       />
       <TailoredSection heading="Develop, Launch & Grow Your Mobile App with Confidence" />
       <MobileBusinessSection />

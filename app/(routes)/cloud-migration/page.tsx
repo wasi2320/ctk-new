@@ -21,9 +21,9 @@ const CloudMigration = () => {
   return (
     <div>
       <HeroSection
-        title="Cloud Migration: Seamless Transition to Better Infrastructure"
-        description="Our expert team ensures smooth cloud migration, enhancing scalability, security, and performance without disruption."
-        imageSrc="/Images/CloudMigration_Hero.png"
+        title="Skill of Cloud Migration is Key to Enhancing Flexibility and Security"
+        description="Ensure a smooth transition, minimizing downtime and maximizing efficiency, allowing you to leverage the full potential of cloud technology for better business performance."
+        imageSrc="/Images/Cloud_Hero.png"
       />
       <TailoredSection />
       <GrowthSection />

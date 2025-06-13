@@ -41,8 +41,8 @@ const HeroSection = ({
           alt="Hero"
           height={500}
           width={500}
-          className={`md:w-[350px] md:h-[350px] lg:w-[500px] lg:h-[500px] ${
-            cover ? "object-contain" : ""
+          className={`md:w-full md:h-[350px] lg:w-[80%] lg:h-[500px] ${
+            cover ? "object-cover" : ""
           }`}
         />
       </div>
