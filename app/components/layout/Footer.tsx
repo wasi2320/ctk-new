@@ -185,6 +185,7 @@ const Footer = () => {
                 <Link
                   href={item.url}
                   key={index}
+                  target="_blank"
                   className="w-7 h-7 flex justify-center items-center bg-white rounded-full"
                 >
                   <Image

@@ -1,7 +1,7 @@
 export const SOCIAL_MEDIA_LINKS = {
   facebook: {
     name: "Facebook",
-    url: "https://www.facebook.com/share/1AjsbfDZeR/",
+    url: "https://www.facebook.com/people/CodetoKloud/61577188241553/",
     icon: "/Images/Social_1.svg",
     imageIcon: "/Images/Social_1.svg",
     ariaLabel: "Facebook",
