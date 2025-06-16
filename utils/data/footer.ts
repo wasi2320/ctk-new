@@ -11,8 +11,8 @@ export const FOOTER_DATA = {
     heading: "We build partnerships with you.",
   },
   learnCol: [
-    { name: "Services", link: "/services" },
-    { name: "Expertise", link: "/expertise" },
+    // { name: "Services", link: "/services" },
+    // { name: "Expertise", link: "/expertise" },
     // { name: "Resources", link: "/resources" },
     { name: "About Us", link: "/aboutus" },
     { name: "Contact Us", link: "/contact" },
