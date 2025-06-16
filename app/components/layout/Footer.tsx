@@ -70,7 +70,7 @@ const Footer = () => {
         throw new Error("Failed to send message");
       }
     } catch (error) {
-      console.error("Error sending to Discord:", error);
+      console.error("Error sending to Mail:", error);
       alert(
         "Sorry, there was an error sending your request. Please try again."
       );

@@ -190,7 +190,7 @@ export default function ContactUsSection() {
       "https://discord.com/api/webhooks/1382850558288855200/FdgEKZeNdokxtBgahKci9FS70F_AS3lObDBZEaA0ruun7H98PxK-_oGKjFQs65KvQnU4";
 
     if (!webhookUrl) {
-      throw new Error("Discord webhook URL not configured");
+      throw new Error("Webhook URL not configured");
     }
 
     const response = await fetch(webhookUrl, {
@@ -253,11 +253,11 @@ export default function ContactUsSection() {
 
       // Show success message
       alert(
-        "✅ Your message has been sent successfully to our Discord channel!" +
+        "✅ Your message has been sent successfully to our mail channel!" +
           (fileUrl
-            ? " File has been uploaded to S3."
+            ? " File has been uploaded."
             : uploadedFile
-            ? " Note: File upload to S3 failed, but form was submitted."
+            ? " Note: File upload failed, but form was submitted."
             : "")
       );
     } catch (error) {
