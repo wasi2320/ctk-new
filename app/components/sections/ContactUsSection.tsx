@@ -175,7 +175,7 @@ export default function ContactUsSection() {
           fields: fields,
           footer: {
             text: "Contact Form Submission System",
-            icon_url: "https://cdn-icons-png.flaticon.com/512/684/684908.png",
+            icon_url: "https://cdn-icons-png.flaticon.com/512/684/684910.png",
           },
           timestamp: new Date().toISOString(),
         },
