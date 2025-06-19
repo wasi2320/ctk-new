@@ -131,15 +131,10 @@ const Footer = () => {
               {FOOTER_DATA.logoCol.heading}
             </h3>
           </div>
-          <div className="md:w-1/2 md:border-t-2 md:border-white flex justify-center md:gap-20 2xl:gap-32 gap-10 md:mt-14 mt-6">
-            <div className="md:ml-20">
+          <div className="ml-[9%] md:border-t-2 md:border-white flex justify-between md:mt-14 mt-6">
+            <div>
               <h4 className="md:text-lg mt-10">Learn</h4>
-              <div
-                className="flex flex-col gap-4 mt-4"
-                style={{
-                  width: "125%",
-                }}
-              >
+              <div className="flex flex-col gap-4 mt-4">
                 {FOOTER_DATA.learnCol.map((item, index) => (
                   <Link href={item.link} key={index}>
                     <p className="text-[#CCCBC9]">{item.name}</p>
@@ -147,6 +142,7 @@ const Footer = () => {
                 ))}
               </div>
             </div>
+
             <div>
               <h4 className="md:text-lg mt-10">Contact</h4>
               <div className="flex flex-col gap-4 mt-4">
@@ -157,12 +153,13 @@ const Footer = () => {
                 ))}
               </div>
             </div>
-            <div>
+
+            <div className="w-[50%">
               <h4 className="md:text-lg mt-10">Address</h4>
-              <p className="text-[#CCCBC9] mb-1 mt-4 md:w-9/12">
+              <p className="text-[#CCCBC9] mb-1 mt-4 ">
                 {FOOTER_DATA.addressCol.addressOne}
               </p>
-              <p className="text-[#CCCBC9] md:w-9/12">
+              <p className="text-[#CCCBC9] ">
                 {FOOTER_DATA.addressCol.addressTwo}
               </p>
             </div>
