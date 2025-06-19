@@ -7,14 +7,14 @@ export const CardScrollSection = () => {
   return (
     <section className="my-20">
       <div className="px-4 md:px-0">
-        <h2 className="md:text-4xl text-3xl text-center nunito-bold font-bold mb-6">
+        <h2 className="md:text-[22px]  text-3xl text-center nunito-bold font-bold mb-6">
           {CARD_SCROLL_SECTION.heading}
         </h2>
         <p className="md:text-xl text-sm nunito-semiBold md:w-7/12 mx-auto text-center font-semibold">
           {CARD_SCROLL_SECTION.description}
         </p>
       </div>
-      
+
       {/* Mobile Sticky Container */}
       <div className="block md:hidden relative h-[300vh]">
         {CARD_SCROLL_SECTION.cards.map((item, index) => (
@@ -37,7 +37,7 @@ export const CardScrollSection = () => {
                 />
               </div>
               <div className="flex-1 overflow-y-auto">
-                <h2 className="text-2xl nunito-bold font-bold mb-4">
+                <h2 className="text-[20px] nunito-bold font-bold mb-4  ">
                   {item.heading}
                 </h2>
                 <p className="nunito-extraLight mb-6">{item.description}</p>
@@ -70,10 +70,12 @@ export const CardScrollSection = () => {
           >
             <div className="w-full lg:w-[40%] space-y-4 lg:space-y-6 h-full flex flex-col justify-center">
               <div className="space-y-4 lg:space-y-6">
-                <h2 className="md:text-4xl text-2xl nunito-bold font-bold lg:w-8/12 lg:leading-12">
+                <h2 className="md:text-[22px]  text-2xl nunito-bold font-bold ">
                   {item.heading}
                 </h2>
-                <p className="md:text-xl nunito-extraLight">{item.description}</p>
+                <p className="md:text-xl nunito-extraLight">
+                  {item.description}
+                </p>
                 <div className="flex gap-2 mt-12">
                   <button className="text-2xl">Learn More</button>
                   <div className="w-7 h-7 flex justify-center items-center bg-[#152F27] rounded-full">

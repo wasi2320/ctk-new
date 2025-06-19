@@ -21,7 +21,7 @@ const HeroSection = ({
   return (
     <section className="md:px-36 px-4 flex flex-col-reverse md:flex-row items-center justify-between h-auto md:h-[90vh] gap-10 my-10 md:my-0">
       <div className="md:w-[55%] text-center md:text-left">
-        <h1 className="md:text-7xl text-4xl text-shadow-lg">{title}</h1>
+        <h1 className="md:text-[44px] text-4xl text-shadow-lg">{title}</h1>
         <p className="md:text-xl text-base md:w-11/12 my-8 text-gray-700">
           {description}
         </p>
