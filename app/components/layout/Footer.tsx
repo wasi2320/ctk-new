@@ -137,7 +137,7 @@ const Footer = () => {
               <div
                 className="flex flex-col gap-4 mt-4"
                 style={{
-                  width: "120%",
+                  width: "125%",
                 }}
               >
                 {FOOTER_DATA.learnCol.map((item, index) => (
