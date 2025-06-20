@@ -131,7 +131,7 @@ const Footer = () => {
               {FOOTER_DATA.logoCol.heading}
             </h3>
           </div>
-          <div className="ml-[9%] md:border-t-2 md:border-white flex justify-between md:mt-14 mt-6">
+          <div className="ml-[9%] md:border-t-2 md:border-white flex justify-between md:mt-14 mt-6 gap-10">
             <div>
               <h4 className="md:text-lg mt-10">Learn</h4>
               <div className="flex flex-col gap-4 mt-4">
