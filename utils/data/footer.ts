@@ -22,7 +22,7 @@ export const FOOTER_DATA = {
     { name: "Email", link: "#" },
   ],
   addressCol: {
-    addressOne: "Codetokloud Inc PO Box 9165 Naperville, IL 60567",
+    addressOne: "Codetokloud Inc PO Box 9165 \n Naperville, IL 60567",
     addressTwo: "+1 (480) 572-7818",
   },
   otherPages: [{ name: "Privacy Policy", link: "/privacy-policy" }],

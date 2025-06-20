@@ -156,7 +156,7 @@ const Footer = () => {
 
             <div className="w-[50%">
               <h4 className="md:text-lg mt-10">Address</h4>
-              <p className="text-[#CCCBC9] mb-1 mt-4 ">
+              <p className="text-[#CCCBC9] mb-1 mt-4 whitespace-pre-line">
                 {FOOTER_DATA.addressCol.addressOne}
               </p>
               <p className="text-[#CCCBC9] ">
