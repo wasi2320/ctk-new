@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { CONTACT_SECTION_DATA } from "@/utils/data/contactSection";
 import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
 
@@ -39,6 +40,65 @@ interface DiscordEmbed {
 interface DiscordPayload {
   embeds: DiscordEmbed[];
 }
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const formCardVariants = {
+  hidden: { opacity: 0, x: -50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+const contactInfoVariants = {
+  hidden: { opacity: 0, x: 50 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+const formFieldVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+};
+
+const buttonVariants = {
+  idle: { scale: 1 },
+  hover: { scale: 1.05 },
+  tap: { scale: 0.95 },
+  loading: {
+    scale: 1,
+    transition: {
+      duration: 0.2,
+    },
+  },
+};
 
 export default function ContactUsSection() {
   const {
@@ -272,24 +332,47 @@ export default function ContactUsSection() {
   };
 
   return (
-    <section
+    <motion.section
       className="w-full py-12 px-2 md:px-0 bg-cover bg-center relative overflow-hidden"
       style={{ backgroundImage: `url('${backgroundImage}')` }}
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
     >
       {/* <FluidBackground className="absolute inset-0" /> */}
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center justify-between relative z-10">
         {/* Form Card */}
-        <div className="bg-white/95 rounded-2xl shadow-xl p-8 flex-1 min-w-[320px] max-w-xl mx-auto">
-          <h2 className="text-4xl font-semibold mb-8">{title}</h2>
+        <motion.div
+          className="bg-white/95 rounded-2xl shadow-xl p-8 flex-1 min-w-[320px] max-w-xl mx-auto"
+          variants={formCardVariants}
+          whileHover={{
+            y: -5,
+            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+          }}
+        >
+          <motion.h2
+            className="text-4xl font-semibold mb-8"
+            variants={formFieldVariants}
+          >
+            {title}
+          </motion.h2>
           <form className="space-y-6" onSubmit={handleSubmit}>
-            {formFields.map((field) => (
-              <div key={field.id}>
-                <label className="block text-lg font-medium mb-1">
+            {formFields.map((field, index) => (
+              <motion.div
+                key={field.id}
+                variants={formFieldVariants}
+                transition={{ delay: index * 0.1 }}
+              >
+                <motion.label
+                  className="block text-lg font-medium mb-1"
+                  whileHover={{ color: "#059669" }}
+                >
                   {field.label}
-                </label>
+                </motion.label>
                 {field.type === "textarea" ? (
-                  <textarea
-                    className="w-full border-b border-gray-400 outline-none py-2 bg-transparent"
+                  <motion.textarea
+                    className="w-full border-b border-gray-400 outline-none py-2 bg-transparent transition-colors focus:border-green-600"
                     rows={field.rows}
                     placeholder={field.placeholder}
                     required={field.required}
@@ -297,30 +380,38 @@ export default function ContactUsSection() {
                     onChange={(e) =>
                       handleInputChange(field.id, e.target.value)
                     }
+                    whileFocus={{ borderColor: "#059669" }}
                   />
                 ) : (
-                  <input
+                  <motion.input
                     type={field.type}
-                    className="w-full border-b border-gray-400 outline-none py-2 bg-transparent"
+                    className="w-full border-b border-gray-400 outline-none py-2 bg-transparent transition-colors focus:border-green-600"
                     placeholder={field.placeholder}
                     required={field.required}
                     value={formData[field.id] || ""}
                     onChange={(e) =>
                       handleInputChange(field.id, e.target.value)
                     }
+                    whileFocus={{ borderColor: "#059669" }}
                   />
                 )}
-              </div>
+              </motion.div>
             ))}
 
-            <div className="flex items-center gap-2 mt-2">
+            <motion.div
+              className="flex items-center gap-2 mt-2"
+              variants={formFieldVariants}
+            >
               <Image
                 src={uploadSection.icon}
                 alt={uploadSection.altText}
                 width={18}
                 height={18}
               />
-              <label className="text-gray-700 text-base cursor-pointer">
+              <motion.label
+                className="text-gray-700 text-base cursor-pointer"
+                whileHover={{ color: "#059669" }}
+              >
                 {uploadSection.text}
                 {uploadedFile ? ` - ${uploadedFile.name}` : ""}
                 <input
@@ -328,11 +419,14 @@ export default function ContactUsSection() {
                   className="hidden"
                   onChange={handleFileUpload}
                 />
-              </label>
-            </div>
+              </motion.label>
+            </motion.div>
 
-            <div className="flex justify-end mt-4">
-              <button
+            <motion.div
+              className="flex justify-end mt-4"
+              variants={formFieldVariants}
+            >
+              <motion.button
                 type="submit"
                 disabled={isSubmitting}
                 className={`${submitButton.className} ${
@@ -344,6 +438,11 @@ export default function ContactUsSection() {
                     ? "bg-red-600 hover:bg-red-700"
                     : ""
                 }`}
+                variants={buttonVariants}
+                initial="idle"
+                whileHover={isSubmitting ? undefined : "hover"}
+                whileTap={isSubmitting ? undefined : "tap"}
+                animate={isSubmitting ? "loading" : "idle"}
               >
                 {isSubmitting ? (
                   <span className="flex items-center gap-2">
@@ -376,16 +475,29 @@ export default function ContactUsSection() {
                 ) : (
                   submitButton.text
                 )}
-              </button>
-            </div>
+              </motion.button>
+            </motion.div>
           </form>
-        </div>
+        </motion.div>
 
         {/* Contact Info */}
-        <div className="flex-1 flex flex-col items-start mt-8 md:mt-0 md:pl-8 border-l border-black">
-          {contactInfo.map((info) => (
-            <div key={info.id} className="mb-6">
-              <div className="font-semibold text-2xl mb-1">{info.title}</div>
+        <motion.div
+          className="flex-1 flex flex-col items-start mt-8 md:mt-0 md:pl-8 border-l border-black"
+          variants={contactInfoVariants}
+        >
+          {contactInfo.map((info, index) => (
+            <motion.div
+              key={info.id}
+              className="mb-6"
+              variants={formFieldVariants}
+              transition={{ delay: index * 0.1 }}
+            >
+              <motion.div
+                className="font-semibold text-2xl mb-1"
+                whileHover={{ color: "#059669" }}
+              >
+                {info.title}
+              </motion.div>
               {info.type === "text" ? (
                 <div className="text-gray-800 text-xl">
                   {info.content.map((line, index) => (
@@ -397,25 +509,36 @@ export default function ContactUsSection() {
                 </div>
               ) : (
                 info.content.map((item, index) => (
-                  <a key={index} href={info.href} className={info.className}>
+                  <motion.a
+                    key={index}
+                    href={info.href}
+                    className={info.className}
+                    whileHover={{ scale: 1.05, color: "#059669" }}
+                  >
                     {item}
-                  </a>
+                  </motion.a>
                 ))
               )}
-            </div>
+            </motion.div>
           ))}
 
-          <div>
-            <div className="font-semibold text-2xl mb-2">
+          <motion.div variants={formFieldVariants}>
+            <motion.div
+              className="font-semibold text-2xl mb-2"
+              whileHover={{ color: "#059669" }}
+            >
               {socialMedia.title}
-            </div>
+            </motion.div>
             <div className="flex gap-4">
               {socialMedia.links.map((social) => (
-                <a
+                <motion.a
                   key={social.id}
                   href={social.url}
                   aria-label={social.ariaLabel}
                   target="_blank"
+                  whileHover={{ scale: 1.2, rotate: 5 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
                   <Image
                     src={social.icon}
@@ -423,12 +546,12 @@ export default function ContactUsSection() {
                     width={38}
                     height={38}
                   />
-                </a>
+                </motion.a>
               ))}
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }
