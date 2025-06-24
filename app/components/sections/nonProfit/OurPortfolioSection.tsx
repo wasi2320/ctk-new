@@ -80,7 +80,7 @@ export default function OurPortfolioSection() {
             Our Portfolio
           </motion.h2>
           <motion.p className="text-xl text-slate-600" variants={itemVariants}>
-            Real-World cases in Fintech
+            Real-World Technology Solutions for Non-Profits
           </motion.p>
         </div>
 
@@ -90,15 +90,15 @@ export default function OurPortfolioSection() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <Link
-            href="#"
+          <a
+            href="/scalable-secure-aws"
             className="inline-block px-6 py-3 text-xl text-slate-800 border-2 border-slate-800 hover:bg-slate-100 transition-colors"
             style={{
               borderRadius: "1rem",
             }}
           >
             Real-World cases in Fintech
-          </Link>
+          </a>
         </motion.div>
       </motion.div>
 
@@ -107,8 +107,9 @@ export default function OurPortfolioSection() {
         variants={containerVariants}
       >
         {/* Cost Optimization Card */}
-        <motion.div
-          className="bg-gray-50 rounded-3xl p-8 shadow-lg"
+        <motion.a
+          href="/automated_deployment"
+          className="bg-gray-50 rounded-3xl p-8 shadow-lg cursor-pointer block"
           variants={cardVariants}
           whileHover={{
             y: -10,
@@ -126,22 +127,23 @@ export default function OurPortfolioSection() {
             className="text-xl text-slate-600 mb-6"
             variants={itemVariants}
           >
-            Real-World cases in Fintech
+            Automated deployment reducing non-profit operational costs
           </motion.p>
           <motion.div className="flex justify-center" variants={imageVariants}>
             <Image
-              src="/Images/nonprofit/portfolio_1.svg"
-              alt="Cost Optimization Illustration"
-              width={400}
-              height={300}
-              className="w-full h-auto"
+              src="/services/automated_aws2.png"
+              alt="Cost Optimization Case Study"
+              width={300}
+              height={200}
+              className="w-full h-auto rounded-lg hover:scale-105 transition-transform duration-300"
             />
           </motion.div>
-        </motion.div>
+        </motion.a>
 
-        {/* Security Compliance Card */}
-        <motion.div
-          className="bg-gray-50 rounded-3xl p-8 shadow-lg"
+        {/* Technology Infrastructure Card */}
+        <motion.a
+          href="/scalable-secure-aws"
+          className="bg-gray-50 rounded-3xl p-8 shadow-lg cursor-pointer block"
           variants={cardVariants}
           whileHover={{
             y: -10,
@@ -153,24 +155,24 @@ export default function OurPortfolioSection() {
             className="text-3xl font-bold text-slate-800 mb-2"
             variants={itemVariants}
           >
-            Security Compliance
+            Scalable Infrastructure
           </motion.h3>
           <motion.p
             className="text-xl text-slate-600 mb-6"
             variants={itemVariants}
           >
-            Real-World cases in Fintech
+            Secure AWS setup enabling non-profit growth and impact
           </motion.p>
           <motion.div className="flex justify-center" variants={imageVariants}>
             <Image
-              src="/Images/nonprofit/portfolio_2.svg"
-              alt="Security Compliance Illustration"
-              width={400}
-              height={300}
-              className="w-full h-auto"
+              src="/services/aws-solution-illustration.png"
+              alt="Scalable Infrastructure Case Study"
+              width={300}
+              height={200}
+              className="w-full h-auto rounded-lg hover:scale-105 transition-transform duration-300"
             />
           </motion.div>
-        </motion.div>
+        </motion.a>
       </motion.div>
     </motion.div>
   );

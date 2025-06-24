@@ -22,8 +22,8 @@ const EdTechFutureHealthcare = ({}: EdTechFutureHealthcareProps) => {
           {/* Right Div: Link/Button */}
           <div>
             <a
-              href="#your-link"
-              className="inline-block bg-transparent text-Nunito text-dark text-lg md:text-xl font-semibold md:py-2 md:px-6 py-2 px-4 border-3 rounded-2xl transition"
+              href="/helm-pipeline"
+              className="inline-block bg-transparent text-Nunito text-dark text-lg md:text-xl font-semibold md:py-2 md:px-6 py-2 px-4 border-3 rounded-2xl transition hover:bg-gray-100"
             >
               Explore EdTech Solutions
               <Image
@@ -38,25 +38,50 @@ const EdTechFutureHealthcare = ({}: EdTechFutureHealthcareProps) => {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center mt-8">
-          {/* Left Div: Heading + Paragraph */}
-          <div className="md:w-[564px] md:h-[420px] w-[330px] h-[380px] text-center md:text-center mt-4 bg-[#f6f6f6] p-6 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.1)]">
+          {/* Left Card: Cost Optimization Case Study */}
+          <a
+            href="/scalable-secure-aws"
+            className="md:w-[564px] md:h-[420px] w-[330px] h-[380px] text-center md:text-center mt-4 bg-[#f6f6f6] p-6 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)] transition-all duration-300 cursor-pointer group"
+          >
             <h3 className="md:text-3xl text-2xl font-bold text-dark mb-1 mt-5">
-              Cost Optimization
+              Scalable Platform
             </h3>
             <h3 className="md:text-lg text-lg text-Nunito mb-3">
-              Maximizing educational resources with minimal investment
+              EdTech platform migration to AWS with enhanced scalability
             </h3>
-          </div>
 
-          {/* Right Div: Heading + Paragraph */}
-          <div className="md:w-[564px] md:h-[420px] w-[330px] h-[380px] text-center md:text-center mt-4 bg-[#f6f6f6] p-6 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.1)]">
+            <div className="flex justify-center">
+              <Image
+                src="/services/aws-solution-illustration.png"
+                alt="EdTech Scalable Platform Case Study"
+                width={280}
+                height={180}
+                className="rounded-lg group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </a>
+
+          {/* Right Card: Security Compliance Case Study */}
+          <a
+            href="/aws-scalable-secure"
+            className="md:w-[564px] md:h-[420px] w-[330px] h-[380px] text-center md:text-center mt-4 bg-[#f6f6f6] p-6 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)] transition-all duration-300 cursor-pointer group"
+          >
             <h3 className="md:text-3xl text-2xl font-bold text-dark mb-1 mt-5">
-              Security Compliance
+              AI Integration
             </h3>
             <h3 className="md:text-xl text-lg text-Nunito mb-3">
-              Protecting student data and maintaining privacy standards
+              Educational AI solutions with VoIP and real-time communication
             </h3>
-          </div>
+            <div className="flex justify-center">
+              <Image
+                src="/services/GoAgalia2.png"
+                alt="EdTech AI Integration Case Study"
+                width={280}
+                height={180}
+                className="rounded-lg group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </a>
         </div>
       </div>
     </section>
