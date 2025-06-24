@@ -1,5 +1,7 @@
+// "use client";
 import Link from "next/link";
 import Image from "next/image";
+// import FluidBackground from "./FluidBackground";
 
 interface HeroSectionProps {
   title: string;
@@ -19,6 +21,7 @@ const HeroSection = ({
   buttonLink = "/contact",
 }: HeroSectionProps) => {
   return (
+    // <FluidBackground>
     <section className="md:px-36 px-4 flex flex-col-reverse md:flex-row items-center justify-between h-auto md:h-[90vh] gap-10 my-10 md:my-0">
       <div className="md:w-[55%] text-center md:text-left">
         <h1 className="md:text-[44px] text-4xl text-shadow-lg">{title}</h1>
@@ -47,6 +50,7 @@ const HeroSection = ({
         />
       </div>
     </section>
+    // </FluidBackground>
   );
 };
 
