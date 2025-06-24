@@ -9,11 +9,18 @@ const FutureHealthcare = ({ heading }: FutureHealthcareProps) => {
   return (
     <section className="md:px-36 px-4 md:pt-12 pt-8 pb-8 bg-center bg-no-repeat text-dark">
       <div className="flex flex-col md:flex-col justify-center">
-        <div className="text-center flex flex-col items-center justify-center mb-8 md:mb-0">
+        <div className="text-center flex flex-col items-center justify-center mb-8 md:mb-0 relative">
           <h3 className="md:text-4xl text-2xl text-Nunito mb-3">
             Empowering the Future of Healthcare
           </h3>
-          <Image src="/Images/future-healthcare.png" alt="Center" fill />
+          <div className="relative w-full h-64 mb-4">
+            <Image
+              src="/Images/future-healthcare.png"
+              alt="Future Healthcare"
+              fill
+              className="object-contain"
+            />
+          </div>
           <p className="md:text-2xl text-lg nunito-semiBold md:w-9/12 mx-auto mt-8 text-center font-semibold">
             Deliver impactful healthcare experiences with our innovative
             solutions and dedicated support, helping you shape the next
@@ -34,8 +41,8 @@ const FutureHealthcare = ({ heading }: FutureHealthcareProps) => {
           {/* Right Div: Link/Button */}
           <div>
             <a
-              href="#your-link"
-              className="inline-block bg-transparent text-Nunito text-dark text-lg md:text-xl font-semibold md:py-2 md:px-6 py-2 px-4 border-3 rounded-2xl transition"
+              href="/security-and-deployment"
+              className="inline-block bg-transparent text-Nunito text-dark text-lg md:text-xl font-semibold md:py-2 md:px-6 py-2 px-4 border-3 rounded-2xl transition hover:bg-gray-100"
             >
               Explore Healthcare Innovations
               <Image
@@ -50,25 +57,49 @@ const FutureHealthcare = ({ heading }: FutureHealthcareProps) => {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center mt-8">
-          {/* Left Div: Heading + Paragraph */}
-          <div className="md:w-[564px] md:h-[420px] w-[330px] h-[380px] text-center md:text-center mt-4 bg-[#f6f6f6] p-6 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.1)]">
+          {/* Left Card: Healthcare Security Case Study */}
+          <a
+            href="/security-and-deployment"
+            className="md:w-[564px] md:h-[420px] w-[330px] h-[380px] text-center md:text-center mt-4 bg-[#f6f6f6] p-6 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)] transition-all duration-300 cursor-pointer group"
+          >
             <h3 className="md:text-3xl text-2xl font-bold text-dark mb-1 mt-5">
-              Cost Optimization
+              Healthcare Security
             </h3>
             <h3 className="md:text-lg text-lg text-Nunito mb-3">
-              Reducing healthcare delivery costs while maintaining quality
+              HIPAA-compliant wellness platform with secure deployment
             </h3>
-          </div>
+            <div className="flex justify-center">
+              <Image
+                src="/services/awsDeployment2.png"
+                alt="Healthcare Security Case Study"
+                width={280}
+                height={180}
+                className="rounded-lg group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </a>
 
-          {/* Right Div: Heading + Paragraph */}
-          <div className="md:w-[564px] md:h-[420px] w-[330px] h-[380px] text-center md:text-center mt-4 bg-[#f6f6f6] p-6 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.1)]">
+          {/* Right Card: Healthcare Infrastructure Case Study */}
+          <a
+            href="/strengthening-aws"
+            className="md:w-[564px] md:h-[420px] w-[330px] h-[380px] text-center md:text-center mt-4 bg-[#f6f6f6] p-6 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)] transition-all duration-300 cursor-pointer group"
+          >
             <h3 className="md:text-3xl text-2xl font-bold text-dark mb-1 mt-5">
-              Security Compliance
+              Data Protection
             </h3>
             <h3 className="md:text-xl text-lg text-Nunito mb-3">
-              Meeting HIPAA requirements and protecting patient data
+              Patient data encryption and regulatory compliance standards
             </h3>
-          </div>
+            <div className="flex justify-center">
+              <Image
+                src="/services/strength_aws2.png"
+                alt="Healthcare Data Protection Case Study"
+                width={280}
+                height={180}
+                className="rounded-lg group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </a>
         </div>
       </div>
     </section>
