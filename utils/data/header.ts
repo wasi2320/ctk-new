@@ -33,7 +33,7 @@ export const HEADER = {
         { name: "FinTech", link: "/fin-tech" },
         { name: "Poweing Business", link: "/powering-business" },
         // { name: "Financial Services", link: "/financial-services" },
-        { name: "Real Estate", link: "/real-estate" },
+        // { name: "Real Estate", link: "/real-estate" },
         // { name: "Private Equity and VC Firms", link: "/pe-vc" },
       ],
     },

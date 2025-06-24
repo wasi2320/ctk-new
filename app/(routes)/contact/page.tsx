@@ -20,8 +20,6 @@ export default function page() {
       </header>
 
       <ContactUsSection />
-
-      {/* Our Journey Section */}
     </div>
   );
 }

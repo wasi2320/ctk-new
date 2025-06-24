@@ -15,7 +15,7 @@ const CloudMigration = () => {
         description="Professional Services blend expert knowledge with modern technology to deliver agile, efficient, and results-driven solutions. From digital transformation to managed services, we empower organizations to evolve, scale, and stay ahead in today’s dynamic market landscape."
         imageSrc="/Images/healthcare.png"
         buttonText="Scheduale your cloud assessment"
-        buttonLink="/healthcare"
+        buttonLink="/contact"
       />
       <PoweringExpertiseTailoredSection />
       <PoweringHealthcareSolution />

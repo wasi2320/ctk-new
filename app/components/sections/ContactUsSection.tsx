@@ -273,10 +273,11 @@ export default function ContactUsSection() {
 
   return (
     <section
-      className="w-full py-12 px-2 md:px-0 bg-cover bg-center"
+      className="w-full py-12 px-2 md:px-0 bg-cover bg-center relative overflow-hidden"
       style={{ backgroundImage: `url('${backgroundImage}')` }}
     >
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center justify-between">
+      {/* <FluidBackground className="absolute inset-0" /> */}
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center justify-between relative z-10">
         {/* Form Card */}
         <div className="bg-white/95 rounded-2xl shadow-xl p-8 flex-1 min-w-[320px] max-w-xl mx-auto">
           <h2 className="text-4xl font-semibold mb-8">{title}</h2>
@@ -384,9 +385,9 @@ export default function ContactUsSection() {
         <div className="flex-1 flex flex-col items-start mt-8 md:mt-0 md:pl-8 border-l border-black">
           {contactInfo.map((info) => (
             <div key={info.id} className="mb-6">
-              <div className="font-semibold text-xl mb-1">{info.title}</div>
+              <div className="font-semibold text-2xl mb-1">{info.title}</div>
               {info.type === "text" ? (
-                <div className="text-gray-800 text-base">
+                <div className="text-gray-800 text-xl">
                   {info.content.map((line, index) => (
                     <span key={index}>
                       {line}
@@ -405,7 +406,7 @@ export default function ContactUsSection() {
           ))}
 
           <div>
-            <div className="font-semibold text-xl mb-2">
+            <div className="font-semibold text-2xl mb-2">
               {socialMedia.title}
             </div>
             <div className="flex gap-4">
@@ -419,8 +420,8 @@ export default function ContactUsSection() {
                   <Image
                     src={social.icon}
                     alt={social.name}
-                    width={28}
-                    height={28}
+                    width={38}
+                    height={38}
                   />
                 </a>
               ))}

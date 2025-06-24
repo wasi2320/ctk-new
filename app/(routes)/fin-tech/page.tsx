@@ -13,7 +13,7 @@ const CloudMigration = () => {
         description="Empower your financial services with cutting-edge cloud solutions. From modernizing legacy systems to enhancing customer experiences, we help your team leverage the cloud to unlock agility, scalability, and security all while staying compliant in a rapidly evolving industry."
         imageSrc="/Images/fin-tech.png"
         buttonText="Scheduale your cloud assessment"
-        buttonLink="/fin-tech"
+        buttonLink="/contact"
       />
       <FinTechTailoredSection />
       <FinTechTransformative />

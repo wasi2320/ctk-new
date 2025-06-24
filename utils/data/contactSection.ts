@@ -61,7 +61,7 @@ export const CONTACT_SECTION_DATA = {
       content: ["info@codetokloud.com"],
       type: "link",
       href: "mailto:info@codetokloud.com",
-      className: "text-[#193728] underline text-sm",
+      className: "text-[#193728] underline text-xl",
     },
     {
       id: "phone",
@@ -69,7 +69,7 @@ export const CONTACT_SECTION_DATA = {
       content: ["+1 (480) 572-7818"],
       type: "link",
       href: "tel:+1 (480) 572-7818",
-      className: "text-[#193728] text-sm",
+      className: "text-[#193728] text-xl",
     },
   ],
 

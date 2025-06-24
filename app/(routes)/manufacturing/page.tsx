@@ -15,7 +15,7 @@ const CloudMigration = () => {
         From automated factories to cloud-powered platforms, it enables enterprises to innovate, scale, and meet the evolving needs of the market."
         imageSrc="/Images/manufacturing.svg"
         buttonText="Scheduale your cloud assessment"
-        buttonLink="/manufacturing"
+        buttonLink="/contact"
       />
       <ManufacturingExpertiseTailoredSection />
       <ManufacturingSolution />
