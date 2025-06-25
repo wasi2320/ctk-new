@@ -64,7 +64,7 @@ export const CardScrollSection = () => {
         {CARD_SCROLL_SECTION.cards.map((item, index) => (
           <motion.div
             key={index}
-            className="rounded-4xl flex flex-col lg:flex-row items-start justify-between h-full lg:h-[90vh] lg:sticky lg:top-[.2rem] all-sides-shadow overflow-hidden bg-cover bg-center mb-12 lg:mb-0 p-6 lg:p-20 bg-white z-10"
+            className="rounded-4xl flex flex-col lg:flex-row items-center justify-between h-full lg:h-[90vh] lg:sticky lg:top-[.2rem] all-sides-shadow overflow-hidden bg-cover bg-center mb-12 lg:mb-0 p-6 lg:p-20 bg-white z-10"
             initial={{ y: 100 }}
             transition={{ duration: 1, delay: index * 0.5 }}
           >
