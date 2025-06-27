@@ -12,7 +12,7 @@ const CloudMigration = () => {
         title="EdTech"
         description="EdTech blends education with innovative technology to create smarter, faster, and more personalized learning experiences. From digital classrooms to cloud-powered platforms, it enables institutions to innovate, scale, and meet the evolving needs of learners worldwide."
         imageSrc="/Images/ed-tech.png"
-        buttonText="Scheduale your cloud assessment"
+        buttonText="Let’s connect"
         buttonLink="/contact"
       />
       <EdTechTailoredSection />

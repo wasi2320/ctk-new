@@ -12,7 +12,7 @@ export default function HealthcarePage() {
         title="Healthcare"
         description="HealthTech blends healthcare with innovative technology to create smarter, faster, and more personalized patient care experiences. From virtual consultations to cloud-powered healthcare platforms, it enables organizations to innovate, scale, and meet the evolving needs of patients worldwide."
         imageSrc="/Images/healthcare.png"
-        buttonText="Scheduale your cloud assessment"
+        buttonText="Let’s connect"
         buttonLink="/contact"
       />
       <PoweringExpertiseTailoredSection />

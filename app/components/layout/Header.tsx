@@ -114,8 +114,9 @@ const Header = () => {
                     >
                       {item.name}
                       <svg
-                        className={`w-4 h-4 ml-1 transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""
-                          }`}
+                        className={`w-4 h-4 ml-1 transition-transform duration-200 ${
+                          isServicesOpen ? "rotate-180" : ""
+                        }`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -191,8 +192,9 @@ const Header = () => {
                     >
                       {item.name}
                       <svg
-                        className={`w-4 h-4 ml-1 transition-transform duration-200 ${isIndustriesOpen ? "rotate-180" : ""
-                          }`}
+                        className={`w-4 h-4 ml-1 transition-transform duration-200 ${
+                          isIndustriesOpen ? "rotate-180" : ""
+                        }`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -252,13 +254,13 @@ const Header = () => {
               );
             })}
           </div>
-          <Image
+          {/* <Image
             src={HEADER.search}
             alt="Search"
             height={35}
             width={35}
             className="w-[30px] h-[30px] cursor-pointer"
-          />
+          /> */}
         </div>
 
         {/* Mobile Menu Button */}
@@ -279,20 +281,23 @@ const Header = () => {
 
       {/* Mobile Sidebar */}
       <div
-        className={`fixed inset-0 z-50 transition-all duration-300 ease-in-out ${isMenuOpen ? "visible" : "invisible"
-          }`}
+        className={`fixed inset-0 z-50 transition-all duration-300 ease-in-out ${
+          isMenuOpen ? "visible" : "invisible"
+        }`}
       >
         {/* Overlay */}
         <div
-          className={`absolute inset-0 bg-black transition-opacity duration-300 ${isMenuOpen ? "opacity-50" : "opacity-0"
-            }`}
+          className={`absolute inset-0 bg-black transition-opacity duration-300 ${
+            isMenuOpen ? "opacity-50" : "opacity-0"
+          }`}
           onClick={toggleMenu}
         />
 
         {/* Sidebar Content */}
         <div
-          className={`absolute right-0 top-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${isMenuOpen ? "translate-x-0" : "translate-x-full"
-            }`}
+          className={`absolute right-0 top-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
+            isMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
         >
           <div className="p-4 flex justify-end">
             <button
@@ -317,8 +322,9 @@ const Header = () => {
                     >
                       {item.name}
                       <svg
-                        className={`w-4 h-4 ml-1 transition-transform duration-200 ${isMobileServicesOpen ? "rotate-180" : ""
-                          }`}
+                        className={`w-4 h-4 ml-1 transition-transform duration-200 ${
+                          isMobileServicesOpen ? "rotate-180" : ""
+                        }`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -366,8 +372,9 @@ const Header = () => {
                     >
                       {item.name}
                       <svg
-                        className={`w-4 h-4 ml-1 transition-transform duration-200 ${isMobileIndustriesOpen ? "rotate-180" : ""
-                          }`}
+                        className={`w-4 h-4 ml-1 transition-transform duration-200 ${
+                          isMobileIndustriesOpen ? "rotate-180" : ""
+                        }`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"

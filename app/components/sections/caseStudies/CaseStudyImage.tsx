@@ -33,7 +33,7 @@ const CaseStudyImage: React.FC<CaseStudyImageProps> = ({
       <div
         className="rounded-lg max-w-6xl overflow-hidden flex justify-center bg-transparent w-full md:w-[80%] mx-auto cursor-pointer md:cursor-default"
         style={{
-          zIndex: 9999,
+          zIndex: 3,
           position: "relative",
         }}
         onClick={handleImageClick}

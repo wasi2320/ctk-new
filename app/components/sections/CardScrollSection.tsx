@@ -16,7 +16,7 @@ export const CardScrollSection = () => {
       </div>
 
       {/* Mobile Sticky Container */}
-      <div className="block md:hidden relative h-[300vh]">
+      <div className="block md:hidden relative">
         {CARD_SCROLL_SECTION.cards.map((item, index) => (
           <motion.div
             key={index}
@@ -26,7 +26,7 @@ export const CardScrollSection = () => {
             viewport={{ amount: 0.5 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="bg-white rounded-4xl all-sides-shadow w-full h-[80vh] p-6 flex flex-col">
+            <div className="bg-white rounded-4xl all-sides-shadow w-full  p-6 flex flex-col">
               <div className="w-full h-[40%] mb-4">
                 <Image
                   src={item.image}
@@ -76,8 +76,16 @@ export const CardScrollSection = () => {
                 <p className="md:text-xl nunito-extraLight">
                   {item.description}
                 </p>
-                <div className="flex gap-2 mt-12">
-                  <button className="text-2xl">Learn More</button>
+
+                <div
+                  className="flex gap-2 mt-12 w-fit cursor-pointer"
+                  onClick={() => {
+                    window.location.href = item.route;
+                  }}
+                >
+                  <button className="text-2xl cursor-pointer">
+                    Learn More
+                  </button>
                   <div className="w-7 h-7 flex justify-center items-center bg-[#152F27] rounded-full">
                     <Image
                       src="/Images/Arrow_Left.svg"
