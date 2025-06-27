@@ -42,7 +42,14 @@ export const CardScrollSection = () => {
                 </h2>
                 <p className="nunito-extraLight mb-6">{item.description}</p>
                 <div className="flex gap-2">
-                  <button className="text-lg">Learn More</button>
+                  <button
+                    className="text-lg"
+                    onClick={() => {
+                      window.location.href = item.route;
+                    }}
+                  >
+                    Learn More
+                  </button>
                   <div className="w-7 h-7 flex justify-center items-center bg-[#152F27] rounded-full">
                     <Image
                       src="/Images/Arrow_Left.svg"
