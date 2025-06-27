@@ -14,7 +14,7 @@ const CloudMigration = () => {
         description="Manufacturing solutions blend industrial processes with innovative technology to create smarter, faster, and more personalized production.   
         From automated factories to cloud-powered platforms, it enables enterprises to innovate, scale, and meet the evolving needs of the market."
         imageSrc="/Images/manufacturing.svg"
-        buttonText="Scheduale your cloud assessment"
+        buttonText="Let’s connect"
         buttonLink="/contact"
       />
       <ManufacturingExpertiseTailoredSection />

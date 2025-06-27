@@ -12,7 +12,7 @@ const CloudMigration = () => {
         title="E-Commerce"
         description="E-Commerce blends retail with innovative technology to create smarter, faster, and more personalized shopping experiences. From online storefronts to cloud-powered platforms, it enables businesses to innovate, scale, and meet the evolving needs of customers worldwide."
         imageSrc="/Images/healthcare.png"
-        buttonText="Scheduale your cloud assessment"
+        buttonText="Let’s connect"
         buttonLink="/contact"
       />
       <EcommerceExpertiseTailoredSection />
