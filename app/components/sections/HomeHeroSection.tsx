@@ -9,7 +9,6 @@ const HomeHeroSection = () => {
   return (
     <>
       <section className="relative px-4 sm:px-6 md:px-10 lg:px-20 xl:px-28 min-h-[80vh] py-8 sm:py-12 md:py-16 flex flex-col-reverse md:flex-row items-center justify-between gap-6 md:gap-8">
-
         <div className="w-full md:w-1/2 lg:w-3/5 space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8">
           <div
             className="space-y-3 sm:space-y-4 md:space-y-6"
@@ -35,7 +34,6 @@ const HomeHeroSection = () => {
                     {HOME_HERO_SECTION.button.text}
                   </button>
                 </Link>
-
               </div>
             </div>
           </div>
@@ -73,11 +71,9 @@ const HomeHeroSection = () => {
             Your browser does not support the video tag.
           </video>
         </div>
-
-
       </section>
       <div className="relative w-full mb-16 md:mb-26 h-[30vh] sm:h-auto sm:mt-10">
-      <div className="absolute left-1/2 -translate-x-1/2  md:-top-24 bg-white px-8 py-4 ">
+        <div className="absolute left-1/2 -translate-x-1/2  md:-top-24 bg-white px-8 py-4 ">
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
             <Link
               className="transition-transform duration-300 hover:scale-105"
@@ -89,8 +85,8 @@ const HomeHeroSection = () => {
                 src={HOME_HERO_SECTION.badge}
                 alt="aws"
                 className="h-[80px] sm:h-[100px] w-auto object-contain"
-                height={100}
-                width={100}
+                height={700}
+                width={700}
               />
             </Link>
             <div className="mt-2 sm:mt-0">
@@ -106,16 +102,14 @@ const HomeHeroSection = () => {
                 src="/Images/homepage/Verified_agency.svg"
                 alt="verified agency"
                 className="h-[50px] sm:h-[60px] w-auto object-contain"
-                height={100}
-                width={100}
+                height={600}
+                width={600}
               />
             </Link>
           </div>
         </div>
       </div>
     </>
-
-
   );
 };
 

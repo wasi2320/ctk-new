@@ -53,7 +53,10 @@ const ClutchHero = () => {
   };
 
   return (
-    <div className="w-auto align-center justify-center flex overflow-hidden transition-opacity duration-500 opacity-100">
+    <div
+      style={{ width: 235 }}
+      className=" align-center justify-center flex overflow-hidden transition-opacity duration-500 opacity-100"
+    >
       <iframe
         ref={iframeRef}
         src="/clutch-badge-widget.html"
