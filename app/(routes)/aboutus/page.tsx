@@ -12,7 +12,7 @@ function page() {
       <ServiceCard
         title={"About Us"}
         description={
-          "At CodeToCloud, we are architects of connection, dedicated to empowering businesses globally to navigate the complexities of technology and reach new heights. Our mission is to bridge the gap between where your business is today and where it could be tomorrow, by leveraging the power of innovative, multi-cloud solutions. We specialize in helping organizations transform their IT infrastructure to improve performance, scalability, and security. With expertise in cloud engineering, responsive web solutions, and user experience design, we create tailored services that address your specific needs."
+          "At CodeToKloud, we are architects of connection, dedicated to empowering businesses globally to navigate the complexities of technology and reach new heights. Our mission is to bridge the gap between where your business is today and where it could be tomorrow, by leveraging the power of innovative, multi-cloud solutions. We specialize in helping organizations transform their IT infrastructure to improve performance, scalability, and security. With expertise in cloud engineering, responsive web solutions, and user experience design, we create tailored services that address your specific needs."
         }
         image={"/Images/aboutus/aboutHeader.png"}
       />
