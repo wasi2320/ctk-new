@@ -54,14 +54,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script 
+          type="text/javascript" 
+          async 
+          src="https://bot.leadoo.com/bot/dynamic.js?company=I1hDKCU7"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning={true}
       >
-        <Script
-          src="https://bot.leadoo.com/bot/dynamic.js?company=I1hDKCU7"
-          strategy="afterInteractive"
-        />
         <Header />
         <ScrollToTop />
         {children}
