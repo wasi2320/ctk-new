@@ -58,6 +58,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning={true}
       >
+        <Script
+          src="https://bot.leadoo.com/bot/dynamic.js?company=I1hDKCU7"
+          strategy="afterInteractive"
+        />
         <Header />
         <ScrollToTop />
         {children}
