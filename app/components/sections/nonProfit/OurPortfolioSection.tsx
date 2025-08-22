@@ -61,12 +61,12 @@ export default function OurPortfolioSection() {
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
     >
-      <motion.h1
+      <motion.h2
         className="text-5xl font-bold text-center text-slate-800 mb-16"
         variants={itemVariants}
       >
         We Strive For Innovation
-      </motion.h1>
+      </motion.h2>
 
       <motion.div
         className="flex flex-col lg:flex-row justify-between items-start mb-12"

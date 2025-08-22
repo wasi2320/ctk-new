@@ -149,7 +149,7 @@ const HeroSection = ({
             alt="Hero"
             height={500}
             width={500}
-            className={`md:w-full md:h-[350px] lg:w-[80%] lg:h-[500px] ${
+            className={`md:w-full md:h-[350px] lg:h-[500px] ${
               cover ? "object-cover" : ""
             }`}
           />

@@ -29,8 +29,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ctk",
-  description: "",
+  title: "Code to Kloud",
+  description: "CodeToKloud offers AWS, cloud, DevOps, AI/ML, and web solutions to help businesses modernize legacy systems with secure, scalable multi-cloud platforms.",
   icons: {
     icon: [
       {

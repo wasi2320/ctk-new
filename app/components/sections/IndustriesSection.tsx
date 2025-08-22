@@ -40,13 +40,13 @@ const IndustriesSection = () => {
 
   return (
     <section className="py-20 px-4 md:px-8 lg:px-12">
-      <h1
+      <h2
         data-aos="fade-down"
         data-aos-delay="100"
-        className="text-3xl font-bold mb-4 w-full text-center"
+        className="text-4xl font-bold mb-4 w-full text-center"
       >
         {INDUSTRIES_SECTION.heading}
-      </h1>
+      </h2>
 
       <div className="max-w-[80%] mx-auto mt-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
