@@ -1,12 +1,21 @@
+"use client";
 import MissionSection from "@/app/components/sections/MissionSection";
 import ServiceCard from "@/app/components/ServiceCard";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import IndustriesSection, {
   IndustriesCard,
 } from "@/app/components/sections/IndustriesSection";
+import ChatModal from "@/app/components/ChatModal";
+import ChatToggle from "@/app/components/ChatToggle";
 
 function page() {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
+  const toggleChat = () => {
+    setIsChatOpen(!isChatOpen);
+  };
+
   return (
     <div>
       <ServiceCard
@@ -254,6 +263,10 @@ function page() {
           </div>
         </div>
       </section>
+
+      {/* Chat Components */}
+      <ChatToggle onToggle={toggleChat} isOpen={isChatOpen} />
+      <ChatModal isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
     </div>
   );
 }
