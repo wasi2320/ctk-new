@@ -3,13 +3,11 @@ import MissionSection from "@/app/components/sections/MissionSection";
 import ServiceCard from "@/app/components/ServiceCard";
 import React, { useState } from "react";
 import Image from "next/image";
-import IndustriesSection, {
-  IndustriesCard,
-} from "@/app/components/sections/IndustriesSection";
+import { IndustriesCard } from "@/app/components/sections/IndustriesSection";
 import ChatModal from "@/app/components/ChatModal";
 import ChatToggle from "@/app/components/ChatToggle";
 
-function page() {
+function AboutUsPage() {
   const [isChatOpen, setIsChatOpen] = useState(false);
 
   const toggleChat = () => {
@@ -271,4 +269,4 @@ function page() {
   );
 }
 
-export default page;
+export default AboutUsPage;
