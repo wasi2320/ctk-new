@@ -44,8 +44,9 @@ export default function BlogPostPage() {
       console.log("Blog fields:", Object.keys(data || {}));
 
       setBlog(data);
-    } catch (error: any) {
-      setError(error.message);
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
@@ -63,7 +64,7 @@ export default function BlogPostPage() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-red-600"></div>
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#000209]"></div>
       </div>
     );
   }
@@ -129,31 +130,32 @@ export default function BlogPostPage() {
         <div className="markdown-content">
           <ReactMarkdown
             components={{
-              // Custom component for images with lazy loading
-              img: ({ node, ...props }) => (
-                <img
-                  {...props}
-                  loading="lazy"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = "none";
-                  }}
-                />
-              ),
-              // Custom component for code blocks
-              code: ({ node, className, children, ...props }: any) => {
-                const match = /language-(\w+)/.exec(className || "");
-                const isInline = !className || !className.includes("language-");
-                return !isInline && match ? (
-                  <pre>
-                    <code className={className} {...props}>
-                      {children}
-                    </code>
-                  </pre>
-                ) : (
-                  <code {...props}>{children}</code>
-                );
-              },
+                              // Custom component for images with lazy loading
+                img: ({ node, ...props }) => (
+                  <img
+                    {...props}
+                    alt={props.alt || "Blog content image"}
+                    loading="lazy"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = "none";
+                    }}
+                  />
+                ),
+                                              // Custom component for code blocks
+                code: ({ className, children, ...props }) => {
+                  const match = /language-(\w+)/.exec(className || "");
+                  const isInline = !className || !className.includes("language-");
+                  return !isInline && match ? (
+                    <pre>
+                      <code className={className} {...props}>
+                        {children}
+                      </code>
+                    </pre>
+                  ) : (
+                    <code {...props}>{children}</code>
+                  );
+                },
             }}
           >
             {blog.content}

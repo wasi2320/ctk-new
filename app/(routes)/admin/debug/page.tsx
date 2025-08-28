@@ -4,7 +4,18 @@ import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
 
 export default function DebugPage() {
-  const [blogs, setBlogs] = useState<any[]>([]);
+  const [blogs, setBlogs] = useState<
+    {
+      id: string;
+      title: string;
+      excerpt: string;
+      content: string;
+      poster_url: string;
+      author_id: string;
+      created_at: string;
+      updated_at: string;
+    }[]
+  >([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -50,9 +61,11 @@ export default function DebugPage() {
       console.log("Test blog created:", data);
       alert("Test blog created! Check console for details.");
       checkDatabase();
-    } catch (error: any) {
+    } catch (error: unknown) {
+      const errorMessage =
+        error instanceof Error ? error.message : "Unknown error occurred";
       console.error("Error creating test blog:", error);
-      alert(`Error: ${error.message}`);
+      alert(`Error: ${errorMessage}`);
     }
   };
 

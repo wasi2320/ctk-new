@@ -6,7 +6,10 @@ import LoginForm from "./LoginForm";
 import BlogUploadForm from "./BlogUploadForm";
 
 export default function AdminPage() {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<{
+    id: string;
+    email: string;
+  } | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -15,7 +18,12 @@ export default function AdminPage() {
       const {
         data: { user },
       } = await supabase.auth.getUser();
-      setUser(user);
+      if (user && user.email) {
+        setUser({
+          id: user.id,
+          email: user.email,
+        });
+      }
       setLoading(false);
     };
 
@@ -25,7 +33,14 @@ export default function AdminPage() {
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(async (event, session) => {
-      setUser(session?.user ?? null);
+      if (session?.user && session.user.email) {
+        setUser({
+          id: session.user.id,
+          email: session.user.email,
+        });
+      } else {
+        setUser(null);
+      }
       setLoading(false);
     });
 
@@ -35,7 +50,7 @@ export default function AdminPage() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-red-600"></div>
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#000209]"></div>
       </div>
     );
   }

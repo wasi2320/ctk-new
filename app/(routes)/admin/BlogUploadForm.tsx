@@ -6,7 +6,10 @@ import MDEditor from "@uiw/react-md-editor";
 import { LogOut, Upload, Save, Eye } from "lucide-react";
 
 interface BlogUploadFormProps {
-  user: any;
+  user: {
+    id: string;
+    email: string;
+  };
 }
 
 export default function BlogUploadForm({ user }: BlogUploadFormProps) {
@@ -104,8 +107,10 @@ export default function BlogUploadForm({ user }: BlogUploadFormProps) {
       if (e.target) {
         e.target.value = "";
       }
-    } catch (error: any) {
-      setMessage(`Error uploading image: ${error.message}`);
+    } catch (error: unknown) {
+      const errorMessage =
+        error instanceof Error ? error.message : "Unknown error occurred";
+      setMessage(`Error uploading image: ${errorMessage}`);
     } finally {
       setLoading(false);
     }
@@ -156,8 +161,10 @@ export default function BlogUploadForm({ user }: BlogUploadFormProps) {
       if (fileInputRef.current) {
         fileInputRef.current.value = "";
       }
-    } catch (error: any) {
-      setMessage(`Error: ${error.message}`);
+    } catch (error: unknown) {
+      const errorMessage =
+        error instanceof Error ? error.message : "Unknown error occurred";
+      setMessage(`Error: ${errorMessage}`);
     } finally {
       setLoading(false);
     }
@@ -203,7 +210,7 @@ export default function BlogUploadForm({ user }: BlogUploadFormProps) {
                 id="title"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-black-500 focus:border-black-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#000209] focus:border-[#000209]"
                 placeholder="Enter blog title"
                 required
               />
@@ -246,7 +253,7 @@ export default function BlogUploadForm({ user }: BlogUploadFormProps) {
                 <button
                   type="button"
                   onClick={() => fileInputRef.current?.click()}
-                  className="flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black-500"
+                  className="flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#000209]"
                 >
                   <Upload className="h-4 w-4 mr-2" />
                   Choose Image
