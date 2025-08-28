@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
 
     // Call your Python chatbot backend
     // You'll need to update this URL to match your Python server
-    const response = await fetch("http://localhost:8501/chat", {
+    const response = await fetch("http://18.116.241.30:8501/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
