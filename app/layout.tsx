@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import ChatFloat from "./components/ChatFloat";
 
 // Add LocatorJS runtime setup
 const setupLocator = async () => {
@@ -55,9 +56,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script 
-          type="text/javascript" 
-          async 
+        <script
+          type="text/javascript"
+          async
           src="https://bot.leadoo.com/bot/dynamic.js?company=I1hDKCU7"
         />
       </head>
@@ -69,6 +70,7 @@ export default function RootLayout({
         <ScrollToTop />
         {children}
         <Footer />
+        <ChatFloat />
       </body>
     </html>
   );
