@@ -161,7 +161,7 @@ export default function CategoryModal({
         </div>
 
         {/* Content */}
-        <div className="p-6">
+        <div className="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
           {/* Add Category Button */}
           {!showAddForm && (
             <button
