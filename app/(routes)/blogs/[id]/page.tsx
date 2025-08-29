@@ -6,6 +6,7 @@ import { supabase } from "@/lib/supabase";
 import Link from "next/link";
 import { ArrowLeft, Calendar } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import Image from "next/image";
 
 interface Blog {
   id: string;
@@ -45,7 +46,8 @@ export default function BlogPostPage() {
 
       setBlog(data);
     } catch (error: unknown) {
-      const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+      const errorMessage =
+        error instanceof Error ? error.message : "Unknown error occurred";
       setError(errorMessage);
     } finally {
       setLoading(false);
@@ -119,9 +121,11 @@ export default function BlogPostPage() {
 
         {/* Featured Image */}
         <div className="mb-8">
-          <img
+          <Image
             src={blog.poster_url}
             alt={blog.title}
+            width={800}
+            height={384}
             className="w-full h-96 object-cover rounded-lg shadow-lg"
           />
         </div>
@@ -130,32 +134,32 @@ export default function BlogPostPage() {
         <div className="markdown-content">
           <ReactMarkdown
             components={{
-                              // Custom component for images with lazy loading
-                img: ({ node, ...props }) => (
-                  <img
-                    {...props}
-                    alt={props.alt || "Blog content image"}
-                    loading="lazy"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = "none";
-                    }}
-                  />
-                ),
-                                              // Custom component for code blocks
-                code: ({ className, children, ...props }) => {
-                  const match = /language-(\w+)/.exec(className || "");
-                  const isInline = !className || !className.includes("language-");
-                  return !isInline && match ? (
-                    <pre>
-                      <code className={className} {...props}>
-                        {children}
-                      </code>
-                    </pre>
-                  ) : (
-                    <code {...props}>{children}</code>
-                  );
-                },
+              // Custom component for images with lazy loading
+              img: ({ node, ...props }) => (
+                <Image
+                  {...props}
+                  src={props.src || ""}
+                  alt={props.alt || "Blog content image"}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto rounded-lg"
+                  loading="lazy"
+                />
+              ),
+              // Custom component for code blocks
+              code: ({ className, children, ...props }) => {
+                const match = /language-(\w+)/.exec(className || "");
+                const isInline = !className || !className.includes("language-");
+                return !isInline && match ? (
+                  <pre>
+                    <code className={className} {...props}>
+                      {children}
+                    </code>
+                  </pre>
+                ) : (
+                  <code {...props}>{children}</code>
+                );
+              },
             }}
           >
             {blog.content}

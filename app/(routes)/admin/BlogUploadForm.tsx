@@ -1,18 +1,37 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
 import MDEditor from "@uiw/react-md-editor";
-import { LogOut, Upload, Save, Eye } from "lucide-react";
+import { Upload, Save, Eye, Edit, Plus } from "lucide-react";
+import Image from "next/image";
+
+interface Blog {
+  id: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  poster_url: string;
+  author_id: string;
+  created_at: string;
+}
 
 interface BlogUploadFormProps {
   user: {
     id: string;
     email: string;
   };
+  editingBlog?: Blog | null;
+  onEditComplete?: () => void;
+  onCancelEdit?: () => void;
 }
 
-export default function BlogUploadForm({ user }: BlogUploadFormProps) {
+export default function BlogUploadForm({
+  user,
+  editingBlog,
+  onEditComplete,
+  onCancelEdit,
+}: BlogUploadFormProps) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [posterFile, setPosterFile] = useState<File | null>(null);
@@ -21,6 +40,23 @@ export default function BlogUploadForm({ user }: BlogUploadFormProps) {
   const [message, setMessage] = useState("");
   const [showPreview, setShowPreview] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // Initialize form when editing a blog
+  useEffect(() => {
+    if (editingBlog) {
+      setTitle(editingBlog.title);
+      setContent(editingBlog.content);
+      setPosterPreview(editingBlog.poster_url);
+      setPosterFile(null); // No new file selected for edit
+    } else {
+      // Reset form for new blog
+      setTitle("");
+      setContent("");
+      setPosterFile(null);
+      setPosterPreview("");
+      setMessage("");
+    }
+  }, [editingBlog]);
 
   // Function to generate excerpt from content (first 3 lines)
   const generateExcerpt = (content: string): string => {
@@ -118,8 +154,14 @@ export default function BlogUploadForm({ user }: BlogUploadFormProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!title || !content || !posterFile) {
-      setMessage("Please fill in all fields and upload a poster image");
+    if (!title || !content) {
+      setMessage("Please fill in title and content");
+      return;
+    }
+
+    // For new blogs, poster is required
+    if (!editingBlog && !posterFile) {
+      setMessage("Please upload a poster image");
       return;
     }
 
@@ -127,39 +169,78 @@ export default function BlogUploadForm({ user }: BlogUploadFormProps) {
     setMessage("");
 
     try {
-      // Upload poster image to Supabase Storage
-      const posterFileName = `${Date.now()}-${posterFile.name}`;
-      const { data: posterData, error: posterError } = await supabase.storage
-        .from("blog-posters")
-        .upload(posterFileName, posterFile);
+      let posterUrl = editingBlog?.poster_url || "";
 
-      if (posterError) throw posterError;
+      // Upload new poster image if provided
+      if (posterFile) {
+        const posterFileName = `${Date.now()}-${posterFile.name}`;
+        const { data: posterData, error: posterError } = await supabase.storage
+          .from("blog-posters")
+          .upload(posterFileName, posterFile);
 
-      // Get public URL for the poster
-      const { data: posterUrl } = supabase.storage
-        .from("blog-posters")
-        .getPublicUrl(posterFileName);
+        if (posterError) throw posterError;
 
-      // Insert blog post into database
-      const { error: insertError } = await supabase.from("blogs").insert({
-        title,
-        excerpt: generateExcerpt(content),
-        content,
-        poster_url: posterUrl.publicUrl,
-        author_id: user.id,
-        created_at: new Date().toISOString(),
-      });
+        // Get public URL for the poster
+        const { data: newPosterUrl } = supabase.storage
+          .from("blog-posters")
+          .getPublicUrl(posterFileName);
 
-      if (insertError) throw insertError;
+        posterUrl = newPosterUrl.publicUrl;
 
-      setMessage("Blog post uploaded successfully!");
-      // Reset form
-      setTitle("");
-      setContent("");
-      setPosterFile(null);
-      setPosterPreview("");
-      if (fileInputRef.current) {
-        fileInputRef.current.value = "";
+        // Delete old poster if editing
+        if (editingBlog?.poster_url) {
+          try {
+            const oldPosterPath = editingBlog.poster_url.split("/").pop();
+            if (oldPosterPath) {
+              await supabase.storage
+                .from("blog-posters")
+                .remove([oldPosterPath]);
+            }
+          } catch (storageError) {
+            console.warn("Could not delete old poster:", storageError);
+          }
+        }
+      }
+
+      if (editingBlog) {
+        // Update existing blog
+        const { error: updateError } = await supabase
+          .from("blogs")
+          .update({
+            title,
+            excerpt: generateExcerpt(content),
+            content,
+            poster_url: posterUrl,
+            updated_at: new Date().toISOString(),
+          })
+          .eq("id", editingBlog.id);
+
+        if (updateError) throw updateError;
+
+        setMessage("Blog updated successfully!");
+        onEditComplete?.();
+      } else {
+        // Insert new blog
+        const { error: insertError } = await supabase.from("blogs").insert({
+          title,
+          excerpt: generateExcerpt(content),
+          content,
+          poster_url: posterUrl,
+          author_id: user.id,
+          created_at: new Date().toISOString(),
+        });
+
+        if (insertError) throw insertError;
+
+        setMessage("Blog post uploaded successfully!");
+        // Reset form for new blog
+        setTitle("");
+        setContent("");
+        setPosterFile(null);
+        setPosterPreview("");
+        if (fileInputRef.current) {
+          fileInputRef.current.value = "";
+        }
       }
     } catch (error: unknown) {
       const errorMessage =
@@ -170,193 +251,189 @@ export default function BlogUploadForm({ user }: BlogUploadFormProps) {
     }
   };
 
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
+  const handleCancelEdit = () => {
+    onCancelEdit?.();
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="flex justify-between items-center mb-8">
-          <div>
-            <h1 className="text-3xl font-bold text-gray-900">
-              Blog Management
-            </h1>
-            <p className="text-gray-600">Welcome back, {user.email}</p>
-          </div>
-          <button
-            onClick={handleLogout}
-            className="flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black-500"
+    <div className="bg-white shadow rounded-lg p-6">
+      <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Title */}
+        <div>
+          <label
+            htmlFor="title"
+            className="block text-sm font-medium text-gray-700 mb-2"
           >
-            <LogOut className="h-4 w-4 mr-2" />
-            Logout
-          </button>
+            Blog Title *
+          </label>
+          <input
+            type="text"
+            id="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#000209] focus:border-[#000209]"
+            placeholder="Enter blog title"
+            required
+          />
         </div>
 
-        {/* Form */}
-        <div className="bg-white shadow rounded-lg p-6">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Title */}
-            <div>
-              <label
-                htmlFor="title"
-                className="block text-sm font-medium text-gray-700 mb-2"
-              >
-                Blog Title *
-              </label>
-              <input
-                type="text"
-                id="title"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#000209] focus:border-[#000209]"
-                placeholder="Enter blog title"
-                required
+        {/* Auto-generated Excerpt Preview */}
+        {content && (
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Auto-generated Excerpt Preview
+            </label>
+            <div className="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md text-sm text-gray-600">
+              {generateExcerpt(content)}
+            </div>
+            <p className="text-xs text-gray-500 mt-1">
+              This excerpt is automatically generated from the first 3 lines of
+              your blog content
+            </p>
+          </div>
+        )}
+
+        {/* Poster Image */}
+        <div>
+          <label
+            htmlFor="poster"
+            className="block text-sm font-medium text-gray-700 mb-2"
+          >
+            Poster Image {!editingBlog && "*"}
+          </label>
+          <div className="flex items-center space-x-4">
+            <input
+              ref={fileInputRef}
+              type="file"
+              id="poster"
+              accept="image/*"
+              onChange={handlePosterChange}
+              className="hidden"
+              required={!editingBlog}
+            />
+            <button
+              type="button"
+              onClick={() => fileInputRef.current?.click()}
+              className="flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#000209]"
+            >
+              <Upload className="h-4 w-4 mr-2" />
+              {editingBlog ? "Change Image" : "Choose Image"}
+            </button>
+            {posterFile && (
+              <span className="text-sm text-gray-600">{posterFile.name}</span>
+            )}
+          </div>
+          {posterPreview && (
+            <div className="mt-4">
+              <Image
+                src={posterPreview}
+                alt="Poster preview"
+                width={192}
+                height={128}
+                className="w-48 h-32 object-cover rounded-md border"
               />
             </div>
+          )}
+        </div>
 
-            {/* Auto-generated Excerpt Preview */}
-            {content && (
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Auto-generated Excerpt Preview
-                </label>
-                <div className="w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md text-sm text-gray-600">
-                  {generateExcerpt(content)}
-                </div>
-                <p className="text-xs text-gray-500 mt-1">
-                  This excerpt is automatically generated from the first 3 lines
-                  of your blog content
-                </p>
-              </div>
-            )}
+        {/* Markdown Editor */}
+        <div>
+          <div className="flex justify-between items-center mb-2">
+            <label className="block text-sm font-medium text-gray-700">
+              Blog Content (Markdown) *
+            </label>
+            <button
+              type="button"
+              onClick={() => setShowPreview(!showPreview)}
+              className="flex items-center text-sm text-[#000209] hover:text-[#000209]/80"
+            >
+              <Eye className="h-4 w-4 mr-1" />
+              {showPreview ? "Hide Preview" : "Show Preview"}
+            </button>
+          </div>
 
-            {/* Poster Image */}
-            <div>
-              <label
-                htmlFor="poster"
-                className="block text-sm font-medium text-gray-700 mb-2"
-              >
-                Poster Image *
-              </label>
-              <div className="flex items-center space-x-4">
-                <input
-                  ref={fileInputRef}
-                  type="file"
-                  id="poster"
-                  accept="image/*"
-                  onChange={handlePosterChange}
-                  className="hidden"
-                  required
-                />
-                <button
-                  type="button"
-                  onClick={() => fileInputRef.current?.click()}
-                  className="flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#000209]"
-                >
-                  <Upload className="h-4 w-4 mr-2" />
-                  Choose Image
-                </button>
-                {posterFile && (
-                  <span className="text-sm text-gray-600">
-                    {posterFile.name}
-                  </span>
-                )}
-              </div>
-              {posterPreview && (
-                <div className="mt-4">
-                  <img
-                    src={posterPreview}
-                    alt="Poster preview"
-                    className="w-48 h-32 object-cover rounded-md border"
-                  />
-                </div>
-              )}
-            </div>
-
-            {/* Markdown Editor */}
-            <div>
-              <div className="flex justify-between items-center mb-2">
-                <label className="block text-sm font-medium text-gray-700">
-                  Blog Content (Markdown) *
-                </label>
-                <button
-                  type="button"
-                  onClick={() => setShowPreview(!showPreview)}
-                  className="flex items-center text-sm text-[#000209] hover:text-[#000209]/80"
-                >
-                  <Eye className="h-4 w-4 mr-1" />
-                  {showPreview ? "Hide Preview" : "Show Preview"}
-                </button>
-              </div>
-
-              {/* Image Upload for Markdown */}
-              <div className="mb-4 p-3 bg-gray-50 rounded-md border">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Upload Images for Blog Content
-                </label>
-                <div className="flex items-center space-x-4">
-                  <input
-                    id="markdown-image-input"
-                    type="file"
-                    accept="image/*"
-                    onChange={handleMarkdownImageUpload}
-                    className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-[#000209]/5 file:text-[#000209] hover:file:bg-[#000209]/10"
-                  />
-                  <button
-                    type="button"
-                    onClick={() =>
-                      document.getElementById("markdown-image-input")?.click()
-                    }
-                    className="px-3 py-2 text-sm text-[#000209] hover:text-[#000209]/80 border border-[#000209]/20 rounded-md hover:bg-[#000209]/5"
-                  >
-                    Upload Image
-                  </button>
-                </div>
-                <p className="text-xs text-gray-500 mt-2">
-                  Upload images here and copy the markdown link to paste in your
-                  content
-                </p>
-              </div>
-
-              <div data-color-mode="light">
-                <MDEditor
-                  value={content}
-                  onChange={(val) => setContent(val || "")}
-                  height={400}
-                  preview={showPreview ? "preview" : "edit"}
-                />
-              </div>
-            </div>
-
-            {/* Message */}
-            {message && (
-              <div
-                className={`p-3 rounded-md ${
-                  message.includes("Error")
-                    ? "bg-red-50 text-red-700 border border-red-200"
-                    : "bg-green-50 text-green-700 border border-green-200"
-                }`}
-              >
-                {message}
-              </div>
-            )}
-
-            {/* Submit Button */}
-            <div className="flex justify-end">
+          {/* Image Upload for Markdown */}
+          <div className="mb-4 p-3 bg-gray-50 rounded-md border">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Upload Images for Blog Content
+            </label>
+            <div className="flex items-center space-x-4">
+              <input
+                id="markdown-image-input"
+                type="file"
+                accept="image/*"
+                onChange={handleMarkdownImageUpload}
+                className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-[#000209]/5 file:text-[#000209] hover:file:bg-[#000209]/10"
+              />
               <button
-                type="submit"
-                disabled={loading}
-                className="flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#000209] hover:bg-[#000209]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#000209] disabled:opacity-50 disabled:cursor-not-allowed"
+                type="button"
+                onClick={() =>
+                  document.getElementById("markdown-image-input")?.click()
+                }
+                className="px-3 py-2 text-sm text-[#000209] hover:text-[#000209]/80 border border-[#000209]/20 rounded-md hover:bg-[#000209]/5"
               >
-                <Save className="h-4 w-4 mr-2" />
-                {loading ? "Uploading..." : "Upload Blog"}
+                Upload Image
               </button>
             </div>
-          </form>
+            <p className="text-xs text-gray-500 mt-2">
+              Upload images here and copy the markdown link to paste in your
+              content
+            </p>
+          </div>
+
+          <div data-color-mode="light">
+            <MDEditor
+              value={content}
+              onChange={(val) => setContent(val || "")}
+              height={400}
+              preview={showPreview ? "preview" : "edit"}
+            />
+          </div>
         </div>
-      </div>
+
+        {/* Message */}
+        {message && (
+          <div
+            className={`p-3 rounded-md ${
+              message.includes("Error")
+                ? "bg-red-50 text-red-700 border border-red-200"
+                : "bg-green-50 text-green-700 border border-green-200"
+            }`}
+          >
+            {message}
+          </div>
+        )}
+
+        {/* Action Buttons */}
+        <div className="flex justify-end space-x-3">
+          {editingBlog && (
+            <button
+              type="button"
+              onClick={handleCancelEdit}
+              className="px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+            >
+              Cancel
+            </button>
+          )}
+          <button
+            type="submit"
+            disabled={loading}
+            className="flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#000209] hover:bg-[#000209]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#000209] disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {editingBlog ? (
+              <>
+                <Edit className="h-4 w-4 mr-2" />
+                {loading ? "Updating..." : "Update Blog"}
+              </>
+            ) : (
+              <>
+                <Plus className="h-4 w-4 mr-2" />
+                {loading ? "Uploading..." : "Upload Blog"}
+              </>
+            )}
+          </button>
+        </div>
+      </form>
     </div>
   );
 }

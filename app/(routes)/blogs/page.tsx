@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
 import Link from "next/link";
+import Image from "next/image";
 
 interface Blog {
   id: string;
@@ -100,9 +101,11 @@ export default function BlogsPage() {
               >
                 {/* Blog Image */}
                 <div className="aspect-w-16 aspect-h-9">
-                  <img
+                  <Image
                     src={blog.poster_url}
                     alt={blog.title}
+                    width={400}
+                    height={192}
                     className="w-full h-48 object-cover"
                   />
                 </div>

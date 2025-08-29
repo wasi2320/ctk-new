@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { nonProfitSectionData } from "@/utils/data/NonProfitSectionData";
+import Image from "next/image";
 
 const NonProfitSection = () => {
   return (
@@ -24,9 +25,11 @@ const NonProfitSection = () => {
       </div>
       {/* Right: Illustration */}
       <div className="flex-1 flex items-center justify-center">
-        <img
+        <Image
           src={nonProfitSectionData.image}
           alt="Non profit illustration"
+          width={600}
+          height={400}
           className="max-w-full h-auto md:max-w-xlg"
         />
       </div>
