@@ -7,7 +7,14 @@ export async function GET(request: NextRequest) {
 
     const { data: blogs, error } = await supabase
       .from("blogs")
-      .select("*")
+      .select(
+        `
+        *,
+        categories (
+          name
+        )
+      `
+      )
       .order("created_at", { ascending: false });
 
     if (error) throw error;
@@ -28,7 +35,14 @@ export async function POST(request: NextRequest) {
     const { data: blog, error } = await supabase
       .from("blogs")
       .insert([body])
-      .select()
+      .select(
+        `
+        *,
+        categories (
+          name
+        )
+      `
+      )
       .single();
 
     if (error) throw error;
@@ -58,7 +72,14 @@ export async function PUT(request: NextRequest) {
       .from("blogs")
       .update(updateData)
       .eq("id", id)
-      .select()
+      .select(
+        `
+        *,
+        categories (
+          name
+        )
+      `
+      )
       .single();
 
     if (error) throw error;

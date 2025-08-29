@@ -14,7 +14,12 @@ interface Blog {
   excerpt: string;
   content: string;
   poster_url: string;
+  author_id: string;
   created_at: string;
+  category_id?: string;
+  categories?: {
+    name: string;
+  };
 }
 
 export default function BlogPostPage() {
@@ -33,7 +38,14 @@ export default function BlogPostPage() {
     try {
       const { data, error } = await supabase
         .from("blogs")
-        .select("*")
+        .select(
+          `
+          *,
+          categories (
+            name
+          )
+        `
+        )
         .eq("id", id)
         .single();
 
@@ -110,9 +122,16 @@ export default function BlogPostPage() {
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         {/* Header */}
         <header className="mb-8">
-          <div className="text-sm text-gray-500 mb-4 flex items-center">
-            <Calendar className="h-4 w-4 mr-2" />
-            {formatDate(blog.created_at)}
+          <div className="flex items-center justify-between mb-4">
+            <div className="text-sm text-gray-500 flex items-center">
+              <Calendar className="h-4 w-4 mr-2" />
+              {formatDate(blog.created_at)}
+            </div>
+            {blog.categories?.name && (
+              <span className="px-3 py-1 bg-[#000209]/10 text-[#000209] text-sm font-medium rounded-full">
+                {blog.categories.name}
+              </span>
+            )}
           </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-4 leading-tight">
             {blog.title}

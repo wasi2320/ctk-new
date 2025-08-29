@@ -1,31 +1,66 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { supabase } from "@/lib/supabase";
 import Link from "next/link";
+import { supabase } from "@/lib/supabase";
 import Image from "next/image";
+
+interface Category {
+  id: string;
+  name: string;
+  description: string;
+  created_at: string;
+}
 
 interface Blog {
   id: string;
   title: string;
   excerpt: string;
+  content: string;
   poster_url: string;
+  author_id: string;
   created_at: string;
+  category_id?: string;
+  categories?: {
+    name: string;
+  };
 }
 
 export default function BlogsPage() {
   const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedCategory, setSelectedCategory] = useState<string>("");
+  const [filteredBlogs, setFilteredBlogs] = useState<Blog[]>([]);
 
   useEffect(() => {
     fetchBlogs();
+    fetchCategories();
   }, []);
+
+  useEffect(() => {
+    if (selectedCategory) {
+      setFilteredBlogs(
+        blogs.filter((blog) => blog.category_id === selectedCategory)
+      );
+    } else {
+      setFilteredBlogs(blogs);
+    }
+  }, [selectedCategory, blogs]);
 
   const fetchBlogs = async () => {
     try {
+      setLoading(true);
       const { data, error } = await supabase
         .from("blogs")
-        .select("*")
+        .select(
+          `
+          *,
+          categories (
+            name
+          )
+        `
+        )
         .order("created_at", { ascending: false });
 
       if (error) throw error;
@@ -37,9 +72,26 @@ export default function BlogsPage() {
     }
   };
 
+  const fetchCategories = async () => {
+    try {
+      const response = await fetch("/api/categories");
+      const data = await response.json();
+
+      if (response.ok) {
+        setCategories(data.categories || []);
+      }
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+    }
+  };
+
+  const handleCategoryFilter = (categoryId: string) => {
+    setSelectedCategory(selectedCategory === categoryId ? "" : categoryId);
+  };
+
   const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString("en-US", {
+    return new Date(dateString).toLocaleDateString("en-US", {
+      year: "numeric",
       month: "long",
       day: "numeric",
     });
@@ -85,16 +137,52 @@ export default function BlogsPage() {
           </p>
         </div>
 
+        {/* Category Filter */}
+        {categories.length > 0 && (
+          <div className="mb-8">
+            <h3 className="text-lg font-medium text-gray-900 mb-4 text-center">
+              Filter by Category
+            </h3>
+            <div className="flex flex-wrap justify-center gap-3">
+              <button
+                onClick={() => handleCategoryFilter("")}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  selectedCategory === ""
+                    ? "bg-[#000209] text-white"
+                    : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50"
+                }`}
+              >
+                All Posts
+              </button>
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => handleCategoryFilter(category.id)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                    selectedCategory === category.id
+                      ? "bg-[#000209] text-white"
+                      : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50"
+                  }`}
+                >
+                  {category.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Blog Grid */}
-        {blogs.length === 0 ? (
+        {filteredBlogs.length === 0 ? (
           <div className="text-center py-12">
             <p className="text-gray-500 text-lg">
-              No blog posts available yet.
+              {selectedCategory
+                ? "No blog posts found in this category."
+                : "No blog posts available yet."}
             </p>
           </div>
         ) : (
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {blogs.map((blog) => (
+            {filteredBlogs.map((blog) => (
               <article
                 key={blog.id}
                 className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
@@ -112,8 +200,15 @@ export default function BlogsPage() {
 
                 {/* Blog Content */}
                 <div className="p-6">
-                  <div className="text-sm text-gray-500 mb-2">
-                    {formatDate(blog.created_at)}
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="text-sm text-gray-500">
+                      {formatDate(blog.created_at)}
+                    </div>
+                    {blog.categories?.name && (
+                      <span className="px-2 py-1 bg-[#000209]/10 text-[#000209] text-xs font-medium rounded-full">
+                        {blog.categories.name}
+                      </span>
+                    )}
                   </div>
 
                   <h2 className="text-xl font-semibold text-gray-900 mb-3 line-clamp-2">

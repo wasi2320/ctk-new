@@ -14,6 +14,10 @@ interface Blog {
   poster_url: string;
   author_id: string;
   created_at: string;
+  category_id?: string;
+  categories?: {
+    name: string;
+  };
 }
 
 interface BlogListProps {
@@ -37,7 +41,14 @@ export default function BlogList({ onEditBlog }: BlogListProps) {
       setMessage("");
       const { data, error } = await supabase
         .from("blogs")
-        .select("*")
+        .select(
+          `
+          *,
+          categories (
+            name
+          )
+        `
+        )
         .order("created_at", { ascending: false });
 
       if (error) throw error;
@@ -189,6 +200,13 @@ export default function BlogList({ onEditBlog }: BlogListProps) {
                           <User className="h-3 w-3 mr-1" />
                           {blog.author_id}
                         </div>
+                        {blog.categories?.name && (
+                          <div className="flex items-center">
+                            <span className="px-2 py-1 bg-[#000209]/10 text-[#000209] text-xs font-medium rounded-full">
+                              {blog.categories.name}
+                            </span>
+                          </div>
+                        )}
                       </div>
                     </div>
 
