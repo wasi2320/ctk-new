@@ -38,7 +38,7 @@ const PeVcPortfolioSection = () => {
         viewport={{ once: true, margin: "-100px" }}
       >
         {/* Header Section with Title and Button */}
-        <div className="flex flex-col lg:flex-row justify-between items-start mb-16 border-b border-blue-200 pb-8">
+        <div className="flex flex-col lg:flex-row justify-between items-start mb-16 border-b border-green-800 pb-8">
           <div className="mb-6 lg:mb-0">
             <motion.h2
               className="text-4xl md:text-5xl font-bold text-black mb-2"
