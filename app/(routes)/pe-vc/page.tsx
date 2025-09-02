@@ -1,11 +1,32 @@
-import React from "react";
+import HeroSection from "@/app/components/HeroSection";
+import StatsSection from "@/app/components/sections/StatsSection";
+import PeVcImpactSection from "@/app/components/sections/PeVcImpactSection";
+import PeVcDifferentiationSection from "@/app/components/sections/PeVcDifferentiationSection";
+import PeVcPortfolioSection from "@/app/components/sections/PeVcPortfolioSection";
+import ContactUsSection from "@/app/components/sections/ContactUsSection";
+import { peVcSectionData } from "@/utils/data/peVcSection";
 
-export default function PEVCPage() {
-    return (
-        <div className="min-h-screen bg-white flex items-center justify-center">
-            <div className="text-center">
-                <h1 className="text-5xl font-bold text-gray-800">Coming Soon for Private Equity and VC Firms</h1>
-            </div>
-        </div>
-    );
-} 
+const PEVCPage = () => {
+  return (
+    <div>
+      <HeroSection
+        title={peVcSectionData.title}
+        description={peVcSectionData.description}
+        imageSrc={peVcSectionData.imageSrc}
+        buttonText={peVcSectionData.buttonText}
+        buttonLink={peVcSectionData.buttonLink}
+      />
+      <StatsSection
+        title="PE/VC Impact"
+        stats={peVcSectionData.stats}
+        backgroundImage="/Images/nonprofit/nonprofit-Section2_bg.svg"
+      />
+      <PeVcImpactSection />
+      <PeVcDifferentiationSection />
+      <PeVcPortfolioSection />
+      <ContactUsSection />
+    </div>
+  );
+};
+
+export default PEVCPage;
