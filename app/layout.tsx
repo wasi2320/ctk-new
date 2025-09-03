@@ -5,6 +5,7 @@ import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import ChatFloat from "./components/ChatFloat";
+import Script from "next/script";
 
 // Add LocatorJS runtime setup
 const setupLocator = async () => {
@@ -56,22 +57,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <Head>
-          {/* Google Analytics gtag.js */}
-          <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-RRB63EKL29"
-          ></script>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'G-RRB63EKL29');
-              `,
-            }}
-          />
+        {/* Google Analytics gtag.js */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-RRB63EKL29"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-RRB63EKL29');
+          `}
+        </Script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
