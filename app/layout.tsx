@@ -56,14 +56,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RRB63EKL29"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-RRB63EKL29');
-</script>
+      <Head>
+          {/* Google Analytics gtag.js */}
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-RRB63EKL29"
+          ></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-RRB63EKL29');
+              `,
+            }}
+          />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
