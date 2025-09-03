@@ -56,11 +56,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <script
-          type="text/javascript"
-          async
-          src="https://bot.leadoo.com/bot/dynamic.js?company=I1hDKCU7"
-        />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RRB63EKL29"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RRB63EKL29');
+</script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
