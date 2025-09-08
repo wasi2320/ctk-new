@@ -11,6 +11,7 @@ import Image from "next/image";
 interface Blog {
   id: string;
   title: string;
+  slug: string;
   excerpt: string;
   content: string;
   poster_url: string;
@@ -29,12 +30,12 @@ export default function BlogPostPage() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (params.id) {
-      fetchBlog(params.id as string);
+    if (params.slug) {
+      fetchBlog(params.slug as string);
     }
-  }, [params.id]);
+  }, [params.slug]);
 
-  const fetchBlog = async (id: string) => {
+  const fetchBlog = async (slug: string) => {
     try {
       const { data, error } = await supabase
         .from("blogs")
@@ -46,7 +47,7 @@ export default function BlogPostPage() {
           )
         `
         )
-        .eq("id", id)
+        .eq("slug", slug)
         .single();
 
       if (error) throw error;

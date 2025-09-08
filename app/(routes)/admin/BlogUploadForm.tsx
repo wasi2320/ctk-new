@@ -18,6 +18,7 @@ interface Category {
 interface Blog {
   id: string;
   title: string;
+  slug: string;
   excerpt: string;
   content: string;
   poster_url: string;
@@ -43,6 +44,7 @@ export default function BlogUploadForm({
   onCancelEdit,
 }: BlogUploadFormProps) {
   const [title, setTitle] = useState("");
+  const [slug, setSlug] = useState("");
   const [content, setContent] = useState("");
   const [posterFile, setPosterFile] = useState<File | null>(null);
   const [posterPreview, setPosterPreview] = useState<string>("");
@@ -59,10 +61,31 @@ export default function BlogUploadForm({
   }>({ message: "", type: "success", isVisible: false });
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  // Slug generation function
+  const generateSlug = (text: string) => {
+    return text
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s-]/g, "") // Remove special characters
+      .replace(/[\s_-]+/g, "-") // Replace spaces and underscores with hyphens
+      .replace(/^-+|-+$/g, ""); // Remove leading/trailing hyphens
+  };
+
+  // Auto-generate slug when title changes
+  const handleTitleChange = (newTitle: string) => {
+    setTitle(newTitle);
+    if (!editingBlog) {
+      // Only auto-generate for new blogs
+      const generatedSlug = generateSlug(newTitle);
+      setSlug(generatedSlug);
+    }
+  };
+
   // Initialize form when editing a blog
   useEffect(() => {
     if (editingBlog) {
       setTitle(editingBlog.title);
+      setSlug(editingBlog.slug || "");
       setContent(editingBlog.content);
       setPosterPreview(editingBlog.poster_url);
       setSelectedCategory(editingBlog.category_id || "");
@@ -70,6 +93,7 @@ export default function BlogUploadForm({
     } else {
       // Reset form for new blog
       setTitle("");
+      setSlug("");
       setContent("");
       setPosterFile(null);
       setPosterPreview("");
@@ -200,8 +224,17 @@ export default function BlogUploadForm({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!title || !content) {
-      setMessage("Please fill in title and content");
+    if (!title || !content || !slug) {
+      setMessage("Please fill in title, content, and slug");
+      return;
+    }
+
+    // Validate slug format
+    const slugRegex = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+    if (!slugRegex.test(slug)) {
+      setMessage(
+        "Slug can only contain lowercase letters, numbers, and hyphens"
+      );
       return;
     }
 
@@ -254,6 +287,7 @@ export default function BlogUploadForm({
           .from("blogs")
           .update({
             title,
+            slug,
             excerpt: generateExcerpt(content),
             content,
             poster_url: posterUrl,
@@ -270,6 +304,7 @@ export default function BlogUploadForm({
         // Insert new blog
         const { error: insertError } = await supabase.from("blogs").insert({
           title,
+          slug,
           excerpt: generateExcerpt(content),
           content,
           poster_url: posterUrl,
@@ -330,11 +365,36 @@ export default function BlogUploadForm({
               type="text"
               id="title"
               value={title}
-              onChange={(e) => setTitle(e.target.value)}
+              onChange={(e) => handleTitleChange(e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#000209] focus:border-[#000209]"
               placeholder="Enter blog title"
               required
             />
+          </div>
+
+          {/* Custom Slug */}
+          <div>
+            <label
+              htmlFor="slug"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
+              Custom Slug (URL) *
+            </label>
+            <input
+              type="text"
+              id="slug"
+              value={slug}
+              onChange={(e) => setSlug(generateSlug(e.target.value))}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#000209] focus:border-[#000209]"
+              placeholder="Enter custom slug (e.g., my-awesome-blog)"
+              required
+            />
+            <p className="text-xs text-gray-500 mt-1">
+              This will be used in the blog URL. Only letters, numbers, and
+              hyphens allowed.
+              {!editingBlog &&
+                " (Auto-generated from title, but you can customize it)"}
+            </p>
           </div>
 
           {/* Category Selection */}

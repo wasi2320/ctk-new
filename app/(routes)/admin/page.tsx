@@ -9,6 +9,7 @@ import BlogList from "./BlogList";
 interface Blog {
   id: string;
   title: string;
+  slug: string;
   excerpt: string;
   content: string;
   poster_url: string;
