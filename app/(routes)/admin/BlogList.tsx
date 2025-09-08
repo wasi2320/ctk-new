@@ -9,6 +9,7 @@ import Image from "next/image";
 interface Blog {
   id: string;
   title: string;
+  slug: string;
   excerpt: string;
   content: string;
   poster_url: string;

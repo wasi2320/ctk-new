@@ -19,7 +19,16 @@ export async function GET(request: NextRequest) {
 
     if (error) throw error;
 
-    return NextResponse.json({ blogs });
+    // Also create a map for slug lookups
+    const slugMap =
+      blogs?.reduce((map: Record<string, string>, blog) => {
+        if (blog.slug) {
+          map[blog.slug] = blog.id;
+        }
+        return map;
+      }, {}) || {};
+
+    return NextResponse.json({ blogs, slugMap });
   } catch (error: unknown) {
     const errorMessage =
       error instanceof Error ? error.message : "Unknown error occurred";

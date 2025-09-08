@@ -93,9 +93,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       .from("blogs")
       .select(
         `
-        id, 
-        title, 
-        updated_at, 
+        id,
+        slug,
+        title,
+        updated_at,
         created_at,
         category_id,
         categories (name)
@@ -107,7 +108,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       console.error("Error fetching blogs for sitemap:", blogsError);
     } else if (blogs) {
       blogRoutes = blogs.map((blog) => ({
-        url: `${baseUrl}/blogs/${blog.id}`,
+        url: `${baseUrl}/blogs/${blog.slug || blog.id}`,
         lastModified: new Date(blog.updated_at || blog.created_at),
         changeFrequency: "weekly" as const,
         priority: 0.6,
