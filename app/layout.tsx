@@ -23,16 +23,28 @@ if (typeof window !== "undefined") {
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
+  fallback: [
+    "system-ui",
+    "-apple-system",
+    "BlinkMacSystemFont",
+    "Segoe UI",
+    "Roboto",
+    "sans-serif",
+  ],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+  fallback: ["Consolas", "Monaco", "Courier New", "monospace"],
 });
 
 export const metadata: Metadata = {
   title: "Code to Kloud",
-  description: "CodeToKloud offers AWS, cloud, DevOps, AI/ML, and web solutions to help businesses modernize legacy systems with secure, scalable multi-cloud platforms.",
+  description:
+    "CodeToKloud offers AWS, cloud, DevOps, AI/ML, and web solutions to help businesses modernize legacy systems with secure, scalable multi-cloud platforms.",
   icons: {
     icon: [
       {
@@ -44,6 +56,33 @@ export const metadata: Metadata = {
       {
         url: "/Images/logo.svg",
         type: "image/svg+xml",
+      },
+    ],
+  },
+  openGraph: {
+    url: "https://codetokloud.com/",
+    type: "website",
+    title: "Code to Kloud",
+    description:
+      "CodeToKloud offers AWS, cloud, DevOps, AI/ML, and web solutions to help businesses modernize legacy systems with secure, scalable multi-cloud platforms.",
+    images: [
+      {
+        url: "https://opengraph.b-cdn.net/production/images/dd5c0828-1890-4d85-8051-5fac6878e7ce.png?token=8F3WOtV6fyrJjvXYeTMLY4rjWwtjMDd_JLbEhytH9CE&height=630&width=1200&expires=33293625957",
+        width: 1200,
+        height: 630,
+        alt: "Code to Kloud",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Code to Kloud",
+    description:
+      "CodeToKloud offers AWS, cloud, DevOps, AI/ML, and web solutions to help businesses modernize legacy systems with secure, scalable multi-cloud platforms.",
+    images: [
+      {
+        url: "https://opengraph.b-cdn.net/production/images/dd5c0828-1890-4d85-8051-5fac6878e7ce.png?token=8F3WOtV6fyrJjvXYeTMLY4rjWwtjMDd_JLbEhytH9CE&height=630&width=1200&expires=33293625957",
+        alt: "Code to Kloud",
       },
     ],
   },
