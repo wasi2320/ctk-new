@@ -21,7 +21,7 @@ const projectDetails = {
 };
 
 // AWS Partner Program Requirements - Customer Challenge
-const customerChallenge = `GoAgalia's legacy infrastructure could not scale to meet growing demand from expanding hospital networks, causing performance degradation during peak scheduling periods that affected thousands of healthcare workers. As a healthcare application handling sensitive employee data, GoAgalia needed HIPAA compliance but lacked necessary security controls, encryption standards, and audit capabilities. Manual deployment processes led to inconsistent environments, prolonged deployment times, and increased risk of human error, while over-provisioning infrastructure resulted in unnecessary costs. Without addressing these challenges, GoAgalia risked losing customer trust, facing compliance violations with severe financial penalties, and being unable to scale their business.`;
+const customerChallenge = `GoAgalia&apos;s legacy infrastructure could not scale to meet growing demand from expanding hospital networks, causing performance degradation during peak scheduling periods that affected thousands of healthcare workers. As a healthcare application handling sensitive employee data, GoAgalia needed HIPAA compliance but lacked necessary security controls, encryption standards, and audit capabilities. Manual deployment processes led to inconsistent environments, prolonged deployment times, and increased risk of human error, while over-provisioning infrastructure resulted in unnecessary costs. Without addressing these challenges, GoAgalia risked losing customer trust, facing compliance violations with severe financial penalties, and being unable to scale their business.`;
 
 // AWS Partner Program Requirements - Partner Solution
 const solutionComponents = [
@@ -153,7 +153,7 @@ const ResultsBenefitsSection = () => (
         <div className="space-y-6 text-lg md:text-xl text-gray-700 leading-relaxed">
           <p>
             The AWS cloud migration and DevOps transformation delivered
-            substantial, measurable improvements across all areas of GoAgalia's
+            substantial, measurable improvements across all areas of GoAgalia&apos;s
             operations. Application response times improved significantly, with the
             average API response time dropping from 850ms to 320ms. The
             auto-scaling capabilities enabled the platform to handle 2.5x more
