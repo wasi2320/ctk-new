@@ -106,7 +106,7 @@ const CaseStudyProblemStatement: React.FC<CaseStudyProblemStatementProps> = ({
           <motion.p
             custom={scrollDirection}
             variants={itemVariants}
-            className="mb-4 w-full text-xl md:text-2xl md:w-[80%]"
+            className="mb-4 w-full text-lg md:text-xl md:w-[80%]"
           >
             {statement}
           </motion.p>

@@ -57,6 +57,20 @@ const techCards: TechCard[] = [
     route: "/aws-scalable-secure",
   },
   {
+    title: "GoAgalia Healthcare Workforce Management",
+    subtitle: "Scalable AWS cloud infrastructure for healthcare",
+    imageSrc: "/services/GoAgalia.png",
+    imageAlt: "GoAgalia Healthcare AWS Architecture Illustration",
+    route: "/goagalia-healthcare-workforce-management",
+  },
+  {
+    title: "Automated ECS Deployment with PR Preview",
+    subtitle: "Enterprise SaaS platform with automated CI/CD and preview environments",
+    imageSrc: "/services/automated_aws2.png",
+    imageAlt: "ECS PR Preview Architecture Illustration",
+    route: "/ecs-pr-preview-environments",
+  },
+  {
     title: "Scalable and Secure AWS Setup",
     subtitle: "Flexible cloud architecture with robust security",
     imageSrc: "/services/aws-solution-illustration.png",
