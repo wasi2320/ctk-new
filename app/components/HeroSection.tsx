@@ -168,14 +168,15 @@ const HeroSection = ({
             scale: 1.02,
             transition: { duration: 0.3, ease: "easeOut" },
           }}
+          className="w-[240px] sm:w-[300px] md:w-full"
         >
           <Image
             src={imageSrc}
             alt="Hero"
             height={500}
             width={500}
-            className={`md:w-full md:h-[350px] lg:h-[500px] ${
-              cover ? "object-cover" : ""
+            className={`w-full h-auto max-h-[260px] sm:max-h-[320px] md:max-h-none md:h-[350px] lg:h-[500px] ${
+              cover ? "object-cover" : "object-contain"
             }`}
           />
         </motion.div>
