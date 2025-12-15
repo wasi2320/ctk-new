@@ -2,11 +2,9 @@ import MissionSection from "@/app/components/sections/MissionSection";
 import ServiceCard from "@/app/components/ServiceCard";
 import React from "react";
 import Image from "next/image";
-import IndustriesSection, {
-  IndustriesCard,
-} from "@/app/components/sections/IndustriesSection";
+import { IndustriesCard } from "@/app/components/sections/IndustriesSection";
 
-function page() {
+function AboutUsPage() {
   return (
     <div>
       <ServiceCard
@@ -258,4 +256,4 @@ function page() {
   );
 }
 
-export default page;
+export default AboutUsPage;

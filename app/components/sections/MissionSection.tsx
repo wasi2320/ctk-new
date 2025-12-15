@@ -34,13 +34,13 @@ const MissionSection = () => {
         <div className="w-full max-w-full mx-auto">
           <div className="flex flex-col items-center justify-center text-white space-y-6 md:space-y-8 lg:space-y-10 py-12 md:py-16 lg:py-20">
             {/* Heading */}
-            <h1
+            <h2
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-center max-w-[800px] mx-auto"
               data-aos="fade-down"
               data-aos-delay="100"
             >
               Our Vision and Mission
-            </h1>
+            </h2>
 
             {/* Description */}
             <div

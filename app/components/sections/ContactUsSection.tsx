@@ -305,6 +305,11 @@ export default function ContactUsSection() {
       // Send to Discord
       await sendToDiscord(discordPayload);
 
+      // Track conversion for Google Ads
+      if (typeof window !== 'undefined' && (window as unknown as { gtag_report_conversion?: () => void }).gtag_report_conversion) {
+        (window as unknown as { gtag_report_conversion: () => void }).gtag_report_conversion();
+      }
+
       setSubmitStatus("success");
 
       // Reset form

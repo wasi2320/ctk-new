@@ -84,12 +84,13 @@ const CaseStudySolution: React.FC<CaseStudySolutionProps> = ({
           Proposed Solution
         </motion.h2>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, margin: "-100px" }}
+            className="lg:col-span-2 grid md:grid-cols-2 gap-4"
           >
             {solutions.map((component, index) => (
               <motion.div
@@ -98,19 +99,20 @@ const CaseStudySolution: React.FC<CaseStudySolutionProps> = ({
                 variants={itemVariants}
                 whileHover={{
                   scale: 1.02,
-                  x: 5,
                   transition: { duration: 0.2 },
                 }}
-                className="mb-6 p-4 border rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow duration-300"
+                className="p-5 border rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow duration-300 h-full flex flex-col"
               >
-                <p className="font-medium text-xl">
-                  <span className="font-bold">{component.title}</span>{" "}
+                <h3 className="font-bold text-lg mb-2 text-gray-900">
+                  {component.title}
+                </h3>
+                <p className="text-base text-gray-700 leading-relaxed flex-grow">
                   {component.description}
                 </p>
               </motion.div>
             ))}
           </motion.div>
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center lg:sticky lg:top-8 h-fit">
             {illustration && (
               <motion.div
                 custom={scrollYProgress.get() > 0.5 ? -1 : 1}
@@ -138,7 +140,7 @@ const CaseStudySolution: React.FC<CaseStudySolutionProps> = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
                 viewport={{ once: false }}
-                className="mt-6 text-start text-gray-700 text-xl"
+                className="mt-6 text-start text-gray-700 text-lg"
               >
                 {description}
               </motion.p>

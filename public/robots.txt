@@ -1,0 +1,51 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://codetokloud.com/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+# Allow important pages
+Allow: /
+Allow: /blogs/
+Allow: /aboutus/
+Allow: /contact/
+Allow: /privacy-policy/
+Allow: /term-condition/
+
+# Allow service pages
+Allow: /cloud-service/
+Allow: /web-solutions/
+Allow: /mobile-app/
+Allow: /ai/
+Allow: /automated_deployment/
+Allow: /cloud-migration/
+Allow: /consulting-and-advisory/
+Allow: /devops/
+Allow: /e-commerce/
+Allow: /ed-tech/
+Allow: /fin-tech/
+Allow: /financial-services/
+Allow: /finops/
+Allow: /healthcare/
+Allow: /helm-pipeline/
+Allow: /manufacturing/
+Allow: /non-profits/
+Allow: /pe-vc/
+Allow: /powering-business/
+Allow: /real-estate/
+Allow: /saas-isv/
+Allow: /scalable-secure-aws/
+Allow: /security-and-compliance/
+Allow: /security-and-deployment/
+Allow: /small-and-mid-size-business/
+Allow: /strengthening-aws/
+Allow: /ui-ux/
+
+# Crawl delay (optional)
+Crawl-delay: 1

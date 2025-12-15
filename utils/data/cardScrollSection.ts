@@ -46,6 +46,20 @@ export const CARD_SCROLL_SECTION = {
       route: "/aws-scalable-secure",
     },
     {
+      heading: "GoAgalia Healthcare Workforce Management",
+      description:
+        "Migrated healthcare workforce management platform to AWS with EKS, achieving significant performance improvements, approximately 35% cost reduction, and 99.7% uptime. Implemented HIPAA-compliant infrastructure with automated CI/CD, comprehensive monitoring, and disaster recovery.",
+      image: "/services/GoAgalia.png",
+      route: "/goagalia-healthcare-workforce-management",
+    },
+    {
+      heading: "Automated ECS Deployment with PR Preview Environments",
+      description:
+        "Implemented fully automated ECS deployment with PR preview environments for enterprise SaaS platform. Achieved 70% reduction in PR review time, 400% increase in deployment frequency, and 90% reduction in DevOps effort through Infrastructure as Code and automated CI/CD pipelines.",
+      image: "/services/automated_aws2.png",
+      route: "/ecs-pr-preview-environments",
+    },
+    {
       heading: "Scalable and Secure AWS Setup",
       description:
         "Migrated SaaS application from VPS to AWS with modern cloud infrastructure featuring CI/CD, container orchestration, and comprehensive monitoring. Delivered significant cost savings, improved security, and enhanced performance through cloud-native architecture.",

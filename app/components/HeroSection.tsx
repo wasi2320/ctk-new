@@ -1,4 +1,5 @@
 "use client";
+import type { MouseEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -91,6 +92,36 @@ const HeroSection = ({
   buttonText = "Let's connect", // default value
   buttonLink = "/contact",
 }: HeroSectionProps) => {
+  const isAnchorLink = Boolean(buttonLink?.startsWith("#"));
+
+  const handleAnchorClick = (event: MouseEvent<HTMLButtonElement>) => {
+    if (!isAnchorLink || !buttonLink) return;
+
+    event.preventDefault();
+    const target = document.querySelector(buttonLink);
+
+    if (target instanceof HTMLElement) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.replaceState(null, "", buttonLink);
+    } else {
+      window.location.hash = buttonLink;
+    }
+  };
+
+  const renderButton = () => (
+    <motion.button
+      type="button"
+      className="rounded-full px-8 py-3 border border-transparent cursor-pointer shadow-2xl font-medium"
+      variants={buttonVariants}
+      initial="rest"
+      whileHover="hover"
+      whileTap="tap"
+      onClick={isAnchorLink ? handleAnchorClick : undefined}
+    >
+      {buttonText}
+    </motion.button>
+  );
+
   return (
     // <FluidBackground>
     <motion.section
@@ -105,7 +136,7 @@ const HeroSection = ({
         variants={textVariants}
       >
         <motion.h1
-          className="md:text-[44px] text-4xl text-shadow-lg"
+          className="md:text-[44px] text-4xl font-bold"
           variants={textVariants}
         >
           {title}
@@ -119,17 +150,11 @@ const HeroSection = ({
 
         {buttonText && buttonLink && (
           <motion.div variants={textVariants}>
-            <Link href={buttonLink}>
-              <motion.button
-                className="rounded-full px-8 py-3 border border-transparent cursor-pointer shadow-2xl font-medium"
-                variants={buttonVariants}
-                initial="rest"
-                whileHover="hover"
-                whileTap="tap"
-              >
-                {buttonText}
-              </motion.button>
-            </Link>
+            {isAnchorLink ? (
+              renderButton()
+            ) : (
+              <Link href={buttonLink}>{renderButton()}</Link>
+            )}
           </motion.div>
         )}
       </motion.div>
@@ -149,7 +174,7 @@ const HeroSection = ({
             alt="Hero"
             height={500}
             width={500}
-            className={`md:w-full md:h-[350px] lg:w-[80%] lg:h-[500px] ${
+            className={`md:w-full md:h-[350px] lg:h-[500px] ${
               cover ? "object-cover" : ""
             }`}
           />

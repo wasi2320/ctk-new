@@ -1,29 +1,34 @@
-import HeroSection from "@/app/components/HeroSection";
-import PoweringExpertiseTailoredSection from "@/app/components/sections/PoweringExpertiseTailoredSection";
-import PoweringHealthcareSolution from "@/app/components/sections/PoweringHealthcareSolution";
-import MarketDifference from "@/app/components/sections/MarketDifference";
-import ProfessionalServices from "@/app/components/sections/ProfessionalServices";
-import PoweringFutureHealthCare from "@/app/components/sections/PoweringFutureHealthCare";
+import StatsSection from "@/app/components/sections/StatsSection";
+import FinancialServicesSection from "@/app/components/sections/FinancialServicesSection";
+import FinancialServicesDifferentiationSection from "@/app/components/sections/FinancialServicesDifferentiationSection";
+import FinancialServicesHelpSection from "@/app/components/sections/FinancialServicesHelpSection";
+import PeVcPortfolioSection from "@/app/components/sections/PeVcPortfolioSection";
 import ContactUsSection from "@/app/components/sections/ContactUsSection";
-import FinancialServicesSection from "@/app/components/FinancialService";
+import { financialServicesSectionData } from "@/utils/data/financialServicesSection";
+import HeroSection from "@/app/components/HeroSection";
 
-export default function FinancialServicesPage() {
+const FinancialServicesPage = () => {
   return (
     <div>
       <HeroSection
-        title="Financial Services"
-        description="Our comprehensive financial services are designed to support your goals—whether personal or business. From smart investment strategies and insurance solutions to loans, retirement planning, and beyond, we offer expert guidance every step of the way. With a focus on trust, technology, and tailored advice, we help turn financial complexity into clarity."
-        imageSrc="/Images/healthcare.png"
-        buttonText="Let’s connect"
-        buttonLink="/contact"
+        title={financialServicesSectionData.title}
+        description={financialServicesSectionData.description}
+        imageSrc={financialServicesSectionData.imageSrc}
+        buttonText={financialServicesSectionData.buttonText}
+        buttonLink={financialServicesSectionData.buttonLink}
       />
-      <PoweringExpertiseTailoredSection />
-      <PoweringHealthcareSolution />
-      <MarketDifference />
-      <ProfessionalServices />
+      <StatsSection
+        title="Powering Business"
+        stats={financialServicesSectionData.stats}
+        backgroundImage="/Images/nonprofit/nonprofit-Section2_bg.svg"
+      />
       <FinancialServicesSection />
-      <PoweringFutureHealthCare />
+      <FinancialServicesDifferentiationSection />
+      <FinancialServicesHelpSection />
+      <PeVcPortfolioSection />
       <ContactUsSection />
     </div>
   );
-}
+};
+
+export default FinancialServicesPage;
