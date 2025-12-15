@@ -108,7 +108,19 @@ export default function RoleForm({
     setMessage("");
 
     if (!title.trim()) {
-      setMessage("Please add a title for the role.");
+      setMessage("Role title is required.");
+      setLoading(false);
+      return;
+    }
+
+    if (!summary.trim()) {
+      setMessage("Short summary is required.");
+      setLoading(false);
+      return;
+    }
+
+    if (!description.trim()) {
+      setMessage("Please add a detailed description.");
       setLoading(false);
       return;
     }
@@ -135,8 +147,8 @@ export default function RoleForm({
         title: title.trim(),
         employment_type: employmentType.trim(),
         location: resolvedLocation,
-        summary: summary.trim() || "",
-        description: description.trim() || null,
+        summary: summary.trim(),
+        description: description.trim(),
         apply_url: applyUrl.trim() || null,
         due_date: dueDate,
         is_active: isActive,
@@ -210,9 +222,9 @@ export default function RoleForm({
       <form className="px-6 py-6 space-y-6" onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Role title
-            </label>
+          <label className="block text-sm font-medium text-gray-700">
+            Role title *
+          </label>
             <input
               type="text"
               value={title}
@@ -223,25 +235,26 @@ export default function RoleForm({
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Employment type
-            </label>
-            <select
-              value={employmentType}
-              onChange={(e) => setEmploymentType(e.target.value)}
-              className="mt-1 block w-full px-3 py-2 rounded-md border border-gray-300 shadow-sm focus:border-[#000209] focus:ring-[#000209]"
-            >
-              {employmentTypeOptions.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
+          <label className="block text-sm font-medium text-gray-700">
+            Employment type *
+          </label>
+          <select
+            value={employmentType}
+            onChange={(e) => setEmploymentType(e.target.value)}
+            className="mt-1 block w-full px-3 py-2 rounded-md border border-gray-300 shadow-sm focus:border-[#000209] focus:ring-[#000209]"
+            required
+          >
+            {employmentTypeOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
               ))}
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Location
-            </label>
+          <label className="block text-sm font-medium text-gray-700">
+            Location *
+          </label>
             <select
               value={locationType}
               onChange={(e) => {
@@ -252,6 +265,7 @@ export default function RoleForm({
                 }
               }}
               className="mt-1 block w-full px-3 py-2 rounded-md border border-gray-300 shadow-sm focus:border-[#000209] focus:ring-[#000209]"
+              required
             >
               {locationOptions.map((option) => (
                 <option key={option} value={option}>
@@ -266,6 +280,7 @@ export default function RoleForm({
                 onChange={(e) => setCustomLocation(e.target.value)}
                 className="mt-2 block w-full px-3 py-2 rounded-md border border-gray-300 shadow-sm focus:border-[#000209] focus:ring-[#000209]"
                 placeholder="Enter a custom location"
+                required
               />
             )}
           </div>
@@ -273,7 +288,7 @@ export default function RoleForm({
 
         <div>
           <label className="block text-sm font-medium text-gray-700">
-            Short summary (optional)
+            Short summary *
           </label>
           <textarea
             value={summary}
@@ -282,6 +297,7 @@ export default function RoleForm({
             placeholder="Brief description shown on the Careers page"
             rows={3}
             maxLength={260}
+            required
           />
           <p className="text-xs text-gray-500 mt-1">
             Keep this concise (260 characters max).
@@ -290,7 +306,7 @@ export default function RoleForm({
 
         <div>
           <label className="block text-sm font-medium text-gray-700">
-            Optional long description
+            Long description *
           </label>
           <div
             className="mt-1 rounded-md border border-gray-200 bg-white"
@@ -323,9 +339,9 @@ export default function RoleForm({
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Application due date
-            </label>
+          <label className="block text-sm font-medium text-gray-700">
+            Application due date *
+          </label>
             <input
               type="date"
               value={dueDate}
