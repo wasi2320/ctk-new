@@ -11,7 +11,7 @@ type Role = {
   title: string;
   employment_type: string;
   location: string;
-  summary: string;
+  summary?: string | null;
   description?: string | null;
   apply_url?: string | null;
   due_date?: string | null;
@@ -107,9 +107,10 @@ const markdownComponents: Components = {
 export default async function RoleDetailPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const role = await getRole(params.id);
+  const resolvedParams = await params;
+  const role = await getRole(resolvedParams.id);
 
   if (!role) {
     notFound();
@@ -156,9 +157,6 @@ export default async function RoleDetailPage({
           </div>
 
           <div className="space-y-4">
-            <p className="text-lg text-gray-800 leading-relaxed">
-              {role.summary}
-            </p>
             {role.description ? (
               <div className="max-w-none">
                 <ReactMarkdown components={markdownComponents}>

@@ -98,7 +98,31 @@ async function getOpenRoles(): Promise<Role[]> {
       .order("created_at", { ascending: false });
 
     if (error) throw error;
-    return data || [];
+    const roles = data || [];
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const filtered = roles.filter((role) => {
+      if (!role.due_date) return true;
+      const due = new Date(role.due_date);
+      if (Number.isNaN(due.getTime())) return true;
+      return due >= today;
+    });
+
+    filtered.sort((a, b) => {
+      const aDue = a.due_date ? new Date(a.due_date).getTime() : null;
+      const bDue = b.due_date ? new Date(b.due_date).getTime() : null;
+
+      if (aDue !== null && bDue !== null) {
+        return aDue - bDue;
+      }
+      if (aDue !== null) return -1;
+      if (bDue !== null) return 1;
+      return 0;
+    });
+
+    return filtered;
   } catch (error) {
     console.error("Error fetching roles for careers page:", error);
     return [];
@@ -312,7 +336,7 @@ export default async function CareersPage() {
               href="mailto:careers@codetokloud.com"
               className="rounded-full px-8 py-3 border border-gray-300 text-[#0a0f13] font-semibold hover:border-[#081617] transition-colors"
             >
-              Email careers@codetokloud.com
+              Email hr@codetokloud.com
             </a>
           </div>
         </div>
