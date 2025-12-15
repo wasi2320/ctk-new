@@ -11,7 +11,7 @@ export interface Role {
   title: string;
   employment_type: string;
   location: string;
-  summary: string;
+  summary?: string | null;
   description?: string | null;
   apply_url?: string | null;
   due_date?: string | null;
@@ -107,8 +107,14 @@ export default function RoleForm({
     setLoading(true);
     setMessage("");
 
-    if (!title.trim() || !summary.trim()) {
-      setMessage("Please fill in at least the title and summary.");
+    if (!title.trim()) {
+      setMessage("Please add a title for the role.");
+      setLoading(false);
+      return;
+    }
+
+    if (!dueDate) {
+      setMessage("Please provide an application due date.");
       setLoading(false);
       return;
     }
@@ -129,10 +135,10 @@ export default function RoleForm({
         title: title.trim(),
         employment_type: employmentType.trim(),
         location: resolvedLocation,
-        summary: summary.trim(),
+        summary: summary.trim() || "",
         description: description.trim() || null,
         apply_url: applyUrl.trim() || null,
-        due_date: dueDate || null,
+        due_date: dueDate,
         is_active: isActive,
         created_by: user.id,
       };
@@ -267,7 +273,7 @@ export default function RoleForm({
 
         <div>
           <label className="block text-sm font-medium text-gray-700">
-            Short summary
+            Short summary (optional)
           </label>
           <textarea
             value={summary}
@@ -318,13 +324,14 @@ export default function RoleForm({
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700">
-              Application due date (optional)
+              Application due date
             </label>
             <input
               type="date"
               value={dueDate}
               onChange={(e) => setDueDate(e.target.value)}
               className="mt-1 block w-full px-3 py-2 rounded-md border border-gray-300 shadow-sm focus:border-[#000209] focus:ring-[#000209]"
+              required
             />
           </div>
           <div className="flex items-center space-x-3 pt-6">
