@@ -14,6 +14,7 @@ export const FOOTER_DATA = {
     // { name: "Services", link: "/services" },
     // { name: "Expertise", link: "/expertise" },
     // { name: "Resources", link: "/resources" },
+    { name: "Careers", link: "/careers" },
     { name: "About Us", link: "/aboutus" },
     { name: "Contact Us", link: "/contact" },
   ],
