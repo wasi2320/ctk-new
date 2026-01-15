@@ -1,58 +1,36 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
+import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import LoginForm from "./LoginForm";
-import BlogUploadForm from "./BlogUploadForm";
-import BlogList from "./BlogList";
+import LoginForm from "../LoginForm";
+import RoleForm, { Role } from "./RoleForm";
+import RoleList from "./RoleList";
+import Link from "next/link";
 
-interface Blog {
-  id: string;
-  title: string;
-  slug: string;
-  excerpt: string;
-  content: string;
-  poster_url: string;
-  author_id: string;
-  created_at: string;
-}
-
-export default function AdminPage() {
-  const [user, setUser] = useState<{
-    id: string;
-    email: string;
-  } | null>(null);
+export default function RolesAdminPage() {
+  const [user, setUser] = useState<{ id: string; email: string } | null>(null);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<"create" | "manage">("create");
-  const [editingBlog, setEditingBlog] = useState<Blog | null>(null);
+  const [editingRole, setEditingRole] = useState<Role | null>(null);
 
   useEffect(() => {
-    // Check if user is already logged in
     const checkUser = async () => {
       const {
         data: { user },
       } = await supabase.auth.getUser();
       if (user && user.email) {
-        setUser({
-          id: user.id,
-          email: user.email,
-        });
+        setUser({ id: user.id, email: user.email });
       }
       setLoading(false);
     };
 
     checkUser();
 
-    // Listen for auth changes
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(async (event, session) => {
       if (session?.user && session.user.email) {
-        setUser({
-          id: session.user.id,
-          email: session.user.email,
-        });
+        setUser({ id: session.user.id, email: session.user.email });
       } else {
         setUser(null);
       }
@@ -62,18 +40,18 @@ export default function AdminPage() {
     return () => subscription.unsubscribe();
   }, []);
 
-  const handleEditBlog = (blog: Blog) => {
-    setEditingBlog(blog);
-    setActiveTab("create"); // Switch to create tab for editing
+  const handleEditRole = (role: Role) => {
+    setEditingRole(role);
+    setActiveTab("create");
   };
 
   const handleEditComplete = () => {
-    setEditingBlog(null);
-    setActiveTab("manage"); // Switch back to manage tab
+    setEditingRole(null);
+    setActiveTab("manage");
   };
 
   const handleCancelEdit = () => {
-    setEditingBlog(null);
+    setEditingRole(null);
   };
 
   if (loading) {
@@ -96,16 +74,18 @@ export default function AdminPage() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 py-6">
             <div className="space-y-1">
               <h1 className="text-3xl font-bold text-gray-900">
-                Blog Admin Panel
+                Roles Admin Panel
               </h1>
-              <p className="text-gray-600">Welcome back, {user.email}</p>
+              <p className="text-gray-600">
+                Manage open positions shown on the Careers page
+              </p>
             </div>
             <div className="flex w-full md:w-auto flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
               <Link
-                href="/admin/roles"
+                href="/admin"
                 className="px-4 py-2 text-sm font-semibold text-white bg-[#0f241f] rounded-md shadow-sm hover:bg-[#0a1613] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0f241f] text-center"
               >
-                Switch to Roles Admin
+                Switch to Blog Admin
               </Link>
               <button
                 onClick={() => supabase.auth.signOut()}
@@ -121,7 +101,7 @@ export default function AdminPage() {
             <button
               onClick={() => {
                 setActiveTab("create");
-                setEditingBlog(null);
+                setEditingRole(null);
               }}
               className={`py-2 px-1 border-b-2 font-medium text-sm ${
                 activeTab === "create"
@@ -129,7 +109,7 @@ export default function AdminPage() {
                   : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
               }`}
             >
-              {editingBlog ? "Edit Blog" : "Create New Blog"}
+              {editingRole ? "Edit Role" : "Create New Role"}
             </button>
             <button
               onClick={() => setActiveTab("manage")}
@@ -139,7 +119,7 @@ export default function AdminPage() {
                   : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
               }`}
             >
-              Manage Blogs
+              Manage Roles
             </button>
           </div>
         </div>
@@ -148,14 +128,14 @@ export default function AdminPage() {
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {activeTab === "create" ? (
-          <BlogUploadForm
+          <RoleForm
             user={user}
-            editingBlog={editingBlog}
+            editingRole={editingRole}
             onEditComplete={handleEditComplete}
             onCancelEdit={handleCancelEdit}
           />
         ) : (
-          <BlogList onEditBlog={handleEditBlog} />
+          <RoleList onEditRole={handleEditRole} />
         )}
       </div>
     </div>

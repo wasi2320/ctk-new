@@ -39,6 +39,7 @@ export const HEADER = {
     },
     { name: "Blog", link: "/blogs" },
     { name: "About Us", link: "/aboutus" },
+    { name: "Careers", link: "/careers" },
     { name: "Contact Us", link: "/contact" },
   ],
   search: "/Images/Search.svg",

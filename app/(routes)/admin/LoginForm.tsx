@@ -38,7 +38,7 @@ export default function LoginForm() {
             Admin Login
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            Access your blog management dashboard
+            Access your admin dashboard
           </p>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleLogin}>
