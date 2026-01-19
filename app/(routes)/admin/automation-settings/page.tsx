@@ -2,9 +2,17 @@
 
 import { useState } from "react";
 
+interface TestResult {
+  success?: boolean;
+  error?: string;
+  message?: string;
+  blog?: unknown;
+  case_study?: unknown;
+}
+
 export default function AutomationSettingsPage() {
   const [cronSecret, setCronSecret] = useState("");
-  const [testResult, setTestResult] = useState<any>(null);
+  const [testResult, setTestResult] = useState<TestResult | null>(null);
   const [testing, setTesting] = useState(false);
 
   const testAutomation = async () => {
@@ -21,8 +29,8 @@ export default function AutomationSettingsPage() {
 
       const data = await response.json();
       setTestResult(data);
-    } catch (error: any) {
-      setTestResult({ error: error.message });
+    } catch (error) {
+      setTestResult({ error: error instanceof Error ? error.message : 'Unknown error occurred' });
     } finally {
       setTesting(false);
     }

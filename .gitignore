@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Scripts with credentials (these should not be committed)
+PUSH_TO_GITHUB.sh
+RUN_MIGRATION_LOCAL.sh
+migrate-now.sh
+migrate-database.sh

@@ -239,10 +239,26 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const results = {
-      blog: null as any,
-      caseStudy: null as any,
-      errors: [] as string[],
+    interface BlogResult {
+      success: boolean;
+      title: string;
+      id: string;
+    }
+
+    interface CaseStudyResult {
+      success: boolean;
+      title: string;
+      id: string;
+    }
+
+    const results: {
+      blog: BlogResult | null;
+      caseStudy: CaseStudyResult | null;
+      errors: string[];
+    } = {
+      blog: null,
+      caseStudy: null,
+      errors: [],
     };
 
     // Generate and publish blog post
@@ -282,8 +298,9 @@ export async function GET(request: NextRequest) {
 
       if (blogError) throw blogError;
       results.blog = { success: true, title: blog.title, id: blog.id };
-    } catch (error: any) {
-      results.errors.push(`Blog generation failed: ${error.message}`);
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      results.errors.push(`Blog generation failed: ${errorMessage}`);
     }
 
     // Generate and publish case study (every 3 days)
@@ -320,8 +337,9 @@ export async function GET(request: NextRequest) {
 
         if (caseError) throw caseError;
         results.caseStudy = { success: true, title: caseStudy.title, id: caseStudy.id };
-      } catch (error: any) {
-        results.errors.push(`Case study generation failed: ${error.message}`);
+      } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+        results.errors.push(`Case study generation failed: ${errorMessage}`);
       }
     }
 
@@ -330,10 +348,11 @@ export async function GET(request: NextRequest) {
       timestamp: new Date().toISOString(),
       results,
     });
-  } catch (error: any) {
+  } catch (error) {
     console.error("Auto-generation error:", error);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
     return NextResponse.json(
-      { error: "Failed to auto-generate content", details: error.message },
+      { error: "Failed to auto-generate content", details: errorMessage },
       { status: 500 }
     );
   }
