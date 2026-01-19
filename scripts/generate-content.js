@@ -442,6 +442,13 @@ function generateMermaidDiagram(template) {
 async function main() {
   console.log('🚀 Starting automated content generation...\n');
 
+  // Debug: Check environment variables
+  console.log('🔍 Checking environment variables...');
+  console.log(`   SUPABASE_URL: ${process.env.NEXT_PUBLIC_SUPABASE_URL ? '✅ Set' : '❌ Missing'}`);
+  console.log(`   SUPABASE_ANON_KEY: ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ? '✅ Set' : '❌ Missing'}`);
+  console.log(`   SERVICE_ROLE_KEY: ${process.env.SUPABASE_SERVICE_ROLE_KEY ? '✅ Set' : '❌ Missing'}`);
+  console.log('');
+
   const results = {
     blog: null,
     caseStudy: null,
@@ -486,8 +493,10 @@ async function main() {
     console.log(`   ✅ Blog published: ${slug}`);
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    const errorStack = error instanceof Error ? error.stack : '';
     results.errors.push(`Blog generation failed: ${errorMessage}`);
     console.error(`   ❌ Blog error: ${errorMessage}`);
+    console.error(`   Stack trace:`, errorStack);
   }
 
   // Generate case study (every 3 days)
@@ -528,8 +537,10 @@ async function main() {
       console.log(`   ✅ Case study published: ${slug}`);
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      const errorStack = error instanceof Error ? error.stack : '';
       results.errors.push(`Case study generation failed: ${errorMessage}`);
       console.error(`   ❌ Case study error: ${errorMessage}`);
+      console.error(`   Stack trace:`, errorStack);
     }
   } else {
     console.log('\n📊 Skipping case study (runs every 3 days)');
