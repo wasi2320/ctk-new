@@ -13,27 +13,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
       - name: Generate Daily Content
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
         run: |
-          response=$(curl -X GET \
-            ${{ secrets.SITE_URL }}/api/cron/auto-generate-content \
-            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}" \
-            -w "\n%{http_code}")
+          echo "🤖 Starting automated content generation..."
+          node scripts/generate-content.js
 
-          http_code=$(echo "$response" | tail -n1)
-          body=$(echo "$response" | sed '$d')
-
-          echo "HTTP Status: $http_code"
-          echo "Response: $body"
-
-          if [ "$http_code" != "200" ]; then
-            echo "❌ Content generation failed!"
-            exit 1
-          fi
-
-          echo "✅ Content generated successfully!"
+      - name: Notify on Success
+        if: success()
+        run: |
+          echo "✅ Daily content generated and published successfully!"
 
       - name: Notify on Failure
         if: failure()
         run: |
-          echo "⚠️ Daily content generation failed. Check logs."
+          echo "❌ Daily content generation failed. Check logs above."
