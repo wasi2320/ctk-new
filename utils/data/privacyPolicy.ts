@@ -61,6 +61,18 @@ Please note that if you decline to use cookies, you may experience reduced funct
 We or our service providers may also collect web surfing data related to your use of the Services (e.g., information regarding which of our web pages you access, the frequency of such access, and your product and service preferences). This may be accomplished by using cookies, web beacons, page tags, or similar tools. Such web surfing data may include your Internet Protocol (IP) address, browser type, internet service provider (ISP), referring or exit pages, clickstream data, operating system, and the dates and times that you visit the Website. Web surfing data and similar information may be used for administrative purposes; to assess the usage, value, and performance of our online products and services; and to improve your experience with the Services.`,
     },
     {
+      heading: "SMS / Text Messaging Communications",
+      content: `If you provide your mobile phone number and opt in to receive text messages (SMS) from CodeToKloud, we will use it to send you service-related and informational messages connected to your engagement with us.
+
+SMS consent and opt-in data will not be shared with any third parties or affiliates for marketing or any other purposes.
+
+Opt-in: We only send SMS messages to clients who have explicitly opted in by completing our consent form and checking the consent checkbox. Message frequency varies. Message and data rates may apply.
+
+Opt-out: You can opt out at any time by replying STOP to any message you receive from us. You may reply HELP for assistance. After you opt out, we will no longer send you SMS messages.
+
+We maintain records of SMS consent internally. For questions about our SMS program, contact us at info@codetokloud.com.`,
+    },
+    {
       heading: "Contact Information",
       content: `Please contact CodeToKloud with any questions or comments about this Privacy Policy, your personal information, or your choices with regards to our collection and use of your personal information, email at info@codetokloud.com.
 
