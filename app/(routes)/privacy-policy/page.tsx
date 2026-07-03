@@ -1,5 +1,7 @@
 import { privacyPolicyData } from "@/utils/data/privacyPolicy";
+import { pageMetadata } from "@/lib/page-metadata";
 
+export const metadata = pageMetadata("/privacy-policy");
 export default function PrivacyPolicyPage() {
     return (
         <div className="max-w-3xl mx-auto py-12 px-4">

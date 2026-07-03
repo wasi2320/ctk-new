@@ -1,5 +1,7 @@
 import { termsAndConditionsData } from "@/utils/data/termsAndConditions";
+import { pageMetadata } from "@/lib/page-metadata";
 
+export const metadata = pageMetadata("/term-condition");
 export default function TermsAndConditionsPage() {
     return (
         <div className="max-w-3xl mx-auto py-12 px-4">

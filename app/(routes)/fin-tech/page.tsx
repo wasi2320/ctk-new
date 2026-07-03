@@ -4,7 +4,9 @@ import FinTechEmpoweringEducation from "@/app/components/sections/FinTechEmpower
 import FinTechFutureHealthcare from "@/app/components/sections/FinTechFutureHealthcare";
 import FinTechTransformative from "@/app/components/sections/FinTechTransformative";
 import ContactUsSection from "@/app/components/sections/ContactUsSection";
+import { pageMetadata } from "@/lib/page-metadata";
 
+export const metadata = pageMetadata("/fin-tech");
 const CloudMigration = () => {
   return (
     <div>

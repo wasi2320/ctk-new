@@ -4,7 +4,12 @@ import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
 import TailoredSection from "@/app/components/sections/TailoredSection";
 import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
 import UpscaleSection from "@/app/components/sections/UpscaleSection";
+import JsonLd from "@/app/components/JsonLd";
+import { coreServiceSchemas } from "@/lib/structured-data";
+import { pageMetadata } from "@/lib/page-metadata";
+import RelatedServices from "@/app/components/sections/RelatedServices";
 
+export const metadata = pageMetadata("/security-and-compliance");
 const SecurityAndCompliance = () => {
   const securityTechStack = {
     heading: "Security & Compliance Technologies",
@@ -20,6 +25,7 @@ const SecurityAndCompliance = () => {
 
   return (
     <div>
+      <JsonLd data={coreServiceSchemas["/security-and-compliance"]} />
       <HeroSection
         title="Stays ahead of threats with security and compliance solutions"
         description="Solutions, designed to protect your data, mitigate risks, and meet industry regulations with confidence."
@@ -31,6 +37,7 @@ const SecurityAndCompliance = () => {
       <DifferentiateSection />
       <TechDisplaySection techDisplaySection={securityTechStack} />
       <CardScrollSection />
+      <RelatedServices currentPath="/security-and-compliance" />
     </div>
   );
 };

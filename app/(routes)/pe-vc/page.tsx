@@ -5,7 +5,9 @@ import PeVcDifferentiationSection from "@/app/components/sections/PeVcDifferenti
 import PeVcPortfolioSection from "@/app/components/sections/PeVcPortfolioSection";
 import ContactUsSection from "@/app/components/sections/ContactUsSection";
 import { peVcSectionData } from "@/utils/data/peVcSection";
+import { pageMetadata } from "@/lib/page-metadata";
 
+export const metadata = pageMetadata("/pe-vc");
 const PEVCPage = () => {
   return (
     <div>

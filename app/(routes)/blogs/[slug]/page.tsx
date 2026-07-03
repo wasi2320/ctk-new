@@ -1,113 +1,100 @@
-"use client";
-
-import { useState, useEffect } from "react";
-import { useParams } from "next/navigation";
-import { supabase } from "@/lib/supabase";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Calendar } from "lucide-react";
 import ReactMarkdown from "react-markdown";
-import Image from "next/image";
+import {
+  getBlogBySlug,
+  getAllBlogSlugs,
+  stripMarkdown,
+} from "@/lib/blogs";
+import { SITE_URL, blogPostingSchema } from "@/lib/structured-data";
+import JsonLd from "@/app/components/JsonLd";
 
-interface Blog {
-  id: string;
-  title: string;
-  slug: string;
-  excerpt: string;
-  content: string;
-  poster_url: string;
-  author_id: string;
-  created_at: string;
-  category_id?: string;
-  categories?: {
-    name: string;
+// Revalidate on-demand (ISR): serve cached HTML, refresh hourly.
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  const slugs = await getAllBlogSlugs();
+  return slugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const blog = await getBlogBySlug(slug);
+
+  if (!blog) {
+    return { title: "Blog Post Not Found | CodetoKloud" };
+  }
+
+  const description = blog.excerpt
+    ? stripMarkdown(blog.excerpt).slice(0, 160)
+    : `Read "${blog.title}" on the CodetoKloud blog.`;
+  const url = `${SITE_URL}/blogs/${blog.slug}`;
+
+  return {
+    title: `${blog.title} | CodetoKloud`,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "article",
+      url,
+      title: blog.title,
+      description,
+      publishedTime: blog.created_at,
+      modifiedTime: blog.updated_at || blog.created_at,
+      images: blog.poster_url ? [{ url: blog.poster_url }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: blog.title,
+      description,
+      images: blog.poster_url ? [blog.poster_url] : undefined,
+    },
   };
 }
 
-export default function BlogPostPage() {
-  const params = useParams();
-  const [blog, setBlog] = useState<Blog | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+function formatDate(dateString: string) {
+  return new Date(dateString).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
 
-  useEffect(() => {
-    if (params.slug) {
-      fetchBlog(params.slug as string);
-    }
-  }, [params.slug]);
+export default async function BlogPostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const blog = await getBlogBySlug(slug);
 
-  const fetchBlog = async (slug: string) => {
-    try {
-      const { data, error } = await supabase
-        .from("blogs")
-        .select(
-          `
-          *,
-          categories (
-            name
-          )
-        `
-        )
-        .eq("slug", slug)
-        .single();
-
-      if (error) throw error;
-
-      // Debug logging
-      console.log("Fetched blog:", data);
-      console.log("Blog excerpt:", data?.excerpt);
-      console.log("Blog fields:", Object.keys(data || {}));
-
-      setBlog(data);
-    } catch (error: unknown) {
-      const errorMessage =
-        error instanceof Error ? error.message : "Unknown error occurred";
-      setError(errorMessage);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-  };
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#000209]"></div>
-      </div>
-    );
+  if (!blog) {
+    notFound();
   }
 
-  if (error || !blog) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">
-            Blog Post Not Found
-          </h1>
-          <p className="text-gray-600 mb-6">
-            {error || "The blog post you are looking for does not exist."}
-          </p>
-          <Link
-            href="/blogs"
-            className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-[#000209] hover:bg-[#000209]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#000209]"
-          >
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Blogs
-          </Link>
-        </div>
-      </div>
-    );
-  }
+  const articleSchema = blogPostingSchema({
+    title: blog.title,
+    description: blog.excerpt
+      ? stripMarkdown(blog.excerpt).slice(0, 300)
+      : blog.title,
+    slug: blog.slug,
+    image: blog.poster_url,
+    datePublished: blog.created_at,
+    dateModified: blog.updated_at,
+    categoryName: blog.categories?.name,
+  });
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <JsonLd data={articleSchema} />
+
       {/* Back Button */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <Link
@@ -140,15 +127,17 @@ export default function BlogPostPage() {
         </header>
 
         {/* Featured Image */}
-        <div className="mb-8">
-          <Image
-            src={blog.poster_url}
-            alt={blog.title}
-            width={800}
-            height={384}
-            className="w-full h-96 object-cover rounded-lg shadow-lg"
-          />
-        </div>
+        {blog.poster_url && (
+          <div className="mb-8">
+            <Image
+              src={blog.poster_url}
+              alt={blog.title}
+              width={800}
+              height={384}
+              className="w-full h-96 object-cover rounded-lg shadow-lg"
+            />
+          </div>
+        )}
 
         {/* Blog Content */}
         <div className="markdown-content">

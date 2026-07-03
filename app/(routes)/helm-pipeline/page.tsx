@@ -6,7 +6,9 @@ import CaseStudySolution from "@/app/components/sections/caseStudies/CaseStudySo
 import CaseStudyTechStack from "@/app/components/sections/caseStudies/CaseStudyTechStack";
 import CaseStudyLessons from "@/app/components/sections/caseStudies/CaseStudyLessons";
 import MetricsDisplay from "@/app/components/metrics";
+import { pageMetadata } from "@/lib/page-metadata";
 
+export const metadata = pageMetadata("/helm-pipeline");
 const services = [
   "Cloud Consulting & SI",
   "DevOps Managed Services",

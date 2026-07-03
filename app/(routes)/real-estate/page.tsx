@@ -4,7 +4,9 @@ import ProfessionalServices from "@/app/components/sections/ProfessionalServices
 import RealEstateServicesSection from "@/app/components/sections/RealEstateServicesSection";
 import RealEstateSolutionsSection from "@/app/components/sections/RealEstateSolutionsSection";
 import OurPortfolioSection from "@/app/components/sections/nonProfit/OurPortfolioSection";
+import { pageMetadata } from "@/lib/page-metadata";
 
+export const metadata = pageMetadata("/real-estate");
 const RealEstatePage = () => {
   return (
     <div>

@@ -15,7 +15,7 @@ const WhyUsSection = () => {
       <div className="md:w-1/2 h-full">
         <Image
           src={WHY_US_SECTION.rightImage}
-          alt=""
+          alt="Hybrid cloud ecosystem across on-prem and public cloud"
           height={500}
           width={500}
           className="w-full h-full"

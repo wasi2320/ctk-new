@@ -6,7 +6,9 @@ import PeVcPortfolioSection from "@/app/components/sections/PeVcPortfolioSection
 import ContactUsSection from "@/app/components/sections/ContactUsSection";
 import { financialServicesSectionData } from "@/utils/data/financialServicesSection";
 import HeroSection from "@/app/components/HeroSection";
+import { pageMetadata } from "@/lib/page-metadata";
 
+export const metadata = pageMetadata("/financial-services");
 const FinancialServicesPage = () => {
   return (
     <div>

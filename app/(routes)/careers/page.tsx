@@ -2,6 +2,7 @@ import HeroSection from "@/app/components/HeroSection";
 import Image from "next/image";
 import Link from "next/link";
 import { createServerClient } from "@/lib/supabase";
+import { pageMetadata } from "@/lib/page-metadata";
 
 export const dynamic = "force-dynamic";
 
@@ -140,6 +141,7 @@ const formatDate = (dateString?: string | null) => {
   });
 };
 
+export const metadata = pageMetadata("/careers");
 export default async function CareersPage() {
   const openRoles = await getOpenRoles();
 

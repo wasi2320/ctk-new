@@ -2,7 +2,7 @@ import { CLOUD_DIFFERENTIATE__SECTION } from "@/utils/data/cloudDifferentiateSec
 
 const CloudDifferentiateSection = () => {
   return (
-    <section className="md:px-32 px-4 pt-12 pb-20 bg-[url('/Images/Differentiate_Bg.png')] bg-cover bg-center bg-no-repeat text-white">
+    <section className="md:px-32 px-4 pt-12 pb-20 bg-[url('/Images/Differentiate_Bg.webp')] bg-cover bg-center bg-no-repeat text-white">
       <h2 className="md:text-4xl text-3xl nunito-bold font-bold text-center">
         {CLOUD_DIFFERENTIATE__SECTION.heading}
       </h2>

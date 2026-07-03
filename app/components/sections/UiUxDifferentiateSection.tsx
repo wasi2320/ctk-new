@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const UiUxDifferentiateSection = () => {
   return (
-    <section className="md:px-28 px-4 md:pt-24 pt-12 pb-12 bg-[url('/Images/Differentiate_Bg.png')] bg-cover bg-center bg-no-repeat text-white">
+    <section className="md:px-28 px-4 md:pt-24 pt-12 pb-12 bg-[url('/Images/Differentiate_Bg.webp')] bg-cover bg-center bg-no-repeat text-white">
       <h2 className="md:text-4xl text-2xl nunito-bold font-bold mb-5 text-center md:text-start">
         {UIUX_DIFFERENTIATE_SECTION.heading}
       </h2>
@@ -15,7 +15,7 @@ const UiUxDifferentiateSection = () => {
           <div key={index} className="flex flex-col items-center md:items-start gap-3">
             <Image
               src={card.imageSrc}
-              alt=""
+              alt={card.title}
               width={375}
               height={370}
               className="w-full md:h-[450px] h-[250px]"

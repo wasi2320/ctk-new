@@ -4,7 +4,9 @@ import UiUxBusinessSection from "@/app/components/sections/UiUxBusinessSection";
 import UiUxDifferentiateSection from "@/app/components/sections/UiUxDifferentiateSection";
 import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
 import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
+import { pageMetadata } from "@/lib/page-metadata";
 
+export const metadata = pageMetadata("/ui-ux");
 const UiUx = () => {
   const uiUxTechStack = {
     heading: "UI/UX Design Technologies",

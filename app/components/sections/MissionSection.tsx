@@ -16,10 +16,10 @@ const MissionSection = () => {
     <section className="relative w-full min-h-[60vh]">
       {/* Background Image */}
       <div
-        className="absolute inset-0 w-full h-full bg-[url('/Images/homepage/World_Image.png')] bg-cover
+        className="absolute inset-0 w-full h-full bg-[url('/Images/homepage/World_Image.webp')] bg-cover
         bg-size-cover bg-center bg-no-repeat"
       // style={{
-      //   backgroundImage: "url('/Images/homepage/World_Image.png')",
+      //   backgroundImage: "url('/Images/homepage/World_Image.webp')",
       //   backgroundSize: 'cover',
       //   backgroundPosition: 'center',
       //   backgroundRepeat: 'no-repeat'

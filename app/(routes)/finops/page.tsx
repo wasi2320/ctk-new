@@ -4,7 +4,9 @@ import FinOpsBusinessSection from "@/app/components/sections/FinOpsBusinessSecti
 import FinOpsDifferentiateSection from "@/app/components/sections/FinOpsDifferentiateSection";
 import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
 import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
+import { pageMetadata } from "@/lib/page-metadata";
 
+export const metadata = pageMetadata("/finops");
 const FinOps = () => {
   const finopsTechStack = {
     heading: "FinOps Technology Stack",

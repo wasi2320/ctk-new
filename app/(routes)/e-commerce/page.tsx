@@ -4,7 +4,9 @@ import EcommerceTransformative from "@/app/components/sections/EcommerceTransfor
 import EcommerceSolution from "@/app/components/sections/EcommerceSolution";
 import EcommerceFutureHealthcare from "@/app/components/sections/EcommerceFutureHealthcare";
 import ContactUsSection from "@/app/components/sections/ContactUsSection";
+import { pageMetadata } from "@/lib/page-metadata";
 
+export const metadata = pageMetadata("/e-commerce");
 const CloudMigration = () => {
   return (
     <div>

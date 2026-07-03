@@ -5,7 +5,9 @@ import ManufacturingTransformative from "@/app/components/sections/Manufacturing
 import ManufacturingReimagine from "@/app/components/sections/ManufacturingReimagine";
 import ManufacturingFutureHealthcare from "@/app/components/sections/ManufacturingFutureHealthcare";
 import ContactUsSection from "@/app/components/sections/ContactUsSection";
+import { pageMetadata } from "@/lib/page-metadata";
 
+export const metadata = pageMetadata("/manufacturing");
 const CloudMigration = () => {
   return (
     <div>

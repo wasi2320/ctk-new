@@ -4,7 +4,12 @@ import TailoredSection from "@/app/components/sections/TailoredSection";
 import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
 import WebBusinessSection from "@/app/components/sections/WebBusinessSection";
 import WebDifferentiateSection from "@/app/components/sections/WebDifferentiateSection";
+import JsonLd from "@/app/components/JsonLd";
+import { coreServiceSchemas } from "@/lib/structured-data";
+import { pageMetadata } from "@/lib/page-metadata";
+import RelatedServices from "@/app/components/sections/RelatedServices";
 
+export const metadata = pageMetadata("/web-solutions");
 const WebSolutions = () => {
   const webTechStack = {
     heading: "Web Development Technologies",
@@ -23,6 +28,7 @@ const WebSolutions = () => {
 
   return (
     <div>
+      <JsonLd data={coreServiceSchemas["/web-solutions"]} />
       <HeroSection
         title="Your Trusted Source for Advanced Web Solutions"
         description="Your website is more than just code it is the heartbeat of your brand."
@@ -34,6 +40,7 @@ const WebSolutions = () => {
       <WebDifferentiateSection />
       <TechDisplaySection techDisplaySection={webTechStack} />
       <CardScrollSection />
+      <RelatedServices currentPath="/web-solutions" />
     </div>
   );
 };

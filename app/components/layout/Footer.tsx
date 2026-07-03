@@ -5,87 +5,15 @@ import { LogoWhite } from "../global/logoWhite";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
 
 const Footer = () => {
   const pathname = usePathname();
-  const [email, setEmail] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
 
   const backgroundImage =
     pathname === "/"
-      ? "bg-[url('/Images/Partner_Bg.png')]"
-      : "bg-[url('/Images/Partner_Bg_Main_.png')]";
+      ? "bg-[url('/Images/Partner_Bg.webp')]"
+      : "bg-[url('/Images/Partner_Bg_Main_.webp')]";
   const inputBg = pathname === "/" ? "bg-[#152F27]" : "bg-[#254F42]";
-
-  const sendToDiscord = async (emailAddress: string) => {
-    setIsLoading(true);
-    try {
-      const webhookUrl =
-        "https://discord.com/api/webhooks/1382850558288855200/FdgEKZeNdokxtBgahKci9FS70F_AS3lObDBZEaA0ruun7H98PxK-_oGKjFQs65KvQnU4";
-
-      const message = {
-        content: `📧 **New Connection Request**\n\n**Email:** ${emailAddress}\n**Message:** This email wants to get connected with you!\n\n*Sent from your website footer subscription.*`,
-        embeds: [
-          {
-            title: "New Subscription Request",
-            description: `Someone wants to connect with you!`,
-            color: 0x00ff00,
-            fields: [
-              {
-                name: "Email Address",
-                value: emailAddress,
-                inline: true,
-              },
-              {
-                name: "Request Type",
-                value: "Connection Request",
-                inline: true,
-              },
-              {
-                name: "Timestamp",
-                value: new Date().toLocaleString(),
-                inline: false,
-              },
-            ],
-            footer: {
-              text: "Website Footer Subscription",
-            },
-          },
-        ],
-      };
-
-      const response = await fetch(webhookUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(message),
-      });
-
-      if (response.ok) {
-        alert("Thank you! Your connection request has been sent successfully.");
-        setEmail(""); // Clear the email input
-      } else {
-        throw new Error("Failed to send message");
-      }
-    } catch (error) {
-      console.error("Error sending to Mail:", error);
-      alert(
-        "Sorry, there was an error sending your request. Please try again."
-      );
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const handleSubmit = () => {
-    if (!email || !email.includes("@")) {
-      alert("Please enter a valid email address.");
-      return;
-    }
-    sendToDiscord(email);
-  };
 
   return (
     <footer>
@@ -99,24 +27,12 @@ const Footer = () => {
           <h3 className="text-white md:text-3xl text-xl">
             {FOOTER_DATA.subHeading}
           </h3>
-          <div className="bg-white/10 p-1.5 flex justify-between items-center rounded-full">
-            <input
-              type="email"
-              placeholder={FOOTER_DATA.placeholder}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="text-white outline-none ml-6 text-lg w-7/12 bg-transparent placeholder-white/70"
-            />
-            <button
-              onClick={handleSubmit}
-              disabled={isLoading}
-              className={`rounded-full nunito-medium font-semibold px-9 py-2 bg-white text-[#1C3D7A] text-lg hover:bg-white/90 transition-colors ${
-                isLoading ? "opacity-70 cursor-not-allowed" : "cursor-pointer"
-              }`}
-            >
-              {isLoading ? "Sending..." : FOOTER_DATA.buttonText}
-            </button>
-          </div>
+          <Link
+            href="/contact"
+            className="inline-block rounded-full nunito-medium font-semibold px-10 py-3 bg-white text-[#1C3D7A] text-lg hover:bg-white/90 transition-colors"
+          >
+            {FOOTER_DATA.buttonText}
+          </Link>
         </div>
       </div>
 
@@ -187,7 +103,7 @@ const Footer = () => {
                 >
                   <Image
                     src={item.icon}
-                    alt=""
+                    alt={item.ariaLabel}
                     width={16}
                     height={16}
                     className="w-4 h-4"

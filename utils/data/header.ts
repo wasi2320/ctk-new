@@ -40,6 +40,7 @@ export const HEADER = {
     { name: "Blog", link: "/blogs" },
     { name: "About Us", link: "/aboutus" },
     { name: "Careers", link: "/careers" },
+    { name: "FAQ", link: "/faq" },
     { name: "Contact Us", link: "/contact" },
   ],
   search: "/Images/Search.svg",

@@ -5,7 +5,9 @@ import MarketDifference from "@/app/components/sections/MarketDifference";
 import ProfessionalServices from "@/app/components/sections/ProfessionalServices";
 import PoweringFutureHealthCare from "@/app/components/sections/PoweringFutureHealthCare";
 import ContactUsSection from "@/app/components/sections/ContactUsSection";
+import { pageMetadata } from "@/lib/page-metadata";
 
+export const metadata = pageMetadata("/powering-business");
 const CloudMigration = () => {
   return (
     <div>

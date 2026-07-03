@@ -4,7 +4,9 @@ import OurPortfolioSection from "@/app/components/sections/nonProfit/OurPortfoli
 import NonProfitStatsSection from "@/app/components/sections/nonProfit/statsSection";
 import SMBBusinessSection from "@/app/components/sections/SMBBusinessSection";
 import Image from "next/image";
+import { pageMetadata } from "@/lib/page-metadata";
 
+export const metadata = pageMetadata("/small-and-mid-size-business");
 const SMBPage = () => {
   return (
     <div>

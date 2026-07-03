@@ -4,7 +4,9 @@ import MobileBusinessSection from "@/app/components/sections/MobileBusinessSecti
 import MobileDifferentiateSection from "@/app/components/sections/MobileDifferentiateSection";
 import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
 import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
+import { pageMetadata } from "@/lib/page-metadata";
 
+export const metadata = pageMetadata("/mobile-app");
 const MobileApp = () => {
   const mobileTechStack = {
     heading: "Mobile App Development Stack",

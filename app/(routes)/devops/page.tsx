@@ -5,7 +5,12 @@ import BenefitSection from "@/app/components/sections/BenefitSection";
 import DevOpsDifferentiateSection from "@/app/components/sections/DevOpsDifferentiateSection";
 import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
 import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
+import JsonLd from "@/app/components/JsonLd";
+import { coreServiceSchemas } from "@/lib/structured-data";
+import { pageMetadata } from "@/lib/page-metadata";
+import RelatedServices from "@/app/components/sections/RelatedServices";
 
+export const metadata = pageMetadata("/devops");
 const DevOps = () => {
   const devopsTechStack = {
     heading: "DevOps Technologies & Tools",
@@ -24,6 +29,7 @@ const DevOps = () => {
 
   return (
     <div>
+      <JsonLd data={coreServiceSchemas["/devops"]} />
       <HeroSection
         title="Transform Your Workflow with Expert DevOps Implementation"
         description="Automate processes, improve team collaboration, and scale your infrastructure to meet your unique business needs."
@@ -35,6 +41,7 @@ const DevOps = () => {
       <DevOpsDifferentiateSection />
       <TechDisplaySection techDisplaySection={devopsTechStack} />
       <CardScrollSection />
+      <RelatedServices currentPath="/devops" />
     </div>
   );
 };

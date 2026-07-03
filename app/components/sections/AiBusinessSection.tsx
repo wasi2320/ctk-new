@@ -17,7 +17,7 @@ const AiBusinessSection = () => {
           <div className="md:hidden w-[45%]">
             <Image
               src={AI_BUSINESS_SECTION.image}
-              alt=""
+              alt="Generative AI business solutions illustration"
               width={500}
               height={600}
             />
@@ -41,7 +41,7 @@ const AiBusinessSection = () => {
         <div className="md:w-[35%] hidden md:block">
           <Image
             src={AI_BUSINESS_SECTION.image}
-            alt=""
+            alt="Generative AI business solutions illustration"
             width={500}
             height={600}
             className="w-full"

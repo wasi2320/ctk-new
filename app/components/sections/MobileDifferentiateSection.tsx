@@ -14,7 +14,7 @@ const MobileDifferentiateSection = () => {
         <div className="md:h-[400px] mt-7">
           <Image
             src={MOBILE_DIFFERENTIATE_SECTION.image}
-            alt=""
+            alt="Scalable mobile app development solutions"
             width={400}
             height={400}
             className="h-full w-full object-cover rounded-3xl"

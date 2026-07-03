@@ -4,7 +4,12 @@ import AiBusinessSection from "@/app/components/sections/AiBusinessSection";
 import AiDifferentiateSection from "@/app/components/sections/AiDifferentiateSection";
 import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
 import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
+import JsonLd from "@/app/components/JsonLd";
+import { coreServiceSchemas } from "@/lib/structured-data";
+import { pageMetadata } from "@/lib/page-metadata";
+import RelatedServices from "@/app/components/sections/RelatedServices";
 
+export const metadata = pageMetadata("/ai");
 const Ai = () => {
   const aiTechStack = {
     heading: "AI & Machine Learning Technologies",
@@ -22,6 +27,7 @@ const Ai = () => {
 
   return (
     <div>
+      <JsonLd data={coreServiceSchemas["/ai"]} />
       <HeroSection
         title="Power of AI, ML,and GenAI to drive smarter decisions,"
         description="Harness the power of AI, ML, and GenAI to drive smarter decisions, fuel innovation, and accelerate your business growth."
@@ -33,6 +39,7 @@ const Ai = () => {
       <AiDifferentiateSection />
       <TechDisplaySection techDisplaySection={aiTechStack} />
       <CardScrollSection />
+      <RelatedServices currentPath="/ai" />
     </div>
   );
 };

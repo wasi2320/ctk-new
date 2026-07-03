@@ -8,7 +8,7 @@ const FinancialServicesHelpSection = () => {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: "url('/Images/Differentiate_Bg.png')",
+          backgroundImage: "url('/Images/Differentiate_Bg.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

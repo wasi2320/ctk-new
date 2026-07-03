@@ -31,6 +31,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/careers`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/faq`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/privacy-policy`,
       lastModified: new Date(),
       changeFrequency: "yearly" as const,
@@ -75,6 +87,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/strengthening-aws",
     "/ui-ux",
     "/web-solutions",
+    // Case studies
+    "/ecs-pr-preview-environments",
+    "/goagalia-healthcare-workforce-management",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
@@ -115,25 +130,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       }));
     }
 
-    // Fetch categories for category-specific blog listings
-    const { data: categories, error: categoriesError } = await supabase
-      .from("categories")
-      .select("id, name, updated_at, created_at")
-      .order("name", { ascending: true });
-
-    if (categoriesError) {
-      console.error("Error fetching categories for sitemap:", categoriesError);
-    } else if (categories) {
-      // Add category-specific blog listing pages (if you implement them)
-      const categoryRoutes = categories.map((category) => ({
-        url: `${baseUrl}/blogs?category=${category.id}`,
-        lastModified: new Date(category.updated_at || category.created_at),
-        changeFrequency: "weekly" as const,
-        priority: 0.5,
-      }));
-
-      blogRoutes = [...blogRoutes, ...categoryRoutes];
-    }
+    // Note: category filter URLs (/blogs?category=…) are intentionally excluded.
+    // They are query-string variants of the /blogs listing (client-side filter),
+    // not distinct indexable pages, so including them creates duplicate-content
+    // noise in the sitemap.
   } catch (error) {
     console.error("Error in sitemap generation:", error);
   }

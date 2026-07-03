@@ -4,7 +4,9 @@ import EdTechEmpoweringEducation from "@/app/components/sections/EdTechEmpowerin
 import EdTechTransformative from "@/app/components/sections/EdTechTransformative";
 import EdTechFutureHealthcare from "@/app/components/sections/EdTechFutureHealthcare";
 import ContactUsSection from "@/app/components/sections/ContactUsSection";
+import { pageMetadata } from "@/lib/page-metadata";
 
+export const metadata = pageMetadata("/ed-tech");
 const CloudMigration = () => {
   return (
     <div>

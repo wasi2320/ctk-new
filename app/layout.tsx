@@ -5,6 +5,9 @@ import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import ChatFloat from "./components/ChatFloat";
+import Breadcrumbs from "./components/Breadcrumbs";
+import JsonLd from "./components/JsonLd";
+import { organizationSchema } from "@/lib/structured-data";
 import Script from "next/script";
 
 // Add LocatorJS runtime setup
@@ -42,9 +45,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Code to Kloud",
+  metadataBase: new URL("https://codetokloud.com"),
+  title: {
+    default:
+      "CodetoKloud | AWS Cloud, DevOps & AI Automation Consulting",
+    template: "%s",
+  },
   description:
-    "CodeToKloud offers AWS, cloud, DevOps, AI/ML, and web solutions to help businesses modernize legacy systems with secure, scalable multi-cloud platforms.",
+    "CodetoKloud is a US-registered IT consulting company and AWS Advanced Tier Partner providing cloud infrastructure, DevOps, AI automation, full-stack development, and compliance services (SOC 2, HIPAA, PCI DSS).",
   icons: {
     icon: [
       {
@@ -62,27 +70,27 @@ export const metadata: Metadata = {
   openGraph: {
     url: "https://codetokloud.com/",
     type: "website",
-    title: "Code to Kloud",
+    title: "CodetoKloud",
     description:
-      "CodeToKloud offers AWS, cloud, DevOps, AI/ML, and web solutions to help businesses modernize legacy systems with secure, scalable multi-cloud platforms.",
+      "CodetoKloud is a US-registered IT consulting company and AWS Advanced Tier Partner providing cloud infrastructure, DevOps, AI automation, full-stack development, and compliance services (SOC 2, HIPAA, PCI DSS).",
     images: [
       {
         url: "https://opengraph.b-cdn.net/production/images/dd5c0828-1890-4d85-8051-5fac6878e7ce.png?token=8F3WOtV6fyrJjvXYeTMLY4rjWwtjMDd_JLbEhytH9CE&height=630&width=1200&expires=33293625957",
         width: 1200,
         height: 630,
-        alt: "Code to Kloud",
+        alt: "CodetoKloud",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Code to Kloud",
+    title: "CodetoKloud",
     description:
-      "CodeToKloud offers AWS, cloud, DevOps, AI/ML, and web solutions to help businesses modernize legacy systems with secure, scalable multi-cloud platforms.",
+      "CodetoKloud is a US-registered IT consulting company and AWS Advanced Tier Partner providing cloud infrastructure, DevOps, AI automation, full-stack development, and compliance services (SOC 2, HIPAA, PCI DSS).",
     images: [
       {
         url: "https://opengraph.b-cdn.net/production/images/dd5c0828-1890-4d85-8051-5fac6878e7ce.png?token=8F3WOtV6fyrJjvXYeTMLY4rjWwtjMDd_JLbEhytH9CE&height=630&width=1200&expires=33293625957",
-        alt: "Code to Kloud",
+        alt: "CodetoKloud",
       },
     ],
   },
@@ -132,7 +140,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning={true}
       >
+        <JsonLd data={organizationSchema} />
         <Header />
+        <Breadcrumbs />
         <ScrollToTop />
         {children}
         <Footer />

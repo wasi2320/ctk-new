@@ -12,7 +12,7 @@ const CaseStudyLessons: React.FC<CaseStudyLessonsProps> = ({
 }) => (
   <section className="py-12 px-4 md:px-6 lg:px-8 relative flex flex-col md:flex-row gap-8">
     <Card
-      className={`text-center min-h-[550px] bg-[url('/graph_bg.png')] h-full bg-cover bg-center bg-no-repeat backdrop-blur-sm shadow-lg ${
+      className={`text-center min-h-[550px] bg-[url('/graph_bg.webp')] h-full bg-cover bg-center bg-no-repeat backdrop-blur-sm shadow-lg ${
         !secondLesson ? "w-full" : ""
       }`}
     >
@@ -26,7 +26,7 @@ const CaseStudyLessons: React.FC<CaseStudyLessonsProps> = ({
       </CardContent>
     </Card>
     {secondLesson ? (
-      <Card className="text-center min-h-[550px] bg-[url('/graph_bg.png')] h-full bg-cover bg-center bg-no-repeat backdrop-blur-sm shadow-lg">
+      <Card className="text-center min-h-[550px] bg-[url('/graph_bg.webp')] h-full bg-cover bg-center bg-no-repeat backdrop-blur-sm shadow-lg">
         <CardHeader>
           <CardTitle className="py-8 text-4xl text-center">
             TCO Analysis

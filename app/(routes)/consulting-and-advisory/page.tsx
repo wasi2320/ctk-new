@@ -4,7 +4,9 @@ import ConsultingSection from "@/app/components/sections/ConsultingSection";
 import WhyUsSection from "@/app/components/sections/WhyUsSection";
 import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
 import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
+import { pageMetadata } from "@/lib/page-metadata";
 
+export const metadata = pageMetadata("/consulting-and-advisory");
 const ConsultingAndAdvisory = () => {
   const consultingTechStack = {
     heading: "Consulting & Advisory Technologies",

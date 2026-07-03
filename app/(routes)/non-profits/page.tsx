@@ -5,7 +5,9 @@ import EmpoweringSection from "@/app/components/sections/nonProfit/EmpoweringSec
 import DifferentiateSection from "@/app/components/sections/nonProfit/DifferentiateSection";
 import OurPortfolioSection from "@/app/components/sections/nonProfit/OurPortfolioSection";
 import ContactUsSection from "@/app/components/sections/ContactUsSection";
+import { pageMetadata } from "@/lib/page-metadata";
 
+export const metadata = pageMetadata("/non-profits");
 export default function NonProfitsPage() {
     return (
         <>

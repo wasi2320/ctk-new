@@ -4,7 +4,9 @@ import OurPortfolioSection from "@/app/components/sections/nonProfit/OurPortfoli
 import NonProfitStatsSection from "@/app/components/sections/nonProfit/statsSection";
 import SaaSBusinessSection from "@/app/components/sections/SaaSBusinessSection";
 import SaaSDifferentiateSection from "@/app/components/sections/SaaSDifferentiateSection";
+import { pageMetadata } from "@/lib/page-metadata";
 
+export const metadata = pageMetadata("/saas-isv");
 const SaaSISVPage = () => {
   //   const securityTechStack = {
   //     heading: "Saas and ISV",

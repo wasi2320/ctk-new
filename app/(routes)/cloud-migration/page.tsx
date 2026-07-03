@@ -4,7 +4,9 @@ import GrowthSection from "@/app/components/sections/GrowthSection";
 import DifferentiateCardSection from "@/app/components/sections/DifferentiateCardSection";
 import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
 import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
+import { pageMetadata } from "@/lib/page-metadata";
 
+export const metadata = pageMetadata("/cloud-migration");
 const CloudMigration = () => {
   const migrationTechStack = {
     heading: "Cloud Migration Technologies",

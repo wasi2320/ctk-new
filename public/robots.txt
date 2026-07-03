@@ -1,51 +1,51 @@
+# CodetoKloud robots.txt
+
+# Default: allow all standard crawlers, block private/admin areas.
 User-agent: *
 Allow: /
-
-# Sitemap
-Sitemap: https://codetokloud.com/sitemap.xml
-
-# Disallow admin and private areas
 Disallow: /admin/
 Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
 
-# Allow important pages
+# --- AI / LLM crawlers ---------------------------------------------------
+# Explicitly allowed so CodetoKloud can be discovered, indexed, and cited
+# by generative engines (ChatGPT, Claude, Perplexity, Google AI Overviews).
+
+# OpenAI (ChatGPT training, search, and user browsing)
+User-agent: GPTBot
 Allow: /
-Allow: /blogs/
-Allow: /aboutus/
-Allow: /contact/
-Allow: /privacy-policy/
-Allow: /term-condition/
 
-# Allow service pages
-Allow: /cloud-service/
-Allow: /web-solutions/
-Allow: /mobile-app/
-Allow: /ai/
-Allow: /automated_deployment/
-Allow: /cloud-migration/
-Allow: /consulting-and-advisory/
-Allow: /devops/
-Allow: /e-commerce/
-Allow: /ed-tech/
-Allow: /fin-tech/
-Allow: /financial-services/
-Allow: /finops/
-Allow: /healthcare/
-Allow: /helm-pipeline/
-Allow: /manufacturing/
-Allow: /non-profits/
-Allow: /pe-vc/
-Allow: /powering-business/
-Allow: /real-estate/
-Allow: /saas-isv/
-Allow: /scalable-secure-aws/
-Allow: /security-and-compliance/
-Allow: /security-and-deployment/
-Allow: /small-and-mid-size-business/
-Allow: /strengthening-aws/
-Allow: /ui-ux/
+User-agent: OAI-SearchBot
+Allow: /
 
-# Crawl delay (optional)
-Crawl-delay: 1
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google Gemini / AI Overviews (separate from standard Googlebot indexing)
+User-agent: Google-Extended
+Allow: /
+
+# Common Crawl (used as a training corpus by many LLMs)
+User-agent: CCBot
+Allow: /
+
+# Sitemap
+Sitemap: https://codetokloud.com/sitemap.xml

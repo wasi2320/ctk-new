@@ -42,7 +42,7 @@ const TechStackSection = () => {
                       objectFit: "contain",
                     }}
                     src={img}
-                    alt=""
+                    alt="Technology stack tool logo"
                     height={80}
                     width={80}
                     className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
@@ -61,7 +61,7 @@ const TechStackSection = () => {
                       objectFit: "contain",
                     }}
                     src={img}
-                    alt=""
+                    alt="Technology stack tool logo"
                     height={80}
                     width={80}
                     className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
@@ -80,7 +80,7 @@ const TechStackSection = () => {
                       objectFit: "contain",
                     }}
                     src={img}
-                    alt=""
+                    alt="Technology stack tool logo"
                     height={80}
                     width={80}
                     className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
@@ -99,7 +99,7 @@ const TechStackSection = () => {
                       objectFit: "contain",
                     }}
                     src={img}
-                    alt=""
+                    alt="Technology stack tool logo"
                     height={80}
                     width={80}
                     className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
@@ -118,7 +118,7 @@ const TechStackSection = () => {
                       objectFit: "contain",
                     }}
                     src={img}
-                    alt=""
+                    alt="Technology stack tool logo"
                     height={80}
                     width={80}
                     className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
@@ -137,7 +137,7 @@ const TechStackSection = () => {
                       objectFit: "contain",
                     }}
                     src={img}
-                    alt=""
+                    alt="Technology stack tool logo"
                     height={80}
                     width={80}
                     className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
@@ -156,7 +156,7 @@ const TechStackSection = () => {
                       objectFit: "contain",
                     }}
                     src={img}
-                    alt=""
+                    alt="Technology stack tool logo"
                     height={80}
                     width={80}
                     className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
@@ -175,7 +175,7 @@ const TechStackSection = () => {
                       objectFit: "contain",
                     }}
                     src={img}
-                    alt=""
+                    alt="Technology stack tool logo"
                     height={80}
                     width={80}
                     className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
@@ -198,7 +198,7 @@ const TechStackSection = () => {
                       objectFit: "contain",
                     }}
                     src={img}
-                    alt=""
+                    alt="Technology stack tool logo"
                     height={80}
                     width={80}
                     className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
@@ -217,7 +217,7 @@ const TechStackSection = () => {
                       objectFit: "contain",
                     }}
                     src={img}
-                    alt=""
+                    alt="Technology stack tool logo"
                     height={80}
                     width={80}
                     className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
@@ -236,7 +236,7 @@ const TechStackSection = () => {
                       objectFit: "contain",
                     }}
                     src={img}
-                    alt=""
+                    alt="Technology stack tool logo"
                     height={80}
                     width={80}
                     className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
@@ -255,7 +255,7 @@ const TechStackSection = () => {
                       objectFit: "contain",
                     }}
                     src={img}
-                    alt=""
+                    alt="Technology stack tool logo"
                     height={80}
                     width={80}
                     className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
@@ -274,7 +274,7 @@ const TechStackSection = () => {
                       objectFit: "contain",
                     }}
                     src={img}
-                    alt=""
+                    alt="Technology stack tool logo"
                     height={80}
                     width={80}
                     className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
@@ -293,7 +293,7 @@ const TechStackSection = () => {
                       objectFit: "contain",
                     }}
                     src={img}
-                    alt=""
+                    alt="Technology stack tool logo"
                     height={80}
                     width={80}
                     className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
@@ -312,7 +312,7 @@ const TechStackSection = () => {
                       objectFit: "contain",
                     }}
                     src={img}
-                    alt=""
+                    alt="Technology stack tool logo"
                     height={80}
                     width={80}
                     className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
@@ -331,7 +331,7 @@ const TechStackSection = () => {
                       objectFit: "contain",
                     }}
                     src={img}
-                    alt=""
+                    alt="Technology stack tool logo"
                     height={80}
                     width={80}
                     className="md:w-[80px] md:h-[80px] w-[38px] h-[38px]"
