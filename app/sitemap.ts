@@ -104,6 +104,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/hipaa-aws-hardening-case-study",
     "/pci-dss-enterprise-case-study",
     "/hybrid-cloud-kubernetes-case-study",
+    // Comparisons
+    "/eks-vs-ecs-vs-fargate",
+    "/eks-vs-gke-vs-aks",
+    "/terraform-vs-cloudformation",
+    // Local
+    "/devops-consulting-naperville-il",
+    "/devops-kubernetes-consulting-chicago",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

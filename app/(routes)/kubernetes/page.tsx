@@ -223,6 +223,51 @@ export default function KubernetesPage() {
         </div>
       </section>
 
+      {/* Deeper comparisons + local landing pages. */}
+      <section className="px-4 md:px-36 pb-12 bg-gray-50">
+        <div className="max-w-5xl mx-auto space-y-3">
+          <p className="text-gray-700">
+            <span className="font-semibold text-gray-900">Compare in depth:</span>{" "}
+            <Link
+              href="/eks-vs-ecs-vs-fargate"
+              className="text-[#152F27] font-semibold underline hover:no-underline"
+            >
+              EKS vs ECS vs Fargate
+            </Link>
+            {" · "}
+            <Link
+              href="/eks-vs-gke-vs-aks"
+              className="text-[#152F27] font-semibold underline hover:no-underline"
+            >
+              EKS vs GKE vs AKS
+            </Link>
+            {" · "}
+            <Link
+              href="/terraform-vs-cloudformation"
+              className="text-[#152F27] font-semibold underline hover:no-underline"
+            >
+              Terraform vs CloudFormation
+            </Link>
+          </p>
+          <p className="text-gray-700">
+            <span className="font-semibold text-gray-900">Local:</span>{" "}
+            <Link
+              href="/devops-consulting-naperville-il"
+              className="text-[#152F27] font-semibold underline hover:no-underline"
+            >
+              Naperville, IL
+            </Link>
+            {" · "}
+            <Link
+              href="/devops-kubernetes-consulting-chicago"
+              className="text-[#152F27] font-semibold underline hover:no-underline"
+            >
+              Chicago
+            </Link>
+          </p>
+        </div>
+      </section>
+
       {/* Curated case studies — crawlable, quantified proof. */}
       <section className="py-16 px-4 md:px-36 bg-white">
         <div className="max-w-6xl mx-auto">

@@ -235,6 +235,35 @@ const PAGES: Record<string, PageMeta> = {
       "How CodetoKloud connected on-premise hardware and cloud burst capacity into one secure Kubernetes platform over a WireGuard mesh, reaching 99.9% uptime and sub-35ms inter-node latency.",
   },
 
+  // --- Comparisons ---
+  "/eks-vs-ecs-vs-fargate": {
+    title: "EKS vs ECS vs Fargate: How to Choose | CodetoKloud",
+    description:
+      "Amazon EKS vs ECS vs Fargate compared: what each is, what it's best for, and how to choose the right way to run containers on AWS. From AWS Advanced Tier Partner CodetoKloud.",
+  },
+  "/eks-vs-gke-vs-aks": {
+    title: "EKS vs GKE vs AKS: Managed Kubernetes Compared | CodetoKloud",
+    description:
+      "Amazon EKS vs Google GKE vs Azure AKS compared: strengths, best fit, and how to choose a managed Kubernetes service. From AWS Advanced Tier Partner CodetoKloud.",
+  },
+  "/terraform-vs-cloudformation": {
+    title: "Terraform vs CloudFormation: Which to Use | CodetoKloud",
+    description:
+      "Terraform vs AWS CloudFormation compared: scope, strengths, and tradeoffs, and how to choose the right infrastructure-as-code tool. From CodetoKloud.",
+  },
+
+  // --- Local ---
+  "/devops-consulting-naperville-il": {
+    title: "DevOps & Kubernetes Consulting in Naperville, IL | CodetoKloud",
+    description:
+      "DevOps, Kubernetes, and AWS cloud consulting in Naperville, IL from CodetoKloud, a local AWS Advanced Tier Partner: CI/CD, Amazon EKS, cost optimization, and SOC 2/HIPAA/PCI DSS compliance.",
+  },
+  "/devops-kubernetes-consulting-chicago": {
+    title: "DevOps & Kubernetes Consulting in Chicago | CodetoKloud",
+    description:
+      "DevOps, Kubernetes, and AWS cloud consulting for Chicago-area businesses from CodetoKloud, an AWS Advanced Tier Partner: CI/CD, Amazon EKS, cost optimization, and compliance.",
+  },
+
   // --- Company / legal ---
   "/faq": {
     title: "Frequently Asked Questions | CodetoKloud",

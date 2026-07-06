@@ -232,6 +232,53 @@ export function caseStudySchema({
   };
 }
 
+export interface LocalBusinessInput {
+  /** City label, e.g. "Naperville, IL" */
+  city: string;
+  /** Route path, e.g. "/devops-consulting-naperville-il" */
+  path: string;
+  description: string;
+}
+
+/**
+ * Builds a LocalBusiness (ProfessionalService) schema for a local landing page,
+ * with areaServed set to the target city + Illinois, tied to the Organization.
+ */
+export function localBusinessSchema({
+  city,
+  path,
+  description,
+}: LocalBusinessInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": `${SITE_URL}${path}#localbusiness`,
+    name: `CodetoKloud — DevOps & Kubernetes Consulting in ${city}`,
+    url: `${SITE_URL}${path}`,
+    description,
+    telephone: "+1-480-572-7818",
+    priceRange: "$$",
+    parentOrganization: { "@id": ORG_ID },
+    address: {
+      "@type": "PostalAddress",
+      postOfficeBoxNumber: "9165",
+      addressLocality: "Naperville",
+      addressRegion: "IL",
+      postalCode: "60567",
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 41.7508,
+      longitude: -88.1535,
+    },
+    areaServed: [
+      { "@type": "City", name: city },
+      { "@type": "State", name: "Illinois" },
+    ],
+  };
+}
+
 export interface FaqItem {
   question: string;
   answer: string;
