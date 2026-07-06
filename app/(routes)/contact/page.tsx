@@ -1,5 +1,7 @@
 import React from "react";
 import ContactUsSection from "@/app/components/sections/ContactUsSection";
+import TrustBadge from "@/app/components/sections/TrustBadge";
+import AuditOffer from "@/app/components/sections/AuditOffer";
 import { pageMetadata } from "@/lib/page-metadata";
 
 export const metadata = pageMetadata("/contact");
@@ -11,15 +13,22 @@ export default function page() {
         <div className="relative w-full h-full flex items-center justify-center lg:justify-end px-5 md:px-[5%] lg:px-[10%] xl:px-[15%]">
           <div className="absolute z-[2] w-full max-w-full md:max-w-[600px] lg:w-[60%] lg:max-w-none text-white text-center lg:text-start px-[15px] lg:right-0 lg:mr-[5%]">
             <h1 className="text-[2rem] md:text-[2.5rem] lg:text-[2.5rem] xl:text-[3.5rem] font-semibold mb-4 md:mb-5 lg:mb-6 leading-[1.2]">
-              Schedule a meeting
+              Book Your Free Cloud &amp; DevOps Audit
             </h1>
             <p className="text-base md:text-[1.1rem] lg:text-[1.2rem] leading-[1.5] opacity-90">
-              Connect with our team to discuss solutions tailored to your
-              business needs and accelerate your digital growth.
+              Get a free, no-obligation review of your AWS, DevOps, and
+              Kubernetes setup from an AWS Advanced Tier Partner — with
+              prioritized recommendations you can act on.
             </p>
           </div>
         </div>
       </header>
+
+      <div className="px-4 md:px-36 py-8 border-b border-gray-100">
+        <TrustBadge align="center" />
+      </div>
+
+      <AuditOffer />
 
       <ContactUsSection />
     </div>

@@ -2,6 +2,7 @@
 import { CARD_SCROLL_SECTION } from "@/utils/data/cardScrollSection";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export const CardScrollSection = () => {
   return (
@@ -41,15 +42,11 @@ export const CardScrollSection = () => {
                   {item.heading}
                 </h2>
                 <p className="nunito-extraLight mb-6">{item.description}</p>
-                <div className="flex gap-2">
-                  <button
-                    className="text-lg"
-                    onClick={() => {
-                      window.location.href = item.route;
-                    }}
-                  >
-                    Learn More
-                  </button>
+                <Link
+                  href={item.route}
+                  className="flex gap-2 items-center w-fit"
+                >
+                  <span className="text-lg">Learn More</span>
                   <div className="w-7 h-7 flex justify-center items-center bg-[#152F27] rounded-full">
                     <Image
                       src="/Images/Arrow_Left.svg"
@@ -59,7 +56,7 @@ export const CardScrollSection = () => {
                       className="w-3 h-3"
                     />
                   </div>
-                </div>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -84,15 +81,11 @@ export const CardScrollSection = () => {
                   {item.description}
                 </p>
 
-                <div
-                  className="flex gap-2 mt-12 w-fit cursor-pointer"
-                  onClick={() => {
-                    window.location.href = item.route;
-                  }}
+                <Link
+                  href={item.route}
+                  className="flex gap-2 mt-12 w-fit items-center cursor-pointer"
                 >
-                  <button className="text-2xl cursor-pointer">
-                    Learn More
-                  </button>
+                  <span className="text-2xl">Learn More</span>
                   <div className="w-7 h-7 flex justify-center items-center bg-[#152F27] rounded-full">
                     <Image
                       src="/Images/Arrow_Left.svg"
@@ -102,7 +95,7 @@ export const CardScrollSection = () => {
                       className="w-3 h-3"
                     />
                   </div>
-                </div>
+                </Link>
               </div>
             </div>
             <div className="w-full lg:w-[60%] pl-0 lg:pl-24">

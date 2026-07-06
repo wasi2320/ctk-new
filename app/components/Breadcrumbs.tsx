@@ -9,6 +9,7 @@ import { SITE_URL, breadcrumbSchema } from "@/lib/structured-data";
 const LABELS: Record<string, string> = {
   "cloud-service": "Cloud Services",
   devops: "DevOps",
+  kubernetes: "Kubernetes & EKS",
   ai: "AI & Automation",
   "web-solutions": "Web Solutions",
   "mobile-app": "Mobile App Development",

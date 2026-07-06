@@ -10,6 +10,7 @@ export const HEADER = {
         { name: "Cloud Migration", link: "/cloud-migration" },
         { name: "FinOps", link: "/finops" },
         { name: "DevOps Implementation", link: "/devops" },
+        { name: "Kubernetes & EKS", link: "/kubernetes" },
         { name: "UI/UX Designs and animation", link: "/ui-ux" },
         { name: "Web Solutions", link: "/web-solutions" },
         { name: "Mobile Development", link: "/mobile-app" },

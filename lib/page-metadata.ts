@@ -14,6 +14,14 @@ interface PageMeta {
   description: string;
 }
 
+/**
+ * Canonical 1200x630 brand OpenGraph image (same asset used in the root layout).
+ * Included on every page so per-page openGraph objects don't drop the preview
+ * image — Next.js replaces (does not deep-merge) the parent openGraph.
+ */
+const OG_IMAGE =
+  "https://opengraph.b-cdn.net/production/images/dd5c0828-1890-4d85-8051-5fac6878e7ce.png?token=8F3WOtV6fyrJjvXYeTMLY4rjWwtjMDd_JLbEhytH9CE&height=630&width=1200&expires=33293625957";
+
 const PAGES: Record<string, PageMeta> = {
   // --- Core services ---
   "/cloud-service": {
@@ -22,9 +30,14 @@ const PAGES: Record<string, PageMeta> = {
       "Secure, scalable AWS cloud infrastructure design, deployment, and management from CodetoKloud, an AWS Advanced Tier Partner serving US businesses.",
   },
   "/devops": {
-    title: "DevOps Consulting & CI/CD Automation | CodetoKloud",
+    title: "AWS DevOps Consulting & CI/CD Automation | CodetoKloud",
     description:
-      "DevOps consulting from CodetoKloud: CI/CD pipelines, infrastructure-as-code, and automation to ship faster and improve reliability on AWS.",
+      "AWS DevOps consulting from CodetoKloud, an AWS Advanced Tier Partner: CI/CD pipelines, Terraform infrastructure-as-code, GitOps, and Kubernetes automation to ship faster and improve reliability.",
+  },
+  "/kubernetes": {
+    title: "Kubernetes & Amazon EKS Consulting Services | CodetoKloud",
+    description:
+      "Kubernetes and Amazon EKS consulting from CodetoKloud, an AWS Advanced Tier Partner: EKS cluster design, GitOps with ArgoCD, Helm, autoscaling, observability, cost optimization, and security hardening.",
   },
   "/ai": {
     title: "AI Automation & Machine Learning Services | CodetoKloud",
@@ -228,6 +241,9 @@ export function pageMetadata(path: string): Metadata {
       url: `${SITE_URL}${path}`,
       title: meta.title,
       description: meta.description,
+      images: [
+        { url: OG_IMAGE, width: 1200, height: 630, alt: "CodetoKloud" },
+      ],
     },
   };
 }

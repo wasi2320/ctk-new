@@ -3,6 +3,7 @@ import Link from "next/link";
 const SERVICES = [
   { name: "Cloud Infrastructure (AWS)", href: "/cloud-service" },
   { name: "DevOps", href: "/devops" },
+  { name: "Kubernetes & EKS", href: "/kubernetes" },
   { name: "AI Automation", href: "/ai" },
   { name: "Full-Stack Development", href: "/web-solutions" },
   { name: "Security & Compliance", href: "/security-and-compliance" },

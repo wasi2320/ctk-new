@@ -7,6 +7,8 @@ import CaseStudyTechStack from "@/app/components/sections/caseStudies/CaseStudyT
 import CaseStudyLessons from "@/app/components/sections/caseStudies/CaseStudyLessons";
 import MetricsDisplay from "@/app/components/metrics";
 import { pageMetadata } from "@/lib/page-metadata";
+import JsonLd from "@/app/components/JsonLd";
+import { caseStudySchema } from "@/lib/structured-data";
 
 export const metadata = pageMetadata("/security-and-deployment");
 const services = [
@@ -100,7 +102,17 @@ const lesson = {
 
 export default function AwsDeploymentSecurityPage() {
   return (
-    <CaseStudyLayout>
+    <>
+      <JsonLd
+        data={caseStudySchema({
+          title: "Secure Automated Deployment on AWS ECS",
+          description:
+            "How CodetoKloud automated secure application deployment on AWS ECS using CloudFormation, AWS WAF, and Secrets Manager.",
+          path: "/security-and-deployment",
+          image: "/services/awsDeployment2.png",
+        })}
+      />
+      <CaseStudyLayout>
       <CaseStudyHeader
         title="AWS Deployment & Security"
         subtitle="Services provided on this Project"
@@ -122,5 +134,6 @@ export default function AwsDeploymentSecurityPage() {
       <MetricsDisplay metrics={metrics} />
       <CaseStudyLessons lessons={lesson.firstLesson} />
     </CaseStudyLayout>
+    </>
   );
 }

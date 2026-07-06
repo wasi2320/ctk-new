@@ -2,7 +2,7 @@
 
 import { TECH_CAROUSEL_SECTION } from "@/utils/data/techCarouselSection";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 interface TechCard {
@@ -80,8 +80,6 @@ const techCards: TechCard[] = [
 ];
 
 const TechCarouselSection = () => {
-  const router = useRouter();
-
   return (
     <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
       <h2 className="text-5xl font-bold text-center text-slate-800 mb-16">
@@ -102,39 +100,31 @@ const TechCarouselSection = () => {
       <div className="relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {techCards.map((card, index) => (
-            <motion.div
-              key={card.title}
-              className="rounded-3xl flex flex-col cursor-pointer items-start justify-between  lg:sticky lg:top-[6rem] all-sides-shadow overflow-hidden bg-cover bg-center mb-12 lg:mb-0 p-6 lg:p-20 bg-gray-50 z-10"
-              initial={{ y: 100, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              viewport={{ once: true, margin: "-100px" }}
-              onClick={() => router.push(card.route)}
-            >
-              <div className="w-full">
-                <h3 className="text-2xl font-bold text-slate-800 mb-2">
-                  {card.title}
-                </h3>
-                <p className="text-lg text-slate-600 mb-4">{card.subtitle}</p>
-              </div>
-              <div className="flex justify-center w-full mt-4">
-                <Image
-                  src={card.imageSrc}
-                  alt={card.imageAlt}
-                  width={300}
-                  height={200}
-                  className="w-full h-auto object-contain"
-                />
-              </div>
-              {/* <motion.button
-                className="mt-6 px-6 py-3 text-xl text-slate-800 border-2 border-slate-800 rounded-full hover:bg-slate-100 transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => router.push(card.route)}
+            <Link key={card.title} href={card.route} className="block">
+              <motion.div
+                className="rounded-3xl flex flex-col cursor-pointer items-start justify-between lg:sticky lg:top-[6rem] all-sides-shadow overflow-hidden bg-cover bg-center mb-12 lg:mb-0 p-6 lg:p-20 bg-gray-50 z-10"
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                viewport={{ once: true, margin: "-100px" }}
               >
-                Learn More
-              </motion.button> */}
-            </motion.div>
+                <div className="w-full">
+                  <h3 className="text-2xl font-bold text-slate-800 mb-2">
+                    {card.title}
+                  </h3>
+                  <p className="text-lg text-slate-600 mb-4">{card.subtitle}</p>
+                </div>
+                <div className="flex justify-center w-full mt-4">
+                  <Image
+                    src={card.imageSrc}
+                    alt={card.imageAlt}
+                    width={300}
+                    height={200}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>

@@ -272,6 +272,13 @@ export const coreServiceSchemas: Record<string, ReturnType<typeof serviceSchema>
     description:
       "DevOps consulting and implementation from CodetoKloud — CI/CD pipelines, automation, and infrastructure-as-code to accelerate delivery and improve reliability.",
   }),
+  "/kubernetes": serviceSchema({
+    name: "Kubernetes & Amazon EKS Consulting",
+    serviceType: "Kubernetes and Amazon EKS consulting",
+    path: "/kubernetes",
+    description:
+      "Kubernetes and Amazon EKS consulting from CodetoKloud, an AWS Advanced Tier Partner — EKS cluster design, GitOps with ArgoCD, Helm packaging, autoscaling, observability, cost optimization, and security hardening.",
+  }),
   "/ai": serviceSchema({
     name: "AI Automation",
     serviceType: "AI automation consulting",

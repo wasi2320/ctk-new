@@ -1,45 +1,19 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { CONTACT_SECTION_DATA } from "@/utils/data/contactSection";
-import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
+import BookCall from "@/app/components/sections/BookCall";
 
-// Type definitions
-interface UploadedFileInfo {
-  name: string;
-  size: number;
-  type: string;
-}
-
-interface SubmissionData {
-  formData: { [key: string]: string };
-  uploadedFile: UploadedFileInfo | null;
-  fileUrl: string | null;
-  submittedAt: string;
-}
-
-interface DiscordEmbedField {
-  name: string;
-  value: string;
-  inline: boolean;
-}
-
-interface DiscordEmbed {
-  title: string;
-  description: string;
-  color: number;
-  fields: DiscordEmbedField[];
-  footer: {
-    text: string;
-    icon_url: string;
-  };
-  timestamp: string;
-}
-
-interface DiscordPayload {
-  embeds: DiscordEmbed[];
-}
+const TOPICS = [
+  "Kubernetes / EKS",
+  "DevOps & CI/CD",
+  "Cloud cost (FinOps)",
+  "Cloud migration",
+  "Security & compliance",
+  "Other",
+];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -101,235 +75,55 @@ const buttonVariants = {
 };
 
 export default function ContactUsSection() {
-  const {
-    title,
-    backgroundImage,
-    formFields,
-    uploadSection,
-    submitButton,
-    contactInfo,
-    socialMedia,
-  } = CONTACT_SECTION_DATA;
+  const { title, backgroundImage, formFields, submitButton, contactInfo, socialMedia } =
+    CONTACT_SECTION_DATA;
 
-  // S3 Configuration
-  const s3Client = new S3Client({
-    region: process.env.NEXT_PUBLIC_AWS_REGION || "us-east-1",
-    credentials: {
-      accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID!,
-      secretAccessKey: process.env.NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY!,
-    },
-  });
-
-  // State to manage form data
+  const router = useRouter();
   const [formData, setFormData] = useState<{ [key: string]: string }>({});
-  const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<
-    "idle" | "success" | "error"
-  >("idle");
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">(
+    "idle"
+  );
 
-  // Handle input changes
   const handleInputChange = (id: string, value: string) => {
-    setFormData((prev) => ({
-      ...prev,
-      [id]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
-  // Handle file upload
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      setUploadedFile(file);
-    }
-  };
-
-  // Upload file to S3
-  const uploadFileToS3 = async (file: File): Promise<string> => {
-    try {
-      // Add timestamp and random string to filename to avoid conflicts
-      const timestamp = Date.now();
-      const randomStr = Math.random().toString(36).substring(7);
-      const fileName = `contact-uploads/${timestamp}-${randomStr}-${file.name}`;
-
-      // Convert file to ArrayBuffer
-      const arrayBuffer = await file.arrayBuffer();
-      const fileContent = new Uint8Array(arrayBuffer);
-
-      const bucketName = process.env.NEXT_PUBLIC_S3_BUCKET_NAME;
-
-      if (!bucketName) {
-        throw new Error("S3 bucket name not configured");
-      }
-
-      // Create S3 upload command
-      const command = new PutObjectCommand({
-        Bucket: bucketName,
-        Key: fileName,
-        Body: fileContent,
-        ContentType: file.type,
-        ContentDisposition: "inline",
-      });
-
-      // Upload to S3
-      await s3Client.send(command);
-
-      // Return the public URL
-      const region = process.env.NEXT_PUBLIC_AWS_REGION || "us-east-1";
-      const fileUrl = `https://${bucketName}.s3.${region}.amazonaws.com/${fileName}`;
-
-      return fileUrl;
-    } catch (error) {
-      console.error("Error uploading to S3:", error);
-      throw error;
-    }
-  };
-
-  // Format data for Discord
-  const formatDiscordMessage = (submissionData: SubmissionData) => {
-    const timestamp = new Date().toLocaleString();
-
-    // Create embed fields for form data
-    const fields = Object.entries(submissionData.formData).map(
-      ([key, value]) => {
-        const field = formFields.find((f) => f.id === key);
-        return {
-          name: field?.label || key,
-          value: value || "Not provided",
-          inline: true,
-        };
-      }
-    );
-
-    // Add file information if uploaded with S3 URL
-    if (submissionData.uploadedFile) {
-      fields.push({
-        name: "📎 Uploaded File",
-        value: submissionData.fileUrl
-          ? `[${submissionData.uploadedFile.name}](${
-              submissionData.fileUrl
-            })\nSize: ${(submissionData.uploadedFile.size / 1024).toFixed(
-              2
-            )} KB\nType: ${submissionData.uploadedFile.type}`
-          : `${submissionData.uploadedFile.name} (${(
-              submissionData.uploadedFile.size / 1024
-            ).toFixed(2)} KB) - Upload failed`,
-        inline: false,
-      });
-    }
-
-    // Add submission timestamp
-    fields.push({
-      name: "🕒 Submission Time",
-      value: timestamp,
-      inline: true,
-    });
-
-    return {
-      embeds: [
-        {
-          title: "🎯 New Contact Form Submission",
-          description:
-            "A new contact form has been submitted with the following details:",
-          color: 0x00ff00, // Green color
-          fields: fields,
-          footer: {
-            text: "Contact Form Submission System",
-            icon_url: "https://cdn-icons-png.flaticon.com/512/684/684910.png",
-          },
-          timestamp: new Date().toISOString(),
-        },
-      ],
-    };
-  };
-
-  // Send to Discord
-  const sendToDiscord = async (discordPayload: DiscordPayload) => {
-    const webhookUrl =
-      process.env.NEXT_PUBLIC_DISCORD_WEBHOOK_URL ||
-      "https://discord.com/api/webhooks/1382850558288855200/FdgEKZeNdokxtBgahKci9FS70F_AS3lObDBZEaA0ruun7H98PxK-_oGKjFQs65KvQnU4";
-
-    if (!webhookUrl) {
-      throw new Error("Webhook URL not configured");
-    }
-
-    const response = await fetch(webhookUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(discordPayload),
-    });
-
-    if (!response.ok) {
-      throw new Error(`Discord API error: ${response.status}`);
-    }
-  };
-
-  // Handle form submission
+  // Submit the lead to the secure server-side endpoint (HubSpot + backup),
+  // then send the visitor to the /thank-you confirmation page.
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
     try {
-      let fileUrl = null;
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name || "",
+          email: formData.email || "",
+          company: formData.company || "",
+          topic: formData.topic || "",
+          message: formData.message || "",
+          pageUri:
+            typeof window !== "undefined" ? window.location.href : undefined,
+        }),
+      });
 
-      // Upload file to S3 if present
-      if (uploadedFile) {
-        try {
-          fileUrl = await uploadFileToS3(uploadedFile);
-        } catch (uploadError) {
-          console.error("Error uploading file to S3:", uploadError);
-          // Continue with submission even if file upload fails
-        }
-      }
-
-      // Create the data object
-      const submissionData: SubmissionData = {
-        formData,
-        uploadedFile: uploadedFile
-          ? {
-              name: uploadedFile.name,
-              size: uploadedFile.size,
-              type: uploadedFile.type,
-            }
-          : null,
-        fileUrl: fileUrl,
-        submittedAt: new Date().toLocaleString(),
-      };
-
-      // Format for Discord
-      const discordPayload = formatDiscordMessage(submissionData);
-
-      // Send to Discord
-      await sendToDiscord(discordPayload);
-
-      // Track conversion for Google Ads
-      if (typeof window !== 'undefined' && (window as unknown as { gtag_report_conversion?: () => void }).gtag_report_conversion) {
-        (window as unknown as { gtag_report_conversion: () => void }).gtag_report_conversion();
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Submission failed");
       }
 
       setSubmitStatus("success");
-
-      // Reset form
       setFormData({});
-      setUploadedFile(null);
-
-      // Show success message
-      alert(
-        "✅ Your message has been sent successfully to our mail channel!" +
-          (fileUrl
-            ? " File has been uploaded."
-            : uploadedFile
-            ? " Note: File upload failed, but form was submitted."
-            : "")
-      );
+      router.push("/thank-you");
     } catch (error) {
-      console.error("Error sending to Discord:", error);
+      console.error("Lead submission error:", error);
       setSubmitStatus("error");
       alert(
-        "❌ Failed to send message. Please try again or contact us directly."
+        "❌ Something went wrong sending your message. Please try again or email info@codetokloud.com."
       );
     } finally {
       setIsSubmitting(false);
@@ -345,7 +139,6 @@ export default function ContactUsSection() {
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
     >
-      {/* <FluidBackground className="absolute inset-0" /> */}
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center justify-between relative z-10">
         {/* Form Card */}
         <motion.div
@@ -382,9 +175,7 @@ export default function ContactUsSection() {
                     placeholder={field.placeholder}
                     required={field.required}
                     value={formData[field.id] || ""}
-                    onChange={(e) =>
-                      handleInputChange(field.id, e.target.value)
-                    }
+                    onChange={(e) => handleInputChange(field.id, e.target.value)}
                     whileFocus={{ borderColor: "#059669" }}
                   />
                 ) : (
@@ -394,37 +185,33 @@ export default function ContactUsSection() {
                     placeholder={field.placeholder}
                     required={field.required}
                     value={formData[field.id] || ""}
-                    onChange={(e) =>
-                      handleInputChange(field.id, e.target.value)
-                    }
+                    onChange={(e) => handleInputChange(field.id, e.target.value)}
                     whileFocus={{ borderColor: "#059669" }}
                   />
                 )}
               </motion.div>
             ))}
 
-            <motion.div
-              className="flex items-center gap-2 mt-2"
-              variants={formFieldVariants}
-            >
-              <Image
-                src={uploadSection.icon}
-                alt={uploadSection.altText}
-                width={18}
-                height={18}
-              />
+            {/* Qualifier — helps route and prioritize the lead. */}
+            <motion.div variants={formFieldVariants}>
               <motion.label
-                className="text-gray-700 text-base cursor-pointer"
+                className="block text-lg font-medium mb-1"
                 whileHover={{ color: "#059669" }}
               >
-                {uploadSection.text}
-                {uploadedFile ? ` - ${uploadedFile.name}` : ""}
-                <input
-                  type="file"
-                  className="hidden"
-                  onChange={handleFileUpload}
-                />
+                What do you need help with?
               </motion.label>
+              <select
+                className="w-full border-b border-gray-400 outline-none py-2 bg-transparent transition-colors focus:border-green-600"
+                value={formData.topic || ""}
+                onChange={(e) => handleInputChange("topic", e.target.value)}
+              >
+                <option value="">Select a topic (optional)</option>
+                {TOPICS.map((topic) => (
+                  <option key={topic} value={topic}>
+                    {topic}
+                  </option>
+                ))}
+              </select>
             </motion.div>
 
             <motion.div
@@ -473,8 +260,6 @@ export default function ContactUsSection() {
                     </svg>
                     Sending...
                   </span>
-                ) : submitStatus === "success" ? (
-                  "✅ Sent!"
                 ) : submitStatus === "error" ? (
                   "❌ Failed"
                 ) : (
@@ -526,6 +311,11 @@ export default function ContactUsSection() {
               )}
             </motion.div>
           ))}
+
+          {/* Book a call — appears once NEXT_PUBLIC_CALENDLY_URL is set. */}
+          <motion.div variants={formFieldVariants} className="mb-6">
+            <BookCall label="Or book a call →" />
+          </motion.div>
 
           <motion.div variants={formFieldVariants}>
             <motion.div

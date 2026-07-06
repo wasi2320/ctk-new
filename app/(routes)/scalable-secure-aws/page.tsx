@@ -7,6 +7,8 @@ import CaseStudyTechStack from "@/app/components/sections/caseStudies/CaseStudyT
 import CaseStudyLessons from "@/app/components/sections/caseStudies/CaseStudyLessons";
 import MetricsDisplay from "@/app/components/metrics";
 import { pageMetadata } from "@/lib/page-metadata";
+import JsonLd from "@/app/components/JsonLd";
+import { caseStudySchema } from "@/lib/structured-data";
 
 export const metadata = pageMetadata("/scalable-secure-aws");
 const services = [
@@ -87,7 +89,17 @@ const lesson = {
 
 export default function ScalableSecureAwsPage() {
   return (
-    <CaseStudyLayout>
+    <>
+      <JsonLd
+        data={caseStudySchema({
+          title: "Scalable, Secure & Cost-Efficient AWS Setup",
+          description:
+            "How CodetoKloud migrated a SaaS application to modern AWS infrastructure with container orchestration, CI/CD, and Prometheus/Grafana monitoring, improving cost, security, and performance.",
+          path: "/scalable-secure-aws",
+          image: "/services/aws-solution-illustration.png",
+        })}
+      />
+      <CaseStudyLayout>
       <CaseStudyHeader
         title="Scalable and Secure AWS Setup"
         subtitle="Services provided on this Project"
@@ -112,5 +124,6 @@ export default function ScalableSecureAwsPage() {
         secondLesson={lesson.secondLesson}
       />
     </CaseStudyLayout>
+    </>
   );
 }

@@ -9,6 +9,7 @@ export const metadata = pageMetadata("/faq");
 const groups = [
   { title: "Cloud Services", key: "/cloud-service" },
   { title: "DevOps", key: "/devops" },
+  { title: "Kubernetes & EKS", key: "/kubernetes" },
   { title: "AI & Automation", key: "/ai" },
   { title: "Security & Compliance", key: "/security-and-compliance" },
   { title: "About CodetoKloud", key: "/aboutus" },
