@@ -24,7 +24,7 @@ export const FOOTER_DATA = {
   ],
   addressCol: {
     addressOne: "Codetokloud Inc PO Box 9165 \n Naperville, IL 60567",
-    addressTwo: "+1 (480) 572-7818",
+    addressTwo: "+1 (309) 590-3617",
   },
   otherPages: [{ name: "Privacy Policy", link: "/privacy-policy" }],
   socialCol: getFooterSocialLinks(),

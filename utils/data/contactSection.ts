@@ -66,9 +66,9 @@ export const CONTACT_SECTION_DATA = {
     {
       id: "phone",
       title: "Phone Number:",
-      content: ["+1 (480) 572-7818"],
+      content: ["+1 (309) 590-3617"],
       type: "link",
-      href: "tel:+1 (480) 572-7818",
+      href: "tel:+13095903617",
       className: "text-[#193728] text-xl",
     },
   ],

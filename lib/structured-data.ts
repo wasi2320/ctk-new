@@ -20,7 +20,7 @@ export const organizationSchema = {
   name: "CodetoKloud",
   legalName: "CodetoKloud Inc",
   url: SITE_URL,
-  telephone: "+1-480-572-7818",
+  telephone: "+1-309-590-3617",
   priceRange: "$$",
   logo: {
     "@type": "ImageObject",
@@ -256,7 +256,7 @@ export function localBusinessSchema({
     name: `CodetoKloud — DevOps & Kubernetes Consulting in ${city}`,
     url: `${SITE_URL}${path}`,
     description,
-    telephone: "+1-480-572-7818",
+    telephone: "+1-309-590-3617",
     priceRange: "$$",
     parentOrganization: { "@id": ORG_ID },
     address: {
