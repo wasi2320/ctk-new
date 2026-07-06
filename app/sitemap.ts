@@ -111,6 +111,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Local
     "/devops-consulting-naperville-il",
     "/devops-kubernetes-consulting-chicago",
+    // Guides / definitional
+    "/what-is-a-kubernetes-consultant",
+    "/what-does-a-devops-consultant-do",
+    "/devops-consulting-cost",
+    "/engagement-models",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

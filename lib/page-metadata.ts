@@ -264,6 +264,28 @@ const PAGES: Record<string, PageMeta> = {
       "DevOps, Kubernetes, and AWS cloud consulting for Chicago-area businesses from CodetoKloud, an AWS Advanced Tier Partner: CI/CD, Amazon EKS, cost optimization, and compliance.",
   },
 
+  // --- Guides / definitional ---
+  "/what-is-a-kubernetes-consultant": {
+    title: "What Is a Kubernetes Consultant? | CodetoKloud",
+    description:
+      "What a Kubernetes consultant does, when to hire one, and what to look for. From CodetoKloud, an AWS Advanced Tier Partner specializing in Amazon EKS.",
+  },
+  "/what-does-a-devops-consultant-do": {
+    title: "What Does a DevOps Consultant Do? | CodetoKloud",
+    description:
+      "What a DevOps consultant does, when to hire one, and what to look for. From CodetoKloud, an AWS Advanced Tier Partner: CI/CD, IaC, Kubernetes, and observability.",
+  },
+  "/devops-consulting-cost": {
+    title: "How Much Does DevOps Consulting Cost? | CodetoKloud",
+    description:
+      "What drives the cost of DevOps and Kubernetes consulting, the common engagement models, and how to get an accurate quote. From CodetoKloud.",
+  },
+  "/engagement-models": {
+    title: "How We Work: Engagement Models | CodetoKloud",
+    description:
+      "How CodetoKloud engages with clients: fixed-scope projects, managed retainers, and short assessments. Every engagement starts with a free consultation.",
+  },
+
   // --- Company / legal ---
   "/faq": {
     title: "Frequently Asked Questions | CodetoKloud",

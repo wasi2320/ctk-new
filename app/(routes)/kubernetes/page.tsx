@@ -265,6 +265,29 @@ export default function KubernetesPage() {
               Chicago
             </Link>
           </p>
+          <p className="text-gray-700">
+            <span className="font-semibold text-gray-900">Guides:</span>{" "}
+            <Link
+              href="/what-is-a-kubernetes-consultant"
+              className="text-[#152F27] font-semibold underline hover:no-underline"
+            >
+              What is a Kubernetes consultant?
+            </Link>
+            {" · "}
+            <Link
+              href="/engagement-models"
+              className="text-[#152F27] font-semibold underline hover:no-underline"
+            >
+              Engagement models
+            </Link>
+            {" · "}
+            <Link
+              href="/devops-consulting-cost"
+              className="text-[#152F27] font-semibold underline hover:no-underline"
+            >
+              Consulting cost
+            </Link>
+          </p>
         </div>
       </section>
 

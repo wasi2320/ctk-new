@@ -140,6 +140,41 @@ export function serviceSchema({
   };
 }
 
+export interface OfferItem {
+  name: string;
+  description: string;
+}
+
+/** Builds a Service + OfferCatalog schema for engagement models / service offers. */
+export function offerCatalogSchema(offers: OfferItem[], path: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${SITE_URL}${path}#offers`,
+    name: "CodetoKloud Consulting Engagements",
+    url: `${SITE_URL}${path}`,
+    provider: {
+      "@type": "Organization",
+      "@id": ORG_ID,
+      name: "CodetoKloud",
+      url: SITE_URL,
+    },
+    areaServed: "US",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Consulting engagement models",
+      itemListElement: offers.map((o) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: o.name,
+          description: o.description,
+        },
+      })),
+    },
+  };
+}
+
 export interface BlogPostingInput {
   title: string;
   description: string;
