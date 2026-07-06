@@ -2,6 +2,7 @@ import Link from "next/link";
 import HeroSection from "@/app/components/HeroSection";
 import TrustBadge from "@/app/components/sections/TrustBadge";
 import FaqSection from "@/app/components/sections/FaqSection";
+import ComplianceLinks from "@/app/components/sections/ComplianceLinks";
 import RelatedServices from "@/app/components/sections/RelatedServices";
 import JsonLd from "@/app/components/JsonLd";
 import { coreServiceSchemas } from "@/lib/structured-data";
@@ -79,6 +80,13 @@ const caseStudies = [
     blurb:
       "Migrated a SaaS application to modern AWS infrastructure with container orchestration, CI/CD, and full monitoring.",
     metrics: ["Lower cost", "Improved security", "Better performance"],
+  },
+  {
+    href: "/kubernetes-compliance-platform-case-study",
+    title: "Compliance-Ready On-Prem Kubernetes",
+    blurb:
+      "Built an on-premise RKE2 platform with default encryption, SSO on every access path, and GitOps for a company facing four audit frameworks.",
+    metrics: ["SOC 2 · HIPAA · HiTrust · NIST", "Passed readiness assessments"],
   },
 ];
 
@@ -277,6 +285,7 @@ export default function KubernetesPage() {
         description="Common questions about Kubernetes and EKS consulting, migration, cost, and security."
       />
 
+      <ComplianceLinks currentPath="/kubernetes" />
       <RelatedServices currentPath="/kubernetes" />
     </div>
   );

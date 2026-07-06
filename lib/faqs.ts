@@ -175,6 +175,95 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     },
   ],
 
+  "/hipaa-compliance": [
+    {
+      question: "Can AWS and Kubernetes be HIPAA compliant?",
+      answer:
+        "Yes. AWS offers a Business Associate Addendum (BAA) and a broad set of HIPAA-eligible services, and Kubernetes on Amazon EKS can host protected health information (PHI) when configured with the right controls. CodetoKloud builds HIPAA-compliant infrastructure on AWS and EKS using encryption, access controls, audit logging, network isolation, and disaster recovery.",
+    },
+    {
+      question: "What does HIPAA-compliant infrastructure require?",
+      answer:
+        "HIPAA-compliant infrastructure generally requires encryption of PHI at rest and in transit, strict access controls, audit logging, network isolation, secure backups and disaster recovery, and a signed BAA covering the services in use. CodetoKloud implements and documents each of these technical safeguards on AWS.",
+    },
+    {
+      question: "How does CodetoKloud secure protected health information (PHI) on AWS?",
+      answer:
+        "CodetoKloud secures PHI using AWS KMS encryption, private networking and isolated VPCs, least-privilege IAM and Kubernetes RBAC, encrypted secrets management, and continuous monitoring with tools like CloudWatch and Datadog. Only HIPAA-eligible AWS services are used for workloads that handle PHI.",
+    },
+    {
+      question: "Has CodetoKloud built HIPAA-compliant systems before?",
+      answer:
+        "Yes. CodetoKloud migrated GoAgalia's healthcare workforce management platform to a HIPAA-compliant architecture on Amazon EKS with autoscaling, GitOps, and full observability — cutting cloud costs by roughly 35%, reducing API latency from 850ms to 320ms, and reaching 99.7% uptime.",
+    },
+    {
+      question: "How does the BAA work with AWS?",
+      answer:
+        "AWS provides a Business Associate Addendum (BAA) that covers its HIPAA-eligible services. CodetoKloud architects your environment to use those eligible services correctly so that PHI is only processed and stored within HIPAA-eligible boundaries; specific contractual terms are handled as part of your engagement.",
+    },
+    {
+      question: "Can you help us prepare for a HIPAA assessment?",
+      answer:
+        "Yes. CodetoKloud implements and documents the technical safeguards a HIPAA assessment looks for — encryption, access control, logging, and disaster recovery. Formal assessments are performed by independent third parties; we prepare your infrastructure and evidence so that process goes smoothly.",
+    },
+  ],
+
+  "/soc-2-compliance": [
+    {
+      question: "What is SOC 2?",
+      answer:
+        "SOC 2 is a security framework based on the Trust Services Criteria — security, availability, processing integrity, confidentiality, and privacy. A SOC 2 report is issued by an independent auditor after evaluating your controls. CodetoKloud builds and operates the AWS infrastructure and controls that a SOC 2 audit evaluates.",
+    },
+    {
+      question: "Can CodetoKloud make us SOC 2 compliant?",
+      answer:
+        "SOC 2 reports are issued by independent auditors, not vendors. What CodetoKloud does is get you audit-ready: we implement the access controls, audit logging, change management, monitoring, and encryption that SOC 2 requires, and provide the technical evidence auditors ask for.",
+    },
+    {
+      question: "What controls does CodetoKloud implement for SOC 2 on AWS?",
+      answer:
+        "CodetoKloud implements least-privilege IAM and access controls, centralized audit logging, change management through infrastructure-as-code, encryption at rest and in transit, monitoring and alerting, and incident response processes — mapped to the SOC 2 Trust Services Criteria.",
+    },
+    {
+      question: "How long does SOC 2 readiness take?",
+      answer:
+        "It depends on the current state of your infrastructure. CodetoKloud starts with a gap assessment, then closes the technical gaps — often the fastest path is standardizing infrastructure-as-code, logging, and access controls before your audit window begins.",
+    },
+    {
+      question: "Do you work with our auditor?",
+      answer:
+        "Yes. CodetoKloud provides the technical documentation, architecture diagrams, and control evidence your auditor needs, and remediates findings on the infrastructure side so your audit stays on track.",
+    },
+  ],
+
+  "/pci-dss-compliance": [
+    {
+      question: "What is PCI DSS?",
+      answer:
+        "PCI DSS (Payment Card Industry Data Security Standard) is a security standard for organizations that store, process, or transmit cardholder data. CodetoKloud builds PCI DSS-aligned infrastructure on AWS with the segmentation, encryption, access control, and logging the standard requires.",
+    },
+    {
+      question: "Can you build a PCI DSS-compliant environment on AWS?",
+      answer:
+        "Yes. CodetoKloud designs AWS cardholder data environments (CDE) with network segmentation, encryption in transit and at rest, least-privilege access, logging and monitoring, and vulnerability management. Formal validation is performed by a Qualified Security Assessor (QSA); we build and document the controls that validation depends on.",
+    },
+    {
+      question: "How do you reduce PCI DSS scope?",
+      answer:
+        "CodetoKloud reduces PCI scope by segmenting the cardholder data environment from the rest of your infrastructure and, where appropriate, recommending tokenization or third-party payment processors so fewer systems fall under PCI DSS requirements — which lowers both risk and cost.",
+    },
+    {
+      question: "What PCI DSS controls does CodetoKloud implement?",
+      answer:
+        "CodetoKloud implements network segmentation and firewalls, encryption of cardholder data, strict access controls and MFA, centralized logging and monitoring, vulnerability scanning, and secure configuration baselines across the AWS environment.",
+    },
+    {
+      question: "Do you work with e-commerce and fintech businesses?",
+      answer:
+        "Yes. CodetoKloud works with e-commerce platforms, fintech companies, and SaaS providers that handle payments, building secure, PCI DSS-aligned infrastructure on AWS that scales with the business.",
+    },
+  ],
+
   "/ai": [
     {
       question: "Can you deploy AI applications in the cloud?",

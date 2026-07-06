@@ -54,6 +54,21 @@ const PAGES: Record<string, PageMeta> = {
     description:
       "Security and compliance services from CodetoKloud covering SOC 2, HIPAA, and PCI DSS to help US businesses meet regulations on AWS.",
   },
+  "/hipaa-compliance": {
+    title: "HIPAA-Compliant AWS & Kubernetes Hosting | CodetoKloud",
+    description:
+      "HIPAA-compliant AWS and Amazon EKS infrastructure from CodetoKloud, an AWS Advanced Tier Partner: encryption, access controls, audit logging, and disaster recovery for healthcare workloads.",
+  },
+  "/soc-2-compliance": {
+    title: "SOC 2 Compliance on AWS | CodetoKloud",
+    description:
+      "SOC 2 readiness on AWS from CodetoKloud: access controls, audit logging, change management, and monitoring aligned to the Trust Services Criteria for US businesses.",
+  },
+  "/pci-dss-compliance": {
+    title: "PCI DSS Compliance on AWS | CodetoKloud",
+    description:
+      "PCI DSS-aligned AWS infrastructure from CodetoKloud: network segmentation, encryption, access control, logging, and vulnerability management for cardholder data environments.",
+  },
 
   // --- Other services ---
   "/cloud-migration": {
@@ -191,6 +206,33 @@ const PAGES: Record<string, PageMeta> = {
       "Case Study: Scalable, HIPAA-Compliant AWS Infrastructure for GoAgalia | CodetoKloud",
     description:
       "How CodetoKloud migrated GoAgalia's healthcare workforce platform to a scalable, HIPAA-compliant AWS architecture on Amazon EKS, cutting costs ~35% and API latency from 850ms to 320ms.",
+  },
+  "/soc-2-healthcare-aws-case-study": {
+    title: "Case Study: SOC 2 Multi-AZ Healthcare Platform on AWS | CodetoKloud",
+    description:
+      "How CodetoKloud rebuilt a healthcare platform on AWS with Multi-AZ failover, cross-AZ replication, audit logging, and encryption to pass a SOC 2 audit and reach 99.99% uptime.",
+  },
+  "/kubernetes-compliance-platform-case-study": {
+    title:
+      "Case Study: On-Prem Kubernetes Platform for SOC 2, HIPAA & NIST | CodetoKloud",
+    description:
+      "How CodetoKloud built an on-premise RKE2 Kubernetes platform with default encryption, SSO, GitOps change history, and audit evidence for SOC 2, HIPAA, HiTrust, and NIST 800-53.",
+  },
+  "/hipaa-aws-hardening-case-study": {
+    title: "Case Study: HIPAA Hardening on AWS | CodetoKloud",
+    description:
+      "How CodetoKloud hardened a healthcare data company's patient-facing analytics portal for HIPAA on AWS, with private ECS Fargate networking, end-to-end TLS, and Aurora PostgreSQL.",
+  },
+  "/pci-dss-enterprise-case-study": {
+    title: "Case Study: PCI DSS Enterprise Cloud Foundation | CodetoKloud",
+    description:
+      "How CodetoKloud built a PCI DSS-aligned enterprise cloud foundation with standardized Cloud Workstations, shared VPC networking, and Terraform-managed IAM and privileged access.",
+  },
+  "/hybrid-cloud-kubernetes-case-study": {
+    title:
+      "Case Study: Hybrid On-Prem + Cloud Kubernetes over WireGuard | CodetoKloud",
+    description:
+      "How CodetoKloud connected on-premise hardware and cloud burst capacity into one secure Kubernetes platform over a WireGuard mesh, reaching 99.9% uptime and sub-35ms inter-node latency.",
   },
 
   // --- Company / legal ---

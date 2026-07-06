@@ -1,12 +1,23 @@
 "use client";
 import { useState, useEffect } from "react";
 import { HEADER } from "@/utils/data/header";
-import Image from "next/image";
 import Link from "next/link";
 import { Logo } from "../global/logo";
 import IconClose from "../icons/IconClose";
 import IconMenu from "../icons/IconMenu";
 import { useRouter, usePathname } from "next/navigation";
+
+interface DropdownLink {
+  name: string;
+  link: string;
+}
+
+/** Split a list into columns of at most `size` for the desktop dropdown grid. */
+function chunk<T>(arr: T[], size: number): T[][] {
+  const out: T[][] = [];
+  for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
+  return out;
+}
 
 const Header = () => {
   const router = useRouter();
@@ -14,10 +25,11 @@ const Header = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
-  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
-  const [isMobileIndustriesOpen, setIsMobileIndustriesOpen] = useState(false);
+  // Name of the currently open dropdown (desktop / mobile), or null.
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(
+    null
+  );
 
   useEffect(() => {
     if (isLoading) {
@@ -54,39 +66,6 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const toggleServices = () => {
-    setIsServicesOpen((prev) => !prev);
-  };
-
-  const toggleIndustries = () => {
-    setIsIndustriesOpen((prev) => !prev);
-  };
-
-  const toggleMobileServices = () => {
-    setIsMobileServicesOpen((prev) => !prev);
-  };
-
-  const toggleMobileIndustries = () => {
-    setIsMobileIndustriesOpen((prev) => !prev);
-  };
-
-  // Find the services nav item
-  const servicesItem = HEADER.navItems.find(
-    (item) => item.name.toLowerCase() === "services" && Array.isArray(item.link)
-  );
-  const servicesLinks = Array.isArray(servicesItem?.link)
-    ? servicesItem.link
-    : [];
-
-  // Find the industries nav item
-  const industriesItem = HEADER.navItems.find(
-    (item) =>
-      item.name.toLowerCase() === "industries" && Array.isArray(item.link)
-  );
-  const industriesLinks = Array.isArray(industriesItem?.link)
-    ? industriesItem.link
-    : [];
-
   return (
     <>
       <nav className="flex justify-between items-center px-4 md:px-28 pt-3 shadow-md bg-white sticky top-0 z-40">
@@ -98,24 +77,31 @@ const Header = () => {
         <div className="hidden md:flex items-center gap-10">
           <div className="flex items-center gap-10">
             {HEADER.navItems.map((item, index) => {
-              // Services Dropdown
-              if (
-                item.name.toLowerCase() === "services" &&
-                Array.isArray(item.link)
-              ) {
+              // Grouped mega-menu dropdown (e.g. Case Studies).
+              if ("groups" in item) {
+                const groups = item.groups;
+                const isOpen = openDropdown === item.name;
                 return (
                   <div key={index} className="relative">
                     <button
                       className="flex items-center gap-1 text-lg focus:outline-none cursor-pointer"
-                      onClick={toggleServices}
+                      onClick={() =>
+                        setOpenDropdown(isOpen ? null : item.name)
+                      }
                       onBlur={() =>
-                        setTimeout(() => setIsServicesOpen(false), 150)
+                        setTimeout(
+                          () =>
+                            setOpenDropdown((cur) =>
+                              cur === item.name ? null : cur
+                            ),
+                          150
+                        )
                       }
                     >
                       {item.name}
                       <svg
                         className={`w-4 h-4 ml-1 transition-transform duration-200 ${
-                          isServicesOpen ? "rotate-180" : ""
+                          isOpen ? "rotate-180" : ""
                         }`}
                         fill="none"
                         stroke="currentColor"
@@ -131,69 +117,65 @@ const Header = () => {
                       </svg>
                     </button>
 
-                    {isServicesOpen && (
+                    {isOpen && (
                       <div
-                        className="absolute left-0 mt-2 w-fit bg-white shadow-xl rounded-xl z-50 p-4 flex gap-8"
+                        className="absolute left-0 mt-2 w-fit bg-white shadow-xl rounded-xl z-50 p-6 flex gap-10"
                         onMouseDown={(e) => e.preventDefault()}
                       >
-                        <div className="flex flex-col gap-3">
-                          {servicesLinks.slice(0, 5).map((service, idx) => (
-                            <Link
-                              href={service.link}
-                              key={idx}
-                              className="whitespace-nowrap hover:text-[#000209] transition-colors"
-                              prefetch={true}
-                              onClick={(e) => {
-                                e.preventDefault();
-                                setIsServicesOpen(false);
-                                handleNavigation(service.link);
-                              }}
-                            >
-                              {service.name}
-                            </Link>
-                          ))}
-                        </div>
-                        <div className="flex flex-col gap-3">
-                          {servicesLinks.slice(5, 10).map((service, idx) => (
-                            <Link
-                              href={service.link}
-                              key={idx}
-                              className="whitespace-nowrap hover:text-[#000209] transition-colors"
-                              prefetch={true}
-                              onClick={(e) => {
-                                e.preventDefault();
-                                setIsServicesOpen(false);
-                                handleNavigation(service.link);
-                              }}
-                            >
-                              {service.name}
-                            </Link>
-                          ))}
-                        </div>
+                        {groups.map((g, gi) => (
+                          <div key={gi} className="flex flex-col gap-3">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-1">
+                              {g.heading}
+                            </p>
+                            {g.items.map((l, li) => (
+                              <Link
+                                href={l.link}
+                                key={li}
+                                className="whitespace-nowrap hover:text-[#000209] transition-colors"
+                                prefetch={true}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  setOpenDropdown(null);
+                                  handleNavigation(l.link);
+                                }}
+                              >
+                                {l.name}
+                              </Link>
+                            ))}
+                          </div>
+                        ))}
                       </div>
                     )}
                   </div>
                 );
               }
 
-              // Industries Dropdown
-              if (
-                item.name.toLowerCase() === "industries" &&
-                Array.isArray(item.link)
-              ) {
+              // Dropdown nav item (any item whose link is a list).
+              if (Array.isArray(item.link)) {
+                const links = item.link as DropdownLink[];
+                const columns = chunk(links, 5);
+                const isOpen = openDropdown === item.name;
                 return (
                   <div key={index} className="relative">
                     <button
                       className="flex items-center gap-1 text-lg focus:outline-none cursor-pointer"
-                      onClick={toggleIndustries}
+                      onClick={() =>
+                        setOpenDropdown(isOpen ? null : item.name)
+                      }
                       onBlur={() =>
-                        setTimeout(() => setIsIndustriesOpen(false), 150)
+                        setTimeout(
+                          () =>
+                            setOpenDropdown((cur) =>
+                              cur === item.name ? null : cur
+                            ),
+                          150
+                        )
                       }
                     >
                       {item.name}
                       <svg
                         className={`w-4 h-4 ml-1 transition-transform duration-200 ${
-                          isIndustriesOpen ? "rotate-180" : ""
+                          isOpen ? "rotate-180" : ""
                         }`}
                         fill="none"
                         stroke="currentColor"
@@ -209,28 +191,30 @@ const Header = () => {
                       </svg>
                     </button>
 
-                    {isIndustriesOpen && (
+                    {isOpen && (
                       <div
                         className="absolute left-0 mt-2 w-fit bg-white shadow-xl rounded-xl z-50 p-4 flex gap-8"
                         onMouseDown={(e) => e.preventDefault()}
                       >
-                        <div className="flex flex-col gap-3">
-                          {industriesLinks.map((industry, idx) => (
-                            <Link
-                              href={industry.link}
-                              key={idx}
-                              className="whitespace-nowrap hover:text-[#000209] transition-colors"
-                              prefetch={true}
-                              onClick={(e) => {
-                                e.preventDefault();
-                                setIsIndustriesOpen(false);
-                                handleNavigation(industry.link);
-                              }}
-                            >
-                              {industry.name}
-                            </Link>
-                          ))}
-                        </div>
+                        {columns.map((col, ci) => (
+                          <div key={ci} className="flex flex-col gap-3">
+                            {col.map((l, li) => (
+                              <Link
+                                href={l.link}
+                                key={li}
+                                className="whitespace-nowrap hover:text-[#000209] transition-colors"
+                                prefetch={true}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  setOpenDropdown(null);
+                                  handleNavigation(l.link);
+                                }}
+                              >
+                                {l.name}
+                              </Link>
+                            ))}
+                          </div>
+                        ))}
                       </div>
                     )}
                   </div>
@@ -254,13 +238,6 @@ const Header = () => {
               );
             })}
           </div>
-          {/* <Image
-            src={HEADER.search}
-            alt="Search"
-            height={35}
-            width={35}
-            className="w-[30px] h-[30px] cursor-pointer"
-          /> */}
         </div>
 
         {/* Mobile Menu Button */}
@@ -295,7 +272,7 @@ const Header = () => {
 
         {/* Sidebar Content */}
         <div
-          className={`absolute right-0 top-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
+          className={`absolute right-0 top-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out overflow-y-auto ${
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
@@ -310,20 +287,22 @@ const Header = () => {
 
           <div className="flex flex-col space-y-6 p-6">
             {HEADER.navItems.map((item, index) => {
-              if (
-                item.name.toLowerCase() === "services" &&
-                Array.isArray(item.link)
-              ) {
+              // Grouped mega-menu dropdown (e.g. Case Studies).
+              if ("groups" in item) {
+                const groups = item.groups;
+                const isOpen = openMobileDropdown === item.name;
                 return (
                   <div key={index} className="flex flex-col">
                     <button
-                      onClick={toggleMobileServices}
-                      className="flex items-center justify-between w-full text-lg text-gray-800 hover:text-blue-600 transition-colors"
+                      onClick={() =>
+                        setOpenMobileDropdown(isOpen ? null : item.name)
+                      }
+                      className="flex items-center justify-between w-full text-lg text-gray-800 hover:text-[#000209] transition-colors"
                     >
                       {item.name}
                       <svg
                         className={`w-4 h-4 ml-1 transition-transform duration-200 ${
-                          isMobileServicesOpen ? "rotate-180" : ""
+                          isOpen ? "rotate-180" : ""
                         }`}
                         fill="none"
                         stroke="currentColor"
@@ -338,21 +317,28 @@ const Header = () => {
                         />
                       </svg>
                     </button>
-                    {isMobileServicesOpen && (
-                      <div className="mt-2 pl-4 flex flex-col gap-3">
-                        {servicesLinks.map((service, idx) => (
-                          <Link
-                            href={service.link}
-                            key={idx}
-                            className="text-gray-800 hover:text-blue-600 transition-colors"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              toggleMenu();
-                              handleNavigation(service.link);
-                            }}
-                          >
-                            {service.name}
-                          </Link>
+                    {isOpen && (
+                      <div className="mt-2 pl-4 flex flex-col gap-4">
+                        {groups.map((g, gi) => (
+                          <div key={gi} className="flex flex-col gap-2">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">
+                              {g.heading}
+                            </p>
+                            {g.items.map((l, li) => (
+                              <Link
+                                href={l.link}
+                                key={li}
+                                className="text-gray-800 hover:text-[#000209] transition-colors"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  toggleMenu();
+                                  handleNavigation(l.link);
+                                }}
+                              >
+                                {l.name}
+                              </Link>
+                            ))}
+                          </div>
                         ))}
                       </div>
                     )}
@@ -360,20 +346,22 @@ const Header = () => {
                 );
               }
 
-              if (
-                item.name.toLowerCase() === "industries" &&
-                Array.isArray(item.link)
-              ) {
+              // Dropdown nav item.
+              if (Array.isArray(item.link)) {
+                const links = item.link as DropdownLink[];
+                const isOpen = openMobileDropdown === item.name;
                 return (
                   <div key={index} className="flex flex-col">
                     <button
-                      onClick={toggleMobileIndustries}
-                      className="flex items-center justify-between w-full text-lg text-gray-800 hover:text-blue-600 transition-colors"
+                      onClick={() =>
+                        setOpenMobileDropdown(isOpen ? null : item.name)
+                      }
+                      className="flex items-center justify-between w-full text-lg text-gray-800 hover:text-[#000209] transition-colors"
                     >
                       {item.name}
                       <svg
                         className={`w-4 h-4 ml-1 transition-transform duration-200 ${
-                          isMobileIndustriesOpen ? "rotate-180" : ""
+                          isOpen ? "rotate-180" : ""
                         }`}
                         fill="none"
                         stroke="currentColor"
@@ -388,20 +376,20 @@ const Header = () => {
                         />
                       </svg>
                     </button>
-                    {isMobileIndustriesOpen && (
+                    {isOpen && (
                       <div className="mt-2 pl-4 flex flex-col gap-3">
-                        {industriesLinks.map((industry, idx) => (
+                        {links.map((l, li) => (
                           <Link
-                            href={industry.link}
-                            key={idx}
-                            className="text-gray-800 hover:text-blue-600 transition-colors"
+                            href={l.link}
+                            key={li}
+                            className="text-gray-800 hover:text-[#000209] transition-colors"
                             onClick={(e) => {
                               e.preventDefault();
                               toggleMenu();
-                              handleNavigation(industry.link);
+                              handleNavigation(l.link);
                             }}
                           >
-                            {industry.name}
+                            {l.name}
                           </Link>
                         ))}
                       </div>
@@ -410,6 +398,7 @@ const Header = () => {
                 );
               }
 
+              // Normal nav item
               return (
                 <Link
                   href={item.link as string}

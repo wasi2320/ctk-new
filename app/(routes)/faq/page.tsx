@@ -12,6 +12,9 @@ const groups = [
   { title: "Kubernetes & EKS", key: "/kubernetes" },
   { title: "AI & Automation", key: "/ai" },
   { title: "Security & Compliance", key: "/security-and-compliance" },
+  { title: "HIPAA Compliance", key: "/hipaa-compliance" },
+  { title: "SOC 2 Compliance", key: "/soc-2-compliance" },
+  { title: "PCI DSS Compliance", key: "/pci-dss-compliance" },
   { title: "About CodetoKloud", key: "/aboutus" },
 ];
 

@@ -1,261 +1,220 @@
-import MissionSection from "@/app/components/sections/MissionSection";
-import ServiceCard from "@/app/components/ServiceCard";
-import React from "react";
-import Image from "next/image";
-import { IndustriesCard } from "@/app/components/sections/IndustriesSection";
+import Link from "next/link";
+import HeroSection from "@/app/components/HeroSection";
+import TrustBadge from "@/app/components/sections/TrustBadge";
+import FaqSection from "@/app/components/sections/FaqSection";
 import { pageMetadata } from "@/lib/page-metadata";
+import { pageFaqs } from "@/lib/faqs";
 
 export const metadata = pageMetadata("/aboutus");
-function AboutUsPage() {
+
+/** Real, verifiable proof points (sourced from case studies + partner status). */
+const stats = [
+  { value: "AWS", label: "Advanced Tier Partner" },
+  { value: "4.9 / 5", label: "on Clutch, 9 verified reviews" },
+  { value: "99.99%", label: "uptime delivered on a SOC 2 healthcare platform" },
+  { value: "~35%", label: "cloud cost cut on an Amazon EKS migration" },
+  { value: "850ms → 320ms", label: "API latency improvement for a healthcare client" },
+  { value: "SOC 2 · HIPAA · PCI DSS", label: "compliance built into the infrastructure" },
+];
+
+const values = [
+  {
+    title: "Engineering-first",
+    body: "We are engineers, not resellers. We build and operate real production infrastructure, and we explain the tradeoffs in plain terms.",
+  },
+  {
+    title: "Security & compliance by default",
+    body: "Encryption, least-privilege access, and audit evidence go into the infrastructure from day one, not bolted on the week before an audit.",
+  },
+  {
+    title: "Measurable outcomes",
+    body: "We tie our work to numbers you can see: lower cloud cost, faster releases, higher uptime, and shorter recovery times.",
+  },
+  {
+    title: "Partnership beyond launch",
+    body: "We stay after go-live with managed operations, version upgrades, monitoring, and cost optimization.",
+  },
+];
+
+const whatWeDo = [
+  { name: "Cloud Infrastructure (AWS)", href: "/cloud-service" },
+  { name: "DevOps & CI/CD", href: "/devops" },
+  { name: "Kubernetes & Amazon EKS", href: "/kubernetes" },
+  { name: "Security & Compliance", href: "/security-and-compliance" },
+  { name: "AI Automation", href: "/ai" },
+  { name: "Full-Stack Development", href: "/web-solutions" },
+];
+
+const featured = [
+  {
+    href: "/goagalia-healthcare-workforce-management",
+    title: "HIPAA-Compliant EKS for a Healthcare Platform",
+    blurb: "~35% lower cost, 850ms to 320ms latency, 99.7% uptime on Amazon EKS.",
+  },
+  {
+    href: "/soc-2-healthcare-aws-case-study",
+    title: "SOC 2 Multi-AZ Healthcare Platform",
+    blurb: "Passed a SOC 2 audit and reached 99.99% uptime on AWS.",
+  },
+  {
+    href: "/hybrid-cloud-kubernetes-case-study",
+    title: "Hybrid On-Prem + Cloud Kubernetes",
+    blurb: "99.9% uptime and sub-35ms latency across on-premise and cloud.",
+  },
+];
+
+export default function AboutUsPage() {
   return (
     <div>
-      <ServiceCard
-        title={"About Us"}
-        description={
-          "At CodetoKloud, we are architects of connection, dedicated to empowering businesses globally to navigate the complexities of technology and reach new heights. Our mission is to bridge the gap between where your business is today and where it could be tomorrow, by leveraging the power of innovative, multi-cloud solutions. We specialize in helping organizations transform their IT infrastructure to improve performance, scalability, and security. With expertise in cloud engineering, responsive web solutions, and user experience design, we create tailored services that address your specific needs."
-        }
-        image={"/Images/aboutus/aboutHeader.png"}
+      <HeroSection
+        title="About CodetoKloud"
+        description="CodetoKloud is a US-registered IT consulting company and AWS Advanced Tier Partner based in Naperville, Illinois. We help businesses design, build, secure, and run production cloud infrastructure."
+        imageSrc="/Images/aboutus/aboutHeader.png"
+        cover
+        buttonText="Book a free consultation"
+        buttonLink="/contact"
       />
-      <MissionSection />
 
-      <section className="py-16 px-4 md:px-8 lg:px-12">
-        <div className="max-w-[1200px] mx-auto">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-6">
-            Our Journey
-          </h1>
-          <p className="text-center max-w-[800px] mx-auto text-base md:text-lg mb-16">
-            Our team of cloud experts is dedicated to driving innovation and
-            delivering top-tier solutions to meet your business needs.
-          </p>
+      <div className="px-4 md:px-36 -mt-2 mb-8">
+        <TrustBadge />
+      </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="space-y-8">
-              <p className="text-lg md:text-xl leading-relaxed">
-                We deliver tailored solutions, embracing innovation to meet each
-                customer&apos;s unique needs. By prioritizing quality and
-                personalized experiences, we ensure reliable, high-standard
-                results every time.
-              </p>
-
-              <div className="space-y-4">
-                <h2 className="text-2xl md:text-3xl font-bold">
-                  We build partnerships.
-                </h2>
-                <h3 className="text-xl self-center text-center md:text-2xl">
-                  Let&apos;s break through together.
-                </h3>
-              </div>
-
-              {/* <div className="flex items-center w-full max-w-md bg-[#1B332F] rounded-full overflow-hidden">
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  className="flex-1 px-6 py-3 bg-transparent text-white placeholder-white/70 focus:outline-none"
-                />
-                <button className="px-4 py-1  text-[#1B332F] font-medium bg-[#ffffff] transition-colors m-2 mr-3 rounded-2xl">
-                  Connect
-                </button>
-              </div> */}
-            </div>
-
-            {/* Right Content */}
-            <div className="bg-gray-50 p-8 rounded-xl space-y-8">
-              <div className="space-y-2">
-                <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-xl self-center text-center font-medium">
-                    Project: Fintech
-                  </h3>
-                  <span className="bg-[#C5D1CE] px-3 py-1 rounded-full text-sm">
-                    Increased progress
-                  </span>
-                </div>
-
-                {/* Progress Bars */}
-                <div className="space-y-4">
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span>Efficiency</span>
-                      <span>60%</span>
-                    </div>
-                    <div className="h-2 bg-gray-200 rounded-full">
-                      <div className="h-full w-[60%] bg-[#1B332F] rounded-full"></div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span>Security</span>
-                      <span>45%</span>
-                    </div>
-                    <div className="h-2 bg-gray-200 rounded-full">
-                      <div className="h-full w-[45%] bg-[#1B332F] rounded-full"></div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span>Progress</span>
-                      <span>74%</span>
-                    </div>
-                    <div className="h-2 bg-gray-200 rounded-full">
-                      <div className="h-full w-[74%] bg-[#1B332F] rounded-full"></div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span>Overall</span>
-                      <span>83%</span>
-                    </div>
-                    <div className="h-2 bg-gray-200 rounded-full">
-                      <div className="h-full w-[83%] bg-[#1B332F] rounded-full"></div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Stats Bar Chart */}
-                <div className="mt-8 pt-8 border-t">
-                  <div className="flex items-end justify-between h-32 gap-4">
-                    <div className="w-1/4 bg-gray-200 h-full rounded-t"></div>
-                    <div className="w-1/4 bg-[#1B332F] h-[60%] rounded-t"></div>
-                    <div className="w-1/4 bg-[#1B332F] h-[85%] rounded-t"></div>
-                    <div className="w-1/4 bg-[#1B332F] h-[70%] rounded-t"></div>
-                  </div>
-                  <div className="mt-4 flex items-start">
-                    <div className="flex-1">
-                      <p className="text-3xl md:text-4xl font-bold">40 %</p>
-                      <p className="text-sm mt-2">
-                        Reduced data breach costs for
-                        <span className="bg-[#C5D1CE] px-2 py-0.5 rounded-full ml-1">
-                          AWS Company Limited.
-                        </span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 px-4 md:px-8 lg:px-12 bg-[#081617] text-white">
-        <div className="max-w-[1200px] mx-auto">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center">
-            Company Unique Factor
+      {/* Who we are */}
+      <section className="py-14 px-4 md:px-36 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Who we are
           </h2>
-          <p className="text-lg md:text-xl text-center mb-16 max-w-3xl mx-auto">
-            We don&apos;t just build websites; we craft digital experiences
+          <p className="text-lg text-gray-700 leading-relaxed">
+            We are a team of cloud and DevOps engineers who build infrastructure
+            that is scalable, secure, and cost-efficient. As an AWS Advanced Tier
+            Partner, we work with startups and established companies to modernize
+            on AWS, automate delivery, run Kubernetes, and meet compliance
+            requirements like SOC 2, HIPAA, and PCI DSS.
           </p>
+          <p className="text-base text-gray-600 leading-relaxed mt-4">
+            The difference shows up in the results: real production platforms,
+            with real numbers behind them.
+          </p>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-            {/* Customized FinOps Solutions */}
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-6 relative">
-                <Image
-                  src="/Images/aboutus/Group1.png"
-                  alt="FinOps"
-                  fill
-                  className="object-contain"
-                />
+      {/* Real proof stats */}
+      <section className="py-20 px-4 md:px-36 bg-[#081617] text-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-center">
+            The proof is in the work
+          </h2>
+          <p className="text-lg text-gray-300 text-center max-w-3xl mx-auto mb-14">
+            Verifiable results from real client engagements.
+          </p>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {stats.map((s) => (
+              <div key={s.label} className="text-center">
+                <p className="text-3xl md:text-4xl font-bold text-white mb-2">
+                  {s.value}
+                </p>
+                <p className="text-sm text-gray-300 leading-relaxed">
+                  {s.label}
+                </p>
               </div>
-              <h3 className="text-xl self-center text-center font-semibold mb-4">
-                Customized FinOps Solutions
-              </h3>
-              <p className="text-sm text-gray-300 leading-relaxed">
-                Tailoring financial operations to fit specific business needs
-                and objectives.
-              </p>
-            </div>
-
-            {/* Innovative Technology */}
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-6 relative">
-                <Image
-                  src="/Images/aboutus/Group2.png"
-                  alt="Innovative"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <h3 className="text-xl self-center text-center font-semibold mb-4">
-                Innovative Technology
-              </h3>
-              <p className="text-sm text-gray-300 leading-relaxed">
-                Leveraging advanced tools and automation to optimize financial
-                workflows.
-              </p>
-            </div>
-
-            {/* Continuous Optimization */}
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-6 relative">
-                <Image
-                  src="/Images/aboutus/Group3.png"
-                  alt="Optimization"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <h3 className="text-xl self-center text-center font-semibold mb-4">
-                Continuous Optimization
-              </h3>
-              <p className="text-sm text-gray-300 leading-relaxed">
-                Proactively refining processes for sustained efficiency and
-                long-term growth.
-              </p>
-            </div>
-
-            {/* Expert FinOps Team */}
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-6 relative">
-                <Image
-                  src="/Images/aboutus/Group4.png"
-                  alt="Team"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <h3 className="text-xl self-center text-center font-semibold mb-4">
-                Expert FinOps Team
-              </h3>
-              <p className="text-sm text-gray-300 leading-relaxed">
-                Providing specialized expertise to drive strategic financial
-                decision-making and execution.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Our Premium Services Section */}
-      <section className="py-20 px-4 md:px-8 lg:px-12">
-        <div className="max-w-[1200px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            {/* Left Content - Text and Image */}
-            <div className="lg:col-span-4">
-              <h2 className="text-3xl   font-bold">Our Premium Services</h2>
-              <p className="text-lg md:text-xl text-gray-600 leading-5">
-                With extensive experience across various industries, we drive
-                innovation and deliver exceptional results.
-              </p>
-              <div className="relative w-full aspect-square">
-                <Image
-                  src="/Images/aboutus/Rectangle.png"
-                  alt="Services Illustration"
-                  fill
-                  className="object-contain"
-                />
+      {/* Values */}
+      <section className="py-16 px-4 md:px-36 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10 text-center">
+            How we work
+          </h2>
+          <div className="grid gap-8 md:grid-cols-2">
+            {values.map((v) => (
+              <div
+                key={v.title}
+                className="rounded-2xl border border-gray-200 p-6 hover:border-[#152F27] transition-colors"
+              >
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {v.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">{v.body}</p>
               </div>
-            </div>
-
-            <IndustriesCard />
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* What we do */}
+      <section className="py-16 px-4 md:px-36 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10 text-center">
+            What we do
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {whatWeDo.map((w) => (
+              <Link
+                key={w.href}
+                href={w.href}
+                className="flex items-center justify-between rounded-2xl border border-gray-200 bg-white px-6 py-5 hover:border-[#152F27] hover:shadow-sm transition-all"
+              >
+                <span className="font-semibold text-gray-900">{w.name}</span>
+                <span aria-hidden="true" className="text-[#152F27]">
+                  →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured case studies */}
+      <section className="py-16 px-4 md:px-36 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10 text-center">
+            Proven results
+          </h2>
+          <div className="grid gap-6 md:grid-cols-3">
+            {featured.map((f) => (
+              <Link
+                key={f.href}
+                href={f.href}
+                className="block rounded-2xl border border-gray-200 p-6 hover:border-[#152F27] hover:shadow-md transition-all"
+              >
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  {f.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">{f.blurb}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <FaqSection
+        items={pageFaqs["/aboutus"]}
+        heading="About CodetoKloud: FAQs"
+        description="Common questions about who we are and how we work."
+      />
+
+      {/* CTA */}
+      <section className="py-16 px-4 md:px-36 bg-[#000209] text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Let&apos;s build something reliable
+          </h2>
+          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+            Tell us what you are working on and we will show you how we would
+            approach it, with a free, no-obligation review.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-block rounded-full bg-white text-[#000209] font-semibold px-8 py-3 hover:bg-gray-100 transition-colors"
+          >
+            Book a free consultation
+          </Link>
         </div>
       </section>
     </div>
   );
 }
-
-export default AboutUsPage;

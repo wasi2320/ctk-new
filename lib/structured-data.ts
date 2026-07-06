@@ -300,4 +300,25 @@ export const coreServiceSchemas: Record<string, ReturnType<typeof serviceSchema>
     description:
       "Security and compliance services from CodetoKloud covering SOC 2, HIPAA, and PCI DSS, helping US businesses meet regulatory requirements on AWS.",
   }),
+  "/hipaa-compliance": serviceSchema({
+    name: "HIPAA-Compliant AWS & Kubernetes Infrastructure",
+    serviceType: "HIPAA compliance consulting",
+    path: "/hipaa-compliance",
+    description:
+      "CodetoKloud helps healthcare organizations build and run HIPAA-compliant infrastructure on AWS and Amazon EKS — encryption, access controls, audit logging, network isolation, and disaster recovery.",
+  }),
+  "/soc-2-compliance": serviceSchema({
+    name: "SOC 2 Compliance on AWS",
+    serviceType: "SOC 2 compliance consulting",
+    path: "/soc-2-compliance",
+    description:
+      "CodetoKloud helps businesses implement and prepare for SOC 2 on AWS — access controls, audit logging, change management, monitoring, and infrastructure-as-code aligned to the Trust Services Criteria.",
+  }),
+  "/pci-dss-compliance": serviceSchema({
+    name: "PCI DSS Compliance on AWS",
+    serviceType: "PCI DSS compliance consulting",
+    path: "/pci-dss-compliance",
+    description:
+      "CodetoKloud helps businesses build PCI DSS-aligned infrastructure on AWS — network segmentation, encryption, access control, logging, and vulnerability management for cardholder data environments.",
+  }),
 };

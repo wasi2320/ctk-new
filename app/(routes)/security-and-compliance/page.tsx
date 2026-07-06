@@ -8,6 +8,7 @@ import JsonLd from "@/app/components/JsonLd";
 import { coreServiceSchemas } from "@/lib/structured-data";
 import { pageMetadata } from "@/lib/page-metadata";
 import RelatedServices from "@/app/components/sections/RelatedServices";
+import ComplianceLinks from "@/app/components/sections/ComplianceLinks";
 
 export const metadata = pageMetadata("/security-and-compliance");
 const SecurityAndCompliance = () => {
@@ -37,6 +38,7 @@ const SecurityAndCompliance = () => {
       <DifferentiateSection />
       <TechDisplaySection techDisplaySection={securityTechStack} />
       <CardScrollSection />
+      <ComplianceLinks currentPath="/security-and-compliance" />
       <RelatedServices currentPath="/security-and-compliance" />
     </div>
   );

@@ -76,6 +76,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/fin-tech",
     "/financial-services",
     "/finops",
+    "/hipaa-compliance",
+    "/soc-2-compliance",
+    "/pci-dss-compliance",
     "/healthcare",
     "/helm-pipeline",
     "/manufacturing",
@@ -96,6 +99,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Case studies
     "/ecs-pr-preview-environments",
     "/goagalia-healthcare-workforce-management",
+    "/soc-2-healthcare-aws-case-study",
+    "/kubernetes-compliance-platform-case-study",
+    "/hipaa-aws-hardening-case-study",
+    "/pci-dss-enterprise-case-study",
+    "/hybrid-cloud-kubernetes-case-study",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
