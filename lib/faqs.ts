@@ -61,6 +61,59 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     },
   ],
 
+  "/kubernetes": [
+    {
+      question: "What is Kubernetes and why do businesses use it?",
+      answer:
+        "Kubernetes is an open-source platform that automates the deployment, scaling, and management of containerized applications. Businesses use it to run applications reliably across many servers, scale automatically with demand, recover from failures without downtime, and ship updates safely. CodetoKloud designs and operates production Kubernetes clusters for companies that need this level of scalability and resilience.",
+    },
+    {
+      question: "What is Amazon EKS and when should you use it?",
+      answer:
+        "Amazon EKS (Elastic Kubernetes Service) is AWS's managed Kubernetes service, which runs the Kubernetes control plane for you so your team focuses on applications instead of cluster infrastructure. It is the right choice when you want Kubernetes on AWS with deep integration into services like IAM, VPC networking, and CloudWatch. As an AWS Advanced Tier Partner, CodetoKloud specializes in EKS cluster design, managed node groups, and day-2 operations.",
+    },
+    {
+      question: "What does CodetoKloud's Kubernetes consulting include?",
+      answer:
+        "CodetoKloud's Kubernetes consulting covers cluster architecture and setup on Amazon EKS, GitOps delivery with ArgoCD, Helm-based application packaging, horizontal and cluster autoscaling, observability with Prometheus, Grafana, Datadog, and CloudWatch, cost optimization, security hardening, and ongoing managed operations including version upgrades and disaster recovery.",
+    },
+    {
+      question: "EKS vs ECS vs Fargate — which should we use?",
+      answer:
+        "Amazon EKS is best when you need full Kubernetes portability, a rich ecosystem (Helm, ArgoCD, operators), or already run Kubernetes elsewhere. Amazon ECS is a simpler AWS-native container orchestrator that is faster to adopt for straightforward workloads. AWS Fargate is a serverless compute engine that runs containers for either EKS or ECS without managing servers. CodetoKloud helps teams choose based on portability needs, team skills, and operational overhead — and has delivered both ECS and EKS platforms in production.",
+    },
+    {
+      question: "How do you reduce Kubernetes and EKS costs?",
+      answer:
+        "CodetoKloud reduces Kubernetes costs by right-sizing pod requests and limits, tuning cluster autoscaling and node groups, using Spot instances and modern autoscalers like Karpenter, consolidating underused workloads, and adding cost visibility. On a healthcare workload migrated to Amazon EKS, this approach cut cloud costs by roughly 35% while improving reliability.",
+    },
+    {
+      question: "How do you secure a Kubernetes cluster?",
+      answer:
+        "CodetoKloud secures Kubernetes clusters using private networking, least-privilege RBAC and IAM roles for service accounts, network policies, encrypted secrets management, image vulnerability scanning, and continuous monitoring. This DevSecOps approach lets clusters support regulated workloads, including SOC 2, HIPAA, and PCI DSS requirements on AWS.",
+    },
+    {
+      question: "What is GitOps and do you use ArgoCD?",
+      answer:
+        "GitOps is a delivery model where the desired state of your Kubernetes environment is stored in Git and automatically synced to the cluster, so every change is versioned, reviewable, and auditable. CodetoKloud implements GitOps with ArgoCD and Helm — on one client pipeline this delivered a 95% deployment success rate and reduced manual deployment effort by 80%.",
+    },
+    {
+      question: "Can you migrate our applications to Kubernetes or Amazon EKS?",
+      answer:
+        "Yes. CodetoKloud plans and executes migrations from virtual machines, on-premises servers, or other container platforms to Kubernetes on Amazon EKS, including containerization, Helm packaging, CI/CD and GitOps setup, and cutover with minimal downtime. A recent EKS migration cut API latency from 850ms to 320ms and reached 99.7% uptime.",
+    },
+    {
+      question: "Can Kubernetes run HIPAA or SOC 2 compliant workloads?",
+      answer:
+        "Yes. Kubernetes can host compliant workloads when the cluster is configured with the right controls — private networking, encryption, access controls, audit logging, and monitoring. CodetoKloud has built HIPAA-compliant infrastructure on Amazon EKS for healthcare clients and applies the same controls for SOC 2 and PCI DSS environments.",
+    },
+    {
+      question: "Do you provide ongoing Kubernetes management and upgrades?",
+      answer:
+        "Yes. CodetoKloud offers managed day-2 Kubernetes operations, including cluster and node version upgrades, patching, monitoring and alerting, autoscaling tuning, incident response, and disaster recovery, so your platform stays secure, current, and reliable after the initial build.",
+    },
+  ],
+
   "/cloud-service": [
     {
       question: "What cloud services does CodetoKloud provide?",

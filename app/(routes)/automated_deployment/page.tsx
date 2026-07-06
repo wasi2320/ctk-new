@@ -7,6 +7,8 @@ import CaseStudyTechStack from "@/app/components/sections/caseStudies/CaseStudyT
 import CaseStudyLessons from "@/app/components/sections/caseStudies/CaseStudyLessons";
 import MetricsDisplay from "@/app/components/metrics";
 import { pageMetadata } from "@/lib/page-metadata";
+import JsonLd from "@/app/components/JsonLd";
+import { caseStudySchema } from "@/lib/structured-data";
 
 export const metadata = pageMetadata("/automated_deployment");
 const services = [
@@ -70,7 +72,17 @@ const lesson = {
 
 export default function AutomatedDeploymentPage() {
   return (
-    <CaseStudyLayout>
+    <>
+      <JsonLd
+        data={caseStudySchema({
+          title: "Zero-Downtime Automated Deployment for a Financial App",
+          description:
+            "How CodetoKloud built zero-downtime automated deployments for a Python financial application using GitLab CI/CD, Docker, and AWS ECS.",
+          path: "/automated_deployment",
+          image: "/services/automated_aws2.png",
+        })}
+      />
+      <CaseStudyLayout>
       <CaseStudyHeader
         title="Automated Deployment of Financial App"
         subtitle="Services provided on this Project"
@@ -92,5 +104,6 @@ export default function AutomatedDeploymentPage() {
       <MetricsDisplay metrics={metrics} />
       <CaseStudyLessons lessons={lesson.firstLesson} />
     </CaseStudyLayout>
+    </>
   );
 }

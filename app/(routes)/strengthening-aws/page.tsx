@@ -7,6 +7,8 @@ import CaseStudyTechStack from "@/app/components/sections/caseStudies/CaseStudyT
 import CaseStudyLessons from "@/app/components/sections/caseStudies/CaseStudyLessons";
 import MetricsDisplay from "@/app/components/metrics";
 import { pageMetadata } from "@/lib/page-metadata";
+import JsonLd from "@/app/components/JsonLd";
+import { caseStudySchema } from "@/lib/structured-data";
 
 export const metadata = pageMetadata("/strengthening-aws");
 const services = [
@@ -98,7 +100,17 @@ const lesson = {
 
 export default function StrengtheningAwsSecurityPage() {
   return (
-    <CaseStudyLayout>
+    <>
+      <JsonLd
+        data={caseStudySchema({
+          title: "Strengthening AWS Security with DevSecOps",
+          description:
+            "How CodetoKloud hardened AWS security after a breach using private VPCs, least-privilege IAM, vulnerability scanning (SonarQube, Trivy), and AWS GuardDuty threat detection.",
+          path: "/strengthening-aws",
+          image: "/services/strength_aws2.png",
+        })}
+      />
+      <CaseStudyLayout>
       <CaseStudyHeader
         title="Strengthening AWS Security to Prevent Breaches"
         subtitle="Services provided on this Project"
@@ -120,5 +132,6 @@ export default function StrengtheningAwsSecurityPage() {
       <MetricsDisplay metrics={metrics} />
       <CaseStudyLessons lessons={lesson.firstLesson} />
     </CaseStudyLayout>
+    </>
   );
 }

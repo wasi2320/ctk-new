@@ -4,53 +4,58 @@ import { createServerClient } from "@/lib/supabase";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://codetokloud.com";
 
+  // Fixed content-modification date for static/service pages. Bump this when
+  // page content materially changes — do NOT use `new Date()`, which stamps
+  // today's date on every build and makes crawlers distrust the lastmod signal.
+  const LAST_MODIFIED = new Date("2026-07-06");
+
   // Static routes
   const staticRoutes = [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified: LAST_MODIFIED,
       changeFrequency: "daily" as const,
       priority: 1,
     },
     {
       url: `${baseUrl}/aboutus`,
-      lastModified: new Date(),
+      lastModified: LAST_MODIFIED,
       changeFrequency: "monthly" as const,
       priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: new Date(),
+      lastModified: LAST_MODIFIED,
       changeFrequency: "monthly" as const,
       priority: 0.8,
     },
     {
       url: `${baseUrl}/blogs`,
-      lastModified: new Date(),
+      lastModified: LAST_MODIFIED,
       changeFrequency: "daily" as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/careers`,
-      lastModified: new Date(),
+      lastModified: LAST_MODIFIED,
       changeFrequency: "weekly" as const,
       priority: 0.5,
     },
     {
       url: `${baseUrl}/faq`,
-      lastModified: new Date(),
+      lastModified: LAST_MODIFIED,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
     {
       url: `${baseUrl}/privacy-policy`,
-      lastModified: new Date(),
+      lastModified: LAST_MODIFIED,
       changeFrequency: "yearly" as const,
       priority: 0.3,
     },
     {
       url: `${baseUrl}/term-condition`,
-      lastModified: new Date(),
+      lastModified: LAST_MODIFIED,
       changeFrequency: "yearly" as const,
       priority: 0.3,
     },
@@ -65,6 +70,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/cloud-service",
     "/consulting-and-advisory",
     "/devops",
+    "/kubernetes",
     "/e-commerce",
     "/ed-tech",
     "/fin-tech",

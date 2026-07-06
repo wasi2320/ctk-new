@@ -7,6 +7,8 @@ import CaseStudyTechStack from "@/app/components/sections/caseStudies/CaseStudyT
 import CaseStudyLessons from "@/app/components/sections/caseStudies/CaseStudyLessons";
 import MetricsDisplay from "@/app/components/metrics";
 import { pageMetadata } from "@/lib/page-metadata";
+import JsonLd from "@/app/components/JsonLd";
+import { caseStudySchema } from "@/lib/structured-data";
 
 export const metadata = pageMetadata("/aws-scalable-secure");
 const services = ["DevOps Managed Services", "Cloud Consulting & SI"];
@@ -83,7 +85,17 @@ const lesson = {
 
 export default function VoipAiCallProtectionPage() {
   return (
-    <CaseStudyLayout>
+    <>
+      <JsonLd
+        data={caseStudySchema({
+          title: "Scalable VoIP Platform with AI Call Protection on Kubernetes",
+          description:
+            "How CodetoKloud deployed a scalable, secure VoIP platform (FusionPBX) with AI-based scam-call detection on Kubernetes, achieving 50% faster releases and 40% faster issue resolution.",
+          path: "/aws-scalable-secure",
+          image: "/services/GoAgalia2.png",
+        })}
+      />
+      <CaseStudyLayout>
       <CaseStudyHeader
         title="Scalable VoIP & AI Call Protection"
         subtitle="Services provided on this Project"
@@ -105,5 +117,6 @@ export default function VoipAiCallProtectionPage() {
       <MetricsDisplay metrics={metrics} />
       <CaseStudyLessons lessons={lesson.firstLesson} />
     </CaseStudyLayout>
+    </>
   );
 }

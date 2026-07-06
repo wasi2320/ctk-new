@@ -7,6 +7,8 @@ import CaseStudyTechStack from "@/app/components/sections/caseStudies/CaseStudyT
 import CaseStudyLessons from "@/app/components/sections/caseStudies/CaseStudyLessons";
 import MetricsDisplay from "@/app/components/metrics";
 import { pageMetadata } from "@/lib/page-metadata";
+import JsonLd from "@/app/components/JsonLd";
+import { caseStudySchema } from "@/lib/structured-data";
 
 export const metadata = pageMetadata("/monolithic-structure");
 const services = [
@@ -95,7 +97,17 @@ const lesson = {
 
 export default function AwsMonolithicAppArchitecturePage() {
   return (
-    <CaseStudyLayout>
+    <>
+      <JsonLd
+        data={caseStudySchema({
+          title: "Scalable AWS Architecture for a Monolithic Application",
+          description:
+            "How CodetoKloud architected a scalable, highly available AWS deployment for a monolithic application using Elastic Beanstalk, Auto Scaling Groups, and Route 53.",
+          path: "/monolithic-structure",
+          image: "/services/aws_mono2.png",
+        })}
+      />
+      <CaseStudyLayout>
       <CaseStudyHeader
         title="AWS Monolithic App Architecture"
         subtitle="Services provided on this Project"
@@ -117,5 +129,6 @@ export default function AwsMonolithicAppArchitecturePage() {
       <MetricsDisplay metrics={metrics} />
       <CaseStudyLessons lessons={lesson.firstLesson} />
     </CaseStudyLayout>
+    </>
   );
 }

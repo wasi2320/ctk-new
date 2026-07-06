@@ -7,6 +7,8 @@ import CaseStudyTechStack from "@/app/components/sections/caseStudies/CaseStudyT
 import CaseStudyLessons from "@/app/components/sections/caseStudies/CaseStudyLessons";
 import MetricsDisplay from "@/app/components/metrics";
 import { pageMetadata } from "@/lib/page-metadata";
+import JsonLd from "@/app/components/JsonLd";
+import { caseStudySchema } from "@/lib/structured-data";
 
 export const metadata = pageMetadata("/helm-pipeline");
 const services = [
@@ -85,7 +87,17 @@ const lesson = {
 
 export default function HelmPipelinePage() {
   return (
-    <CaseStudyLayout>
+    <>
+      <JsonLd
+        data={caseStudySchema({
+          title: "CI/CD Pipeline with ArgoCD & Helm on Amazon EKS",
+          description:
+            "How CodetoKloud implemented an automated CI/CD pipeline using ArgoCD, Helm, and Amazon EKS, reaching a 95% deployment success rate and 80% less manual effort.",
+          path: "/helm-pipeline",
+          image: "/services/ci_cd_eks2.png",
+        })}
+      />
+      <CaseStudyLayout>
       <CaseStudyHeader
         title="CI/CD Pipeline with ArgoCD Helm on EKS"
         subtitle="Services provided on this Project"
@@ -110,5 +122,6 @@ export default function HelmPipelinePage() {
         secondLesson={lesson.secondLesson}
       />
     </CaseStudyLayout>
+    </>
   );
 }
