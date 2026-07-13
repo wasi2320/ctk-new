@@ -3,8 +3,9 @@ import { getAllBlogs, getAllCategories } from "@/lib/blogs";
 import { SITE_URL } from "@/lib/structured-data";
 import BlogsList from "./BlogsList";
 
-// Revalidate on-demand (ISR): serve cached HTML, refresh hourly.
-export const revalidate = 3600;
+// Always render the latest blog list (no ISR cache) so newly published posts
+// appear immediately. Still fully server-rendered, so the list stays crawlable.
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Blog | Cloud, DevOps & AI Insights | CodetoKloud",

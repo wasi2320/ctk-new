@@ -12,8 +12,9 @@ import {
 import { SITE_URL, blogPostingSchema } from "@/lib/structured-data";
 import JsonLd from "@/app/components/JsonLd";
 
-// Revalidate on-demand (ISR): serve cached HTML, refresh hourly.
-export const revalidate = 3600;
+// ISR: cache each post but refresh within a minute so edits show quickly.
+// New slugs render on demand (dynamicParams defaults to true).
+export const revalidate = 60;
 
 export async function generateStaticParams() {
   const slugs = await getAllBlogSlugs();
