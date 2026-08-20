@@ -14,11 +14,10 @@ const EdTechEmpoweringEducation = ({}: EdTechEmpoweringEducationProps) => {
             Empowering Education with Customized, Scalable Cloud Solutions
           </h3>
           <p className="text-lg text-Nunito md:text-start text-center">
-            We empower your educational ecosystem with innovative cloud-based
-            EdTech solutions tailored to your needs. From modernizing legacy
-            systems to enhancing learning experiences and security, we provide
-            end-to-end support that ensures your platform is agile, scalable,
-            and future-read
+            We build and run secure cloud infrastructure for education teams.
+            From modernizing legacy systems to improving learning experiences
+            and security, we provide the engineering support that keeps your
+            platform reliable, scalable, and ready to grow.
           </p>
         </div>
 
@@ -37,7 +36,7 @@ const EdTechEmpoweringEducation = ({}: EdTechEmpoweringEducationProps) => {
         <div className="md:w-1/3 text-start md:text-left">
           <div className="flex items-start">
             <hr
-              className="border-green-900 w-9 mt-4"
+              className="border-[#16212e] w-9 mt-4"
               style={{ borderWidth: "2px" }}
             />
             <div className="ml-4">
@@ -55,7 +54,7 @@ const EdTechEmpoweringEducation = ({}: EdTechEmpoweringEducationProps) => {
           </div>
           <div className="flex items-start">
             <hr
-              className="border-green-900 w-9 mt-4"
+              className="border-[#16212e] w-9 mt-4"
               style={{ borderWidth: "2px" }}
             />
             <div className="ml-4">
@@ -72,7 +71,7 @@ const EdTechEmpoweringEducation = ({}: EdTechEmpoweringEducationProps) => {
           </div>
           <div className="flex items-start">
             <hr
-              className="border-green-900 w-9 mt-4"
+              className="border-[#16212e] w-9 mt-4"
               style={{ borderWidth: "2px" }}
             />
             <div className="ml-4">
@@ -90,14 +89,14 @@ const EdTechEmpoweringEducation = ({}: EdTechEmpoweringEducationProps) => {
           </div>
           <div className="flex items-start">
             <hr
-              className="border-green-900 w-9 mt-4"
+              className="border-[#16212e] w-9 mt-4"
               style={{ borderWidth: "2px" }}
             />
             <div className="ml-4">
               {" "}
               {/* Adds margin-left */}
               <h6 className="text-lg font-semibold mb-2 text-Nunito">
-                Unlock Deeper Learning Insights
+                Deeper Learning Insights
               </h6>
               <p className="text-lg text-Nunito mb-2">
                 Transform student data into actionable intelligence. Identify
@@ -108,7 +107,7 @@ const EdTechEmpoweringEducation = ({}: EdTechEmpoweringEducationProps) => {
           </div>
           <div className="flex items-start">
             <hr
-              className="border-green-900 w-9 mt-4"
+              className="border-[#16212e] w-9 mt-4"
               style={{ borderWidth: "2px" }}
             />
             <div className="ml-4">
@@ -127,7 +126,7 @@ const EdTechEmpoweringEducation = ({}: EdTechEmpoweringEducationProps) => {
 
           <div className="flex items-start">
             <hr
-              className="border-green-900 w-9 mt-4"
+              className="border-[#16212e] w-9 mt-4"
               style={{ borderWidth: "2px" }}
             />
             <div className="ml-4">

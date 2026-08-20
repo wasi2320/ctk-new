@@ -48,7 +48,7 @@ export default function BlogsList({ blogs, categories }: BlogsListProps) {
               onClick={() => handleCategoryFilter("")}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 selectedCategory === ""
-                  ? "bg-[#000209] text-white"
+                  ? "bg-[#0972d3] text-white"
                   : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50"
               }`}
             >
@@ -60,7 +60,7 @@ export default function BlogsList({ blogs, categories }: BlogsListProps) {
                 onClick={() => handleCategoryFilter(category.id)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   selectedCategory === category.id
-                    ? "bg-[#000209] text-white"
+                    ? "bg-[#0972d3] text-white"
                     : "bg-white text-gray-700 border border-gray-300 hover:bg-gray-50"
                 }`}
               >
@@ -105,7 +105,7 @@ export default function BlogsList({ blogs, categories }: BlogsListProps) {
                     {formatDate(blog.created_at)}
                   </div>
                   {blog.categories?.name && (
-                    <span className="px-2 py-1 bg-[#000209]/10 text-[#000209] text-xs font-medium rounded-full">
+                    <span className="px-2 py-1 bg-[#0d1526]/10 text-[#0d1526] text-xs font-medium rounded-full">
                       {blog.categories.name}
                     </span>
                   )}
@@ -123,7 +123,7 @@ export default function BlogsList({ blogs, categories }: BlogsListProps) {
 
                 <Link
                   href={`/blogs/${blog.slug || blog.id}`}
-                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-[#000209] hover:bg-[#000209]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#000209] transition-colors duration-200"
+                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-[#0d1526] hover:bg-[#0d1526]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0d1526] transition-colors duration-200"
                 >
                   Read Article
                 </Link>

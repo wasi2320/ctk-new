@@ -12,9 +12,9 @@ const CloudMigration = () => {
     <div>
       <HeroSection
         title="E-Commerce"
-        description="E-Commerce blends retail with innovative technology to create smarter, faster, and more personalized shopping experiences. From online storefronts to cloud-powered platforms, it enables businesses to innovate, scale, and meet the evolving needs of customers worldwide."
+        description="We build the cloud platforms behind high-traffic e-commerce. From storefronts and checkout to inventory and peak-season scale, we handle the AWS engineering so your store stays fast, secure, and always on."
         imageSrc="/Images/healthcare.png"
-        buttonText="Let’s connect"
+        buttonText="Book a free audit"
         buttonLink="/contact"
       />
       <EcommerceExpertiseTailoredSection />

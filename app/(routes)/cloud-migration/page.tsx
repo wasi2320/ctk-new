@@ -5,6 +5,9 @@ import DifferentiateCardSection from "@/app/components/sections/DifferentiateCar
 import TechDisplaySection from "@/app/components/sections/TechDisplaySection";
 import { CardScrollSection } from "@/app/components/sections/CardScrollSection";
 import { pageMetadata } from "@/lib/page-metadata";
+import JsonLd from "@/app/components/JsonLd";
+import { coreServiceSchemas } from "@/lib/structured-data";
+import RelatedServices from "@/app/components/sections/RelatedServices";
 
 export const metadata = pageMetadata("/cloud-migration");
 const CloudMigration = () => {
@@ -22,9 +25,10 @@ const CloudMigration = () => {
 
   return (
     <div>
+      <JsonLd data={coreServiceSchemas["/cloud-migration"]} />
       <HeroSection
         title="Skill of Cloud Migration is Key to Enhancing Flexibility and Security"
-        description="Ensure a smooth transition, minimizing downtime and maximizing efficiency, allowing you to leverage the full potential of cloud technology for better business performance."
+        description="Move to the cloud with minimal downtime and a plan built around your workloads, so you get the performance, security, and cost control the cloud should deliver."
         imageSrc="/Images/Cloud_Hero.png"
       />
       <TailoredSection />
@@ -32,6 +36,7 @@ const CloudMigration = () => {
       <DifferentiateCardSection />
       <TechDisplaySection techDisplaySection={migrationTechStack} />
       <CardScrollSection />
+      <RelatedServices currentPath="/cloud-migration" />
     </div>
   );
 };

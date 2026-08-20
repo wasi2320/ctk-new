@@ -16,7 +16,7 @@ const services = [
 
 const projectDetails = {
   client: "GoAgalia",
-  schedule: "Dec 2024 — June 2025",
+  schedule: "Dec 2024 to June 2025",
   size: "$200,000 to $499,999",
 };
 
@@ -74,37 +74,37 @@ const metrics = [
   {
     category: "Performance",
     description: "Average API response time reduced from 850ms to 320ms",
-    bgColor: "bg-[#1a2e22]",
+    bgColor: "bg-[#16273c]",
     width: "w-[75%]",
   },
   {
     category: "Scalability",
     description: "Handles 2.5x more concurrent users during peak periods",
-    bgColor: "bg-[#1a3b2a]",
+    bgColor: "bg-[#16324f]",
     width: "w-[70%]",
   },
   {
     category: "Deployment Time",
     description: "Deployment time reduced from 3-4 hours to under 40 minutes",
-    bgColor: "bg-[#3a6a50]",
+    bgColor: "bg-[#2b6ca8]",
     width: "w-[80%]",
   },
   {
     category: "Cost Optimization",
     description: "Infrastructure costs reduced by approximately 35%",
-    bgColor: "bg-[#4d7a65]",
+    bgColor: "bg-[#4a86bf]",
     width: "w-[65%]",
   },
   {
     category: "Uptime",
     description: "System uptime improved to 99.7% with improved monitoring",
-    bgColor: "bg-[#5a8a75]",
+    bgColor: "bg-[#5a95cf]",
     width: "w-[85%]",
   },
   {
     category: "MTTR",
     description: "Mean time to recovery improved from 40+ minutes to 10-12 minutes",
-    bgColor: "bg-[#6a9a85]",
+    bgColor: "bg-[#6aa5db]",
     width: "w-[75%]",
   },
 ];

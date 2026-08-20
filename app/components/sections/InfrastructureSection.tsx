@@ -79,7 +79,7 @@ const InfrastructureSection = () => {
                           transition={{ duration: 0.2 }}
                         >
                           <Link href={page.url} className="feature-item">
-                            <p className="md:text-base text-sm text-center hover:text-[#000209] transition-colors">
+                            <p className="md:text-base text-sm text-center hover:text-[#0d1526] transition-colors">
                               {page.name}
                             </p>
                           </Link>

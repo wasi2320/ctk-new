@@ -9,14 +9,14 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
     <section className="md:px-36 px-4 md:pt-12 pt-8 pb-12 bg-[#f9f8f8] text-dark font-Nunito">
       <div className="text-start md:text-left mb-8 md:mb-12">
         <h3 className="md:text-4xl text-3xl text-center md:text-start font-bold mb-8 font-ClashGrotesk">
-          How we Empowering Tomorrow&apos;s Finance with{" "}
-          <br className="hidden md:block"></br> Today&apos;s Innovation
+          How We Power Tomorrow&apos;s Finance with{" "}
+          <br className="hidden md:block"></br> Today&apos;s Technology
         </h3>
         <p className="text-lg font-Nunito text-center md:text-start w-full">
-          We deliver innovative, cloud-based FinTech solutions tailored to your
-          needs, from modernizing legacy systems to enhancing security and
-          customer experience. Our end-to-end support ensures your operations
-          are agile, scalable, and future-ready.
+          We build secure, cloud-based infrastructure for FinTech teams, from
+          modernizing legacy systems to strengthening security and customer
+          experience. Our support keeps your operations reliable, scalable, and
+          ready to grow.
         </p>
       </div>
 
@@ -25,7 +25,7 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
           <div className="flex items-start gap-4 p-4">
             {/* Image on top-left */}
             <Image
-              src="/images/fin-empowering1.png"
+              src="/Images/fin-empowering1.png"
               alt="Icon"
               height={20}
               width={20}
@@ -36,7 +36,7 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
               <h3 className="text-2xl mb-1 nunito-bold font-bold">
                 Effortless Financial Management
               </h3>
-              <p className="text-[##152F27] text-lg nunito-normal">
+              <p className="text-[#16212e] text-lg nunito-normal">
                 Automate invoicing, tracking, and reporting. Gain a clear
                 financial overview and reclaim valuable time for your core
                 business activities.
@@ -46,7 +46,7 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
           <div className="flex items-start gap-4 p-4">
             {/* Image on top-left */}
             <Image
-              src="/images/fin-empowering1.png"
+              src="/Images/fin-empowering1.png"
               alt="Icon"
               height={20}
               width={20}
@@ -57,7 +57,7 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
               <h3 className="text-2xl mb-1 nunito-bold font-bold">
                 Secure and Reliable Transactions
               </h3>
-              <p className="text-[##152F27] text-lg nunito-normal">
+              <p className="text-[#16212e] text-lg nunito-normal">
                 Ensure your sensitive data and transactions are always protected
                 with robust security measures and adherence to industry
                 standards.
@@ -67,7 +67,7 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
           <div className="flex items-start gap-4 p-4">
             {/* Image on top-left */}
             <Image
-              src="/images/fin-empowering3.png"
+              src="/Images/fin-empowering3.png"
               alt="Icon"
               height={20}
               width={20}
@@ -78,7 +78,7 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
               <h3 className="text-2xl mb-1 nunito-bold font-bold">
                 Connect Your Financial Ecosystem
               </h3>
-              <p className="text-[##152F27] text-lg nunito-normal">
+              <p className="text-[#16212e] text-lg nunito-normal">
                 Integrate with your existing tools like accounting software and
                 payment gateways for a unified and streamlined financial
                 workflow.
@@ -90,7 +90,7 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
           <div className="flex items-start gap-4 p-4">
             {/* Image on top-left */}
             <Image
-              src="/images/fin-empowering4.png"
+              src="/Images/fin-empowering4.png"
               alt="Icon"
               height={20}
               width={20}
@@ -99,9 +99,9 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
             {/* Text content on the right */}
             <div>
               <h3 className="text-2xl mb-1 nunito-bold font-bold">
-                Unlock Deeper Financial Insights
+                Deeper Financial Insights
               </h3>
-              <p className="text-[##152F27] text-lg nunito-normal">
+              <p className="text-[#16212e] text-lg nunito-normal">
                 Transform data into insights to identify trends, forecast
                 performance, and drive business growth with excellence.
               </p>
@@ -110,7 +110,7 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
           <div className="flex items-start gap-4 p-4">
             {/* Image on top-left */}
             <Image
-              src="/images/fin-empowering1.png"
+              src="/Images/fin-empowering1.png"
               alt="Icon"
               height={20}
               width={20}
@@ -121,16 +121,16 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
               <h3 className="text-2xl mb-1 nunito-bold font-bold">
                 Scale Your Business with Confidence
               </h3>
-              <p className="text-[##152F27] text-lg nunito-normal">
-                Our flexible solutions scale with your growth, ensuring seamless
-                handling of increasing volumes and operations.
+              <p className="text-[#16212e] text-lg nunito-normal">
+                Our infrastructure scales with your growth, handling rising
+                volumes and operations with confidence.
               </p>
             </div>
           </div>
           <div className="flex items-start gap-4 p-4">
             {/* Image on top-left */}
             <Image
-              src="/images/fin-empowering6.png"
+              src="/Images/fin-empowering6.png"
               alt="Icon"
               height={20}
               width={20}
@@ -141,7 +141,7 @@ const FinTechEmpoweringEducation = ({}: FinTechEmpoweringEducationProps) => {
               <h3 className="text-2xl mb-1 nunito-bold font-bold">
                 Empowering Your Financial Future
               </h3>
-              <p className="text-[##152F27] text-lg nunito-normal">
+              <p className="text-[#16212e] text-lg nunito-normal">
                 Gain control of your finances with our innovative solutions and
                 dedicated support to achieve your business goals efficiently.
               </p>

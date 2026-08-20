@@ -18,7 +18,7 @@ const services = [
 ];
 const projectDetails = {
   client: "Orbital Installs",
-  schedule: "Oct 2024 — Mar 2025",
+  schedule: "Oct 2024 to Mar 2025",
   size: "$50,000 to $199,999",
 };
 const solutionComponents = [
@@ -55,25 +55,25 @@ const metrics = [
   {
     category: "Release Cycle",
     description: "50% faster release cycles",
-    bgColor: "bg-[#1a2e22]",
+    bgColor: "bg-[#16273c]",
     width: "w-[85%]",
   },
   {
     category: "Manual Effort",
     description: "80% reduction in manual effort",
-    bgColor: "bg-[#1a3b2a]",
+    bgColor: "bg-[#16324f]",
     width: "w-[90%]",
   },
   {
     category: "Deployment",
     description: "95% deployment success rate",
-    bgColor: "bg-[#3a6a50]",
+    bgColor: "bg-[#2b6ca8]",
     width: "w-[80%]",
   },
   {
     category: "Issue Resolution",
     description: "Faster issue resolution with real-time alerts",
-    bgColor: "bg-[#4d7a65]",
+    bgColor: "bg-[#4a86bf]",
     width: "w-[95%]",
   },
 ];

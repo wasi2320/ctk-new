@@ -3,7 +3,7 @@
 # Default: allow all standard crawlers, block private/admin areas.
 User-agent: *
 Allow: /
-Disallow: /admin/
+Disallow: /admin
 Disallow: /api/
 Disallow: /_next/
 Disallow: /static/

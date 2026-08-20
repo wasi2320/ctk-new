@@ -16,7 +16,7 @@ const services = [
 
 const projectDetails = {
   client: "Orbital Installations LLC",
-  schedule: "Jan 2025 — Apr 2025",
+  schedule: "Jan 2025 to Apr 2025",
   size: "$200,000 to $499,999",
 };
 
@@ -73,37 +73,37 @@ const metrics = [
   {
     category: "PR Review Time",
     description: "Decreased from 2-3 days to approximately 8-10 hours",
-    bgColor: "bg-[#1a2e22]",
+    bgColor: "bg-[#16273c]",
     width: "w-[70%]",
   },
   {
     category: "Deployment Frequency",
     description: "Increased from 2-3 to 8-10 deployments per week",
-    bgColor: "bg-[#1a3b2a]",
+    bgColor: "bg-[#16324f]",
     width: "w-[75%]",
   },
   {
     category: "Deployment Time",
     description: "Reduced from 3-4 hours to under 40 minutes",
-    bgColor: "bg-[#3a6a50]",
+    bgColor: "bg-[#2b6ca8]",
     width: "w-[65%]",
   },
   {
     category: "DevOps Effort",
     description: "Reduced from 15-20 hours to approximately 3-4 hours per week",
-    bgColor: "bg-[#4d7a65]",
+    bgColor: "bg-[#4a86bf]",
     width: "w-[80%]",
   },
   {
     category: "Production Incidents",
     description: "Decreased from 8-10 to 2-3 incidents per quarter",
-    bgColor: "bg-[#5a8a75]",
+    bgColor: "bg-[#5a95cf]",
     width: "w-[70%]",
   },
   {
     category: "MTTR",
     description: "Improved from 40+ minutes to 12-15 minutes",
-    bgColor: "bg-[#6a9a85]",
+    bgColor: "bg-[#6aa5db]",
     width: "w-[75%]",
   },
 ];

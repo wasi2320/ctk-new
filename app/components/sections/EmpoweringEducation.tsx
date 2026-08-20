@@ -12,14 +12,13 @@ const EmpoweringEducation = ({}: EmpoweringEducationProps) => {
         {/* Left Content */}
         <div className="md:w-1/3 text-start md:text-left mb-8 md:mb-0">
           <h3 className="md:text-3xl text-3xl text-center md:text-start font-bold mb-5">
-            Empowering Education with Customized, Scalable Cloud Solutions
+            Customized, Scalable Cloud Solutions for Education
           </h3>
           <p className="text-lg text-Nunito md:text-start text-center">
-            We empower your educational ecosystem with innovative cloud-based
-            EdTech solutions tailored to your needs. From modernizing legacy
-            systems to enhancing learning experiences and security, we provide
-            end-to-end support that ensures your platform is agile, scalable,
-            and future-read
+            We build and run secure cloud infrastructure for education teams.
+            From modernizing legacy systems to improving learning experiences
+            and security, we provide the engineering support that keeps your
+            platform reliable, scalable, and ready to grow.
           </p>
         </div>
 
@@ -38,44 +37,43 @@ const EmpoweringEducation = ({}: EmpoweringEducationProps) => {
         <div className="md:w-1/3 text-start md:text-left">
           <div className="flex items-start">
             <hr
-              className="border-green-900 w-9 mt-4"
+              className="border-[#16212e] w-9 mt-4"
               style={{ borderWidth: "2px" }}
             />
             <div className="ml-4">
               {" "}
               {/* Adds margin-left */}
               <h6 className="text-lg font-semibold mb-2 text-Nunito">
-                Personalized Care and Remote Monitoring
+                Personalized Learning and Remote Access
               </h6>
               <p className="text-lg text-Nunito mb-2">
-                Provide personalized care plans tailored to each patient and
-                monitor their health remotely. This allows for timely
-                interventions and ensures that care is specific to individual
-                needs.
+                Support personalized learning paths for each student and deliver
+                them reliably from any location. Cloud delivery keeps coursework
+                available on demand across devices.
               </p>
             </div>
           </div>
           <div className="flex items-start">
             <hr
-              className="border-green-900 w-9 mt-4"
+              className="border-[#16212e] w-9 mt-4"
               style={{ borderWidth: "2px" }}
             />
             <div className="ml-4">
               {" "}
               {/* Adds margin-left */}
               <h6 className="text-lg font-semibold mb-2 text-Nunito">
-                Enhanced Security for Patient Data
+                Enhanced Security for Student Data
               </h6>
               <p className="text-lg text-Nunito mb-2">
-                Ensure that patient data and health records are protected with
-                advanced security measures. This helps maintain privacy and
-                ensures compliance with healthcare regulations.
+                Protect student records and learning data with strong access
+                controls and encryption. This helps maintain privacy and
+                supports compliance with data protection requirements.
               </p>
             </div>
           </div>
           <div className="flex items-start">
             <hr
-              className="border-green-900 w-9 mt-4"
+              className="border-[#16212e] w-9 mt-4"
               style={{ borderWidth: "2px" }}
             />
             <div className="ml-4">
@@ -93,7 +91,7 @@ const EmpoweringEducation = ({}: EmpoweringEducationProps) => {
           </div>
           <div className="flex items-start">
             <hr
-              className="border-green-900 w-9 mt-4"
+              className="border-[#16212e] w-9 mt-4"
               style={{ borderWidth: "2px" }}
             />
             <div className="ml-4">
@@ -103,28 +101,27 @@ const EmpoweringEducation = ({}: EmpoweringEducationProps) => {
                 Scalable Platforms for Growth
               </h6>
               <p className="text-lg text-Nunito mb-2">
-                Our solutions are built to scale, allowing your platform to
-                handle a growing number of patients without compromising on
+                Our solutions are built to scale, letting your platform handle a
+                growing number of students and users without compromising on
                 performance or quality.
               </p>
             </div>
           </div>
           <div className="flex items-start">
             <hr
-              className="border-green-900 w-9 mt-4"
+              className="border-[#16212e] w-9 mt-4"
               style={{ borderWidth: "2px" }}
             />
             <div className="ml-4">
               {" "}
               {/* Adds margin-left */}
               <h6 className="text-lg font-semibold mb-2 text-Nunito">
-                Improved Communication with Patient Portals
+                Improved Communication with Student Portals
               </h6>
               <p className="text-lg text-Nunito mb-2">
-                Enhance communication and patient engagement through
-                user-friendly portals where patients can access their health
-                information, book appointments, and communicate directly with
-                healthcare providers.
+                Improve engagement through user-friendly portals where students
+                and staff can access learning materials, track progress, and
+                communicate directly with instructors.
               </p>
             </div>
           </div>

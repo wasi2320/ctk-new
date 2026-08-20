@@ -7,46 +7,46 @@ interface MarketDifferenceProps {
 
 const cards = [
   {
-    title: "Seamless Service Management",
+    title: "Streamlined Service Management",
     description:
       "Streamline project execution, and resource allocation. Gain full transparency and deliver outcomes that exceed expectations.",
-    icon: "/images/service-management.png",
+    icon: "/Images/service-management.png",
   },
   {
     title: "Turn Insights into Strategy",
     description:
       "Transform operational data into actionable plans. Address inefficiencies, track KPIs, and refine service delivery for optimal impact.",
-    icon: "/images/insights.png",
+    icon: "/Images/insights.png",
   },
   {
     title: "Secure, Trusted Operations",
     description:
       "Protect critical systems and sensitive data with enterprise-grade security, risk management, and compliance frameworks.",
-    icon: "/images/security.png",
+    icon: "/Images/security.png",
   },
   {
     title: "Grow Without Limits",
     description:
       "Our scalable services adapt with your business needs expanding teams, capabilities, and technology in sync with your success.",
-    icon: "/images/grow.png",
+    icon: "/Images/grow.png",
   },
   {
     title: "Unify Your Operations",
     description:
       "Integrate with your existing tools ERP, CRM, collaboration platforms for a cohesive and efficient service experience.",
-    icon: "/images/unify.png",
+    icon: "/Images/unify.png",
   },
   {
     title: "Accelerating Business Excellence",
     description:
-      "Empower your enterprise with innovative solutions and guidance, enabling smarter decisions and sustainable growth.",
-    icon: "/images/excellence.png",
+      "Give your enterprise the tools and guidance to make smarter decisions and grow sustainably.",
+    icon: "/Images/excellence.png",
   },
 ];
 
 const MarketDifference = ({ heading }: MarketDifferenceProps) => {
   return (
-    <section className="bg-[#0e0f11] text-white py-16 px-4">
+    <section className="bg-[#111827] text-white py-16 px-4">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-Nunito mb-12">
           How We Differentiate from the <br className="hidden md:block"></br>{" "}

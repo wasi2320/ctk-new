@@ -13,11 +13,14 @@ const Footer = () => {
     pathname === "/"
       ? "bg-[url('/Images/Partner_Bg.webp')]"
       : "bg-[url('/Images/Partner_Bg_Main_.webp')]";
-  const inputBg = pathname === "/" ? "bg-[#152F27]" : "bg-[#254F42]";
+  const inputBg = pathname === "/" ? "bg-[#16212e]" : "bg-[#1b4a74]";
+
+  // The redesigned homepage ships its own footer.
+  if (pathname === "/") return null;
 
   return (
     <footer>
-      <div className="py-10 px-4 md:px-28 bg-gradient-to-r from-[#000209] to-[#13241E] flex flex-col md:flex-row justify-between items-center gap-5">
+      <div className="py-10 px-4 md:px-28 bg-gradient-to-r from-[#0d1526] to-[#16212e] flex flex-col md:flex-row justify-between items-center gap-5">
         <div className="md:w-1/2">
           <h2 className="text-3xl md:text-6xl text-white">
             {FOOTER_DATA.heading}
@@ -29,7 +32,7 @@ const Footer = () => {
           </h3>
           <Link
             href="/contact"
-            className="inline-block rounded-full nunito-medium font-semibold px-10 py-3 bg-white text-[#1C3D7A] text-lg hover:bg-white/90 transition-colors"
+            className="inline-block rounded-full nunito-medium font-semibold px-10 py-3 bg-white text-[#0972d3] text-lg hover:bg-white/90 transition-colors"
           >
             {FOOTER_DATA.buttonText}
           </Link>

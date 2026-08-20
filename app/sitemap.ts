@@ -5,7 +5,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://codetokloud.com";
 
   // Fixed content-modification date for static/service pages. Bump this when
-  // page content materially changes — do NOT use `new Date()`, which stamps
+  // page content materially changes, do NOT use `new Date()`, which stamps
   // today's date on every build and makes crawlers distrust the lastmod signal.
   const LAST_MODIFIED = new Date("2026-07-06");
 
@@ -108,17 +108,35 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/eks-vs-ecs-vs-fargate",
     "/eks-vs-gke-vs-aks",
     "/terraform-vs-cloudformation",
+    "/argocd-vs-flux",
+    "/github-actions-vs-jenkins-vs-gitlab-ci",
+    "/fargate-vs-ec2",
+    "/ecs-vs-kubernetes",
+    "/terraform-vs-pulumi",
+    "/prometheus-vs-datadog",
     // Local
     "/devops-consulting-naperville-il",
     "/devops-kubernetes-consulting-chicago",
+    "/devops-consulting-austin",
+    "/devops-consulting-dallas",
+    "/devops-consulting-denver",
     // Guides / definitional
     "/what-is-a-kubernetes-consultant",
     "/what-does-a-devops-consultant-do",
     "/devops-consulting-cost",
     "/engagement-models",
+    "/what-is-gitops",
+    "/what-is-finops",
+    "/what-is-amazon-eks",
+    "/what-is-a-well-architected-review",
+    "/what-is-infrastructure-as-code",
+    "/platform-engineering-vs-devops",
+    "/kubernetes-consulting-cost",
+    "/cloud-migration-cost",
+    "/soc-2-cost",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date(),
+    lastModified: LAST_MODIFIED,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));

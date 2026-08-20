@@ -19,7 +19,7 @@ const ServiceCard = ({ title, description, image }: ServiceCardProps) => {
         </p>
         <Link
           href="/contact"
-          className="w-fit px-6 py-1.5 bg-[#081617] rounded-full text-white transition-colors duration-300 cursor-pointer"
+          className="w-fit px-6 py-1.5 bg-[#101d2e] rounded-full text-white transition-colors duration-300 cursor-pointer"
         >
           Let&apos;s connect
         </Link>

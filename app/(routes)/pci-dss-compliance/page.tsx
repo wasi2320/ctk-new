@@ -14,7 +14,7 @@ export const metadata = pageMetadata("/pci-dss-compliance");
 const controls = [
   {
     title: "Network Segmentation",
-    body: "We isolate the cardholder data environment (CDE) from the rest of your infrastructure with dedicated VPCs, subnets, security groups, and firewalls — reducing both risk and PCI scope.",
+    body: "We isolate the cardholder data environment (CDE) from the rest of your infrastructure with dedicated VPCs, subnets, security groups, and firewalls, reducing both risk and PCI scope.",
   },
   {
     title: "Encryption of Cardholder Data",
@@ -34,7 +34,7 @@ const controls = [
   },
   {
     title: "Scope Reduction",
-    body: "We reduce PCI scope with segmentation and, where appropriate, tokenization or third-party payment processors — so fewer systems fall under PCI DSS, lowering cost and effort.",
+    body: "We reduce PCI scope with segmentation and, where appropriate, tokenization or third-party payment processors, so fewer systems fall under PCI DSS, lowering cost and effort.",
   },
 ];
 
@@ -45,9 +45,8 @@ export default function PciDssCompliancePage() {
 
       <HeroSection
         title="PCI DSS Compliance on AWS"
-        description="CodetoKloud, an AWS Advanced Tier Partner, builds PCI DSS-aligned infrastructure on AWS — network segmentation, encryption, access control, logging, and vulnerability management for cardholder data environments."
+        description="CodetoKloud, an AWS Advanced Tier Partner, builds PCI DSS-aligned infrastructure on AWS, network segmentation, encryption, access control, logging, and vulnerability management for cardholder data environments."
         imageSrc="/services/awsDeployment2.png"
-        cover
         buttonText="Book a free PCI DSS review"
         buttonLink="/contact"
       />
@@ -72,7 +71,7 @@ export default function PciDssCompliancePage() {
           </p>
           <p className="text-base text-gray-600 leading-relaxed mt-4">
             Formal PCI validation is performed by a Qualified Security Assessor
-            (QSA) — we build and document the controls that validation depends
+            (QSA), we build and document the controls that validation depends
             on, and reduce your PCI scope wherever we can.
           </p>
         </div>
@@ -92,7 +91,7 @@ export default function PciDssCompliancePage() {
             {controls.map((c) => (
               <div
                 key={c.title}
-                className="rounded-2xl border border-gray-200 p-6 hover:border-[#152F27] transition-colors"
+                className="rounded-2xl border border-gray-200 p-6 hover:border-[#16212e] transition-colors"
               >
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {c.title}
@@ -105,7 +104,7 @@ export default function PciDssCompliancePage() {
       </section>
 
       {/* CTA band */}
-      <section className="py-16 px-4 md:px-36 bg-[#000209] text-white">
+      <section className="py-16 px-4 md:px-36 bg-[#0d1526] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Get a free PCI DSS review
@@ -113,11 +112,11 @@ export default function PciDssCompliancePage() {
           <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
             We&apos;ll review your AWS environment against PCI DSS controls,
             identify scope-reduction opportunities, and give you a prioritized
-            remediation plan — no obligation.
+            remediation plan, no obligation.
           </p>
           <Link
             href="/contact"
-            className="inline-block rounded-full bg-white text-[#000209] font-semibold px-8 py-3 hover:bg-gray-100 transition-colors"
+            className="inline-block rounded-full bg-white text-[#0d1526] font-semibold px-8 py-3 hover:bg-gray-100 transition-colors"
           >
             Book a free PCI DSS review
           </Link>
@@ -131,7 +130,7 @@ export default function PciDssCompliancePage() {
             See it in practice:{" "}
             <Link
               href="/pci-dss-enterprise-case-study"
-              className="text-[#152F27] font-semibold underline hover:no-underline"
+              className="text-[#16212e] font-semibold underline hover:no-underline"
             >
               PCI DSS Enterprise Cloud Foundation
             </Link>

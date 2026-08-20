@@ -12,7 +12,7 @@ const ManufacturingExpertiseTailoredSection = ({
       <div className="flex flex-col md:flex-row gap-24 justify-between items-center">
         {/* Card 1 */}
         <div className="text-center">
-          <h6 className="text-sm text-[#656c6e] mb-2">Frame 204</h6>
+          <h6 className="text-sm text-[#5a6b81] mb-2"></h6>
           <hr
             className="border-white w-9 mx-auto mb-4"
             style={{ borderWidth: "2px" }}
@@ -35,7 +35,7 @@ const ManufacturingExpertiseTailoredSection = ({
           />
           <h3 className="text-4xl mb-2">80%</h3>
           <p className="text-sm nunito-extraLight">
-            prefer flexible/modular production
+            Prefer flexible, modular production
           </p>
         </div>
 

@@ -18,7 +18,7 @@ const services = [
 ];
 const projectDetails = {
   client: "Topflight Apps",
-  schedule: "Jan 2025 — Mar 2025",
+  schedule: "Jan 2025 to Mar 2025",
   size: "$10,000 to $49,999",
 };
 const solutionComponents = [
@@ -41,26 +41,26 @@ const metrics = [
   {
     category: "Deployment Process",
     description: "Faster, secure, and scalable deployment process",
-    bgColor: "bg-[#1a2e22]",
+    bgColor: "bg-[#16273c]",
     width: "w-[90%]",
   },
   {
     category: "High Availability",
     description:
       "Zero-downtime deployments with high availability via AWS ECS and Route 53",
-    bgColor: "bg-[#1a3b2a]",
+    bgColor: "bg-[#16324f]",
     width: "w-[95%]",
   },
   {
     category: "Image Storage",
     description: "Secure image storage in AWS ECR",
-    bgColor: "bg-[#3a6a50]",
+    bgColor: "bg-[#2b6ca8]",
     width: "w-[80%]",
   },
   {
     category: "Cost Efficiency",
     description: "Improved cost-efficiency with AWS's pay-as-you-go model",
-    bgColor: "bg-[#4d7a65]",
+    bgColor: "bg-[#4a86bf]",
     width: "w-[85%]",
   },
 ];

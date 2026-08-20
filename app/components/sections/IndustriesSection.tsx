@@ -81,7 +81,7 @@ export const IndustriesCard = () => {
     <div className="lg:col-span-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Fintech Card */}
-        <div className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group">
+        <div className="p-6 rounded-2xl hover:bg-[#101d2e] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group">
           <div className="w-12 h-12 mb-4 relative">
             <Image
               src="/Images/aboutus/Frame4.svg"
@@ -98,7 +98,7 @@ export const IndustriesCard = () => {
         </div>
 
         {/* Edtech Card */}
-        <div className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group">
+        <div className="p-6 rounded-2xl hover:bg-[#101d2e] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group">
           <div className="w-12 h-12 mb-4 relative">
             <Image
               src="/Images/aboutus/Frame3.svg"
@@ -114,7 +114,7 @@ export const IndustriesCard = () => {
         </div>
 
         {/* Professional Services Card */}
-        <div className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group">
+        <div className="p-6 rounded-2xl hover:bg-[#101d2e] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group">
           <div className="w-12 h-12 mb-4 relative">
             <Image
               src="/Images/aboutus/Frame5.svg"
@@ -130,7 +130,7 @@ export const IndustriesCard = () => {
         </div>
 
         {/* Healthcare Card */}
-        <div className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group">
+        <div className="p-6 rounded-2xl hover:bg-[#101d2e] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group">
           <div className="w-12 h-12 mb-4 relative">
             <Image
               src="/Images/aboutus/Frame6.svg"
@@ -146,7 +146,7 @@ export const IndustriesCard = () => {
         </div>
 
         {/* E-commerce Card */}
-        <div className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group">
+        <div className="p-6 rounded-2xl hover:bg-[#101d2e] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group">
           <div className="w-12 h-12 mb-4 relative">
             <Image
               src="/Images/aboutus/Frame2.svg"
@@ -162,7 +162,7 @@ export const IndustriesCard = () => {
         </div>
 
         {/* Manufacturing Card */}
-        <div className="p-6 rounded-2xl hover:bg-[#081617] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group">
+        <div className="p-6 rounded-2xl hover:bg-[#101d2e] transition-all duration-300 hover:shadow-lg border border-gray-200 hover:text-white group">
           <div className="w-12 h-12 mb-4 relative">
             <Image
               src="/Images/aboutus/Frame1.svg"
@@ -191,7 +191,7 @@ export const IndustriesCard = () => {
 //         py-8
 //         rounded-3xl
 //         border
-//         border-[#152F27]
+//         border-[#16212e]
 //         flex
 //         flex-col
 //         justify-center

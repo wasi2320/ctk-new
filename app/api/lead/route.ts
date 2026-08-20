@@ -5,11 +5,11 @@ import { createServerClient } from "@/lib/supabase";
  * Server-side lead intake. Runs on the server so no API keys or webhook URLs are
  * exposed to the browser. A lead is captured through up to three channels and is
  * considered successful if ANY of them accepts it, so a lead is never silently lost:
- *   1. HubSpot (primary CRM — pipeline, auto-reply, notifications)
+ *   1. HubSpot (primary CRM, pipeline, auto-reply, notifications)
  *   2. Supabase `leads` table (owned backup)
  *   3. Discord webhook (optional team ping)
  *
- * Configure via env vars — see docs/setup/leads-funnel-setup.md.
+ * Configure via env vars, see docs/setup/leads-funnel-setup.md.
  */
 
 // Portal ID + Form GUID are not secrets (they ship in HubSpot's public embed
@@ -59,7 +59,7 @@ async function submitToHubSpot(lead: LeadBody): Promise<ChannelResult> {
           ],
           context: {
             pageUri: lead.pageUri || "https://codetokloud.com/contact",
-            pageName: "Contact — CodetoKloud",
+            pageName: "Contact, CodetoKloud",
           },
         }),
       }
@@ -115,11 +115,11 @@ async function notifyDiscord(lead: LeadBody): Promise<ChannelResult> {
             title: "🎯 New lead from codetokloud.com",
             color: 0x152f27,
             fields: [
-              { name: "Name", value: lead.name || "—", inline: true },
-              { name: "Email", value: lead.email || "—", inline: true },
-              { name: "Company", value: lead.company || "—", inline: true },
-              { name: "Interested in", value: lead.topic || "—", inline: true },
-              { name: "Message", value: lead.message || "—", inline: false },
+              { name: "Name", value: lead.name || ", ", inline: true },
+              { name: "Email", value: lead.email || ", ", inline: true },
+              { name: "Company", value: lead.company || ", ", inline: true },
+              { name: "Interested in", value: lead.topic || ", ", inline: true },
+              { name: "Message", value: lead.message || ", ", inline: false },
             ],
           },
         ],

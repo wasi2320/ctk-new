@@ -21,7 +21,7 @@ const FinTechTailoredSection = ({ heading }: FinTechTailoredSectionProps) => {
         {/* Card 2 */}
         <div className="text-center" style={{ marginTop: "-60px" }}>
           <h6 className="text-4xl mb-2 text-Nunito">
-            {heading || "EdTech now"}
+            {heading || "FinTech now"}
           </h6>
           <hr
             className="border-white w-9 mx-auto mb-4"

@@ -9,7 +9,7 @@ const CloudDifferentiateSection = () => {
       <div className="mt-14">
         {CLOUD_DIFFERENTIATE__SECTION.cards.map((card, index) => (
           <div key={index} className="flex">
-            <div className="md:w-[30%] w-[40%] border-r-3 border-[#1D493A] md:mr-12 mr-6">
+            <div className="md:w-[30%] w-[40%] border-r-3 border-[#173a5c] md:mr-12 mr-6">
               <h3 className="nunito-bold font-semibold md:text-xl">{card.title}</h3>
             </div>
             <div className="md:w-[70%] w-[60%]">

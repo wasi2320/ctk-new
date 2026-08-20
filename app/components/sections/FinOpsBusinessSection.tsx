@@ -15,12 +15,12 @@ const FinOpsBusinessSection = () => {
             key={index}
             className={`${
               index === 0
-                ? "border-b-2 border-r-2 border-[#152F27] md:pb-12 md:pr-12 pb-6 pr-6"
+                ? "border-b-2 border-r-2 border-[#16212e] md:pb-12 md:pr-12 pb-6 pr-6"
                 : ""
             }
                 ${
                   index === 3
-                    ? "border-t-2 border-l-2 border-l-[linear-gradient(to_right,#D9D9D9,#A4AEAB)] border-[#152F27] md:pt-12 md:pl-12 pt-6 pl-6 -ml-[1px] md:-mt-[1.5px] -mt-[2px]"
+                    ? "border-t-2 border-l-2 border-l-[linear-gradient(to_right,#D9D9D9,#93a3b8)] border-[#16212e] md:pt-12 md:pl-12 pt-6 pl-6 -ml-[1px] md:-mt-[1.5px] -mt-[2px]"
                     : ""
                 }
                 ${index === 2 ? "md:mt-12 md:mr-12 mt-6 mr-6" : ""}

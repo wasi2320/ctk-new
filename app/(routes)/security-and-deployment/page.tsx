@@ -18,7 +18,7 @@ const services = [
 ];
 const projectDetails = {
   client: "Centerboard Wellness Center",
-  schedule: "Oct 2024 — Feb 2025",
+  schedule: "Oct 2024 to Feb 2025",
   size: "$50,000 to $199,999",
 };
 const solutionComponents = [
@@ -66,31 +66,31 @@ const metrics = [
   {
     category: "Manual Deployment",
     description: "Reduced manual deployment efforts",
-    bgColor: "bg-[#1a2e22]",
+    bgColor: "bg-[#16273c]",
     width: "w-[80%]",
   },
   {
     category: "Security",
     description: "Improved security with WAF and Secret Manager",
-    bgColor: "bg-[#1a3b2a]",
+    bgColor: "bg-[#16324f]",
     width: "w-[90%]",
   },
   {
     category: "Content",
     description: "Automated content moderation",
-    bgColor: "bg-[#3a6a50]",
+    bgColor: "bg-[#2b6ca8]",
     width: "w-[85%]",
   },
   {
     category: "Scalability",
     description: "Scalability achieved via ECS auto-scaling",
-    bgColor: "bg-[#4d7a65]",
+    bgColor: "bg-[#4a86bf]",
     width: "w-[90%]",
   },
   {
     category: "System Health",
     description: "System health monitored through CloudWatch and Grafana",
-    bgColor: "bg-[#2e4d3a]",
+    bgColor: "bg-[#1e3a5c]",
     width: "w-[85%]",
   },
 ];

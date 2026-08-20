@@ -166,7 +166,7 @@ export default function CategoryModal({
           {!showAddForm && (
             <button
               onClick={() => setShowAddForm(true)}
-              className="mb-6 flex items-center px-4 py-2 bg-[#000209] text-white rounded-md hover:bg-[#000209]/90 transition-colors"
+              className="mb-6 flex items-center px-4 py-2 bg-[#0d1526] text-white rounded-md hover:bg-[#0d1526]/90 transition-colors"
             >
               <Plus className="h-4 w-4 mr-2" />
               Add New Category
@@ -190,7 +190,7 @@ export default function CategoryModal({
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-[#000209] focus:border-[#000209]"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-[#0d1526] focus:border-[#0d1526]"
                     placeholder="Enter category name"
                     required
                   />
@@ -204,7 +204,7 @@ export default function CategoryModal({
                     onChange={(e) =>
                       setFormData({ ...formData, description: e.target.value })
                     }
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-[#000209] focus:border-[#000209]"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-[#0d1526] focus:border-[#0d1526]"
                     placeholder="Enter category description (optional)"
                     rows={3}
                   />
@@ -213,7 +213,7 @@ export default function CategoryModal({
                   <button
                     type="submit"
                     disabled={loading}
-                    className="px-4 py-2 bg-[#000209] text-white rounded-md hover:bg-[#000209]/90 disabled:opacity-50 transition-colors"
+                    className="px-4 py-2 bg-[#0d1526] text-white rounded-md hover:bg-[#0d1526]/90 disabled:opacity-50 transition-colors"
                   >
                     {loading
                       ? "Saving..."
@@ -239,7 +239,7 @@ export default function CategoryModal({
               className={`p-3 rounded-md mb-4 ${
                 message.includes("Error")
                   ? "bg-red-50 text-red-700 border border-red-200"
-                  : "bg-green-50 text-green-700 border border-green-200"
+                  : "bg-[#eef6fd] text-[#0b5cad] border border-[#bfdcf5]"
               }`}
             >
               {message}
@@ -253,7 +253,7 @@ export default function CategoryModal({
             </h3>
             {loading ? (
               <div className="text-center py-4">
-                <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-[#000209] mx-auto"></div>
+                <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-[#0d1526] mx-auto"></div>
               </div>
             ) : categories.length === 0 ? (
               <p className="text-gray-500 text-center py-4">

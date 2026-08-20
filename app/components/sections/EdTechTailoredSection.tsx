@@ -44,8 +44,7 @@ const EdTechExpertiseTailoredSection = ({
           />
           <h3 className="text-4xl mb-2">18%</h3>
           <p className="text-sm nunito-extraLight">
-            Increase of investor in Educational <br></br> institutions adopt
-            cloud
+            Increase in EdTech <br></br> investment
           </p>
         </div>
       </div>

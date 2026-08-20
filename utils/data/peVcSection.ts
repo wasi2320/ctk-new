@@ -1,103 +1,102 @@
 export const peVcSectionData = {
   title: "Private Equity and VC Firms",
   description:
-    "Fueling innovation and growth through strategic capital, expertise, and operational support. We partner with visionary companies to accelerate their digital transformation and market expansion.",
+    "We are the technology partner for private equity and VC firms and their portfolio companies. From technical due diligence to cloud infrastructure, DevOps, security, and cost control, we help you de-risk investments and help portfolio companies scale on AWS.",
   buttonText: "Schedule your cloud assessment",
   buttonLink: "/contact",
   imageSrc: "/Images/pe-vc/equity-stock.png",
 
   stats: [
     {
-      value: "$500B+",
-      description:
-        "Accelerated growth driven by strategic investments and digital transformation.",
+      value: "35%",
+      description: "Cloud cost cut on a recent AWS migration",
     },
     {
-      value: "65%",
-      description: "portfolio companies achieve 3x growth within 2 years",
+      value: "99.7%",
+      description: "Uptime delivered on production AWS",
     },
     {
-      value: "32%",
-      description: "YoY investment growth in tech-enabled businesses",
+      value: "4.9",
+      description: "Client rating on Clutch, across 9 reviews",
     },
   ],
 
   impactData: [
     {
-      title: "Capital Injection",
+      title: "Technical Due Diligence",
       description:
-        "Strategic capital infusion to fuel growth, innovation, and market expansion initiatives.",
+        "We assess a target's cloud architecture, security, scalability, and technical debt before you invest, so there are no surprises after close.",
     },
     {
-      title: "Strategic Guidance",
+      title: "Portfolio Cloud Infrastructure",
       description:
-        "Expert advisory on business strategy, market positioning, and competitive advantage.",
+        "We build and run secure, scalable AWS infrastructure for portfolio companies, from first cluster to day-2 operations.",
     },
     {
-      title: "Operational Support",
+      title: "Cost Optimization",
       description:
-        "They help improve company operations by optimizing processes, enhancing management teams, and driving efficiency.",
+        "We cut cloud spend across the portfolio with FinOps, rightsizing, and Savings Plans, improving margins and unit economics.",
     },
     {
-      title: "Access to Networks",
+      title: "Security and Compliance",
       description:
-        "Connect with industry leaders, potential customers, and strategic partners.",
+        "We harden portfolio companies for SOC 2, HIPAA, and PCI DSS, reducing risk and clearing enterprise sales blockers.",
     },
     {
-      title: "Governance and Oversight",
+      title: "DevOps and Delivery Speed",
       description:
-        "Establish robust governance frameworks and provide strategic oversight.",
+        "CI/CD, infrastructure as code, and automation so portfolio companies ship faster with fewer incidents.",
     },
     {
-      title: "Talent Acquisition",
+      title: "Reliability and Scale",
       description:
-        "Assist in recruiting top-tier talent and building high-performing teams.",
+        "Multi-AZ architecture, monitoring, and disaster recovery that keep revenue-critical platforms available as they grow.",
     },
     {
-      title: "Market Credibility",
+      title: "Hands-On Engineering",
       description:
-        "Enhance market reputation and credibility through strategic partnerships.",
+        "Senior engineers who own outcomes end to end, so your teams get results, not just recommendations.",
     },
   ],
 
   differentiateData: {
-    title: "How We Differentiate from the Market",
-    backgroundImage: "/Images/Differentiate_Bg.png", // Add your background image path here
+    title: "What sets us apart",
+    backgroundImage: "/Images/Differentiate_Bg.png",
     cards: [
       {
-        title: "Specialized Industry Focus",
+        title: "AWS Advanced Tier Partner",
         description:
-          "Develop deep expertise in specific sectors to offer tailored insights and add significant value beyond capital.",
+          "Certified AWS engineers who build the way AWS recommends, so portfolio companies get proven, supportable architecture.",
         icon: "/Images/pe-vc/industry_focus.png",
       },
       {
-        title: "Hands-On Partnership",
+        title: "Embedded Partnership",
         description:
-          "Act as a true partner by providing strategic guidance, operational support, and access to a strong network.",
+          "We work as an embedded engineering partner, not a distant advisor, from due diligence through day-2 operations.",
         icon: "/Images/pe-vc/partnership.png",
       },
       {
-        title: "Unique Deal Sourcing",
+        title: "Portfolio-Wide Leverage",
         description:
-          "Leverage proprietary channels or technology to access exclusive investment opportunities.",
+          "Shared standards, tooling, and playbooks across your portfolio, so each company benefits from what we have already built.",
         icon: "/Images/pe-vc/unique_deal.png",
       },
       {
-        title: "Value-Added Services",
+        title: "Cost and Margin Focus",
         description:
-          "Support portfolio companies with mentorship, talent acquisition, marketing, or international expansion.",
+          "We treat cloud spend as a margin lever, with clear visibility and steady savings across your holdings.",
         icon: "/Images/pe-vc/services.png",
       },
       {
-        title: "Ethical and Impact Investing",
+        title: "Security and Compliance Built In",
         description:
-          "Incorporate ESG principles or impact investing to attract socially conscious investors and founders.",
+          "SOC 2, HIPAA, and PCI DSS controls engineered in from the start, protecting value and speeding enterprise deals.",
         icon: "/Images/pe-vc/investing.png",
       },
       {
-        title: "Transparent and Efficient Processes",
+        title: "Transparent Delivery",
         description:
-          "Ensure clear communication, fast decision-making, and transparent reporting to build trust and confidence.",
+          "Clear communication, fast decisions, and honest reporting, so you always know where a build stands.",
         icon: "/Images/pe-vc/transparent.png",
       },
     ],
@@ -106,17 +105,17 @@ export const peVcSectionData = {
   portfolioData: [
     {
       title: "Cost Optimization",
-      subtitle: "Real-World cases in Fintech",
+      subtitle: "Real-world work in FinTech",
       description:
         "Strategic cost reduction through cloud optimization and operational efficiency improvements.",
       image: "/Images/pe-vc/cost_optimization.png",
       link: "/fin-tech",
     },
     {
-      title: "Security Compliance",
-      subtitle: "Real-World cases in Fintech",
+      title: "Security and Compliance",
+      subtitle: "Real-world work in FinTech",
       description:
-        "Comprehensive security frameworks and compliance solutions for financial institutions.",
+        "Security frameworks and compliance controls built for financial institutions.",
       image: "/Images/pe-vc/security_compliance.png",
       link: "/fin-tech",
     },

@@ -11,7 +11,7 @@ import { pageFaqs } from "@/lib/faqs";
 
 export const metadata = pageMetadata("/hipaa-compliance");
 
-/** Technical safeguards — keyworded H3s with extractable, standalone prose. */
+/** Technical safeguards, keyworded H3s with extractable, standalone prose. */
 const safeguards = [
   {
     title: "HIPAA-Eligible Services & BAA",
@@ -19,7 +19,7 @@ const safeguards = [
   },
   {
     title: "Encryption of PHI",
-    body: "We encrypt PHI at rest with AWS KMS and in transit with TLS across every layer — databases, storage, container workloads, and backups — so sensitive health data is protected end to end.",
+    body: "We encrypt PHI at rest with AWS KMS and in transit with TLS across every layer, databases, storage, container workloads, and backups, so sensitive health data is protected end to end.",
   },
   {
     title: "Access Control (IAM & RBAC)",
@@ -35,7 +35,7 @@ const safeguards = [
   },
   {
     title: "Backup & Disaster Recovery",
-    body: "We design encrypted backups and disaster recovery so PHI stays available and recoverable — a core HIPAA requirement — with tested restore procedures and defined recovery objectives.",
+    body: "We design encrypted backups and disaster recovery so PHI stays available and recoverable, a core HIPAA requirement, with tested restore procedures and defined recovery objectives.",
   },
 ];
 
@@ -46,9 +46,8 @@ export default function HipaaCompliancePage() {
 
       <HeroSection
         title="HIPAA-Compliant AWS & Kubernetes Infrastructure"
-        description="CodetoKloud, an AWS Advanced Tier Partner, helps healthcare organizations build and run HIPAA-compliant infrastructure on AWS and Amazon EKS — with the encryption, access controls, audit logging, and disaster recovery HIPAA requires."
+        description="CodetoKloud, an AWS Advanced Tier Partner, helps healthcare organizations build and run HIPAA-compliant infrastructure on AWS and Amazon EKS, with the encryption, access controls, audit logging, and disaster recovery HIPAA requires."
         imageSrc="/services/strength_aws.png"
-        cover
         buttonText="Book a free HIPAA readiness review"
         buttonLink="/contact"
       />
@@ -57,7 +56,7 @@ export default function HipaaCompliancePage() {
         <TrustBadge />
       </div>
 
-      {/* Answer capsule — definition-first, standalone, names the company. */}
+      {/* Answer capsule, definition-first, standalone, names the company. */}
       <section className="py-14 px-4 md:px-36 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
@@ -73,7 +72,7 @@ export default function HipaaCompliancePage() {
             recovery.
           </p>
           <p className="text-base text-gray-600 leading-relaxed mt-4">
-            HIPAA compliance isn&apos;t a product you buy — it&apos;s how your
+            HIPAA compliance isn&apos;t a product you buy, it&apos;s how your
             infrastructure is designed and operated. We implement and document
             the technical safeguards so your healthcare platform is built for
             compliance from the ground up.
@@ -94,7 +93,7 @@ export default function HipaaCompliancePage() {
             {safeguards.map((s) => (
               <div
                 key={s.title}
-                className="rounded-2xl border border-gray-200 p-6 hover:border-[#152F27] transition-colors"
+                className="rounded-2xl border border-gray-200 p-6 hover:border-[#16212e] transition-colors"
               >
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {s.title}
@@ -106,7 +105,7 @@ export default function HipaaCompliancePage() {
         </div>
       </section>
 
-      {/* Proof — the GoAgalia case study. */}
+      {/* Proof, the GoAgalia case study. */}
       <section className="py-16 px-4 md:px-36 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
@@ -114,7 +113,7 @@ export default function HipaaCompliancePage() {
           </h2>
           <p className="text-lg text-gray-600 mb-8 max-w-3xl">
             We migrated GoAgalia&apos;s healthcare workforce management platform
-            to a HIPAA-compliant architecture on Amazon EKS — with private
+            to a HIPAA-compliant architecture on Amazon EKS, with private
             networking, autoscaling, GitOps delivery, and full observability.
           </p>
           <div className="flex flex-wrap gap-3 mb-8">
@@ -122,11 +121,11 @@ export default function HipaaCompliancePage() {
               "~35% lower cloud cost",
               "850ms → 320ms API latency",
               "99.7% uptime",
-              "MTTR 40min → 10–12min",
+              "MTTR 40min → 10, 12min",
             ].map((m) => (
               <span
                 key={m}
-                className="text-sm font-medium text-[#152F27] bg-[#152F27]/10 rounded-full px-4 py-2"
+                className="text-sm font-medium text-[#16212e] bg-[#16212e]/10 rounded-full px-4 py-2"
               >
                 {m}
               </span>
@@ -134,7 +133,7 @@ export default function HipaaCompliancePage() {
           </div>
           <Link
             href="/goagalia-healthcare-workforce-management"
-            className="inline-block rounded-full border border-[#152F27] text-[#152F27] font-semibold px-6 py-3 hover:bg-[#152F27] hover:text-white transition-colors"
+            className="inline-block rounded-full border border-[#16212e] text-[#16212e] font-semibold px-6 py-3 hover:bg-[#16212e] hover:text-white transition-colors"
           >
             Read the GoAgalia case study →
           </Link>
@@ -142,7 +141,7 @@ export default function HipaaCompliancePage() {
       </section>
 
       {/* CTA band */}
-      <section className="py-16 px-4 md:px-36 bg-[#000209] text-white">
+      <section className="py-16 px-4 md:px-36 bg-[#0d1526] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Get a free HIPAA readiness review
@@ -150,11 +149,11 @@ export default function HipaaCompliancePage() {
           <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
             Tell us about your healthcare workload and we&apos;ll review your AWS
             or Kubernetes environment against HIPAA&apos;s technical safeguards,
-            then recommend the highest-impact next steps — no obligation.
+            then recommend the highest-impact next steps, no obligation.
           </p>
           <Link
             href="/contact"
-            className="inline-block rounded-full bg-white text-[#000209] font-semibold px-8 py-3 hover:bg-gray-100 transition-colors"
+            className="inline-block rounded-full bg-white text-[#0d1526] font-semibold px-8 py-3 hover:bg-gray-100 transition-colors"
           >
             Book a free HIPAA readiness review
           </Link>
@@ -170,7 +169,7 @@ export default function HipaaCompliancePage() {
           <p className="text-gray-700">
             <Link
               href="/hipaa-aws-hardening-case-study"
-              className="text-[#152F27] font-semibold underline hover:no-underline"
+              className="text-[#16212e] font-semibold underline hover:no-underline"
             >
               HIPAA Hardening for a Healthcare Data Platform on AWS
             </Link>
@@ -178,7 +177,7 @@ export default function HipaaCompliancePage() {
           <p className="text-gray-700">
             <Link
               href="/kubernetes-compliance-platform-case-study"
-              className="text-[#152F27] font-semibold underline hover:no-underline"
+              className="text-[#16212e] font-semibold underline hover:no-underline"
             >
               On-Prem Kubernetes Platform for SOC 2, HIPAA &amp; NIST
             </Link>

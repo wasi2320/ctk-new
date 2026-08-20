@@ -18,7 +18,7 @@ const services = [
 ];
 const projectDetails = {
   client: "Spiderdoor",
-  schedule: "Oct 2024 — Dec 2024",
+  schedule: "Oct 2024 to Dec 2024",
   size: "$10,000 to $49,999",
 };
 const solutionComponents = [
@@ -56,26 +56,26 @@ const metrics = [
   {
     category: "Release Cycles",
     description: "50% faster release cycles due to CI/CD automation",
-    bgColor: "bg-[#1a2e22]",
+    bgColor: "bg-[#16273c]",
     width: "w-[75%]",
   },
   {
     category: "Issue Resolution",
     description: "40% faster issue resolution with monitoring tools",
-    bgColor: "bg-[#1a3b2a]",
+    bgColor: "bg-[#16324f]",
     width: "w-full",
   },
   {
     category: "Security",
     description: "Improved security and high availability",
-    bgColor: "bg-[#3a6a50]",
+    bgColor: "bg-[#2b6ca8]",
     width: "w-[65%]",
   },
   {
     category: "Cost Efficiency",
     description:
       "Cost-efficiency and scalability aligned with future business growth",
-    bgColor: "bg-[#4d7a65]",
+    bgColor: "bg-[#4a86bf]",
     width: "w-[90%]",
   },
 ];

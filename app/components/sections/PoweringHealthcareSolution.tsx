@@ -29,11 +29,10 @@ const PoweringHealthcareSolution = ({
             Services:
           </h3>
           <p className="text-lg font-Nunito text-start md:text-start md:w-[80%] w-full mb-8">
-            Professional Services are redefining how businesses operate,
-            delivering high-impact solutions with agility, efficiency, and
-            precision. Through digital tools and expert strategies,
-            organizations can streamline operations, enhance client experiences,
-            and accelerate innovation. Benefits of Professional Services:
+            Our professional services teams design, build, and operate the cloud
+            and software systems your business runs on. We automate operations,
+            harden security, and ship faster, so your engineers spend less time
+            on infrastructure and more on the product. What you get:
           </p>
 
           <ul className="mt-10 space-y-4">
@@ -46,7 +45,7 @@ const PoweringHealthcareSolution = ({
                 width={10}
               />
               <span className="text-lg font-semibold font-Nunito">
-                Customized strategies tailored to business objectives
+                Cloud architecture designed around your workloads and goals
               </span>
             </li>
 
@@ -58,7 +57,7 @@ const PoweringHealthcareSolution = ({
                 width={10}
               />
               <span className="text-lg font-semibold font-Nunito">
-                Robust cybersecurity for sensitive operations and data
+                Security built into every layer, from IAM to data at rest
               </span>
             </li>
 
@@ -70,7 +69,7 @@ const PoweringHealthcareSolution = ({
                 width={10}
               />
               <span className="text-lg font-semibold font-Nunito">
-                Reduced overheads through automation and outsourcing
+                Lower operating costs through automation and managed infrastructure
               </span>
             </li>
 
@@ -82,7 +81,7 @@ const PoweringHealthcareSolution = ({
                 width={10}
               />
               <span className="text-lg font-semibold font-Nunito">
-                Scalable solutions to support growth and innovation
+                Cloud-native systems that scale with demand
               </span>
             </li>
 
@@ -94,7 +93,7 @@ const PoweringHealthcareSolution = ({
                 width={10}
               />
               <span className="text-lg font-semibold font-Nunito">
-                Enhanced experiences through digital-first engagement
+                Faster delivery through CI/CD and infrastructure as code
               </span>
             </li>
           </ul>

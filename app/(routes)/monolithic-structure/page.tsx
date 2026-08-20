@@ -18,7 +18,7 @@ const services = [
 ];
 const projectDetails = {
   client: "Clyk Studio",
-  schedule: "Feb 2025 — Mar 2025",
+  schedule: "Feb 2025 to Mar 2025",
   size: "$50,000 to $199,999",
 };
 const solutionComponents = [
@@ -46,32 +46,32 @@ const metrics = [
     category: "Scalability",
     description:
       "Scalability achieved with Auto Scaling Groups and Elastic Beanstalk",
-    bgColor: "bg-[#1a2e22]",
+    bgColor: "bg-[#16273c]",
     width: "w-[90%]",
   },
   {
     category: "Availability",
     description:
       "High availability through Application Load Balancer and Route 53",
-    bgColor: "bg-[#1a3b2a]",
+    bgColor: "bg-[#16324f]",
     width: "w-[85%]",
   },
   {
     category: "Security",
     description: "Strong security with Cognito, WAF, and KMS",
-    bgColor: "bg-[#3a6a50]",
+    bgColor: "bg-[#2b6ca8]",
     width: "w-[55%]",
   },
   {
     category: "Errors",
     description: "CI/CD pipelines reduce errors",
-    bgColor: "bg-[#4d7a65]",
+    bgColor: "bg-[#4a86bf]",
     width: "w-[40%]",
   },
   {
     category: "Performance",
     description: "Performance monitoring via CloudWatch, alerts via SNS/Slack",
-    bgColor: "bg-[#2e4d3a]",
+    bgColor: "bg-[#1e3a5c]",
     width: "w-[85%]",
   },
   {
@@ -83,7 +83,7 @@ const metrics = [
   {
     category: "Data Protection",
     description: "Data protection ensured through AWS Backup and EBS snapshots",
-    bgColor: "bg-[#4d7a65]",
+    bgColor: "bg-[#4a86bf]",
     width: "w-[90%]",
   },
 ];

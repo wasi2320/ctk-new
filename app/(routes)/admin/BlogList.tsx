@@ -121,7 +121,7 @@ export default function BlogList({ onEditBlog }: BlogListProps) {
   if (loading && blogs.length === 0) {
     return (
       <div className="flex items-center justify-center py-12">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#000209]"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#0d1526]"></div>
       </div>
     );
   }
@@ -142,7 +142,7 @@ export default function BlogList({ onEditBlog }: BlogListProps) {
           <button
             onClick={handleRefresh}
             disabled={loading}
-            className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#000209] disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0d1526] disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <RefreshCw
               className={`h-4 w-4 mr-2 ${loading ? "animate-spin" : ""}`}
@@ -154,7 +154,7 @@ export default function BlogList({ onEditBlog }: BlogListProps) {
 
       {/* Message */}
       {message && (
-        <div className="mx-6 mt-4 p-3 rounded-md bg-green-50 text-green-700 border border-green-200">
+        <div className="mx-6 mt-4 p-3 rounded-md bg-[#eef6fd] text-[#0b5cad] border border-[#bfdcf5]">
           {message}
         </div>
       )}
@@ -203,7 +203,7 @@ export default function BlogList({ onEditBlog }: BlogListProps) {
                         </div>
                         {blog.categories?.name && (
                           <div className="flex items-center">
-                            <span className="px-2 py-1 bg-[#000209]/10 text-[#000209] text-xs font-medium rounded-full">
+                            <span className="px-2 py-1 bg-[#0d1526]/10 text-[#0d1526] text-xs font-medium rounded-full">
                               {blog.categories.name}
                             </span>
                           </div>
@@ -297,7 +297,7 @@ export default function BlogList({ onEditBlog }: BlogListProps) {
                   </h4>
                   <button
                     onClick={() => setShowPreview(!showPreview)}
-                    className="text-sm text-[#000209] hover:text-[#000209]/80"
+                    className="text-sm text-[#0d1526] hover:text-[#0d1526]/80"
                   >
                     {showPreview ? "Show Markdown" : "Show Preview"}
                   </button>

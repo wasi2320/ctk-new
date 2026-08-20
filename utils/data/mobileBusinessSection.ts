@@ -1,30 +1,30 @@
 export const MOBILE_BUSINESS_SECTION = {
-  heading: "How will your Business upscale?",
+  heading: "Mobile apps your users keep",
   description:
-    "Leverage our mobile development expertise to drive innovation and efficiency within your team.By utilizing the latest technologies, we ensure your mobile solutions are strategically designed to accelerate growth and enhance your business transformation.",
+    "We build native and cross-platform apps backed by cloud infrastructure that scales. Strategically designed, well engineered, and ready to grow with your business.",
   cards: [
     {
       title: "Stronger Brand Presence",
       description:
-        "Our mobile solutions enhance yourbrand identity and expand yourreach on Android and iOS.",
+        "Our mobile apps extend your brand and expand your reach across Android and iOS.",
       imageSrc: "/Images/Mobile_Img_1.svg",
     },
     {
-      title: "Increased Revenue ",
+      title: "Increased Revenue",
       description:
-        "We create user-friendly apps that drive sales, boost engagement, and unlock new revenue streams.",
+        "We build user-friendly apps that drive sales, boost engagement, and open new revenue streams.",
       imageSrc: "/Images/Mobile_Img_2.svg",
     },
     {
-      title: "Data Driven Insights",
+      title: "Data-Driven Insights",
       description:
-        "We integrate analytics to help youunderstand user behavior and refine your business strategy.",
+        "We integrate analytics that show how users behave, so you can refine your product and strategy with evidence.",
       imageSrc: "/Images/Mobile_Img_3.svg",
     },
     {
-      title: "Imporved Conversions",
+      title: "Improved Conversions",
       description:
-        "Optimized design and functionality lead to a better user experience and higher conversion rates.",
+        "Thoughtful design and performance lead to a better experience and higher conversion rates.",
       imageSrc: "/Images/Mobile_Img_4.svg",
     },
   ],

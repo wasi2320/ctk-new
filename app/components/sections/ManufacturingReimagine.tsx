@@ -16,12 +16,9 @@ const ManufacturingReimagine = ({ heading }: ManufacturingReimagineProps) => {
           className="font-Nunito fw-bold md:text-2xl"
           style={{ lineHeight: "45px" }}
         >
-          Empowering Your Industrial Ecosystem with Custom Cloud-Based
-          Manufacturing Solutions;We offer cloud-based manufacturing solutions
-          tailored to your specific needs. From upgrading old systems to
-          improving production processes and security, we provide full support
-          to ensure your platform is flexible, scalable, and ready for the
-          future.
+          Custom cloud platforms for manufacturers. We modernize legacy
+          systems, improve production workflows, and strengthen security so
+          your platform stays flexible, scalable, and ready for the future.
         </p>
       </div>
     </section>

@@ -15,7 +15,7 @@ const EcommerceFutureHealthcare = ({}: EcommerceFutureHealthcareProps) => {
               Our Portfolio
             </h3>
             <h3 className="md:text-xl text-lg text-Nunito mb-3">
-              Digital Commerce Excellence
+              Cloud engineering case studies
             </h3>
           </div>
 
@@ -47,7 +47,7 @@ const EcommerceFutureHealthcare = ({}: EcommerceFutureHealthcareProps) => {
               Cost Optimization
             </h3>
             <h3 className="md:text-lg text-lg text-Nunito mb-3">
-              Automated deployment reducing infrastructure costs by 40%
+              Automated deployment for faster releases and lower cloud cost
             </h3>
 
             <div className="flex justify-center">

@@ -186,7 +186,7 @@ h3 {
   left: -100%;
   width: 100%;
   height: 2px;
-  background: #050C06;
+  background: #0d1526;
   transition: left 0.7s ease-in-out;
 }
 
@@ -199,7 +199,7 @@ h3 {
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #000209 !important; /* Active dot color */
+  background-color: #0d1526 !important; /* Active dot color */
 }
 .clutch-widget{
   width: 100% !important;
@@ -313,15 +313,15 @@ h3 {
 }
 
 .markdown-content a {
-  @apply text-red-600 hover:text-red-700 underline;
+  @apply text-[#0972d3] hover:text-[#0b5cad] underline;
 }
 
 .markdown-content blockquote {
-  @apply border-l-4 border-red-500 pl-4 italic text-gray-600 my-4;
+  @apply border-l-4 border-[#0972d3] pl-4 italic text-gray-600 my-4;
 }
 
 .markdown-content code {
-  @apply bg-gray-100 text-red-600 px-1 py-0.5 rounded text-sm;
+  @apply bg-gray-100 text-[#0b5cad] px-1 py-0.5 rounded text-sm;
 }
 
 .markdown-content pre {
@@ -349,7 +349,7 @@ h3 {
   @apply bg-gray-50 font-semibold;
 }
 
-/* Testimonials marquee — continuous leftward auto-scroll */
+/* Testimonials marquee, continuous leftward auto-scroll */
 @keyframes testimonial-marquee {
   from {
     transform: translateX(0);
@@ -373,4 +373,26 @@ h3 {
   .testimonial-marquee-track {
     animation: none;
   }
+}
+
+/* =====================================================================
+   Redesign typography, apply the AWS design-system fonts site-wide.
+   The homepage (.home-rd) and shared chrome (.ctk-hd/.ctk-ft) already use
+   Sora + Inter, so this block re-skins the legacy pages to match. Declared
+   last so it wins over the earlier ClashGrotesk / Nunito rules.
+   ===================================================================== */
+body {
+  font-family: var(--font-inter), "Inter", system-ui, -apple-system, "Segoe UI", sans-serif !important;
+}
+h1, h2, h3 {
+  font-family: var(--font-sora), "Sora", system-ui, sans-serif !important;
+  letter-spacing: -0.02em;
+}
+h4, h5, h6,
+.nunito-medium, .nunito-semiBold, .nunito-bold, .nunito-extraLight {
+  font-family: var(--font-inter), "Inter", system-ui, sans-serif !important;
+}
+/* Keep the redesign components on their intended display face. */
+.home-rd h4, .ctk-ft h4 {
+  font-family: var(--font-sora), "Sora", system-ui, sans-serif !important;
 }

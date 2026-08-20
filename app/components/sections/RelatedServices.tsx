@@ -32,14 +32,14 @@ export default function RelatedServices({
             <Link
               key={service.href}
               href={service.href}
-              className="px-5 py-3 rounded-full border border-gray-300 text-gray-800 hover:border-[#000209] hover:text-[#000209] transition-colors"
+              className="px-5 py-3 rounded-full border border-gray-300 text-gray-800 hover:border-[#0d1526] hover:text-[#0d1526] transition-colors"
             >
               {service.name}
             </Link>
           ))}
           <Link
             href="/contact"
-            className="px-5 py-3 rounded-full bg-[#000209] text-white hover:bg-[#000209]/90 transition-colors"
+            className="px-5 py-3 rounded-full bg-[#0d1526] text-white hover:bg-[#0d1526]/90 transition-colors"
           >
             Talk to an expert
           </Link>

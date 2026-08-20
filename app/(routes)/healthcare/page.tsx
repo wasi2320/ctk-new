@@ -13,9 +13,9 @@ export default function HealthcarePage() {
     <div>
       <HeroSection
         title="Healthcare"
-        description="HealthTech blends healthcare with innovative technology to create smarter, faster, and more personalized patient care experiences. From virtual consultations to cloud-powered healthcare platforms, it enables organizations to innovate, scale, and meet the evolving needs of patients worldwide."
+        description="We build secure, HIPAA-ready cloud infrastructure for healthcare and HealthTech teams. From telehealth platforms to patient data and interoperability, we handle the AWS engineering so your systems stay compliant, available, and ready to scale."
         imageSrc="/Images/healthcare.png"
-        buttonText="Let’s connect"
+        buttonText="Book a free audit"
         buttonLink="/contact"
       />
       <PoweringExpertiseTailoredSection />

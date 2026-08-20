@@ -78,9 +78,9 @@ export const pageFaqs: Record<string, FaqItem[]> = {
         "CodetoKloud's Kubernetes consulting covers cluster architecture and setup on Amazon EKS, GitOps delivery with ArgoCD, Helm-based application packaging, horizontal and cluster autoscaling, observability with Prometheus, Grafana, Datadog, and CloudWatch, cost optimization, security hardening, and ongoing managed operations including version upgrades and disaster recovery.",
     },
     {
-      question: "EKS vs ECS vs Fargate — which should we use?",
+      question: "EKS vs ECS vs Fargate, which should we use?",
       answer:
-        "Amazon EKS is best when you need full Kubernetes portability, a rich ecosystem (Helm, ArgoCD, operators), or already run Kubernetes elsewhere. Amazon ECS is a simpler AWS-native container orchestrator that is faster to adopt for straightforward workloads. AWS Fargate is a serverless compute engine that runs containers for either EKS or ECS without managing servers. CodetoKloud helps teams choose based on portability needs, team skills, and operational overhead — and has delivered both ECS and EKS platforms in production.",
+        "Amazon EKS is best when you need full Kubernetes portability, a rich ecosystem (Helm, ArgoCD, operators), or already run Kubernetes elsewhere. Amazon ECS is a simpler AWS-native container orchestrator that is faster to adopt for straightforward workloads. AWS Fargate is a serverless compute engine that runs containers for either EKS or ECS without managing servers. CodetoKloud helps teams choose based on portability needs, team skills, and operational overhead, and has delivered both ECS and EKS platforms in production.",
     },
     {
       question: "How do you reduce Kubernetes and EKS costs?",
@@ -95,7 +95,7 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "What is GitOps and do you use ArgoCD?",
       answer:
-        "GitOps is a delivery model where the desired state of your Kubernetes environment is stored in Git and automatically synced to the cluster, so every change is versioned, reviewable, and auditable. CodetoKloud implements GitOps with ArgoCD and Helm — on one client pipeline this delivered a 95% deployment success rate and reduced manual deployment effort by 80%.",
+        "GitOps is a delivery model where the desired state of your Kubernetes environment is stored in Git and automatically synced to the cluster, so every change is versioned, reviewable, and auditable. CodetoKloud implements GitOps with ArgoCD and Helm, on one client pipeline this delivered a 95% deployment success rate and reduced manual deployment effort by 80%.",
     },
     {
       question: "Can you migrate our applications to Kubernetes or Amazon EKS?",
@@ -105,7 +105,7 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "Can Kubernetes run HIPAA or SOC 2 compliant workloads?",
       answer:
-        "Yes. Kubernetes can host compliant workloads when the cluster is configured with the right controls — private networking, encryption, access controls, audit logging, and monitoring. CodetoKloud has built HIPAA-compliant infrastructure on Amazon EKS for healthcare clients and applies the same controls for SOC 2 and PCI DSS environments.",
+        "Yes. Kubernetes can host compliant workloads when the cluster is configured with the right controls, private networking, encryption, access controls, audit logging, and monitoring. CodetoKloud has built HIPAA-compliant infrastructure on Amazon EKS for healthcare clients and applies the same controls for SOC 2 and PCI DSS environments.",
     },
     {
       question: "Do you provide ongoing Kubernetes management and upgrades?",
@@ -194,7 +194,7 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "Has CodetoKloud built HIPAA-compliant systems before?",
       answer:
-        "Yes. CodetoKloud migrated GoAgalia's healthcare workforce management platform to a HIPAA-compliant architecture on Amazon EKS with autoscaling, GitOps, and full observability — cutting cloud costs by roughly 35%, reducing API latency from 850ms to 320ms, and reaching 99.7% uptime.",
+        "Yes. CodetoKloud migrated GoAgalia's healthcare workforce management platform to a HIPAA-compliant architecture on Amazon EKS with autoscaling, GitOps, and full observability, cutting cloud costs by roughly 35%, reducing API latency from 850ms to 320ms, and reaching 99.7% uptime.",
     },
     {
       question: "How does the BAA work with AWS?",
@@ -204,7 +204,7 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "Can you help us prepare for a HIPAA assessment?",
       answer:
-        "Yes. CodetoKloud implements and documents the technical safeguards a HIPAA assessment looks for — encryption, access control, logging, and disaster recovery. Formal assessments are performed by independent third parties; we prepare your infrastructure and evidence so that process goes smoothly.",
+        "Yes. CodetoKloud implements and documents the technical safeguards a HIPAA assessment looks for, encryption, access control, logging, and disaster recovery. Formal assessments are performed by independent third parties; we prepare your infrastructure and evidence so that process goes smoothly.",
     },
   ],
 
@@ -212,7 +212,7 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "What is SOC 2?",
       answer:
-        "SOC 2 is a security framework based on the Trust Services Criteria — security, availability, processing integrity, confidentiality, and privacy. A SOC 2 report is issued by an independent auditor after evaluating your controls. CodetoKloud builds and operates the AWS infrastructure and controls that a SOC 2 audit evaluates.",
+        "SOC 2 is a security framework based on the Trust Services Criteria, security, availability, processing integrity, confidentiality, and privacy. A SOC 2 report is issued by an independent auditor after evaluating your controls. CodetoKloud builds and operates the AWS infrastructure and controls that a SOC 2 audit evaluates.",
     },
     {
       question: "Can CodetoKloud make us SOC 2 compliant?",
@@ -222,12 +222,12 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "What controls does CodetoKloud implement for SOC 2 on AWS?",
       answer:
-        "CodetoKloud implements least-privilege IAM and access controls, centralized audit logging, change management through infrastructure-as-code, encryption at rest and in transit, monitoring and alerting, and incident response processes — mapped to the SOC 2 Trust Services Criteria.",
+        "CodetoKloud implements least-privilege IAM and access controls, centralized audit logging, change management through infrastructure-as-code, encryption at rest and in transit, monitoring and alerting, and incident response processes, mapped to the SOC 2 Trust Services Criteria.",
     },
     {
       question: "How long does SOC 2 readiness take?",
       answer:
-        "It depends on the current state of your infrastructure. CodetoKloud starts with a gap assessment, then closes the technical gaps — often the fastest path is standardizing infrastructure-as-code, logging, and access controls before your audit window begins.",
+        "It depends on the current state of your infrastructure. CodetoKloud starts with a gap assessment, then closes the technical gaps, often the fastest path is standardizing infrastructure-as-code, logging, and access controls before your audit window begins.",
     },
     {
       question: "Do you work with our auditor?",
@@ -250,7 +250,7 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "How do you reduce PCI DSS scope?",
       answer:
-        "CodetoKloud reduces PCI scope by segmenting the cardholder data environment from the rest of your infrastructure and, where appropriate, recommending tokenization or third-party payment processors so fewer systems fall under PCI DSS requirements — which lowers both risk and cost.",
+        "CodetoKloud reduces PCI scope by segmenting the cardholder data environment from the rest of your infrastructure and, where appropriate, recommending tokenization or third-party payment processors so fewer systems fall under PCI DSS requirements, which lowers both risk and cost.",
     },
     {
       question: "What PCI DSS controls does CodetoKloud implement?",
@@ -289,6 +289,34 @@ export const pageFaqs: Record<string, FaqItem[]> = {
       question: "Can AI be deployed securely?",
       answer:
         "Yes. We help deploy AI systems using secure infrastructure, access controls, API security, monitoring, and scalable cloud architecture.",
+    },
+  ],
+
+  "/web-solutions": [
+    {
+      question: "What kind of web solutions do you build?",
+      answer:
+        "We design and build fast, secure web applications and sites on modern stacks, backed by cloud infrastructure on AWS. That includes customer-facing sites, web apps, dashboards, and APIs.",
+    },
+    {
+      question: "Do you host and maintain the sites you build?",
+      answer:
+        "Yes. We can deploy your web application on AWS with CI/CD, monitoring, and security, and provide ongoing maintenance, updates, and support after launch.",
+    },
+    {
+      question: "Can you improve the performance and SEO of an existing site?",
+      answer:
+        "Yes. We audit and improve Core Web Vitals, page speed, accessibility, and technical SEO, and can re-platform slow or fragile sites onto a modern, maintainable stack.",
+    },
+    {
+      question: "Do your web builds scale for traffic spikes?",
+      answer:
+        "Yes. We architect on AWS so your site handles growth and traffic spikes with autoscaling, caching, and a CDN, without downtime during peak demand.",
+    },
+    {
+      question: "Will we own the code and infrastructure?",
+      answer:
+        "Yes. You own the code, the AWS account, and the infrastructure. We document and hand over what we build so your team stays in control.",
     },
   ],
 

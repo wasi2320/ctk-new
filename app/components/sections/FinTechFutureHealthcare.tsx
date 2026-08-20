@@ -15,7 +15,7 @@ const FinTechFutureHealthcare = ({}: FinTechFutureHealthcareProps) => {
               Our Portfolio
             </h3>
             <h3 className="md:text-xl text-lg text-Nunito mb-3">
-              Innovative Financial Technology Solutions
+              Cloud and security engineering for financial platforms
             </h3>
           </div>
 

@@ -31,15 +31,14 @@ const PeVcImpactSection = () => {
         {/* Left side - Text content */}
         <div className="md:w-[50%] w-full">
           <h2 className="md:text-5xl text-2xl font-bold text-black mb-6">
-            The Impact of Equity and VC Firms on Companies
+            How We Support Private Equity and VC Firms
           </h2>
           <p className="md:text-lg text-base text-gray-700 leading-relaxed">
-            As a private equity and VC firm, we empower companies by providing
-            the capital and strategic guidance needed to accelerate growth and
-            innovation. We work closely with management to optimize operations,
-            strengthen leadership, and unlock new market opportunities. Our
-            extensive network and hands-on support help companies scale
-            efficiently while enhancing governance and long-term value.
+            We partner with private equity and VC firms to strengthen the
+            technology behind their portfolio. From cloud infrastructure and
+            security to cost control and technical due diligence, we give
+            portfolio companies the engineering foundation to scale efficiently,
+            tighten governance, and protect long-term value.
           </p>
         </div>
 

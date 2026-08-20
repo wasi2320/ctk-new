@@ -14,9 +14,9 @@ const CloudMigration = () => {
       <HeroSection
         title="Professional Services: Powering business 
         Excellence"
-        description="Professional Services blend expert knowledge with modern technology to deliver agile, efficient, and results-driven solutions. From digital transformation to managed services, we empower organizations to evolve, scale, and stay ahead in today’s dynamic market landscape."
+        description="We combine senior engineering with modern cloud technology to deliver practical, results-driven services. From digital transformation to managed operations, we help organizations modernize, scale, and run reliably."
         imageSrc="/Images/healthcare.png"
-        buttonText="Let’s connect"
+        buttonText="Book a free audit"
         buttonLink="/contact"
       />
       <PoweringExpertiseTailoredSection />

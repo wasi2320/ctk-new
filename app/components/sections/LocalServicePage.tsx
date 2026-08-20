@@ -36,7 +36,6 @@ export default function LocalServicePage({ data }: { data: LocalData }) {
         title={data.heroTitle}
         description={data.intro}
         imageSrc={data.heroImage}
-        cover
         buttonText="Book a free consultation"
         buttonLink="/contact"
       />
@@ -73,10 +72,10 @@ export default function LocalServicePage({ data }: { data: LocalData }) {
               <Link
                 key={s.href}
                 href={s.href}
-                className="flex items-center justify-between rounded-2xl border border-gray-200 px-6 py-5 hover:border-[#152F27] hover:shadow-sm transition-all"
+                className="flex items-center justify-between rounded-2xl border border-gray-200 px-6 py-5 hover:border-[#16212e] hover:shadow-sm transition-all"
               >
                 <span className="font-semibold text-gray-900">{s.name}</span>
-                <span aria-hidden="true" className="text-[#152F27]">
+                <span aria-hidden="true" className="text-[#16212e]">
                   →
                 </span>
               </Link>
@@ -118,7 +117,7 @@ export default function LocalServicePage({ data }: { data: LocalData }) {
               <Link
                 key={c.href}
                 href={c.href}
-                className="block rounded-2xl border border-gray-200 p-6 hover:border-[#152F27] hover:shadow-md transition-all"
+                className="block rounded-2xl border border-gray-200 p-6 hover:border-[#16212e] hover:shadow-md transition-all"
               >
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
                   {c.title}
@@ -136,7 +135,7 @@ export default function LocalServicePage({ data }: { data: LocalData }) {
       />
 
       {/* CTA */}
-      <section className="py-16 px-4 md:px-36 bg-[#000209] text-white">
+      <section className="py-16 px-4 md:px-36 bg-[#0d1526] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Let&apos;s talk about your {data.city} project
@@ -147,7 +146,7 @@ export default function LocalServicePage({ data }: { data: LocalData }) {
           </p>
           <Link
             href="/contact"
-            className="inline-block rounded-full bg-white text-[#000209] font-semibold px-8 py-3 hover:bg-gray-100 transition-colors"
+            className="inline-block rounded-full bg-white text-[#0d1526] font-semibold px-8 py-3 hover:bg-gray-100 transition-colors"
           >
             Book a free consultation
           </Link>

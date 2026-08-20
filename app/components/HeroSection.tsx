@@ -64,13 +64,13 @@ const imageVariants = {
 const buttonVariants = {
   rest: {
     scale: 1,
-    backgroundColor: "#000000",
-    color: "#ffffff",
+    backgroundColor: "#ff9900",
+    color: "#16212e",
   },
   hover: {
     scale: 1.05,
-    backgroundColor: "#ffffff",
-    color: "#000000",
+    backgroundColor: "#16212e",
+    color: "#ffffff",
     transition: {
       duration: 0.3,
       ease: "easeInOut",
@@ -89,7 +89,7 @@ const HeroSection = ({
   description,
   imageSrc,
   cover = false,
-  buttonText = "Let's connect", // default value
+  buttonText = "Book a free audit", // default value
   buttonLink = "/contact",
 }: HeroSectionProps) => {
   const isAnchorLink = Boolean(buttonLink?.startsWith("#"));

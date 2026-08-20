@@ -16,16 +16,16 @@ export default function MetricsDisplay({
   return (
     <div
       ref={containerRef}
-      className="w-full p-12 mx-auto shadow-xl bg-[url('/Images/section_bg.png')] bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-700"
+      className="w-full p-12 mx-auto shadow-xl bg-[url('/section_bg.png')] bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-700"
     >
       <div className="max-w-6xl mx-auto">
         <div className="animate-fade-in">
-          <h2 className="text-4xl font-bold mb-2 text-start">
+          <h2 className="text-4xl font-bold mb-2 text-start text-white">
             Outcomes & Success Metrics
           </h2>
-          <p className="text-2xl text-start mb-8">
-            Significant reduction in scam calls, improved uptime, enhanced
-            scalability, and efficient AI integration.
+          <p className="text-2xl text-start mb-8 text-white/90">
+            Measurable improvements in performance, reliability, scalability, and
+            cost.
           </p>
         </div>
         {metrics.map((metric, index) => (

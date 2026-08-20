@@ -8,6 +8,8 @@ import JsonLd from "@/app/components/JsonLd";
 import { coreServiceSchemas } from "@/lib/structured-data";
 import { pageMetadata } from "@/lib/page-metadata";
 import RelatedServices from "@/app/components/sections/RelatedServices";
+import FaqSection from "@/app/components/sections/FaqSection";
+import { pageFaqs } from "@/lib/faqs";
 
 export const metadata = pageMetadata("/cloud-service");
 const CloudService = () => {
@@ -38,6 +40,7 @@ const CloudService = () => {
       <CloudDifferentiateSection />
       <TechDisplaySection techDisplaySection={cloudTechStack} />
       <CardScrollSection />
+      <FaqSection items={pageFaqs["/cloud-service"]} />
       <RelatedServices currentPath="/cloud-service" />
     </div>
   );

@@ -1,7 +1,7 @@
 export const PROFESSIONAL_SERVICES_SECTION = {
   heading: "How We Help You with Professional Services",
   description:
-    "We deliver tailored professional service solutions that align with your business goals. Whether modernizing legacy systems, enhancing workflows, or optimizing performance, we offer end-to-end support that makes your organization more adaptive, secure, and ready for tomorrow.",
+    "We deliver professional services that match your business goals. Whether you are modernizing legacy systems, improving workflows, or tuning performance, we provide the support that makes your organization more adaptive, secure, and ready for what is next.",
   cards: [
     {
       icon: "/svgs/focus.svg",
@@ -13,7 +13,7 @@ export const PROFESSIONAL_SERVICES_SECTION = {
       icon: "/svgs/automate.svg",
       title: "Digital Transformation Services",
       description:
-        "We help organizations modernize their operations through digital transformation, automating processes and implementing cutting-edge technologies for enhanced efficiency.",
+        "We help organizations modernize operations, automating processes and adopting modern technology for real gains in efficiency.",
     },
     {
       icon: "/svgs/isolate.svg",
@@ -31,7 +31,7 @@ export const PROFESSIONAL_SERVICES_SECTION = {
       icon: "/svgs/empower.svg",
       title: "Technology Integration",
       description:
-        "Seamlessly integrate new technologies with your existing infrastructure, ensuring smooth transitions and minimal disruption to your operations.",
+        "Integrate new technology with your existing infrastructure, with smooth transitions and minimal disruption to your operations.",
     },
     {
       icon: "/svgs/valueable.svg",

@@ -78,7 +78,7 @@ export default function AdminPage() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#000209]"></div>
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#0d1526]"></div>
       </div>
     );
   }
@@ -118,7 +118,7 @@ export default function AdminPage() {
               }}
               className={`py-2 px-1 border-b-2 font-medium text-sm ${
                 activeTab === "create"
-                  ? "border-[#000209] text-[#000209]"
+                  ? "border-[#0d1526] text-[#0d1526]"
                   : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
               }`}
             >
@@ -128,7 +128,7 @@ export default function AdminPage() {
               onClick={() => setActiveTab("manage")}
               className={`py-2 px-1 border-b-2 font-medium text-sm ${
                 activeTab === "manage"
-                  ? "border-[#000209] text-[#000209]"
+                  ? "border-[#0d1526] text-[#0d1526]"
                   : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
               }`}
             >

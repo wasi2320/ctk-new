@@ -6,6 +6,6 @@ export const DEVOPS_BUSINESS_SECTION = {
   points: [
     "Faster Time-to-Market",
     "Enhanced Collaboration",
-    "Scalable Infrastructure ",
+    "Scalable Infrastructure",
   ],
 };

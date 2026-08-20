@@ -12,15 +12,14 @@ const RealEstatePage = () => {
     <div>
       <HeroSection
         title="Real Estate"
-        description="We offer expert real estate services for buying, selling, leasing, and property management. Our team ensures smooth transactions, reliable tenant matching, and hassle-free property care. With strategic consulting and valuation, we help you make smart investment decisions and maximize returns."
+        description="We build the cloud platforms and software that modern real estate businesses run on. From listing and transaction platforms to tenant portals, property-management systems, and data and valuation tools, we deliver the engineering that keeps your systems fast, secure, and ready to scale."
         imageSrc="/svgs/realEstate.svg"
-        cover={true}
       />
       <RealEstateServicesSection />
       <RealEstateSolutionsSection />
       <ProfessionalServices
         heading="We Help You Reimagine the Real Estate Industry"
-        description="We provide comprehensive real estate solutions tailored to meet the unique needs of our clients. From buying and selling to leasing and property management, our expert team is dedicated to delivering seamless and efficient services. We combine market knowledge, personalized support, and innovative strategies to help you achieve your real estate goals with confidence."
+        description="We build the cloud platforms and software that modern real estate businesses run on. From listing and property-management platforms to data, security, and automation, we deliver the engineering support that keeps your systems fast, reliable, and ready to scale."
       />
       <OurPortfolioSection />
       <ContactUsSection />

@@ -13,10 +13,9 @@ const CloudMigration = () => {
     <div>
       <HeroSection
         title="Manufacturing"
-        description="Manufacturing solutions blend industrial processes with innovative technology to create smarter, faster, and more personalized production.   
-        From automated factories to cloud-powered platforms, it enables enterprises to innovate, scale, and meet the evolving needs of the market."
-        imageSrc="/Images/manufacturing.svg"
-        buttonText="Let’s connect"
+        description="We build the cloud and data infrastructure behind modern manufacturing. From IoT and shop-floor data to ERP integration and analytics, we handle the AWS engineering so your systems run reliably and scale with production."
+        imageSrc="/Images/manufacturing.webp"
+        buttonText="Book a free audit"
         buttonLink="/contact"
       />
       <ManufacturingExpertiseTailoredSection />

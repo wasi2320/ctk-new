@@ -1,7 +1,7 @@
 export const GROWTH_SECTION = {
   heading: "How will your Business upscale?",
   description:
-    "Cloud migration allows your business to scale by providing flexible, on-demand resources. It boosts efficiency through process automation, handles increased traffic seamlessly, and opens new growth opportunities. With cloud technology, you can enhance performance, improve collaboration, and foster innovation, driving business success and expansion.",
+    "Cloud migration lets your business scale with flexible, on-demand resources. It improves efficiency through automation, absorbs traffic spikes, and opens new growth opportunities, while improving performance and collaboration across your teams.",
   cards: [
     {
       title: "Growth Opportunities",

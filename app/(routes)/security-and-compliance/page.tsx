@@ -8,6 +8,8 @@ import JsonLd from "@/app/components/JsonLd";
 import { coreServiceSchemas } from "@/lib/structured-data";
 import { pageMetadata } from "@/lib/page-metadata";
 import RelatedServices from "@/app/components/sections/RelatedServices";
+import FaqSection from "@/app/components/sections/FaqSection";
+import { pageFaqs } from "@/lib/faqs";
 import ComplianceLinks from "@/app/components/sections/ComplianceLinks";
 
 export const metadata = pageMetadata("/security-and-compliance");
@@ -31,7 +33,6 @@ const SecurityAndCompliance = () => {
         title="Stays ahead of threats with security and compliance solutions"
         description="Solutions, designed to protect your data, mitigate risks, and meet industry regulations with confidence."
         imageSrc="/Images/Security_Hero.png"
-        cover={true}
       />
       <TailoredSection />
       <UpscaleSection />
@@ -39,6 +40,7 @@ const SecurityAndCompliance = () => {
       <TechDisplaySection techDisplaySection={securityTechStack} />
       <CardScrollSection />
       <ComplianceLinks currentPath="/security-and-compliance" />
+      <FaqSection items={pageFaqs["/security-and-compliance"]} />
       <RelatedServices currentPath="/security-and-compliance" />
     </div>
   );

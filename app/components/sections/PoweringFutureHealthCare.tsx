@@ -17,7 +17,7 @@ const PoweringFutureHealthCare = ({
               Our Portfolio
             </h3>
             <h3 className="md:text-xl text-lg text-Nunito mb-3">
-              Cutting-Edge Healthcare Solutions
+              Modern Healthcare Solutions
             </h3>
           </div>
 

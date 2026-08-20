@@ -1,30 +1,30 @@
 export const WEB_BUSINESS_SECTION = {
-  heading: "How will your Business upscale?",
+  heading: "Web platforms built to perform",
   description:
-    "Empower your team with web solutions that drive innovation and efficiency. Our expertise in cutting-edge technologies ensures your web presence stays ahead of the curve, fostering growth and transformation for your business.",
+    "We design and build fast, reliable web applications on modern stacks and AWS. Sites and platforms engineered for performance, security, and growth, not a locked template.",
   cards: [
     {
-      title: "Tailored Solution",
+      title: "Built for Your Goals",
       description:
-        "Start by aligning your website with your brand identity and business goals. We create uniquely designed websites tailored to fit your specific needs.",
+        "We build websites and web apps around your brand and business goals, designed and coded to fit your specific needs, and fully owned by you.",
       imageSrc: "/Images/Web_Img_1.svg",
     },
     {
-      title: "Competitive Advantage",
+      title: "Credibility That Converts",
       description:
-        "Stay ahead of the competition. With a website that reflects innovation and builds trust, you’ll strengthen your position in your industry.",
+        "A fast, modern, trustworthy site strengthens your position and earns confidence from the first visit.",
       imageSrc: "/Images/Web_Img_2.svg",
     },
     {
-      title: "Increased online visibility",
+      title: "Found in Search",
       description:
-        "Boost your brand’s credibility and improve your search engine rankings with a professionally designed website that gets noticed.",
+        "Clean, technically sound builds that load fast and rank, with strong Core Web Vitals and SEO in place from the start.",
       imageSrc: "/Images/Web_Img_3.svg",
     },
     {
       title: "Higher Conversion Rates",
       description:
-        "Finally, turn your visitors intoloyal customers with a fast-loading, high-ranking website that drives conversionsand business growth",
+        "Turn visitors into customers with fast-loading pages and clear paths to action that drive conversions and growth.",
       imageSrc: "/Images/Web_Img_4.svg",
     },
   ],

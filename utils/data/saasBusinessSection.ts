@@ -1,12 +1,12 @@
 export const SAAS_BUSINESS_SECTION = {
-  heading: "How SaaS and ISVs Empower Companies",
+  heading: "How SaaS and ISVs power modern companies",
   description:
-    "SaaS and Independent Software Vendors (ISVs) empower businesses by delivering flexible, scalable, and cost-efficient software solutions that adapt to rapidly changing needs. These cloud-based platforms reduce infrastructure burdens, accelerate innovation, and provide real-time access to critical tools—allowing companies to focus more on growth and less on maintenance.",
+    "SaaS and Independent Software Vendors (ISVs) give businesses flexible, scalable, cost-efficient software that adapts as needs change. Cloud-based platforms cut infrastructure overhead, speed up delivery, and put critical tools a click away, so teams spend more time on growth and less on maintenance.",
   image: "/svgs/empower.svg",
   bulletPoints: [
-    "Eliminate the need for heavy upfront infrastructure costs.",
-    "Provide remote access to tools for global, distributed teams.",
+    "Remove the need for heavy upfront infrastructure costs.",
+    "Give global, distributed teams remote access to the tools they need.",
     "Offer customizable solutions that scale with business growth.",
-    "Enable seamless updates and continuous improvements.",
+    "Enable smooth updates and continuous improvement.",
   ],
 };

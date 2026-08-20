@@ -17,7 +17,7 @@ const ManufacturingFutureHealthcare = ({
               Our Portfolio
             </h3>
             <h3 className="md:text-xl text-lg text-Nunito mb-3">
-              Innovative Manufacturing Technology
+              Cloud and DevOps engineering for manufacturers
             </h3>
           </div>
 

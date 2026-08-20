@@ -117,7 +117,7 @@ export default async function BlogPostPage({
               {formatDate(blog.created_at)}
             </div>
             {blog.categories?.name && (
-              <span className="px-3 py-1 bg-[#000209]/10 text-[#000209] text-sm font-medium rounded-full">
+              <span className="px-3 py-1 bg-[#0d1526]/10 text-[#0d1526] text-sm font-medium rounded-full">
                 {blog.categories.name}
               </span>
             )}
@@ -181,7 +181,7 @@ export default async function BlogPostPage({
           <div className="flex justify-between items-center">
             <Link
               href="/blogs"
-              className="inline-flex items-center text-[#000209] hover:text-[#000209]/80"
+              className="inline-flex items-center text-[#0d1526] hover:text-[#0d1526]/80"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Blogs
@@ -191,6 +191,32 @@ export default async function BlogPostPage({
             </div>
           </div>
         </footer>
+
+        {/* Lead-gen CTA band */}
+        <div className="mt-14 rounded-2xl overflow-hidden bg-gradient-to-br from-[#16212e] via-[#0d5cad] to-[#2b8fe8] text-white px-6 md:px-10 py-10 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">
+            Want this running in your cloud?
+          </h2>
+          <p className="text-white/85 max-w-2xl mx-auto mb-6">
+            Get a free, no-obligation review of your AWS, DevOps, and Kubernetes
+            setup from an AWS Advanced Tier Partner, with prioritized
+            recommendations within one business day.
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Link
+              href="/contact"
+              className="rounded-full px-6 py-3 bg-[#ff9900] text-[#16212e] font-semibold hover:brightness-95 transition"
+            >
+              Book a free audit
+            </Link>
+            <Link
+              href="/kubernetes"
+              className="rounded-full px-6 py-3 border border-white/30 text-white font-semibold hover:bg-white/10 transition"
+            >
+              Explore our services
+            </Link>
+          </div>
+        </div>
       </article>
     </div>
   );

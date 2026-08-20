@@ -5,7 +5,7 @@
  * - inline=false (default): a styled button/link that opens the scheduler.
  * - inline=true: an embedded scheduler iframe (used on the /thank-you page).
  */
-// Public scheduling link — not a secret, so we default to the live value and
+// Public scheduling link, not a secret, so we default to the live value and
 // let env override it. This makes "Book a call" work on deploy with no env step.
 const CALENDLY_URL =
   process.env.NEXT_PUBLIC_CALENDLY_URL ||
@@ -46,7 +46,7 @@ export default function BookCall({
       rel="noopener noreferrer"
       className={
         className ||
-        "inline-block rounded-full bg-[#152F27] text-white font-semibold px-8 py-3 hover:bg-[#152F27]/90 transition-colors"
+        "inline-block rounded-full bg-[#16212e] text-white font-semibold px-8 py-3 hover:bg-[#16212e]/90 transition-colors"
       }
     >
       {label}

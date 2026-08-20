@@ -58,12 +58,12 @@ const FinancialServicesSection = () => {
     {
       title: "Expert-Led, Not Just AI-Driven",
       description:
-        "While we use technology to enhance efficiency, every financial decision is backed by experienced professionals—real people with real expertise.",
+        "While we use technology to enhance efficiency, every financial decision is backed by experienced professionals, real people with real expertise.",
     },
     {
       title: "Education, Not Just Execution",
       description:
-        "We empower our clients with knowledge—through guides, webinars, and 1-on-1 consultations—so you're confident in every decision you make.",
+        "We empower our clients with knowledge, through guides, webinars, and 1-on-1 consultations, so you're confident in every decision you make.",
     },
   ];
 
@@ -98,8 +98,8 @@ const FinancialServicesSection = () => {
             How we Differentiate from the Market
           </h2>
           <p className="text-lg text-gray-600 mb-16 text-center max-w-4xl mx-auto">
-            At Code to Kloud, we&apos;re not just another financial services
-            provider—we&apos;re a partner in your financial journey. What sets
+            At CodetoKloud, we&apos;re not just another financial services
+            provider, we&apos;re a partner in your financial journey. What sets
             us apart is our commitment to personalization, transparency, and
             innovation that puts your needs first.
           </p>

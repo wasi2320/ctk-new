@@ -1,29 +1,29 @@
 export const FINOPS_DIFFERENTIATE_SECTION = {
   heading: "How we Differentiate from the Market?",
-  description: "We don’t just build websites; we craft digital experiences",
+  description: "We don't just report cloud spend; we turn it into decisions your teams can act on.",
   cards: [
     {
       title: "Customized FinOps Solutions",
       description:
-        "Tailoring financial operations to fit specific business needs and objectives.",
+        "We fit cloud financial operations to how your teams budget, forecast, and own their spend.",
       imageSrc: "/Images/FinOps_Img_1.svg",
     },
     {
-      title: "Innovative Technology",
+      title: "Automation & Tooling",
       description:
-        "Leveraging advanced tools and automation to optimize financial workflows.",
+        "We use tagging, cost allocation, and automation to make cloud spend visible and accountable.",
       imageSrc: "/Images/FinOps_Img_2.svg",
     },
     {
       title: "Continuous Optimization",
       description:
-        "Proactively refining processes for sustained efficiency and long-term growth.",
+        "We continuously rightsize resources and refine commitments like Savings Plans to keep spend efficient over time.",
       imageSrc: "/Images/FinOps_Img_3.svg",
     },
     {
       title: "Expert FinOps Team",
       description:
-        "Providing specialized expertise to drive strategic financial decision-making and execution.",
+        "Practitioners who help you make cloud cost decisions and then put them into practice.",
       imageSrc: "/Images/FinOps_Img_4.svg",
     },
   ],

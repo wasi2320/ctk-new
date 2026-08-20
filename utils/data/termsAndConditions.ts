@@ -13,7 +13,7 @@ export const termsAndConditionsData = {
       },
       {
         heading: "Intellectual Property",
-        content: `All content, trademarks, and data on this site are the property of Code to Kloud or its licensors. Unauthorized use is prohibited.`,
+        content: `All content, trademarks, and data on this site are the property of CodetoKloud or its licensors. Unauthorized use is prohibited.`,
       },
       {
         heading: "Limitation of Liability",

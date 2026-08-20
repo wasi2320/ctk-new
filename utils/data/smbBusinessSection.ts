@@ -1,31 +1,31 @@
 export const SMB_BUSINESS_SECTION = {
-  heading: "Why Small and Mid-Sized Businesses Choose Code to Cloud",
+  heading: "Why Small and Mid-Sized Businesses Choose CodetoKloud",
   description:
-    "We understand the unique challenges SMBs face and deliver solutions that drive real results.",
+    "We understand the challenges SMBs face and deliver solutions that drive real results.",
   cards: [
     {
       icon: "/svgs/agile.svg",
-      title: "Agile Excellence with Strategic Impact",
+      title: "Agile Delivery, Real Impact",
       description:
-        "At Code to Cloud, our agile development process ensures rapid deployment without sacrificing quality, empowering your business to stay ahead of market changes.",
+        "Our agile process ships quickly without cutting corners, so your business keeps pace with change.",
     },
     {
       icon: "/svgs/empower.svg",
       title: "Partner-Centric Approach",
       description:
-        "We aren't just vendors—we're dedicated partners committed to translating your vision into measurable impact, delivering tailored solutions that truly elevate your business.",
+        "We work as dedicated partners, not just vendors, turning your vision into measurable results.",
     },
     {
       icon: "/svgs/automate.svg",
-      title: "Smart Automation & AI Integration",
+      title: "Practical Automation and AI",
       description:
-        "By seamlessly integrating practical AI and automation, we streamline your operations, reduce overhead, and free you to focus on strategic growth and innovation.",
+        "We apply automation and AI where it counts to streamline operations, cut overhead, and free your team for higher-value work.",
     },
     {
       icon: "/svgs/focus.svg",
-      title: "Tailored Solutions for Growth",
+      title: "Systems That Scale With You",
       description:
-        "Our scalable systems grow with you, ensuring your investment lasts long-term. As your business evolves, so do the tools we provide, keeping you ahead of the curve.",
+        "Our systems grow with your business, so your investment keeps paying off as you evolve.",
     },
   ],
 };

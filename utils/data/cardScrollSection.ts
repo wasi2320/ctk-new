@@ -1,7 +1,7 @@
 export const CARD_SCROLL_SECTION = {
-  heading: "Proven Success with Leading Clients",
+  heading: "Real engagements, real outcomes",
   description:
-    "Our extensive portfolio of case studies showcases how we've partnered with businesses across industries to tackle complex challenges and deliver innovative web solutions. Each project reflects our commitment to excellence, leveraging cutting-edge technologies to build reliable, scalable, and efficient systems. Explore our success stories and discover how we can help you achieve your goals.",
+    "These case studies show how we have partnered with teams across industries to solve hard infrastructure problems and ship reliable, scalable systems on AWS. Explore the work, and the numbers behind it.",
   cards: [
     {
       heading: "CI/CD Pipeline with ArgoCD Helm",

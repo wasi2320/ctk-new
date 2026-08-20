@@ -121,7 +121,7 @@ const CaseStudyProblemStatement: React.FC<CaseStudyProblemStatementProps> = ({
                 scale: 1.02,
                 transition: { duration: 0.2 },
               }}
-              className={`backdrop-blur-md bg-[#677F76]/30 text-white p-4 py-7 rounded-lg border border-white/20 ${
+              className={`backdrop-blur-md bg-[#5a6b81]/30 text-white p-4 py-7 rounded-lg border border-white/20 ${
                 index !== projectDetails.length - 1 ? "mb-6" : ""
               }`}
             >

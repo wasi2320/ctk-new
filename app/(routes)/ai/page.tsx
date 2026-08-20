@@ -8,13 +8,15 @@ import JsonLd from "@/app/components/JsonLd";
 import { coreServiceSchemas } from "@/lib/structured-data";
 import { pageMetadata } from "@/lib/page-metadata";
 import RelatedServices from "@/app/components/sections/RelatedServices";
+import FaqSection from "@/app/components/sections/FaqSection";
+import { pageFaqs } from "@/lib/faqs";
 
 export const metadata = pageMetadata("/ai");
 const Ai = () => {
   const aiTechStack = {
     heading: "AI & Machine Learning Technologies",
     description:
-      "Harnessing cutting-edge artificial intelligence and machine learning tools to create intelligent solutions:",
+      "Building production AI and machine learning systems with proven frameworks and platforms:",
     marqueeItems: [
       "/Images/PNGSS/tensorflow-logo.png",
       "/Images/PNGSS/pytorch-logo.png",
@@ -29,16 +31,16 @@ const Ai = () => {
     <div>
       <JsonLd data={coreServiceSchemas["/ai"]} />
       <HeroSection
-        title="Power of AI, ML,and GenAI to drive smarter decisions,"
-        description="Harness the power of AI, ML, and GenAI to drive smarter decisions, fuel innovation, and accelerate your business growth."
+        title="AI, ML, and GenAI That Drive Smarter Decisions"
+        description="We build production AI, ML, and GenAI systems on secure AWS infrastructure that speed up decisions, automate workflows, and support real business growth."
         imageSrc="/Images/Ai_Hero.png"
-        cover={true}
       />
       <TailoredSection heading="Transform, Innovate & Scale with AI/ML & GenAI" />
       <AiBusinessSection />
       <AiDifferentiateSection />
       <TechDisplaySection techDisplaySection={aiTechStack} />
       <CardScrollSection />
+      <FaqSection items={pageFaqs["/ai"]} />
       <RelatedServices currentPath="/ai" />
     </div>
   );

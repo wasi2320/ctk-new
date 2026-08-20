@@ -17,7 +17,7 @@ interface PageMeta {
 /**
  * Canonical 1200x630 brand OpenGraph image (same asset used in the root layout).
  * Included on every page so per-page openGraph objects don't drop the preview
- * image — Next.js replaces (does not deep-merge) the parent openGraph.
+ * image, Next.js replaces (does not deep-merge) the parent openGraph.
  */
 const OG_IMAGE =
   "https://opengraph.b-cdn.net/production/images/dd5c0828-1890-4d85-8051-5fac6878e7ce.png?token=8F3WOtV6fyrJjvXYeTMLY4rjWwtjMDd_JLbEhytH9CE&height=630&width=1200&expires=33293625957";
@@ -316,6 +316,104 @@ const PAGES: Record<string, PageMeta> = {
     title: "Terms & Conditions | CodetoKloud",
     description:
       "Terms and conditions governing the use of CodetoKloud services and website.",
+  },
+
+  // --- Comparison guides ---
+  "/argocd-vs-flux": {
+    title: "ArgoCD vs Flux: GitOps on Kubernetes Compared | CodetoKloud",
+    description:
+      "ArgoCD vs Flux for GitOps on Kubernetes, how they differ and how to choose. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/github-actions-vs-jenkins-vs-gitlab-ci": {
+    title: "GitHub Actions vs Jenkins vs GitLab CI | CodetoKloud",
+    description:
+      "GitHub Actions vs Jenkins vs GitLab CI compared for CI/CD pipelines, and how to choose. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/fargate-vs-ec2": {
+    title: "AWS Fargate vs EC2 for Containers | CodetoKloud",
+    description:
+      "AWS Fargate vs EC2 for running containers, cost, control, and when to use each. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/ecs-vs-kubernetes": {
+    title: "Amazon ECS vs Kubernetes: How to Choose | CodetoKloud",
+    description:
+      "Amazon ECS vs Kubernetes (EKS) compared, simplicity versus portability, and how to choose. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/terraform-vs-pulumi": {
+    title: "Terraform vs Pulumi: Choosing an IaC Tool | CodetoKloud",
+    description:
+      "Terraform vs Pulumi for infrastructure as code on AWS, how they differ and how to choose. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/prometheus-vs-datadog": {
+    title: "Prometheus vs Datadog: Kubernetes Monitoring | CodetoKloud",
+    description:
+      "Prometheus vs Datadog for monitoring and observability on Kubernetes and AWS, and how to choose. From CodetoKloud.",
+  },
+
+  // --- Definitional / GEO guides ---
+  "/what-is-gitops": {
+    title: "What Is GitOps? A Practical Guide | CodetoKloud",
+    description:
+      "What GitOps is, how it works with ArgoCD and Flux on Kubernetes, and why teams adopt it. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/what-is-finops": {
+    title: "What Is FinOps? Cloud Cost Management Explained | CodetoKloud",
+    description:
+      "What FinOps is and how it brings visibility and control to AWS cloud spend. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/what-is-amazon-eks": {
+    title: "What Is Amazon EKS? Managed Kubernetes on AWS | CodetoKloud",
+    description:
+      "What Amazon EKS is, how managed Kubernetes on AWS works, and when to use it. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/what-is-a-well-architected-review": {
+    title: "What Is an AWS Well-Architected Review? | CodetoKloud",
+    description:
+      "What an AWS Well-Architected Review is, what it covers, and how CodetoKloud, an AWS Advanced Tier Partner, runs one.",
+  },
+  "/what-is-infrastructure-as-code": {
+    title: "What Is Infrastructure as Code (IaC)? | CodetoKloud",
+    description:
+      "What Infrastructure as Code is, how Terraform and CloudFormation work, and why it matters. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/platform-engineering-vs-devops": {
+    title: "Platform Engineering vs DevOps: The Difference | CodetoKloud",
+    description:
+      "Platform engineering vs DevOps, how they differ, how they overlap, and what your team needs. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+
+  // --- Cost guides ---
+  "/kubernetes-consulting-cost": {
+    title: "How Much Does Kubernetes Consulting Cost? | CodetoKloud",
+    description:
+      "What drives the cost of Kubernetes and Amazon EKS consulting, common engagement models, and how to get a quote. From CodetoKloud.",
+  },
+  "/cloud-migration-cost": {
+    title: "How Much Does AWS Cloud Migration Cost? | CodetoKloud",
+    description:
+      "What drives AWS cloud migration cost, how projects are scoped, and how to estimate yours. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/soc-2-cost": {
+    title: "How Much Does SOC 2 Compliance Cost on AWS? | CodetoKloud",
+    description:
+      "What drives the cost of SOC 2 compliance on AWS and how to plan for it. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+
+  // --- Local landing pages ---
+  "/devops-consulting-austin": {
+    title: "DevOps & Kubernetes Consulting in Austin | CodetoKloud",
+    description:
+      "DevOps, Kubernetes, and AWS cloud consulting for Austin-area businesses from CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/devops-consulting-dallas": {
+    title: "DevOps & Kubernetes Consulting in Dallas | CodetoKloud",
+    description:
+      "DevOps, Kubernetes, and AWS cloud consulting for Dallas-area businesses from CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/devops-consulting-denver": {
+    title: "DevOps & Kubernetes Consulting in Denver | CodetoKloud",
+    description:
+      "DevOps, Kubernetes, and AWS cloud consulting for Denver-area businesses from CodetoKloud, an AWS Advanced Tier Partner.",
   },
 };
 

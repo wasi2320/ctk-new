@@ -15,7 +15,7 @@ import FaqSection from "@/app/components/sections/FaqSection";
 
 export const metadata = pageMetadata("/devops");
 
-/** DevOps capabilities — keyworded H3s with extractable, standalone prose. */
+/** DevOps capabilities, keyworded H3s with extractable, standalone prose. */
 const capabilities = [
   {
     title: "CI/CD Pipeline Automation",
@@ -23,7 +23,7 @@ const capabilities = [
   },
   {
     title: "Infrastructure as Code (Terraform & CloudFormation)",
-    body: "We provision and manage cloud infrastructure as code with Terraform, CloudFormation, and Kubernetes manifests, so every environment is consistent, version-controlled, and repeatable — no manual, drift-prone setup.",
+    body: "We provision and manage cloud infrastructure as code with Terraform, CloudFormation, and Kubernetes manifests, so every environment is consistent, version-controlled, and repeatable, no manual, drift-prone setup.",
   },
   {
     title: "GitOps Delivery with ArgoCD",
@@ -39,7 +39,7 @@ const capabilities = [
   },
   {
     title: "DevSecOps & Security",
-    body: "We build security into the pipeline with least-privilege access, secrets management, image and dependency scanning, and continuous monitoring — helping teams meet SOC 2, HIPAA, and PCI DSS requirements on AWS.",
+    body: "We build security into the pipeline with least-privilege access, secrets management, image and dependency scanning, and continuous monitoring, helping teams meet SOC 2, HIPAA, and PCI DSS requirements on AWS.",
   },
 ];
 
@@ -67,7 +67,7 @@ const DevOps = () => {
       <JsonLd data={coreServiceSchemas["/devops"]} />
       <HeroSection
         title="AWS DevOps Consulting & CI/CD Automation"
-        description="CodetoKloud, an AWS Advanced Tier Partner, automates your delivery with CI/CD pipelines, Terraform infrastructure-as-code, GitOps, and Kubernetes — so you ship faster, more reliably, and at lower cost."
+        description="CodetoKloud, an AWS Advanced Tier Partner, automates your delivery with CI/CD pipelines, Terraform infrastructure-as-code, GitOps, and Kubernetes, so you ship faster, more reliably, and at lower cost."
         imageSrc="/Images/DevOps_Hero.png"
         buttonText="Get a free CI/CD pipeline audit"
         buttonLink="/contact"
@@ -77,7 +77,7 @@ const DevOps = () => {
         <TrustBadge />
       </div>
 
-      {/* Answer capsule — definition-first, standalone, names the company. */}
+      {/* Answer capsule, definition-first, standalone, names the company. */}
       <section className="py-14 px-4 md:px-36 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
@@ -85,7 +85,7 @@ const DevOps = () => {
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed">
             DevOps consulting is expert help automating how software is built,
-            tested, deployed, and operated — combining CI/CD pipelines,
+            tested, deployed, and operated, combining CI/CD pipelines,
             infrastructure as code, and monitoring so teams release faster and
             more reliably. CodetoKloud, an AWS Advanced Tier Partner, delivers
             DevOps consulting on AWS: CI/CD automation, Terraform, GitOps with
@@ -108,7 +108,7 @@ const DevOps = () => {
             {capabilities.map((c) => (
               <div
                 key={c.title}
-                className="rounded-2xl border border-gray-200 p-6 hover:border-[#152F27] transition-colors"
+                className="rounded-2xl border border-gray-200 p-6 hover:border-[#16212e] transition-colors"
               >
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {c.title}

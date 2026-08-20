@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { CONTACT_SECTION_DATA } from "@/utils/data/contactSection";
 import BookCall from "@/app/components/sections/BookCall";
+import TrustBadge from "@/app/components/sections/TrustBadge";
 
 const TOPICS = [
   "Kubernetes / EKS",
@@ -150,11 +151,14 @@ export default function ContactUsSection() {
           }}
         >
           <motion.h2
-            className="text-4xl font-semibold mb-8"
+            className="text-4xl font-semibold mb-4"
             variants={formFieldVariants}
           >
             {title}
           </motion.h2>
+          <motion.div variants={formFieldVariants} className="mb-8">
+            <TrustBadge align="start" />
+          </motion.div>
           <form className="space-y-6" onSubmit={handleSubmit}>
             {formFields.map((field, index) => (
               <motion.div
@@ -164,44 +168,44 @@ export default function ContactUsSection() {
               >
                 <motion.label
                   className="block text-lg font-medium mb-1"
-                  whileHover={{ color: "#059669" }}
+                  whileHover={{ color: "#0972d3" }}
                 >
                   {field.label}
                 </motion.label>
                 {field.type === "textarea" ? (
                   <motion.textarea
-                    className="w-full border-b border-gray-400 outline-none py-2 bg-transparent transition-colors focus:border-green-600"
+                    className="w-full border-b border-gray-400 outline-none py-2 bg-transparent transition-colors focus:border-[#0972d3]"
                     rows={field.rows}
                     placeholder={field.placeholder}
                     required={field.required}
                     value={formData[field.id] || ""}
                     onChange={(e) => handleInputChange(field.id, e.target.value)}
-                    whileFocus={{ borderColor: "#059669" }}
+                    whileFocus={{ borderColor: "#0972d3" }}
                   />
                 ) : (
                   <motion.input
                     type={field.type}
-                    className="w-full border-b border-gray-400 outline-none py-2 bg-transparent transition-colors focus:border-green-600"
+                    className="w-full border-b border-gray-400 outline-none py-2 bg-transparent transition-colors focus:border-[#0972d3]"
                     placeholder={field.placeholder}
                     required={field.required}
                     value={formData[field.id] || ""}
                     onChange={(e) => handleInputChange(field.id, e.target.value)}
-                    whileFocus={{ borderColor: "#059669" }}
+                    whileFocus={{ borderColor: "#0972d3" }}
                   />
                 )}
               </motion.div>
             ))}
 
-            {/* Qualifier — helps route and prioritize the lead. */}
+            {/* Qualifier, helps route and prioritize the lead. */}
             <motion.div variants={formFieldVariants}>
               <motion.label
                 className="block text-lg font-medium mb-1"
-                whileHover={{ color: "#059669" }}
+                whileHover={{ color: "#0972d3" }}
               >
                 What do you need help with?
               </motion.label>
               <select
-                className="w-full border-b border-gray-400 outline-none py-2 bg-transparent transition-colors focus:border-green-600"
+                className="w-full border-b border-gray-400 outline-none py-2 bg-transparent transition-colors focus:border-[#0972d3]"
                 value={formData.topic || ""}
                 onChange={(e) => handleInputChange("topic", e.target.value)}
               >
@@ -225,7 +229,7 @@ export default function ContactUsSection() {
                   isSubmitting ? "opacity-50 cursor-not-allowed" : ""
                 } ${
                   submitStatus === "success"
-                    ? "bg-green-600 hover:bg-green-700"
+                    ? "bg-[#0972d3] hover:bg-[#0b5cad]"
                     : submitStatus === "error"
                     ? "bg-red-600 hover:bg-red-700"
                     : ""
@@ -284,7 +288,7 @@ export default function ContactUsSection() {
             >
               <motion.div
                 className="font-semibold text-2xl mb-1"
-                whileHover={{ color: "#059669" }}
+                whileHover={{ color: "#0972d3" }}
               >
                 {info.title}
               </motion.div>
@@ -303,7 +307,7 @@ export default function ContactUsSection() {
                     key={index}
                     href={info.href}
                     className={info.className}
-                    whileHover={{ scale: 1.05, color: "#059669" }}
+                    whileHover={{ scale: 1.05, color: "#0972d3" }}
                   >
                     {item}
                   </motion.a>
@@ -312,7 +316,7 @@ export default function ContactUsSection() {
             </motion.div>
           ))}
 
-          {/* Book a call — appears once NEXT_PUBLIC_CALENDLY_URL is set. */}
+          {/* Book a call, appears once NEXT_PUBLIC_CALENDLY_URL is set. */}
           <motion.div variants={formFieldVariants} className="mb-6">
             <BookCall label="Or book a call →" />
           </motion.div>
@@ -320,7 +324,7 @@ export default function ContactUsSection() {
           <motion.div variants={formFieldVariants}>
             <motion.div
               className="font-semibold text-2xl mb-2"
-              whileHover={{ color: "#059669" }}
+              whileHover={{ color: "#0972d3" }}
             >
               {socialMedia.title}
             </motion.div>

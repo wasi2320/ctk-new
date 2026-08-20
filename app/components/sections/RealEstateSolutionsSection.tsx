@@ -31,7 +31,7 @@ const RealEstateSolutionsSection = () => {
             {REAL_ESTATE_SOLUTIONS_SECTION.bulletPoints.map((point, index) => (
               <div key={index} className="flex items-start gap-3">
                 <div className="flex-shrink-0 mt-1">
-                  <div className="w-2 h-2 bg-[#152F27] rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-[#16212e] rounded-full mt-2"></div>
                 </div>
                 <p className="md:text-base text-sm text-gray-700">{point}</p>
               </div>

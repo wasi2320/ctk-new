@@ -12,9 +12,9 @@ const CloudMigration = () => {
     <div>
       <HeroSection
         title="FinTech"
-        description="Empower your financial services with cutting-edge cloud solutions. From modernizing legacy systems to enhancing customer experiences, we help your team leverage the cloud to unlock agility, scalability, and security all while staying compliant in a rapidly evolving industry."
+        description="We build secure, compliant cloud infrastructure for financial services and FinTech teams. From modernizing legacy systems to improving customer experiences, we help you move faster while meeting the security and compliance bar your industry demands."
         imageSrc="/Images/fin-tech.png"
-        buttonText="Let’s connect"
+        buttonText="Book a free audit"
         buttonLink="/contact"
       />
       <FinTechTailoredSection />

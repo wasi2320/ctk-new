@@ -21,16 +21,24 @@ export default async function BlogsPage() {
   ]);
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Blog</h1>
-          <p className="text-xl text-gray-600">
-            Insights, updates, and stories from our team
+    <div className="min-h-screen bg-[#f4f7fb]">
+      {/* AWS-aligned gradient hero */}
+      <section className="bg-gradient-to-br from-[#16212e] via-[#0d5cad] to-[#2b8fe8] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
+          <span className="inline-block text-xs font-semibold tracking-[0.18em] uppercase text-[#9fd0ff] mb-4">
+            Insights &amp; Guides
+          </span>
+          <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight">
+            Cloud, DevOps &amp; AI Insights
+          </h1>
+          <p className="text-lg md:text-xl text-white/85 max-w-2xl mx-auto leading-relaxed">
+            Field notes and guides on AWS, Kubernetes, DevOps automation, and
+            compliance from the CodetoKloud engineering team.
           </p>
         </div>
+      </section>
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <BlogsList blogs={blogs} categories={categories} />
       </div>
     </div>

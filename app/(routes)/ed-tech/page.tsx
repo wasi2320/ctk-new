@@ -12,9 +12,9 @@ const CloudMigration = () => {
     <div>
       <HeroSection
         title="EdTech"
-        description="EdTech blends education with innovative technology to create smarter, faster, and more personalized learning experiences. From digital classrooms to cloud-powered platforms, it enables institutions to innovate, scale, and meet the evolving needs of learners worldwide."
+        description="We build the cloud infrastructure behind modern EdTech. From learning platforms and digital classrooms to secure student data and scale for exam-day traffic, we handle the AWS engineering so your product stays fast and reliable as you grow."
         imageSrc="/Images/ed-tech.png"
-        buttonText="Let’s connect"
+        buttonText="Book a free audit"
         buttonLink="/contact"
       />
       <EdTechTailoredSection />

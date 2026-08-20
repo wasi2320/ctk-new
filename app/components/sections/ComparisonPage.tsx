@@ -10,7 +10,7 @@ export interface ComparisonData {
   heroTitle: string;
   intro: string;
   heroImage: string;
-  /** Answer capsule — definition-first, standalone, names the company. */
+  /** Answer capsule, definition-first, standalone, names the company. */
   capsuleQuestion: string;
   capsuleAnswer: string;
   /** Table headers; first column is the option name. */
@@ -30,7 +30,6 @@ export default function ComparisonPage({ data }: { data: ComparisonData }) {
         title={data.heroTitle}
         description={data.intro}
         imageSrc={data.heroImage}
-        cover
         buttonText="Talk to an AWS expert"
         buttonLink="/contact"
       />
@@ -60,7 +59,7 @@ export default function ComparisonPage({ data }: { data: ComparisonData }) {
           <div className="overflow-x-auto rounded-2xl border border-gray-200">
             <table className="w-full text-left border-collapse min-w-[680px]">
               <thead>
-                <tr className="bg-[#152F27] text-white">
+                <tr className="bg-[#16212e] text-white">
                   {data.tableHeaders.map((h) => (
                     <th key={h} className="px-5 py-4 font-semibold">
                       {h}
@@ -99,7 +98,7 @@ export default function ComparisonPage({ data }: { data: ComparisonData }) {
             {data.recommendation.map((r) => (
               <div
                 key={r.title}
-                className="rounded-2xl border border-gray-200 bg-white p-6 hover:border-[#152F27] transition-colors"
+                className="rounded-2xl border border-gray-200 bg-white p-6 hover:border-[#16212e] transition-colors"
               >
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {r.title}
@@ -113,7 +112,7 @@ export default function ComparisonPage({ data }: { data: ComparisonData }) {
             Partner, helps teams choose and then builds it.{" "}
             <Link
               href="/contact"
-              className="text-[#152F27] font-semibold underline hover:no-underline"
+              className="text-[#16212e] font-semibold underline hover:no-underline"
             >
               Get a free recommendation
             </Link>
@@ -132,7 +131,7 @@ export default function ComparisonPage({ data }: { data: ComparisonData }) {
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-[#152F27] font-medium underline hover:no-underline"
+                className="text-[#16212e] font-medium underline hover:no-underline"
               >
                 {l.name}
               </Link>

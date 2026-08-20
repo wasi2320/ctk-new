@@ -18,7 +18,7 @@ const services = [
 ];
 const projectDetails = {
   client: "AlphaBravo Development",
-  schedule: "Nov 2024 — Jan 2025",
+  schedule: "Nov 2024 to Jan 2025",
   size: "$50,000 to $199,999",
 };
 const solutionComponents = [
@@ -64,25 +64,25 @@ const metrics = [
   {
     category: "Protection",
     description: "Enhanced protection of sensitive data",
-    bgColor: "bg-[#1a2e22]",
+    bgColor: "bg-[#16273c]",
     width: "w-[80%]",
   },
   {
     category: "Control",
     description: "Tighter control over access and faster threat detection",
-    bgColor: "bg-[#1a3b2a]",
+    bgColor: "bg-[#16324f]",
     width: "w-[90%]",
   },
   {
     category: "Access",
     description: "Reduced unauthorized access incidents",
-    bgColor: "bg-[#3a6a50]",
+    bgColor: "bg-[#2b6ca8]",
     width: "w-[70%]",
   },
   {
     category: "Vulnerability Detection",
     description: "Improved vulnerability detection with automated tools",
-    bgColor: "bg-[#4d7a65]",
+    bgColor: "bg-[#4a86bf]",
     width: "w-[85%]",
   },
   {

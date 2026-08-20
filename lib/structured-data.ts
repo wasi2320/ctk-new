@@ -2,7 +2,7 @@
  * Centralized JSON-LD structured data for GEO (Generative Engine Optimization).
  *
  * Verbatim business facts live here so every schema stays consistent. Placeholder
- * values are marked with `TODO:` — fill these in and they propagate everywhere.
+ * values are marked with `TODO:`, fill these in and they propagate everywhere.
  */
 
 export const SITE_URL = "https://codetokloud.com";
@@ -11,7 +11,7 @@ const ORG_ID = `${SITE_URL}/#organization`;
 
 /**
  * Sitewide Organization schema. Rendered once in the root layout.
- * `sameAs` links are placeholders — fill in the real profile URLs.
+ * `sameAs` links are placeholders, fill in the real profile URLs.
  */
 export const organizationSchema = {
   "@context": "https://schema.org",
@@ -288,7 +288,7 @@ export function localBusinessSchema({
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "@id": `${SITE_URL}${path}#localbusiness`,
-    name: `CodetoKloud — DevOps & Kubernetes Consulting in ${city}`,
+    name: `CodetoKloud, DevOps & Kubernetes Consulting in ${city}`,
     url: `${SITE_URL}${path}`,
     description,
     telephone: "+1-309-590-3617",
@@ -352,14 +352,14 @@ export const coreServiceSchemas: Record<string, ReturnType<typeof serviceSchema>
     serviceType: "DevOps consulting",
     path: "/devops",
     description:
-      "DevOps consulting and implementation from CodetoKloud — CI/CD pipelines, automation, and infrastructure-as-code to accelerate delivery and improve reliability.",
+      "DevOps consulting and implementation from CodetoKloud, CI/CD pipelines, automation, and infrastructure-as-code to accelerate delivery and improve reliability.",
   }),
   "/kubernetes": serviceSchema({
     name: "Kubernetes & Amazon EKS Consulting",
     serviceType: "Kubernetes and Amazon EKS consulting",
     path: "/kubernetes",
     description:
-      "Kubernetes and Amazon EKS consulting from CodetoKloud, an AWS Advanced Tier Partner — EKS cluster design, GitOps with ArgoCD, Helm packaging, autoscaling, observability, cost optimization, and security hardening.",
+      "Kubernetes and Amazon EKS consulting from CodetoKloud, an AWS Advanced Tier Partner, EKS cluster design, GitOps with ArgoCD, Helm packaging, autoscaling, observability, cost optimization, and security hardening.",
   }),
   "/ai": serviceSchema({
     name: "AI Automation",
@@ -387,20 +387,55 @@ export const coreServiceSchemas: Record<string, ReturnType<typeof serviceSchema>
     serviceType: "HIPAA compliance consulting",
     path: "/hipaa-compliance",
     description:
-      "CodetoKloud helps healthcare organizations build and run HIPAA-compliant infrastructure on AWS and Amazon EKS — encryption, access controls, audit logging, network isolation, and disaster recovery.",
+      "CodetoKloud helps healthcare organizations build and run HIPAA-compliant infrastructure on AWS and Amazon EKS, encryption, access controls, audit logging, network isolation, and disaster recovery.",
   }),
   "/soc-2-compliance": serviceSchema({
     name: "SOC 2 Compliance on AWS",
     serviceType: "SOC 2 compliance consulting",
     path: "/soc-2-compliance",
     description:
-      "CodetoKloud helps businesses implement and prepare for SOC 2 on AWS — access controls, audit logging, change management, monitoring, and infrastructure-as-code aligned to the Trust Services Criteria.",
+      "CodetoKloud helps businesses implement and prepare for SOC 2 on AWS, access controls, audit logging, change management, monitoring, and infrastructure-as-code aligned to the Trust Services Criteria.",
   }),
   "/pci-dss-compliance": serviceSchema({
     name: "PCI DSS Compliance on AWS",
     serviceType: "PCI DSS compliance consulting",
     path: "/pci-dss-compliance",
     description:
-      "CodetoKloud helps businesses build PCI DSS-aligned infrastructure on AWS — network segmentation, encryption, access control, logging, and vulnerability management for cardholder data environments.",
+      "CodetoKloud helps businesses build PCI DSS-aligned infrastructure on AWS, network segmentation, encryption, access control, logging, and vulnerability management for cardholder data environments.",
+  }),
+  "/cloud-migration": serviceSchema({
+    name: "AWS Cloud Migration",
+    serviceType: "Cloud migration consulting",
+    path: "/cloud-migration",
+    description:
+      "AWS cloud migration from CodetoKloud, an AWS Advanced Tier Partner, assessment, re-platforming, and low-downtime cutover to secure, scalable infrastructure on AWS.",
+  }),
+  "/finops": serviceSchema({
+    name: "FinOps & AWS Cost Optimization",
+    serviceType: "Cloud cost optimization (FinOps) consulting",
+    path: "/finops",
+    description:
+      "FinOps and AWS cost optimization from CodetoKloud, cost visibility, forecasting, rightsizing, Savings Plans, and cost-aware architecture to keep cloud spend predictable.",
+  }),
+  "/consulting-and-advisory": serviceSchema({
+    name: "Cloud Consulting & Advisory",
+    serviceType: "Cloud and DevOps consulting and advisory",
+    path: "/consulting-and-advisory",
+    description:
+      "Cloud and DevOps consulting and advisory from CodetoKloud, an AWS Advanced Tier Partner, architecture reviews, roadmaps, and hands-on guidance for teams building on AWS.",
+  }),
+  "/mobile-app": serviceSchema({
+    name: "Mobile App Development",
+    serviceType: "Mobile application development",
+    path: "/mobile-app",
+    description:
+      "Native and cross-platform mobile app development from CodetoKloud, backed by secure, scalable cloud infrastructure on AWS.",
+  }),
+  "/ui-ux": serviceSchema({
+    name: "UI/UX Design",
+    serviceType: "UI/UX design",
+    path: "/ui-ux",
+    description:
+      "UI/UX design from CodetoKloud, user-centered interfaces and product design for web and mobile applications.",
   }),
 };

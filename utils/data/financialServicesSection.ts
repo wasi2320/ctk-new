@@ -1,125 +1,124 @@
 export const financialServicesSectionData = {
   title: "Financial Services",
   description:
-    "Our comprehensive financial services are designed to support your goals—whether personal or business. From smart investment strategies and insurance solutions to loans, retirement planning, and beyond, we offer expert guidance every step of the way. With a focus on trust, technology, and tailored advice, we help turn financial complexity into clarity.",
+    "We build secure, compliant cloud infrastructure for banks, insurers, and financial-services firms. From migration and modernization to DevOps, data platforms, and cost control, we give financial teams the engineering foundation to move fast without compromising security or compliance.",
   buttonText: "Schedule your cloud assessment",
   buttonLink: "/contact",
-  imageSrc: "/Images/finance/finance-hero.svg",
+  imageSrc: "/Images/finance/finance-hero.webp",
 
   stats: [
     {
-      value: "$500B+",
-      description:
-        "Accelerated growth driven by digital-first healthcare delivery",
+      value: "35%",
+      description: "Cloud cost cut on a recent AWS migration",
     },
     {
-      value: "65%",
-      description: "prefer hybrid/health care",
+      value: "99.7%",
+      description: "Uptime delivered on production AWS",
     },
     {
-      value: "32%",
-      description: "YoY investment growth",
+      value: "4.9",
+      description: "Client rating on Clutch, across 9 reviews",
     },
   ],
 
   servicesData: [
     {
-      title: "Investment Management",
+      title: "Cloud Migration and Modernization",
       description:
-        "Maximize your returns with our personalized investment strategies and portfolio management.",
+        "Move core financial workloads to AWS with minimal downtime and a modernization plan built around your systems.",
     },
     {
-      title: "Financial Planning and Advisory",
+      title: "Security and Compliance",
       description:
-        "Get expert guidance to achieve your financial goals with comprehensive planning and advice.",
+        "SOC 2, PCI DSS, and financial-grade controls built into the infrastructure, with audit evidence from day one.",
     },
     {
-      title: "Corporate Finance Services",
+      title: "DevOps and Automation",
       description:
-        "Optimize your business growth through strategic mergers, acquisitions, and capital solutions.",
+        "CI/CD, infrastructure as code, and GitOps so your teams ship safely and often.",
     },
     {
-      title: "Accounting and Tax Services",
+      title: "Data Platforms and Analytics",
       description:
-        "Ensure accuracy and compliance with our professional accounting and tax management services.",
+        "Secure, scalable data pipelines and analytics on AWS that turn financial data into insight.",
     },
     {
-      title: "Risk Management and Insurance",
+      title: "Reliability and Disaster Recovery",
       description:
-        "Protect your assets and minimize risks with customized insurance and risk management solutions.",
+        "Multi-AZ architecture, failover, and DR so critical services stay available.",
     },
     {
-      title: "Loans and Credit Services",
+      title: "FinOps and Cost Control",
       description:
-        "Access flexible lending options tailored to meet your personal and business financing needs.",
+        "Visibility and optimization that keep cloud spend predictable as you scale.",
     },
   ],
 
   differentiateData: {
-    title: "How we Differentiate from the Market",
+    title: "What sets us apart",
     description:
-      "At Code to Kloud, we're not just another financial services provider—we're a partner in your financial journey. What sets us apart is our commitment to personalization, transparency, and innovation that puts your needs first.",
+      "We are not another vendor. We are an AWS Advanced Tier Partner and a hands-on engineering team that understands what financial workloads demand: security, compliance, and reliability, without slowing delivery.",
     cards: [
       {
-        title: "Client-First, Always",
+        title: "AWS Advanced Tier Partner",
         description:
-          "We prioritize transparency, trust, and tailored advice. No hidden fees. No cookie-cutter solutions. Just honest guidance designed around your goals.",
+          "Certified AWS engineers who build the way AWS recommends, integrated with IAM, VPC, and CloudWatch.",
         icon: "/Images/finance/client.svg",
       },
       {
-        title: "Specialized Services for",
+        title: "Compliance Built In",
         description:
-          "Unlike generic firms, we specialize in serving target market. That means more relevant advice, quicker turnaround, and deeper insight.",
+          "SOC 2, PCI DSS, and HIPAA controls engineered into the platform, not bolted on before an audit.",
         icon: "/Images/finance/special_services.svg",
       },
       {
-        title: "Cutting-Edge Technology",
+        title: "Modern, Secure Technology",
         description:
-          "Our platform leverages the latest in AI, automation, and secure digital infrastructure to make financial services faster, safer, and smarter.",
+          "AI, automation, and secure infrastructure that make financial systems faster, safer, and easier to run.",
         icon: "/Images/finance/tech.svg",
       },
       {
-        title: "Sustainable & Responsible Finance",
+        title: "Reliability You Can Prove",
         description:
-          "We believe in building futures that last. Our investment options include ESG-focused portfolios and socially responsible strategies for a better world.",
+          "Multi-AZ architecture, monitoring, and disaster recovery that keep critical financial services available.",
         icon: "/Images/finance/sustainable.svg",
       },
       {
-        title: "Expert-Led, Not Just AI-Driven",
+        title: "Senior Engineers, Not Resellers",
         description:
-          "While we use technology to enhance efficiency, every financial decision is backed by experienced professionals—real people with real expertise.",
+          "Every engagement is led by experienced engineers who own the outcome end to end.",
         icon: "/Images/finance/expert.svg",
       },
       {
-        title: "Education, Not Just Execution",
+        title: "Knowledge Transfer",
         description:
-          "We empower our clients with knowledge—through guides, webinars, and 1-on-1 consultations—so you're confident in every decision you make.",
+          "We document and hand over what we build, so your team stays in control long after go-live.",
         icon: "/Images/finance/education.svg",
       },
     ],
   },
 
   helpData: {
-    title: "How We Help You with Your Finances",
+    title: "How We Help Financial Services Teams",
     description:
-      "We simplify your financial life with clear, actionable advice and smart solutions tailored to your goals. Whether you're saving for the future, growing your business, or investing with purpose, we’re here to guide every step. Our expert team and powerful tools help you make confident, informed decisions—without the jargon. Let’s build your financial future, together.",
+      "We handle the hard parts of running financial technology: security, compliance, scale, and cost. Whether you are migrating core systems, hardening for an audit, or optimizing a growing AWS bill, our engineers help you make confident, well-supported decisions and build the platform behind them.",
   },
 
   portfolioData: [
     {
       title: "Cost Optimization",
-      subtitle: "Real-World cases in Fintech",
+      subtitle: "Real-world work in FinTech",
       description:
         "Strategic cost reduction through cloud optimization and operational efficiency improvements.",
-      image: "/Images/finance/.svgcost-optimization.png",
+      image: "/Images/finance/graph.svg",
       link: "/fin-tech",
     },
     {
-      title: "Security Compliance",
-      subtitle: "Real-World cases in Fintech",
+      title: "Security and Compliance",
+      subtitle: "Real-world work in FinTech",
       description:
-        "Comprehensive security frameworks and compliance solutions for financial institutions.",
-      image: "/Images/finance/.svgsecurity-compliance.png",
+        "Security frameworks and compliance controls built for financial institutions.",
+      image: "/Images/finance/tech.svg",
       link: "/fin-tech",
     },
   ],

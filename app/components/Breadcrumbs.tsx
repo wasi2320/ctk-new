@@ -76,11 +76,21 @@ export default function Breadcrumbs() {
   const segments = pathname.split("/").filter(Boolean);
   if (segments.length === 0) return null;
 
+  // Path segments that exist only as URL structure, not as real pages
+  // (e.g. /careers/roles/[id], there is no /careers/roles page). These are
+  // shown as plain text so we never render a link to a 404.
+  const NON_NAVIGABLE = new Set(["roles"]);
+
   const crumbs = [
-    { name: "Home", url: SITE_URL, href: "/" },
+    { name: "Home", url: SITE_URL, href: "/", nav: true },
     ...segments.map((segment, index) => {
       const href = "/" + segments.slice(0, index + 1).join("/");
-      return { name: prettify(segment), url: `${SITE_URL}${href}`, href };
+      return {
+        name: prettify(segment),
+        url: `${SITE_URL}${href}`,
+        href,
+        nav: !NON_NAVIGABLE.has(segment),
+      };
     }),
   ];
 
@@ -99,13 +109,15 @@ export default function Breadcrumbs() {
                 <span className="text-gray-900 font-medium" aria-current="page">
                   {crumb.name}
                 </span>
-              ) : (
+              ) : crumb.nav ? (
                 <Link
                   href={crumb.href}
-                  className="hover:text-[#000209] transition-colors"
+                  className="hover:text-[#0d1526] transition-colors"
                 >
                   {crumb.name}
                 </Link>
+              ) : (
+                <span>{crumb.name}</span>
               )}
             </li>
           );

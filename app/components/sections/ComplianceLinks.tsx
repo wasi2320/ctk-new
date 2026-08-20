@@ -29,14 +29,14 @@ export default function ComplianceLinks({
             <Link
               key={item.href}
               href={item.href}
-              className="px-5 py-3 rounded-full border border-gray-300 text-gray-800 hover:border-[#152F27] hover:text-[#152F27] transition-colors"
+              className="px-5 py-3 rounded-full border border-gray-300 text-gray-800 hover:border-[#16212e] hover:text-[#16212e] transition-colors"
             >
               {item.name}
             </Link>
           ))}
           <Link
             href="/contact"
-            className="px-5 py-3 rounded-full bg-[#152F27] text-white hover:bg-[#152F27]/90 transition-colors"
+            className="px-5 py-3 rounded-full bg-[#16212e] text-white hover:bg-[#16212e]/90 transition-colors"
           >
             Get a free compliance review
           </Link>

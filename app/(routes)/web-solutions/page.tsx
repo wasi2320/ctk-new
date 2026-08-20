@@ -8,6 +8,8 @@ import JsonLd from "@/app/components/JsonLd";
 import { coreServiceSchemas } from "@/lib/structured-data";
 import { pageMetadata } from "@/lib/page-metadata";
 import RelatedServices from "@/app/components/sections/RelatedServices";
+import FaqSection from "@/app/components/sections/FaqSection";
+import { pageFaqs } from "@/lib/faqs";
 
 export const metadata = pageMetadata("/web-solutions");
 const WebSolutions = () => {
@@ -33,13 +35,13 @@ const WebSolutions = () => {
         title="Your Trusted Source for Advanced Web Solutions"
         description="Your website is more than just code it is the heartbeat of your brand."
         imageSrc="/Images/Web_Hero.png"
-        cover={true}
       />
       <TailoredSection heading="Optimize your infrastructure  today." />
       <WebBusinessSection />
       <WebDifferentiateSection />
       <TechDisplaySection techDisplaySection={webTechStack} />
       <CardScrollSection />
+      <FaqSection items={pageFaqs["/web-solutions"]} />
       <RelatedServices currentPath="/web-solutions" />
     </div>
   );

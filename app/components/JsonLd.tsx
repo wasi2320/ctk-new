@@ -13,7 +13,7 @@ export default function JsonLd({ data }: JsonLdProps) {
   return (
     <script
       type="application/ld+json"
-      // Structured data is trusted, build-time content — safe to inline.
+      // Structured data is trusted, build-time content, safe to inline.
       dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
     />
   );

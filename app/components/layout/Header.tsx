@@ -66,6 +66,9 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // The redesigned homepage ships its own header.
+  if (pathname === "/") return null;
+
   return (
     <>
       <nav className="flex justify-between items-center px-4 md:px-28 pt-3 shadow-md bg-white sticky top-0 z-40">
@@ -131,7 +134,7 @@ const Header = () => {
                               <Link
                                 href={l.link}
                                 key={li}
-                                className="whitespace-nowrap hover:text-[#000209] transition-colors"
+                                className="whitespace-nowrap hover:text-[#0d1526] transition-colors"
                                 prefetch={true}
                                 onClick={(e) => {
                                   e.preventDefault();
@@ -202,7 +205,7 @@ const Header = () => {
                               <Link
                                 href={l.link}
                                 key={li}
-                                className="whitespace-nowrap hover:text-[#000209] transition-colors"
+                                className="whitespace-nowrap hover:text-[#0d1526] transition-colors"
                                 prefetch={true}
                                 onClick={(e) => {
                                   e.preventDefault();
@@ -226,7 +229,7 @@ const Header = () => {
                 <Link
                   href={item.link as string}
                   key={index}
-                  className="hover:text-[#000209] transition-colors"
+                  className="hover:text-[#0d1526] transition-colors"
                   prefetch={true}
                   onClick={(e) => {
                     e.preventDefault();
@@ -248,9 +251,9 @@ const Header = () => {
 
       {/* Loading Progress Bar */}
       {isLoading && (
-        <div className="fixed top-0 left-0 w-full h-1 bg-[#000209]/20 z-50">
+        <div className="fixed top-0 left-0 w-full h-1 bg-[#0d1526]/20 z-50">
           <div
-            className="h-full bg-[#000209] transition-all duration-300 ease-out"
+            className="h-full bg-[#0d1526] transition-all duration-300 ease-out"
             style={{ width: `${loadingProgress}%` }}
           />
         </div>
@@ -297,7 +300,7 @@ const Header = () => {
                       onClick={() =>
                         setOpenMobileDropdown(isOpen ? null : item.name)
                       }
-                      className="flex items-center justify-between w-full text-lg text-gray-800 hover:text-[#000209] transition-colors"
+                      className="flex items-center justify-between w-full text-lg text-gray-800 hover:text-[#0d1526] transition-colors"
                     >
                       {item.name}
                       <svg
@@ -328,7 +331,7 @@ const Header = () => {
                               <Link
                                 href={l.link}
                                 key={li}
-                                className="text-gray-800 hover:text-[#000209] transition-colors"
+                                className="text-gray-800 hover:text-[#0d1526] transition-colors"
                                 onClick={(e) => {
                                   e.preventDefault();
                                   toggleMenu();
@@ -356,7 +359,7 @@ const Header = () => {
                       onClick={() =>
                         setOpenMobileDropdown(isOpen ? null : item.name)
                       }
-                      className="flex items-center justify-between w-full text-lg text-gray-800 hover:text-[#000209] transition-colors"
+                      className="flex items-center justify-between w-full text-lg text-gray-800 hover:text-[#0d1526] transition-colors"
                     >
                       {item.name}
                       <svg
@@ -382,7 +385,7 @@ const Header = () => {
                           <Link
                             href={l.link}
                             key={li}
-                            className="text-gray-800 hover:text-[#000209] transition-colors"
+                            className="text-gray-800 hover:text-[#0d1526] transition-colors"
                             onClick={(e) => {
                               e.preventDefault();
                               toggleMenu();
@@ -409,7 +412,7 @@ const Header = () => {
                     handleNavigation(item.link as string);
                   }}
                 >
-                  <p className="text-lg text-gray-800 hover:text-[#000209] transition-colors">
+                  <p className="text-lg text-gray-800 hover:text-[#0d1526] transition-colors">
                     {item.name}
                   </p>
                 </Link>
