@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import CaseStudyLayout from "@/app/components/sections/caseStudies/CaseStudyLayout";
 import CaseStudyHeader from "@/app/components/sections/caseStudies/CaseStudyHeader";
 import CaseStudyProblemStatement from "@/app/components/sections/caseStudies/CaseStudyProblemStatement";
@@ -12,9 +13,9 @@ import { caseStudySchema } from "@/lib/structured-data";
 
 export const metadata = pageMetadata("/automated_deployment");
 const services = [
-  "Cloud Consulting & SI",
-  "DevOps Managed Services",
-  "Mobile App Development",
+  "Amazon ECS",
+  "CI/CD Automation",
+  "Container Delivery",
 ];
 const projectDetails = {
   client: "Topflight Apps",
@@ -23,9 +24,24 @@ const projectDetails = {
 };
 const solutionComponents = [
   {
-    title: "Automating deployment using GitLab CI/CD, Docker, and AWS",
+    title: "Automated validation in GitLab CI",
     description:
-      "Code is stored in GitLab, triggering builds, tests, and deployments. Application is containerized with Docker, and images are stored securely in AWS ECR. Deployed and managed containers for scalability and high availability, while Route 53 handles DNS.",
+      "Every code change triggered a controlled pipeline that built the Python application, ran tests, and prepared a versioned container release.",
+  },
+  {
+    title: "Private image storage in Amazon ECR",
+    description:
+      "Validated Docker images were published to Amazon ECR so deployments referenced a traceable artifact instead of rebuilding in production.",
+  },
+  {
+    title: "Highly available Amazon ECS service",
+    description:
+      "Amazon ECS ran application tasks across two Availability Zones behind health checks, with Route 53 directing users to the service.",
+  },
+  {
+    title: "Rolling updates with rollback",
+    description:
+      "The deployment workflow replaced healthy tasks gradually and returned to the last known image when health checks failed.",
   },
 ];
 const techStack = [
@@ -35,7 +51,6 @@ const techStack = [
   },
   { name: "GitLab", icon: "/Images/PNGSS/gitlab.png" },
   { name: "AWS", icon: "/Images/PNGSS/aws.png" },
-  { name: "Google Cloud", icon: "/Images/PNGSS/gcloud.png" },
 ];
 const metrics = [
   {
@@ -67,7 +82,7 @@ const metrics = [
 
 const lesson = {
   firstLesson:
-    "Key lessons include the value of automation through GitLab CI/CD and Docker, which reduced manual effort and errors. Leveraging AWS services demonstrated scalability and cost-effectiveness compared to on-premise hardware. Storing Docker images in AWS ECR ensured better security, and continuous updates to the CI/CD pipeline improved performance and reliability over time.",
+    "For this financial application, the strongest reliability gain came from treating build artifacts, health checks, deployment order, and rollback as one workflow. Amazon ECR made each release traceable, while Amazon ECS provided a consistent runtime across Availability Zones.",
 };
 
 export default function AutomatedDeploymentPage() {
@@ -79,30 +94,41 @@ export default function AutomatedDeploymentPage() {
           description:
             "How CodetoKloud built zero-downtime automated deployments for a Python financial application using GitLab CI/CD, Docker, and AWS ECS.",
           path: "/automated_deployment",
-          image: "/services/automated_aws2.png",
+          image: "/services/architecture/ecs-deployment-pipeline.svg",
         })}
       />
       <CaseStudyLayout>
       <CaseStudyHeader
-        title="Automated Deployment of Financial App"
-        subtitle="Services provided on this Project"
+        title="Zero Downtime Deployment for a Python Financial App"
+        subtitle="GitLab CI, Amazon ECR, and Amazon ECS created a repeatable release path with health checks and rollback."
         services={services}
-        arcSrc="/services/automated_aws.png"
-        alt="AWS Architecture Diagram"
+        arcSrc="/services/architecture/ecs-deployment-pipeline.svg"
+        alt="GitLab CI deployment pipeline to an Amazon ECS service across two Availability Zones with health checks and rollback"
       />
       <CaseStudyProblemStatement
-        statement="The challenge was to create a streamlined, automated, and scalable deployment process for a Python-based financial application. The goal was to ensure efficient CI/CD pipelines, secure container image management, high availability, scalability, and reduced downtime and operational costs."
+        statement="Topflight Apps needed a safer release process for a Python financial application. Manual steps made deployments difficult to repeat, while the production service needed traceable container images, capacity across Availability Zones, health-based rollout decisions, and a practical rollback path."
         details={projectDetails}
       />
       <CaseStudySolution
         solutions={solutionComponents}
-        illustration="/services/automated_aws2.png"
-        illustrationAlt="Solution Illustration"
-        description="This approach minimizes downtime, ensures secure storage, and offers cost-effective scalability with continuous zero-downtime updates."
+        description="The finished pipeline linked every production task to a tested container image and used service health to decide whether a release should continue or roll back."
       />
       <CaseStudyTechStack techs={techStack} />
       <MetricsDisplay metrics={metrics} />
       <CaseStudyLessons lessons={lesson.firstLesson} />
+      <section className="bg-[#0d1526] px-4 py-16 text-center text-white">
+        <h2 className="text-3xl font-bold">Need safer releases on Amazon ECS?</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
+          We can review your current build, image, deployment, health check, and
+          rollback path and identify the highest-risk manual steps.
+        </p>
+        <Link
+          href="/contact"
+          className="mt-8 inline-block rounded-full bg-white px-8 py-3 font-semibold text-[#0d1526] hover:bg-gray-100"
+        >
+          Review my ECS delivery process
+        </Link>
+      </section>
     </CaseStudyLayout>
     </>
   );

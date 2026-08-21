@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import CaseStudyLayout from "@/app/components/sections/caseStudies/CaseStudyLayout";
 import CaseStudyHeader from "@/app/components/sections/caseStudies/CaseStudyHeader";
 import CaseStudyProblemStatement from "@/app/components/sections/caseStudies/CaseStudyProblemStatement";
@@ -12,9 +13,9 @@ import { caseStudySchema } from "@/lib/structured-data";
 
 export const metadata = pageMetadata("/helm-pipeline");
 const services = [
-  "Cloud Consulting & SI",
-  "DevOps Managed Services",
-  "Web Development",
+  "Amazon EKS",
+  "GitOps and CI/CD",
+  "Helm Release Management",
 ];
 const projectDetails = {
   client: "Orbital Installs",
@@ -23,22 +24,24 @@ const projectDetails = {
 };
 const solutionComponents = [
   {
-    title: "Implemented an automated CI/CD pipeline",
-    description: "using ArgoCD, Helm, and EKS",
-  },
-  {
-    title: "Automated code",
+    title: "Automated build and validation",
     description:
-      "merging, dependency installation, testing, and Docker image building",
+      "GitLab CI merged code, installed dependencies, ran tests, built Docker images, and published versioned artifacts to Amazon ECR.",
   },
   {
-    title: "Application deployed",
+    title: "GitOps deployment control",
     description:
-      "to development, staging, and production environments via EKS and ArgoCD",
+      "Argo CD reconciled the desired state stored in Git, which made application changes reviewable and gave the team a consistent rollback path.",
   },
   {
-    title: "Helm charts",
-    description: "manage configurations and versioning",
+    title: "Separated environments on EKS",
+    description:
+      "Development, staging, and production ran as separate Amazon EKS environments with controlled promotion between each release stage.",
+  },
+  {
+    title: "Versioned Helm configuration",
+    description:
+      "Helm charts captured application configuration and release versions so the same deployment pattern could be promoted without manual rework.",
   },
 ];
 const techStack = [
@@ -48,7 +51,7 @@ const techStack = [
   },
   { name: "GitLab", icon: "/Images/PNGSS/gitlab.png" },
   { name: "Kubernetes", icon: "/Images/PNGSS/Kubernetes-Logo.png" },
-  { name: "Google Cloud", icon: "/Images/PNGSS/gcloud.png" },
+  { name: "AWS", icon: "/Images/PNGSS/aws.png" },
   { name: "ArgoCD", icon: "/Images/PNGSS/Argo-1-e1630327305635-1.png" },
 ];
 const metrics = [
@@ -80,9 +83,9 @@ const metrics = [
 
 const lesson = {
   firstLesson:
-    "Automation, environment separation, and approval gates improved deployment confidence and reduced errors. EKS, ArgoCD, and Helm simplified Kubernetes management, but required version control and team training. Investing in automation early ensures long-term efficiency and faster delivery.",
+    "For this engagement, release automation worked best when environment separation, approval gates, and rollback procedures were designed together. Argo CD and Helm reduced repetitive work, while version control kept deployment changes reviewable.",
   secondLesson:
-    "A TCO analysis showed that automation reduced manual work, deployment failures, and operational costs. EKS minimized infrastructure management, while tools like ArgoCD and Helm cut overhead. The solution proved cost-effective, scalable, and efficient.",
+    "The project analysis showed that fewer manual deployment steps and fewer failed releases reduced delivery overhead. Amazon EKS shifted cluster operations to a managed control plane, while Argo CD and Helm standardized day-to-day releases.",
 };
 
 export default function HelmPipelinePage() {
@@ -94,26 +97,24 @@ export default function HelmPipelinePage() {
           description:
             "How CodetoKloud implemented an automated CI/CD pipeline using ArgoCD, Helm, and Amazon EKS, reaching a 95% deployment success rate and 80% less manual effort.",
           path: "/helm-pipeline",
-          image: "/services/ci_cd_eks2.png",
+          image: "/services/architecture/gitops-eks-pipeline.svg",
         })}
       />
       <CaseStudyLayout>
       <CaseStudyHeader
-        title="CI/CD Pipeline with ArgoCD Helm on EKS"
-        subtitle="Services provided on this Project"
+        title="How Orbital Installs Automated Releases on Amazon EKS"
+        subtitle="Argo CD and Helm replaced manual, inconsistent releases across development, staging, and production."
         services={services}
-        arcSrc="/services/ci_cd_eks.png"
-        alt="CI/CD EKS Architecture Diagram"
+        arcSrc="/services/architecture/gitops-eks-pipeline.svg"
+        alt="GitOps CI/CD pipeline from GitLab CI and Amazon ECR through Argo CD and Helm to Amazon EKS"
       />
       <CaseStudyProblemStatement
-        statement="Manual deployment processes cause delays, errors, and inconsistent environments, hindering quick, high-quality application delivery. An automated CI/CD pipeline is needed to streamline development, testing, deployment, and ensure security and operational readiness."
+        statement="Orbital Installs relied on manual deployment steps that delayed releases and produced inconsistent environments. The team needed one controlled path for building, testing, promoting, and rolling back application changes across development, staging, and production on Amazon EKS."
         details={projectDetails}
       />
       <CaseStudySolution
         solutions={solutionComponents}
-        illustration="/services/ci_cd_eks2.png"
-        illustrationAlt="Solution Illustration"
-        description="This setup ensures real-time notifications which keep teams informed, ensuring consistent and reliable delivery."
+        description="GitLab CI handles continuous integration, while Argo CD and Helm control deployment from a versioned source of truth. Real-time notifications keep the delivery team informed when a release needs attention."
       />
       <CaseStudyTechStack techs={techStack} />
       <MetricsDisplay metrics={metrics} />
@@ -121,6 +122,19 @@ export default function HelmPipelinePage() {
         lessons={lesson.firstLesson}
         secondLesson={lesson.secondLesson}
       />
+      <section className="bg-[#0d1526] px-4 py-16 text-center text-white">
+        <h2 className="text-3xl font-bold">Planning an Amazon EKS delivery workflow?</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
+          Bring us your current pipeline and release bottlenecks. We will identify
+          the highest-impact opportunities for automation, promotion, and rollback.
+        </p>
+        <Link
+          href="/contact"
+          className="mt-8 inline-block rounded-full bg-white px-8 py-3 font-semibold text-[#0d1526] hover:bg-gray-100"
+        >
+          Review my EKS pipeline
+        </Link>
+      </section>
     </CaseStudyLayout>
     </>
   );

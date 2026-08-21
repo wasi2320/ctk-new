@@ -1,10 +1,30 @@
 import Link from "next/link";
 
 const COMPLIANCE = [
-  { name: "HIPAA Compliance", href: "/hipaa-compliance" },
-  { name: "SOC 2 Compliance", href: "/soc-2-compliance" },
-  { name: "PCI DSS Compliance", href: "/pci-dss-compliance" },
-  { name: "Security & Compliance", href: "/security-and-compliance" },
+  {
+    name: "HIPAA Compliance",
+    href: "/hipaa-compliance",
+    description:
+      "Protect electronic health data on AWS with access, encryption, logging, and evidence controls.",
+  },
+  {
+    name: "SOC 2 Compliance",
+    href: "/soc-2-compliance",
+    description:
+      "Prepare AWS systems and operating processes for the SOC 2 Trust Services Criteria.",
+  },
+  {
+    name: "PCI DSS Compliance",
+    href: "/pci-dss-compliance",
+    description:
+      "Reduce cardholder data risk with scoped architecture, cloud controls, and audit evidence.",
+  },
+  {
+    name: "Security & Compliance",
+    href: "/security-and-compliance",
+    description:
+      "Strengthen identity, data protection, monitoring, response, and cloud governance together.",
+  },
 ];
 
 /**
@@ -19,26 +39,43 @@ export default function ComplianceLinks({
   const others = COMPLIANCE.filter((c) => c.href !== currentPath);
 
   return (
-    <section className="py-16 px-4 md:px-28 bg-gray-50">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-gray-900">
+    <section className="bg-gray-50 px-4 py-10 sm:px-6 md:px-10 md:py-12 lg:px-16">
+      <div className="mx-auto max-w-6xl">
+        <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
           Explore Compliance on AWS
         </h2>
-        <div className="flex flex-wrap justify-center gap-4">
+        <p className="mt-2 max-w-3xl text-sm leading-6 text-gray-600 md:text-base">
+          Compare focused compliance services and choose the next step for your
+          AWS environment.
+        </p>
+        <div className="mt-6 grid gap-3 sm:grid-cols-2">
           {others.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="px-5 py-3 rounded-full border border-gray-300 text-gray-800 hover:border-[#16212e] hover:text-[#16212e] transition-colors"
+              className="group rounded-xl border border-gray-200 bg-white px-5 py-4 transition-colors hover:border-[#16212e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b85f00] focus-visible:ring-offset-2"
             >
-              {item.name}
+              <span className="flex items-center justify-between gap-4 font-semibold text-gray-900 group-hover:text-[#b85f00]">
+                {item.name}
+                <span aria-hidden="true">&rarr;</span>
+              </span>
+              <span className="mt-1 block text-sm leading-5 text-gray-600">
+                {item.description}
+              </span>
             </Link>
           ))}
           <Link
             href="/contact"
-            className="px-5 py-3 rounded-full bg-[#16212e] text-white hover:bg-[#16212e]/90 transition-colors"
+            className="group rounded-xl bg-[#16212e] px-5 py-4 text-white transition-colors hover:bg-[#16212e]/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b85f00] focus-visible:ring-offset-2"
           >
-            Get a free compliance review
+            <span className="flex items-center justify-between gap-4 font-semibold">
+              Book a compliance readiness review
+              <span aria-hidden="true">&rarr;</span>
+            </span>
+            <span className="mt-1 block text-sm leading-5 text-gray-200">
+              Review control gaps, evidence needs, and practical next steps with
+              a cloud compliance consultant.
+            </span>
           </Link>
         </div>
       </div>

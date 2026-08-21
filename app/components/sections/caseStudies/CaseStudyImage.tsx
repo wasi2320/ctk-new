@@ -16,6 +16,9 @@ const CaseStudyImage: React.FC<CaseStudyImageProps> = ({
   height = 400,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const isArchitectureSvg = src.startsWith("/services/architecture/");
+  const displayWidth = isArchitectureSvg ? 1200 : width;
+  const displayHeight = isArchitectureSvg ? 720 : height;
 
   const handleImageClick = () => {
     if (window.innerWidth <= 768) {
@@ -41,9 +44,9 @@ const CaseStudyImage: React.FC<CaseStudyImageProps> = ({
         <Image
           src={src}
           alt={alt}
-          width={width}
-          height={height}
-          className="w-full object-contain"
+          width={displayWidth}
+          height={displayHeight}
+          className="w-full h-auto object-contain"
         />
       </div>
 
@@ -64,8 +67,8 @@ const CaseStudyImage: React.FC<CaseStudyImageProps> = ({
               <Image
                 src={src}
                 alt={alt}
-                width={width * 2}
-                height={height * 2}
+                width={displayWidth}
+                height={displayHeight}
                 className="w-full h-full object-contain"
                 style={{
                   touchAction: "none",

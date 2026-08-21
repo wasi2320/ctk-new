@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="gitopsTitle gitopsDesc">
+  <title id="gitopsTitle">GitOps CI/CD pipeline on Amazon EKS</title>
+  <desc id="gitopsDesc">A two-stage delivery workflow. GitLab CI tests code, builds a container, and pushes it to Amazon ECR. A version change in the GitOps repository is reconciled by Argo CD, rendered with Helm, and deployed across development, staging, and production namespaces in Amazon EKS.</desc>
+  <defs>
+    <linearGradient id="gitopsBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F8FBFF"/>
+      <stop offset="1" stop-color="#EFF6FF"/>
+    </linearGradient>
+    <linearGradient id="gitopsEks" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0F2A4A"/>
+      <stop offset="1" stop-color="#174D75"/>
+    </linearGradient>
+    <filter id="gitopsShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="7" stdDeviation="10" flood-color="#17324D" flood-opacity="0.10"/>
+    </filter>
+    <marker id="gitopsArrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M1 1 9 5 1 9Z" fill="#2563EB"/>
+    </marker>
+    <marker id="gitopsArrowPurple" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M1 1 9 5 1 9Z" fill="#7C3AED"/>
+    </marker>
+    <style>
+      .gt { font-family: Inter, ui-sans-serif, system-ui, sans-serif; fill: #102A43; }
+      .gtitle { font-size: 30px; font-weight: 760; letter-spacing: -0.5px; }
+      .gsub { font-size: 15px; fill: #52677C; }
+      .gstage { font-size: 14px; font-weight: 750; letter-spacing: 1.5px; }
+      .gcard { fill: #FFFFFF; stroke: #DCE7F2; stroke-width: 1.5; }
+      .gname { font-size: 17px; font-weight: 720; }
+      .gmeta { font-size: 13px; fill: #63778B; }
+      .gsmall { font-size: 12px; font-weight: 650; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="720" rx="28" fill="url(#gitopsBg)"/>
+  <rect x="28" y="26" width="1144" height="668" rx="24" fill="none" stroke="#D9E6F2"/>
+
+  <g class="gt">
+    <text class="gtitle" x="58" y="72">GitOps delivery on Amazon EKS</text>
+    <text class="gsub" x="58" y="99">Immutable images, declarative releases, and controlled promotion across environments</text>
+
+    <g transform="translate(927 45)">
+      <rect width="94" height="32" rx="16" fill="#E8F2FF"/>
+      <circle cx="17" cy="16" r="5" fill="#2563EB"/>
+      <text class="gsmall" x="29" y="20" fill="#174EA6">CI BUILD</text>
+    </g>
+    <g transform="translate(1031 45)">
+      <rect width="111" height="32" rx="16" fill="#F2EAFE"/>
+      <circle cx="17" cy="16" r="5" fill="#7C3AED"/>
+      <text class="gsmall" x="29" y="20" fill="#6427B7">GITOPS CD</text>
+    </g>
+
+    <rect x="50" y="128" width="1100" height="226" rx="20" fill="#FFFFFF" stroke="#D8E5F1"/>
+    <rect x="50" y="128" width="8" height="226" rx="4" fill="#2563EB"/>
+    <text class="gstage" x="78" y="159" fill="#2563EB">1  CONTINUOUS INTEGRATION</text>
+    <text class="gmeta" x="344" y="159">Every merge produces a tested, traceable image</text>
+
+    <g filter="url(#gitopsShadow)">
+      <g transform="translate(78 191)">
+        <rect class="gcard" width="158" height="116" rx="16"/>
+        <circle cx="79" cy="37" r="22" fill="#E8F2FF"/>
+        <circle cx="79" cy="31" r="7" fill="none" stroke="#2563EB" stroke-width="2.5"/>
+        <path d="M64 51c3-8 9-12 15-12s12 4 15 12" fill="none" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"/>
+        <text class="gname" x="79" y="79" text-anchor="middle">Developer</text>
+        <text class="gmeta" x="79" y="99" text-anchor="middle">Merge request</text>
+      </g>
+      <g transform="translate(277 191)">
+        <rect class="gcard" width="158" height="116" rx="16"/>
+        <circle cx="79" cy="37" r="22" fill="#FFF0E8"/>
+        <path d="M66 29h26v18H66zM70 25v8M88 25v8" fill="none" stroke="#E95C17" stroke-width="2.5" stroke-linejoin="round"/>
+        <circle cx="73" cy="38" r="2" fill="#E95C17"/><circle cx="85" cy="38" r="2" fill="#E95C17"/>
+        <text class="gname" x="79" y="79" text-anchor="middle">GitLab</text>
+        <text class="gmeta" x="79" y="99" text-anchor="middle">Application source</text>
+      </g>
+      <g transform="translate(476 191)">
+        <rect class="gcard" width="158" height="116" rx="16"/>
+        <circle cx="79" cy="37" r="22" fill="#E9F8F3"/>
+        <path d="M66 36h26M71 29l-7 7 7 7M87 29l7 7-7 7" fill="none" stroke="#0E9F6E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <text class="gname" x="79" y="79" text-anchor="middle">GitLab CI</text>
+        <text class="gmeta" x="79" y="99" text-anchor="middle">Test and scan</text>
+      </g>
+      <g transform="translate(675 191)">
+        <rect class="gcard" width="158" height="116" rx="16"/>
+        <circle cx="79" cy="37" r="22" fill="#EBF4FF"/>
+        <path d="m68 32 11-6 11 6v12l-11 6-11-6zM68 32l11 6 11-6M79 38v12" fill="none" stroke="#1778D0" stroke-width="2.3" stroke-linejoin="round"/>
+        <text class="gname" x="79" y="79" text-anchor="middle">Docker build</text>
+        <text class="gmeta" x="79" y="99" text-anchor="middle">Signed image</text>
+      </g>
+      <g transform="translate(874 191)">
+        <rect class="gcard" width="198" height="116" rx="16"/>
+        <circle cx="99" cy="37" r="22" fill="#FFF2DE"/>
+        <path d="M86 30h26v14H86zM90 34h18M90 40h18" fill="none" stroke="#E8790A" stroke-width="2.5" stroke-linecap="round"/>
+        <text class="gname" x="99" y="79" text-anchor="middle">Amazon ECR</text>
+        <text class="gmeta" x="99" y="99" text-anchor="middle">Versioned artifact</text>
+      </g>
+    </g>
+
+    <path d="M236 249H269" fill="none" stroke="#2563EB" stroke-width="2.5" marker-end="url(#gitopsArrowBlue)"/>
+    <path d="M435 249H468" fill="none" stroke="#2563EB" stroke-width="2.5" marker-end="url(#gitopsArrowBlue)"/>
+    <path d="M634 249H667" fill="none" stroke="#2563EB" stroke-width="2.5" marker-end="url(#gitopsArrowBlue)"/>
+    <path d="M833 249H866" fill="none" stroke="#2563EB" stroke-width="2.5" marker-end="url(#gitopsArrowBlue)"/>
+
+    <rect x="50" y="378" width="1100" height="282" rx="20" fill="#FFFFFF" stroke="#D8E5F1"/>
+    <rect x="50" y="378" width="8" height="282" rx="4" fill="#7C3AED"/>
+    <text class="gstage" x="78" y="409" fill="#7C3AED">2  DECLARATIVE DELIVERY</text>
+    <text class="gmeta" x="330" y="409">Git is the source of truth and Argo CD continuously reconciles drift</text>
+
+    <g filter="url(#gitopsShadow)">
+      <g transform="translate(78 446)">
+        <rect class="gcard" width="178" height="132" rx="16"/>
+        <circle cx="89" cy="39" r="22" fill="#F2EAFE"/>
+        <path d="M75 31h28v20H75zM81 27v8M97 27v8M81 41h16" fill="none" stroke="#7C3AED" stroke-width="2.5" stroke-linecap="round"/>
+        <text class="gname" x="89" y="82" text-anchor="middle">GitOps repo</text>
+        <text class="gmeta" x="89" y="103" text-anchor="middle">Helm values and</text>
+        <text class="gmeta" x="89" y="121" text-anchor="middle">environment manifests</text>
+      </g>
+      <g transform="translate(312 446)">
+        <rect class="gcard" width="178" height="132" rx="16"/>
+        <circle cx="89" cy="39" r="22" fill="#FFF0E8"/>
+        <circle cx="89" cy="39" r="10" fill="none" stroke="#F05A28" stroke-width="2.5"/>
+        <path d="M89 22v7M89 49v7M72 39h7M99 39h7" stroke="#F05A28" stroke-width="2.5" stroke-linecap="round"/>
+        <text class="gname" x="89" y="82" text-anchor="middle">Argo CD</text>
+        <text class="gmeta" x="89" y="103" text-anchor="middle">Policy, sync, rollback</text>
+        <rect x="42" y="112" width="94" height="16" rx="8" fill="#E9F8F3"/>
+        <text x="89" y="124" text-anchor="middle" font-size="10" font-weight="700" fill="#087A55">HEALTHY</text>
+      </g>
+      <g transform="translate(546 446)">
+        <rect class="gcard" width="178" height="132" rx="16"/>
+        <circle cx="89" cy="39" r="22" fill="#E8F2FF"/>
+        <circle cx="89" cy="39" r="13" fill="none" stroke="#2563EB" stroke-width="2.4"/>
+        <path d="M89 22v7M89 49v7M72 39h7M99 39h7M78 28l5 6M100 28l-5 6M78 50l5-6M100 50l-5-6" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
+        <text class="gname" x="89" y="82" text-anchor="middle">Helm release</text>
+        <text class="gmeta" x="89" y="103" text-anchor="middle">Rendered Kubernetes</text>
+        <text class="gmeta" x="89" y="121" text-anchor="middle">resources</text>
+      </g>
+    </g>
+
+    <g transform="translate(780 432)" filter="url(#gitopsShadow)">
+      <rect width="328" height="192" rx="20" fill="url(#gitopsEks)"/>
+      <circle cx="36" cy="36" r="20" fill="#2D6ED6"/>
+      <path d="M36 22v28M22 36h28M26 26l20 20M46 26 26 46" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="36" cy="36" r="8" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      <text x="67" y="34" font-size="19" font-weight="750" fill="#FFFFFF">Amazon EKS</text>
+      <text x="67" y="54" font-size="12" fill="#BFD7EE">Managed Kubernetes cluster</text>
+
+      <g transform="translate(20 76)">
+        <rect width="88" height="92" rx="13" fill="#FFFFFF" fill-opacity="0.10" stroke="#76A6D4"/>
+        <text x="44" y="24" text-anchor="middle" font-size="12" font-weight="750" fill="#A9D5FF">DEV</text>
+        <rect x="17" y="39" width="22" height="22" rx="6" fill="#52B6F3"/><rect x="49" y="39" width="22" height="22" rx="6" fill="#52B6F3"/>
+        <text x="44" y="79" text-anchor="middle" font-size="11" fill="#DCECFB">namespace</text>
+      </g>
+      <g transform="translate(120 76)">
+        <rect width="88" height="92" rx="13" fill="#FFFFFF" fill-opacity="0.10" stroke="#76A6D4"/>
+        <text x="44" y="24" text-anchor="middle" font-size="12" font-weight="750" fill="#A9D5FF">STAGE</text>
+        <rect x="17" y="39" width="22" height="22" rx="6" fill="#54D6B2"/><rect x="49" y="39" width="22" height="22" rx="6" fill="#54D6B2"/>
+        <text x="44" y="79" text-anchor="middle" font-size="11" fill="#DCECFB">namespace</text>
+      </g>
+      <g transform="translate(220 76)">
+        <rect width="88" height="92" rx="13" fill="#FFFFFF" fill-opacity="0.10" stroke="#76A6D4"/>
+        <text x="44" y="24" text-anchor="middle" font-size="12" font-weight="750" fill="#A9D5FF">PROD</text>
+        <rect x="17" y="39" width="22" height="22" rx="6" fill="#FFC857"/><rect x="49" y="39" width="22" height="22" rx="6" fill="#FFC857"/>
+        <text x="44" y="79" text-anchor="middle" font-size="11" fill="#DCECFB">namespace</text>
+      </g>
+    </g>
+
+    <path d="M555 307v37c0 14-10 20-25 20H167v74" fill="none" stroke="#7C3AED" stroke-width="2.5" marker-end="url(#gitopsArrowPurple)"/>
+    <text class="gsmall" x="570" y="369" fill="#6427B7">update image tag</text>
+    <path d="M256 512H304" fill="none" stroke="#7C3AED" stroke-width="2.5" marker-end="url(#gitopsArrowPurple)"/>
+    <path d="M490 512H538" fill="none" stroke="#7C3AED" stroke-width="2.5" marker-end="url(#gitopsArrowPurple)"/>
+    <path d="M724 512H772" fill="none" stroke="#7C3AED" stroke-width="2.5" marker-end="url(#gitopsArrowPurple)"/>
+    <path d="M780 598H515c-18 0-26-9-26-25" fill="none" stroke="#7C3AED" stroke-width="2" stroke-dasharray="7 7" marker-end="url(#gitopsArrowPurple)"/>
+    <text class="gsmall" x="595" y="618" fill="#6427B7">health and drift status</text>
+  </g>
+</svg>

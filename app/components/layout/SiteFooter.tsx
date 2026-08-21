@@ -47,17 +47,17 @@ const CSS = `
 `;
 
 const SERVICE_LINKS = [
-  { name: "Cloud Infrastructure (AWS)", link: "/cloud-service" },
-  { name: "DevOps Implementation", link: "/devops" },
-  { name: "Kubernetes & EKS", link: "/kubernetes" },
-  { name: "Security & Compliance", link: "/security-and-compliance" },
-  { name: "FinOps", link: "/finops" },
-  { name: "AI & GenAI", link: "/ai" },
+  { name: "AWS Cloud Infrastructure", link: "/cloud-service" },
+  { name: "DevOps and CI/CD", link: "/devops" },
+  { name: "Kubernetes and Amazon EKS", link: "/kubernetes" },
+  { name: "Security and Compliance", link: "/security-and-compliance" },
+  { name: "AWS FinOps", link: "/finops" },
+  { name: "AI Automation on AWS", link: "/ai" },
 ];
 
 const COMPANY_LINKS = [
   { name: "About Us", link: "/aboutus" },
-  { name: "Case Studies", link: "/helm-pipeline" },
+  { name: "Case Studies", link: "/case-studies" },
   { name: "Blog", link: "/blogs" },
   { name: "Careers", link: "/careers" },
   { name: "FAQ", link: "/faq" },

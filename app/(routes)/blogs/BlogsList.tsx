@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { stripMarkdown } from "@/lib/markdown";
-import type { Blog, Category } from "@/lib/blogs";
+import type { BlogSummary, Category } from "@/lib/blogs";
 
 function formatDate(dateString: string) {
   return new Date(dateString).toLocaleDateString("en-US", {
@@ -15,7 +15,7 @@ function formatDate(dateString: string) {
 }
 
 interface BlogsListProps {
-  blogs: Blog[];
+  blogs: BlogSummary[];
   categories: Category[];
 }
 
@@ -91,7 +91,7 @@ export default function BlogsList({ blogs, categories }: BlogsListProps) {
               <div className="aspect-w-16 aspect-h-9">
                 <Image
                   src={blog.poster_url}
-                  alt={blog.title}
+                  alt={blog.poster_alt || blog.title}
                   width={400}
                   height={192}
                   className="w-full h-48 object-cover"

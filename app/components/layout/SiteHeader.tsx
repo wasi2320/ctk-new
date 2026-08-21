@@ -51,21 +51,24 @@ const CSS = `
 .ctk-hd .burger svg{width:26px;height:26px;}
 .ctk-hd .callbtn{display:none;align-items:center;justify-content:center;width:40px;height:40px;border-radius:11px;color:var(--blue2);border:1px solid var(--line2);flex:none;}
 .ctk-hd .callbtn svg{width:19px;height:19px;}
-@media(max-width:1024px){
+@media(max-width:1280px){
   .ctk-hd .nav{display:none;}
   .ctk-hd .burger,.ctk-hd .callbtn{display:inline-flex;}
-  /* Keep the primary CTA persistent on mobile, just compact. */
+  /* Keep the primary CTA visible at tablet widths in a compact form. */
   .ctk-hd .in>.cta{padding:9px 15px;font-size:13.5px;}
 }
+@media(max-width:640px){
+  .ctk-hd .in>.cta{display:none;}
+}
 @media(max-width:430px){
-  .ctk-hd .in>.cta{padding:8px 12px;font-size:12.5px;}
+  .ctk-hd .in{padding-inline:16px;gap:10px;}
   .ctk-hd .callbtn{width:38px;height:38px;}
 }
 /* mobile drawer */
 .ctk-hd .scrim{position:fixed;inset:0;background:rgba(10,18,32,.5);opacity:0;visibility:hidden;transition:.28s;z-index:90;}
 .ctk-hd .scrim.open{opacity:1;visibility:visible;}
-.ctk-hd .drawer{position:fixed;top:0;right:0;height:100%;width:min(340px,86vw);background:#fff;box-shadow:-20px 0 60px -30px rgba(20,30,70,.5);transform:translateX(100%);transition:transform .3s cubic-bezier(.2,.8,.2,1);z-index:91;overflow-y:auto;padding:18px 18px 40px;}
-.ctk-hd .drawer.open{transform:none;}
+.ctk-hd .drawer{position:fixed;top:0;right:0;height:100%;width:min(340px,86vw);background:#fff;box-shadow:-20px 0 60px -30px rgba(20,30,70,.5);transform:translateX(100%);visibility:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),visibility 0s linear .3s;z-index:91;overflow-y:auto;padding:18px 18px 40px;}
+.ctk-hd .drawer.open{transform:none;visibility:visible;transition:transform .3s cubic-bezier(.2,.8,.2,1),visibility 0s;}
 .ctk-hd .drawer .dh{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
 .ctk-hd .drawer .x{background:none;border:0;cursor:pointer;color:var(--mist);padding:6px;}
 .ctk-hd .drawer .x svg{width:24px;height:24px;}
@@ -197,7 +200,7 @@ export default function SiteHeader() {
         </a>
 
         <Link href="/contact" className="cta">
-          Book a free audit
+          Book an AWS review
         </Link>
 
         <button className="burger" aria-label="Open menu" onClick={() => setOpen(true)}>
@@ -278,7 +281,7 @@ export default function SiteHeader() {
         })}
 
         <Link href="/contact" className="cta" onClick={close}>
-          Book a free audit
+          Book an AWS review
         </Link>
       </div>
     </header>

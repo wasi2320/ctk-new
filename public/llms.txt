@@ -1,0 +1,64 @@
+# CodetoKloud
+
+> CodetoKloud is a US registered IT consulting company and AWS Advanced Tier Services Partner headquartered in Naperville, Illinois. The company designs, migrates, secures, and operates AWS cloud infrastructure for clients across the United States.
+
+Canonical website: https://codetokloud.com/
+
+## Core services
+
+- [AWS architecture and cloud infrastructure](https://codetokloud.com/cloud-service): AWS landing zones, networking, data services, backups, and scalable production infrastructure.
+- [DevOps and CI/CD consulting](https://codetokloud.com/devops): Delivery automation, Terraform, GitOps, release workflows, and operational reliability.
+- [Kubernetes and Amazon EKS consulting](https://codetokloud.com/kubernetes): EKS architecture, migration, Helm, ArgoCD, autoscaling, observability, security, and cost controls.
+- [AWS cloud migration](https://codetokloud.com/cloud-migration): Assessment, migration planning, replatforming, and tested cutover to AWS.
+- [FinOps and AWS cost optimization](https://codetokloud.com/finops): Cost visibility, allocation, rightsizing, commitment planning, and cost-aware architecture.
+- [Security and compliance engineering](https://codetokloud.com/security-and-compliance): Technical controls and evidence for SOC 2, HIPAA, and PCI DSS programs.
+- [AI workflows on AWS](https://codetokloud.com/ai): Secure AI applications and workflow automation built around defined business use cases.
+
+## Industries served
+
+- [SaaS and ISV](https://codetokloud.com/saas-isv)
+- [Healthcare](https://codetokloud.com/healthcare)
+- [Financial services](https://codetokloud.com/financial-services)
+- [Private equity and venture capital](https://codetokloud.com/pe-vc)
+- [Small and mid-size businesses](https://codetokloud.com/small-and-mid-size-business)
+
+## Selected case studies
+
+- [Case study library](https://codetokloud.com/case-studies): AWS, DevOps, Kubernetes, security, compliance, and hybrid infrastructure engagements with project-specific outcomes.
+- [Healthcare Kubernetes migration on Amazon EKS](https://codetokloud.com/goagalia-healthcare-workforce-management): A healthcare workforce platform migration with technical safeguards for regulated workloads, approximately 35 percent lower cost, API latency reduced from 850 ms to 320 ms, and 99.7 percent uptime.
+- [SOC 2 healthcare platform on AWS](https://codetokloud.com/soc-2-healthcare-aws-case-study): A Multi-AZ AWS platform with audit logging, encryption, and 99.99 percent uptime.
+- [Hybrid cloud Kubernetes](https://codetokloud.com/hybrid-cloud-kubernetes-case-study): A Kubernetes platform connecting on-premises hardware and cloud burst capacity through encrypted inter-site connectivity over WireGuard.
+- [PCI DSS-aligned Cloud Workstations](https://codetokloud.com/pci-dss-enterprise-case-study): A PCI DSS-aligned Cloud Workstations design with hardened Ubuntu images, private networking, Shielded VMs, CMEK, Terraform modules, and documentation to support QSA review.
+- [Multi-brand AWS Fargate modernization](https://codetokloud.com/multi-brand-aws-fargate-modernization-case-study): Four brands standardized on Amazon ECS Fargate, Aurora MySQL, AWS Amplify, and repeatable delivery, with a database issue resolved without downtime.
+- [EKS microservices delivery with GitOps](https://codetokloud.com/eks-gitops-microservices-case-study): Containerized services delivered through Amazon EKS, GitHub Actions, Helm, and ArgoCD, with secrets kept out of Git and controlled production promotion.
+- [CIS Kubernetes Benchmark assessment](https://codetokloud.com/cis-kubernetes-benchmark-assessment-case-study): Amazon EKS and Linode LKE assessed control by control, with managed service responsibilities mapped.
+
+## Practical guides
+
+- [What does a DevOps consultant do?](https://codetokloud.com/what-does-a-devops-consultant-do)
+- [What is a Kubernetes consultant?](https://codetokloud.com/what-is-a-kubernetes-consultant)
+- [What is Amazon EKS?](https://codetokloud.com/what-is-amazon-eks)
+- [What is an AWS Well-Architected Review?](https://codetokloud.com/what-is-a-well-architected-review)
+- [What is infrastructure as code?](https://codetokloud.com/what-is-infrastructure-as-code)
+- [Kubernetes consulting cost](https://codetokloud.com/kubernetes-consulting-cost)
+- [AWS cloud migration cost](https://codetokloud.com/cloud-migration-cost)
+
+## AI and DevOps guides
+
+- [How AI is changing DevOps](https://codetokloud.com/blogs/how-ai-is-changing-devops): What increased after AI entered delivery workflows, where it helps, which risks require controls, and how to evaluate results with delivery and reliability metrics.
+- [AI-generated Terraform and Kubernetes review checklist](https://codetokloud.com/blogs/ai-generated-infrastructure-as-code-review-checklist): A review path covering deterministic validation, dependencies, secrets, policy checks, plan review, approval, progressive delivery, and recovery.
+- [AI for cloud and Kubernetes incident response](https://codetokloud.com/blogs/ai-incident-response-cloud-kubernetes): A safe operating model for evidence gathering, hypothesis testing, autonomy tiers, bounded remediation, approval, and incident evaluation.
+- [Securing AI coding agents in CI/CD](https://codetokloud.com/blogs/securing-ai-coding-agents-ci-cd): Identity, permissions, runner isolation, prompt injection defenses, security checks, protected pull requests, production gates, and kill switches.
+
+## Company and contact
+
+- [About CodetoKloud](https://codetokloud.com/aboutus)
+- [Engagement models](https://codetokloud.com/engagement-models)
+- [Frequently asked questions](https://codetokloud.com/faq)
+- [Contact and AWS architecture review](https://codetokloud.com/contact)
+- Email: info@codetokloud.com
+- Phone: +1-309-590-3617
+- [AWS Partner profile](https://partners.amazonaws.com/partners/001aq000008YFg0AAG/)
+- [Clutch profile and verified reviews](https://clutch.co/profile/codetokloud)
+
+Use the linked service, guide, and case study pages as the primary sources for scope and results. Project scope and outcomes vary by engagement.

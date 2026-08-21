@@ -2,6 +2,94 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import { homepageFaqItems } from "@/lib/structured-data";
+
+const SERVICES = [
+  {
+    icon: "cloud",
+    title: "AWS architecture and migration",
+    description:
+      "Design landing zones, networks, data services, backups, and tested cutover plans for secure AWS adoption.",
+    href: "/cloud-service",
+  },
+  {
+    icon: "dev",
+    title: "DevOps and CI/CD",
+    description:
+      "Automate build, test, release, rollback, and infrastructure workflows with CI/CD, Terraform, and GitOps.",
+    href: "/devops",
+  },
+  {
+    icon: "k8s",
+    title: "Kubernetes and Amazon EKS",
+    description:
+      "Design, migrate, secure, and operate EKS with Helm, ArgoCD, autoscaling, observability, and cost controls.",
+    href: "/kubernetes",
+  },
+  {
+    icon: "shield",
+    title: "Security and compliance",
+    description:
+      "Implement IAM, encryption, logging, segmentation, monitoring, and evidence for regulated workloads.",
+    href: "/security-and-compliance",
+  },
+  {
+    icon: "fin",
+    title: "AWS FinOps",
+    description:
+      "Make cloud spend visible and accountable through tagging, rightsizing, commitments, and cost-aware architecture.",
+    href: "/finops",
+  },
+  {
+    icon: "ai",
+    title: "AI workflows on AWS",
+    description:
+      "Build secure AI applications and automations around a defined business use case, trusted data, and measurable outcomes.",
+    href: "/ai",
+  },
+] as const;
+
+const PIPELINE = [
+  { icon: "commit", title: "Commit", detail: "reviewed change" },
+  { icon: "build", title: "Build", detail: "signed image" },
+  { icon: "test", title: "Test", detail: "quality gates" },
+  { icon: "deploy", title: "Deploy", detail: "GitOps sync" },
+  { icon: "observe", title: "Observe", detail: "logs and metrics" },
+] as const;
+
+const PROBLEMS = [
+  ["Rising AWS spend", "Find waste, assign ownership, and protect reliability while reducing cost."],
+  ["Fragile releases", "Replace manual deployment steps with tested pipelines and safe rollback paths."],
+  ["Complex Kubernetes", "Make EKS secure, observable, scalable, and easier for your team to operate."],
+  ["An approaching audit", "Close infrastructure control gaps and make technical evidence easier to produce."],
+  ["A high-risk migration", "Map dependencies, test the move, and rehearse cutover before production changes."],
+] as const;
+
+function DiagramIcon({ name }: { name: string }) {
+  const common = {
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.7,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+  };
+
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      {name === "cloud" && <path {...common} d="M7 18h9a4 4 0 0 0 .5-7.97A6 6 0 0 0 5 9.5 3.5 3.5 0 0 0 6 18Z" />}
+      {name === "dev" && <><path {...common} d="M8 8l-4 4 4 4M16 8l4 4-4 4M13 5l-2 14" /></>}
+      {name === "k8s" && <><path {...common} d="M12 3l7 4v8l-7 4-7-4V7z" /><circle {...common} cx="12" cy="12" r="2.4" /></>}
+      {name === "shield" && <><path {...common} d="M12 3l7 3v6c0 4.2-3 7-7 9-4-2-7-4.8-7-9V6z" /><path {...common} d="M9 12l2 2 4-4" /></>}
+      {name === "ai" && <><circle {...common} cx="12" cy="12" r="3" /><path {...common} d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" /></>}
+      {name === "fin" && <path {...common} d="M4 19V5M4 15l5-5 4 3 7-8" />}
+      {name === "commit" && <path {...common} d="M12 3v10m0 0a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM6 3a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0 6v4a3 3 0 0 0 3 3h1" />}
+      {name === "build" && <path {...common} d="M12 2l8 4.5v9L12 20l-8-4.5v-9L12 2zM4 6.5L12 11l8-4.5M12 11v9" />}
+      {name === "test" && <path {...common} d="M5 12l4 4L19 6" />}
+      {name === "deploy" && <path {...common} d="M12 3v12m0-12l-4 4m4-4l4 4M5 17v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2" />}
+      {name === "observe" && <><path {...common} d="M4 13a8 8 0 0 1 16 0M12 13l3-3M9 20h6" /><circle cx="12" cy="13" r="1.6" fill="currentColor" /></>}
+    </svg>
+  );
+}
 
 /**
  * Redesigned homepage, self-contained, AWS-aligned dark-terminal / light theme.
@@ -61,10 +149,10 @@ const CSS = `
 .home-rd .hero{position:relative;min-height:92vh;display:flex;align-items:center;padding:70px 0 60px;overflow:hidden;}
 .home-rd #aurora{position:absolute;inset:0;width:100%;height:100%;z-index:0;}
 .home-rd .hero-fade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(244,247,251,.6) 0%,rgba(244,247,251,.12) 32%,transparent 52%),linear-gradient(180deg,rgba(244,247,251,.45) 0%,transparent 16%,transparent 60%,var(--bg) 100%);}
-.home-rd .hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.06fr .94fr;gap:48px;align-items:center;width:100%;}
+.home-rd .hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr .88fr;gap:48px;align-items:center;width:100%;}
 @media(max-width:1000px){.home-rd .hero-in{grid-template-columns:1fr;gap:44px;}}
-.home-rd .hero h1{font-size:clamp(40px,6.4vw,72px);font-weight:800;letter-spacing:-.03em;margin:22px 0 22px;}
-.home-rd .hero .sub{color:var(--mist);font-size:clamp(16px,2vw,19px);max-width:42ch;}
+.home-rd .hero h1{font-size:clamp(40px,5.5vw,64px);font-weight:800;letter-spacing:-.035em;margin:22px 0 22px;}
+.home-rd .hero .sub{color:var(--mist);font-size:clamp(16px,2vw,19px);max-width:48ch;}
 .home-rd .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;}
 .home-rd .trust{margin-top:26px;display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--mist);font-family:var(--fm);flex-wrap:wrap;}
 .home-rd .stars{color:var(--signal);letter-spacing:2px;} .home-rd .sep{color:var(--dim);}
@@ -99,6 +187,28 @@ const CSS = `
 .home-rd .ts-txt .stars{color:var(--signal);letter-spacing:1px;font-size:13px;}
 .home-rd .ts-badges{display:flex;gap:8px;}
 .home-rd .ts-badges .b{font-family:var(--fm);font-weight:700;font-size:12.5px;letter-spacing:.04em;border:1px solid var(--line2);border-radius:9px;padding:8px 12px;background:var(--bg);color:var(--ink-2);}
+.home-rd .answer-sec{padding:76px 0 54px;background:var(--surface);}
+.home-rd .answer-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:42px;align-items:start;}
+@media(max-width:840px){.home-rd .answer-grid{grid-template-columns:1fr;}}
+.home-rd .answer-copy h2{font-size:clamp(29px,4vw,44px);margin:15px 0 18px;letter-spacing:-.025em;}
+.home-rd .answer-copy p{font-size:18px;color:var(--ink-2);max-width:68ch;}
+.home-rd .answer-copy p+p{margin-top:14px;color:var(--mist);font-size:16px;}
+.home-rd .answer-facts{display:grid;gap:12px;}
+.home-rd .answer-fact{padding:17px 18px;border:1px solid var(--line);border-radius:14px;background:var(--bg);}
+.home-rd .answer-fact b{display:block;font-family:var(--fd);font-size:14px;color:var(--ink);margin-bottom:3px;}
+.home-rd .answer-fact span{display:block;color:var(--mist);font-size:14px;}
+.home-rd .problem-sec{padding:64px 0 92px;background:var(--surface);}
+.home-rd .problem-head{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:30px;}
+.home-rd .problem-head h2{font-size:clamp(28px,3.7vw,42px);max-width:18ch;margin-top:14px;}
+.home-rd .problem-head p{max-width:43ch;color:var(--mist);}
+@media(max-width:760px){.home-rd .problem-head{align-items:start;flex-direction:column;}}
+.home-rd .problem-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
+@media(max-width:980px){.home-rd .problem-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.home-rd .problem-grid{grid-template-columns:1fr;}}
+.home-rd .problem-card{min-height:180px;padding:22px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(155deg,#fff,var(--bg));}
+.home-rd .problem-card .num{font-family:var(--fm);color:var(--teal);font-size:12px;letter-spacing:.08em;}
+.home-rd .problem-card h3{font-size:17px;margin:24px 0 9px;line-height:1.2;}
+.home-rd .problem-card p{color:var(--mist);font-size:14px;line-height:1.5;}
 .home-rd .mq-band{padding:44px 0;background:linear-gradient(180deg,var(--surface),var(--bg-2));border-block:1px solid var(--line);}
 .home-rd .mq-label{text-align:center;font-family:var(--fm);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist);margin-bottom:26px;}
 .home-rd .mq-wrap{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);}
@@ -132,6 +242,7 @@ const CSS = `
 .home-rd .stat .n{font-family:var(--fd);font-weight:800;font-size:clamp(34px,5vw,52px);letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1;color:var(--ink);}
 .home-rd .stat .n span{font-size:.55em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
 .home-rd .stat .l{margin-top:10px;font-family:var(--fm);font-size:12.5px;color:var(--mist);letter-spacing:.04em;text-transform:uppercase;}
+.home-rd .stat .source{display:block;margin-top:7px;color:var(--dim);font-size:12px;line-height:1.4;}
 .home-rd .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;perspective:1300px;}
 @media(max-width:940px){.home-rd .cards{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:600px){.home-rd .cards{grid-template-columns:1fr;}}
@@ -155,6 +266,20 @@ const CSS = `
 .home-rd .region{display:flex;align-items:center;gap:12px;font-family:var(--fm);font-size:13.5px;color:var(--mist);}
 .home-rd .region .d{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 10px rgba(9,114,211,.6);}
 .home-rd .region b{color:var(--ink);font-weight:600;}
+.home-rd .arch-card{border-radius:var(--r-lg);padding:26px;background:#0b1424;border:1px solid rgba(255,255,255,.1);box-shadow:0 38px 80px -46px rgba(10,30,70,.7);color:#dce7f8;}
+.home-rd .arch-label{font-family:var(--fm);font-size:11px;text-transform:uppercase;letter-spacing:.11em;color:#7fbdf0;margin-bottom:12px;}
+.home-rd .arch-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1.2fr;align-items:center;gap:9px;}
+@media(max-width:700px){.home-rd .arch-flow{grid-template-columns:1fr;}.home-rd .arch-arrow{transform:rotate(90deg);justify-self:center;}}
+.home-rd .arch-node{min-height:76px;padding:13px 12px;border-radius:13px;border:1px solid rgba(127,189,240,.2);background:rgba(255,255,255,.055);display:flex;flex-direction:column;justify-content:center;}
+.home-rd .arch-node strong{font-family:var(--fd);font-size:13px;color:#fff;line-height:1.25;}
+.home-rd .arch-node span{font-family:var(--fm);font-size:10.5px;color:#91a4bd;margin-top:3px;}
+.home-rd .arch-node.accent{border-color:rgba(255,153,0,.55);background:rgba(255,153,0,.1);}
+.home-rd .arch-arrow{font-family:var(--fm);color:#4ea3f0;font-size:19px;}
+.home-rd .arch-rails{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;}
+@media(max-width:560px){.home-rd .arch-rails{grid-template-columns:1fr;}}
+.home-rd .arch-rail{border-radius:12px;padding:13px 14px;background:rgba(78,163,240,.07);border:1px solid rgba(78,163,240,.13);font-size:12px;color:#9fb1c9;}
+.home-rd .arch-rail b{color:#dce7f8;font-weight:600;}
+.home-rd .arch-note{margin-top:15px;font-size:11.5px;color:#7588a2;font-family:var(--fm);}
 .home-rd .proof{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
 @media(max-width:860px){.home-rd .proof{grid-template-columns:1fr;}}
 .home-rd .pcard{border:1px solid var(--line);border-radius:var(--r);padding:26px;background:var(--surface);box-shadow:0 20px 50px -38px rgba(20,30,70,.4);transition:transform .3s,box-shadow .3s;}
@@ -170,6 +295,20 @@ const CSS = `
 .home-rd .badge{font-family:var(--fm);font-weight:700;font-size:15px;letter-spacing:.06em;border:1px solid var(--line-2);border-radius:12px;padding:12px 18px;background:var(--bg);color:var(--ink);}
 .home-rd .comply .t{max-width:42ch;position:relative;}
 .home-rd .comply .t h3{font-size:24px;margin-bottom:8px;} .home-rd .comply .t p{color:var(--mist);font-size:15px;}
+.home-rd .process{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:step;}
+@media(max-width:820px){.home-rd .process{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:520px){.home-rd .process{grid-template-columns:1fr;}}
+.home-rd .process-step{counter-increment:step;padding:24px;border:1px solid var(--line);border-radius:16px;background:var(--surface);}
+.home-rd .process-step::before{content:"0" counter(step);font-family:var(--fm);font-size:12px;color:var(--teal);letter-spacing:.08em;}
+.home-rd .process-step h3{font-size:18px;margin:19px 0 8px;}
+.home-rd .process-step p{font-size:14px;color:var(--mist);}
+.home-rd .faq-list{display:grid;gap:12px;max-width:900px;}
+.home-rd .faq-list details{border:1px solid var(--line);border-radius:15px;background:var(--surface);padding:0 20px;}
+.home-rd .faq-list summary{cursor:pointer;list-style:none;font-family:var(--fd);font-weight:600;font-size:17px;padding:20px 34px 20px 0;position:relative;}
+.home-rd .faq-list summary::-webkit-details-marker{display:none;}
+.home-rd .faq-list summary::after{content:"+";position:absolute;right:2px;top:17px;font-family:var(--fm);font-size:22px;color:var(--teal);}
+.home-rd .faq-list details[open] summary::after{content:"−";}
+.home-rd .faq-list details p{color:var(--mist);font-size:15px;padding:0 34px 20px 0;max-width:78ch;}
 .home-rd .cta{padding:120px 0;}
 .home-rd .cta .panel{position:relative;border-radius:32px;overflow:hidden;text-align:center;padding:96px 32px;background:linear-gradient(125deg,#16212e 0%,#0d5cad 55%,#2b8fe8 100%);box-shadow:0 50px 120px -50px rgba(13,92,173,.6);}
 .home-rd #ctagrid{position:absolute;inset:0;z-index:0;opacity:.6;}
@@ -238,26 +377,6 @@ export default function HomeRedesign() {
     const fillMq = (id: string, arr: string[]) => { const el = $(id); if (!el) return; const r = arr.map((t) => '<span class="chip"><span class="d"></span>' + t + "</span>").join(""); el.innerHTML = r + r; };
     fillMq("#mq1", setA.concat(setB)); fillMq("#mq2", setB.concat(setA));
 
-    /* service cards */
-    const ic: Record<string, string> = {
-      cloud: '<path d="M7 18h9a4 4 0 0 0 .5-7.97A6 6 0 0 0 5 9.5 3.5 3.5 0 0 0 6 18Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>',
-      dev: '<path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13 5l-2 14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>',
-      k8s: '<path d="M12 3l7 4v8l-7 4-7-4V7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/>',
-      shield: '<path d="M12 3l7 3v6c0 4.2-3 7-7 9-4-2-7-4.8-7-9V6z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>',
-      ai: '<circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>',
-      fin: '<path d="M4 19V5M4 15l5-5 4 3 7-8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>',
-    };
-    const services = [
-      { i: "cloud", t: "Cloud Infrastructure (AWS)", d: "Architecture, migration, and managed AWS built to scale securely.", l: "/cloud-service" },
-      { i: "dev", t: "DevOps & CI/CD", d: "Automated pipelines, infrastructure-as-code, and GitOps so you ship faster.", l: "/devops" },
-      { i: "k8s", t: "Kubernetes & Amazon EKS", d: "Cluster design, autoscaling, cost control, and day-2 operations.", l: "/kubernetes" },
-      { i: "shield", t: "Security & Compliance", d: "SOC 2, HIPAA, and PCI DSS built into the infrastructure.", l: "/security-and-compliance" },
-      { i: "ai", t: "AI Automation", d: "LLM and workflow automation running on secure cloud infrastructure.", l: "/ai" },
-      { i: "fin", t: "FinOps", d: "Cost visibility and optimization that pays for itself.", l: "/finops" },
-    ];
-    const cw = $("#cards");
-    if (cw) cw.innerHTML = services.map((s, i) => '<a class="card rv d' + (i % 3) + '" href="' + s.l + '"><span class="ic"><svg viewBox="0 0 24 24">' + ic[s.i] + '</svg></span><h3>' + s.t + "</h3><p>" + s.d + '</p><span class="more">Explore →</span></a>').join("");
-
     if (hoverable && !reduce) {
       onWin("mousemove", (e: Event) => { const m = e as MouseEvent; const c = (m.target as HTMLElement).closest(".card") as HTMLElement | null; if (!c || !root.contains(c)) return; const r = c.getBoundingClientRect(), px = (m.clientX - r.left) / r.width, py = (m.clientY - r.top) / r.height; c.style.setProperty("--mx", px * 100 + "%"); c.style.setProperty("--my", py * 100 + "%"); c.style.transform = "rotateY(" + (px - .5) * 12 + "deg) rotateX(" + (.5 - py) * 12 + "deg) translateZ(8px)"; });
       onWin("mouseout", (e: Event) => { const m = e as MouseEvent; const c = (m.target as HTMLElement).closest(".card") as HTMLElement | null; if (c && (!m.relatedTarget || !c.contains(m.relatedTarget as Node))) c.style.transform = ""; });
@@ -273,19 +392,8 @@ export default function HomeRedesign() {
     if (!reduce) { const io2 = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { up(e.target as HTMLElement); io2.unobserve(e.target); } }), { threshold: .6 }); $$("[data-count]").forEach((el) => io2.observe(el)); observers.push(io2); }
 
     /* pipeline */
-    const sd = [
-      { t: "Commit", s: "git push", ic: '<path d="M12 3v10m0 0a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM6 3a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0 6v4a3 3 0 0 0 3 3h1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>' },
-      { t: "Build", s: "docker build", ic: '<path d="M12 2l8 4.5v9L12 20l-8-4.5v-9L12 2zM4 6.5L12 11l8-4.5M12 11v9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>' },
-      { t: "Test", s: "ci: passing", ic: '<path d="M5 12l4 4L19 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>' },
-      { t: "Deploy", s: "argocd sync", ic: '<path d="M12 3v12m0-12l-4 4m4-4l4 4M5 17v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>' },
-      { t: "Observe", s: "datadog", ic: '<path d="M4 13a8 8 0 0 1 16 0M12 13l3-3M9 20h6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="13" r="1.6" fill="currentColor"/>' },
-    ];
     const pipe = $("#pipe");
     if (pipe) {
-      // Idempotent: remove any stages left from a prior effect run / remount so
-      // a soft navigation back to the homepage never duplicates the pipeline.
-      $$("#pipe .stage").forEach((el) => el.remove());
-      sd.forEach((d) => pipe.insertAdjacentHTML("beforeend", '<div class="stage"><div class="node"><svg viewBox="0 0 24 24">' + d.ic + "</svg></div><h4>" + d.t + "</h4><p>" + d.s + "</p></div>"));
       const stages = $$("#pipe .stage"), fill = $("#pipefill");
       const runPipe = () => { if (fill) fill.style.width = "100%"; stages.forEach((st, i) => setTimeout(() => { if (!killed) st.classList.add("on"); }, 300 + i * 430)); };
       if (!reduce) { const io3 = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { runPipe(); io3.disconnect(); } }), { threshold: .4 }); io3.observe(pipe); observers.push(io3); }
@@ -385,17 +493,22 @@ export default function HomeRedesign() {
         <div className="wrap hero-in">
           <div>
             <span className="eyebrow rv in">AWS Advanced Tier Partner, Naperville, IL</span>
-            <h1 className="kin" data-text="Cloud, DevOps & Kubernetes, engineered.">Cloud, DevOps &amp; Kubernetes, engineered.</h1>
-            <p className="sub rv in d2">We design, automate, and secure production AWS infrastructure, CI/CD pipelines, Amazon EKS, and SOC&nbsp;2 / HIPAA / PCI&nbsp;DSS compliance. Built by senior engineers, not resellers.</p>
+            <h1 className="kin" data-text="AWS cloud, DevOps, and Kubernetes consulting.">AWS cloud, DevOps, and Kubernetes consulting.</h1>
+            <p className="sub rv in d2">CodetoKloud helps production teams at SaaS, healthcare, fintech, and growing technology companies design, migrate, automate, and secure AWS infrastructure, Amazon EKS, CI/CD, FinOps, and technical controls for regulated workloads.</p>
             <div className="cta-row rv in d3">
-              <Link className="btn btn-primary" href="/contact">Book a free audit <span className="arw">→</span></Link>
-              <a className="btn btn-ghost" href="#proof">See our work</a>
+              <Link className="btn btn-primary" href="/contact">Book a 30-minute AWS review <span className="arw">→</span></Link>
+              <Link className="btn btn-ghost" href="/case-studies">View client results</Link>
             </div>
-            <div className="trust rv in d3"><span className="stars">★★★★★</span><span>4.9/5 on Clutch</span><span className="sep">·</span><span>9 verified reviews</span></div>
+            <div className="trust rv in d3"><span className="stars">★★★★★</span><span>4.9/5 on Clutch</span><span className="sep">·</span><span>Fit confirmed within one business day</span></div>
           </div>
           <div className="term rv in d2" role="img" aria-label="Live deployment terminal">
             <div className="term-bar"><span className="tl r" /><span className="tl y" /><span className="tl g" /><span className="term-title">deploy.sh, codetokloud</span></div>
-            <div className="term-body" id="term" />
+            <div className="term-body" id="term">
+              <div className="ln"><span className="t-prompt">$ </span><span className="t-cmd">terraform plan</span></div>
+              <div className="ln"><span className="t-dim">Plan: 3 to add, 0 to change, 0 to destroy.</span></div>
+              <div className="ln"><span className="t-prompt">$ </span><span className="t-cmd">helm upgrade api ./chart</span></div>
+              <div className="ln"><span className="t-ok">✓ production rollout ready</span></div>
+            </div>
             <div className="term-foot"><span>eks · us-east-1</span><span className="live"><span className="pip" />PRODUCTION</span></div>
           </div>
         </div>
@@ -420,6 +533,41 @@ export default function HomeRedesign() {
         </div>
       </section>
 
+      <section className="answer-sec" aria-labelledby="what-codetokloud-does">
+        <div className="wrap answer-grid">
+          <div className="answer-copy rv">
+            <span className="eyebrow">Direct answer</span>
+            <h2 id="what-codetokloud-does">What does CodetoKloud do?</h2>
+            <p>CodetoKloud is an AWS consulting company based in Naperville, Illinois. We help US businesses modernize cloud infrastructure, automate software delivery, run Kubernetes on Amazon EKS, reduce AWS cost, and implement technical controls for regulated workloads.</p>
+            <p>Our work covers architecture and hands-on implementation, with clear documentation, measurable outcomes, and practical handoff to your team.</p>
+          </div>
+          <div className="answer-facts rv d1" aria-label="CodetoKloud company facts">
+            <div className="answer-fact"><b>Primary platform</b><span>Amazon Web Services</span></div>
+            <div className="answer-fact"><b>Core expertise</b><span>DevOps, Amazon EKS, migration, FinOps, and cloud security</span></div>
+            <div className="answer-fact"><b>Best fit</b><span>SaaS, healthcare, fintech, and growing digital platforms</span></div>
+            <div className="answer-fact"><b>Service area</b><span>United States, delivered from Naperville, Illinois</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="problem-sec" aria-labelledby="cloud-problems">
+        <div className="wrap">
+          <div className="problem-head rv">
+            <div><span className="eyebrow">When to call us</span><h2 id="cloud-problems">Bring us the cloud problem slowing your team down.</h2></div>
+            <p>Start with the constraint that matters most. We connect architecture decisions to reliability, delivery speed, security, and cost.</p>
+          </div>
+          <div className="problem-grid">
+            {PROBLEMS.map(([title, description], index) => (
+              <article className={`problem-card rv d${index % 3}`} key={title}>
+                <span className="num">0{index + 1}</span>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="mq-band" aria-hidden="true">
         <div className="wrap">
           <p className="mq-label">Production-grade tooling we build and operate</p>
@@ -430,41 +578,77 @@ export default function HomeRedesign() {
 
       <section className="sec" id="pipeline">
         <div className="wrap">
-          <div className="sec-head rv"><span className="eyebrow">The platform</span><h2>From commit to production, automated.</h2><p>Every change flows through a pipeline we build for you, tested, secured, and shipped without the 2&nbsp;a.m. surprises.</p></div>
-          <div className="pipe" id="pipe"><div className="pipe-line"><span className="fill" id="pipefill" /></div></div>
+          <div className="sec-head rv"><span className="eyebrow">Delivery architecture</span><h2>From commit to production, automated.</h2><p>Every change moves through review, build, security checks, deployment, and observability, with a clear rollback path.</p></div>
+          <div className="pipe" id="pipe">
+            <div className="pipe-line"><span className="fill" id="pipefill" /></div>
+            {PIPELINE.map((stage) => (
+              <div className="stage" key={stage.title}>
+                <div className="node"><DiagramIcon name={stage.icon} /></div>
+                <h4>{stage.title}</h4>
+                <p>{stage.detail}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="sec" style={{ padding: "40px 0 60px" }}>
         <div className="wrap"><div className="stats">
-          <div className="stat rv"><div className="n" data-count="99.99" data-suffix="%">99.99<span>%</span></div><div className="l">Uptime delivered</div></div>
-          <div className="stat rv d1"><div className="n"><span>~</span>35<span>%</span></div><div className="l">Cloud cost cut</div></div>
-          <div className="stat rv d2"><div className="n" data-count="95" data-suffix="%">95<span>%</span></div><div className="l">Deploy success</div></div>
-          <div className="stat rv d3"><div className="n">4.9<span>/5</span></div><div className="l">Clutch · 9 reviews</div></div>
+          <div className="stat rv"><div className="n">~35<span>%</span></div><div className="l">Lower AWS cost</div><span className="source">GoAgalia EKS migration</span></div>
+          <div className="stat rv d1"><div className="n">80<span>%</span></div><div className="l">Less manual effort</div><span className="source">ArgoCD and Helm pipeline</span></div>
+          <div className="stat rv d2"><div className="n">99.99<span>%</span></div><div className="l">Platform uptime</div><span className="source">SOC 2 healthcare case study</span></div>
+          <div className="stat rv d3"><div className="n">4.9<span>/5</span></div><div className="l">Clutch rating</div><span className="source">9 verified reviews</span></div>
         </div></div>
       </section>
 
       <section className="sec" id="services" style={{ paddingTop: "40px" }}>
         <div className="wrap">
-          <div className="sec-head rv"><span className="eyebrow">What we do</span><h2>Senior engineering across your whole cloud.</h2><p>From first cluster to day-2 operations, architecture, automation, and security, built to scale on AWS.</p></div>
-          <div className="cards" id="cards" />
+          <div className="sec-head rv"><span className="eyebrow">Core services</span><h2>AWS engineering from architecture through operations.</h2><p>Bring in CodetoKloud for a focused project, a modernization program, or ongoing platform support.</p></div>
+          <div className="cards" id="cards">
+            {SERVICES.map((service, index) => (
+              <Link className={`card rv d${index % 3}`} href={service.href} key={service.href}>
+                <span className="ic"><DiagramIcon name={service.icon} /></span>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+                <span className="more">Explore service →</span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="sec globe-sec" id="global">
         <div className="wrap globe-grid">
           <div className="rv">
-            <span className="eyebrow">Global by design</span>
-            <h2 style={{ fontSize: "clamp(28px,4vw,44px)", margin: "16px 0 14px", letterSpacing: "-.02em" }}>Built to run anywhere your users are.</h2>
-            <p style={{ color: "var(--mist)" }}>Multi-region AWS architecture with automated failover and low-latency delivery, so your platform stays fast and available across the map.</p>
+            <span className="eyebrow">Reference architecture</span>
+            <h2 style={{ fontSize: "clamp(28px,4vw,44px)", margin: "16px 0 14px", letterSpacing: "-.02em" }}>A secure AWS path from user request to production data.</h2>
+            <p style={{ color: "var(--mist)" }}>We adapt the pattern to your recovery targets, compliance scope, traffic profile, team, and budget. The result is documented infrastructure your engineers can understand and operate.</p>
             <div className="region-list">
-              <div className="region"><span className="d" /><b>us-east-1</b> · N. Virginia, primary</div>
-              <div className="region"><span className="d" /><b>us-west-2</b> · Oregon, failover</div>
-              <div className="region"><span className="d" /><b>eu-west-1</b> · Ireland, edge</div>
-              <div className="region"><span className="d" /><b>ap-south-1</b> · Mumbai, edge</div>
+              <div className="region"><span className="d" /><b>Availability</b> Multi-AZ services and tested recovery</div>
+              <div className="region"><span className="d" /><b>Security</b> WAF, least privilege, encryption, and private networks</div>
+              <div className="region"><span className="d" /><b>Delivery</b> Versioned infrastructure and GitOps deployment</div>
+              <div className="region"><span className="d" /><b>Operations</b> Logs, metrics, traces, alerts, and cost visibility</div>
             </div>
           </div>
-          <div className="globe-hold rv d1"><canvas id="globe" aria-hidden="true" /></div>
+          <figure className="arch-card rv d1" aria-labelledby="reference-architecture-title">
+            <figcaption className="arch-label" id="reference-architecture-title">Example production AWS architecture</figcaption>
+            <div className="arch-flow">
+              <div className="arch-node"><strong>Users</strong><span>web and mobile</span></div>
+              <span className="arch-arrow" aria-hidden="true">›</span>
+              <div className="arch-node"><strong>CloudFront + WAF</strong><span>edge and protection</span></div>
+              <span className="arch-arrow" aria-hidden="true">›</span>
+              <div className="arch-node"><strong>Load balancer</strong><span>TLS and routing</span></div>
+              <span className="arch-arrow" aria-hidden="true">›</span>
+              <div className="arch-node accent"><strong>Amazon EKS</strong><span>private services across AZs</span></div>
+            </div>
+            <div className="arch-rails">
+              <div className="arch-rail"><b>Data:</b> Amazon RDS Multi-AZ, S3, backups, and encryption</div>
+              <div className="arch-rail"><b>Delivery:</b> Git, CI checks, ECR, ArgoCD, and Terraform</div>
+              <div className="arch-rail"><b>Security:</b> IAM, secrets, network policies, logging, and scanning</div>
+              <div className="arch-rail"><b>Observability:</b> CloudWatch, metrics, traces, alerts, and cost data</div>
+            </div>
+            <p className="arch-note">Reference pattern only. Final architecture depends on workload requirements.</p>
+          </figure>
         </div>
       </section>
 
@@ -474,26 +658,52 @@ export default function HomeRedesign() {
           <div className="proof">
             <Link className="pcard rv" href="/goagalia-healthcare-workforce-management"><span className="tag">Healthcare · EKS</span><h3>HIPAA-Compliant Kubernetes on Amazon EKS</h3><p>Migrated a healthcare workforce platform to a private, autoscaling EKS architecture with GitOps and full observability.</p><div className="metrics"><span className="metric">−35% cost</span><span className="metric">850→320 ms</span><span className="metric">99.7% uptime</span></div></Link>
             <Link className="pcard rv d1" href="/soc-2-healthcare-aws-case-study"><span className="tag">Healthcare · SOC 2</span><h3>SOC 2 Multi-AZ Healthcare Platform</h3><p>Rebuilt on AWS with Multi-AZ failover, cross-AZ replication, and audit logging to pass a SOC 2 audit.</p><div className="metrics"><span className="metric">Passed SOC 2</span><span className="metric">99.99% uptime</span></div></Link>
-            <Link className="pcard rv d2" href="/hybrid-cloud-kubernetes-case-study"><span className="tag">Media · Hybrid</span><h3>Hybrid On-Prem + Cloud Kubernetes</h3><p>Joined on-prem hardware and cloud burst capacity into one secure Kubernetes platform over a WireGuard mesh.</p><div className="metrics"><span className="metric">99.9% uptime</span><span className="metric">&lt;35 ms latency</span></div></Link>
+            <Link className="pcard rv d2" href="/hybrid-cloud-kubernetes-case-study"><span className="tag">Media · Hybrid</span><h3>Hybrid On-Prem + Cloud Kubernetes</h3><p>Joined retained on-premise hardware and cloud burst capacity into one Kubernetes platform over an encrypted WireGuard mesh.</p><div className="metrics"><span className="metric">Encrypted mesh</span><span className="metric">Cloud burst capacity</span></div></Link>
           </div>
         </div>
       </section>
 
       <section className="sec" id="compliance" style={{ paddingTop: "20px" }}>
         <div className="wrap rv"><div className="comply">
-          <div className="t"><span className="eyebrow">Compliance</span><h3>Engineered into the infrastructure, not bolted on.</h3><p>Encryption, least-privilege access, and audit evidence built in from day one, so audits become a formality.</p></div>
+          <div className="t"><span className="eyebrow">Compliance engineering</span><h3>Technical controls built into the infrastructure.</h3><p>We implement encryption, least privilege, logging, segmentation, monitoring, and evidence collection to reduce infrastructure gaps before an audit or assessment.</p></div>
           <div className="badges"><span className="badge">SOC 2</span><span className="badge">HIPAA</span><span className="badge">PCI DSS</span></div>
         </div></div>
+      </section>
+
+      <section className="sec" aria-labelledby="engagement-process">
+        <div className="wrap">
+          <div className="sec-head rv"><span className="eyebrow">How we work</span><h2 id="engagement-process">A clear path from problem to production.</h2><p>Each engagement starts with the business constraint, then turns it into a prioritized technical plan with measurable outcomes.</p></div>
+          <div className="process">
+            <article className="process-step rv"><h3>Discover</h3><p>Clarify the constraint, current environment, stakeholders, risks, and definition of success.</p></article>
+            <article className="process-step rv d1"><h3>Review</h3><p>Assess architecture, delivery, security, reliability, and cost against your goals.</p></article>
+            <article className="process-step rv d2"><h3>Implement</h3><p>Build the prioritized changes in your environment with versioned, documented work.</p></article>
+            <article className="process-step rv d3"><h3>Measure and hand off</h3><p>Verify results, transfer knowledge, and continue with managed support when needed.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section className="sec" aria-labelledby="homepage-faq" style={{ paddingTop: "40px" }}>
+        <div className="wrap">
+          <div className="sec-head rv"><span className="eyebrow">Frequently asked questions</span><h2 id="homepage-faq">What buyers ask before the first call.</h2><p>Direct answers about CodetoKloud, our focus, and how an engagement starts.</p></div>
+          <div className="faq-list">
+            {homepageFaqItems.map((item) => (
+              <details className="rv" key={item.question}>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section className="cta" id="cta">
         <div className="wrap"><div className="panel">
           <canvas id="ctagrid" aria-hidden="true" />
           <div className="in rv">
-            <span className="eyebrow" style={{ display: "inline-flex" }}>Free · no obligation</span>
-            <h2 style={{ marginTop: "16px" }}>Ready to build something reliable?</h2>
-            <p>Tell us what you&apos;re building and we&apos;ll review your cloud, pipelines, and Kubernetes setup, then send back prioritized recommendations within one business day.</p>
-            <Link className="btn btn-primary" href="/contact" style={{ padding: "16px 30px", fontSize: "16.5px" }}>Book a free audit <span className="arw">→</span></Link>
+            <span className="eyebrow" style={{ display: "inline-flex" }}>Focused first review</span>
+            <h2 style={{ marginTop: "16px" }}>Get three priorities for your AWS environment.</h2>
+            <p>Share your biggest cloud, DevOps, Kubernetes, cost, or compliance concern. We will confirm fit within one business day, schedule a focused 30-minute review, and identify three practical next steps.</p>
+            <Link className="btn btn-primary" href="/contact" style={{ padding: "16px 30px", fontSize: "16.5px" }}>Book my AWS review <span className="arw">→</span></Link>
           </div>
         </div></div>
       </section>

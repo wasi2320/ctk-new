@@ -9,6 +9,7 @@ interface HeroSectionProps {
   title: string;
   description: string;
   imageSrc: string;
+  imageAlt?: string;
   cover?: boolean;
   buttonText?: string;
   buttonLink?: string;
@@ -88,8 +89,9 @@ const HeroSection = ({
   title,
   description,
   imageSrc,
+  imageAlt,
   cover = false,
-  buttonText = "Book a free audit", // default value
+  buttonText = "Book an AWS review",
   buttonLink = "/contact",
 }: HeroSectionProps) => {
   const isAnchorLink = Boolean(buttonLink?.startsWith("#"));
@@ -125,31 +127,31 @@ const HeroSection = ({
   return (
     // <FluidBackground>
     <motion.section
-      className="md:px-36 px-4 flex flex-col-reverse md:flex-row items-center justify-between h-auto md:h-[90vh] gap-10 my-10 md:my-0"
+      className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-8 px-4 py-10 sm:px-6 sm:py-12 md:grid-cols-2 md:gap-10 md:px-10 lg:gap-14 lg:px-16 lg:py-14 xl:px-20"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
       viewport={{ once: true, margin: "-100px" }}
     >
       <motion.div
-        className="md:w-[55%] text-center md:text-left"
+        className="text-center md:text-left"
         variants={textVariants}
       >
         <motion.h1
-          className="md:text-[44px] text-4xl font-bold"
+          className="text-3xl font-bold leading-tight sm:text-4xl lg:text-[44px]"
           variants={textVariants}
         >
           {title}
         </motion.h1>
         <motion.p
-          className="md:text-xl text-base md:w-11/12 my-8 text-gray-700"
+          className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-gray-700 sm:text-lg md:mx-0 md:max-w-xl lg:text-xl"
           variants={textVariants}
         >
           {description}
         </motion.p>
 
         {buttonText && buttonLink && (
-          <motion.div variants={textVariants}>
+          <motion.div className="mt-6" variants={textVariants}>
             {isAnchorLink ? (
               renderButton()
             ) : (
@@ -160,7 +162,7 @@ const HeroSection = ({
       </motion.div>
 
       <motion.div
-        className="md:w-[55%] w-full flex justify-center"
+        className="flex w-full justify-center"
         variants={imageVariants}
       >
         <motion.div
@@ -168,14 +170,14 @@ const HeroSection = ({
             scale: 1.02,
             transition: { duration: 0.3, ease: "easeOut" },
           }}
-          className="w-[240px] sm:w-[300px] md:w-full"
+          className="w-full max-w-[420px] md:max-w-[480px]"
         >
           <Image
             src={imageSrc}
-            alt="Hero"
+            alt={imageAlt || title}
             height={500}
             width={500}
-            className={`w-full h-auto max-h-[260px] sm:max-h-[320px] md:max-h-none md:h-[350px] lg:h-[500px] ${
+            className={`h-auto max-h-[280px] w-full sm:max-h-[320px] md:max-h-[380px] lg:max-h-[420px] ${
               cover ? "object-cover" : "object-contain"
             }`}
           />

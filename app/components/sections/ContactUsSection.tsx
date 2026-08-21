@@ -167,6 +167,7 @@ export default function ContactUsSection() {
                 transition={{ delay: index * 0.1 }}
               >
                 <motion.label
+                  htmlFor={field.id}
                   className="block text-lg font-medium mb-1"
                   whileHover={{ color: "#0972d3" }}
                 >
@@ -174,6 +175,8 @@ export default function ContactUsSection() {
                 </motion.label>
                 {field.type === "textarea" ? (
                   <motion.textarea
+                    id={field.id}
+                    name={field.id}
                     className="w-full border-b border-gray-400 outline-none py-2 bg-transparent transition-colors focus:border-[#0972d3]"
                     rows={field.rows}
                     placeholder={field.placeholder}
@@ -184,6 +187,8 @@ export default function ContactUsSection() {
                   />
                 ) : (
                   <motion.input
+                    id={field.id}
+                    name={field.id}
                     type={field.type}
                     className="w-full border-b border-gray-400 outline-none py-2 bg-transparent transition-colors focus:border-[#0972d3]"
                     placeholder={field.placeholder}
@@ -199,12 +204,15 @@ export default function ContactUsSection() {
             {/* Qualifier, helps route and prioritize the lead. */}
             <motion.div variants={formFieldVariants}>
               <motion.label
+                htmlFor="topic"
                 className="block text-lg font-medium mb-1"
                 whileHover={{ color: "#0972d3" }}
               >
                 What do you need help with?
               </motion.label>
               <select
+                id="topic"
+                name="topic"
                 className="w-full border-b border-gray-400 outline-none py-2 bg-transparent transition-colors focus:border-[#0972d3]"
                 value={formData.topic || ""}
                 onChange={(e) => handleInputChange("topic", e.target.value)}

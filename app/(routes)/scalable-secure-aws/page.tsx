@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import CaseStudyLayout from "@/app/components/sections/caseStudies/CaseStudyLayout";
 import CaseStudyHeader from "@/app/components/sections/caseStudies/CaseStudyHeader";
 import CaseStudyProblemStatement from "@/app/components/sections/caseStudies/CaseStudyProblemStatement";
@@ -12,9 +13,9 @@ import { caseStudySchema } from "@/lib/structured-data";
 
 export const metadata = pageMetadata("/scalable-secure-aws");
 const services = [
-  "Cloud Consulting & SI",
-  "Architectural Design",
-  "Account-Based Marketing",
+  "AWS Architecture",
+  "Kubernetes and EKS",
+  "DevOps Automation",
 ];
 const projectDetails = {
   client: "Spiderdoor",
@@ -23,33 +24,38 @@ const projectDetails = {
 };
 const solutionComponents = [
   {
-    title: "ALB",
-    description: "for traffic distribution",
+    title: "Protected request path",
+    description:
+      "CloudFront, AWS WAF, and an Application Load Balancer provided edge protection and distributed traffic to private application workloads.",
   },
   {
-    title: "Amazon RDS",
-    description: "for secure database management",
+    title: "Private application and data tiers",
+    description:
+      "Containerized services ran on Amazon EKS, while Amazon RDS provided managed database availability in private subnets.",
   },
   {
-    title: "Prometheus & Grafana",
-    description: "for monitoring",
+    title: "Automated delivery",
+    description:
+      "Jenkins, Docker, and Argo CD established a repeatable CI/CD workflow with a private source repository and container registry.",
   },
   {
-    title: "S3",
-    description: "for log and backup storage",
+    title: "Monitoring and recovery data",
+    description:
+      "Prometheus and Grafana provided operational visibility, while Amazon S3 retained logs and backup data.",
   },
   {
-    title: "VPC, VPN, WAF, CloudFront",
-    description: "for security",
+    title: "Controlled administrative access",
+    description:
+      "VPC segmentation, VPN access, managed secrets, and encryption reduced exposure compared with the previous VPS environment.",
   },
 ];
 const techStack = [
   {
-    name: "Docker",
-    icon: "/Images/PNGSS/bg_dock.png",
+    name: "AWS",
+    icon: "/Images/PNGSS/aws.png",
   },
-  { name: "GitLab", icon: "/Images/PNGSS/gitlab.png" },
-  { name: "Google Cloud", icon: "/Images/PNGSS/gcloud.png" },
+  { name: "Kubernetes", icon: "/Images/PNGSS/Kubernetes-Logo.png" },
+  { name: "Argo CD", icon: "/Images/PNGSS/Argo-1-e1630327305635-1.png" },
   { name: "Prometheus", icon: "/Images/PNGSS/prometheus.png" },
 ];
 const metrics = [
@@ -82,9 +88,9 @@ const metrics = [
 
 const lesson = {
   firstLesson:
-    "Key takeaways included the importance of scalability with auto-scaling and Kubernetes, the value of automation in CI/CD workflows, the need for proactive monitoring, and the benefits of cloud-native security. Cost optimization required ongoing resource management to prevent overprovisioning.",
+    "For this SaaS migration, automated delivery and observability were as important as the target infrastructure. Auto scaling provided capacity flexibility, but ongoing resource review remained necessary to prevent overprovisioning.",
   secondLesson:
-    "A comparison between VPS and AWS revealed significant savings and operational benefits. AWS reduced manual processes, improved security, and provided scalable infrastructure. Pay-as-you-go pricing minimized upfront costs, while automation reduced labor expenses. AWS's built-in services outperformed the client's existing VPS setup in cost, performance, and security.",
+    "The project comparison favored AWS for this workload because managed services, automated scaling, and repeatable delivery replaced several manual VPS operations. The cost advantage depended on right sizing and continued resource management.",
 };
 
 export default function ScalableSecureAwsPage() {
@@ -96,26 +102,24 @@ export default function ScalableSecureAwsPage() {
           description:
             "How CodetoKloud migrated a SaaS application to modern AWS infrastructure with container orchestration, CI/CD, and Prometheus/Grafana monitoring, improving cost, security, and performance.",
           path: "/scalable-secure-aws",
-          image: "/services/aws-solution-illustration.png",
+          image: "/services/architecture/secure-aws-eks-platform.svg",
         })}
       />
       <CaseStudyLayout>
       <CaseStudyHeader
-        title="Scalable and Secure AWS Setup"
-        subtitle="Services provided on this Project"
+        title="How Spiderdoor Moved from a VPS to a Secure AWS Platform"
+        subtitle="A private Amazon EKS architecture combined automated delivery, managed data, monitoring, and layered traffic protection."
         services={services}
-        arcSrc="/services/strength_aws.png"
-        alt="AWS Architecture Diagram"
+        arcSrc="/services/architecture/secure-aws-eks-platform.svg"
+        alt="Secure Amazon EKS architecture with GitOps delivery, private workloads, Multi-AZ data services, and centralized observability"
       />
       <CaseStudyProblemStatement
-        statement="A client sought to migrate their SaaS application from a VPS to AWS to improve scalability, security, and deployment efficiency. The existing setup lacked automation, robust CI/CD workflows, and strong security, making development slow and error-prone. The client needed a modern, well-architected cloud infrastructure with CI/CD, container orchestration, monitoring, and security best practices."
+        statement="Spiderdoor needed to move its SaaS application from a VPS to AWS. The existing environment relied on manual deployment work, had limited scaling options, and did not provide the network controls or operational visibility the team needed for continued growth."
         details={projectDetails}
       />
       <CaseStudySolution
         solutions={solutionComponents}
-        illustration="/services/aws-solution-illustration.png"
-        illustrationAlt="Solution Illustration"
-        description="The new AWS infrastructure integrates CI/CD using Jenkins, Docker, and ArgoCD, with Kubernetes handling container orchestration. A private code repository and Docker registry enhance code and image security. This setup enables efficient, automated deployments and improves reliability through continuous monitoring and infrastructure scalability."
+        description="The new environment brought delivery, runtime, data, security, and monitoring into one AWS operating model. Each layer has a defined purpose and can be reviewed independently as the SaaS workload grows."
       />
       <CaseStudyTechStack techs={techStack} />
       <MetricsDisplay metrics={metrics} />
@@ -123,6 +127,19 @@ export default function ScalableSecureAwsPage() {
         lessons={lesson.firstLesson}
         secondLesson={lesson.secondLesson}
       />
+      <section className="bg-[#0d1526] px-4 py-16 text-center text-white">
+        <h2 className="text-3xl font-bold">Considering a VPS to AWS migration?</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
+          We will review the current workload, identify migration risks, and map
+          the smallest practical path to a secure, operable AWS foundation.
+        </p>
+        <Link
+          href="/contact"
+          className="mt-8 inline-block rounded-full bg-white px-8 py-3 font-semibold text-[#0d1526] hover:bg-gray-100"
+        >
+          Review my AWS migration
+        </Link>
+      </section>
     </CaseStudyLayout>
     </>
   );

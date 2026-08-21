@@ -1,0 +1,199 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="secureTitle secureDesc">
+  <title id="secureTitle">Secure and scalable Amazon EKS platform architecture</title>
+  <desc id="secureDesc">GitHub Actions tests and scans application code, pushes signed images to Amazon ECR, and updates a GitOps repository. Argo CD deploys to a private Amazon EKS cluster across two Availability Zones. CloudFront, AWS WAF, and an Application Load Balancer protect user traffic. RDS, Secrets Manager, KMS, GuardDuty, CloudWatch, Prometheus, and Grafana support security, data, and operations.</desc>
+  <defs>
+    <linearGradient id="secureBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F8FBFF"/>
+      <stop offset="1" stop-color="#EEF6FC"/>
+    </linearGradient>
+    <linearGradient id="secureEks" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#12385C"/>
+      <stop offset="1" stop-color="#0E2740"/>
+    </linearGradient>
+    <filter id="secureShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#17324D" flood-opacity="0.10"/>
+    </filter>
+    <marker id="secureArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M1 1 9 5 1 9Z" fill="#2563EB"/>
+    </marker>
+    <marker id="secureArrowPurple" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M1 1 9 5 1 9Z" fill="#7C3AED"/>
+    </marker>
+    <marker id="secureArrowGreen" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M1 1 9 5 1 9Z" fill="#0E9F6E"/>
+    </marker>
+    <style>
+      .st { font-family: Inter, ui-sans-serif, system-ui, sans-serif; fill: #102A43; }
+      .stitle { font-size: 30px; font-weight: 760; letter-spacing: -0.5px; }
+      .ssub { font-size: 15px; fill: #52677C; }
+      .ssection { font-size: 13px; font-weight: 760; letter-spacing: 1.2px; }
+      .sname { font-size: 15px; font-weight: 730; }
+      .smeta { font-size: 12px; fill: #61758A; }
+      .scard { fill: #FFFFFF; stroke: #D8E5F1; stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="720" rx="28" fill="url(#secureBg)"/>
+  <rect x="28" y="26" width="1144" height="668" rx="24" fill="none" stroke="#D9E6F2"/>
+
+  <g class="st">
+    <text class="stitle" x="58" y="72">Secure AWS platform on Amazon EKS</text>
+    <text class="ssub" x="58" y="99">Private workloads, GitOps delivery, layered protection, and centralized operational visibility</text>
+    <g transform="translate(949 45)">
+      <rect width="193" height="32" rx="16" fill="#E9F8F3"/>
+      <path d="M18 8 25 11v6c0 5-3 8-7 10-4-2-7-5-7-10v-6z" fill="none" stroke="#0E9F6E" stroke-width="1.8"/>
+      <text x="34" y="21" font-size="11" font-weight="750" fill="#087A55">DEFENSE IN DEPTH</text>
+    </g>
+
+    <rect x="50" y="126" width="1100" height="134" rx="18" fill="#FFFFFF" stroke="#D8E5F1"/>
+    <rect x="50" y="126" width="8" height="134" rx="4" fill="#7C3AED"/>
+    <text class="ssection" x="78" y="153" fill="#7C3AED">SECURE SOFTWARE DELIVERY</text>
+
+    <g filter="url(#secureShadow)">
+      <g transform="translate(78 172)">
+        <rect class="scard" width="146" height="65" rx="13"/>
+        <circle cx="28" cy="32" r="16" fill="#EBF1F7"/>
+        <path d="M21 32h14M28 25v14" stroke="#102A43" stroke-width="2" stroke-linecap="round"/>
+        <text class="sname" x="52" y="29">GitHub</text>
+        <text class="smeta" x="52" y="47">Source code</text>
+      </g>
+      <g transform="translate(261 172)">
+        <rect class="scard" width="167" height="65" rx="13"/>
+        <circle cx="28" cy="32" r="16" fill="#E9F8F3"/>
+        <path d="m20 33 5 5 11-13" fill="none" stroke="#0E9F6E" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+        <text class="sname" x="52" y="29">Actions</text>
+        <text class="smeta" x="52" y="47">Test and scan</text>
+      </g>
+      <g transform="translate(465 172)">
+        <rect class="scard" width="167" height="65" rx="13"/>
+        <circle cx="28" cy="32" r="16" fill="#FFF2DE"/>
+        <path d="M19 25h18v14H19zM22 29h12M22 34h12" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round"/>
+        <text class="sname" x="52" y="29">Amazon ECR</text>
+        <text class="smeta" x="52" y="47">Signed images</text>
+      </g>
+      <g transform="translate(669 172)">
+        <rect class="scard" width="167" height="65" rx="13"/>
+        <circle cx="28" cy="32" r="16" fill="#F2EAFE"/>
+        <path d="M19 25h18v16H19zM23 22v6M33 22v6M23 33h10" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round"/>
+        <text class="sname" x="52" y="29">GitOps repo</text>
+        <text class="smeta" x="52" y="47">Desired state</text>
+      </g>
+      <g transform="translate(873 172)">
+        <rect class="scard" width="167" height="65" rx="13"/>
+        <circle cx="28" cy="32" r="16" fill="#FFF0E8"/>
+        <circle cx="28" cy="32" r="7" fill="none" stroke="#F05A28" stroke-width="2"/>
+        <path d="M28 20v5M28 39v5M16 32h5M35 32h5" stroke="#F05A28" stroke-width="2" stroke-linecap="round"/>
+        <text class="sname" x="52" y="29">Argo CD</text>
+        <text class="smeta" x="52" y="47">Sync and rollback</text>
+      </g>
+    </g>
+    <path d="M224 204H253" fill="none" stroke="#7C3AED" stroke-width="2.3" marker-end="url(#secureArrowPurple)"/>
+    <path d="M428 204H457" fill="none" stroke="#7C3AED" stroke-width="2.3" marker-end="url(#secureArrowPurple)"/>
+    <path d="M632 204H661" fill="none" stroke="#7C3AED" stroke-width="2.3" marker-end="url(#secureArrowPurple)"/>
+    <path d="M836 204H865" fill="none" stroke="#7C3AED" stroke-width="2.3" marker-end="url(#secureArrowPurple)"/>
+    <rect x="1055" y="178" width="69" height="20" rx="10" fill="#E9F8F3"/>
+    <text x="1089" y="192" text-anchor="middle" font-size="9.5" font-weight="750" fill="#087A55">TRIVY</text>
+    <rect x="1055" y="207" width="69" height="20" rx="10" fill="#E8F2FF"/>
+    <text x="1089" y="221" text-anchor="middle" font-size="9.5" font-weight="750" fill="#174EA6">SONAR</text>
+
+    <text class="ssection" x="58" y="294" fill="#2563EB">PROTECTED REQUEST PATH</text>
+    <g transform="translate(58 311)">
+      <rect width="148" height="54" rx="13" fill="#FFFFFF" stroke="#D8E5F1"/>
+      <text class="sname" x="74" y="24" text-anchor="middle">Users</text>
+      <text class="smeta" x="74" y="41" text-anchor="middle">TLS traffic</text>
+    </g>
+    <g transform="translate(251 311)">
+      <rect width="178" height="54" rx="13" fill="#FFFFFF" stroke="#D8E5F1"/>
+      <text class="sname" x="89" y="24" text-anchor="middle">Route 53</text>
+      <text class="smeta" x="89" y="41" text-anchor="middle">DNS health routing</text>
+    </g>
+    <g transform="translate(474 311)">
+      <rect width="205" height="54" rx="13" fill="#FFF8EE" stroke="#F4CCA0"/>
+      <text class="sname" x="102" y="24" text-anchor="middle" fill="#A15305">CloudFront + WAF</text>
+      <text class="smeta" x="102" y="41" text-anchor="middle">Edge cache and rules</text>
+    </g>
+    <g transform="translate(724 311)">
+      <rect width="205" height="54" rx="13" fill="#F0FAF7" stroke="#B9E3D4"/>
+      <text class="sname" x="102" y="24" text-anchor="middle" fill="#087A55">Application LB</text>
+      <text class="smeta" x="102" y="41" text-anchor="middle">Public subnets</text>
+    </g>
+    <path d="M206 338H243" fill="none" stroke="#2563EB" stroke-width="2.3" marker-end="url(#secureArrow)"/>
+    <path d="M429 338H466" fill="none" stroke="#2563EB" stroke-width="2.3" marker-end="url(#secureArrow)"/>
+    <path d="M679 338H716" fill="none" stroke="#2563EB" stroke-width="2.3" marker-end="url(#secureArrow)"/>
+
+    <rect x="48" y="389" width="1104" height="273" rx="20" fill="#FFFFFF" stroke="#AFC8DF" stroke-width="1.5"/>
+    <rect x="48" y="389" width="1104" height="37" rx="20" fill="#EAF3FB"/>
+    <path d="M48 408c0-11 9-19 19-19h1066c10 0 19 8 19 19v18H48z" fill="#EAF3FB"/>
+    <text class="ssection" x="70" y="413" fill="#174D75">AWS REGION  •  PRIVATE VPC  •  TWO AVAILABILITY ZONES</text>
+
+    <g transform="translate(70 445)" filter="url(#secureShadow)">
+      <rect width="534" height="192" rx="18" fill="url(#secureEks)"/>
+      <circle cx="34" cy="34" r="18" fill="#2D6ED6"/>
+      <path d="M34 22v24M22 34h24M26 26l16 16M42 26 26 42" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+      <circle cx="34" cy="34" r="7" fill="none" stroke="#FFFFFF" stroke-width="1.8"/>
+      <text x="63" y="31" font-size="18" font-weight="750" fill="#FFFFFF">Amazon EKS</text>
+      <text x="63" y="49" font-size="11.5" fill="#C9DBEB">Private API endpoint and worker nodes</text>
+
+      <g transform="translate(20 71)">
+        <rect width="237" height="98" rx="13" fill="#FFFFFF" fill-opacity="0.10" stroke="#719BC4"/>
+        <text x="14" y="23" font-size="11" font-weight="750" fill="#A9D5FF">AZ A  •  MANAGED NODES</text>
+        <rect x="15" y="38" width="58" height="42" rx="9" fill="#2D6ED6"/>
+        <rect x="89" y="38" width="58" height="42" rx="9" fill="#0E9F6E"/>
+        <rect x="163" y="38" width="58" height="42" rx="9" fill="#7C3AED"/>
+        <text x="44" y="64" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">API</text>
+        <text x="118" y="64" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">WORKER</text>
+        <text x="192" y="64" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">QUEUE</text>
+      </g>
+      <g transform="translate(277 71)">
+        <rect width="237" height="98" rx="13" fill="#FFFFFF" fill-opacity="0.10" stroke="#719BC4"/>
+        <text x="14" y="23" font-size="11" font-weight="750" fill="#A9D5FF">AZ B  •  MANAGED NODES</text>
+        <rect x="15" y="38" width="58" height="42" rx="9" fill="#2D6ED6"/>
+        <rect x="89" y="38" width="58" height="42" rx="9" fill="#0E9F6E"/>
+        <rect x="163" y="38" width="58" height="42" rx="9" fill="#7C3AED"/>
+        <text x="44" y="64" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">API</text>
+        <text x="118" y="64" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">WORKER</text>
+        <text x="192" y="64" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">QUEUE</text>
+      </g>
+    </g>
+
+    <g transform="translate(625 445)">
+      <rect width="231" height="192" rx="18" fill="#F8FBFF" stroke="#BCD2E6"/>
+      <text x="18" y="28" font-size="12" font-weight="760" letter-spacing="1" fill="#52677C">PRIVATE DATA</text>
+      <rect x="18" y="43" width="195" height="69" rx="12" fill="#FFFFFF" stroke="#D8E5F1"/>
+      <circle cx="47" cy="77" r="17" fill="#F2EAFE"/>
+      <ellipse cx="47" cy="71" rx="9" ry="4" fill="none" stroke="#7C3AED" stroke-width="2"/>
+      <path d="M38 71v13c0 5 18 5 18 0V71M38 78c0 5 18 5 18 0" fill="none" stroke="#7C3AED" stroke-width="2"/>
+      <text x="74" y="70" font-size="14" font-weight="730">RDS Multi-AZ</text>
+      <text x="74" y="89" font-size="11" fill="#61758A">Encrypted + backups</text>
+      <rect x="18" y="124" width="92" height="48" rx="11" fill="#FFF2DE"/>
+      <text x="64" y="145" text-anchor="middle" font-size="11" font-weight="730" fill="#A15305">Redis</text>
+      <text x="64" y="161" text-anchor="middle" font-size="10" fill="#80520B">cache</text>
+      <rect x="121" y="124" width="92" height="48" rx="11" fill="#F2EAFE"/>
+      <text x="167" y="145" text-anchor="middle" font-size="11" font-weight="730" fill="#6427B7">RabbitMQ</text>
+      <text x="167" y="161" text-anchor="middle" font-size="10" fill="#6427B7">queue</text>
+    </g>
+
+    <g transform="translate(877 445)">
+      <rect width="253" height="192" rx="18" fill="#F8FBFF" stroke="#BCD2E6"/>
+      <text x="18" y="28" font-size="12" font-weight="760" letter-spacing="1" fill="#52677C">SECURITY + OPERATIONS</text>
+      <rect x="18" y="43" width="101" height="53" rx="11" fill="#FFF8EE"/>
+      <path d="M34 57 42 60v7c0 5-3 8-8 10-5-2-8-5-8-10v-7z" fill="none" stroke="#D97706" stroke-width="1.8"/>
+      <text x="51" y="63" font-size="10.5" font-weight="730" fill="#A15305">Secrets</text>
+      <text x="51" y="78" font-size="9.5" fill="#80520B">KMS rotation</text>
+      <rect x="130" y="43" width="105" height="53" rx="11" fill="#FDECEF"/>
+      <path d="M147 57v19M140 65h14" stroke="#C81E4A" stroke-width="1.8" stroke-linecap="round"/>
+      <text x="163" y="63" font-size="10.5" font-weight="730" fill="#A5123B">GuardDuty</text>
+      <text x="163" y="78" font-size="9.5" fill="#8F2141">Threat alerts</text>
+      <rect x="18" y="108" width="217" height="64" rx="11" fill="#EAF3FB"/>
+      <path d="M34 145 40 137l6 4 7-12" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="66" y="133" font-size="11.5" font-weight="730">CloudWatch + Prometheus</text>
+      <text x="66" y="151" font-size="10" fill="#61758A">Grafana dashboards and alerts</text>
+    </g>
+
+    <path d="M974 237v130c0 14-10 22-24 22H340v48" fill="none" stroke="#7C3AED" stroke-width="2.4" marker-end="url(#secureArrowPurple)"/>
+    <text x="781" y="383" font-size="10.5" font-weight="700" fill="#6427B7">reconcile desired state</text>
+    <path d="M826 365v52c0 12-10 20-22 20H546" fill="none" stroke="#2563EB" stroke-width="2.4" marker-end="url(#secureArrow)"/>
+    <path d="M604 540H617" fill="none" stroke="#0E9F6E" stroke-width="2.3" marker-end="url(#secureArrowGreen)"/>
+    <path d="M856 540H869" fill="none" stroke="#0E9F6E" stroke-width="2.3" marker-end="url(#secureArrowGreen)"/>
+  </g>
+</svg>

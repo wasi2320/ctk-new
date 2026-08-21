@@ -60,7 +60,7 @@ const featured = [
   {
     href: "/hybrid-cloud-kubernetes-case-study",
     title: "Hybrid On-Prem + Cloud Kubernetes",
-    blurb: "99.9% uptime and sub-35ms latency across on-premise and cloud.",
+    blurb: "Retained on-premise capacity and added cloud burst nodes through an encrypted WireGuard mesh.",
   },
 ];
 

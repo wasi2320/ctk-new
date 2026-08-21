@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Amazon EKS production operating model</title>
+  <desc id="desc">Traffic enters through controlled ingress to private Amazon EKS workloads across Availability Zones. Argo CD and Helm reconcile desired state, while IAM and Kubernetes RBAC, autoscaling, observability, cost visibility, and backup and recovery support ongoing operations.</desc>
+  <defs>
+    <linearGradient id="page" x1="50" y1="30" x2="1140" y2="690" gradientUnits="userSpaceOnUse"><stop stop-color="#F8FAFC"/><stop offset="1" stop-color="#E9EFF6"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#16212E" flood-opacity=".12"/></filter>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#FF9900"/></marker>
+  </defs>
+  <rect x="28" y="24" width="1144" height="672" rx="38" fill="url(#page)"/>
+  <rect x="62" y="50" width="1076" height="620" rx="30" fill="#FFFFFF" stroke="#D9E0E8" filter="url(#shadow)"/>
+  <rect x="94" y="78" width="252" height="32" rx="16" fill="#16212E"/>
+  <text x="220" y="99" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="1.4" fill="#FFFFFF">AMAZON EKS OPERATING MODEL</text>
+  <text x="94" y="151" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#16212E">Run private Kubernetes workloads with a complete operating path</text>
+  <text x="94" y="181" font-family="Arial, sans-serif" font-size="16" fill="#5D6875">Delivery, access, scaling, visibility, cost, and recovery controls surround the Amazon EKS workload.</text>
+
+  <rect x="90" y="211" width="1020" height="350" rx="24" fill="#FBFCFE" stroke="#96A2AF" stroke-width="2"/>
+  <rect x="112" y="195" width="218" height="34" rx="17" fill="#FFF4E5" stroke="#FFB84D"/>
+  <text x="221" y="217" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" letter-spacing=".8" fill="#6B4300">AWS VPC AND PRIVATE SUBNETS</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="118" y="310" width="190" height="132" rx="18" fill="#FFFFFF" stroke="#D9E0E8"/>
+    <path d="M143 347l20-10 20 10v16c0 13-9 22-20 28-11-6-20-15-20-28z" fill="#FFF4E5" stroke="#FF9900" stroke-width="2.5"/>
+    <text x="199" y="343" font-size="16" font-weight="700" fill="#16212E">Ingress</text>
+    <text x="199" y="367" font-size="12" fill="#5D6875">WAF and load balancing</text>
+    <text x="199" y="389" font-size="12" fill="#5D6875">TLS and health checks</text>
+    <text x="213" y="425" text-anchor="middle" font-size="11" font-weight="700" fill="#74808D">APPLICATION TRAFFIC</text>
+    <path d="M316 376H360" stroke="#FF9900" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <rect x="372" y="278" width="386" height="214" rx="22" fill="#16212E"/>
+    <rect x="398" y="299" width="150" height="28" rx="14" fill="#2D3948"/>
+    <text x="473" y="318" text-anchor="middle" font-size="11" font-weight="700" letter-spacing="1" fill="#FFFFFF">PRIVATE AMAZON EKS</text>
+    <text x="565" y="354" text-anchor="middle" font-size="19" font-weight="700" fill="#FFFFFF">Containerized application workloads</text>
+    <rect x="410" y="380" width="136" height="75" rx="14" fill="#2D3948" stroke="#FF9900"/>
+    <text x="478" y="404" text-anchor="middle" font-size="11" font-weight="700" fill="#FFB84D">AZ A</text>
+    <rect x="432" y="418" width="38" height="18" rx="5" fill="#FFFFFF"/><rect x="486" y="418" width="38" height="18" rx="5" fill="#FFFFFF"/>
+    <rect x="584" y="380" width="136" height="75" rx="14" fill="#2D3948" stroke="#FF9900"/>
+    <text x="652" y="404" text-anchor="middle" font-size="11" font-weight="700" fill="#FFB84D">AZ B</text>
+    <rect x="606" y="418" width="38" height="18" rx="5" fill="#FFFFFF"/><rect x="660" y="418" width="38" height="18" rx="5" fill="#FFFFFF"/>
+    <path d="M546 417H584" stroke="#FF9900" stroke-width="2" stroke-dasharray="5 4"/>
+    <text x="565" y="479" text-anchor="middle" font-size="12" fill="#D7DEE7">Pod and node autoscaling across private worker capacity</text>
+
+    <rect x="372" y="229" width="386" height="38" rx="13" fill="#FFF4E5" stroke="#FFB84D"/>
+    <text x="438" y="253" text-anchor="middle" font-size="11" font-weight="700" fill="#6B4300">GIT DESIRED STATE</text>
+    <path d="M500 248H525" stroke="#FF9900" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <text x="574" y="253" text-anchor="middle" font-size="11" font-weight="700" fill="#6B4300">ARGO CD SYNC</text>
+    <path d="M625 248H650" stroke="#FF9900" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <text x="703" y="253" text-anchor="middle" font-size="11" font-weight="700" fill="#6B4300">HELM RELEASE</text>
+
+    <rect x="372" y="507" width="386" height="35" rx="12" fill="#F1F5F9"/>
+    <text x="565" y="530" text-anchor="middle" font-size="12" font-weight="700" fill="#16212E">IAM ROLES  |  KUBERNETES RBAC  |  SECRETS  |  IMAGE POLICY</text>
+
+    <path d="M766 320H796" stroke="#FF9900" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M766 400H796" stroke="#FF9900" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M766 480H796" stroke="#FF9900" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <rect x="808" y="272" width="252" height="76" rx="17" fill="#FFFFFF" stroke="#D9E0E8"/>
+    <path d="M828 330v-30m10 30v-19m10 19v-39m10 39v-26" stroke="#FF9900" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="879" y="299" font-size="16" font-weight="700" fill="#16212E">Observability</text>
+    <text x="879" y="323" font-size="12" fill="#5D6875">Metrics, logs, traces, and alerts</text>
+    <rect x="808" y="362" width="252" height="76" rx="17" fill="#FFFFFF" stroke="#D9E0E8"/>
+    <path d="M829 413l10-14 11 8 18-28" fill="none" stroke="#FF9900" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="879" y="389" font-size="16" font-weight="700" fill="#16212E">Cost visibility</text>
+    <text x="879" y="413" font-size="12" fill="#5D6875">Requests, nodes, teams, and services</text>
+    <rect x="808" y="452" width="252" height="76" rx="17" fill="#FFFFFF" stroke="#D9E0E8"/>
+    <path d="M829 490a15 15 0 1027-9M856 481v11h-11" fill="none" stroke="#FF9900" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="879" y="479" font-size="16" font-weight="700" fill="#16212E">Backup and recovery</text>
+    <text x="879" y="503" font-size="12" fill="#5D6875">Workload state, data, and restore tests</text>
+  </g>
+
+  <text x="94" y="611" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#16212E">OPERATING NOTE</text>
+  <text x="214" y="611" font-family="Arial, sans-serif" font-size="13" fill="#5D6875">Cluster design, workload controls, capacity, and recovery procedures must match application and compliance requirements.</text>
+  <circle cx="104" cy="640" r="5" fill="#FF9900"/>
+  <text x="120" y="645" font-family="Arial, sans-serif" font-size="12" fill="#74808D">Amazon EKS is one runtime option. Its operational value depends on workload complexity and team readiness.</text>
+</svg>

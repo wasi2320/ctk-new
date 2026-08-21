@@ -95,7 +95,7 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "What is GitOps and do you use ArgoCD?",
       answer:
-        "GitOps is a delivery model where the desired state of your Kubernetes environment is stored in Git and automatically synced to the cluster, so every change is versioned, reviewable, and auditable. CodetoKloud implements GitOps with ArgoCD and Helm, on one client pipeline this delivered a 95% deployment success rate and reduced manual deployment effort by 80%.",
+        "GitOps is a delivery model where the desired state of your Kubernetes environment is stored in Git and automatically synced to the cluster, so every change is versioned, reviewable, and auditable. CodetoKloud implements GitOps with ArgoCD and Helm. On one client pipeline, this reduced manual deployment effort by 80% and made releases 50% faster.",
     },
     {
       question: "Can you migrate our applications to Kubernetes or Amazon EKS?",
@@ -105,7 +105,7 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "Can Kubernetes run HIPAA or SOC 2 compliant workloads?",
       answer:
-        "Yes. Kubernetes can host compliant workloads when the cluster is configured with the right controls, private networking, encryption, access controls, audit logging, and monitoring. CodetoKloud has built HIPAA-compliant infrastructure on Amazon EKS for healthcare clients and applies the same controls for SOC 2 and PCI DSS environments.",
+        "Kubernetes can support regulated workloads when the cluster is configured with private networking, encryption, access controls, audit logging, and monitoring. CodetoKloud implements these technical safeguards on Amazon EKS for healthcare and other regulated teams. HIPAA and SOC 2 readiness also depends on organizational policies, operating procedures, risk management, and independent legal or audit review.",
     },
     {
       question: "Do you provide ongoing Kubernetes management and upgrades?",
@@ -177,14 +177,14 @@ export const pageFaqs: Record<string, FaqItem[]> = {
 
   "/hipaa-compliance": [
     {
-      question: "Can AWS and Kubernetes be HIPAA compliant?",
+      question: "Can AWS and Kubernetes support HIPAA-regulated workloads?",
       answer:
-        "Yes. AWS offers a Business Associate Addendum (BAA) and a broad set of HIPAA-eligible services, and Kubernetes on Amazon EKS can host protected health information (PHI) when configured with the right controls. CodetoKloud builds HIPAA-compliant infrastructure on AWS and EKS using encryption, access controls, audit logging, network isolation, and disaster recovery.",
+        "Yes. AWS offers a Business Associate Addendum (BAA) and HIPAA-eligible services, and Amazon EKS can host protected health information when the workload is configured and operated with the appropriate safeguards. CodetoKloud implements and documents encryption, access controls, audit logging, network isolation, backup, and recovery within the technical scope of your HIPAA program.",
     },
     {
-      question: "What does HIPAA-compliant infrastructure require?",
+      question: "What technical safeguards do HIPAA-regulated workloads require?",
       answer:
-        "HIPAA-compliant infrastructure generally requires encryption of PHI at rest and in transit, strict access controls, audit logging, network isolation, secure backups and disaster recovery, and a signed BAA covering the services in use. CodetoKloud implements and documents each of these technical safeguards on AWS.",
+        "The technical scope commonly includes encryption of PHI at rest and in transit, strict access controls, audit logging, network isolation, secure backups and recovery, and a BAA covering eligible services. HIPAA compliance also depends on organizational policies, training, vendor management, and legal review outside the infrastructure scope.",
     },
     {
       question: "How does CodetoKloud secure protected health information (PHI) on AWS?",
@@ -192,14 +192,14 @@ export const pageFaqs: Record<string, FaqItem[]> = {
         "CodetoKloud secures PHI using AWS KMS encryption, private networking and isolated VPCs, least-privilege IAM and Kubernetes RBAC, encrypted secrets management, and continuous monitoring with tools like CloudWatch and Datadog. Only HIPAA-eligible AWS services are used for workloads that handle PHI.",
     },
     {
-      question: "Has CodetoKloud built HIPAA-compliant systems before?",
+      question: "Has CodetoKloud built infrastructure for HIPAA programs before?",
       answer:
-        "Yes. CodetoKloud migrated GoAgalia's healthcare workforce management platform to a HIPAA-compliant architecture on Amazon EKS with autoscaling, GitOps, and full observability, cutting cloud costs by roughly 35%, reducing API latency from 850ms to 320ms, and reaching 99.7% uptime.",
+        "Yes. CodetoKloud migrated GoAgalia's healthcare workforce management platform to an Amazon EKS architecture designed for its HIPAA program, with autoscaling, GitOps, and centralized observability. The engagement cut cloud costs by roughly 35%, reduced API latency from 850 ms to 320 ms, and reached 99.7% uptime.",
     },
     {
       question: "How does the BAA work with AWS?",
       answer:
-        "AWS provides a Business Associate Addendum (BAA) that covers its HIPAA-eligible services. CodetoKloud architects your environment to use those eligible services correctly so that PHI is only processed and stored within HIPAA-eligible boundaries; specific contractual terms are handled as part of your engagement.",
+        "AWS provides a Business Associate Addendum that covers its HIPAA-eligible services. Your organization enters the applicable agreement with AWS. CodetoKloud helps define and implement an approved service boundary so PHI is processed and stored only through the services selected for that workload.",
     },
     {
       question: "Can you help us prepare for a HIPAA assessment?",
@@ -217,7 +217,7 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "Can CodetoKloud make us SOC 2 compliant?",
       answer:
-        "SOC 2 reports are issued by independent auditors, not vendors. What CodetoKloud does is get you audit-ready: we implement the access controls, audit logging, change management, monitoring, and encryption that SOC 2 requires, and provide the technical evidence auditors ask for.",
+        "No vendor can issue your SOC 2 report. An independent CPA firm evaluates the controls and issues the report. CodetoKloud assesses and remediates agreed AWS infrastructure gaps, implements technical controls, and organizes evidence for your auditor. Your organization remains responsible for policies and operating the controls.",
     },
     {
       question: "What controls does CodetoKloud implement for SOC 2 on AWS?",
@@ -245,7 +245,7 @@ export const pageFaqs: Record<string, FaqItem[]> = {
     {
       question: "Can you build a PCI DSS-compliant environment on AWS?",
       answer:
-        "Yes. CodetoKloud designs AWS cardholder data environments (CDE) with network segmentation, encryption in transit and at rest, least-privilege access, logging and monitoring, and vulnerability management. Formal validation is performed by a Qualified Security Assessor (QSA); we build and document the controls that validation depends on.",
+        "CodetoKloud can design an AWS cardholder data environment with network segmentation, encryption in transit and at rest, least-privilege access, logging, monitoring, and vulnerability management. Formal validation is performed by a Qualified Security Assessor or through the applicable self-assessment process. We implement and document technical controls, but we do not certify PCI compliance.",
     },
     {
       question: "How do you reduce PCI DSS scope?",

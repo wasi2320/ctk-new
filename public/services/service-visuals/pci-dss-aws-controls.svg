@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">PCI DSS-aligned cardholder data environment on AWS</title>
+  <desc id="desc">An AWS-specific payment architecture uses AWS WAF, a segmented cardholder data environment, encryption, tokenization or an approved payment processor boundary, least-privilege access, centralized logging, and vulnerability scanning without claiming certification.</desc>
+  <defs>
+    <linearGradient id="page" x1="55" y1="30" x2="1140" y2="690" gradientUnits="userSpaceOnUse"><stop stop-color="#F8FAFC"/><stop offset="1" stop-color="#E9EFF6"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#16212E" flood-opacity=".12"/></filter>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#FF9900"/></marker>
+    <marker id="grayArrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#74808D"/></marker>
+  </defs>
+  <rect x="28" y="24" width="1144" height="672" rx="38" fill="url(#page)"/>
+  <rect x="62" y="50" width="1076" height="620" rx="30" fill="#FFFFFF" stroke="#D9E0E8" filter="url(#shadow)"/>
+  <rect x="94" y="78" width="242" height="32" rx="16" fill="#16212E"/>
+  <text x="215" y="99" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="1.4" fill="#FFFFFF">PCI DSS TECHNICAL CONTROLS</text>
+  <text x="94" y="151" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#16212E">Segment and protect the AWS payment data path</text>
+  <text x="94" y="181" font-family="Arial, sans-serif" font-size="16" fill="#5D6875">Reduce scope where possible, control every access path, and collect evidence across the cardholder data environment.</text>
+
+  <rect x="90" y="211" width="1020" height="350" rx="24" fill="#FBFCFE" stroke="#96A2AF" stroke-width="2"/>
+  <rect x="112" y="195" width="178" height="34" rx="17" fill="#FFF4E5" stroke="#FFB84D"/>
+  <text x="208" y="217" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="700" letter-spacing=".8" fill="#6B4300">AWS ACCOUNT AND VPC</text>
+
+  <g font-family="Arial, sans-serif">
+    <text x="116" y="269" font-size="12" font-weight="700" letter-spacing=".8" fill="#74808D">CUSTOMER PAYMENT REQUEST</text>
+    <rect x="118" y="286" width="178" height="122" rx="19" fill="#FFFFFF" stroke="#D9E0E8"/>
+    <path d="M145 320l20-10 20 10v16c0 13-9 22-20 28-11-6-20-15-20-28z" fill="#FFF4E5" stroke="#FF9900" stroke-width="2.5"/>
+    <text x="199" y="322" font-size="17" font-weight="700" fill="#16212E">AWS WAF</text>
+    <text x="199" y="346" font-size="12" fill="#5D6875">Managed rules and</text>
+    <text x="199" y="366" font-size="12" fill="#5D6875">request filtering</text>
+    <rect x="138" y="380" width="138" height="12" rx="6" fill="#F1F5F9"/>
+    <path d="M306 347H344" stroke="#FF9900" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <rect x="356" y="244" width="450" height="280" rx="22" fill="#FFFFFF" stroke="#FF9900" stroke-width="2" stroke-dasharray="8 6"/>
+    <rect x="378" y="228" width="314" height="34" rx="17" fill="#16212E"/>
+    <text x="535" y="250" text-anchor="middle" font-size="12" font-weight="700" letter-spacing=".9" fill="#FFFFFF">SEGMENTED CARDHOLDER DATA ENVIRONMENT</text>
+
+    <rect x="386" y="286" width="172" height="112" rx="17" fill="#16212E"/>
+    <text x="472" y="319" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">Payment API</text>
+    <text x="472" y="343" text-anchor="middle" font-size="12" fill="#D7DEE7">Approved payment</text>
+    <text x="472" y="363" text-anchor="middle" font-size="12" fill="#D7DEE7">processing path</text>
+
+    <path d="M566 342H596" stroke="#FF9900" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="608" y="286" width="168" height="112" rx="17" fill="#FFF4E5" stroke="#FFB84D"/>
+    <path d="M632 329v-8a13 13 0 0126 0v8m-31 0h36v27h-36z" fill="none" stroke="#B85F00" stroke-width="3"/>
+    <text x="718" y="319" text-anchor="middle" font-size="13" font-weight="700" fill="#6B4300">KMS encryption</text>
+    <text x="669" y="343" font-size="11" fill="#7A5521">Protected data, keys,</text>
+    <text x="669" y="362" font-size="11" fill="#7A5521">secrets, and backups</text>
+
+    <rect x="386" y="424" width="172" height="72" rx="15" fill="#F8FAFC" stroke="#D9E0E8"/>
+    <path d="M410 460v-7a11 11 0 0122 0v7m-27 0h32v20h-32z" fill="none" stroke="#FF9900" stroke-width="2.5"/>
+    <text x="450" y="451" font-size="14" font-weight="700" fill="#16212E">Least privilege</text>
+    <text x="450" y="472" font-size="12" fill="#5D6875">IAM, MFA, and access review</text>
+
+    <rect x="576" y="424" width="200" height="72" rx="15" fill="#F8FAFC" stroke="#D9E0E8"/>
+    <path d="M599 475v-29m10 29v-18m10 18v-39m10 39v-24" stroke="#FF9900" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="646" y="450" font-size="14" font-weight="700" fill="#16212E">Central logging</text>
+    <text x="646" y="471" font-size="12" fill="#5D6875">Access, changes, and alerts</text>
+
+    <path d="M814 342H846" stroke="#FF9900" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="858" y="272" width="220" height="168" rx="20" fill="#FFFFFF" stroke="#96A2AF" stroke-width="2"/>
+    <rect x="882" y="290" width="172" height="27" rx="13" fill="#F1F5F9"/>
+    <text x="968" y="308" text-anchor="middle" font-size="11" font-weight="700" letter-spacing=".7" fill="#5D6875">PAYMENT AND TOKENIZATION</text>
+    <path d="M895 344h54v36h-54zM902 353h40M902 364h20" fill="none" stroke="#FF9900" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="1007" cy="361" r="24" fill="#FFF4E5" stroke="#FF9900" stroke-width="2"/>
+    <path d="M994 361h26M1007 348v26" stroke="#B85F00" stroke-width="2.5"/>
+    <text x="968" y="408" text-anchor="middle" font-size="14" font-weight="700" fill="#16212E">Approved processor boundary</text>
+    <text x="968" y="428" text-anchor="middle" font-size="12" fill="#5D6875">Token and payment status returned</text>
+
+    <path d="M858 458H815" stroke="#74808D" stroke-width="2.5" stroke-dasharray="6 5" marker-end="url(#grayArrow)"/>
+    <text x="836" y="479" text-anchor="middle" font-size="11" fill="#74808D">TOKEN</text>
+
+    <rect x="858" y="466" width="220" height="58" rx="15" fill="#FFF4E5" stroke="#FFB84D"/>
+    <path d="M882 485l8 8 14-18M882 507h23" fill="none" stroke="#B85F00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="920" y="489" font-size="14" font-weight="700" fill="#6B4300">Vulnerability scanning</text>
+    <text x="920" y="509" font-size="12" fill="#7A5521">Images, hosts, dependencies</text>
+  </g>
+
+  <text x="94" y="611" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#16212E">VALIDATION NOTE</text>
+  <text x="218" y="611" font-family="Arial, sans-serif" font-size="13" fill="#5D6875">This is a technical control pattern, not a PCI DSS certification claim. Scope and validation depend on the payment flow and assessor.</text>
+  <circle cx="104" cy="640" r="5" fill="#FF9900"/>
+  <text x="120" y="645" font-family="Arial, sans-serif" font-size="12" fill="#74808D">Tokenization can reduce exposure, but scope reduction must be confirmed for the specific architecture and business process.</text>
+</svg>

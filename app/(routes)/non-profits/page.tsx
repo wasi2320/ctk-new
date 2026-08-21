@@ -1,22 +1,15 @@
-import React from "react";
-import NonProfitSection from "@/app/components/sections/nonProfit/NonProfitSection";
-import NonProfitStatsSection from "@/app/components/sections/nonProfit/statsSection";
-import EmpoweringSection from "@/app/components/sections/nonProfit/EmpoweringSection";
-import DifferentiateSection from "@/app/components/sections/nonProfit/DifferentiateSection";
-import OurPortfolioSection from "@/app/components/sections/nonProfit/OurPortfolioSection";
-import ContactUsSection from "@/app/components/sections/ContactUsSection";
+import IndustryPage from "@/app/components/sections/industry/IndustryPage";
+import JsonLd from "@/app/components/JsonLd";
 import { pageMetadata } from "@/lib/page-metadata";
+import { industryServiceSchemas } from "@/lib/structured-data";
+import { industryPages } from "@/utils/data/industryPages";
 
 export const metadata = pageMetadata("/non-profits");
 export default function NonProfitsPage() {
-    return (
-        <>
-            <NonProfitSection />
-            <NonProfitStatsSection />
-            <EmpoweringSection />
-            <DifferentiateSection />
-            <OurPortfolioSection />
-            <ContactUsSection />
-        </>
-    );
-} 
+  return (
+    <>
+      <JsonLd data={industryServiceSchemas["/non-profits"]} />
+      <IndustryPage content={industryPages.nonprofits} />
+    </>
+  );
+}

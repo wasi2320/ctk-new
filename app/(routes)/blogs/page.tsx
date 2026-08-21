@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getAllBlogs, getAllCategories } from "@/lib/blogs";
+import { getAllBlogSummaries, getAllCategories } from "@/lib/blogs";
 import { SITE_URL } from "@/lib/structured-data";
 import BlogsList from "./BlogsList";
 
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default async function BlogsPage() {
   const [blogs, categories] = await Promise.all([
-    getAllBlogs(),
+    getAllBlogSummaries(),
     getAllCategories(),
   ]);
 

@@ -14,12 +14,12 @@ export default function page() {
           <div className="absolute inset-0 z-[1] bg-gradient-to-br from-[#16212e]/95 via-[#0d5cad]/85 to-[#2b8fe8]/65" />
           <div className="absolute z-[2] w-full max-w-full md:max-w-[600px] lg:w-[60%] lg:max-w-none text-white text-center lg:text-start px-[15px] lg:right-0 lg:mr-[5%]">
             <h1 className="text-[2rem] md:text-[2.5rem] lg:text-[2.5rem] xl:text-[3.5rem] font-semibold mb-4 md:mb-5 lg:mb-6 leading-[1.2]">
-              Book Your Free Cloud &amp; DevOps Audit
+              Book a 30-Minute AWS Architecture Review
             </h1>
             <p className="text-base md:text-[1.1rem] lg:text-[1.2rem] leading-[1.5] opacity-90">
-              Get a free, no-obligation review of your AWS, DevOps, and
-              Kubernetes setup from an AWS Advanced Tier Partner, with
-              prioritized recommendations you can act on.
+              Share your biggest AWS, DevOps, Kubernetes, cost, or compliance
+              concern. We will confirm fit within one business day and focus
+              the first review on three practical priorities.
             </p>
           </div>
         </div>

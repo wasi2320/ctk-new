@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="fargateTitle fargateDesc">
+  <title id="fargateTitle">Four-brand AWS Fargate platform modernization</title>
+  <desc id="fargateDesc">Four independent brands share an AWS delivery foundation. CloudFront and Amplify serve web applications, while API Gateway and an Application Load Balancer route to autoscaling ECS Fargate services across multiple Availability Zones. Aurora MySQL provides a resilient data tier, with GitHub Actions using AWS identity federation, Secrets Manager, and CloudWatch supporting delivery and operations.</desc>
+  <defs>
+    <linearGradient id="fargateBg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#F8FBFF"/>
+      <stop offset="1" stop-color="#EEF6FC"/>
+    </linearGradient>
+    <linearGradient id="fargateDark" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#102A43"/>
+      <stop offset="1" stop-color="#174D75"/>
+    </linearGradient>
+    <filter id="fargateShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#17324D" flood-opacity=".1"/>
+    </filter>
+    <marker id="fargateArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M1 1 9 5 1 9Z" fill="#2563EB"/>
+    </marker>
+    <style>
+      .ft{font-family:Inter,ui-sans-serif,system-ui,sans-serif;fill:#102A43}.fh{font-size:30px;font-weight:760}.fsub{font-size:15px;fill:#52677C}.fcap{font-size:12px;font-weight:760;letter-spacing:1px}.fname{font-size:15px;font-weight:730}.fmeta{font-size:11px;fill:#61758A}.fcard{fill:#fff;stroke:#D8E5F1;stroke-width:1.5}
+    </style>
+  </defs>
+  <rect width="1200" height="720" rx="28" fill="url(#fargateBg)"/>
+  <rect x="28" y="26" width="1144" height="668" rx="24" fill="none" stroke="#D9E6F2"/>
+  <g class="ft">
+    <text class="fh" x="58" y="72">Four-brand AWS modernization</text>
+    <text class="fsub" x="58" y="99">Independent applications on one repeatable container, data, delivery, and operations foundation</text>
+    <g transform="translate(935 45)">
+      <rect width="207" height="32" rx="16" fill="#E9F8F3"/>
+      <circle cx="18" cy="16" r="5" fill="#0E9F6E"/>
+      <text x="31" y="20" font-size="11" font-weight="750" fill="#087A55">PHASED CUTOVER</text>
+    </g>
+
+    <text class="fcap" x="58" y="146" fill="#2563EB">FOUR BRAND RELEASE PATHS</text>
+    <g filter="url(#fargateShadow)">
+      <g transform="translate(58 163)"><rect class="fcard" width="142" height="56" rx="13"/><circle cx="23" cy="28" r="8" fill="#2563EB"/><text class="fname" x="43" y="33">Brand 01</text></g>
+      <g transform="translate(216 163)"><rect class="fcard" width="142" height="56" rx="13"/><circle cx="23" cy="28" r="8" fill="#7C3AED"/><text class="fname" x="43" y="33">Brand 02</text></g>
+      <g transform="translate(374 163)"><rect class="fcard" width="142" height="56" rx="13"/><circle cx="23" cy="28" r="8" fill="#0E9F6E"/><text class="fname" x="43" y="33">Brand 03</text></g>
+      <g transform="translate(532 163)"><rect class="fcard" width="142" height="56" rx="13"/><circle cx="23" cy="28" r="8" fill="#E8790A"/><text class="fname" x="43" y="33">Brand 04</text></g>
+    </g>
+    <path d="M674 191H718" fill="none" stroke="#2563EB" stroke-width="2.4" marker-end="url(#fargateArrow)"/>
+    <g transform="translate(728 153)" filter="url(#fargateShadow)">
+      <rect width="260" height="76" rx="15" fill="#fff" stroke="#BCD2E6"/>
+      <text class="fcap" x="18" y="25" fill="#174D75">WEB AND EDGE</text>
+      <text class="fname" x="18" y="49">CloudFront + Amplify</text>
+      <text class="fmeta" x="18" y="66">Separate frontend releases</text>
+    </g>
+
+    <rect x="48" y="260" width="830" height="346" rx="20" fill="#fff" stroke="#AFC8DF" stroke-width="1.5"/>
+    <path d="M48 300V280c0-11 9-20 20-20h790c11 0 20 9 20 20v20Z" fill="#EAF3FB"/>
+    <text class="fcap" x="70" y="286" fill="#174D75">AWS APPLICATION AND DATA PLATFORM</text>
+
+    <g transform="translate(70 330)" filter="url(#fargateShadow)">
+      <rect width="190" height="76" rx="15" fill="#F0F7FF" stroke="#B7D4F3"/>
+      <text class="fname" x="95" y="31" text-anchor="middle">API Gateway</text>
+      <text class="fmeta" x="95" y="52" text-anchor="middle">Managed API entry</text>
+    </g>
+    <g transform="translate(290 330)" filter="url(#fargateShadow)">
+      <rect width="210" height="76" rx="15" fill="#F0FAF7" stroke="#B9E3D4"/>
+      <text class="fname" x="105" y="31" text-anchor="middle" fill="#087A55">Load Balancer</text>
+      <text class="fmeta" x="105" y="52" text-anchor="middle">Service traffic routing</text>
+    </g>
+    <path d="M260 368H282" fill="none" stroke="#2563EB" stroke-width="2.3" marker-end="url(#fargateArrow)"/>
+
+    <g transform="translate(530 319)">
+      <rect width="326" height="164" rx="17" fill="#F8FBFF" stroke="#BCD2E6"/>
+      <text class="fcap" x="18" y="27" fill="#52677C">AUTOSCALING ECS FARGATE</text>
+      <g transform="translate(18 45)">
+        <rect width="137" height="92" rx="13" fill="#12385C"/>
+        <text x="68.5" y="25" text-anchor="middle" font-size="11" font-weight="750" fill="#A9D5FF">ZONE A</text>
+        <rect x="18" y="38" width="43" height="34" rx="8" fill="#2D6ED6"/><rect x="76" y="38" width="43" height="34" rx="8" fill="#2D6ED6"/>
+        <text x="68.5" y="85" text-anchor="middle" font-size="10.5" fill="#DCECFB">Brand services</text>
+      </g>
+      <g transform="translate(171 45)">
+        <rect width="137" height="92" rx="13" fill="#12385C"/>
+        <text x="68.5" y="25" text-anchor="middle" font-size="11" font-weight="750" fill="#A9D5FF">ZONE B</text>
+        <rect x="18" y="38" width="43" height="34" rx="8" fill="#54D6B2"/><rect x="76" y="38" width="43" height="34" rx="8" fill="#54D6B2"/>
+        <text x="68.5" y="85" text-anchor="middle" font-size="10.5" fill="#DCECFB">Brand services</text>
+      </g>
+    </g>
+    <path d="M500 368H522" fill="none" stroke="#2563EB" stroke-width="2.3" marker-end="url(#fargateArrow)"/>
+
+    <g transform="translate(70 508)">
+      <rect width="786" height="75" rx="15" fill="#F2EAFE" stroke="#D1B8F5"/>
+      <text class="fcap" x="18" y="25" fill="#6427B7">AURORA MYSQL ACROSS MULTIPLE AVAILABILITY ZONES</text>
+      <ellipse cx="48" cy="48" rx="16" ry="6" fill="none" stroke="#7C3AED" stroke-width="2"/>
+      <path d="M32 48v14c0 8 32 8 32 0V48M32 55c0 8 32 8 32 0" fill="none" stroke="#7C3AED" stroke-width="2"/>
+      <text class="fname" x="82" y="52" fill="#6427B7">Writer, read capacity, managed failover, and autoscaling</text>
+    </g>
+    <path d="M693 483V500" fill="none" stroke="#7C3AED" stroke-width="2.3" marker-end="url(#fargateArrow)"/>
+
+    <g transform="translate(906 260)">
+      <rect width="236" height="346" rx="20" fill="url(#fargateDark)"/>
+      <text x="20" y="34" font-size="12" font-weight="760" letter-spacing="1" fill="#A9D5FF">DELIVERY AND OPERATIONS</text>
+      <g transform="translate(18 60)"><rect width="200" height="70" rx="13" fill="#fff" fill-opacity=".1"/><text x="16" y="27" font-size="14" font-weight="730" fill="#fff">GitHub Actions</text><text x="16" y="49" font-size="11" fill="#C9DBEB">AWS identity federation</text></g>
+      <g transform="translate(18 145)"><rect width="200" height="70" rx="13" fill="#fff" fill-opacity=".1"/><text x="16" y="27" font-size="14" font-weight="730" fill="#fff">Secrets Manager</text><text x="16" y="49" font-size="11" fill="#C9DBEB">Runtime credentials</text></g>
+      <g transform="translate(18 230)"><rect width="200" height="70" rx="13" fill="#fff" fill-opacity=".1"/><text x="16" y="27" font-size="14" font-weight="730" fill="#fff">CloudWatch</text><text x="16" y="49" font-size="11" fill="#C9DBEB">Health and container signals</text></g>
+    </g>
+
+    <g transform="translate(58 635)">
+      <text class="fcap" x="0" y="22" fill="#52677C">DELIVERY PHASES</text>
+      <rect x="133" width="217" height="36" rx="18" fill="#E8F2FF"/><text x="241" y="23" text-anchor="middle" font-size="11" font-weight="720" fill="#174EA6">1  FOUNDATION</text>
+      <rect x="362" width="217" height="36" rx="18" fill="#E9F8F3"/><text x="470" y="23" text-anchor="middle" font-size="11" font-weight="720" fill="#087A55">2  CONTAINER SERVICES</text>
+      <rect x="591" width="217" height="36" rx="18" fill="#FFF2DE"/><text x="699" y="23" text-anchor="middle" font-size="11" font-weight="720" fill="#A15305">3  CUTOVER AND HANDOFF</text>
+    </g>
+  </g>
+</svg>

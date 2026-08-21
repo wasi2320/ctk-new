@@ -1,7 +1,7 @@
 import { getContactSocialLinks } from "./socialMedia";
 
 export const CONTACT_SECTION_DATA = {
-  title: "Get in Touch",
+  title: "Tell us your AWS priority",
   backgroundImage: "/Images/ConactUs.webp",
 
   formFields: [
@@ -9,28 +9,28 @@ export const CONTACT_SECTION_DATA = {
       id: "name",
       label: "Name",
       type: "text",
-      placeholder: "Your Name",
+      placeholder: "Your name",
       required: true,
     },
     {
       id: "company",
       label: "Company Name",
       type: "text",
-      placeholder: "Your Company",
+      placeholder: "Your company",
       required: false,
     },
     {
       id: "email",
       label: "Email",
       type: "email",
-      placeholder: "Your Email",
+      placeholder: "Work email",
       required: true,
     },
     {
       id: "message",
       label: "Message",
       type: "textarea",
-      placeholder: "Tell us about your project (optional)",
+      placeholder: "What would you like us to review? (optional)",
       required: false,
       rows: 2,
     },
@@ -43,7 +43,7 @@ export const CONTACT_SECTION_DATA = {
   },
 
   submitButton: {
-    text: "Send Message",
+    text: "Request my AWS review",
     className:
       "bg-[#000] text-white px-7 py-2 rounded-full shadow hover:bg-[#16324f]/90 transition-colors cursor-pointer",
   },

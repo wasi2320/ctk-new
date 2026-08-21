@@ -49,7 +49,7 @@ const data: LocalData = {
     {
       href: "/hybrid-cloud-kubernetes-case-study",
       title: "Hybrid On-Prem + Cloud Kubernetes",
-      blurb: "99.9% uptime and sub-35ms latency across on-prem and cloud.",
+      blurb: "Retained on-premise capacity and added cloud burst nodes through an encrypted WireGuard mesh.",
     },
     {
       href: "/soc-2-healthcare-aws-case-study",

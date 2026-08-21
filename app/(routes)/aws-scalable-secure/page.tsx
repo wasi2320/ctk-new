@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import CaseStudyLayout from "@/app/components/sections/caseStudies/CaseStudyLayout";
 import CaseStudyHeader from "@/app/components/sections/caseStudies/CaseStudyHeader";
 import CaseStudyProblemStatement from "@/app/components/sections/caseStudies/CaseStudyProblemStatement";
@@ -11,44 +12,52 @@ import JsonLd from "@/app/components/JsonLd";
 import { caseStudySchema } from "@/lib/structured-data";
 
 export const metadata = pageMetadata("/aws-scalable-secure");
-const services = ["DevOps Managed Services", "Cloud Consulting & SI"];
+const services = [
+  "Kubernetes Platform Engineering",
+  "VoIP Infrastructure",
+  "Monitoring and Observability",
+];
 const projectDetails = {
-  client: "Goagalia",
+  client: "VoIP platform team",
   schedule: "Aug 2024 to Dec 2024",
   size: "$50,000 to $199,999",
 };
 const solutionComponents = [
   {
-    title: "FusionPBX",
+    title: "Containerized FusionPBX",
     description:
-      "was deployed on Kubernetes in a DigitalOcean cluster, with Rancher managing the cluster.",
+      "FusionPBX was deployed on Kubernetes in a DigitalOcean cluster, with Rancher providing centralized cluster management.",
   },
   {
-    title: "PostgreSQL",
-    description: "configured as a StatefulSet for persistent storage.",
+    title: "Persistent call data",
+    description:
+      "PostgreSQL ran as a StatefulSet so the communications workload retained durable data as application pods changed.",
   },
   {
-    title: "Python-based AI voice bot",
-    description: "was integrated for real-time scam detection.",
+    title: "Real-time call verification",
+    description:
+      "A Python voice service was integrated with the platform to verify calls and flag suspected scam activity in real time.",
   },
   {
-    title: "Monitoring",
-    description: "was set up using Prometheus, Grafana, and Loki.",
+    title: "Metrics, dashboards, and logs",
+    description:
+      "Prometheus, Grafana, and Loki provided a shared operational view for service health, performance, and troubleshooting.",
   },
-  { title: "Odoo CRM", description: "was deployed in containers." },
+  {
+    title: "Containerized CRM",
+    description:
+      "Odoo CRM was deployed in containers alongside the communications platform to keep deployment and operations consistent.",
+  },
 ];
 const techStack = [
   {
-    name: "Docker",
-    icon: "/Images/PNGSS/bg_dock.png",
+    name: "DigitalOcean",
+    icon: "/Images/PNGSS/DigitalOcean_logo.png",
   },
-  { name: "GitLab", icon: "/Images/PNGSS/gitlab.png" },
-  { name: "React", icon: "/Images/PNGSS/react.png" },
-  {
-    name: "Google Cloud",
-    icon: "/Images/PNGSS/gcloud.png",
-  },
-  { name: "AI Tools", icon: "/Images/PNGSS/Figma.png" },
+  { name: "Kubernetes", icon: "/Images/PNGSS/Kubernetes-Logo.png" },
+  { name: "Python", icon: "/Images/PNGSS/Python-logo-notext.svg.png" },
+  { name: "Prometheus", icon: "/Images/PNGSS/prometheus.png" },
+  { name: "Grafana", icon: "/Images/PNGSS/Grafana_logo.svg.png" },
 ];
 const metrics = [
   {
@@ -80,7 +89,7 @@ const metrics = [
 
 const lesson = {
   firstLesson:
-    "Key lessons included the importance of cluster planning for high availability, fine-tuning resource allocation to optimize costs, and thorough testing for seamless AI integration. Monitoring tools and GitOps for configuration management were essential for stability and efficiency. The project demonstrated that Kubernetes offers scalability and automation, but careful planning, testing, and monitoring are critical for success.",
+    "This project showed that a stateful VoIP workload needs deliberate capacity planning, persistent data design, and end-to-end observability. The call verification service also required realistic integration testing before it could operate safely in the live request path.",
 };
 
 export default function VoipAiCallProtectionPage() {
@@ -92,30 +101,41 @@ export default function VoipAiCallProtectionPage() {
           description:
             "How CodetoKloud deployed a scalable, secure VoIP platform (FusionPBX) with AI-based scam-call detection on Kubernetes, achieving 50% faster releases and 40% faster issue resolution.",
           path: "/aws-scalable-secure",
-          image: "/services/GoAgalia2.png",
+          image: "/services/architecture/kubernetes-voip-call-protection.svg",
         })}
       />
       <CaseStudyLayout>
       <CaseStudyHeader
-        title="Scalable VoIP & AI Call Protection"
-        subtitle="Services provided on this Project"
+        title="Scalable VoIP and AI Call Protection on Kubernetes"
+        subtitle="FusionPBX, persistent call data, and real-time scam detection were brought together on one observable platform."
         services={services}
-        arcSrc="/services/GoAgalia.png"
-        alt="AWS Architecture Diagram"
+        arcSrc="/services/architecture/kubernetes-voip-call-protection.svg"
+        alt="VoIP platform architecture with FusionPBX and PostgreSQL on Kubernetes, Python call verification, Rancher management, and Prometheus, Grafana, and Loki observability"
       />
       <CaseStudyProblemStatement
-        statement="The client needed a scalable, reliable VoIP solution that integrates AI for real-time call verification and scam call detection. The goal was to deploy FusionPBX on Kubernetes with seamless AI integration, along with Rancher for cluster management and monitoring tools like Prometheus, Grafana, and Loki. The challenge was to ensure high availability, performance, and smooth integration."
+        statement="A VoIP platform team needed to scale FusionPBX while adding real-time call verification and scam detection. The workload combined stateful communications data, a Python voice service, and strict reliability requirements, so the team also needed consistent cluster management and a clear view of metrics, dashboards, and logs."
         details={projectDetails}
       />
       <CaseStudySolution
         solutions={solutionComponents}
-        illustration="/services/GoAgalia2.png"
-        illustrationAlt="Solution Illustration"
-        description="To improve AWS security, the solution focused on network security, access management, pipeline security, monitoring, and data encryption."
+        description="The resulting platform separated the call path, persistent data, management, and observability concerns. That made scaling and troubleshooting more predictable as call volume changed."
       />
       <CaseStudyTechStack techs={techStack} />
       <MetricsDisplay metrics={metrics} />
       <CaseStudyLessons lessons={lesson.firstLesson} />
+      <section className="bg-[#0d1526] px-4 py-16 text-center text-white">
+        <h2 className="text-3xl font-bold">Building a stateful Kubernetes platform?</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
+          We can review workload state, scaling constraints, integrations, and
+          observability before they become production bottlenecks.
+        </p>
+        <Link
+          href="/contact"
+          className="mt-8 inline-block rounded-full bg-white px-8 py-3 font-semibold text-[#0d1526] hover:bg-gray-100"
+        >
+          Review my platform architecture
+        </Link>
+      </section>
     </CaseStudyLayout>
     </>
   );
