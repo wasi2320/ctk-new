@@ -17,7 +17,7 @@ interface PageMeta {
 /**
  * Canonical 1200x630 brand OpenGraph image (same asset used in the root layout).
  * Included on every page so per-page openGraph objects don't drop the preview
- * image — Next.js replaces (does not deep-merge) the parent openGraph.
+ * image, Next.js replaces (does not deep-merge) the parent openGraph.
  */
 const OG_IMAGE =
   "https://opengraph.b-cdn.net/production/images/dd5c0828-1890-4d85-8051-5fac6878e7ce.png?token=8F3WOtV6fyrJjvXYeTMLY4rjWwtjMDd_JLbEhytH9CE&height=630&width=1200&expires=33293625957";
@@ -35,29 +35,29 @@ const PAGES: Record<string, PageMeta> = {
       "AWS DevOps consulting from CodetoKloud, an AWS Advanced Tier Partner: CI/CD pipelines, Terraform infrastructure-as-code, GitOps, and Kubernetes automation to ship faster and improve reliability.",
   },
   "/kubernetes": {
-    title: "Kubernetes & Amazon EKS Consulting Services | CodetoKloud",
+    title: "Kubernetes and Amazon EKS Consulting Services | CodetoKloud",
     description:
       "Kubernetes and Amazon EKS consulting from CodetoKloud, an AWS Advanced Tier Partner: EKS cluster design, GitOps with ArgoCD, Helm, autoscaling, observability, cost optimization, and security hardening.",
   },
   "/ai": {
-    title: "AI Automation & Machine Learning Services | CodetoKloud",
+    title: "AWS AI Automation & GenAI Development | CodetoKloud",
     description:
-      "AI automation, ML, and GenAI solutions from CodetoKloud to automate workflows and drive smarter decisions across your cloud and application stack.",
+      "Design and build secure AI workflows on AWS for document processing, retrieval, and task automation, tied to trusted data and measurable business outcomes.",
   },
   "/web-solutions": {
-    title: "Full-Stack Web Development | CodetoKloud",
+    title: "Custom Web Application Development on AWS | CodetoKloud",
     description:
-      "Full-stack web and application development from CodetoKloud, building modern, scalable software on secure AWS cloud infrastructure.",
+      "Build responsive SaaS products, customer portals, dashboards, APIs, and web applications with secure AWS infrastructure, CI/CD, accessibility, and performance in scope.",
   },
   "/security-and-compliance": {
     title: "Cloud Security & Compliance: SOC 2, HIPAA, PCI DSS | CodetoKloud",
     description:
-      "Security and compliance services from CodetoKloud covering SOC 2, HIPAA, and PCI DSS to help US businesses meet regulations on AWS.",
+      "AWS security engineering and technical controls for SOC 2, HIPAA, and PCI DSS readiness, including IAM, encryption, logging, segmentation, and evidence workflows.",
   },
   "/hipaa-compliance": {
-    title: "HIPAA-Compliant AWS & Kubernetes Hosting | CodetoKloud",
+    title: "AWS & Kubernetes for HIPAA Workloads | CodetoKloud",
     description:
-      "HIPAA-compliant AWS and Amazon EKS infrastructure from CodetoKloud, an AWS Advanced Tier Partner: encryption, access controls, audit logging, and disaster recovery for healthcare workloads.",
+      "Implement and document encryption, access controls, audit logging, private networking, backup, and recovery safeguards for HIPAA-regulated workloads on AWS and Amazon EKS.",
   },
   "/soc-2-compliance": {
     title: "SOC 2 Compliance on AWS | CodetoKloud",
@@ -87,79 +87,84 @@ const PAGES: Record<string, PageMeta> = {
       "FinOps services from CodetoKloud to optimize AWS cloud spend, improve cost efficiency, and enable sustainable, well-managed growth.",
   },
   "/mobile-app": {
-    title: "Custom Mobile App Development | CodetoKloud",
+    title: "Custom Mobile App Development with AWS | CodetoKloud",
     description:
-      "Custom native and cross-platform mobile app development from CodetoKloud, built on scalable, secure cloud infrastructure.",
+      "Plan and build native or cross-platform mobile applications with product discovery, accessible UX, secure AWS backends, analytics, launch support, and CI/CD.",
   },
   "/ui-ux": {
-    title: "UI/UX Design Services | CodetoKloud",
+    title: "UI/UX Design for SaaS, Web & Mobile | CodetoKloud",
     description:
-      "User interface and experience design from CodetoKloud: intuitive, accessible digital products that set your brand apart.",
+      "Turn complex product workflows into clear user journeys, accessible interfaces, tested prototypes, and practical design systems for SaaS, web, and mobile products.",
   },
 
   // --- Industries ---
   "/e-commerce": {
-    title: "E-Commerce Cloud Solutions | CodetoKloud",
+    title: "AWS Cloud & DevOps for E-Commerce | CodetoKloud",
     description:
-      "Cloud-powered e-commerce solutions from CodetoKloud to build, scale, and secure online storefronts on AWS.",
+      "AWS architecture, DevOps, observability, security, and cost controls for e-commerce platforms that need reliable checkout, integrations, and peak traffic readiness.",
   },
   "/ed-tech": {
-    title: "EdTech Cloud Solutions | CodetoKloud",
+    title: "AWS Cloud & DevOps for EdTech Platforms | CodetoKloud",
     description:
-      "EdTech cloud solutions from CodetoKloud for scalable digital learning platforms built on secure AWS infrastructure.",
+      "Build and operate EdTech platforms on AWS with reliable releases, secure student data, observability, and infrastructure that can handle enrollment and assessment peaks.",
   },
   "/fin-tech": {
-    title: "FinTech Cloud Solutions | CodetoKloud",
+    title: "AWS Cloud, DevOps & Security for FinTech | CodetoKloud",
     description:
-      "FinTech cloud solutions from CodetoKloud: modernize legacy systems and scale securely while staying compliant with SOC 2 and PCI DSS.",
+      "AWS infrastructure, DevOps automation, security controls, and technical readiness support for FinTech products handling sensitive data and regulated payment workflows.",
   },
   "/financial-services": {
-    title: "Financial Services Technology Solutions | CodetoKloud",
+    title: "AWS Engineering for Financial Services | CodetoKloud",
     description:
-      "Technology solutions for financial services from CodetoKloud, combining secure cloud infrastructure with SOC 2 and PCI DSS compliance expertise.",
+      "Modernize financial services platforms with AWS architecture, delivery automation, resilience, observability, and technical controls for regulated workloads.",
   },
   "/healthcare": {
-    title: "Healthcare Cloud Solutions (HIPAA) | CodetoKloud",
+    title: "AWS Cloud & DevOps for Healthcare | CodetoKloud",
     description:
-      "HIPAA-focused healthcare cloud solutions from CodetoKloud for secure patient data, scalable platforms, and compliant infrastructure.",
+      "Design and operate AWS infrastructure for healthcare and HealthTech with encryption, access controls, audit logging, resilience, and technical support for HIPAA programs.",
   },
   "/manufacturing": {
-    title: "Manufacturing Cloud Solutions | CodetoKloud",
+    title: "AWS Cloud & Data Platforms for Manufacturing | CodetoKloud",
     description:
-      "Cloud solutions for manufacturing from CodetoKloud: automation and scalable platforms to modernize production and operations.",
+      "Connect manufacturing applications, operational data, analytics, and delivery workflows through reliable AWS infrastructure with practical security and cost controls.",
   },
   "/non-profits": {
-    title: "Cloud Solutions for Non-Profits | CodetoKloud",
+    title: "AWS Cloud & DevOps for Nonprofits | CodetoKloud",
     description:
-      "Scalable, cost-effective cloud and managed services from CodetoKloud to help non-profits streamline operations and expand their impact.",
+      "Practical AWS architecture, migration, automation, security, and cost optimization for nonprofits that need reliable technology and accountable cloud spending.",
   },
   "/pe-vc": {
-    title: "Cloud Solutions for PE & VC Firms | CodetoKloud",
+    title: "Cloud Engineering for PE & VC Portfolios | CodetoKloud",
     description:
-      "CodetoKloud partners with private equity and venture capital firms to accelerate portfolio digital transformation and growth.",
+      "Assess cloud risk, delivery maturity, security, reliability, and AWS cost across portfolio companies, then prioritize technical improvements that support value creation.",
   },
   "/powering-business": {
-    title: "Professional Services for Business | CodetoKloud",
+    title: "Cloud & DevOps for Professional Services | CodetoKloud",
     description:
-      "Professional services from CodetoKloud that blend expert knowledge with modern cloud technology to deliver agile, results-driven outcomes.",
+      "Modernize client portals, delivery workflows, data platforms, and cloud operations with AWS architecture, DevOps automation, security, and managed support.",
   },
   "/real-estate": {
-    title: "Real Estate Technology Solutions | CodetoKloud",
+    title: "AWS Cloud & Software for Real Estate | CodetoKloud",
     description:
-      "Real estate technology and cloud solutions from CodetoKloud for smooth transactions, property management, and smart investment decisions.",
+      "Build and modernize real estate platforms, tenant portals, integrations, and data workflows on secure AWS infrastructure with reliable delivery automation.",
   },
   "/saas-isv": {
-    title: "Cloud Solutions for SaaS & ISVs | CodetoKloud",
+    title: "AWS, DevOps & EKS for SaaS and ISVs | CodetoKloud",
     description:
-      "Cloud-native development, DevOps, and AI for SaaS providers and ISVs from CodetoKloud to launch, scale, and optimize software faster.",
+      "Design, migrate, secure, and operate SaaS platforms on AWS with CI/CD, Amazon EKS, observability, FinOps, and infrastructure built for product teams.",
   },
   "/small-and-mid-size-business": {
-    title: "Cloud & IT Solutions for SMBs | CodetoKloud",
+    title: "AWS Cloud & DevOps for Growing Businesses | CodetoKloud",
     description:
-      "Agile web, app, AI, and cloud services from CodetoKloud tailored to small and mid-sized businesses looking to grow and compete.",
+      "Practical AWS architecture, migration, DevOps, security, and cost optimization for growing businesses that need reliable systems without unnecessary complexity.",
   },
 
   // --- Case studies ---
+  "/case-studies": {
+    title: "AWS, DevOps & Kubernetes Case Studies | CodetoKloud",
+    description:
+      "Production case studies covering AWS architecture, DevOps, Kubernetes, security, compliance controls, FinOps, and hybrid infrastructure, with project-specific outcomes.",
+  },
   "/automated_deployment": {
     title: "Case Study: Automated Deployment of a Financial App | CodetoKloud",
     description:
@@ -202,10 +207,24 @@ const PAGES: Record<string, PageMeta> = {
       "How CodetoKloud automated Amazon ECS deployments with ephemeral PR preview environments using Terraform and GitHub Actions, cutting deployment time to under 40 minutes.",
   },
   "/goagalia-healthcare-workforce-management": {
-    title:
-      "Case Study: Scalable, HIPAA-Compliant AWS Infrastructure for GoAgalia | CodetoKloud",
+    title: "Case Study: Healthcare EKS Migration for GoAgalia | CodetoKloud",
     description:
-      "How CodetoKloud migrated GoAgalia's healthcare workforce platform to a scalable, HIPAA-compliant AWS architecture on Amazon EKS, cutting costs ~35% and API latency from 850ms to 320ms.",
+      "How CodetoKloud migrated GoAgalia's healthcare workforce platform to Amazon EKS with technical safeguards for regulated workloads, reducing cost by about 35% and API latency from 850 ms to 320 ms.",
+  },
+  "/multi-brand-aws-fargate-modernization-case-study": {
+    title: "Case Study: Multi-Brand AWS Fargate Modernization | CodetoKloud",
+    description:
+      "How CodetoKloud standardized four brands on Amazon ECS Fargate, Aurora MySQL, AWS Amplify, and repeatable delivery, then resolved a production database issue without downtime.",
+  },
+  "/eks-gitops-microservices-case-study": {
+    title: "Case Study: EKS Microservices Delivery with GitOps | CodetoKloud",
+    description:
+      "How CodetoKloud containerized microservices and built an Amazon EKS delivery workflow with GitHub Actions, Helm, ArgoCD, ECR, and secrets kept out of Git.",
+  },
+  "/cis-kubernetes-benchmark-assessment-case-study": {
+    title: "Case Study: CIS Kubernetes Benchmark Assessment | CodetoKloud",
+    description:
+      "How CodetoKloud assessed Amazon EKS and Linode LKE against the CIS Kubernetes Benchmark and mapped managed service control responsibilities.",
   },
   "/soc-2-healthcare-aws-case-study": {
     title: "Case Study: SOC 2 Multi-AZ Healthcare Platform on AWS | CodetoKloud",
@@ -214,9 +233,9 @@ const PAGES: Record<string, PageMeta> = {
   },
   "/kubernetes-compliance-platform-case-study": {
     title:
-      "Case Study: On-Prem Kubernetes Platform for SOC 2, HIPAA & NIST | CodetoKloud",
+      "Case Study: On-Prem Kubernetes for Compliance Targets | CodetoKloud",
     description:
-      "How CodetoKloud built an on-premise RKE2 Kubernetes platform with default encryption, SSO, GitOps change history, and audit evidence for SOC 2, HIPAA, HiTrust, and NIST 800-53.",
+      "How CodetoKloud built a four-node on-premise RKE2 platform with two control-plane nodes, two GPU workers, GitOps, self-hosted observability, and operational runbooks for multiple security framework targets.",
   },
   "/hipaa-aws-hardening-case-study": {
     title: "Case Study: HIPAA Hardening on AWS | CodetoKloud",
@@ -224,15 +243,15 @@ const PAGES: Record<string, PageMeta> = {
       "How CodetoKloud hardened a healthcare data company's patient-facing analytics portal for HIPAA on AWS, with private ECS Fargate networking, end-to-end TLS, and Aurora PostgreSQL.",
   },
   "/pci-dss-enterprise-case-study": {
-    title: "Case Study: PCI DSS Enterprise Cloud Foundation | CodetoKloud",
+    title: "Case Study: PCI DSS-Aligned Cloud Workstations | CodetoKloud",
     description:
-      "How CodetoKloud built a PCI DSS-aligned enterprise cloud foundation with standardized Cloud Workstations, shared VPC networking, and Terraform-managed IAM and privileged access.",
+      "How CodetoKloud designed PCI DSS-aligned Google Cloud Workstations with hardened Ubuntu images, private networking, Shielded VMs, CMEK, Terraform modules, and control documentation to support QSA review.",
   },
   "/hybrid-cloud-kubernetes-case-study": {
     title:
       "Case Study: Hybrid On-Prem + Cloud Kubernetes over WireGuard | CodetoKloud",
     description:
-      "How CodetoKloud connected on-premise hardware and cloud burst capacity into one secure Kubernetes platform over a WireGuard mesh, reaching 99.9% uptime and sub-35ms inter-node latency.",
+      "How CodetoKloud connected on-premise hardware and cloud burst capacity into one Kubernetes platform using encrypted inter-site connectivity over a WireGuard mesh.",
   },
 
   // --- Comparisons ---
@@ -298,9 +317,9 @@ const PAGES: Record<string, PageMeta> = {
       "CodetoKloud is a US-registered IT consulting company and AWS Advanced Tier Partner in Illinois, delivering cloud, DevOps, AI, and compliance solutions.",
   },
   "/contact": {
-    title: "Contact CodetoKloud | Schedule a Consultation",
+    title: "Book an AWS Architecture Review | CodetoKloud",
     description:
-      "Get in touch with CodetoKloud to discuss AWS cloud, DevOps, AI automation, and compliance solutions tailored to your business.",
+      "Book a focused 30-minute review for an AWS cloud, DevOps, Amazon EKS, FinOps, migration, security, or compliance priority.",
   },
   "/careers": {
     title: "Careers at CodetoKloud",
@@ -316,6 +335,104 @@ const PAGES: Record<string, PageMeta> = {
     title: "Terms & Conditions | CodetoKloud",
     description:
       "Terms and conditions governing the use of CodetoKloud services and website.",
+  },
+
+  // --- Comparison guides ---
+  "/argocd-vs-flux": {
+    title: "ArgoCD vs Flux: GitOps on Kubernetes Compared | CodetoKloud",
+    description:
+      "ArgoCD vs Flux for GitOps on Kubernetes, how they differ and how to choose. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/github-actions-vs-jenkins-vs-gitlab-ci": {
+    title: "GitHub Actions vs Jenkins vs GitLab CI | CodetoKloud",
+    description:
+      "GitHub Actions vs Jenkins vs GitLab CI compared for CI/CD pipelines, and how to choose. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/fargate-vs-ec2": {
+    title: "AWS Fargate vs EC2 for Containers | CodetoKloud",
+    description:
+      "AWS Fargate vs EC2 for running containers, cost, control, and when to use each. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/ecs-vs-kubernetes": {
+    title: "Amazon ECS vs Kubernetes: How to Choose | CodetoKloud",
+    description:
+      "Amazon ECS vs Kubernetes (EKS) compared, simplicity versus portability, and how to choose. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/terraform-vs-pulumi": {
+    title: "Terraform vs Pulumi: Choosing an IaC Tool | CodetoKloud",
+    description:
+      "Terraform vs Pulumi for infrastructure as code on AWS, how they differ and how to choose. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/prometheus-vs-datadog": {
+    title: "Prometheus vs Datadog: Kubernetes Monitoring | CodetoKloud",
+    description:
+      "Prometheus vs Datadog for monitoring and observability on Kubernetes and AWS, and how to choose. From CodetoKloud.",
+  },
+
+  // --- Definitional / GEO guides ---
+  "/what-is-gitops": {
+    title: "What Is GitOps? A Practical Guide | CodetoKloud",
+    description:
+      "What GitOps is, how it works with ArgoCD and Flux on Kubernetes, and why teams adopt it. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/what-is-finops": {
+    title: "What Is FinOps? Cloud Cost Management Explained | CodetoKloud",
+    description:
+      "What FinOps is and how it brings visibility and control to AWS cloud spend. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/what-is-amazon-eks": {
+    title: "What Is Amazon EKS? Managed Kubernetes on AWS | CodetoKloud",
+    description:
+      "What Amazon EKS is, how managed Kubernetes on AWS works, and when to use it. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/what-is-a-well-architected-review": {
+    title: "What Is an AWS Well-Architected Review? | CodetoKloud",
+    description:
+      "What an AWS Well-Architected Review is, what it covers, and how CodetoKloud, an AWS Advanced Tier Partner, runs one.",
+  },
+  "/what-is-infrastructure-as-code": {
+    title: "What Is Infrastructure as Code (IaC)? | CodetoKloud",
+    description:
+      "What Infrastructure as Code is, how Terraform and CloudFormation work, and why it matters. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/platform-engineering-vs-devops": {
+    title: "Platform Engineering vs DevOps: The Difference | CodetoKloud",
+    description:
+      "Platform engineering vs DevOps, how they differ, how they overlap, and what your team needs. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+
+  // --- Cost guides ---
+  "/kubernetes-consulting-cost": {
+    title: "How Much Does Kubernetes Consulting Cost? | CodetoKloud",
+    description:
+      "What drives the cost of Kubernetes and Amazon EKS consulting, common engagement models, and how to get a quote. From CodetoKloud.",
+  },
+  "/cloud-migration-cost": {
+    title: "How Much Does AWS Cloud Migration Cost? | CodetoKloud",
+    description:
+      "What drives AWS cloud migration cost, how projects are scoped, and how to estimate yours. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/soc-2-cost": {
+    title: "How Much Does SOC 2 Compliance Cost on AWS? | CodetoKloud",
+    description:
+      "What drives the cost of SOC 2 compliance on AWS and how to plan for it. From CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+
+  // --- Local landing pages ---
+  "/devops-consulting-austin": {
+    title: "DevOps & Kubernetes Consulting in Austin | CodetoKloud",
+    description:
+      "DevOps, Kubernetes, and AWS cloud consulting for Austin-area businesses from CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/devops-consulting-dallas": {
+    title: "DevOps & Kubernetes Consulting in Dallas | CodetoKloud",
+    description:
+      "DevOps, Kubernetes, and AWS cloud consulting for Dallas-area businesses from CodetoKloud, an AWS Advanced Tier Partner.",
+  },
+  "/devops-consulting-denver": {
+    title: "DevOps & Kubernetes Consulting in Denver | CodetoKloud",
+    description:
+      "DevOps, Kubernetes, and AWS cloud consulting for Denver-area businesses from CodetoKloud, an AWS Advanced Tier Partner.",
   },
 };
 

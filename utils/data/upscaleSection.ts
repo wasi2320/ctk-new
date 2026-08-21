@@ -11,7 +11,7 @@ export const UPSCALE_SECTION = {
     {
       title: "Scalable Security",
       description:
-        "Adopt security solutions thatgrow with your business and safeguard your data.",
+        "Adopt security controls that grow with your business and safeguard your data.",
     },
     {
       title: "Risk Management",

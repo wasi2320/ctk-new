@@ -1,23 +1,23 @@
 export const AI_DIFFERENTIATE_SECTION = {
-  heading: "How we Differentiate from the Market?",
+  heading: "What sets our AI work apart",
   description:
-    "At Code to Kloud, we provide custom AI/ML solutions tailored to your business, not generic models. Our focus on innovation, ethical practices, and personalized training ensures better results and growth for your business.",
+    "We build AI and ML systems tailored to your business and your data, deployed on secure AWS infrastructure. The difference is a production focus: models that ship, stay compliant, and hold up under real traffic.",
   image: "/Images/Ai_Differentiate.png",
   cards: [
     {
       title: "End-to-End AI Development",
       description:
-        "We build custom AI and ML models that are specifically designed for your business operations, ensuring the most effective and precise outcomes.",
+        "We build and deploy custom AI and ML models designed around your operations, from data pipeline to inference, so the results are precise and production-ready.",
     },
     {
-      title: "Cloud & Edge AI Expertise",
+      title: "Cloud and Edge AI on AWS",
       description:
-        "We leverage Generative AI to create innovative, personalized solutions that go beyond traditional AI models, enabling advanced automation and creativity in your processes.",
+        "We run GenAI and ML on AWS, from managed services like Amazon Bedrock and SageMaker to containerized models on Amazon EKS, with the automation and monitoring to keep them reliable.",
     },
     {
-      title: "AI + Domain Expertise",
+      title: "AI Plus Domain Expertise",
       description:
-        "Our AI/ML solutions are developed with a strong focus on compliance and ethical governance, ensuring responsible AI usage across industries.",
+        "We pair AI engineering with real domain and compliance knowledge, so systems are built responsibly and fit the way your industry actually works.",
     },
   ],
 };

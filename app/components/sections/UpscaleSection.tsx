@@ -26,8 +26,8 @@ const UpscaleSection = () => {
                         index === 0 ? "pt-5 md:px-8 px-4 md:pb-14 pb-5" : "py-5 md:px-8 px-4"
                       } ${index === 1 ? "mt-12 pb-14" : ""} ${
                         index === 1
-                          ? "bg-[#245444] text-white"
-                          : "text-[#152F27]"
+                          ? "bg-[#1b4a74] text-white"
+                          : "text-[#16212e]"
                       }`}
                     >
                       <h5 className="md:text-2xl text-sm mb-3 text-center md:text-start">{card.title}</h5>
@@ -44,7 +44,7 @@ const UpscaleSection = () => {
 
           {/* Two star divs side by side */}
           <div className="flex gap-5 col-span-2">
-            <div className="flex gap-2 md:px-8 px-4 all-sides-shadow bg-[#1D493A] md:rounded-3xl rounded-2xl justify-center md:ml-16 md:w-1/2 md:h-[100px] h-[70px] items-center mt-1">
+            <div className="flex gap-2 md:px-8 px-4 all-sides-shadow bg-[#173a5c] md:rounded-3xl rounded-2xl justify-center md:ml-16 md:w-1/2 md:h-[100px] h-[70px] items-center mt-1">
               {UPSCALE_SECTION.StarOne.map((star, index) => (
                 <div key={index}>
                   <Image
@@ -84,8 +84,8 @@ const UpscaleSection = () => {
                       actualIndex === 3 ? "pt-5 md:px-8 px-4 md:pb-16 pb-5" : "py-5 md:px-8 px-4 pb-8"
                     } ${
                       actualIndex === 3
-                        ? "bg-[#152F27] text-white"
-                        : "text-[#152F27]"
+                        ? "bg-[#16212e] text-white"
+                        : "text-[#16212e]"
                     } ${actualIndex === 3 ? "mt-4" : ""}`}
                   >
                     <h5 className="md:text-2xl text-sm mb-3 text-center md:text-start">{card.title}</h5>

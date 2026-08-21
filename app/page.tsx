@@ -1,55 +1,63 @@
-"use client";
-import { useState, useEffect } from "react";
-import HomeHeroSection from "./components/sections/HomeHeroSection";
-import MissionSection from "./components/sections/MissionSection";
-import InfrastructureSection from "./components/sections/InfrastructureSection";
-import IndustriesSection from "./components/sections/IndustriesSection";
-import TechStackSection from "./components/sections/TechStackSection";
-import TechCarouselSection from "./components/sections/TechCarouselSection";
-import EnsureSection from "./components/sections/EnsureSection";
-import BusinessCarouselSection from "./components/sections/BusinessCarouselSection";
-import Loader from "./components/Loader";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import Script from "next/script";
+import type { Metadata } from "next";
+import JsonLd from "./components/JsonLd";
+import HomeRedesign from "./components/home/HomeRedesign";
+import { homepageSchemas } from "@/lib/structured-data";
+
+const title = "AWS DevOps & Kubernetes Consulting | CodetoKloud";
+const description =
+  "CodetoKloud is an AWS Advanced Tier Services Partner in Naperville for DevOps, Kubernetes, cloud migration, FinOps, and compliance engineering across the US.";
+const socialImage =
+  "https://opengraph.b-cdn.net/production/images/dd5c0828-1890-4d85-8051-5fac6878e7ce.png?token=8F3WOtV6fyrJjvXYeTMLY4rjWwtjMDd_JLbEhytH9CE&height=630&width=1200&expires=33293625957";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "https://codetokloud.com/" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    url: "https://codetokloud.com/",
+    siteName: "CodetoKloud",
+    locale: "en_US",
+    title,
+    description,
+    images: [
+      {
+        url: socialImage,
+        width: 1200,
+        height: 630,
+        alt: "CodetoKloud AWS cloud engineering consulting",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [
+      {
+        url: socialImage,
+        alt: "CodetoKloud AWS cloud engineering consulting",
+      },
+    ],
+  },
+};
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [isContentReady, setIsContentReady] = useState(false);
-
-  // Initialize AOS immediately
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      easing: "ease-in-out",
-    });
-    // Mark content as ready immediately
-    setIsContentReady(true);
-  }, []);
-
   return (
-    <div style={{ width: "100%" }}>
-      {/* {isLoading && <Loader onLoadingComplete={() => setIsLoading(false)} />} */}
-      <div
-      // className={`transition-all duration-700 ease-in-out ${isLoading ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
-      //   }`}
-      // style={{
-      //   visibility: isContentReady ? 'visible' : 'hidden',
-      //   transform: isLoading ? 'translateY(20px)' : 'translateY(0)'
-      // }}
-      >
-        <HomeHeroSection />
-        <div style={{ width: "100%", position: "relative" }}>
-          <MissionSection />
-        </div>
-        <InfrastructureSection />
-        <IndustriesSection />
-        <TechStackSection />
-        <BusinessCarouselSection />
-        <TechCarouselSection />
-        <EnsureSection />
-      </div>
-    </div>
+    <>
+      <HomeRedesign />
+      <JsonLd data={homepageSchemas} />
+    </>
   );
 }

@@ -38,7 +38,7 @@ const HomeHeroSection = () => {
             </div>
           </div>
           <p
-            className="text-base sm:text-lg md:text-xl text-[#050B0B] text-center md:text-start"
+            className="text-base sm:text-lg md:text-xl text-[#0b1220] text-center md:text-start"
             data-aos="fade-up"
             data-aos-delay="100"
           >

@@ -19,7 +19,7 @@ const ChatModal: React.FC<ChatModalProps> = ({ isOpen, onClose }) => {
     {
       role: "assistant",
       content:
-        "Hey there! 👋 I'm here to help you learn about CodeToKloud and our services. I'm excited to show you how our solutions can help your business grow. What specific challenges or opportunities are you looking to address?",
+        "Hey there! 👋 I'm here to help you learn about CodetoKloud and our services. I'm excited to show you how our solutions can help your business grow. What specific challenges or opportunities are you looking to address?",
       timestamp: new Date(),
     },
   ]);
@@ -119,7 +119,7 @@ const ChatModal: React.FC<ChatModalProps> = ({ isOpen, onClose }) => {
           {/* <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
             <span className="text-black font-bold text-sm">CTK</span>
           </div> */}
-          <span className="font-semibold">CodeToKloud Support</span>
+          <span className="font-semibold">CodetoKloud Support</span>
         </div>
         <div className="flex items-center space-x-2">
           <button
@@ -230,7 +230,7 @@ const ChatModal: React.FC<ChatModalProps> = ({ isOpen, onClose }) => {
                   ></div>
                 </div>
                 <span className="text-sm text-gray-500 ml-2">
-                  CodeToKloud Assistant is typing...
+                  CodetoKloud Assistant is typing...
                 </span>
               </div>
             </div>
@@ -283,7 +283,7 @@ const ChatModal: React.FC<ChatModalProps> = ({ isOpen, onClose }) => {
           </button>
         </div>
         <div className="text-center mt-2">
-          <p className="text-xs text-gray-500">Powered by CodeToKloud</p>
+          <p className="text-xs text-gray-500">Powered by CodetoKloud</p>
         </div>
       </div>
     </div>

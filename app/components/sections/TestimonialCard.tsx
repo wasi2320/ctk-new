@@ -32,7 +32,7 @@ export default function TestimonialCard({
             className="w-16 h-16 rounded-full object-cover"
           />
         ) : (
-          <div className="w-16 h-16 rounded-full bg-[#000209] text-white flex items-center justify-center text-xl font-semibold">
+          <div className="w-16 h-16 rounded-full bg-[#0d1526] text-white flex items-center justify-center text-xl font-semibold">
             {initials}
           </div>
         )}

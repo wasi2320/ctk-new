@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import CaseStudyLayout from "@/app/components/sections/caseStudies/CaseStudyLayout";
 import CaseStudyHeader from "@/app/components/sections/caseStudies/CaseStudyHeader";
 import CaseStudyProblemStatement from "@/app/components/sections/caseStudies/CaseStudyProblemStatement";
@@ -16,94 +17,94 @@ const services = [
 
 const projectDetails = {
   client: "Orbital Installations LLC",
-  schedule: "Jan 2025 — Apr 2025",
+  schedule: "Jan 2025 to Apr 2025",
   size: "$200,000 to $499,999",
 };
 
 // AWS Partner Program Requirements - Customer Challenge
-const customerChallenge = `The customer faced significant challenges with their development and deployment workflow that hindered their ability to innovate and scale. The development team lacked isolated preview environments for testing pull requests, creating bottlenecks when multiple features were tested simultaneously. The deployment process was semi-manual, requiring significant DevOps involvement with deployments taking 2-3 hours. The lack of automation increased the risk of human error and configuration drift between environments, leading to "works on my machine" scenarios. Infrastructure was managed through AWS Console operations, CloudFormation templates, and manual scripts, making it difficult to track changes or reproduce environments.`;
+const customerChallenge = `Orbital Installations lacked isolated environments for testing pull requests, so concurrent feature reviews competed for shared environments. Deployments required significant DevOps involvement and took 2-3 hours, while infrastructure changes were spread across AWS Console operations, CloudFormation templates, and manual scripts. The team needed a reproducible AWS foundation, short-lived preview environments, automated production delivery, and reliable cleanup without leaving unused resources running.`;
 
 // AWS Partner Program Requirements - Partner Solution
 const solutionComponents = [
   {
     title: "Multi-Cluster ECS Architecture",
     description:
-      "Architected separate Amazon ECS clusters for development and production environments, each deployed in private subnets across multiple availability zones. Utilized AWS Fargate for serverless container management with automatic scaling based on demand.",
+      "Separate Amazon ECS clusters isolated development and production. AWS Fargate tasks ran in private subnets across multiple Availability Zones and scaled with workload demand.",
   },
   {
     title: "Infrastructure as Code with Terraform",
     description:
-      "Implemented 100% of the infrastructure using Terraform, completely eliminating manual AWS Console operations. All AWS infrastructure including VPCs, subnets, security groups, ECS clusters, and ALBs are defined in modular, reusable Terraform code stored in Git.",
+      "VPCs, subnets, security groups, ECS clusters, and load balancers were moved into modular Terraform stored in Git. This replaced the mix of console operations and manual scripts with a reviewable source of truth.",
   },
   {
     title: "GitHub Actions CI/CD with PR Preview Environments",
     description:
-      "Implemented a sophisticated CI/CD workflow that automatically creates ephemeral preview environments for every pull request. When a PR is opened, GitHub Actions builds a Docker image, pushes it to ECR, creates an isolated ECS service, and provides a unique URL for testing changes in isolation.",
+      "When a pull request opens, GitHub Actions builds a Docker image, publishes it to Amazon ECR, creates an isolated ECS service, and returns a unique URL for focused review and QA.",
   },
   {
     title: "Automated Preview Environment Management",
     description:
-      "Preview environments persist throughout the PR lifecycle and automatically update when new commits are pushed. When PRs are closed or merged, automated cleanup workflows remove ECS services and associated resources, ensuring no resource waste or cost accumulation.",
+      "Preview environments update when new commits are pushed. When a pull request closes or merges, the workflow removes its ECS service and associated resources to limit idle cost.",
   },
   {
     title: "Production Deployment Automation",
     description:
-      "When changes are merged to main branch, GitHub Actions automatically builds production Docker images, updates ECS task definitions, and performs rolling updates with zero downtime. The pipeline implements blue-green deployment strategies, health checks, and automatic rollback capabilities.",
+      "Merges to the main branch build a production image, update the ECS task definition, and start a controlled deployment with health checks and automated rollback.",
   },
   {
     title: "Comprehensive Monitoring with Prometheus and Grafana",
     description:
-      "Deployed Prometheus and Grafana on dedicated ECS services to provide enterprise-grade monitoring. Prometheus scrapes metrics from all ECS tasks, while Grafana dashboards provide real-time visualization of system health, application performance, and business KPIs.",
+      "Prometheus collected metrics from ECS tasks and Grafana dashboards showed service health and application performance for preview and production environments.",
   },
   {
     title: "Secure Network Architecture",
     description:
-      "All ECS tasks run in private subnets with no direct internet access, communicating through VPC endpoints for enhanced security. Application Load Balancers in public subnets provide entry points with AWS WAF protection. All traffic is encrypted in transit using TLS certificates from AWS Certificate Manager.",
+      "ECS tasks ran in private subnets and used VPC endpoints for AWS service access. Public Application Load Balancers used AWS WAF and TLS certificates from AWS Certificate Manager for protected inbound traffic.",
   },
 ];
 
 const techStack = [
   { name: "Docker", icon: "/Images/PNGSS/bg_dock.png" },
   { name: "AWS", icon: "/Images/PNGSS/aws.png" },
-  { name: "Terraform", icon: "/Images/PNGSS/gcloud.png" },
-  { name: "GitHub Actions", icon: "/Images/PNGSS/gitlab.png" },
+  { name: "Terraform", icon: "/Images/PNGSS/terraform-cloud.png" },
+  { name: "GitHub Actions", icon: "/Images/PNGSS/GitHub-Logo.png" },
 ];
 
 const metrics = [
   {
     category: "PR Review Time",
     description: "Decreased from 2-3 days to approximately 8-10 hours",
-    bgColor: "bg-[#1a2e22]",
+    bgColor: "bg-[#16273c]",
     width: "w-[70%]",
   },
   {
     category: "Deployment Frequency",
     description: "Increased from 2-3 to 8-10 deployments per week",
-    bgColor: "bg-[#1a3b2a]",
+    bgColor: "bg-[#16324f]",
     width: "w-[75%]",
   },
   {
     category: "Deployment Time",
     description: "Reduced from 3-4 hours to under 40 minutes",
-    bgColor: "bg-[#3a6a50]",
+    bgColor: "bg-[#2b6ca8]",
     width: "w-[65%]",
   },
   {
     category: "DevOps Effort",
     description: "Reduced from 15-20 hours to approximately 3-4 hours per week",
-    bgColor: "bg-[#4d7a65]",
+    bgColor: "bg-[#4a86bf]",
     width: "w-[80%]",
   },
   {
     category: "Production Incidents",
     description: "Decreased from 8-10 to 2-3 incidents per quarter",
-    bgColor: "bg-[#5a8a75]",
+    bgColor: "bg-[#5a95cf]",
     width: "w-[70%]",
   },
   {
     category: "MTTR",
     description: "Improved from 40+ minutes to 12-15 minutes",
-    bgColor: "bg-[#6a9a85]",
+    bgColor: "bg-[#6aa5db]",
     width: "w-[75%]",
   },
 ];
@@ -122,13 +123,10 @@ const AboutCustomerSection = () => (
           About the Customer
         </h2>
         <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-          Orbital Installations LLC is a rapidly growing SaaS company providing
-          construction and installation management solutions to mid-market and
-          enterprise clients across North America. Their platform serves thousands
-          of daily active users who depend on consistent availability and rapid
-          feature delivery. As a technology-forward organization, the company
-          operates on a rapid release cycle, deploying new features and updates
-          multiple times per week to stay competitive in their market.
+          Orbital Installations LLC provides construction and installation
+          management software to mid-market and enterprise customers. Its product
+          team needed to review several changes in parallel and release frequently
+          without making a shared test environment the delivery bottleneck.
         </p>
       </motion.div>
     </div>
@@ -150,32 +148,24 @@ const ResultsBenefitsSection = () => (
         </h2>
         <div className="space-y-6 text-lg md:text-xl text-gray-700 leading-relaxed">
           <p>
-            The transformation to automated ECS deployment with PR preview
-            environments delivered substantial improvements across development
-            velocity, operational efficiency, and system reliability. Pull request
-            review time decreased significantly, from an average of 2-3 days to
-            approximately 8-10 hours, as QA teams could immediately test changes in
-            isolated preview environments. The development team increased their
-            deployment frequency from 2-3 deployments per week to 8-10 deployments
-            per week. Time from code commit to production deployment reduced from
-            3-4 hours to under 40 minutes for the entire automated pipeline.
+            Pull request review time decreased from 2-3 days to approximately 8-10
+            hours after QA could test each change at its own URL. Deployment
+            frequency increased from 2-3 to 8-10 releases per week, and the full
+            production pipeline reduced deployment time from 3-4 hours to under 40
+            minutes.
           </p>
           <p>
-            Infrastructure management time decreased through Infrastructure as Code, with the
-            ability to provision complete environments in under 30 minutes versus
-            several days with manual processes. Automated cleanup of PR preview
-            environments saved costs by eliminating orphaned resources.
+            Terraform reduced environment provisioning from several days to under
+            30 minutes for the measured workflow. Automated teardown also removed
+            preview services after pull requests closed, limiting orphaned resource
+            cost.
           </p>
           <p>
-            Production incidents related to deployment issues decreased from 8-10
-            incidents per quarter to 2-3 incidents. Mean time to recovery (MTTR) for
-            incidents improved from 40+ minutes to 12-15 minutes through automated
-            rollback capabilities. Bug detection shifted left in the development
-            cycle, with a significant portion of issues now caught in PR preview
-            environments before reaching production. Zero-downtime deployments
-            ensured high uptime even during frequent release cycles. Developer
-            productivity increased as measured by features delivered per sprint,
-            enabled by rapid feedback loops and reduced context switching.
+            Deployment-related production incidents decreased from 8-10 per quarter
+            to 2-3. Mean time to recovery improved from more than 40 minutes to
+            12-15 minutes through health checks and automated rollback. The preview
+            workflow also moved more testing before merge, when changes were easier
+            to isolate and correct.
           </p>
         </div>
       </motion.div>
@@ -183,32 +173,22 @@ const ResultsBenefitsSection = () => (
   </section>
 );
 
-// AWS Partner Program Requirements - About the Partner Section
-const AboutPartnerSection = () => (
-  <section className="py-12 px-4 md:px-6 lg:px-8 bg-white">
-    <div className="max-w-6xl mx-auto">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+const NextStepSection = () => (
+  <section className="bg-[#0d1526] px-4 py-16 text-center text-white">
+    <div className="mx-auto max-w-4xl">
+      <h2 className="text-3xl font-bold md:text-4xl">
+        Need isolated preview environments on AWS?
+      </h2>
+      <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
+        We can review your current pull request workflow, ECS architecture, cleanup
+        controls, and production release path and identify a practical pilot.
+      </p>
+      <Link
+        href="/contact"
+        className="mt-8 inline-block rounded-full bg-white px-8 py-3 font-semibold text-[#0d1526] hover:bg-gray-100"
       >
-        <h2 className="text-4xl font-bold mb-6 text-gray-900">
-          About the Partner
-        </h2>
-        <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-          CodetoKloud is an AWS Partner specializing in cloud infrastructure
-          modernization, DevOps transformation, and automated deployment solutions.
-          We help organizations build scalable, secure, and efficient cloud
-          infrastructure using Infrastructure as Code and modern CI/CD practices. Our
-          team of AWS-certified engineers has deep expertise in container
-          orchestration, serverless architectures, and GitOps methodologies. We focus
-          on eliminating manual processes and implementing automation that
-          accelerates software delivery while improving reliability and security. Our
-          approach emphasizes Infrastructure as Code, comprehensive monitoring, and
-          developer-friendly workflows that enable teams to deploy with confidence.
-        </p>
-      </motion.div>
+        Review my preview workflow
+      </Link>
     </div>
   </section>
 );
@@ -217,11 +197,11 @@ export default function CaseStudyContent() {
   return (
     <CaseStudyLayout>
       <CaseStudyHeader
-        title="Automated ECS Deployment with PR Preview Environments"
-        subtitle="Services provided on this Project"
+        title="How Orbital Installations Automated ECS Preview Environments"
+        subtitle="Each pull request received an isolated test URL, automated updates, and cleanup before production promotion."
         services={services}
-        arcSrc="/services/automated_aws.png"
-        alt="ECS PR Preview Architecture Diagram"
+        arcSrc="/services/architecture/ecs-pr-preview-workflow.svg"
+        alt="GitHub pull request workflow that builds an image in Amazon ECR, creates an isolated Amazon ECS preview service and URL, promotes approved code to production, and removes preview resources when the pull request closes"
       />
       <AboutCustomerSection />
       <CaseStudyProblemStatement
@@ -230,15 +210,12 @@ export default function CaseStudyContent() {
       />
       <CaseStudySolution
         solutions={solutionComponents}
-        illustration="/services/automated_aws2.png"
-        illustrationAlt="ECS PR Preview Solution Architecture"
-        description="This comprehensive AWS cloud-native solution leverages Infrastructure as Code and modern CI/CD practices to deliver automated deployment workflows with PR preview environments, enabling rapid feature delivery while maintaining high reliability and security standards."
+        description="The workflow treated each pull request as a complete lifecycle: build, provision, test, update, approve, promote, and remove. Terraform kept the shared AWS foundation reproducible while automation controlled the short-lived services."
       />
       <CaseStudyTechStack techs={techStack} />
       <MetricsDisplay metrics={metrics} />
       <ResultsBenefitsSection />
-      <AboutPartnerSection />
+      <NextStepSection />
     </CaseStudyLayout>
   );
 }
-

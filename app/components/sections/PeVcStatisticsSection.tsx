@@ -29,7 +29,7 @@ const PeVcStatisticsSection = () => {
   };
 
   return (
-    <section className="bg-gradient-to-br from-[#0e0f11] to-[#1a2a1a] text-white py-20 px-4 md:px-28">
+    <section className="bg-gradient-to-br from-[#111827] to-[#1a2a1a] text-white py-20 px-4 md:px-28">
       <motion.div
         className="max-w-6xl mx-auto"
         variants={containerVariants}

@@ -10,7 +10,7 @@ export interface Testimonial {
 }
 
 /**
- * Real CodetoKloud client testimonials. Add entries here — the reviews section
+ * Real CodetoKloud client testimonials. Add entries here, the reviews section
  * and Review structured data pick them up automatically. When this array is
  * empty, the reviews section is hidden.
  *

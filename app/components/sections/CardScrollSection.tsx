@@ -47,7 +47,7 @@ export const CardScrollSection = () => {
                   className="flex gap-2 items-center w-fit"
                 >
                   <span className="text-lg">Learn More</span>
-                  <div className="w-7 h-7 flex justify-center items-center bg-[#152F27] rounded-full">
+                  <div className="w-7 h-7 flex justify-center items-center bg-[#16212e] rounded-full">
                     <Image
                       src="/Images/Arrow_Left.svg"
                       alt=""
@@ -86,7 +86,7 @@ export const CardScrollSection = () => {
                   className="flex gap-2 mt-12 w-fit items-center cursor-pointer"
                 >
                   <span className="text-2xl">Learn More</span>
-                  <div className="w-7 h-7 flex justify-center items-center bg-[#152F27] rounded-full">
+                  <div className="w-7 h-7 flex justify-center items-center bg-[#16212e] rounded-full">
                     <Image
                       src="/Images/Arrow_Left.svg"
                       alt=""

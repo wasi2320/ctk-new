@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const SaaSDifferentiateSection = () => {
   return (
-    <section className="bg-[#0e0f11] text-white py-16 px-4 md:px-28">
+    <section className="bg-[#111827] text-white py-16 px-4 md:px-28">
       <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12">
         {/* Left side - Heading and description */}
         <div className="md:w-[45%] w-full border-r-2 pr-10">

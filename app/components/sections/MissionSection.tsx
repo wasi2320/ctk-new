@@ -49,11 +49,10 @@ const MissionSection = () => {
               data-aos-delay="200"
             >
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-center leading-relaxed">
-                As architects of connection, we empower business across the globe to
-                envision a future where legacy technology serves as a foundational
-                stepping stone towards progress. Our mission is to connect the dots
-                between where your business is today and the dynamic, multi-cloud
-                future that awaits.
+                We help businesses move from legacy systems to modern,
+                cloud-native platforms. Our mission is simple: connect where your
+                business is today to the reliable, scalable cloud it needs next,
+                without the risk and downtime that usually comes with it.
               </p>
             </div>
           </div>

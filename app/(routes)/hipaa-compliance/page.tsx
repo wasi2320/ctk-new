@@ -11,15 +11,15 @@ import { pageFaqs } from "@/lib/faqs";
 
 export const metadata = pageMetadata("/hipaa-compliance");
 
-/** Technical safeguards — keyworded H3s with extractable, standalone prose. */
+/** Technical safeguards, keyworded H3s with extractable, standalone prose. */
 const safeguards = [
   {
     title: "HIPAA-Eligible Services & BAA",
-    body: "We architect your workloads to run only on HIPAA-eligible AWS services covered by AWS's Business Associate Addendum (BAA), so protected health information (PHI) is processed and stored within compliant boundaries.",
+    body: "We architect workloads around HIPAA-eligible AWS services covered by the applicable AWS Business Associate Addendum (BAA), with an approved service boundary for protected health information (PHI).",
   },
   {
     title: "Encryption of PHI",
-    body: "We encrypt PHI at rest with AWS KMS and in transit with TLS across every layer — databases, storage, container workloads, and backups — so sensitive health data is protected end to end.",
+    body: "We encrypt PHI at rest with AWS KMS and in transit with TLS across every layer, databases, storage, container workloads, and backups, so sensitive health data is protected end to end.",
   },
   {
     title: "Access Control (IAM & RBAC)",
@@ -35,7 +35,7 @@ const safeguards = [
   },
   {
     title: "Backup & Disaster Recovery",
-    body: "We design encrypted backups and disaster recovery so PHI stays available and recoverable — a core HIPAA requirement — with tested restore procedures and defined recovery objectives.",
+    body: "We design encrypted backups and disaster recovery so PHI stays available and recoverable, a core HIPAA requirement, with tested restore procedures and defined recovery objectives.",
   },
 ];
 
@@ -45,56 +45,56 @@ export default function HipaaCompliancePage() {
       <JsonLd data={coreServiceSchemas["/hipaa-compliance"]} />
 
       <HeroSection
-        title="HIPAA-Compliant AWS & Kubernetes Infrastructure"
-        description="CodetoKloud, an AWS Advanced Tier Partner, helps healthcare organizations build and run HIPAA-compliant infrastructure on AWS and Amazon EKS — with the encryption, access controls, audit logging, and disaster recovery HIPAA requires."
-        imageSrc="/services/strength_aws.png"
-        cover
-        buttonText="Book a free HIPAA readiness review"
+        title="AWS and Kubernetes Infrastructure for HIPAA-Regulated Workloads"
+        description="CodetoKloud helps healthcare organizations implement and document encryption, access controls, audit logging, private networking, backup, and recovery safeguards on AWS and Amazon EKS."
+        imageSrc="/services/service-visuals/hipaa-aws-controls.svg"
+        imageAlt="HIPAA-regulated AWS workload with private Amazon EKS, IAM, RBAC, MFA, KMS encryption, audit logging, and backup and recovery controls"
+        buttonText="Book a HIPAA readiness review"
         buttonLink="/contact"
       />
 
-      <div className="px-4 md:px-36 -mt-2 mb-8">
+      <div className="px-4 md:px-36 -mt-2 mb-5">
         <TrustBadge />
       </div>
 
-      {/* Answer capsule — definition-first, standalone, names the company. */}
-      <section className="py-14 px-4 md:px-36 bg-gray-50">
+      {/* Answer capsule, definition-first, standalone, names the company. */}
+      <section className="py-10 md:py-12 px-4 md:px-36 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-            Can AWS and Kubernetes be HIPAA compliant?
+            Can AWS and Kubernetes support HIPAA-regulated workloads?
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed">
             Yes. AWS offers a Business Associate Addendum (BAA) and a broad set of
             HIPAA-eligible services, and Kubernetes on Amazon EKS can host
             protected health information (PHI) when it is configured with the
-            right controls. CodetoKloud, an AWS Advanced Tier Partner, builds
-            HIPAA-compliant infrastructure on AWS and EKS using encryption,
-            access controls, audit logging, network isolation, and disaster
-            recovery.
+            right controls. CodetoKloud implements encryption, access controls,
+            audit logging, network isolation, backup, and recovery safeguards
+            on AWS and EKS, then documents the technical environment for your
+            internal compliance program and qualified advisors.
           </p>
           <p className="text-base text-gray-600 leading-relaxed mt-4">
-            HIPAA compliance isn&apos;t a product you buy — it&apos;s how your
-            infrastructure is designed and operated. We implement and document
-            the technical safeguards so your healthcare platform is built for
-            compliance from the ground up.
+            HIPAA compliance is an organizational responsibility that also
+            includes policies, training, vendor management, and legal review.
+            CodetoKloud focuses on the cloud and Kubernetes safeguards within
+            the technical scope of that program.
           </p>
         </div>
       </section>
 
       {/* Safeguards */}
-      <section className="py-16 px-4 md:px-36 bg-white">
+      <section className="py-10 md:py-12 px-4 md:px-36 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 text-center">
-            How We Build HIPAA-Compliant Infrastructure
+            Technical safeguards for HIPAA-regulated workloads
           </h2>
-          <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
+          <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-8">
             The technical safeguards that protect PHI on AWS and Amazon EKS.
           </p>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
             {safeguards.map((s) => (
               <div
                 key={s.title}
-                className="rounded-2xl border border-gray-200 p-6 hover:border-[#152F27] transition-colors"
+                className="rounded-2xl border border-gray-200 p-6 hover:border-[#16212e] transition-colors"
               >
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {s.title}
@@ -106,27 +106,28 @@ export default function HipaaCompliancePage() {
         </div>
       </section>
 
-      {/* Proof — the GoAgalia case study. */}
-      <section className="py-16 px-4 md:px-36 bg-gray-50">
+      {/* Proof, the GoAgalia case study. */}
+      <section className="py-10 md:py-12 px-4 md:px-36 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-            Proof: HIPAA-Compliant EKS for a Healthcare Platform
+            Healthcare EKS implementation example
           </h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-3xl">
+          <p className="text-lg text-gray-600 mb-6 max-w-3xl">
             We migrated GoAgalia&apos;s healthcare workforce management platform
-            to a HIPAA-compliant architecture on Amazon EKS — with private
-            networking, autoscaling, GitOps delivery, and full observability.
+            to an Amazon EKS architecture designed for its HIPAA program, with
+            private networking, autoscaling, GitOps delivery, and centralized
+            observability.
           </p>
-          <div className="flex flex-wrap gap-3 mb-8">
+          <div className="flex flex-wrap gap-3 mb-6">
             {[
               "~35% lower cloud cost",
               "850ms → 320ms API latency",
               "99.7% uptime",
-              "MTTR 40min → 10–12min",
+              "MTTR from 40+ min to 10-12 min",
             ].map((m) => (
               <span
                 key={m}
-                className="text-sm font-medium text-[#152F27] bg-[#152F27]/10 rounded-full px-4 py-2"
+                className="text-sm font-medium text-[#16212e] bg-[#16212e]/10 rounded-full px-4 py-2"
               >
                 {m}
               </span>
@@ -134,7 +135,7 @@ export default function HipaaCompliancePage() {
           </div>
           <Link
             href="/goagalia-healthcare-workforce-management"
-            className="inline-block rounded-full border border-[#152F27] text-[#152F27] font-semibold px-6 py-3 hover:bg-[#152F27] hover:text-white transition-colors"
+            className="inline-block rounded-full border border-[#16212e] text-[#16212e] font-semibold px-6 py-3 hover:bg-[#16212e] hover:text-white transition-colors"
           >
             Read the GoAgalia case study →
           </Link>
@@ -142,54 +143,62 @@ export default function HipaaCompliancePage() {
       </section>
 
       {/* CTA band */}
-      <section className="py-16 px-4 md:px-36 bg-[#000209] text-white">
+      <section className="py-10 md:py-12 px-4 md:px-36 bg-[#0d1526] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Get a free HIPAA readiness review
+            Review the technical scope of your HIPAA program
           </h2>
-          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-            Tell us about your healthcare workload and we&apos;ll review your AWS
-            or Kubernetes environment against HIPAA&apos;s technical safeguards,
-            then recommend the highest-impact next steps — no obligation.
+          <p className="text-lg text-gray-300 mb-6 max-w-2xl mx-auto">
+            Tell us about your healthcare workload. We will review the AWS or
+            Kubernetes scope, confirm fit, and identify three technical
+            priorities for the first conversation.
           </p>
           <Link
             href="/contact"
-            className="inline-block rounded-full bg-white text-[#000209] font-semibold px-8 py-3 hover:bg-gray-100 transition-colors"
+            className="inline-block rounded-full bg-white text-[#0d1526] font-semibold px-8 py-3 hover:bg-gray-100 transition-colors"
           >
-            Book a free HIPAA readiness review
+            Book a HIPAA readiness review
           </Link>
         </div>
       </section>
 
       {/* Related case studies */}
-      <section className="px-4 md:px-36 pb-14 bg-white">
-        <div className="max-w-4xl mx-auto rounded-2xl border border-gray-200 p-6 space-y-2">
-          <p className="text-lg font-semibold text-gray-900">
+      <section className="px-4 py-8 md:px-36 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
             More HIPAA case studies
-          </p>
-          <p className="text-gray-700">
+          </h2>
+          <div className="grid gap-4 md:grid-cols-2">
             <Link
               href="/hipaa-aws-hardening-case-study"
-              className="text-[#152F27] font-semibold underline hover:no-underline"
+              className="group flex min-h-32 flex-col justify-between rounded-2xl border border-gray-200 bg-gray-50 p-5 hover:border-[#16212e] hover:shadow-sm transition-all"
             >
-              HIPAA Hardening for a Healthcare Data Platform on AWS
+              <h3 className="text-lg font-bold text-gray-900">
+                HIPAA Hardening for a Healthcare Data Platform on AWS
+              </h3>
+              <span className="mt-4 text-sm font-semibold text-[#16212e]">
+                Read case study →
+              </span>
             </Link>
-          </p>
-          <p className="text-gray-700">
             <Link
               href="/kubernetes-compliance-platform-case-study"
-              className="text-[#152F27] font-semibold underline hover:no-underline"
+              className="group flex min-h-32 flex-col justify-between rounded-2xl border border-gray-200 bg-gray-50 p-5 hover:border-[#16212e] hover:shadow-sm transition-all"
             >
-              On-Prem Kubernetes Platform for SOC 2, HIPAA &amp; NIST
+              <h3 className="text-lg font-bold text-gray-900">
+                On-Prem Kubernetes Platform for SOC 2, HIPAA &amp; NIST
+              </h3>
+              <span className="mt-4 text-sm font-semibold text-[#16212e]">
+                Read case study →
+              </span>
             </Link>
-          </p>
+          </div>
         </div>
       </section>
 
       <FaqSection
         items={pageFaqs["/hipaa-compliance"]}
         heading="HIPAA Compliance FAQs"
-        description="Common questions about running HIPAA-compliant workloads on AWS and Amazon EKS."
+        description="Common questions about supporting HIPAA-regulated workloads on AWS and Amazon EKS."
       />
 
       <ComplianceLinks currentPath="/hipaa-compliance" />

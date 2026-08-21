@@ -11,7 +11,7 @@ const FutureHealthcare = ({ heading }: FutureHealthcareProps) => {
       <div className="flex flex-col md:flex-col justify-center">
         <div className="text-center flex flex-col items-center justify-center mb-8 md:mb-0 relative">
           <h3 className="md:text-4xl text-2xl text-Nunito mb-3">
-            Empowering the Future of Healthcare
+            Engineering the Future of Healthcare
           </h3>
           <div className="relative w-full h-64 mb-4">
             <Image
@@ -22,9 +22,9 @@ const FutureHealthcare = ({ heading }: FutureHealthcareProps) => {
             />
           </div>
           <p className="md:text-2xl text-lg nunito-semiBold md:w-9/12 mx-auto mt-8 text-center font-semibold">
-            Deliver impactful healthcare experiences with our innovative
-            solutions and dedicated support, helping you shape the next
-            generation of patient care.
+            We build the HIPAA-compliant cloud platforms and software that
+            healthcare organizations run on, from secure deployment to
+            patient-data protection.
           </p>
         </div>
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 mt-8">
@@ -34,7 +34,7 @@ const FutureHealthcare = ({ heading }: FutureHealthcareProps) => {
               Our Portfolio
             </h3>
             <h3 className="md:text-xl text-lg text-Nunito mb-3">
-              Advanced Healthcare Technology Solutions
+              Cloud, security, and deployment engineering for healthcare
             </h3>
           </div>
 
@@ -44,7 +44,7 @@ const FutureHealthcare = ({ heading }: FutureHealthcareProps) => {
               href="/security-and-deployment"
               className="inline-block bg-transparent text-Nunito text-dark text-lg md:text-xl font-semibold md:py-2 md:px-6 py-2 px-4 border-3 rounded-2xl transition hover:bg-gray-100"
             >
-              Explore Healthcare Innovations
+              Explore Healthcare Case Studies
               <Image
                 src="/Images/arrow-right.png"
                 alt="Arrow"

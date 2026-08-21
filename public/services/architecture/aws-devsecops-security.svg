@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="devsecTitle devsecDesc">
+  <title id="devsecTitle">AWS security hardening with DevSecOps</title>
+  <desc id="devsecDesc">A GitLab pipeline builds and tests application code, applies SonarQube code analysis, builds a Docker image, and scans it with Trivy before release. Engineers use AWS VPN and least privilege IAM access to reach workloads inside a private VPC. AWS Secrets Manager provides managed secrets, while GuardDuty and CloudWatch security logs support continuous detection and alerting.</desc>
+  <defs>
+    <linearGradient id="devsecBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F8FBFF"/>
+      <stop offset="1" stop-color="#F1F7FC"/>
+    </linearGradient>
+    <linearGradient id="devsecWorkload" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#143D63"/>
+      <stop offset="1" stop-color="#0D263F"/>
+    </linearGradient>
+    <filter id="devsecShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#17324D" flood-opacity="0.10"/>
+    </filter>
+    <marker id="devsecArrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M1 1 9 5 1 9Z" fill="#2563EB"/>
+    </marker>
+    <marker id="devsecArrowPurple" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M1 1 9 5 1 9Z" fill="#7C3AED"/>
+    </marker>
+    <marker id="devsecArrowGreen" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M1 1 9 5 1 9Z" fill="#0E9F6E"/>
+    </marker>
+    <style>
+      .dt { font-family: Inter, ui-sans-serif, system-ui, sans-serif; fill: #102A43; }
+      .dtitle { font-size: 30px; font-weight: 760; letter-spacing: -0.5px; }
+      .dsub { font-size: 15px; fill: #52677C; }
+      .dsection { font-size: 13px; font-weight: 760; letter-spacing: 1.2px; }
+      .dname { font-size: 15px; font-weight: 730; }
+      .dmeta { font-size: 12px; fill: #61758A; }
+      .dcard { fill: #FFFFFF; stroke: #D8E5F1; stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="720" rx="28" fill="url(#devsecBg)"/>
+  <rect x="28" y="26" width="1144" height="668" rx="24" fill="none" stroke="#D9E6F2"/>
+
+  <g class="dt">
+    <text class="dtitle" x="58" y="72">AWS security hardening with DevSecOps</text>
+    <text class="dsub" x="58" y="99">Private access, least privilege, secure delivery, managed secrets, and continuous detection</text>
+    <g transform="translate(949 45)">
+      <rect width="193" height="32" rx="16" fill="#E9F8F3"/>
+      <path d="M18 8 25 11v6c0 5-3 8-7 10-4-2-7-5-7-10v-6z" fill="none" stroke="#0E9F6E" stroke-width="1.8"/>
+      <text x="34" y="21" font-size="11" font-weight="750" fill="#087A55">DEFENSE IN DEPTH</text>
+    </g>
+
+    <rect x="50" y="126" width="1100" height="176" rx="18" fill="#FFFFFF" stroke="#D8E5F1"/>
+    <rect x="50" y="126" width="8" height="176" rx="4" fill="#7C3AED"/>
+    <text class="dsection" x="78" y="154" fill="#7C3AED">SECURE SOFTWARE DELIVERY</text>
+    <text class="dmeta" x="320" y="154">Automated checks surface vulnerabilities before deployment</text>
+
+    <g filter="url(#devsecShadow)">
+      <g transform="translate(76 178)">
+        <rect class="dcard" width="146" height="94" rx="14"/>
+        <circle cx="73" cy="30" r="17" fill="#FFF0E8"/>
+        <path d="M64 24h18v13H64zM67 21v6M79 21v6M67 31h12" fill="none" stroke="#E95C17" stroke-width="2" stroke-linecap="round"/>
+        <text class="dname" x="73" y="63" text-anchor="middle">GitLab source</text>
+        <text class="dmeta" x="73" y="81" text-anchor="middle">Merge request</text>
+      </g>
+      <g transform="translate(257 178)">
+        <rect class="dcard" width="146" height="94" rx="14"/>
+        <circle cx="73" cy="30" r="17" fill="#E8F2FF"/>
+        <path d="M64 30h18M69 24l-6 6 6 6M77 24l6 6-6 6" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <text class="dname" x="73" y="63" text-anchor="middle">GitLab CI</text>
+        <text class="dmeta" x="73" y="81" text-anchor="middle">Build and test</text>
+      </g>
+      <g transform="translate(438 178)">
+        <rect class="dcard" width="146" height="94" rx="14"/>
+        <circle cx="73" cy="30" r="17" fill="#E9F8F3"/>
+        <path d="M62 34c4-12 18-14 23-3M63 37c5 7 16 8 22 1" fill="none" stroke="#0E9F6E" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="73" cy="30" r="3" fill="#0E9F6E"/>
+        <text class="dname" x="73" y="63" text-anchor="middle">SonarQube</text>
+        <text class="dmeta" x="73" y="81" text-anchor="middle">Code analysis</text>
+      </g>
+      <g transform="translate(619 178)">
+        <rect class="dcard" width="146" height="94" rx="14"/>
+        <circle cx="73" cy="30" r="17" fill="#E8F2FF"/>
+        <path d="m63 25 10-5 10 5v11l-10 5-10-5zM63 25l10 5 10-5M73 30v11" fill="none" stroke="#1778D0" stroke-width="2" stroke-linejoin="round"/>
+        <text class="dname" x="73" y="63" text-anchor="middle">Docker build</text>
+        <text class="dmeta" x="73" y="81" text-anchor="middle">Container image</text>
+      </g>
+      <g transform="translate(800 178)">
+        <rect class="dcard" width="146" height="94" rx="14"/>
+        <circle cx="73" cy="30" r="17" fill="#F2EAFE"/>
+        <path d="M66 22h14l4 8-11 12-11-12z" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linejoin="round"/>
+        <path d="m68 30 4 4 7-8" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <text class="dname" x="73" y="63" text-anchor="middle">Trivy</text>
+        <text class="dmeta" x="73" y="81" text-anchor="middle">Image scan</text>
+      </g>
+      <g transform="translate(981 178)">
+        <rect class="dcard" width="146" height="94" rx="14"/>
+        <circle cx="73" cy="30" r="17" fill="#E9F8F3"/>
+        <path d="M64 30h18M76 24l6 6-6 6" fill="none" stroke="#0E9F6E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <text class="dname" x="73" y="63" text-anchor="middle">AWS release</text>
+        <text class="dmeta" x="73" y="81" text-anchor="middle">Pipeline deploy</text>
+      </g>
+    </g>
+    <path d="M222 225H249" fill="none" stroke="#7C3AED" stroke-width="2.3" marker-end="url(#devsecArrowPurple)"/>
+    <path d="M403 225H430" fill="none" stroke="#7C3AED" stroke-width="2.3" marker-end="url(#devsecArrowPurple)"/>
+    <path d="M584 225H611" fill="none" stroke="#7C3AED" stroke-width="2.3" marker-end="url(#devsecArrowPurple)"/>
+    <path d="M765 225H792" fill="none" stroke="#7C3AED" stroke-width="2.3" marker-end="url(#devsecArrowPurple)"/>
+    <path d="M946 225H973" fill="none" stroke="#7C3AED" stroke-width="2.3" marker-end="url(#devsecArrowPurple)"/>
+
+    <rect x="48" y="326" width="1104" height="334" rx="20" fill="#FFFFFF" stroke="#AFC8DF" stroke-width="1.5"/>
+    <rect x="48" y="326" width="1104" height="38" rx="20" fill="#EAF3FB"/>
+    <path d="M48 346c0-11 9-20 20-20h1064c11 0 20 9 20 20v18H48z" fill="#EAF3FB"/>
+    <text class="dsection" x="70" y="351" fill="#174D75">AWS REGION  •  PRIVATE VPC  •  ISOLATED RESOURCES</text>
+    <g transform="translate(937 335)">
+      <circle cx="7" cy="10" r="4" fill="#2563EB"/>
+      <text x="18" y="14" font-size="10.5" font-weight="700" fill="#52677C">ACCESS</text>
+      <circle cx="83" cy="10" r="4" fill="#0E9F6E"/>
+      <text x="94" y="14" font-size="10.5" font-weight="700" fill="#52677C">SECURITY</text>
+    </g>
+
+    <g transform="translate(70 389)">
+      <rect width="301" height="246" rx="18" fill="#F8FBFF" stroke="#BCD2E6"/>
+      <text x="18" y="28" font-size="12" font-weight="760" letter-spacing="1" fill="#52677C">CONTROLLED AWS ACCESS</text>
+
+      <rect x="18" y="45" width="265" height="52" rx="12" fill="#FFFFFF" stroke="#D8E5F1"/>
+      <circle cx="47" cy="71" r="15" fill="#E8F2FF"/>
+      <circle cx="47" cy="66" r="5" fill="none" stroke="#2563EB" stroke-width="2"/>
+      <path d="M38 79c2-5 5-8 9-8s7 3 9 8" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
+      <text x="73" y="67" font-size="13.5" font-weight="730">Authorized engineer</text>
+      <text x="73" y="84" font-size="10.5" fill="#61758A">Verified identity</text>
+
+      <rect x="18" y="112" width="265" height="52" rx="12" fill="#F2EAFE"/>
+      <circle cx="47" cy="138" r="15" fill="#7C3AED"/>
+      <path d="M39 138h16M43 133l-4 5 4 5M51 133l4 5-4 5" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="73" y="134" font-size="13.5" font-weight="730" fill="#6427B7">AWS VPN</text>
+      <text x="73" y="151" font-size="10.5" fill="#6427B7">Encrypted private access</text>
+
+      <rect x="18" y="179" width="265" height="49" rx="12" fill="#E9F8F3"/>
+      <circle cx="47" cy="203" r="15" fill="#0E9F6E"/>
+      <path d="M42 203v-4a5 5 0 0 1 10 0v4M40 203h14v9H40z" fill="none" stroke="#FFFFFF" stroke-width="1.8"/>
+      <text x="73" y="199" font-size="13.5" font-weight="730" fill="#087A55">IAM policies</text>
+      <text x="73" y="216" font-size="10.5" fill="#087A55">Least privilege + key rotation</text>
+
+      <path d="M150 97v8" fill="none" stroke="#2563EB" stroke-width="2" marker-end="url(#devsecArrowBlue)"/>
+      <path d="M150 164v8" fill="none" stroke="#2563EB" stroke-width="2" marker-end="url(#devsecArrowBlue)"/>
+    </g>
+
+    <g transform="translate(395 389)" filter="url(#devsecShadow)">
+      <rect width="409" height="246" rx="18" fill="url(#devsecWorkload)"/>
+      <circle cx="34" cy="34" r="18" fill="#2D6ED6"/>
+      <path d="M25 27h18v14H25zM29 31h10M29 36h10" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+      <text x="63" y="31" font-size="18" font-weight="750" fill="#FFFFFF">Application workload</text>
+      <text x="63" y="49" font-size="11.5" fill="#C9DBEB">Private resource boundary</text>
+
+      <rect x="20" y="72" width="369" height="82" rx="13" fill="#FFFFFF" fill-opacity="0.10" stroke="#719BC4"/>
+      <text x="38" y="95" font-size="11" font-weight="750" fill="#A9D5FF">LEAST PRIVILEGE LAYERS</text>
+      <g transform="translate(38 108)">
+        <rect width="95" height="29" rx="8" fill="#2563EB"/>
+        <text x="47" y="19" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFFFFF">NETWORK</text>
+      </g>
+      <g transform="translate(148 108)">
+        <rect width="95" height="29" rx="8" fill="#0E9F6E"/>
+        <text x="47" y="19" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFFFFF">IDENTITY</text>
+      </g>
+      <g transform="translate(258 108)">
+        <rect width="95" height="29" rx="8" fill="#7C3AED"/>
+        <text x="47" y="19" text-anchor="middle" font-size="10.5" font-weight="700" fill="#FFFFFF">SECRETS</text>
+      </g>
+
+      <rect x="20" y="169" width="176" height="53" rx="11" fill="#FFFFFF" fill-opacity="0.10" stroke="#719BC4"/>
+      <path d="M38 183v20M31 193h14" stroke="#57C1FF" stroke-width="2" stroke-linecap="round"/>
+      <text x="57" y="188" font-size="11.5" font-weight="730" fill="#FFFFFF">In transit</text>
+      <text x="57" y="205" font-size="10.5" fill="#C9DBEB">Encrypted traffic</text>
+      <rect x="213" y="169" width="176" height="53" rx="11" fill="#FFFFFF" fill-opacity="0.10" stroke="#719BC4"/>
+      <path d="M232 182h11v16h-11zM235 179v6" fill="none" stroke="#54D6B2" stroke-width="2"/>
+      <text x="251" y="188" font-size="11.5" font-weight="730" fill="#FFFFFF">At rest</text>
+      <text x="251" y="205" font-size="10.5" fill="#C9DBEB">Encrypted data</text>
+    </g>
+
+    <g transform="translate(828 389)">
+      <rect width="302" height="246" rx="18" fill="#F8FBFF" stroke="#BCD2E6"/>
+      <text x="18" y="28" font-size="12" font-weight="760" letter-spacing="1" fill="#52677C">SECURITY OPERATIONS</text>
+
+      <rect x="18" y="45" width="266" height="53" rx="12" fill="#FFF8EE"/>
+      <circle cx="47" cy="71" r="15" fill="#FFF2DE"/>
+      <path d="M42 71v-4a5 5 0 0 1 10 0v4M40 71h14v9H40z" fill="none" stroke="#D97706" stroke-width="1.8"/>
+      <text x="73" y="67" font-size="13.5" font-weight="730" fill="#A15305">Secrets Manager</text>
+      <text x="73" y="84" font-size="10.5" fill="#80520B">Managed application secrets</text>
+
+      <rect x="18" y="111" width="266" height="53" rx="12" fill="#FDECEF"/>
+      <circle cx="47" cy="137" r="15" fill="#C81E4A"/>
+      <path d="M47 126v22M39 137h16" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+      <text x="73" y="133" font-size="13.5" font-weight="730" fill="#A5123B">GuardDuty</text>
+      <text x="73" y="150" font-size="10.5" fill="#8F2141">Continuous threat detection</text>
+
+      <rect x="18" y="177" width="266" height="51" rx="12" fill="#EAF3FB"/>
+      <circle cx="47" cy="202" r="15" fill="#2563EB"/>
+      <path d="M38 208 43 200l5 4 8-12" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="73" y="198" font-size="13.5" font-weight="730" fill="#174EA6">CloudWatch + security logs</text>
+      <text x="73" y="215" font-size="10.5" fill="#52677C">Monitoring and alerts</text>
+    </g>
+
+    <path d="M1054 272v61c0 28-18 42-42 42H694c-20 0-28 10-28 27v10" fill="none" stroke="#7C3AED" stroke-width="2.4" marker-end="url(#devsecArrowPurple)"/>
+    <text x="843" y="371" font-size="10.5" font-weight="700" fill="#6427B7">scanned release</text>
+    <path d="M371 592H387" fill="none" stroke="#2563EB" stroke-width="2.4" marker-end="url(#devsecArrowBlue)"/>
+    <path d="M828 460H812" fill="none" stroke="#0E9F6E" stroke-width="2.3" marker-end="url(#devsecArrowGreen)"/>
+    <path d="M804 575H820" fill="none" stroke="#0E9F6E" stroke-width="2.3" marker-end="url(#devsecArrowGreen)"/>
+  </g>
+</svg>

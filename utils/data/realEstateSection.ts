@@ -1,48 +1,48 @@
 export const REAL_ESTATE_SERVICES_SECTION = {
-  heading: "Our Real Estate Services",
+  heading: "Cloud and Software Engineering for Real Estate",
   services: [
     {
-      title: "Property Buying and Selling",
+      title: "Listing and Transaction Platforms",
       description:
-        "We assist clients in finding their ideal residential, commercial, or investment properties. Whether you're a first-time buyer or looking to sell, we provide expert guidance throughout the process from property search and market analysis to negotiations and closing ensuring a smooth and successful transaction.",
+        "We build the web and mobile platforms real estate firms run on, covering property listings, search, offers, and digital closings. From the front-end apps to the AWS back end, we handle the full build so your team can list, transact, and close without fighting the software.",
       icon: "/svgs/isolate.svg",
     },
     {
-      title: "Property Leasing and Renting",
+      title: "Leasing and Tenant Portals",
       description:
-        "Our leasing services connect landlords with qualified tenants and help tenants find rental properties that suit their needs. We handle lease agreements, rent collection, tenant screening, and ensure compliance with rental laws to protect the interests of both parties.",
+        "We develop leasing and tenant portals that handle applications, screening, lease signing, and online rent payments. Secure by design, they integrate with payment providers and your existing systems to keep landlords and tenants working from the same data.",
       icon: "/svgs/keyhome.svg",
     },
     {
-      title: "Property Management",
+      title: "Property Management Systems",
       description:
-        "We offer comprehensive management services for property owners, including regular maintenance, tenant relations, rent collection, and handling legal and financial matters. Our goal is to maximize your property's value and provide hassle-free ownership.",
+        "We build property management software for maintenance requests, rent collection, accounting, and owner reporting. Hosted on AWS with automated backups and monitoring, so day-to-day operations run without manual firefighting.",
       icon: "/svgs/book.svg",
     },
     {
-      title: "Real Estate Consulting and Valuation",
+      title: "Data, Analytics, and Valuation Tools",
       description:
-        "Our consulting services help clients make informed decisions by providing market research, investment analysis, and accurate property valuations. Whether you're looking to invest, develop, or understand market trends, we deliver tailored advice to meet your specific goals.",
+        "We build the data pipelines and analytics apps behind market research, investment analysis, and property valuation. We pull in listing and market data, model it, and surface it in dashboards your team can act on.",
       icon: "/svgs/notepad.svg",
     },
   ],
 };
 
 export const REAL_ESTATE_SOLUTIONS_SECTION = {
-  heading: "How We Help You with Real Estate Solutions",
+  heading: "How We Help Real Estate Businesses Build Software",
   description:
-    "We offer expert real estate services to simplify buying, selling, leasing, and property management. Our team is committed to delivering efficient solutions that help you reach your property goals with ease.",
+    "We build and run the cloud platforms and software that real estate companies depend on, from listing sites and tenant portals to property management systems and analytics. As an AWS Advanced Tier Services Partner, we handle the architecture, development, and ongoing operations so your team can focus on the business.",
   bulletPoints: [
-    "Assist clients in buying and selling properties efficiently.",
-    "Connect landlords with tenants for leasing and renting.",
-    "Provide accurate property valuations and market analysis.",
-    "Market properties effectively to reach a wider audience.",
-    "Support clients with mortgage and financing options.",
-    "Offer expert advice on real estate investments and development.",
-    "Handle legal documentation and ensure compliance with regulations.",
-    "Manage property maintenance, rent collection, and tenant relations.",
-    "Facilitate smooth relocation services for individuals and businesses.",
-    "Deliver personalized solutions tailored to client needs and goals.",
+    "Build listing and search platforms for buying and selling properties.",
+    "Develop tenant and landlord portals for leasing, screening, and online rent payments.",
+    "Create valuation and market-analysis tools backed by real data pipelines.",
+    "Build marketing sites and lead-capture apps that scale with traffic.",
+    "Integrate mortgage, payment, and financing providers through secure APIs.",
+    "Ship analytics dashboards for real estate investment and development decisions.",
+    "Handle document workflows and e-signature with compliance built in.",
+    "Automate maintenance requests, rent collection, and tenant communication.",
+    "Migrate legacy real estate systems to scalable AWS infrastructure.",
+    "Support each platform with monitoring, security, and ongoing engineering.",
   ],
   illustration: "/svgs/leese.svg",
 };

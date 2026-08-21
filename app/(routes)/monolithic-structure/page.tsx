@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import CaseStudyLayout from "@/app/components/sections/caseStudies/CaseStudyLayout";
 import CaseStudyHeader from "@/app/components/sections/caseStudies/CaseStudyHeader";
 import CaseStudyProblemStatement from "@/app/components/sections/caseStudies/CaseStudyProblemStatement";
@@ -12,66 +13,78 @@ import { caseStudySchema } from "@/lib/structured-data";
 
 export const metadata = pageMetadata("/monolithic-structure");
 const services = [
-  "Cloud Consulting & SI",
-  "DevOps Managed Services",
-  "Web Development",
+  "AWS Architecture",
+  "Application Migration",
+  "CI/CD and Operations",
 ];
 const projectDetails = {
   client: "Clyk Studio",
-  schedule: "Feb 2025 — Mar 2025",
+  schedule: "Feb 2025 to Mar 2025",
   size: "$50,000 to $199,999",
 };
 const solutionComponents = [
-  { title: "Route 53", description: "for DNS routing" },
-  { title: "VPC", description: "for network isolation" },
-  { title: "Elastic Beanstalk", description: "for deployment" },
-  { title: "RDS", description: "for data storage" },
-  { title: "Cognito, WAF, and KMS", description: "for security" },
-  { title: "CloudWatch", description: "for performance monitoring" },
-  { title: "GitHub, CodePipeline, CodeDeploy", description: "for CI/CD" },
-  { title: "AWS Backup and EBS snapshots", description: "for backups" },
   {
-    title: "Optional: CloudFront and GuardDuty",
-    description: "for enhanced performance and security",
+    title: "Highly available application tier",
+    description:
+      "An Application Load Balancer distributed traffic to Elastic Beanstalk instances in two Availability Zones, with Auto Scaling adjusting capacity.",
+  },
+  {
+    title: "Managed Multi-AZ data",
+    description:
+      "Amazon RDS Multi-AZ provided managed database failover, while AWS Backup and EBS snapshots protected recoverable application data.",
+  },
+  {
+    title: "Layered traffic and identity controls",
+    description:
+      "Route 53, CloudFront, AWS WAF, Amazon Cognito, VPC isolation, and AWS KMS protected requests, identities, networks, and stored data.",
+  },
+  {
+    title: "Repeatable application delivery",
+    description:
+      "GitHub, CodePipeline, and CodeDeploy moved changes through a consistent release process instead of relying on manual server updates.",
+  },
+  {
+    title: "Monitoring and alerting",
+    description:
+      "Amazon CloudWatch tracked application and infrastructure health, with Amazon SNS and Slack notifications directing issues to the team.",
   },
 ];
 const techStack = [
-  { name: "Docker", icon: "/Images/PNGSS/bg_dock.png" },
-  { name: "GitLab", icon: "/Images/PNGSS/gitlab.png" },
   { name: "AWS", icon: "/Images/PNGSS/aws.png" },
-  { name: "Google Cloud", icon: "/Images/PNGSS/gcloud.png" },
+  { name: "GitHub", icon: "/Images/PNGSS/GitHub-Logo.png" },
+  { name: "Docker", icon: "/Images/PNGSS/bg_dock.png" },
 ];
 const metrics = [
   {
     category: "Scalability",
     description:
       "Scalability achieved with Auto Scaling Groups and Elastic Beanstalk",
-    bgColor: "bg-[#1a2e22]",
+    bgColor: "bg-[#16273c]",
     width: "w-[90%]",
   },
   {
     category: "Availability",
     description:
       "High availability through Application Load Balancer and Route 53",
-    bgColor: "bg-[#1a3b2a]",
+    bgColor: "bg-[#16324f]",
     width: "w-[85%]",
   },
   {
     category: "Security",
     description: "Strong security with Cognito, WAF, and KMS",
-    bgColor: "bg-[#3a6a50]",
+    bgColor: "bg-[#2b6ca8]",
     width: "w-[55%]",
   },
   {
     category: "Errors",
     description: "CI/CD pipelines reduce errors",
-    bgColor: "bg-[#4d7a65]",
+    bgColor: "bg-[#4a86bf]",
     width: "w-[40%]",
   },
   {
     category: "Performance",
     description: "Performance monitoring via CloudWatch, alerts via SNS/Slack",
-    bgColor: "bg-[#2e4d3a]",
+    bgColor: "bg-[#1e3a5c]",
     width: "w-[85%]",
   },
   {
@@ -83,16 +96,16 @@ const metrics = [
   {
     category: "Data Protection",
     description: "Data protection ensured through AWS Backup and EBS snapshots",
-    bgColor: "bg-[#4d7a65]",
+    bgColor: "bg-[#4a86bf]",
     width: "w-[90%]",
   },
 ];
 
 const lesson = {
   firstLesson:
-    "Key lessons included the importance of planning and testing before migration to minimize downtime, ensuring system reliability through monitoring and security measures, and leveraging AWS automation features like auto-scaling. Continuous collaboration with stakeholders helped ensure smooth integration and adjustments throughout the project.",
+    "The monolith did not need to be rewritten to gain stronger availability and operations. Careful dependency discovery, migration rehearsal, health checks, backups, and monitoring reduced risk while managed AWS services improved the existing deployment model.",
   secondLesson:
-    "A TCO analysis compared the cost of maintaining existing infrastructure with migrating to AWS. It accounted for setup, migration, and operational costs, including AWS services like EC2, RDS, and ELBs. The analysis showed that AWS offers reduced infrastructure costs, better scalability, and enhanced security, making it a cost-effective solution.",
+    "The project TCO comparison included migration work, steady-state operations, compute, managed database, load balancing, and backup costs. The AWS option was selected because it combined elastic capacity with managed availability and security controls for this application.",
 };
 
 export default function AwsMonolithicAppArchitecturePage() {
@@ -104,30 +117,41 @@ export default function AwsMonolithicAppArchitecturePage() {
           description:
             "How CodetoKloud architected a scalable, highly available AWS deployment for a monolithic application using Elastic Beanstalk, Auto Scaling Groups, and Route 53.",
           path: "/monolithic-structure",
-          image: "/services/aws_mono2.png",
+          image: "/services/architecture/high-availability-aws-monolith.svg",
         })}
       />
       <CaseStudyLayout>
       <CaseStudyHeader
-        title="AWS Monolithic App Architecture"
-        subtitle="Services provided on this Project"
+        title="Highly Available AWS Architecture for a Monolithic App"
+        subtitle="Clyk Studio improved availability, scaling, delivery, and recovery without forcing an immediate application rewrite."
         services={services}
-        arcSrc="/services/aws_mono.png"
-        alt="AWS Architecture Diagram"
+        arcSrc="/services/architecture/high-availability-aws-monolith.svg"
+        alt="Highly available AWS monolith with CloudFront, an Application Load Balancer, Elastic Beanstalk across two Availability Zones, and Amazon RDS Multi-AZ"
       />
       <CaseStudyProblemStatement
-        statement="The challenge was to design and implement a scalable, secure AWS-based architecture for a monolithic application. It needed to support high availability, automated scaling, robust security, and seamless integration with CI/CD processes. The solution had to ensure user authentication, data storage, and backup, while maintaining performance and minimizing downtime."
+        statement="Clyk Studio needed to move a monolithic application to AWS without introducing the risk of a simultaneous rewrite. The target architecture had to preserve the application model while adding Multi-AZ availability, automatic scaling, controlled releases, identity protection, monitoring, and recoverable data."
         details={projectDetails}
       />
       <CaseStudySolution
         solutions={solutionComponents}
-        illustration="/services/aws_mono2.png"
-        illustrationAlt="Solution Illustration"
-        description="This setup ensures scalability, high availability, and effective resource management."
+        description="The migration used managed AWS services around the existing application. This reduced infrastructure risk first and preserved the option to modernize individual components later."
       />
       <CaseStudyTechStack techs={techStack} />
       <MetricsDisplay metrics={metrics} />
       <CaseStudyLessons lessons={lesson.firstLesson} />
+      <section className="bg-[#0d1526] px-4 py-16 text-center text-white">
+        <h2 className="text-3xl font-bold">Moving a monolith to AWS?</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-300">
+          We will map application dependencies, availability needs, release risk,
+          and recovery requirements before choosing a migration pattern.
+        </p>
+        <Link
+          href="/contact"
+          className="mt-8 inline-block rounded-full bg-white px-8 py-3 font-semibold text-[#0d1526] hover:bg-gray-100"
+        >
+          Review my monolith migration
+        </Link>
+      </section>
     </CaseStudyLayout>
     </>
   );

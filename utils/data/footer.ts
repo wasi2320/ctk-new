@@ -7,7 +7,7 @@ export const FOOTER_DATA = {
   buttonText: "Connect",
   logoCol: {
     subHeading:
-      "Empower your team with cloud expertise that fosters innovation and growth. Together, we drive success through collaborative solutions.",
+      "We bring senior cloud and DevOps expertise to your team, and partner with you to ship reliable systems and real results.",
     heading: "We build partnerships with you.",
   },
   learnCol: [
@@ -23,7 +23,7 @@ export const FOOTER_DATA = {
     { name: "Email", link: "#" },
   ],
   addressCol: {
-    addressOne: "Codetokloud Inc PO Box 9165 \n Naperville, IL 60567",
+    addressOne: "CodetoKloud Inc PO Box 9165 \n Naperville, IL 60567",
     addressTwo: "+1 (309) 590-3617",
   },
   otherPages: [{ name: "Privacy Policy", link: "/privacy-policy" }],

@@ -30,17 +30,16 @@ const EcommerceSolution = ({}: EcommerceSolutionProps) => {
             className="md:text-2xl text-lg font-Nunito text-center md:text-start w-full"
             style={{ lineHeight: "45px" }}
           >
-            We offer user-friendly cloud-based E-Commerce solutions tailored to
-            your business needs. Whether updating your online store, improving
-            customer experience, or ensuring security, we provide full support
-            to make your platform scalable and future-ready. Our solutions
-            automate store management, product listings, and reports, helping
-            you focus on growth. We turn customer data into insights to
-            personalize shopping and boost conversions. With strong security, we
-            protect your store and data. Our scalable solutions grow with your
-            business, supporting more products, customers, and global
-            transactions. We also ensure easy integration with existing systems
-            for a seamless commerce experience.
+            We build cloud-based e-commerce platforms sized to how your business
+            actually runs. Whether you&apos;re re-platforming an online store,
+            improving customer experience, or hardening security, we handle the
+            engineering so the platform scales and holds up under load. We
+            automate store management, product listings, and reporting so your
+            team can focus on growth. We turn customer data into insights that
+            personalize shopping and lift conversions. We protect your store and
+            customer data with security built in, not bolted on. As you add
+            products, customers, and global transactions, the infrastructure
+            grows with you and connects to the systems you already run.
           </p>
         </div>
       </div>

@@ -22,7 +22,7 @@ const highlights = [
   {
     title: "Build cloud-first solutions",
     description:
-      "Design resilient, secure systems across healthcare, fintech, SaaS, and more—built to handle real-world demands.",
+      "Design resilient, secure systems across healthcare, fintech, SaaS, and more, built to handle real-world demands.",
   },
   {
     title: "Own meaningful work",
@@ -148,8 +148,8 @@ export default async function CareersPage() {
   return (
     <div className="bg-white">
       <HeroSection
-        title="Careers at CodeToKloud"
-        description="At CodeToKloud, we're all about teamwork and building cloud solutions that are reliable, scalable, and really useful. We believe the best products come from teams that communicate openly, move quickly, and truly care about their work. If you love learning, enjoy tackling challenges, and want to make a real impact, you'll fit right in with us!"
+        title="Careers at CodetoKloud"
+        description="At CodetoKloud, we're all about teamwork and building cloud solutions that are reliable, scalable, and really useful. We believe the best products come from teams that communicate openly, move quickly, and truly care about their work. If you love learning, enjoy tackling challenges, and want to make a real impact, you'll fit right in with us!"
         imageSrc="/Images/Team_Img.svg"
         buttonText="View open roles"
         buttonLink="#open-roles"
@@ -159,9 +159,9 @@ export default async function CareersPage() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           <div className="space-y-6">
             <p className="text-sm uppercase tracking-[0.25em] text-gray-500">
-              Why CodeToKloud
+              Why CodetoKloud
             </p>
-            <h2 className="text-3xl md:text-4xl font-semibold text-[#0a0f13]">
+            <h2 className="text-3xl md:text-4xl font-semibold text-[#0d1526]">
               Build with ownership, pace, and purpose
             </h2>
             <p className="text-lg text-gray-700">
@@ -177,10 +177,10 @@ export default async function CareersPage() {
                 key={item.title}
                 className="rounded-2xl border border-gray-100 bg-gradient-to-br from-white via-white to-[#f2f6f5] p-6 shadow-sm"
               >
-                <div className="h-12 w-12 rounded-full bg-[#081617] text-white flex items-center justify-center text-lg font-semibold mb-4">
+                <div className="h-12 w-12 rounded-full bg-[#101d2e] text-white flex items-center justify-center text-lg font-semibold mb-4">
                   <span>•</span>
                 </div>
-                <h3 className="text-xl font-semibold text-[#0a0f13] mb-2">
+                <h3 className="text-xl font-semibold text-[#0d1526] mb-2">
                   {item.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
@@ -192,7 +192,7 @@ export default async function CareersPage() {
         </div>
       </section>
 
-      <section className="bg-[#081617] text-white py-16 px-4 md:px-28">
+      <section className="bg-[#101d2e] text-white py-16 px-4 md:px-28">
         <div className="max-w-6xl mx-auto space-y-10">
           <div className="md:flex md:items-center md:justify-between md:gap-10 space-y-4 md:space-y-0">
             <div>
@@ -229,7 +229,7 @@ export default async function CareersPage() {
             <p className="text-sm uppercase tracking-[0.25em] text-gray-500">
               Open roles
             </p>
-            <h2 className="text-3xl md:text-4xl font-semibold text-[#0a0f13]">
+            <h2 className="text-3xl md:text-4xl font-semibold text-[#0d1526]">
               Opportunities we are hiring for
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -240,11 +240,11 @@ export default async function CareersPage() {
 
           {openRoles.length === 0 ? (
             <div className="rounded-2xl border border-dashed border-gray-200 bg-white p-8 text-center">
-              <p className="text-xl font-semibold text-[#0a0f13]">
+              <p className="text-xl font-semibold text-[#0d1526]">
                 No open roles right now.
               </p>
               <p className="text-gray-600 mt-2">
-                We’re always meeting great people—check back soon or drop us a
+                We’re always meeting great people, check back soon or drop us a
                 note to stay in touch.
               </p>
             </div>
@@ -257,14 +257,14 @@ export default async function CareersPage() {
                   className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow-md transition-shadow block"
                 >
                   <div className="flex items-center justify-between mb-4">
-                    <span className="px-3 py-1 text-sm rounded-full bg-[#e8f2ef] text-[#0f241f]">
+                    <span className="px-3 py-1 text-sm rounded-full bg-[#e8f2ef] text-[#13233a]">
                       {role.employment_type || "Role"}
                     </span>
                     <span className="text-sm text-gray-600">
                       {role.location}
                     </span>
                   </div>
-                  <h3 className="text-xl font-semibold text-[#0a0f13] mb-2">
+                  <h3 className="text-xl font-semibold text-[#0d1526] mb-2">
                     {role.title}
                   </h3>
                   <p className="text-gray-700 mb-4 leading-relaxed">
@@ -283,7 +283,7 @@ export default async function CareersPage() {
       </section>
 
       <section className="md:px-28 px-4 py-16">
-        <div className="max-w-6xl mx-auto rounded-3xl bg-gradient-to-r from-[#0f241f] to-[#1f3e35] text-white p-10 md:p-12">
+        <div className="max-w-6xl mx-auto rounded-3xl bg-gradient-to-r from-[#13233a] to-[#1f3e35] text-white p-10 md:p-12">
           <div className="md:flex md:items-start md:justify-between md:gap-12 space-y-8 md:space-y-0">
             <div className="md:w-1/2 space-y-4">
               <p className="text-sm uppercase tracking-[0.25em] text-white/70">
@@ -326,7 +326,7 @@ export default async function CareersPage() {
 
       <section className="md:px-28 px-4 pb-20">
         <div className="max-w-5xl mx-auto text-center space-y-6">
-          <h2 className="text-3xl md:text-4xl font-semibold text-[#0a0f13]">
+          <h2 className="text-3xl md:text-4xl font-semibold text-[#0d1526]">
             Ready to build with us?
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed">
@@ -336,7 +336,7 @@ export default async function CareersPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="mailto:careers@codetokloud.com"
-              className="rounded-full px-8 py-3 border border-gray-300 text-[#0a0f13] font-semibold hover:border-[#081617] transition-colors"
+              className="rounded-full px-8 py-3 border border-gray-300 text-[#0d1526] font-semibold hover:border-[#101d2e] transition-colors"
             >
               Email hr@codetokloud.com
             </a>

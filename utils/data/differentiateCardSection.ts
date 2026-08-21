@@ -1,25 +1,25 @@
 export const DIFFERENTIATE_CARD_SECTION = {
-  heading: "How we Differentiate from the Market?",
+  heading: "What sets us apart",
   cards: [
     {
-      title: "Unique Value",
+      title: "Real Value",
       description:
-        "Tailored solutions that meet customer needs. We focus on delivering what matters most.",
+        "Solutions shaped around what your customers actually need, focused on what matters most.",
     },
     {
-      title: "Innovative Methods",
+      title: "Proven Methods",
       description:
-        "Embracing technology and new strategies. Staying ahead through constant innovation.",
+        "We adopt new technology and approaches where they add real, measurable value.",
     },
     {
       title: "Customer Focus",
       description:
-        "Personalised experiences for each client. We prioritise individual customer needs.",
+        "Personalized engagements built around each client's priorities.",
     },
     {
       title: "Consistent Quality",
       description:
-        "Delivering reliable, high-standard results. Quality is our top priority every time.",
+        "Reliable, high-standard results every time. Quality is the baseline, not a bonus.",
     },
   ],
 };

@@ -1,18 +1,18 @@
 export const MOBILE_DIFFERENTIATE_SECTION = {
   heading: "How we Differentiate from the Market?",
   description:
-    "We don't just build mobile apps-we create scalable, future-proof mobile solutions that drive growth and enhance user engagement.",
+    "We don't just build mobile apps. We build scalable apps that hold up as your user base and feature set grow.",
   image: "/Images/Mobile_Differentiate.png",
   cards: [
     {
       title: "Industry Specific Expertise",
       description:
-        "We specialize in mobile solutions for Industries like healthcare, fintech, eCommerce, and logistics, delivering apps that meet specific industry requirements and ensure compliance and efficiency.",
+        "We specialize in mobile apps for healthcare, fintech, eCommerce, and logistics, meeting each sector's compliance and performance requirements.",
     },
     {
-      title: "Al & loT-Integrated Solutions",
+      title: "AI & IoT-Integrated Solutions",
       description:
-        "We integrate advanced technologies like Artificial Intelligence, Machine Learning, and. loT into mobile apps, enabling automation. personalization, and smart features that elevate user experiences.",
+        "We integrate AI, machine learning, and IoT into mobile apps, adding automation, personalization, and smart features that improve the user experience.",
     },
     {
       title: "Business-Driven Approach",

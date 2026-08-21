@@ -9,11 +9,11 @@ interface CaseStudyMetricsProps {
   metrics: Metric[];
 }
 
-const bgColors = ["bg-green-700", "bg-blue-700", "bg-teal-700", "bg-gray-700"];
+const bgColors = ["bg-[#0b5cad]", "bg-blue-700", "bg-[#0b5cad]", "bg-gray-700"];
 const descColors = [
-  "bg-green-600",
+  "bg-[#0972d3]",
   "bg-blue-600",
-  "bg-teal-600",
+  "bg-[#0972d3]",
   "bg-gray-600",
 ];
 

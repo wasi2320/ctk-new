@@ -1,30 +1,30 @@
 export const DIFFERENTIATE_SECTION = {
-  heading: "How we Differentiate from the Market?",
+  heading: "What sets our security work apart",
   cards: [
     {
       title: "Risk Prevention",
       description:
-        "Our proactive approach identifies and mitigates risks before they affect your business.",
+        "A proactive approach that finds and fixes risks before they reach your business.",
     },
     {
-      title: "Industry Expertise",
+      title: "Hands-On Expertise",
       description:
-        "Leverage our deep knowledge to confidently navigate security and compliance challenges.",
+        "Deep, practical experience navigating security and compliance without slowing delivery.",
     },
     {
-      title: "Advanced Technology",
+      title: "AWS-Native Security",
       description:
-        "We implement cutting-edge technology to protect your business from emerging threats.",
+        "We use modern tooling and AWS security services to protect your business from emerging threats.",
     },
     {
-      title: "Comprehensive Support",
+      title: "Complete Support",
       description:
-        "From implementation to monitoring, we offer complete support for your security needs.",
+        "From implementation to monitoring, we cover the full lifecycle of your security needs.",
     },
     {
       title: "Ongoing Optimization",
       description:
-        "We continuously refine our strategies to ensure long-term compliance and security.",
+        "We keep refining controls and posture so compliance and security hold up over time.",
     },
   ],
 };

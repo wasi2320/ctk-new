@@ -19,7 +19,7 @@ const WebDifferentiateSection = () => {
                   ${
                     hasImage
                       ? "col-span-2 my-10"
-                      : "bg-[linear-gradient(to_right,#D9D9D9,#A4AEAB)] md:py-8 py-4 px-6 md:px-12 rounded-2xl"
+                      : "bg-[linear-gradient(to_right,#D9D9D9,#93a3b8)] md:py-8 py-4 px-6 md:px-12 rounded-2xl"
                   }
                   ${index === 1 ? "md:col-start-2" : ""}
                 `}
@@ -43,7 +43,7 @@ const WebDifferentiateSection = () => {
                         height={30}
                       />
                     </div>
-                    <h3 className="text-xl nunito-bold font-bold mb-4 text-[#152F27]">
+                    <h3 className="text-xl nunito-bold font-bold mb-4 text-[#16212e]">
                       {card.title}
                     </h3>
                     <p className="md:text-lg text-sm font-bold">{card.description}</p>
@@ -51,7 +51,7 @@ const WebDifferentiateSection = () => {
                       <button className="font-semibold text-lg">
                         Learn More
                       </button>
-                      <div className="w-7 h-7 flex justify-center items-center bg-[#152F27] rounded-full">
+                      <div className="w-7 h-7 flex justify-center items-center bg-[#16212e] rounded-full">
                         <Image
                           src="/Images/Arrow_Down.svg"
                           alt=""
@@ -79,7 +79,7 @@ const WebDifferentiateSection = () => {
                 ${
                   hasImage
                     ? "col-span-2 mb-10"
-                    : "bg-[linear-gradient(to_right,#D9D9D9,#A4AEAB)] md:py-8 py-4 px-6 md:px-12 rounded-2xl text-black"
+                    : "bg-[linear-gradient(to_right,#D9D9D9,#93a3b8)] md:py-8 py-4 px-6 md:px-12 rounded-2xl text-black"
                 }
               `}
             >
@@ -102,7 +102,7 @@ const WebDifferentiateSection = () => {
                       height={30}
                     />
                   </div>
-                  <h3 className="text-xl nunito-bold font-bold text-[#152F27] mb-4">
+                  <h3 className="text-xl nunito-bold font-bold text-[#16212e] mb-4">
                     {card.title}
                   </h3>
                   <p className="md:text-lg text-sm font-bold mb-4">
@@ -134,7 +134,7 @@ const WebDifferentiateSection = () => {
                     <button className="font-semibold text-lg">
                       Learn More
                     </button>
-                    <div className="w-7 h-7 flex justify-center items-center bg-[#152F27] rounded-full">
+                    <div className="w-7 h-7 flex justify-center items-center bg-[#16212e] rounded-full">
                       <Image
                         src="/Images/Arrow_Down.svg"
                         alt=""

@@ -366,7 +366,7 @@ export default function BlogUploadForm({
               id="title"
               value={title}
               onChange={(e) => handleTitleChange(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#000209] focus:border-[#000209]"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#0d1526] focus:border-[#0d1526]"
               placeholder="Enter blog title"
               required
             />
@@ -385,7 +385,7 @@ export default function BlogUploadForm({
               id="slug"
               value={slug}
               onChange={(e) => setSlug(generateSlug(e.target.value))}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#000209] focus:border-[#000209]"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#0d1526] focus:border-[#0d1526]"
               placeholder="Enter custom slug (e.g., my-awesome-blog)"
               required
             />
@@ -406,7 +406,7 @@ export default function BlogUploadForm({
               <button
                 type="button"
                 onClick={() => setShowCategoryModal(true)}
-                className="flex items-center text-sm text-[#000209] hover:text-[#000209]/80"
+                className="flex items-center text-sm text-[#0d1526] hover:text-[#0d1526]/80"
               >
                 <Tag className="h-4 w-4 mr-1" />
                 Manage Categories
@@ -415,7 +415,7 @@ export default function BlogUploadForm({
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#000209] focus:border-[#000209]"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#0d1526] focus:border-[#0d1526]"
             >
               <option value="">Select a category (optional)</option>
               {categories.map((category) => (
@@ -463,7 +463,7 @@ export default function BlogUploadForm({
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
-                className="flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#000209]"
+                className="flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0d1526]"
               >
                 <Upload className="h-4 w-4 mr-2" />
                 {editingBlog ? "Change Image" : "Choose Image"}
@@ -494,7 +494,7 @@ export default function BlogUploadForm({
               <button
                 type="button"
                 onClick={() => setShowPreview(!showPreview)}
-                className="flex items-center text-sm text-[#000209] hover:text-[#000209]/80"
+                className="flex items-center text-sm text-[#0d1526] hover:text-[#0d1526]/80"
               >
                 <Eye className="h-4 w-4 mr-1" />
                 {showPreview ? "Hide Preview" : "Show Preview"}
@@ -512,14 +512,14 @@ export default function BlogUploadForm({
                   type="file"
                   accept="image/*"
                   onChange={handleMarkdownImageUpload}
-                  className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-[#000209]/5 file:text-[#000209] hover:file:bg-[#000209]/10"
+                  className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-[#0d1526]/5 file:text-[#0d1526] hover:file:bg-[#0d1526]/10"
                 />
                 <button
                   type="button"
                   onClick={() =>
                     document.getElementById("markdown-image-input")?.click()
                   }
-                  className="px-3 py-2 text-sm text-[#000209] hover:text-[#000209]/80 border border-[#000209]/20 rounded-md hover:bg-[#000209]/5"
+                  className="px-3 py-2 text-sm text-[#0d1526] hover:text-[#0d1526]/80 border border-[#0d1526]/20 rounded-md hover:bg-[#0d1526]/5"
                 >
                   Upload Image
                 </button>
@@ -546,7 +546,7 @@ export default function BlogUploadForm({
               className={`p-3 rounded-md ${
                 message.includes("Error")
                   ? "bg-red-50 text-red-700 border border-red-200"
-                  : "bg-green-50 text-green-700 border border-green-200"
+                  : "bg-[#eef6fd] text-[#0b5cad] border border-[#bfdcf5]"
               }`}
             >
               {message}
@@ -567,7 +567,7 @@ export default function BlogUploadForm({
             <button
               type="submit"
               disabled={loading}
-              className="flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#000209] hover:bg-[#000209]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#000209] disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#0d1526] hover:bg-[#0d1526]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0d1526] disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {editingBlog ? (
                 <>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="eksGitopsTitle eksGitopsDesc">
+  <title id="eksGitopsTitle">EKS microservices delivery with GitOps controls</title>
+  <desc id="eksGitopsDesc">GitHub Actions builds independently versioned microservice containers and pushes them to Amazon ECR. Environment-specific Helm values flow through ArgoCD into development, staging, and production workloads on Amazon EKS. Development includes automated health checks, production requires manual approval, secrets remain in AWS Secrets Manager through External Secrets Operator, and specialized compute uses a capacity fallback path.</desc>
+  <defs>
+    <linearGradient id="eksGitopsBg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F8FBFF"/><stop offset="1" stop-color="#EFF6FF"/></linearGradient>
+    <linearGradient id="eksGitopsDark" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#102A43"/><stop offset="1" stop-color="#174D75"/></linearGradient>
+    <filter id="eksGitopsShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#17324D" flood-opacity=".1"/></filter>
+    <marker id="eksGitopsBlueArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1 9 5 1 9Z" fill="#2563EB"/></marker>
+    <marker id="eksGitopsPurpleArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1 9 5 1 9Z" fill="#7C3AED"/></marker>
+    <style>.et{font-family:Inter,ui-sans-serif,system-ui,sans-serif;fill:#102A43}.eh{font-size:30px;font-weight:760}.esub{font-size:15px;fill:#52677C}.ecap{font-size:12px;font-weight:760;letter-spacing:1px}.ename{font-size:15px;font-weight:730}.emeta{font-size:11px;fill:#61758A}.ecard{fill:#fff;stroke:#D8E5F1;stroke-width:1.5}</style>
+  </defs>
+  <rect width="1200" height="720" rx="28" fill="url(#eksGitopsBg)"/><rect x="28" y="26" width="1144" height="668" rx="24" fill="none" stroke="#D9E6F2"/>
+  <g class="et">
+    <text class="eh" x="58" y="72">EKS microservices delivery with GitOps controls</text>
+    <text class="esub" x="58" y="99">Versioned services, environment-specific configuration, health checks, and controlled production promotion</text>
+    <g transform="translate(951 45)"><rect width="191" height="32" rx="16" fill="#F2EAFE"/><circle cx="18" cy="16" r="5" fill="#7C3AED"/><text x="31" y="20" font-size="11" font-weight="750" fill="#6427B7">DECLARATIVE DELIVERY</text></g>
+
+    <rect x="50" y="128" width="1100" height="190" rx="20" fill="#fff" stroke="#D8E5F1"/><rect x="50" y="128" width="8" height="190" rx="4" fill="#2563EB"/>
+    <text class="ecap" x="78" y="159" fill="#2563EB">CONTINUOUS INTEGRATION</text><text class="emeta" x="277" y="159">Each service becomes a versioned container artifact</text>
+    <g filter="url(#eksGitopsShadow)">
+      <g transform="translate(78 187)"><rect class="ecard" width="184" height="98" rx="15"/><circle cx="92" cy="30" r="17" fill="#E8F2FF"/><path d="M82 30h20M86 24l-6 6 6 6M98 24l6 6-6 6" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round"/><text class="ename" x="92" y="64" text-anchor="middle">Microservice source</text><text class="emeta" x="92" y="83" text-anchor="middle">Independent repositories</text></g>
+      <g transform="translate(310 187)"><rect class="ecard" width="184" height="98" rx="15"/><circle cx="92" cy="30" r="17" fill="#E9F8F3"/><path d="M82 24h20v15H82zM86 20v8M98 20v8" fill="none" stroke="#0E9F6E" stroke-width="2.2"/><text class="ename" x="92" y="64" text-anchor="middle">GitHub Actions</text><text class="emeta" x="92" y="83" text-anchor="middle">Build and publish</text></g>
+      <g transform="translate(542 187)"><rect class="ecard" width="184" height="98" rx="15"/><circle cx="92" cy="30" r="17" fill="#EBF4FF"/><path d="m82 24 10-5 10 5v11l-10 5-10-5zM82 24l10 6 10-6M92 30v10" fill="none" stroke="#1778D0" stroke-width="2"/><text class="ename" x="92" y="64" text-anchor="middle">Docker images</text><text class="emeta" x="92" y="83" text-anchor="middle">Service versions</text></g>
+      <g transform="translate(774 187)"><rect class="ecard" width="184" height="98" rx="15"/><circle cx="92" cy="30" r="17" fill="#FFF2DE"/><path d="M81 23h22v14H81zM85 27h14M85 33h14" fill="none" stroke="#E8790A" stroke-width="2.2"/><text class="ename" x="92" y="64" text-anchor="middle">Amazon ECR</text><text class="emeta" x="92" y="83" text-anchor="middle">Versioned registry</text></g>
+    </g>
+    <path d="M262 236H302M494 236H534M726 236H766" fill="none" stroke="#2563EB" stroke-width="2.4" marker-end="url(#eksGitopsBlueArrow)"/>
+    <g transform="translate(984 181)"><rect width="140" height="108" rx="15" fill="#F2EAFE" stroke="#D1B8F5"/><text class="ecap" x="70" y="25" text-anchor="middle" fill="#6427B7">HELM VALUES</text><text class="emeta" x="70" y="51" text-anchor="middle">Development</text><text class="emeta" x="70" y="70" text-anchor="middle">Staging</text><text class="emeta" x="70" y="89" text-anchor="middle">Production</text></g>
+    <path d="M958 236H976" fill="none" stroke="#7C3AED" stroke-width="2.4" marker-end="url(#eksGitopsPurpleArrow)"/>
+
+    <rect x="50" y="342" width="829" height="322" rx="20" fill="#fff" stroke="#D8E5F1"/><rect x="50" y="342" width="8" height="322" rx="4" fill="#7C3AED"/>
+    <text class="ecap" x="78" y="374" fill="#7C3AED">GITOPS DELIVERY</text><text class="emeta" x="228" y="374">ArgoCD reconciles approved configuration into Amazon EKS</text>
+    <g transform="translate(78 408)" filter="url(#eksGitopsShadow)"><rect class="ecard" width="180" height="98" rx="15"/><circle cx="90" cy="30" r="17" fill="#FFF0E8"/><circle cx="90" cy="30" r="8" fill="none" stroke="#F05A28" stroke-width="2.2"/><path d="M90 17v6M90 37v6M77 30h6M97 30h6" stroke="#F05A28" stroke-width="2.2" stroke-linecap="round"/><text class="ename" x="90" y="65" text-anchor="middle">ArgoCD</text><text class="emeta" x="90" y="83" text-anchor="middle">Sync and drift status</text></g>
+    <path d="M258 457H301" fill="none" stroke="#7C3AED" stroke-width="2.4" marker-end="url(#eksGitopsPurpleArrow)"/>
+    <g transform="translate(311 397)" filter="url(#eksGitopsShadow)">
+      <rect width="542" height="232" rx="19" fill="url(#eksGitopsDark)"/>
+      <circle cx="34" cy="34" r="18" fill="#2D6ED6"/><path d="M34 22v24M22 34h24M26 26l16 16M42 26 26 42" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><circle cx="34" cy="34" r="7" fill="none" stroke="#fff" stroke-width="1.8"/>
+      <text x="62" y="33" font-size="18" font-weight="750" fill="#fff">Amazon EKS</text><text x="62" y="51" font-size="11" fill="#BFD7EE">Managed Kubernetes platform</text>
+      <g transform="translate(18 77)"><rect width="153" height="126" rx="13" fill="#fff" fill-opacity=".1" stroke="#76A6D4"/><text x="76" y="26" text-anchor="middle" font-size="12" font-weight="750" fill="#A9D5FF">DEVELOPMENT</text><rect x="21" y="43" width="46" height="34" rx="8" fill="#52B6F3"/><rect x="86" y="43" width="46" height="34" rx="8" fill="#52B6F3"/><rect x="28" y="91" width="97" height="20" rx="10" fill="#E9F8F3"/><text x="76" y="105" text-anchor="middle" font-size="9.5" font-weight="700" fill="#087A55">HEALTH CHECK</text></g>
+      <g transform="translate(187 77)"><rect width="153" height="126" rx="13" fill="#fff" fill-opacity=".1" stroke="#76A6D4"/><text x="76" y="26" text-anchor="middle" font-size="12" font-weight="750" fill="#A9D5FF">STAGING</text><rect x="21" y="43" width="46" height="34" rx="8" fill="#54D6B2"/><rect x="86" y="43" width="46" height="34" rx="8" fill="#54D6B2"/><text x="76" y="105" text-anchor="middle" font-size="10.5" fill="#DCECFB">Promoted release</text></g>
+      <g transform="translate(356 77)"><rect width="168" height="126" rx="13" fill="#fff" fill-opacity=".1" stroke="#76A6D4"/><text x="84" y="26" text-anchor="middle" font-size="12" font-weight="750" fill="#A9D5FF">PRODUCTION</text><rect x="28" y="43" width="46" height="34" rx="8" fill="#FFC857"/><rect x="94" y="43" width="46" height="34" rx="8" fill="#FFC857"/><rect x="26" y="91" width="116" height="20" rx="10" fill="#FFF2DE"/><text x="84" y="105" text-anchor="middle" font-size="9.5" font-weight="700" fill="#A15305">MANUAL APPROVAL</text></g>
+    </g>
+
+    <g transform="translate(907 342)">
+      <rect width="235" height="322" rx="20" fill="#102A43"/>
+      <text x="18" y="34" font-size="12" font-weight="760" letter-spacing="1" fill="#A9D5FF">PLATFORM CONTROLS</text>
+      <g transform="translate(17 58)"><rect width="201" height="92" rx="13" fill="#fff" fill-opacity=".1"/><text x="15" y="26" font-size="14" font-weight="730" fill="#fff">Secrets Manager</text><text x="15" y="47" font-size="11" fill="#C9DBEB">External Secrets Operator</text><text x="15" y="67" font-size="11" fill="#C9DBEB">keeps values outside Git</text></g>
+      <g transform="translate(17 166)"><rect width="201" height="117" rx="13" fill="#fff" fill-opacity=".1"/><text x="15" y="26" font-size="14" font-weight="730" fill="#fff">Specialized compute</text><text x="15" y="48" font-size="11" fill="#C9DBEB">Preferred capacity</text><path d="M17 68H181" stroke="#76A6D4" stroke-width="1.5" stroke-dasharray="5 5"/><text x="15" y="90" font-size="11" font-weight="700" fill="#FFC857">CAPACITY FALLBACK</text></g>
+    </g>
+    <path d="M1054 289v37H40v131h30" fill="none" stroke="#7C3AED" stroke-width="2.2" marker-end="url(#eksGitopsPurpleArrow)"/>
+  </g>
+</svg>

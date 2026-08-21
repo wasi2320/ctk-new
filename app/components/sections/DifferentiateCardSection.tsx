@@ -11,7 +11,7 @@ const DifferentiateCardSection = () => {
         {DIFFERENTIATE_CARD_SECTION.cards.map((card, index) => (
           <div
             key={index}
-            className="bg-[linear-gradient(to_right,#D9D9D9,#A4AEAB)] md:py-8 py-4 md:px-12 px-6 rounded-2xl"
+            className="bg-[linear-gradient(to_right,#D9D9D9,#93a3b8)] md:py-8 py-4 md:px-12 px-6 rounded-2xl"
           >
             <div className="mb-2 hidden md:block">
               <Image src="/Images/Line.svg" alt="" width={30} height={30} />

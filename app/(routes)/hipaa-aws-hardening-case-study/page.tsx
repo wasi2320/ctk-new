@@ -11,12 +11,12 @@ const data: CaseStudyData = {
   heroTitle: "HIPAA Hardening for a Healthcare Data Platform",
   intro:
     "A healthcare data company had a working patient-facing analytics portal on AWS. The next phase had one requirement: take it from staging to a HIPAA-hardened production posture.",
-  heroImage: "/services/GoAgalia.png",
+  heroImage: "/services/architecture/hipaa-ecs-fargate.svg",
   metaDescription:
     "How CodetoKloud hardened a healthcare data company's patient-facing analytics portal for HIPAA on AWS, with private ECS Fargate networking, end-to-end TLS, and Aurora PostgreSQL.",
   problem: [
     "A healthcare data company ran a working patient-facing analytics portal on ECS Fargate, built with Node.js and Prisma on PostgreSQL. It worked, but working software and audit-ready software are two different problems.",
-    "The next phase had a single requirement: make the platform HIPAA-compliant and production-grade.",
+    "The next phase had a single requirement: move the platform to a production posture with the technical safeguards needed for HIPAA workloads.",
   ],
   solution: [
     {
@@ -53,6 +53,7 @@ const data: CaseStudyData = {
   crossLinks: [
     { name: "HIPAA Compliance", href: "/hipaa-compliance" },
     { name: "Cloud Infrastructure (AWS)", href: "/cloud-service" },
+    { name: "Review my HIPAA workload", href: "/contact" },
   ],
 };
 

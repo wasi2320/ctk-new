@@ -1,6 +1,7 @@
 import Link from "next/link";
 import HeroSection from "@/app/components/HeroSection";
 import TrustBadge from "@/app/components/sections/TrustBadge";
+import GlobalPresence from "@/app/components/sections/GlobalPresence";
 import FaqSection from "@/app/components/sections/FaqSection";
 import { pageMetadata } from "@/lib/page-metadata";
 import { pageFaqs } from "@/lib/faqs";
@@ -59,7 +60,7 @@ const featured = [
   {
     href: "/hybrid-cloud-kubernetes-case-study",
     title: "Hybrid On-Prem + Cloud Kubernetes",
-    blurb: "99.9% uptime and sub-35ms latency across on-premise and cloud.",
+    blurb: "Retained on-premise capacity and added cloud burst nodes through an encrypted WireGuard mesh.",
   },
 ];
 
@@ -70,7 +71,6 @@ export default function AboutUsPage() {
         title="About CodetoKloud"
         description="CodetoKloud is a US-registered IT consulting company and AWS Advanced Tier Partner based in Naperville, Illinois. We help businesses design, build, secure, and run production cloud infrastructure."
         imageSrc="/Images/aboutus/aboutHeader.png"
-        cover
         buttonText="Book a free consultation"
         buttonLink="/contact"
       />
@@ -100,7 +100,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* Real proof stats */}
-      <section className="py-20 px-4 md:px-36 bg-[#081617] text-white">
+      <section className="py-20 px-4 md:px-36 bg-[#101d2e] text-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 text-center">
             The proof is in the work
@@ -123,6 +123,9 @@ export default function AboutUsPage() {
         </div>
       </section>
 
+      {/* Global presence */}
+      <GlobalPresence />
+
       {/* Values */}
       <section className="py-16 px-4 md:px-36 bg-white">
         <div className="max-w-6xl mx-auto">
@@ -133,7 +136,7 @@ export default function AboutUsPage() {
             {values.map((v) => (
               <div
                 key={v.title}
-                className="rounded-2xl border border-gray-200 p-6 hover:border-[#152F27] transition-colors"
+                className="rounded-2xl border border-gray-200 p-6 hover:border-[#16212e] transition-colors"
               >
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {v.title}
@@ -156,10 +159,10 @@ export default function AboutUsPage() {
               <Link
                 key={w.href}
                 href={w.href}
-                className="flex items-center justify-between rounded-2xl border border-gray-200 bg-white px-6 py-5 hover:border-[#152F27] hover:shadow-sm transition-all"
+                className="flex items-center justify-between rounded-2xl border border-gray-200 bg-white px-6 py-5 hover:border-[#16212e] hover:shadow-sm transition-all"
               >
                 <span className="font-semibold text-gray-900">{w.name}</span>
-                <span aria-hidden="true" className="text-[#152F27]">
+                <span aria-hidden="true" className="text-[#16212e]">
                   →
                 </span>
               </Link>
@@ -179,7 +182,7 @@ export default function AboutUsPage() {
               <Link
                 key={f.href}
                 href={f.href}
-                className="block rounded-2xl border border-gray-200 p-6 hover:border-[#152F27] hover:shadow-md transition-all"
+                className="block rounded-2xl border border-gray-200 p-6 hover:border-[#16212e] hover:shadow-md transition-all"
               >
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
                   {f.title}
@@ -198,7 +201,7 @@ export default function AboutUsPage() {
       />
 
       {/* CTA */}
-      <section className="py-16 px-4 md:px-36 bg-[#000209] text-white">
+      <section className="py-16 px-4 md:px-36 bg-[#0d1526] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Let&apos;s build something reliable
@@ -209,7 +212,7 @@ export default function AboutUsPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block rounded-full bg-white text-[#000209] font-semibold px-8 py-3 hover:bg-gray-100 transition-colors"
+            className="inline-block rounded-full bg-white text-[#0d1526] font-semibold px-8 py-3 hover:bg-gray-100 transition-colors"
           >
             Book a free consultation
           </Link>

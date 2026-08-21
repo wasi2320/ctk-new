@@ -11,7 +11,7 @@ const data: CaseStudyData = {
   heroTitle: "SOC 2-Ready Multi-AZ Healthcare Platform on AWS",
   intro:
     "A healthcare application storing patient records and billing data needed to pass a SOC 2 audit. We rebuilt its AWS infrastructure for high availability, audit logging, and encryption.",
-  heroImage: "/services/strength_aws.png",
+  heroImage: "/services/architecture/soc2-healthcare-multiaz.svg",
   metaDescription:
     "How CodetoKloud rebuilt a healthcare platform on AWS with Multi-AZ failover, cross-AZ replication, audit logging, and encryption to pass a SOC 2 audit and reach 99.99% uptime.",
   problem: [
@@ -58,6 +58,7 @@ const data: CaseStudyData = {
   crossLinks: [
     { name: "SOC 2 Compliance on AWS", href: "/soc-2-compliance" },
     { name: "Security & Compliance", href: "/security-and-compliance" },
+    { name: "Review my SOC 2 architecture", href: "/contact" },
   ],
 };
 

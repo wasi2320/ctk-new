@@ -28,7 +28,6 @@ export default function DefinitionPage({ data }: { data: DefinitionData }) {
         title={data.heroTitle}
         description={data.intro}
         imageSrc={data.heroImage}
-        cover
         buttonText="Book a free consultation"
         buttonLink="/contact"
       />
@@ -37,7 +36,7 @@ export default function DefinitionPage({ data }: { data: DefinitionData }) {
         <TrustBadge />
       </div>
 
-      {/* Answer capsule — the citable definition, first thing on the page. */}
+      {/* Answer capsule, the citable definition, first thing on the page. */}
       <section className="py-14 px-4 md:px-36 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
@@ -73,7 +72,7 @@ export default function DefinitionPage({ data }: { data: DefinitionData }) {
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-[#152F27] font-medium underline hover:no-underline"
+                className="text-[#16212e] font-medium underline hover:no-underline"
               >
                 {l.name}
               </Link>
@@ -83,7 +82,7 @@ export default function DefinitionPage({ data }: { data: DefinitionData }) {
       )}
 
       {/* CTA */}
-      <section className="py-16 px-4 md:px-36 bg-[#000209] text-white">
+      <section className="py-16 px-4 md:px-36 bg-[#0d1526] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             {data.ctaHeading || "Talk to an AWS expert"}
@@ -94,7 +93,7 @@ export default function DefinitionPage({ data }: { data: DefinitionData }) {
           </p>
           <Link
             href="/contact"
-            className="inline-block rounded-full bg-white text-[#000209] font-semibold px-8 py-3 hover:bg-gray-100 transition-colors"
+            className="inline-block rounded-full bg-white text-[#0d1526] font-semibold px-8 py-3 hover:bg-gray-100 transition-colors"
           >
             Book a free consultation
           </Link>

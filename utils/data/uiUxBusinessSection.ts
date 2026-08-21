@@ -1,5 +1,5 @@
 export const UIUX_BUSINESS_SECTION = {
-  heading: "How will your Business upscale?",
+  heading: "How will your business scale?",
   cards: [
     {
       title: "Stronger Brand Recognition",

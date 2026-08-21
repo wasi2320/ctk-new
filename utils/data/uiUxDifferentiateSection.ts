@@ -1,10 +1,10 @@
 export const UIUX_DIFFERENTIATE_SECTION = {
-  heading: "How we Differentiate from the Market?",
+  heading: "How we differentiate from the market",
   description:
-    "we combine psychology, strategy, and innovation to deliver UI/UX designs and animations that are functional, data-driven, and conversion-focused.",
+    "We combine psychology, strategy, and research to deliver UI/UX designs and animations that are functional, data-driven, and conversion-focused.",
   cards: [
     {
-      title: "Data-Driven UX Decision",
+      title: "Data-Driven UX Decisions",
       description:
         "Using heatmaps, eye-tracking, and behavioral analytics, we refine designs based on real user interactions and pain points.",
       imageSrc: "/Images/UiUx_Card_Img_1.png",

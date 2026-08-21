@@ -1,51 +1,27 @@
 # CodetoKloud robots.txt
 
-# Default: allow all standard crawlers, block private/admin areas.
+# Allow public pages and the assets required to render them.
 User-agent: *
 Allow: /
-Disallow: /admin/
+Disallow: /admin
 Disallow: /api/
-Disallow: /_next/
-Disallow: /static/
 
-# --- AI / LLM crawlers ---------------------------------------------------
-# Explicitly allowed so CodetoKloud can be discovered, indexed, and cited
-# by generative engines (ChatGPT, Claude, Perplexity, Google AI Overviews).
+# AI and answer engine crawlers
 
-# OpenAI (ChatGPT training, search, and user browsing)
+# OpenAI, Anthropic, Perplexity, Google, and Common Crawl
 User-agent: GPTBot
-Allow: /
-
 User-agent: OAI-SearchBot
-Allow: /
-
 User-agent: ChatGPT-User
-Allow: /
-
-# Anthropic (Claude)
 User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
-
-# Perplexity
+User-agent: Claude-SearchBot
+User-agent: Claude-User
 User-agent: PerplexityBot
-Allow: /
-
 User-agent: Perplexity-User
-Allow: /
-
-# Google Gemini / AI Overviews (separate from standard Googlebot indexing)
 User-agent: Google-Extended
-Allow: /
-
-# Common Crawl (used as a training corpus by many LLMs)
 User-agent: CCBot
 Allow: /
+Disallow: /admin
+Disallow: /api/
 
 # Sitemap
 Sitemap: https://codetokloud.com/sitemap.xml

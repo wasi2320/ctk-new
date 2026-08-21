@@ -2,28 +2,30 @@ import Link from "next/link";
 import HeroSection from "@/app/components/HeroSection";
 import TrustBadge from "@/app/components/sections/TrustBadge";
 import FaqSection from "@/app/components/sections/FaqSection";
+import RelatedInsights from "@/app/components/sections/RelatedInsights";
 import ComplianceLinks from "@/app/components/sections/ComplianceLinks";
 import RelatedServices from "@/app/components/sections/RelatedServices";
 import JsonLd from "@/app/components/JsonLd";
 import { coreServiceSchemas } from "@/lib/structured-data";
 import { pageMetadata } from "@/lib/page-metadata";
 import { pageFaqs } from "@/lib/faqs";
+import { aiDevopsInsights } from "@/utils/data/aiDevopsInsights";
 
 export const metadata = pageMetadata("/kubernetes");
 
-/** Capabilities — keyworded H3s with extractable, standalone prose. */
+/** Capabilities, keyworded H3s with extractable, standalone prose. */
 const capabilities = [
   {
     title: "Amazon EKS Cluster Design",
-    body: "We architect production-grade Amazon EKS clusters with managed node groups, private networking, and multi-environment setups for development, staging, and production. As an AWS Advanced Tier Partner, we build EKS the way AWS recommends — integrated with IAM, VPC, and CloudWatch.",
+    body: "We architect Amazon EKS clusters with managed node groups, private networking, and separate development, staging, and production environments. The design integrates AWS IAM, VPC networking, CloudWatch, and the operating controls your team needs.",
   },
   {
     title: "GitOps Delivery with ArgoCD",
-    body: "We implement GitOps with ArgoCD so your cluster's desired state lives in Git and syncs automatically. Every change is versioned, reviewable, and auditable. On one client pipeline this delivered a 95% deployment success rate and cut manual deployment effort by 80%.",
+    body: "We implement GitOps with ArgoCD so your cluster's desired state lives in Git and syncs automatically. Every change is versioned, reviewable, and auditable. On one client pipeline this reduced manual deployment effort by 80% and made releases 50% faster.",
   },
   {
     title: "Helm Packaging & Releases",
-    body: "We package applications as Helm charts to manage configuration, versioning, and repeatable releases across environments — making deployments consistent, easy to roll back, and simple for your team to maintain.",
+    body: "We package applications as Helm charts to manage configuration, versioning, and repeatable releases across environments, making deployments consistent, easy to roll back, and simple for your team to maintain.",
   },
   {
     title: "Autoscaling & HPA",
@@ -31,7 +33,7 @@ const capabilities = [
   },
   {
     title: "Observability & Monitoring",
-    body: "We add full observability with Prometheus, Grafana, Datadog, and CloudWatch — metrics, logs, traces, dashboards, and alerting — so you catch issues early and keep mean time to recovery low.",
+    body: "We add full observability with Prometheus, Grafana, Datadog, and CloudWatch, metrics, logs, traces, dashboards, and alerting, so you catch issues early and keep mean time to recovery low.",
   },
   {
     title: "Kubernetes Cost Optimization",
@@ -39,33 +41,33 @@ const capabilities = [
   },
   {
     title: "Security & DevSecOps Hardening",
-    body: "We harden clusters with least-privilege RBAC, IAM roles for service accounts, network policies, encrypted secrets, image scanning, and continuous monitoring — supporting SOC 2, HIPAA, and PCI DSS workloads on AWS.",
+    body: "We harden clusters with least-privilege RBAC, IAM roles for service accounts, network policies, encrypted secrets, image scanning, and continuous monitoring. These controls can support the technical scope of SOC 2, HIPAA, and PCI DSS programs on AWS.",
   },
   {
     title: "Migrations to EKS",
-    body: "We migrate applications from virtual machines, on-premises servers, or other container platforms to Kubernetes on Amazon EKS — including containerization, CI/CD, and low-downtime cutover. A recent migration cut API latency from 850ms to 320ms.",
+    body: "We migrate applications from virtual machines, on-premises servers, or other container platforms to Kubernetes on Amazon EKS, including containerization, CI/CD, and low-downtime cutover. A recent migration cut API latency from 850ms to 320ms.",
   },
   {
     title: "Managed Day-2 Operations",
-    body: "We run ongoing Kubernetes operations — version and node upgrades, patching, monitoring, autoscaling tuning, incident response, and disaster recovery — so your platform stays secure, current, and reliable after launch.",
+    body: "We run ongoing Kubernetes operations, version and node upgrades, patching, monitoring, autoscaling tuning, incident response, and disaster recovery, so your platform stays secure, current, and reliable after launch.",
   },
 ];
 
-/** Curated Kubernetes/EKS proof — real, quantified case studies (crawlable links). */
+/** Curated Kubernetes/EKS proof, real, quantified case studies (crawlable links). */
 const caseStudies = [
   {
     href: "/goagalia-healthcare-workforce-management",
-    title: "HIPAA-Compliant EKS for GoAgalia Healthcare",
+    title: "Healthcare EKS Migration for GoAgalia",
     blurb:
-      "Migrated a healthcare workforce platform to a scalable, HIPAA-compliant AWS architecture on Amazon EKS with GitOps and autoscaling.",
-    metrics: ["~35% lower cost", "850ms → 320ms latency", "99.7% uptime"],
+      "Migrated a healthcare workforce platform to Amazon EKS with GitOps, autoscaling, and technical safeguards for regulated workloads.",
+    metrics: ["About 35% lower cost", "Latency from 850 ms to 320 ms", "99.7% uptime"],
   },
   {
     href: "/helm-pipeline",
     title: "CI/CD with ArgoCD & Helm on EKS",
     blurb:
       "Built an automated CI/CD pipeline using ArgoCD, Helm, and Amazon EKS across dev, staging, and production environments.",
-    metrics: ["95% deploy success", "80% less manual effort", "50% faster releases"],
+    metrics: ["80% less manual effort", "50% faster releases"],
   },
   {
     href: "/aws-scalable-secure",
@@ -79,14 +81,21 @@ const caseStudies = [
     title: "Scalable & Secure AWS Setup",
     blurb:
       "Migrated a SaaS application to modern AWS infrastructure with container orchestration, CI/CD, and full monitoring.",
-    metrics: ["Lower cost", "Improved security", "Better performance"],
+    metrics: ["50% faster release cycles", "40% faster issue resolution"],
   },
   {
     href: "/kubernetes-compliance-platform-case-study",
     title: "Compliance-Ready On-Prem Kubernetes",
     blurb:
-      "Built an on-premise RKE2 platform with default encryption, SSO on every access path, and GitOps for a company facing four audit frameworks.",
-    metrics: ["SOC 2 · HIPAA · HiTrust · NIST", "Passed readiness assessments"],
+      "Built a four-node RKE2 platform with two control-plane nodes, two GPU workers, self-hosted observability, and an operational handoff for a company preparing for multiple frameworks.",
+    metrics: ["4-node RKE2 platform", "2 GPU worker nodes"],
+  },
+  {
+    href: "/cis-kubernetes-benchmark-assessment-case-study",
+    title: "CIS Kubernetes Benchmark Assessment",
+    blurb:
+      "Assessed AWS EKS and Linode LKE environments control by control, documenting shared responsibility and collecting cluster evidence with kube-bench where available.",
+    metrics: ["AWS EKS and Linode LKE", "Control-by-control evidence"],
   },
 ];
 
@@ -96,27 +105,27 @@ export default function KubernetesPage() {
       <JsonLd data={coreServiceSchemas["/kubernetes"]} />
 
       <HeroSection
-        title="Kubernetes & Amazon EKS Consulting"
-        description="CodetoKloud designs, migrates, secures, and manages production Kubernetes on Amazon EKS — GitOps with ArgoCD, Helm, autoscaling, observability, and cost optimization from an AWS Advanced Tier Partner."
-        imageSrc="/services/ci_cd_eks.png"
-        cover
+        title="Kubernetes and Amazon EKS Consulting"
+        description="CodetoKloud designs, migrates, secures, and manages production Kubernetes on Amazon EKS, GitOps with ArgoCD, Helm, autoscaling, observability, and cost optimization from an AWS Advanced Tier Partner."
+        imageSrc="/services/service-visuals/amazon-eks-operating-model.svg"
+        imageAlt="Amazon EKS operating model with controlled ingress, private Multi-AZ workloads, Argo CD and Helm GitOps, IAM and RBAC, autoscaling, observability, cost visibility, and backup and recovery"
         buttonText="Book a Kubernetes readiness review"
         buttonLink="/contact"
       />
 
-      <div className="px-4 md:px-36 -mt-2 mb-8">
+      <div className="px-4 md:px-36 -mt-2 mb-5">
         <TrustBadge />
       </div>
 
-      {/* Answer capsule — definition-first, standalone, names the company. */}
-      <section className="py-14 px-4 md:px-36 bg-gray-50">
+      {/* Answer capsule, definition-first, standalone, names the company. */}
+      <section className="py-10 md:py-12 px-4 md:px-36 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             What is Kubernetes consulting?
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed">
             Kubernetes consulting is expert help designing, deploying, securing,
-            and operating Kubernetes — the platform that automates running
+            and operating Kubernetes, the platform that automates running
             containerized applications at scale. CodetoKloud, an AWS Advanced
             Tier Partner, provides Kubernetes consulting on Amazon EKS: cluster
             design, GitOps delivery, autoscaling, observability, cost
@@ -126,27 +135,27 @@ export default function KubernetesPage() {
             Whether you are launching your first cluster, migrating existing
             workloads to Amazon EKS, or trying to control a Kubernetes bill
             that is growing faster than your traffic, we bring the production
-            experience to get it right — with the security and compliance
-            controls regulated workloads require.
+            experience to improve the operating model and implement technical
+            controls for regulated workloads where required.
           </p>
         </div>
       </section>
 
       {/* Capabilities */}
-      <section className="py-16 px-4 md:px-36 bg-white">
+      <section className="py-10 md:py-12 px-4 md:px-36 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 text-center">
             Our Kubernetes &amp; Amazon EKS Services
           </h2>
-          <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
+          <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-8">
             End-to-end Kubernetes engineering, from first cluster to day-2
-            operations — built on Amazon EKS.
+            operations, built on Amazon EKS.
           </p>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((c) => (
               <div
                 key={c.title}
-                className="rounded-2xl border border-gray-200 p-6 hover:border-[#152F27] transition-colors"
+                className="rounded-2xl border border-gray-200 p-6 hover:border-[#16212e] transition-colors"
               >
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {c.title}
@@ -158,20 +167,20 @@ export default function KubernetesPage() {
         </div>
       </section>
 
-      {/* Comparison table — the format AI engines cite most. */}
-      <section className="py-16 px-4 md:px-36 bg-gray-50">
+      {/* Comparison table, the format AI engines cite most. */}
+      <section className="py-10 md:py-12 px-4 md:px-36 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
             EKS vs ECS vs Fargate: Which Should You Use?
           </h2>
-          <p className="text-lg text-gray-600 mb-8">
+          <p className="text-lg text-gray-600 mb-6">
             The three main ways to run containers on AWS, and when each fits.
             Not sure which is right for your workload? We help teams choose.
           </p>
           <div className="overflow-x-auto rounded-2xl border border-gray-200 bg-white">
             <table className="w-full text-left border-collapse min-w-[640px]">
               <thead>
-                <tr className="bg-[#152F27] text-white">
+                <tr className="bg-[#16212e] text-white">
                   <th className="px-5 py-4 font-semibold">Option</th>
                   <th className="px-5 py-4 font-semibold">What it is</th>
                   <th className="px-5 py-4 font-semibold">Best for</th>
@@ -209,7 +218,7 @@ export default function KubernetesPage() {
                     AWS Fargate
                   </td>
                   <td className="px-5 py-4">
-                    Serverless compute for containers — runs EKS or ECS pods
+                    Serverless compute for containers, runs EKS or ECS pods
                     without managing servers.
                   </td>
                   <td className="px-5 py-4">
@@ -224,88 +233,104 @@ export default function KubernetesPage() {
       </section>
 
       {/* Deeper comparisons + local landing pages. */}
-      <section className="px-4 md:px-36 pb-12 bg-gray-50">
-        <div className="max-w-5xl mx-auto space-y-3">
-          <p className="text-gray-700">
-            <span className="font-semibold text-gray-900">Compare in depth:</span>{" "}
-            <Link
-              href="/eks-vs-ecs-vs-fargate"
-              className="text-[#152F27] font-semibold underline hover:no-underline"
-            >
-              EKS vs ECS vs Fargate
-            </Link>
-            {" · "}
-            <Link
-              href="/eks-vs-gke-vs-aks"
-              className="text-[#152F27] font-semibold underline hover:no-underline"
-            >
-              EKS vs GKE vs AKS
-            </Link>
-            {" · "}
-            <Link
-              href="/terraform-vs-cloudformation"
-              className="text-[#152F27] font-semibold underline hover:no-underline"
-            >
-              Terraform vs CloudFormation
-            </Link>
-          </p>
-          <p className="text-gray-700">
-            <span className="font-semibold text-gray-900">Local:</span>{" "}
-            <Link
-              href="/devops-consulting-naperville-il"
-              className="text-[#152F27] font-semibold underline hover:no-underline"
-            >
-              Naperville, IL
-            </Link>
-            {" · "}
-            <Link
-              href="/devops-kubernetes-consulting-chicago"
-              className="text-[#152F27] font-semibold underline hover:no-underline"
-            >
-              Chicago
-            </Link>
-          </p>
-          <p className="text-gray-700">
-            <span className="font-semibold text-gray-900">Guides:</span>{" "}
-            <Link
-              href="/what-is-a-kubernetes-consultant"
-              className="text-[#152F27] font-semibold underline hover:no-underline"
-            >
-              What is a Kubernetes consultant?
-            </Link>
-            {" · "}
-            <Link
-              href="/engagement-models"
-              className="text-[#152F27] font-semibold underline hover:no-underline"
-            >
-              Engagement models
-            </Link>
-            {" · "}
-            <Link
-              href="/devops-consulting-cost"
-              className="text-[#152F27] font-semibold underline hover:no-underline"
-            >
-              Consulting cost
-            </Link>
-          </p>
-        </div>
+      <section className="px-4 pb-10 md:px-36 bg-gray-50">
+        <nav
+          aria-label="Kubernetes comparisons, locations, and guides"
+          className="max-w-5xl mx-auto rounded-2xl border border-gray-200 bg-white p-5"
+        >
+          <h2 className="sr-only">
+            Kubernetes comparisons, locations, and planning guides
+          </h2>
+          <div className="grid gap-5 md:grid-cols-3 md:gap-0 md:divide-x md:divide-gray-200">
+            <div className="md:pr-5">
+              <h3 className="text-sm font-bold uppercase tracking-wide text-gray-500 mb-2">
+                Compare platforms
+              </h3>
+              <div className="flex flex-col items-start gap-1.5">
+                <Link
+                  href="/eks-vs-ecs-vs-fargate"
+                  className="text-[#16212e] font-semibold underline hover:no-underline"
+                >
+                  EKS vs ECS vs Fargate
+                </Link>
+                <Link
+                  href="/eks-vs-gke-vs-aks"
+                  className="text-[#16212e] font-semibold underline hover:no-underline"
+                >
+                  EKS vs GKE vs AKS
+                </Link>
+                <Link
+                  href="/terraform-vs-cloudformation"
+                  className="text-[#16212e] font-semibold underline hover:no-underline"
+                >
+                  Terraform vs CloudFormation
+                </Link>
+              </div>
+            </div>
+            <div className="md:px-5">
+              <h3 className="text-sm font-bold uppercase tracking-wide text-gray-500 mb-2">
+                Local consulting
+              </h3>
+              <div className="flex flex-col items-start gap-1.5">
+                <Link
+                  href="/devops-consulting-naperville-il"
+                  className="text-[#16212e] font-semibold underline hover:no-underline"
+                >
+                  Naperville, IL
+                </Link>
+                <Link
+                  href="/devops-kubernetes-consulting-chicago"
+                  className="text-[#16212e] font-semibold underline hover:no-underline"
+                >
+                  Chicago
+                </Link>
+              </div>
+            </div>
+            <div className="md:pl-5">
+              <h3 className="text-sm font-bold uppercase tracking-wide text-gray-500 mb-2">
+                Planning guides
+              </h3>
+              <div className="flex flex-col items-start gap-1.5">
+                <Link
+                  href="/what-is-a-kubernetes-consultant"
+                  className="text-[#16212e] font-semibold underline hover:no-underline"
+                >
+                  What is a Kubernetes consultant?
+                </Link>
+                <Link
+                  href="/engagement-models"
+                  className="text-[#16212e] font-semibold underline hover:no-underline"
+                >
+                  Engagement models
+                </Link>
+                <Link
+                  href="/devops-consulting-cost"
+                  className="text-[#16212e] font-semibold underline hover:no-underline"
+                >
+                  Consulting cost
+                </Link>
+              </div>
+            </div>
+          </div>
+        </nav>
       </section>
 
-      {/* Curated case studies — crawlable, quantified proof. */}
-      <section className="py-16 px-4 md:px-36 bg-white">
+      {/* Curated case studies, crawlable, quantified proof. */}
+      <section className="py-10 md:py-12 px-4 md:px-36 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 text-center">
             Kubernetes &amp; EKS Case Studies
           </h2>
-          <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
-            Real Amazon EKS engagements with measurable outcomes.
+          <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-8">
+            Production Kubernetes, GitOps, and control assessment work across
+            cloud and on-premise environments.
           </p>
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {caseStudies.map((cs) => (
               <Link
                 key={cs.href}
                 href={cs.href}
-                className="block rounded-2xl border border-gray-200 p-6 hover:border-[#152F27] hover:shadow-md transition-all"
+                className="block rounded-2xl border border-gray-200 p-6 hover:border-[#16212e] hover:shadow-md transition-all"
               >
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {cs.title}
@@ -315,7 +340,7 @@ export default function KubernetesPage() {
                   {cs.metrics.map((m) => (
                     <span
                       key={m}
-                      className="text-sm font-medium text-[#152F27] bg-[#152F27]/10 rounded-full px-3 py-1"
+                      className="text-sm font-medium text-[#16212e] bg-[#16212e]/10 rounded-full px-3 py-1"
                     >
                       {m}
                     </span>
@@ -327,20 +352,26 @@ export default function KubernetesPage() {
         </div>
       </section>
 
+      <RelatedInsights
+        heading="AI guidance for Kubernetes delivery and operations"
+        intro="Use AI to assist with evidence, review, and troubleshooting while GitOps, policy checks, limited identities, and production approvals constrain the blast radius."
+        items={aiDevopsInsights}
+      />
+
       {/* CTA band */}
-      <section className="py-16 px-4 md:px-36 bg-[#000209] text-white">
+      <section className="py-10 md:py-12 px-4 md:px-36 bg-[#0d1526] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Get a free Kubernetes readiness review
+            Review your Kubernetes operating model
           </h2>
-          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-            Tell us about your clusters, cloud spend, and goals. We&apos;ll
-            review your Kubernetes or Amazon EKS setup and recommend the highest-
-            impact next steps — no obligation.
+          <p className="text-lg text-gray-300 mb-6 max-w-2xl mx-auto">
+            Tell us about your clusters, cloud spend, and operating concerns.
+            We will confirm fit within one business day and use a focused
+            30-minute review to identify three practical priorities.
           </p>
           <Link
             href="/contact"
-            className="inline-block rounded-full bg-white text-[#000209] font-semibold px-8 py-3 hover:bg-gray-100 transition-colors"
+            className="inline-block rounded-full bg-white text-[#0d1526] font-semibold px-8 py-3 hover:bg-gray-100 transition-colors"
           >
             Book a Kubernetes readiness review
           </Link>

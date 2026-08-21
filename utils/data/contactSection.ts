@@ -1,37 +1,37 @@
 import { getContactSocialLinks } from "./socialMedia";
 
 export const CONTACT_SECTION_DATA = {
-  title: "Get in Touch",
-  backgroundImage: "/Images/ConactUs.svg",
+  title: "Tell us your AWS priority",
+  backgroundImage: "/Images/ConactUs.webp",
 
   formFields: [
     {
       id: "name",
       label: "Name",
       type: "text",
-      placeholder: "Your Name",
+      placeholder: "Your name",
       required: true,
     },
     {
       id: "company",
       label: "Company Name",
       type: "text",
-      placeholder: "Your Company",
+      placeholder: "Your company",
       required: false,
     },
     {
       id: "email",
       label: "Email",
       type: "email",
-      placeholder: "Your Email",
+      placeholder: "Work email",
       required: true,
     },
     {
       id: "message",
       label: "Message",
       type: "textarea",
-      placeholder: "Your Message",
-      required: true,
+      placeholder: "What would you like us to review? (optional)",
+      required: false,
       rows: 2,
     },
   ],
@@ -43,16 +43,16 @@ export const CONTACT_SECTION_DATA = {
   },
 
   submitButton: {
-    text: "Send Message",
+    text: "Request my AWS review",
     className:
-      "bg-[#000] text-white px-7 py-2 rounded-full shadow hover:bg-[#193728]/90 transition-colors cursor-pointer",
+      "bg-[#000] text-white px-7 py-2 rounded-full shadow hover:bg-[#16324f]/90 transition-colors cursor-pointer",
   },
 
   contactInfo: [
     {
       id: "location",
       title: "Location:",
-      content: ["Codetokloud Inc PO Box 9165 ", "Naperville, IL 60567"],
+      content: ["CodetoKloud Inc PO Box 9165 ", "Naperville, IL 60567"],
       type: "text",
     },
     {
@@ -61,7 +61,7 @@ export const CONTACT_SECTION_DATA = {
       content: ["info@codetokloud.com"],
       type: "link",
       href: "mailto:info@codetokloud.com",
-      className: "text-[#193728] underline text-xl",
+      className: "text-[#16324f] underline text-xl",
     },
     {
       id: "phone",
@@ -69,7 +69,7 @@ export const CONTACT_SECTION_DATA = {
       content: ["+1 (309) 590-3617"],
       type: "link",
       href: "tel:+13095903617",
-      className: "text-[#193728] text-xl",
+      className: "text-[#16324f] text-xl",
     },
   ],
 

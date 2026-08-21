@@ -38,16 +38,16 @@ const PeVcPortfolioSection = () => {
         viewport={{ once: true, margin: "-100px" }}
       >
         {/* Header Section with Title and Button */}
-        <div className="flex flex-col lg:flex-row justify-between items-start mb-16 border-b border-green-800 pb-8">
+        <div className="flex flex-col lg:flex-row justify-between items-start mb-16 border-b border-[#1b3a5c] pb-8">
           <div className="mb-6 lg:mb-0">
             <motion.h2
               className="text-4xl md:text-5xl font-bold text-black mb-2"
               variants={cardVariants}
             >
-              Our Portfolio
+              Our Work
             </motion.h2>
             <motion.p className="text-xl text-black" variants={cardVariants}>
-              Real-World cases in Fintech
+              Real-world fintech case studies
             </motion.p>
           </div>
 
@@ -58,7 +58,7 @@ const PeVcPortfolioSection = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Real-World cases in Fintech
+                View fintech case studies
                 <svg
                   className="w-4 h-4"
                   fill="none"

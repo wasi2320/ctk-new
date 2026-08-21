@@ -14,7 +14,7 @@ export default function Page() {
           description:
             "How CodetoKloud automated Amazon ECS deployments with ephemeral PR preview environments using Terraform and GitHub Actions, cutting deployment time to under 40 minutes.",
           path: "/ecs-pr-preview-environments",
-          image: "/services/automated_aws.png",
+          image: "/services/architecture/ecs-pr-preview-workflow.svg",
         })}
       />
       <CaseStudyContent />

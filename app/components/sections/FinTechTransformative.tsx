@@ -29,7 +29,7 @@ const FinTechTransformative = () => {
                 width={20}
               />
               <span className="text-lg font-semibold font-Nunito">
-                Faster and more seamless transactions
+                Faster, smoother transactions
               </span>
             </li>
 

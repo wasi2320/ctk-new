@@ -25,24 +25,23 @@ export const HEADER: HeaderData = {
     {
       name: "Services",
       link: [
-        { name: "Public Cloud services", link: "/cloud-service" },
-        { name: "Consulting and Advisory", link: "/consulting-and-advisory" },
-        { name: "Security & Compliance", link: "/security-and-compliance" },
+        { name: "AWS Cloud Infrastructure", link: "/cloud-service" },
+        { name: "Cloud Architecture Advisory", link: "/consulting-and-advisory" },
+        { name: "Security and Compliance", link: "/security-and-compliance" },
         { name: "HIPAA Compliance", link: "/hipaa-compliance" },
         { name: "SOC 2 Compliance", link: "/soc-2-compliance" },
         { name: "PCI DSS Compliance", link: "/pci-dss-compliance" },
         { name: "Cloud Migration", link: "/cloud-migration" },
         { name: "FinOps", link: "/finops" },
-        { name: "DevOps Implementation", link: "/devops" },
-        { name: "Kubernetes & EKS", link: "/kubernetes" },
-        { name: "UI/UX Designs and animation", link: "/ui-ux" },
-        { name: "Web Solutions", link: "/web-solutions" },
-        { name: "Mobile Development", link: "/mobile-app" },
-        { name: "AI & GenAI", link: "/ai" },
+        { name: "DevOps and CI/CD", link: "/devops" },
+        { name: "Kubernetes and Amazon EKS", link: "/kubernetes" },
+        { name: "UI and UX Design", link: "/ui-ux" },
+        { name: "Web Application Development", link: "/web-solutions" },
+        { name: "Mobile App Development", link: "/mobile-app" },
+        { name: "AI Automation and GenAI", link: "/ai" },
       ],
     },
     {
-      // TODO: Add back the industries
       name: "Industries",
       link: [
         { name: "Nonprofits", link: "/non-profits" },
@@ -56,7 +55,7 @@ export const HEADER: HeaderData = {
         { name: "Manufacturing", link: "/manufacturing" },
         { name: "EdTech", link: "/ed-tech" },
         { name: "FinTech", link: "/fin-tech" },
-        { name: "Powering Business", link: "/powering-business" },
+        { name: "Professional Services", link: "/powering-business" },
         { name: "Financial Services", link: "/financial-services" },
         { name: "Real Estate", link: "/real-estate" },
         { name: "Private Equity and VC Firms", link: "/pe-vc" },
@@ -65,6 +64,15 @@ export const HEADER: HeaderData = {
     {
       name: "Case Studies",
       groups: [
+        {
+          heading: "Overview",
+          items: [
+            {
+              name: "View All Case Studies",
+              link: "/case-studies",
+            },
+          ],
+        },
         {
           heading: "Compliance",
           items: [
@@ -85,14 +93,26 @@ export const HEADER: HeaderData = {
               link: "/pci-dss-enterprise-case-study",
             },
             {
-              name: "HIPAA-Compliant EKS (GoAgalia)",
+              name: "Healthcare EKS Migration (GoAgalia)",
               link: "/goagalia-healthcare-workforce-management",
+            },
+            {
+              name: "CIS Kubernetes Benchmark Assessment",
+              link: "/cis-kubernetes-benchmark-assessment-case-study",
             },
           ],
         },
         {
           heading: "AWS",
           items: [
+            {
+              name: "Multi-Brand AWS Fargate Modernization",
+              link: "/multi-brand-aws-fargate-modernization-case-study",
+            },
+            {
+              name: "EKS Microservices with GitOps",
+              link: "/eks-gitops-microservices-case-study",
+            },
             { name: "CI/CD with ArgoCD & Helm on EKS", link: "/helm-pipeline" },
             {
               name: "Automated ECS with PR Previews",
@@ -125,6 +145,48 @@ export const HEADER: HeaderData = {
               name: "Hybrid On-Prem + Cloud Kubernetes",
               link: "/hybrid-cloud-kubernetes-case-study",
             },
+          ],
+        },
+      ],
+    },
+    {
+      name: "Resources",
+      groups: [
+        {
+          heading: "Guides",
+          items: [
+            { name: "What Is Amazon EKS?", link: "/what-is-amazon-eks" },
+            { name: "What Is GitOps?", link: "/what-is-gitops" },
+            { name: "What Is FinOps?", link: "/what-is-finops" },
+            { name: "What Is Infrastructure as Code?", link: "/what-is-infrastructure-as-code" },
+            { name: "AWS Well-Architected Review", link: "/what-is-a-well-architected-review" },
+            { name: "Platform Engineering vs DevOps", link: "/platform-engineering-vs-devops" },
+            { name: "What Is a Kubernetes Consultant?", link: "/what-is-a-kubernetes-consultant" },
+            { name: "What Does a DevOps Consultant Do?", link: "/what-does-a-devops-consultant-do" },
+          ],
+        },
+        {
+          heading: "Compare",
+          items: [
+            { name: "EKS vs ECS vs Fargate", link: "/eks-vs-ecs-vs-fargate" },
+            { name: "EKS vs GKE vs AKS", link: "/eks-vs-gke-vs-aks" },
+            { name: "ECS vs Kubernetes", link: "/ecs-vs-kubernetes" },
+            { name: "Fargate vs EC2", link: "/fargate-vs-ec2" },
+            { name: "Terraform vs CloudFormation", link: "/terraform-vs-cloudformation" },
+            { name: "Terraform vs Pulumi", link: "/terraform-vs-pulumi" },
+            { name: "ArgoCD vs Flux", link: "/argocd-vs-flux" },
+            { name: "GitHub Actions vs Jenkins vs GitLab CI", link: "/github-actions-vs-jenkins-vs-gitlab-ci" },
+            { name: "Prometheus vs Datadog", link: "/prometheus-vs-datadog" },
+          ],
+        },
+        {
+          heading: "Pricing",
+          items: [
+            { name: "DevOps Consulting Cost", link: "/devops-consulting-cost" },
+            { name: "Kubernetes Consulting Cost", link: "/kubernetes-consulting-cost" },
+            { name: "Cloud Migration Cost", link: "/cloud-migration-cost" },
+            { name: "SOC 2 Compliance Cost", link: "/soc-2-cost" },
+            { name: "Engagement Models", link: "/engagement-models" },
           ],
         },
       ],

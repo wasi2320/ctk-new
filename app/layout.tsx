@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Sora, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
+import Header from "./components/layout/SiteHeader";
+import Footer from "./components/layout/SiteFooter";
 import ScrollToTop from "./components/ScrollToTop";
 import ChatFloat from "./components/ChatFloat";
 import Breadcrumbs from "./components/Breadcrumbs";
@@ -42,6 +42,26 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
   display: "swap",
   fallback: ["Consolas", "Monaco", "Courier New", "monospace"],
+});
+
+// Redesign fonts (self-hosted via next/font).
+const sora = Sora({
+  variable: "--font-sora",
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "800"],
+  display: "swap",
+});
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+const jbMono = JetBrains_Mono({
+  variable: "--font-jbmono",
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -137,7 +157,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${sora.variable} ${inter.variable} ${jbMono.variable} antialiased`}
         suppressHydrationWarning={true}
       >
         <JsonLd data={organizationSchema} />

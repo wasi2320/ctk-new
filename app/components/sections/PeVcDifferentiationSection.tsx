@@ -54,7 +54,7 @@ const PeVcDifferentiationSection = () => {
           {peVcSectionData.differentiateData.cards.map((card, index) => (
             <motion.div
               key={index}
-              className="bg-green-900/20 backdrop-blur-md rounded-2xl p-6 border border-green-500/30 hover:border-green-400/50 transition-all duration-300 shadow-lg shadow-green-900/20"
+              className="bg-[#16212e]/20 backdrop-blur-md rounded-2xl p-6 border border-[#2b8fe8]/30 hover:border-[#57b1f5]/50 transition-all duration-300 shadow-lg shadow-[#16212e]/20"
               variants={cardVariants}
               whileHover={{
                 y: -5,

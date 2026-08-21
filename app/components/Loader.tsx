@@ -68,7 +68,7 @@ const Loader = ({ onLoadingComplete }: { onLoadingComplete: () => void }) => {
                     className={`text-white text-3xl md:text-5xl font-extrabold text-center transition-all duration-1000 ${isExiting ? 'opacity-0' : 'opacity-100'
                         }`}
                 >
-                    Code To Kloud
+                    CodetoKloud
                 </h1>
 
                 <h2

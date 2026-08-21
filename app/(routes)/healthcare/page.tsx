@@ -1,29 +1,15 @@
-import HeroSection from "@/app/components/HeroSection";
-import PoweringExpertiseTailoredSection from "@/app/components/sections/PoweringExpertiseTailoredSection";
-import PoweringHealthcareSolution from "@/app/components/sections/PoweringHealthcareSolution";
-import MarketDifference from "@/app/components/sections/MarketDifference";
-import ProfessionalServices from "@/app/components/sections/ProfessionalServices";
-import PoweringFutureHealthCare from "@/app/components/sections/PoweringFutureHealthCare";
-import ContactUsSection from "@/app/components/sections/ContactUsSection";
+import IndustryPage from "@/app/components/sections/industry/IndustryPage";
+import JsonLd from "@/app/components/JsonLd";
 import { pageMetadata } from "@/lib/page-metadata";
+import { industryServiceSchemas } from "@/lib/structured-data";
+import { industryPages } from "@/utils/data/industryPages";
 
 export const metadata = pageMetadata("/healthcare");
 export default function HealthcarePage() {
   return (
-    <div>
-      <HeroSection
-        title="Healthcare"
-        description="HealthTech blends healthcare with innovative technology to create smarter, faster, and more personalized patient care experiences. From virtual consultations to cloud-powered healthcare platforms, it enables organizations to innovate, scale, and meet the evolving needs of patients worldwide."
-        imageSrc="/Images/healthcare.png"
-        buttonText="Let’s connect"
-        buttonLink="/contact"
-      />
-      <PoweringExpertiseTailoredSection />
-      <PoweringHealthcareSolution />
-      <MarketDifference />
-      <ProfessionalServices />
-      <PoweringFutureHealthCare />
-      <ContactUsSection />
-    </div>
+    <>
+      <JsonLd data={industryServiceSchemas["/healthcare"]} />
+      <IndustryPage content={industryPages.healthcare} />
+    </>
   );
 }

@@ -8,9 +8,9 @@ export const ENSURE_SECTION = {
     },
     {
       icon: "/Images/Complaint.svg",
-      title: "Complaint",
+      title: "Compliant",
       description:
-        "We follow all rules and regulations to ensure everything is done correctly.",
+        "We align with SOC 2, HIPAA, and PCI DSS requirements so your workloads meet the standards your industry expects.",
     },
     {
       icon: "/Images/Connected.svg",

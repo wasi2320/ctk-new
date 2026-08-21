@@ -1,27 +1,27 @@
 export const AI_BUSINESS_SECTION = {
-  heading: "How will your Business upscale?",
+  heading: "Where AI actually moves the needle",
   description:
-    "At Code to Kloud, we go beyond generic AI/ML development—we create intelligent, results-driven Generative AI solutions that empower businesses to scale, innovate, and lead in their industries.",
+    "We build production AI and GenAI systems that run on secure AWS infrastructure. Retrieval, agents, and workflow automation wired into your data and your compliance requirements, not throwaway demos.",
   cards: [
     {
-      title: "Business-First AI Solutions",
+      title: "Business-First AI",
       description:
-        "We focus on solving real-world business challengeswith AI/ML, not just deploying technology. Our solutions are designed to drive revenue, optimize processes, and create strategic market advantages.",
+        "We start from a problem worth solving, not a model. Every system we build targets a measurable outcome such as faster operations, lower cost, or new revenue, and ships to production.",
     },
     {
-      title: "Hyper-Personalized AI",
+      title: "Grounded in Your Data",
       description:
-        "Unlike off-the-shelf AI models, we develop GenAI solutions specifically tailored to your business needs, enhancing accuracy, performance, and user engagement with personalized outputs.",
+        "We fine-tune and ground models on your own data and domain, so outputs are accurate and specific to your business instead of a generic off-the-shelf answer.",
     },
     {
-      title: "Regulatory Compliance & AI Governance",
+      title: "Compliance and AI Governance",
       description:
-        "We ensure that all AI/ML solutions comply with industry regulations (GDPR, HIPAA, CCPA) and create governance frameworks to avoidAI bias, ensuring responsible and ethical decision-making.",
+        "Every AI/ML system is built to meet the rules you operate under, including GDPR, HIPAA, and CCPA, with access controls and audit trails that keep decisions responsible and traceable.",
     },
     {
-      title: "Custom AI Training & Proprietary Models",
+      title: "Private Models on Your AWS",
       description:
-        "Rather than relying on generic open-source AI, we develop and fine-tune proprietary AI/ML models and GenAI systems, providing our clients with a competitive edge through highly specialized solutions.",
+        "We fine-tune and deploy private models inside your own AWS account, so your data stays in your environment and your models stay your advantage.",
     },
   ],
   image: "/Images/Ai_Business.png",

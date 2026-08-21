@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="aiIncidentTitle aiIncidentDesc">
+  <title id="aiIncidentTitle">AI-assisted incident response for cloud and Kubernetes</title>
+  <desc id="aiIncidentDesc">Logs, metrics, traces, and deployment events feed AI-assisted evidence synthesis. A hypothesis and runbook recommendation move to human approval before controlled remediation, followed by validation or rollback.</desc>
+  <defs>
+    <linearGradient id="aiIncidentBg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#F8FBFF"/>
+      <stop offset="1" stop-color="#EAF4FC"/>
+    </linearGradient>
+    <linearGradient id="aiIncidentCore" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#102A43"/>
+      <stop offset="1" stop-color="#1C527E"/>
+    </linearGradient>
+    <filter id="aiIncidentShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#17324D" flood-opacity=".11"/>
+    </filter>
+    <marker id="aiIncidentBlueArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M1 1 9 5 1 9Z" fill="#2563EB"/>
+    </marker>
+    <marker id="aiIncidentPurpleArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M1 1 9 5 1 9Z" fill="#7C3AED"/>
+    </marker>
+    <marker id="aiIncidentGreenArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M1 1 9 5 1 9Z" fill="#0E9F6E"/>
+    </marker>
+    <style>
+      .ait{font-family:Inter,ui-sans-serif,system-ui,sans-serif;fill:#102A43}
+      .aih{font-size:34px;font-weight:760}
+      .aisub{font-size:15px;fill:#52677C}
+      .aicap{font-size:11px;font-weight:760;letter-spacing:1.1px}
+      .ainame{font-size:15px;font-weight:740}
+      .aimeta{font-size:11.5px;fill:#61758A}
+      .aicard{fill:#FFFFFF;stroke:#D3E1ED;stroke-width:1.5}
+    </style>
+  </defs>
+  <rect width="1200" height="630" rx="28" fill="url(#aiIncidentBg)"/>
+  <rect x="28" y="26" width="1144" height="578" rx="24" fill="none" stroke="#D7E4EF"/>
+  <g class="ait">
+    <text class="aih" x="58" y="70">AI-assisted incident response for cloud and Kubernetes</text>
+    <text class="aisub" x="58" y="98">Use AI to organize evidence and propose next steps while people retain authority over production changes.</text>
+    <g transform="translate(954 44)">
+      <rect width="188" height="36" rx="18" fill="#FFF2DE"/>
+      <circle cx="19" cy="18" r="5" fill="#E8790A"/>
+      <text x="33" y="22" font-size="11" font-weight="750" fill="#A15305">HUMAN APPROVAL GATE</text>
+    </g>
+
+    <text class="aicap" x="58" y="144" fill="#2563EB">OPERATIONAL EVIDENCE</text>
+    <g filter="url(#aiIncidentShadow)">
+      <g transform="translate(58 164)">
+        <rect class="aicard" width="210" height="76" rx="15"/>
+        <circle cx="34" cy="38" r="17" fill="#E8F2FF"/>
+        <path d="M25 31h18M25 38h14M25 45h18" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
+        <text class="ainame" x="62" y="35">Logs</text><text class="aimeta" x="62" y="54">Events and error context</text>
+      </g>
+      <g transform="translate(58 254)">
+        <rect class="aicard" width="210" height="76" rx="15"/>
+        <circle cx="34" cy="38" r="17" fill="#E9F8F3"/>
+        <path d="M23 46l7-10 7 6 9-16" fill="none" stroke="#0E9F6E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <text class="ainame" x="62" y="35">Metrics</text><text class="aimeta" x="62" y="54">Health and saturation</text>
+      </g>
+      <g transform="translate(58 344)">
+        <rect class="aicard" width="210" height="76" rx="15"/>
+        <circle cx="34" cy="38" r="17" fill="#F2EAFE"/>
+        <circle cx="26" cy="31" r="4" fill="#7C3AED"/><circle cx="42" cy="31" r="4" fill="#7C3AED"/><circle cx="34" cy="47" r="4" fill="#7C3AED"/><path d="M30 34l3 9M38 34l-3 9M30 31h8" stroke="#7C3AED" stroke-width="1.8"/>
+        <text class="ainame" x="62" y="35">Traces</text><text class="aimeta" x="62" y="54">Request path and latency</text>
+      </g>
+      <g transform="translate(58 434)">
+        <rect class="aicard" width="210" height="76" rx="15"/>
+        <circle cx="34" cy="38" r="17" fill="#FFF2DE"/>
+        <path d="M34 25v23M25 34l9-9 9 9M23 51h22" fill="none" stroke="#E8790A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <text class="ainame" x="62" y="35">Deploy events</text><text class="aimeta" x="62" y="54">Recent release changes</text>
+      </g>
+    </g>
+
+    <path d="M268 202h46v95h24M268 292h70M268 382h46v-90h24M268 472h46V307h24" fill="none" stroke="#2563EB" stroke-width="2.2" marker-end="url(#aiIncidentBlueArrow)"/>
+
+    <g transform="translate(346 188)" filter="url(#aiIncidentShadow)">
+      <rect width="250" height="208" rx="20" fill="url(#aiIncidentCore)"/>
+      <circle cx="125" cy="52" r="29" fill="#7C3AED"/>
+      <path d="M114 52h22M125 41v22M109 36l6 6M141 36l-6 6M109 68l6-6M141 68l-6-6" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+      <text x="125" y="105" text-anchor="middle" font-size="17" font-weight="750" fill="#FFFFFF">AI evidence synthesis</text>
+      <text x="125" y="133" text-anchor="middle" font-size="12" fill="#C9DBEB">Correlate signals</text>
+      <text x="125" y="154" text-anchor="middle" font-size="12" fill="#C9DBEB">Build a timeline</text>
+      <text x="125" y="175" text-anchor="middle" font-size="12" fill="#C9DBEB">Surface missing context</text>
+    </g>
+    <path d="M596 292H632" fill="none" stroke="#7C3AED" stroke-width="2.6" marker-end="url(#aiIncidentPurpleArrow)"/>
+
+    <g transform="translate(640 188)" filter="url(#aiIncidentShadow)">
+      <rect class="aicard" width="238" height="208" rx="20"/>
+      <text class="aicap" x="119" y="32" text-anchor="middle" fill="#7C3AED">RECOMMENDATION</text>
+      <g transform="translate(20 52)">
+        <rect width="198" height="58" rx="13" fill="#F2EAFE"/>
+        <circle cx="23" cy="29" r="9" fill="#7C3AED"/>
+        <text class="ainame" x="43" y="26">Hypothesis</text>
+        <text class="aimeta" x="43" y="44">With cited evidence</text>
+      </g>
+      <g transform="translate(20 122)">
+        <rect width="198" height="58" rx="13" fill="#EAF3FB"/>
+        <path d="M15 20h16v20H15zM19 25h8M19 30h8M19 35h6" fill="none" stroke="#1778D0" stroke-width="1.8" stroke-linecap="round"/>
+        <text class="ainame" x="43" y="26">Runbook action</text>
+        <text class="aimeta" x="43" y="44">Scope and expected check</text>
+      </g>
+    </g>
+    <path d="M878 292H914" fill="none" stroke="#7C3AED" stroke-width="2.6" marker-end="url(#aiIncidentPurpleArrow)"/>
+
+    <g transform="translate(922 207)" filter="url(#aiIncidentShadow)">
+      <rect width="220" height="170" rx="20" fill="#FFF7E8" stroke="#F1CD91" stroke-width="1.5"/>
+      <circle cx="110" cy="49" r="25" fill="#E8790A"/>
+      <path d="m99 50 8 8 16-21" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="110" y="94" text-anchor="middle" font-size="17" font-weight="750">Human approval</text>
+      <text class="aimeta" x="110" y="119" text-anchor="middle">Verify evidence, risk,</text>
+      <text class="aimeta" x="110" y="138" text-anchor="middle">scope, and fallback</text>
+    </g>
+
+    <path d="M1032 377v34H750v14" fill="none" stroke="#0E9F6E" stroke-width="2.6" marker-end="url(#aiIncidentGreenArrow)"/>
+    <g transform="translate(620 433)">
+      <rect width="522" height="104" rx="18" fill="#ECF9F4" stroke="#B9E3D4" stroke-width="1.5"/>
+      <g transform="translate(18 18)">
+        <circle cx="29" cy="34" r="24" fill="#0E9F6E"/>
+        <path d="M29 22v24M19 32l10-10 10 10M17 49h24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="67" y="27" font-size="14" font-weight="740">Controlled remediation</text>
+        <text class="aimeta" x="67" y="49">Execute the approved runbook step</text>
+      </g>
+      <path d="M261 18v68" stroke="#B9E3D4"/>
+      <path d="M244 52h34" fill="none" stroke="#0E9F6E" stroke-width="2.2" marker-end="url(#aiIncidentGreenArrow)"/>
+      <g transform="translate(279 18)">
+        <circle cx="29" cy="34" r="24" fill="#2563EB"/>
+        <path d="m18 34 7 7 16-19M18 49h23" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="67" y="27" font-size="14" font-weight="740">Validate or rollback</text>
+        <text class="aimeta" x="67" y="49">Compare health with the baseline</text>
+      </g>
+    </g>
+
+    <g transform="translate(346 427)">
+      <rect width="250" height="110" rx="18" fill="#FFFFFF" stroke="#D3E1ED"/>
+      <text class="aicap" x="20" y="29" fill="#52677C">DECISION RECORD</text>
+      <text class="aimeta" x="20" y="54">Evidence used</text>
+      <text class="aimeta" x="20" y="75">Action approved</text>
+      <text class="aimeta" x="20" y="96">Validation result</text>
+      <path d="M151 51h77M151 72h77M151 93h77" stroke="#D3E1ED" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <g transform="translate(58 558)">
+      <rect width="1084" height="27" rx="13.5" fill="#E8F2FF"/>
+      <text x="542" y="18" text-anchor="middle" font-size="11.5" font-weight="680" fill="#174D75">AI organizes evidence and options. People authorize production changes.</text>
+    </g>
+  </g>
+</svg>

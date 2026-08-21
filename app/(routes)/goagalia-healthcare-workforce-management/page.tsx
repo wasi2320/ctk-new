@@ -12,9 +12,9 @@ export default function Page() {
         data={caseStudySchema({
           title: "GoAgalia: Scalable AWS Cloud Infrastructure",
           description:
-            "How CodetoKloud migrated GoAgalia's healthcare workforce platform to a scalable, HIPAA-compliant AWS architecture on Amazon EKS, cutting costs ~35% and API latency from 850ms to 320ms.",
+            "How CodetoKloud migrated GoAgalia's healthcare workforce platform to Amazon EKS with technical safeguards for regulated workloads, reducing cost by about 35% and API latency from 850 ms to 320 ms.",
           path: "/goagalia-healthcare-workforce-management",
-          image: "/services/strength_aws.png",
+          image: "/services/architecture/secure-aws-eks-platform.svg",
         })}
       />
       <CaseStudyContent />

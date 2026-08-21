@@ -22,7 +22,7 @@ const EnsureSection = () => {
           >
             {/* Card */}
             <div className="space-y-9">
-              <div className="bg-[linear-gradient(to_right,#245444,#050B0B)] py-6 px-8 rounded-3xl flex flex-col justify-center items-center gap-2 w-[150px] mx-auto">
+              <div className="bg-[linear-gradient(to_right,#1b4a74,#0b1220)] py-6 px-8 rounded-3xl flex flex-col justify-center items-center gap-2 w-[150px] mx-auto">
                 <div className="flex justify-center mb-1.5 w-full">
                   <Image
                     src={card.icon}

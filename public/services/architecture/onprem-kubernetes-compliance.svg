@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="onpremTitle onpremDesc">
+  <title id="onpremTitle">Four-node on-premise RKE2 platform</title>
+  <desc id="onpremDesc">A four-node RKE2 platform has two control-plane nodes and two NVIDIA GPU workers. Microsoft Entra ID, Rancher, Cilium, Argo CD, Longhorn, Velero, Prometheus, Grafana, Loki, Tempo, Falco, and DCGM support access, delivery, storage, backup, observability, runtime security, GPU monitoring, and documented operations.</desc>
+  <defs>
+    <linearGradient id="opBg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F8FBFF"/><stop offset="1" stop-color="#EEF6FC"/></linearGradient>
+    <filter id="opShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#17324D" flood-opacity=".1"/></filter>
+    <marker id="opArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1 9 5 1 9Z" fill="#7C3AED"/></marker>
+    <style>.t{font-family:Inter,ui-sans-serif,system-ui,sans-serif;fill:#102A43}.h{font-size:30px;font-weight:760}.sub{font-size:15px;fill:#52677C}.cap{font-size:12px;font-weight:760;letter-spacing:1px}.name{font-size:14px;font-weight:730}.meta{font-size:11px;fill:#61758A}.card{fill:#fff;stroke:#D8E5F1;stroke-width:1.5}</style>
+  </defs>
+  <rect width="1200" height="720" rx="28" fill="url(#opBg)"/>
+  <rect x="28" y="26" width="1144" height="668" rx="24" fill="none" stroke="#D9E6F2"/>
+  <g class="t">
+    <text class="h" x="58" y="72">Four-node RKE2 platform on bare metal</text>
+    <text class="sub" x="58" y="99">GPU placement, self-hosted telemetry, and operational ownership built into the platform</text>
+    <g transform="translate(795 44)"><rect width="347" height="36" rx="18" fill="#E9F8F3"/><text x="174" y="23" text-anchor="middle" font-size="11" font-weight="750" fill="#087A55">2 CONTROL PLANE  •  2 GPU WORKERS</text></g>
+
+    <rect x="50" y="128" width="1092" height="104" rx="18" fill="#fff" stroke="#D8E5F1"/>
+    <rect x="50" y="128" width="8" height="104" rx="4" fill="#7C3AED"/>
+    <text class="cap" x="78" y="155" fill="#7C3AED">IDENTITY AND CLUSTER ACCESS</text>
+    <g filter="url(#opShadow)">
+      <g transform="translate(78 174)"><rect class="card" width="220" height="42" rx="11"/><text class="name" x="110" y="26" text-anchor="middle">Microsoft Entra ID</text></g>
+      <g transform="translate(402 174)"><rect class="card" width="270" height="42" rx="11"/><text class="name" x="135" y="26" text-anchor="middle">Rancher and Kubernetes access</text></g>
+      <g transform="translate(776 174)"><rect class="card" width="270" height="42" rx="11"/><text class="name" x="135" y="26" text-anchor="middle">Node SSH access</text></g>
+    </g>
+    <path d="M298 195H394M672 195H768" fill="none" stroke="#7C3AED" stroke-width="2.2" marker-end="url(#opArrow)"/>
+
+    <rect x="48" y="258" width="714" height="360" rx="20" fill="#fff" stroke="#AFC8DF" stroke-width="1.5"/>
+    <rect x="48" y="258" width="714" height="42" rx="20" fill="#EAF3FB"/>
+    <path d="M48 278c0-11 9-20 20-20h674c11 0 20 9 20 20v22H48z" fill="#EAF3FB"/>
+    <text class="cap" x="70" y="285" fill="#174D75">ON-PREMISE DATA CENTER  •  RKE2 ON UBUNTU 24.04</text>
+
+    <g transform="translate(70 322)">
+      <rect width="670" height="124" rx="16" fill="#12385C"/>
+      <text x="18" y="28" font-size="12" font-weight="760" fill="#A9D5FF">FOUR-NODE CLUSTER TOPOLOGY</text>
+      <g transform="translate(18 48)"><rect width="145" height="54" rx="10" fill="#2D6ED6"/><text x="73" y="24" text-anchor="middle" font-size="12" font-weight="730" fill="#fff">Control plane 1</text><text x="73" y="42" text-anchor="middle" font-size="10" fill="#DDEBFF">RKE2 server</text></g>
+      <g transform="translate(181 48)"><rect width="145" height="54" rx="10" fill="#2D6ED6"/><text x="73" y="24" text-anchor="middle" font-size="12" font-weight="730" fill="#fff">Control plane 2</text><text x="73" y="42" text-anchor="middle" font-size="10" fill="#DDEBFF">RKE2 server</text></g>
+      <g transform="translate(344 48)"><rect width="145" height="54" rx="10" fill="#7C3AED"/><text x="73" y="24" text-anchor="middle" font-size="12" font-weight="730" fill="#fff">GPU worker 1</text><text x="73" y="42" text-anchor="middle" font-size="10" fill="#EFE5FF">NoSchedule taint</text></g>
+      <g transform="translate(507 48)"><rect width="145" height="54" rx="10" fill="#7C3AED"/><text x="73" y="24" text-anchor="middle" font-size="12" font-weight="730" fill="#fff">GPU worker 2</text><text x="73" y="42" text-anchor="middle" font-size="10" fill="#EFE5FF">NoSchedule taint</text></g>
+    </g>
+
+    <g transform="translate(70 468)">
+      <rect width="670" height="126" rx="16" fill="#F8FBFF" stroke="#BCD2E6"/>
+      <text class="cap" x="18" y="27" fill="#52677C">PLATFORM SERVICES</text>
+      <g transform="translate(18 44)"><rect width="145" height="62" rx="11" fill="#E8F2FF"/><text class="name" x="73" y="27" text-anchor="middle" fill="#174EA6">Cilium eBPF</text><text class="meta" x="73" y="46" text-anchor="middle">Cluster networking</text></g>
+      <g transform="translate(181 44)"><rect width="145" height="62" rx="11" fill="#E9F8F3"/><text class="name" x="73" y="27" text-anchor="middle" fill="#087A55">Argo CD</text><text class="meta" x="73" y="46" text-anchor="middle">GitOps delivery</text></g>
+      <g transform="translate(344 44)"><rect width="145" height="62" rx="11" fill="#FFF8EE"/><text class="name" x="73" y="27" text-anchor="middle" fill="#A15305">Longhorn</text><text class="meta" x="73" y="46" text-anchor="middle">Distributed storage</text></g>
+      <g transform="translate(507 44)"><rect width="145" height="62" rx="11" fill="#F2EAFE"/><text class="name" x="73" y="27" text-anchor="middle" fill="#6427B7">Velero</text><text class="meta" x="73" y="46" text-anchor="middle">Backup capability</text></g>
+    </g>
+
+    <g transform="translate(786 258)">
+      <rect width="356" height="360" rx="20" fill="#102A43"/>
+      <text x="20" y="34" font-size="12" font-weight="760" letter-spacing="1" fill="#A9D5FF">SELF-HOSTED OPERATIONS</text>
+      <g transform="translate(18 56)"><rect width="320" height="72" rx="13" fill="#fff" fill-opacity=".1"/><text x="17" y="27" font-size="14" font-weight="730" fill="#fff">Prometheus and Grafana</text><text x="17" y="49" font-size="11" fill="#C9DBEB">Metrics, dashboards, and alerting</text></g>
+      <g transform="translate(18 142)"><rect width="320" height="72" rx="13" fill="#fff" fill-opacity=".1"/><text x="17" y="27" font-size="14" font-weight="730" fill="#fff">Loki and Tempo</text><text x="17" y="49" font-size="11" fill="#C9DBEB">Central logs and distributed traces</text></g>
+      <g transform="translate(18 228)"><rect width="320" height="72" rx="13" fill="#fff" fill-opacity=".1"/><text x="17" y="27" font-size="14" font-weight="730" fill="#fff">Falco and DCGM Exporter</text><text x="17" y="49" font-size="11" fill="#C9DBEB">Runtime security and GPU telemetry</text></g>
+      <text x="20" y="327" font-size="11" font-weight="730" fill="#A9D5FF">RUNBOOKS  •  RETENTION  •  ESCALATION</text>
+      <text x="20" y="346" font-size="10" fill="#C9DBEB">Documented alert routing and escalation</text>
+    </g>
+
+    <rect x="48" y="645" width="1094" height="30" rx="15" fill="#E9F8F3"/>
+    <text x="595" y="665" text-anchor="middle" font-size="11" font-weight="750" fill="#087A55">PLATFORM DELIVERED WITH INSTALL GUIDES, TROUBLESHOOTING MATRICES, ON-CALL PROCEDURES, AND ALERT DEFINITIONS</text>
+  </g>
+</svg>

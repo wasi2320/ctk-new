@@ -1,27 +1,27 @@
 export const FINOPS_BUSINESS_SECTION = {
-  heading: "How will your Business upscale?",
+  heading: "Turn cloud spend into something you control",
   description:
-    "We upscale your business by optimizing financial operations to enhance efficiency and drive informed decision-making. Our approach streamlines processes, reduces costs, and supports sustainable growth, ensuring a solid foundation for long-term success.",
+    "We bring FinOps discipline to your AWS bill, making cloud cost visible, predictable, and accountable, so engineering keeps shipping without month-end surprises.",
   cards: [
     {
-      title: "Process Optimization",
+      title: "Cost Visibility",
       description:
-        "Improving workflows to boost efficiency, reduce costs, and enhance accuracy.",
+        "Tagging, allocation, and dashboards that show exactly where your AWS spend goes by team, service, and environment.",
     },
     {
-      title: "Data Insights",
+      title: "Forecasting",
       description:
-        "Using real-time data to guide decisions, improve forecasting, and shape strategy.",
+        "Usage and cost trends that make budgets predictable and flag anomalies before they reach the invoice.",
     },
     {
-      title: "Cost Control",
+      title: "Rightsizing and Savings Plans",
       description:
-        "Minimizing waste, maximizing resources, and ensuring cost-effective operations.",
+        "Rightsized compute, Spot and Savings Plans, and cleanup of idle resources to cut spend without touching performance.",
     },
     {
-      title: "Growth Scalability",
+      title: "Cost-Aware Architecture",
       description:
-        "Building financial systems that support seamless expansion and long-term success.",
+        "Infrastructure designed so unit economics stay healthy as your workload grows, not just a one-time cleanup.",
     },
   ],
 };

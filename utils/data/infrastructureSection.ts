@@ -1,7 +1,7 @@
 export const INFRASTRUCTURE_SECTION = {
   heading: "Let's solve your most complex IT infrastructure challenges.",
   description:
-    "Code to Kloud's solutions are designed to simplify complexity, delivering tailored services that ensure performance, scalability, and security.",
+    "CodetoKloud simplifies complex infrastructure, delivering services built for performance, scalability, and security.",
   cards: [
     {
       title: "Cloud Engineering",
@@ -24,7 +24,7 @@ export const INFRASTRUCTURE_SECTION = {
         pages: [
           { name: "Web Solutions", url: "/web-solutions" },
           { name: "Mobile Development", url: "/mobile-app" },
-          { name: "Al & GenAI", url: "/ai" },
+          { name: "AI & GenAI", url: "/ai" },
         ],
     },
 

@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="ecsTitle ecsDesc">
+  <title id="ecsTitle">Automated deployment pipeline for Amazon ECS</title>
+  <desc id="ecsDesc">A merge in GitLab starts a CI pipeline that tests and scans the application, builds a signed Docker image, and pushes it to Amazon ECR. A new Amazon ECS task definition is deployed with health checks and automatic rollback. Route 53 and an Application Load Balancer route user traffic to healthy ECS tasks across two Availability Zones. Secrets Manager and CloudWatch support secure operations.</desc>
+  <defs>
+    <linearGradient id="ecsBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F8FBFF"/>
+      <stop offset="1" stop-color="#F1F7FC"/>
+    </linearGradient>
+    <linearGradient id="ecsRuntime" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#133A5F"/>
+      <stop offset="1" stop-color="#0E2740"/>
+    </linearGradient>
+    <filter id="ecsShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#17324D" flood-opacity="0.10"/>
+    </filter>
+    <marker id="ecsArrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M1 1 9 5 1 9Z" fill="#2563EB"/>
+    </marker>
+    <marker id="ecsArrowOrange" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M1 1 9 5 1 9Z" fill="#E8790A"/>
+    </marker>
+    <marker id="ecsArrowGreen" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M1 1 9 5 1 9Z" fill="#0E9F6E"/>
+    </marker>
+    <style>
+      .et { font-family: Inter, ui-sans-serif, system-ui, sans-serif; fill: #102A43; }
+      .etitle { font-size: 30px; font-weight: 760; letter-spacing: -0.5px; }
+      .esub { font-size: 15px; fill: #52677C; }
+      .esection { font-size: 13px; font-weight: 760; letter-spacing: 1.2px; }
+      .ename { font-size: 15px; font-weight: 730; }
+      .emeta { font-size: 12px; fill: #61758A; }
+      .ecard { fill: #FFFFFF; stroke: #D8E5F1; stroke-width: 1.5; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="720" rx="28" fill="url(#ecsBg)"/>
+  <rect x="28" y="26" width="1144" height="668" rx="24" fill="none" stroke="#D9E6F2"/>
+
+  <g class="et">
+    <text class="etitle" x="58" y="72">Zero downtime delivery on Amazon ECS</text>
+    <text class="esub" x="58" y="99">Automated build, secure image storage, health-gated release, and resilient container traffic</text>
+    <g transform="translate(944 45)">
+      <rect width="198" height="32" rx="16" fill="#E9F8F3"/>
+      <circle cx="17" cy="16" r="5" fill="#0E9F6E"/>
+      <text x="30" y="21" font-size="11" font-weight="750" fill="#087A55">AUTOMATIC ROLLBACK</text>
+    </g>
+
+    <rect x="50" y="126" width="1100" height="176" rx="18" fill="#FFFFFF" stroke="#D8E5F1"/>
+    <rect x="50" y="126" width="8" height="176" rx="4" fill="#2563EB"/>
+    <text class="esection" x="78" y="154" fill="#2563EB">DEPLOYMENT PATH</text>
+    <text class="emeta" x="250" y="154">Every release is traceable from commit to running task</text>
+
+    <g filter="url(#ecsShadow)">
+      <g transform="translate(76 178)">
+        <rect class="ecard" width="146" height="94" rx="14"/>
+        <circle cx="73" cy="30" r="17" fill="#FFF0E8"/>
+        <path d="M64 24h18v13H64zM67 21v6M79 21v6M67 31h12" fill="none" stroke="#E95C17" stroke-width="2" stroke-linecap="round"/>
+        <text class="ename" x="73" y="63" text-anchor="middle">GitLab repo</text>
+        <text class="emeta" x="73" y="81" text-anchor="middle">Merge to main</text>
+      </g>
+      <g transform="translate(257 178)">
+        <rect class="ecard" width="146" height="94" rx="14"/>
+        <circle cx="73" cy="30" r="17" fill="#E9F8F3"/>
+        <path d="M64 30h18M69 24l-6 6 6 6M77 24l6 6-6 6" fill="none" stroke="#0E9F6E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <text class="ename" x="73" y="63" text-anchor="middle">GitLab CI</text>
+        <text class="emeta" x="73" y="81" text-anchor="middle">Test and scan</text>
+      </g>
+      <g transform="translate(438 178)">
+        <rect class="ecard" width="146" height="94" rx="14"/>
+        <circle cx="73" cy="30" r="17" fill="#E8F2FF"/>
+        <path d="m63 25 10-5 10 5v11l-10 5-10-5zM63 25l10 5 10-5M73 30v11" fill="none" stroke="#1778D0" stroke-width="2" stroke-linejoin="round"/>
+        <text class="ename" x="73" y="63" text-anchor="middle">Docker build</text>
+        <text class="emeta" x="73" y="81" text-anchor="middle">Signed artifact</text>
+      </g>
+      <g transform="translate(619 178)">
+        <rect class="ecard" width="146" height="94" rx="14"/>
+        <circle cx="73" cy="30" r="17" fill="#FFF2DE"/>
+        <path d="M63 23h20v14H63zM66 27h14M66 32h14" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round"/>
+        <text class="ename" x="73" y="63" text-anchor="middle">Amazon ECR</text>
+        <text class="emeta" x="73" y="81" text-anchor="middle">Image registry</text>
+      </g>
+      <g transform="translate(800 178)">
+        <rect class="ecard" width="146" height="94" rx="14"/>
+        <circle cx="73" cy="30" r="17" fill="#F2EAFE"/>
+        <path d="M63 23h20v15H63zM68 27h10M68 32h10" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round"/>
+        <text class="ename" x="73" y="63" text-anchor="middle">Task revision</text>
+        <text class="emeta" x="73" y="81" text-anchor="middle">Pinned image tag</text>
+      </g>
+      <g transform="translate(981 178)">
+        <rect class="ecard" width="146" height="94" rx="14"/>
+        <circle cx="73" cy="30" r="17" fill="#E9F8F3"/>
+        <path d="M64 30h18M76 24l6 6-6 6" fill="none" stroke="#0E9F6E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <text class="ename" x="73" y="63" text-anchor="middle">ECS deploy</text>
+        <text class="emeta" x="73" y="81" text-anchor="middle">Health gated</text>
+      </g>
+    </g>
+    <path d="M222 225H249" fill="none" stroke="#2563EB" stroke-width="2.3" marker-end="url(#ecsArrowBlue)"/>
+    <path d="M403 225H430" fill="none" stroke="#2563EB" stroke-width="2.3" marker-end="url(#ecsArrowBlue)"/>
+    <path d="M584 225H611" fill="none" stroke="#2563EB" stroke-width="2.3" marker-end="url(#ecsArrowBlue)"/>
+    <path d="M765 225H792" fill="none" stroke="#2563EB" stroke-width="2.3" marker-end="url(#ecsArrowBlue)"/>
+    <path d="M946 225H973" fill="none" stroke="#2563EB" stroke-width="2.3" marker-end="url(#ecsArrowBlue)"/>
+
+    <rect x="48" y="326" width="1104" height="334" rx="20" fill="#FFFFFF" stroke="#AFC8DF" stroke-width="1.5"/>
+    <rect x="48" y="326" width="1104" height="38" rx="20" fill="#EAF3FB"/>
+    <path d="M48 346c0-11 9-20 20-20h1064c11 0 20 9 20 20v18H48z" fill="#EAF3FB"/>
+    <text class="esection" x="70" y="351" fill="#174D75">AWS REGION  •  MULTI-AZ ECS SERVICE</text>
+    <g transform="translate(876 335)">
+      <circle cx="7" cy="10" r="4" fill="#2563EB"/>
+      <text x="18" y="14" font-size="10.5" font-weight="700" fill="#52677C">DEPLOYMENT</text>
+      <circle cx="101" cy="10" r="4" fill="#E8790A"/>
+      <text x="112" y="14" font-size="10.5" font-weight="700" fill="#52677C">TRAFFIC</text>
+    </g>
+
+    <text class="esection" x="71" y="396" fill="#E8790A">REQUEST PATH</text>
+    <g transform="translate(70 413)">
+      <rect width="165" height="59" rx="13" fill="#FFFFFF" stroke="#D8E5F1"/>
+      <text class="ename" x="82" y="26" text-anchor="middle">Users</text>
+      <text class="emeta" x="82" y="44" text-anchor="middle">HTTPS</text>
+    </g>
+    <g transform="translate(276 413)">
+      <rect width="165" height="59" rx="13" fill="#FFFFFF" stroke="#D8E5F1"/>
+      <text class="ename" x="82" y="26" text-anchor="middle">Route 53</text>
+      <text class="emeta" x="82" y="44" text-anchor="middle">DNS health</text>
+    </g>
+    <g transform="translate(482 413)">
+      <rect width="198" height="59" rx="13" fill="#FFF8EE" stroke="#F4CCA0"/>
+      <text class="ename" x="99" y="26" text-anchor="middle" fill="#A15305">Application LB</text>
+      <text class="emeta" x="99" y="44" text-anchor="middle">TLS and health checks</text>
+    </g>
+    <path d="M235 442H268" fill="none" stroke="#E8790A" stroke-width="2.3" marker-end="url(#ecsArrowOrange)"/>
+    <path d="M441 442H474" fill="none" stroke="#E8790A" stroke-width="2.3" marker-end="url(#ecsArrowOrange)"/>
+
+    <g transform="translate(70 499)" filter="url(#ecsShadow)">
+      <rect width="737" height="136" rx="18" fill="url(#ecsRuntime)"/>
+      <circle cx="31" cy="31" r="17" fill="#F08B21"/>
+      <path d="M22 24h18v14H22zM27 28h8M27 33h8" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+      <text x="58" y="28" font-size="17" font-weight="750" fill="#FFFFFF">Amazon ECS service</text>
+      <text x="58" y="46" font-size="11.5" fill="#C9DBEB">Rolling release with minimum healthy capacity</text>
+
+      <g transform="translate(20 66)">
+        <rect width="336" height="51" rx="12" fill="#FFFFFF" fill-opacity="0.10" stroke="#719BC4"/>
+        <circle cx="26" cy="25" r="10" fill="#0E9F6E"/>
+        <path d="m21 25 4 4 7-8" fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="46" y="22" font-size="12" font-weight="730" fill="#FFFFFF">Availability Zone A</text>
+        <text x="46" y="38" font-size="10.5" fill="#C9DBEB">Healthy task  •  private subnet</text>
+      </g>
+      <g transform="translate(381 66)">
+        <rect width="336" height="51" rx="12" fill="#FFFFFF" fill-opacity="0.10" stroke="#719BC4"/>
+        <circle cx="26" cy="25" r="10" fill="#0E9F6E"/>
+        <path d="m21 25 4 4 7-8" fill="none" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="46" y="22" font-size="12" font-weight="730" fill="#FFFFFF">Availability Zone B</text>
+        <text x="46" y="38" font-size="10.5" fill="#C9DBEB">Healthy task  •  private subnet</text>
+      </g>
+    </g>
+
+    <g transform="translate(831 396)">
+      <rect width="299" height="239" rx="18" fill="#F8FBFF" stroke="#BCD2E6"/>
+      <text x="18" y="28" font-size="12" font-weight="760" letter-spacing="1" fill="#52677C">OPERATIONS</text>
+      <rect x="18" y="44" width="263" height="64" rx="12" fill="#FFF8EE"/>
+      <circle cx="47" cy="76" r="16" fill="#FFF2DE"/>
+      <path d="M42 76v-5a5 5 0 0 1 10 0v5M40 76h14v10H40z" fill="none" stroke="#D97706" stroke-width="2"/>
+      <text x="75" y="71" font-size="13.5" font-weight="730" fill="#A15305">Secrets Manager</text>
+      <text x="75" y="90" font-size="11" fill="#80520B">Runtime credentials</text>
+      <rect x="18" y="121" width="263" height="94" rx="12" fill="#EAF3FB"/>
+      <circle cx="47" cy="153" r="16" fill="#E8F2FF"/>
+      <path d="M38 159 43 151l5 4 8-12" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="75" y="148" font-size="13.5" font-weight="730" fill="#174EA6">CloudWatch</text>
+      <text x="75" y="167" font-size="11" fill="#52677C">Logs, metrics, alarms</text>
+      <rect x="75" y="180" width="143" height="20" rx="10" fill="#E9F8F3"/>
+      <text x="146" y="194" text-anchor="middle" font-size="9.5" font-weight="750" fill="#087A55">ROLLBACK ON FAILURE</text>
+    </g>
+
+    <path d="M1054 272v73c0 28-19 38-43 38H770c-20 0-28 12-28 31v77" fill="none" stroke="#2563EB" stroke-width="2.5" marker-end="url(#ecsArrowBlue)"/>
+    <text x="897" y="377" font-size="10.5" font-weight="700" fill="#174EA6">deploy new revision</text>
+    <path d="M581 472v19" fill="none" stroke="#E8790A" stroke-width="2.5" marker-end="url(#ecsArrowOrange)"/>
+    <path d="M807 566H823" fill="none" stroke="#0E9F6E" stroke-width="2.3" marker-end="url(#ecsArrowGreen)"/>
+  </g>
+</svg>

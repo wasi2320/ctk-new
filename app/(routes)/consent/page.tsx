@@ -64,7 +64,7 @@ export default function SmsConsentPage() {
         <h1 className="text-3xl font-bold mb-2">SMS Consent</h1>
         <p className="text-gray-600">
           Opt in to receive text messages related to your engagement with
-          CodeToKloud.
+          CodetoKloud.
         </p>
       </div>
 
@@ -76,7 +76,7 @@ export default function SmsConsentPage() {
           <ul className="list-disc pl-5 space-y-1.5">
             <li>
               By submitting this form with the consent box checked, you give{" "}
-              <strong>CodeToKloud</strong> express written permission to send you
+              <strong>CodetoKloud</strong> express written permission to send you
               SMS text messages related to your engagement and services.
             </li>
             <li>
@@ -173,7 +173,7 @@ export default function SmsConsentPage() {
             />
             <span className="text-sm text-gray-700">
               <strong>
-                I agree to receive SMS text messages from CodeToKloud
+                I agree to receive SMS text messages from CodetoKloud
               </strong>{" "}
               at the number provided. I understand message frequency varies,
               message and data rates may apply, and I can reply STOP to opt out
@@ -193,7 +193,7 @@ export default function SmsConsentPage() {
             <div
               className={`text-sm p-3 rounded-lg ${
                 status === "success"
-                  ? "bg-green-50 text-green-800 border border-green-200"
+                  ? "bg-[#eef6fd] text-[#1b3a5c] border border-[#bfdcf5]"
                   : "bg-red-50 text-red-800 border border-red-200"
               }`}
             >

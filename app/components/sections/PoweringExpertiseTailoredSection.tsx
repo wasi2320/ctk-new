@@ -15,8 +15,8 @@ const PoweringExpertiseTailoredSection = ({ heading }: PoweringExpertiseTailored
             <hr className="border-white w-9 mx-auto mb-4" style={{ borderWidth: '2px' }}/>
             <h3 className="text-4xl mb-2">$1.2T+</h3>
             <h6 className="text-sm text-[#fff] mb-2">Market Size</h6>
-            <p className="text-sm nunito-extraLight md:w-[55%] w-100 m-auto">Accelerated demand for expert-led consulting and digital enablement.
-            Signifies a strong shift to flexible, cloud-native service delivery.</p>
+            <p className="text-sm nunito-extraLight md:w-[55%] w-100 m-auto">Growing demand for expert-led cloud consulting and a shift toward
+            flexible, cloud-native service delivery.</p>
             </div>
 
             {/* Card 2 */}
@@ -25,7 +25,7 @@ const PoweringExpertiseTailoredSection = ({ heading }: PoweringExpertiseTailored
             <hr className="border-white w-9 mx-auto mb-4" style={{ borderWidth: '2px' }}/>
             <h3 className="text-4xl mb-2">6000+ </h3>
             <h6 className="text-sm text-[#fff] mb-2">Security Threats per year</h6>
-            <p className="text-sm nunito-extraLight">Underlines the importance of cybersecurity in service engagements.</p>
+            <p className="text-sm nunito-extraLight">Why we build security into every engagement from day one.</p>
             </div>
 
             {/* Card 3 */}
@@ -34,7 +34,7 @@ const PoweringExpertiseTailoredSection = ({ heading }: PoweringExpertiseTailored
             <hr className="border-white w-9 mx-auto mb-4" style={{ borderWidth: '2px' }}/>
             <h3 className="text-4xl mb-2">20%</h3>
             <h6 className="text-sm text-[#fff] mb-2">YoY increase</h6>
-            <p className="text-sm nunito-extraLight">Continued confidence from stakeholders in scalable service models.</p>
+            <p className="text-sm nunito-extraLight">Steady investment in scalable, cloud-native service models.</p>
             </div>
 
         </div>

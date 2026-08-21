@@ -7,67 +7,73 @@ export const metadata = pageMetadata("/kubernetes-compliance-platform-case-study
 
 const data: CaseStudyData = {
   path: "/kubernetes-compliance-platform-case-study",
-  title: "On-Prem Kubernetes Platform for SOC 2, HIPAA, HiTrust & NIST",
+  title: "On-Prem Kubernetes Platform for SOC 2, HIPAA, HITRUST, and NIST",
   heroTitle: "A Compliance-Ready On-Prem Kubernetes Platform",
   intro:
-    "An Indianapolis-area technology company was preparing for SOC 2, HIPAA, HiTrust, and NIST 800-53 audits at the same time. We built an on-premise Kubernetes platform with the compliance controls built into the infrastructure.",
-  heroImage: "/services/ci_cd_eks.png",
+    "A technology company needed a production-grade on-premise Kubernetes platform with GPU scheduling and a complete operational handoff while preparing controls for SOC 2, HIPAA, HITRUST, and NIST 800-53.",
+  heroImage: "/services/architecture/onprem-kubernetes-compliance.svg",
+  heroImageAlt:
+    "Four-node RKE2 platform with two control-plane nodes, two GPU workers, Entra ID access, GitOps, storage, backup, observability, runtime security, and documented alert escalation",
   metaDescription:
-    "How CodetoKloud built an on-premise RKE2 Kubernetes platform with default encryption, SSO on every access path, GitOps change history, and audit evidence for a company preparing for SOC 2, HIPAA, HiTrust, and NIST 800-53 audits.",
+    "How CodetoKloud built a four-node on-premise RKE2 platform with two control-plane nodes, two GPU workers, GitOps, self-hosted observability, and operational runbooks for a company preparing for multiple security frameworks.",
   problem: [
-    "An Indianapolis-area technology company ran sensitive workloads that could not move to public cloud. It had no container platform, and access was managed through individual SSH keys and local accounts.",
-    "There was no audit trail for changes and no encryption for internal network traffic. Four compliance frameworks were in scope at once: SOC 2, HIPAA, HiTrust, and NIST 800-53.",
+    "The company needed a production-grade on-premise Kubernetes platform that could schedule AI workloads across dedicated NVIDIA GPU capacity while keeping operational telemetry inside its environment.",
+    "Its internal team also needed enough documentation to install, operate, monitor, troubleshoot, and escalate issues across the platform while preparing controls for SOC 2, HIPAA, HITRUST, and NIST 800-53.",
   ],
   solution: [
     {
-      title: "Hardened Kubernetes on Bare Metal",
-      body: "We deployed RKE2 on bare metal with a 3-node high-availability control plane, managed through Rancher for its hardened defaults and CIS profile support.",
+      title: "Four-Node RKE2 Foundation",
+      body: "We deployed RKE2 on Ubuntu 24.04 across four bare-metal nodes: two control-plane nodes and two GPU worker nodes. Rancher provided a central cluster management interface.",
     },
     {
-      title: "Encryption by Default",
-      body: "We used Cilium as the CNI with kube-proxy replacement, enabled WireGuard encryption between pods by default, and added Hubble for network observability that doubles as audit evidence. Network policies default to deny.",
+      title: "Cilium Networking and GPU Placement",
+      body: "We installed Cilium with eBPF-based kube-proxy replacement and configured the NVIDIA GPU Operator. Node labels and NoSchedule taints kept general workloads off the GPU workers while allowing selected AI workloads to request GPU capacity.",
     },
     {
-      title: "SSO on Every Access Path",
-      body: "We enforced Entra ID single sign-on across the Rancher UI, kubectl, and SSH. No local accounts, no shared keys. That was a hard auditor requirement.",
+      title: "Identity and GitOps Controls",
+      body: "We integrated Kubernetes access and node SSH with Microsoft Entra ID and used ArgoCD to manage desired application and platform state through Git.",
     },
     {
-      title: "GitOps Change History",
-      body: "We ran ArgoCD so every cluster change is tracked in Git and nothing is applied by hand. That gives auditors a complete, reviewable change history.",
+      title: "Storage and Backup Services",
+      body: "We added Longhorn distributed storage and Velero backup capabilities so the platform team had cluster-native storage and a defined backup component in the operating model.",
     },
     {
-      title: "Storage, Backups, and GPU Workloads",
-      body: "We added Longhorn distributed storage, Velero backups with a tested restore path, and GPU worker nodes through the NVIDIA GPU Operator for machine learning workloads.",
+      title: "Self-Hosted Observability and Runtime Security",
+      body: "We deployed Prometheus, Alertmanager, Grafana, Loki with Promtail, Tempo, Falco, and NVIDIA DCGM Exporter inside the cluster. Node exporter, kube-state-metrics, and cAdvisor added infrastructure and workload visibility without sending the primary telemetry stack off site.",
     },
     {
-      title: "Compliance Evidence on Tap",
-      body: "We built Prometheus and Grafana dashboards oriented around audit evidence, and fed alarm coverage into a continuous compliance evidence platform, so the compliance team pulls evidence without engineering time.",
+      title: "Runbooks and Alert Escalation",
+      body: "We delivered step-by-step installation guides, architecture documentation, component troubleshooting matrices, a data center hardware runbook, log retention guidance, dashboard definitions, alert routing, and documented escalation paths.",
     },
   ],
   results: [
-    "The platform passed readiness assessments across all four frameworks.",
-    "The controls live in the infrastructure itself: encrypted traffic by default, SSO on every access path, Git-based change history, and tested recovery.",
-    "The compliance team pulls auditor evidence from Grafana and Git without pulling engineering time.",
+    "The company received a four-node RKE2 platform with two control-plane nodes and two dedicated GPU workers.",
+    "Self-hosted metrics, logs, traces, GPU telemetry, and runtime security events gave the team one operating view while keeping the monitoring stack on premise.",
+    "The internal team received install guides, architecture documentation, troubleshooting matrices, on-call procedures, and an alert escalation model for ongoing ownership.",
   ],
-  metrics: ["SOC 2 · HIPAA · HiTrust · NIST 800-53", "Passed readiness assessments"],
+  metrics: ["4-node RKE2 platform", "2 GPU workers", "Self-hosted observability"],
   stack: [
     "RKE2",
     "Rancher",
     "Cilium",
-    "WireGuard",
-    "Hubble",
     "Longhorn",
     "Velero",
     "ArgoCD",
     "NVIDIA GPU Operator",
     "Prometheus",
+    "Alertmanager",
     "Grafana",
+    "Loki",
+    "Tempo",
+    "Falco",
+    "NVIDIA DCGM Exporter",
     "Entra ID SSO",
   ],
   crossLinks: [
     { name: "HIPAA Compliance", href: "/hipaa-compliance" },
     { name: "SOC 2 Compliance", href: "/soc-2-compliance" },
     { name: "Kubernetes & EKS", href: "/kubernetes" },
+    { name: "Review my Kubernetes controls", href: "/contact" },
   ],
 };
 

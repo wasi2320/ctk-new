@@ -13,11 +13,10 @@ const EcommerceTransformative = ({}: EcommerceTransformativeProps) => {
             Retail Transformation
           </h3>
           <p className="md:text-2xl text-lg font-Nunito text-center md:text-start md:w-[70%] w-full">
-            E-Commerce is revolutionizing retail by providing personalized,
-            flexible, and accessible shopping experiences. By leveraging cloud
-            technology and digital tools, businesses can expand their reach,
-            offer engaging customer experiences, and quickly respond to market
-            changes.
+            E-commerce is reshaping retail with personalized, flexible, and
+            accessible shopping experiences. We build the cloud platforms those
+            businesses run on: infrastructure that scales with traffic, keeps
+            checkout fast under load, and lets teams ship changes quickly.
           </p>
         </div>
 
@@ -36,7 +35,7 @@ const EcommerceTransformative = ({}: EcommerceTransformativeProps) => {
             Scalable Platform
           </div>
           <div className="bg-[#f9f8f8] border-2 border-[#DEDCDC] text-dark rounded-xl px-3 py-3 text-xl shadow-md font-semibold font-Nunito text-center">
-            Engaging Displays
+            Peak-Traffic Ready
           </div>
         </div>
       </div>

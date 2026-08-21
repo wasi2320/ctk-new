@@ -12,8 +12,8 @@ const ManufacturingTransformative = ({
     <section className="md:px-36 px-4 md:pt-12 pt-8 pb-12 bg-white text-dark font-Nunito">
       <div className="flex flex-row items-center justify-center">
         <h3 className="md:text-4xl text-4xl text-center md:text-center font-SemiBold mb-8 font-Nunito">
-          Transforming Manufacturing with Tailored Cloud Solutions for{" "}
-          <br className="hidden md:block"></br> the Future
+          Cloud and DevOps Engineering That Moves Manufacturing{" "}
+          <br className="hidden md:block"></br> Forward
         </h3>
       </div>
       <div className="grid md:grid-cols-2 grids-cols-1 gap-16 md:mt-6 mt-4">

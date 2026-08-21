@@ -4,7 +4,7 @@ export const CONSULTING_SECTION = {
   description:
     "Our consulting and advisory services help scale your business with effective strategies and expert insights. We focus on improving operations, seizing growth opportunities, and ensuring long-term success.",
   points: [
-    "1. Develop tailored growth strategies",
+    "1. Build growth strategies around your goals",
     "2. Improve efficiency and reduce costs",
     "3. Identify new market opportunities for expansion",
   ],

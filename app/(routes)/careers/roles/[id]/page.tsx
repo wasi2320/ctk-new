@@ -1,8 +1,36 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import { createServerClient } from "@/lib/supabase";
+import { SITE_URL } from "@/lib/structured-data";
 import type { Components } from "react-markdown";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const role = await getRole(id);
+  if (!role) {
+    return {
+      title: "Role | Careers | CodetoKloud",
+      robots: { index: false, follow: true },
+    };
+  }
+  const description = (
+    role.summary ||
+    `Apply for the ${role.title} role at CodetoKloud${
+      role.location ? `, ${role.location}` : ""
+    }.`
+  ).slice(0, 160);
+  return {
+    title: `${role.title} | Careers | CodetoKloud`,
+    description,
+    alternates: { canonical: `${SITE_URL}/careers/roles/${role.id}` },
+  };
+}
 
 export const dynamic = "force-dynamic";
 
@@ -53,7 +81,7 @@ const markdownComponents: Components = {
   a: ({ href, children }) => (
     <a
       href={href}
-      className="text-[#0f241f] font-semibold underline underline-offset-4 hover:text-[#0a1613]"
+      className="text-[#13233a] font-semibold underline underline-offset-4 hover:text-[#101d2e]"
       target="_blank"
       rel="noreferrer"
     >
@@ -73,32 +101,32 @@ const markdownComponents: Components = {
   strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
   em: ({ children }) => <em className="italic">{children}</em>,
   h1: ({ children }) => (
-    <h1 className="text-3xl font-semibold text-[#0a0f13] mb-3 mt-4">
+    <h1 className="text-3xl font-semibold text-[#0d1526] mb-3 mt-4">
       {children}
     </h1>
   ),
   h2: ({ children }) => (
-    <h2 className="text-2xl font-semibold text-[#0a0f13] mb-3 mt-4">
+    <h2 className="text-2xl font-semibold text-[#0d1526] mb-3 mt-4">
       {children}
     </h2>
   ),
   h3: ({ children }) => (
-    <h3 className="text-xl font-semibold text-[#0a0f13] mb-2 mt-3">
+    <h3 className="text-xl font-semibold text-[#0d1526] mb-2 mt-3">
       {children}
     </h3>
   ),
   h4: ({ children }) => (
-    <h4 className="text-lg font-semibold text-[#0a0f13] mb-2 mt-3">
+    <h4 className="text-lg font-semibold text-[#0d1526] mb-2 mt-3">
       {children}
     </h4>
   ),
   h5: ({ children }) => (
-    <h5 className="text-base font-semibold text-[#0a0f13] mb-2 mt-2">
+    <h5 className="text-base font-semibold text-[#0d1526] mb-2 mt-2">
       {children}
     </h5>
   ),
   h6: ({ children }) => (
-    <h6 className="text-sm font-semibold text-[#0a0f13] uppercase tracking-wide mb-2 mt-2">
+    <h6 className="text-sm font-semibold text-[#0d1526] uppercase tracking-wide mb-2 mt-2">
       {children}
     </h6>
   ),
@@ -125,20 +153,20 @@ export default async function RoleDetailPage({
               <p className="text-sm uppercase tracking-[0.25em] text-gray-500">
                 Role detail
               </p>
-              <h1 className="text-3xl md:text-4xl font-semibold text-[#0a0f13] mt-2">
+              <h1 className="text-3xl md:text-4xl font-semibold text-[#0d1526] mt-2">
                 {role.title}
               </h1>
             </div>
             <Link
               href="/careers#open-roles"
-              className="hidden md:inline-flex text-sm text-[#0f241f] font-semibold hover:underline"
+              className="hidden md:inline-flex text-sm text-[#13233a] font-semibold hover:underline"
             >
               Back to roles
             </Link>
           </div>
 
           <div className="flex flex-wrap gap-3 text-sm text-gray-700">
-            <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#e8f2ef] text-[#0f241f] font-semibold">
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#e8f2ef] text-[#13233a] font-semibold">
               {role.employment_type}
             </span>
             <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-gray-800">
@@ -176,14 +204,14 @@ export default async function RoleDetailPage({
                 href={role.apply_url}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full px-6 py-3 bg-[#0f241f] text-white font-semibold hover:bg-[#0a1613] transition-colors"
+                className="rounded-full px-6 py-3 bg-[#13233a] text-white font-semibold hover:bg-[#101d2e] transition-colors"
               >
                 Apply now
               </Link>
             ) : null}
             <Link
               href="/careers#open-roles"
-              className="rounded-full px-6 py-3 border border-gray-300 text-[#0a0f13] font-semibold hover:border-[#081617] transition-colors"
+              className="rounded-full px-6 py-3 border border-gray-300 text-[#0d1526] font-semibold hover:border-[#101d2e] transition-colors"
             >
               Back to roles
             </Link>

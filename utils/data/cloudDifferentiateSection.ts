@@ -4,17 +4,17 @@ export const CLOUD_DIFFERENTIATE__SECTION = {
     {
       title: "Strategic Cloud Transformation",
       description:
-        "We go beyond simple cloud deployment, optimizing your cloud architecture to ensure maximum efficiency, cost savings, and peak performance tailored to your business needs.",
+        "We go beyond basic deployment, tuning your cloud architecture for efficiency, cost, and performance around how your workloads actually run.",
     },
     {
       title: "Developer-Centric Cloud Solutions",
       description:
-        "We create cloud environments that are developer-friendly, integrating automation, DevOps practices, and CI/CD pipelines to enable your teams to deploy faster, innovate seamlessly, and eliminate bottlenecks.",
+        "We build developer-friendly environments with automation, DevOps practices, and CI/CD pipelines so your teams deploy faster and clear bottlenecks.",
     },
     {
       title: "AI-Driven Cloud Management",
       description:
-        "Our AI-powered monitoring and automation tools continuously manage workloads, ensuring your cloud infrastructure operates at optimal performance and cost efficiency—without manual intervention.",
+        "AI-assisted monitoring and automation continuously manage workloads, holding performance and cost at target without constant manual intervention.",
     },
     {
       title: "Multi-Cloud Mastery",

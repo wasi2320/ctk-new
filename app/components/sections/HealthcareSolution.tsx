@@ -16,18 +16,17 @@ const HealthcareSolution = ({ heading }: HealthcareSolutionProps) => {
             <br className="hidden md:block"></br> Solutions
           </h3>
           <p className="text-lg font-Nunito text-center md:text-start">
-            We empower your healthcare ecosystem with innovative cloud-based
-            HealthTech solutions tailored to your needs. From modernizing legacy
-            systems to enhancing patient experiences and data security, we
-            provide end-to-end support that ensures your platform is agile,
-            scalable, and future-ready.
+            We build and run secure cloud infrastructure for healthcare teams.
+            From modernizing legacy systems to improving patient experiences and
+            protecting sensitive data, we provide the engineering support that
+            keeps your platform reliable, scalable, and compliant.
           </p>
 
           <ul className="mt-10 space-y-4">
             {/* List Item 1 */}
             <li className="flex items-center">
               <hr
-                className="border-green-900 w-4 mr-3"
+                className="border-[#16212e] w-4 mr-3"
                 style={{ borderWidth: "2px" }}
               />
               <span className="text-lg font-semibold font-Nunito">
@@ -38,18 +37,18 @@ const HealthcareSolution = ({ heading }: HealthcareSolutionProps) => {
             {/* List Item 2 */}
             <li className="flex items-center">
               <hr
-                className="border-green-900 w-4 mr-3"
+                className="border-[#16212e] w-4 mr-3"
                 style={{ borderWidth: "2px" }}
               />
               <span className="text-lg font-semibold font-Nunito">
-                Unlock Deeper Health Insights
+                Deeper Health Insights
               </span>
             </li>
 
             {/* List Item 3 */}
             <li className="flex items-center">
               <hr
-                className="border-green-900 w-4 mr-3"
+                className="border-[#16212e] w-4 mr-3"
                 style={{ borderWidth: "2px" }}
               />
               <span className="text-lg font-semibold font-Nunito">
@@ -60,7 +59,7 @@ const HealthcareSolution = ({ heading }: HealthcareSolutionProps) => {
             {/* List Item 4 */}
             <li className="flex items-center">
               <hr
-                className="border-green-900 w-4 mr-3"
+                className="border-[#16212e] w-4 mr-3"
                 style={{ borderWidth: "2px" }}
               />
               <span className="text-lg font-semibold font-Nunito">
@@ -71,7 +70,7 @@ const HealthcareSolution = ({ heading }: HealthcareSolutionProps) => {
             {/* List Item 5 */}
             <li className="flex items-center">
               <hr
-                className="border-green-900 w-4 mr-3"
+                className="border-[#16212e] w-4 mr-3"
                 style={{ borderWidth: "2px" }}
               />
               <span className="text-lg font-semibold font-Nunito">
